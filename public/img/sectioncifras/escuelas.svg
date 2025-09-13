@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="103.28 183.955 90.859 73.625" width="90.859" height="73.625" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <filter id="drop-shadow-filter-0" color-interpolation-filters="sRGB" x="-500%" y="-500%" width="1000%" height="1000%" bx:pinned="true">
+      <title>Somba-izquierda</title>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="gaussian-blur-0"/>
+      <feOffset dx="-2" dy="2" in="gaussian-blur-0" result="offset-0"/>
+      <feComponentTransfer result="offsetblur" in="offset-0">
+        <feFuncA id="spread-ctrl" type="linear" slope="1"/>
+      </feComponentTransfer>
+      <feFlood flood-color="rgba(0,0,0,0.3)" result="flood-0"/>
+      <feComposite in2="offsetblur" operator="in" in="flood-0" result="composite-0"/>
+      <feMerge result="merge-0">
+        <feMergeNode in="composite-0"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <path d="M 107.017 215.197 L 107.017 251.787 C 107.017 252.976 107.98 253.939 109.169 253.939 L 119.931 253.939 L 119.931 210.893 L 111.321 210.893 C 108.945 210.893 107.017 212.82 107.017 215.197 Z M 155.444 208.741 L 152.216 208.741 L 152.216 203.36 C 152.216 202.766 151.734 202.284 151.139 202.284 L 148.987 202.284 C 148.393 202.284 147.911 202.766 147.911 203.36 L 147.911 211.969 C 147.911 212.563 148.393 213.045 148.987 213.045 L 155.444 213.045 C 156.038 213.045 156.52 212.563 156.52 211.969 L 156.52 209.817 C 156.52 209.222 156.038 208.741 155.444 208.741 Z M 173.974 200.137 L 152.451 185.788 C 151.005 184.824 149.122 184.824 147.675 185.788 L 126.153 200.137 C 124.955 200.935 124.236 202.279 124.235 203.718 L 124.235 253.939 L 141.454 253.939 L 141.454 234.569 C 141.454 233.38 142.417 232.417 143.606 232.417 L 156.52 232.417 C 157.709 232.417 158.672 233.38 158.672 234.569 L 158.672 253.939 L 175.89 253.939 L 175.89 203.719 C 175.89 202.28 175.171 200.935 173.974 200.137 Z M 150.063 219.503 C 144.12 219.503 139.302 214.684 139.302 208.741 C 139.302 202.797 144.12 197.979 150.063 197.979 C 156.007 197.979 160.824 202.797 160.824 208.741 C 160.824 214.684 156.007 219.503 150.063 219.503 Z M 188.804 210.893 L 180.195 210.893 L 180.195 253.939 L 190.956 253.939 C 192.146 253.939 193.11 252.976 193.11 251.787 L 193.11 215.197 C 193.11 212.82 191.182 210.893 188.804 210.893 Z" style="fill: rgb(255, 255, 255); filter: url(#drop-shadow-filter-0);"/>
+</svg>

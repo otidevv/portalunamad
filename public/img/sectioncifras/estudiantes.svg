@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="110.228 180.936 91.372 74.951" width="91.372" height="74.951" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <filter id="drop-shadow-filter-0" color-interpolation-filters="sRGB" x="-500%" y="-500%" width="1000%" height="1000%" bx:pinned="true">
+      <title>Somba-izquierda</title>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="gaussian-blur-0"/>
+      <feOffset dx="-2" dy="2" in="gaussian-blur-0" result="offset-0"/>
+      <feComponentTransfer result="offsetblur" in="offset-0">
+        <feFuncA id="spread-ctrl" type="linear" slope="1"/>
+      </feComponentTransfer>
+      <feFlood flood-color="rgba(0,0,0,0.3)" result="flood-0"/>
+      <feComposite in2="offsetblur" operator="in" in="flood-0" result="composite-0"/>
+      <feMerge result="merge-0">
+        <feMergeNode in="composite-0"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <path d="M 144.803 216.95 C 154.297 216.95 161.99 209.256 161.99 199.763 C 161.99 190.271 154.297 182.577 144.803 182.577 C 135.31 182.577 127.617 190.271 127.617 199.763 C 127.617 209.256 135.31 216.95 144.803 216.95 Z M 156.834 221.247 L 154.591 221.247 C 151.611 222.616 148.294 223.395 144.803 223.395 C 141.311 223.395 138.009 222.616 135.015 221.247 L 132.772 221.247 C 122.809 221.247 114.727 229.33 114.727 239.293 L 114.727 244.878 C 114.727 248.437 117.613 251.323 121.172 251.323 L 168.434 251.323 C 171.993 251.323 174.88 248.437 174.88 244.878 L 174.88 239.293 C 174.88 229.33 166.797 221.247 156.834 221.247 Z M 200.202 204.006 L 196.47 200.234 C 195.853 199.603 194.844 199.603 194.214 200.22 L 180.144 214.185 L 174.034 208.035 C 173.417 207.404 172.408 207.404 171.778 208.021 L 168.005 211.767 C 167.374 212.385 167.374 213.392 167.991 214.023 L 178.962 225.074 C 179.579 225.705 180.586 225.705 181.217 225.088 L 200.19 206.263 C 200.806 205.631 200.82 204.624 200.202 204.006 Z" style="fill: rgb(255, 255, 255); filter: url(#drop-shadow-filter-0);"/>
+</svg>

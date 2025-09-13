@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="123.873 179.026 69.943 77.455" width="69.943" height="77.455" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <filter id="drop-shadow-filter-0" color-interpolation-filters="sRGB" x="-500%" y="-500%" width="1000%" height="1000%" bx:pinned="true">
+      <title>Somba-izquierda</title>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1" result="gaussian-blur-0"/>
+      <feOffset dx="-2" dy="2" in="gaussian-blur-0" result="offset-0"/>
+      <feComponentTransfer result="offsetblur" in="offset-0">
+        <feFuncA id="spread-ctrl" type="linear" slope="1"/>
+      </feComponentTransfer>
+      <feFlood flood-color="rgba(0,0,0,0.3)" result="flood-0"/>
+      <feComposite in2="offsetblur" operator="in" in="flood-0" result="composite-0"/>
+      <feMerge result="merge-0">
+        <feMergeNode in="composite-0"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <path d="M 189.322 236.155 L 173.462 210.647 L 173.462 190.211 L 174.544 190.211 C 176.344 190.211 177.793 188.762 177.793 186.962 L 177.793 184.798 C 177.793 182.998 176.344 181.549 174.544 181.549 L 146.395 181.549 C 144.595 181.549 143.146 182.998 143.146 184.798 L 143.146 186.962 C 143.146 188.762 144.595 190.211 146.395 190.211 L 147.477 190.211 L 147.477 210.647 L 131.616 236.155 C 127.651 242.53 132.226 250.84 139.749 250.84 L 181.188 250.84 C 188.726 250.84 193.288 242.517 189.322 236.155 Z M 148.817 224.857 L 155.34 214.356 C 155.84 213.651 156.124 212.785 156.124 211.863 L 156.124 190.211 L 164.787 190.211 L 164.787 211.863 C 164.787 212.798 165.084 213.651 165.571 214.356 L 172.094 224.857 L 148.817 224.857 Z" style="filter: url(#drop-shadow-filter-0); fill: rgb(255, 255, 255);"/>
+</svg>

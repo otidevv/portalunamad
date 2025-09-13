@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php artisan:*)",
+      "Bash(test:*)",
+      "Bash(cat:*)",
+      "WebFetch(domain:www.unmsm.edu.pe)",
+      "Bash(dir:*)",
+      "Bash(sed:*)",
+      "WebFetch(domain:localhost)",
+      "Bash(composer:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(php:*)",
+      "Bash(findstr:*)",
+      "Bash(mkdir:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
