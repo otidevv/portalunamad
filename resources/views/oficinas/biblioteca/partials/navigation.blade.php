@@ -65,16 +65,6 @@
                 </div>
             </div>
 
-            <!-- Horarios -->
-            <div class="flex items-start space-x-2">
-                <svg class="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                <div>
-                    <p class="text-xs font-semibold text-gray-800">Horario de Atención</p>
-                    <p class="text-xs text-purple-700">Lunes a Viernes: 8:00 - 17:00</p>
-                </div>
-            </div>
         </div>
     </div>
 </div>

@@ -4,8 +4,8 @@
 
 @section('content')
 <!-- Hero Section -->
-<div class="relative bg-gradient-to-r from-[#db0455] to-[#ed145b] py-20">
-    <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
+<div class="relative bg-gradient-to-r from-[#ed145b] to-[#ed145b] py-20">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#ed145b]/80 to-[#ed145b]/70"></div>
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-center text-white">
             <h1 class="text-4xl font-bold mb-4">Biblioteca Central</h1>
@@ -18,7 +18,7 @@
 <div class="bg-white py-4 border-b">
     <div class="container mx-auto px-4">
         <nav class="flex items-center space-x-2 text-sm">
-            <a href="/" class="text-gray-500 hover:text-[#db0455] transition-colors">
+            <a href="/" class="text-gray-500 hover:text-[#ed145b] transition-colors">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
                 </svg>
@@ -26,11 +26,11 @@
             <svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
-            <a href="/oficinas" class="text-gray-500 hover:text-[#db0455] transition-colors">Oficinas</a>
+            <a href="/oficinas" class="text-gray-500 hover:text-[#ed145b] transition-colors">Oficinas</a>
             <svg class="w-3 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
-            <span class="text-[#db0455] font-medium">Biblioteca Central</span>
+            <span class="text-[#ed145b] font-medium">Biblioteca Central</span>
         </nav>
     </div>
 </div>

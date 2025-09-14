@@ -527,7 +527,7 @@
 <section class="py-16 bg-gray-100">
     <div class="container mx-auto px-4">
         <p class="text-sm font-medium text-gray-600 text-center mb-2">También te puede interesar</p>
-        <h2 class="text-3xl font-bold text-center text-[#ed145b] mb-12">Otros enlaces</h2>
+        <h2 class="text-3xl font-bold text-center text-[#db0455] mb-12">Otros enlaces</h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Directorio de Funcionarios -->
@@ -734,7 +734,7 @@
 <!-- Sección Enlaces Externos -->
 <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center text-[#ed145b] mb-12">Enlaces Externos</h2>
+        <h2 class="text-3xl font-bold text-center text-[#db0455] mb-12">Enlaces Externos</h2>
         
         <!-- Slider Container -->
         <div class="relative overflow-hidden">
