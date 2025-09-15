@@ -42,55 +42,52 @@
         </div>
     </div>
 
-    <!-- Content Card - Solo lado izquierdo -->
-    <div class="absolute left-8 top-1/2 transform -translate-y-1/2 z-10">
-        <div class="rounded-2xl shadow-2xl max-w-md border border-gray-200/20 relative overflow-hidden bg-white">
+    <!-- Content Card - Responsive -->
+    <div class="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 z-10 w-[calc(100%-2rem)] md:w-auto">
+        <div class="rounded-2xl shadow-2xl max-w-xs md:max-w-md mx-auto md:mx-0 border border-gray-200/20 relative overflow-hidden bg-white">
             <!-- Franja superior con imagen de hojas -->
-            <div class="absolute top-0 left-0 right-0 h-16 rounded-t-2xl overflow-hidden" style="background-image: url('/img/banners/backgroundbanner/background_card.png'); background-size: cover; background-position: top center;">
+            <div class="absolute top-0 left-0 right-0 h-12 md:h-16 rounded-t-2xl overflow-hidden" style="background-image: url('/img/banners/backgroundbanner/background_card.png'); background-size: cover; background-position: top center;">
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/80"></div>
             </div>
-            
+
             <!-- Franja inferior con imagen de hojas -->
-            <div class="absolute bottom-0 left-0 right-0 h-16 rounded-b-2xl overflow-hidden" style="background-image: url('/img/banners/backgroundbanner/background_card.png'); background-size: cover; background-position: bottom center;">
+            <div class="absolute bottom-0 left-0 right-0 h-12 md:h-16 rounded-b-2xl overflow-hidden" style="background-image: url('/img/banners/backgroundbanner/background_card.png'); background-size: cover; background-position: bottom center;">
                 <div class="absolute inset-0 bg-gradient-to-t from-transparent to-white/80"></div>
             </div>
-            
+
             <!-- Contenido del card -->
-            <div class="relative z-10 p-8">
+            <div class="relative z-10 p-4 md:p-8">
                 <!-- Logo centrado -->
-                <div class="flex justify-center mb-6">
-                    <img src="{{ asset('img/header/logounamad.png') }}" alt="UNAMAD" class="h-12 w-40">
+                <div class="flex justify-center mb-4 md:mb-6">
+                    <img src="{{ asset('img/header/logounamad.png') }}" alt="UNAMAD" class="h-8 w-28 md:h-12 md:w-40">
                 </div>
-                
+
                 <!-- Título principal conciso -->
-                <h1 class="text-2xl font-bold text-gray-800 mb-4 leading-tight">
+                <h1 class="text-lg md:text-2xl font-bold text-gray-800 mb-3 md:mb-4 leading-tight text-center md:text-left">
                     Universidad Nacional<br>
                     <span class="text-[#db0455]">Amazónica de Madre de Dios</span>
                 </h1>
-                
+
                 <!-- Lema reducido -->
-                <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                <p class="text-gray-600 mb-4 md:mb-6 text-xs md:text-sm leading-relaxed text-center md:text-left">
                     Formando profesionales comprometidos con el desarrollo sostenible de la Amazonía peruana.
                 </p>
-                
+
                 <!-- Botones compactos -->
-                <div class="space-y-3 mb-6">
-                    <a href="https://admision.unamad.edu.pe/" target="_blank" class="block bg-[#db0455] hover:bg-[#a00340] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 text-center text-sm">
+                <div class="space-y-2 md:space-y-3 mb-4 md:mb-6">
+                    <a href="https://admision.unamad.edu.pe/" target="_blank" class="block bg-[#db0455] hover:bg-[#a00340] text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-all duration-300 text-center text-xs md:text-sm">
                         📚 Admisión 2025
                     </a>
-                    <!-- <a href="#" class="block border-2 border-[#db0455] text-[#db0455] hover:bg-[#db0455] hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 text-center text-sm">
-                        🌿 Conoce UNAMAD
-                    </a> -->
                 </div>
-                
+
                 <!-- Estadísticas compactas -->
-                <div class="grid grid-cols-2 gap-4 text-center">
-                    <div class="bg-gray-50 rounded-lg p-3">
-                        <div class="text-xl font-bold text-[#db0455]">10+</div>
+                <div class="grid grid-cols-2 gap-2 md:gap-4 text-center">
+                    <div class="bg-gray-50 rounded-lg p-2 md:p-3">
+                        <div class="text-lg md:text-xl font-bold text-[#db0455]">10+</div>
                         <div class="text-xs text-gray-600">Carreras</div>
                     </div>
-                    <div class="bg-gray-50 rounded-lg p-3">
-                        <div class="text-xl font-bold text-green-600">2K+</div>
+                    <div class="bg-gray-50 rounded-lg p-2 md:p-3">
+                        <div class="text-lg md:text-xl font-bold text-green-600">2K+</div>
                         <div class="text-xs text-gray-600">Estudiantes</div>
                     </div>
                 </div>

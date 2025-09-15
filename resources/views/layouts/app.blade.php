@@ -2345,6 +2345,362 @@
         });
 
     </script>
+
+    <!-- Reproductor de Audio Himno UNAMAD - Desktop -->
+    <div id="audioPlayer" class="fixed bottom-8 left-8 z-50 bg-white rounded-2xl shadow-2xl p-5 items-center gap-5 border border-gray-200 transition-all duration-500 hover:shadow-3xl hidden md:flex" style="min-width: 380px;">
+        <!-- Icono de música animado -->
+        <div class="relative">
+            <div class="w-20 h-20 bg-gradient-to-br from-[#db0455] to-[#a00340] rounded-full flex items-center justify-center shadow-lg">
+                <svg id="musicIcon" class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                </svg>
+                <!-- Ondas de sonido animadas (ocultas por defecto) -->
+                <div id="soundWaves" class="absolute inset-0 pointer-events-none hidden">
+                    <div class="absolute inset-0 rounded-full border-2 border-[#db0455] opacity-20 animate-ping"></div>
+                    <div class="absolute inset-0 rounded-full border-2 border-[#db0455] opacity-20 animate-ping" style="animation-delay: 0.5s;"></div>
+                    <div class="absolute inset-0 rounded-full border-2 border-[#db0455] opacity-20 animate-ping" style="animation-delay: 1s;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Información y controles -->
+        <div class="flex-1">
+            <div class="flex items-center justify-between mb-3">
+                <div>
+                    <h4 class="text-base font-bold text-gray-800">Himno UNAMAD</h4>
+                    <p class="text-sm text-gray-500">Universidad Nacional Amazónica de Madre de Dios</p>
+                </div>
+                <!-- Botón de minimizar -->
+                <button onclick="togglePlayerSize()" class="text-gray-400 hover:text-gray-600 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Barra de progreso -->
+            <div class="relative w-full h-2 bg-gray-200 rounded-full mb-4 cursor-pointer" onclick="seekAudio(event)">
+                <div id="progressBar" class="absolute h-full bg-gradient-to-r from-[#db0455] to-[#a00340] rounded-full transition-all duration-300" style="width: 0%"></div>
+                <div id="progressHandle" class="absolute top-1/2 transform -translate-y-1/2 w-4 h-4 bg-[#db0455] rounded-full shadow-md transition-all duration-300" style="left: 0%"></div>
+            </div>
+
+            <!-- Controles -->
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <!-- Botón Play/Pause -->
+                    <button id="playPauseBtn" onclick="togglePlay()" class="bg-gradient-to-r from-[#db0455] to-[#a00340] text-white rounded-full p-2.5 hover:shadow-lg transition-all duration-300 hover:scale-110">
+                        <svg id="playIcon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                        <svg id="pauseIcon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                        </svg>
+                    </button>
+
+                    <!-- Control de volumen -->
+                    <div class="flex items-center gap-2">
+                        <button onclick="toggleMute()" class="text-gray-600 hover:text-[#db0455] transition-colors">
+                            <svg id="volumeIcon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            </svg>
+                            <svg id="muteIcon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                            </svg>
+                        </button>
+                        <input type="range" id="volumeSlider" min="0" max="100" value="70" onchange="changeVolume(this.value)" class="w-24 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
+                    </div>
+                </div>
+
+                <!-- Tiempo -->
+                <div class="text-sm text-gray-500 font-medium">
+                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audio element (oculto) -->
+        <audio id="himnoAudio" src="{{ asset('audio/HimnoUnamad.mp3') }}" preload="metadata"></audio>
+    </div>
+
+    <!-- Reproductor Móvil - Solo botón flotante -->
+    <div id="audioPlayerMobile" class="fixed bottom-4 left-4 z-50 md:hidden">
+        <button onclick="togglePlayMobile()" class="relative bg-gradient-to-br from-[#db0455] to-[#a00340] text-white rounded-full p-3 shadow-lg active:scale-95 transition-transform">
+            <!-- Ondas de sonido móvil -->
+            <div id="soundWavesMobile" class="absolute inset-0 pointer-events-none hidden">
+                <div class="absolute inset-0 rounded-full border-2 border-[#db0455] opacity-30 animate-ping"></div>
+                <div class="absolute inset-0 rounded-full border-2 border-[#db0455] opacity-20 animate-ping" style="animation-delay: 0.5s;"></div>
+            </div>
+            <svg id="playIconMobile" class="w-6 h-6 relative z-10" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg id="pauseIconMobile" class="w-6 h-6 relative z-10 hidden" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            </svg>
+        </button>
+        <!-- Mini info móvil -->
+        <div id="mobileInfo" class="absolute bottom-full left-0 mb-2 bg-white rounded-lg shadow-lg p-2 text-xs whitespace-nowrap hidden">
+            <span class="font-bold text-[#db0455]">Himno UNAMAD</span>
+        </div>
+    </div>
+
+    <!-- Versión minimizada del reproductor Desktop -->
+    <div id="audioPlayerMini" class="fixed bottom-8 left-8 z-50 bg-white rounded-full shadow-2xl p-3 hidden md:hidden">
+        <button onclick="togglePlayerSize()" class="bg-gradient-to-br from-[#db0455] to-[#a00340] text-white rounded-full p-4 hover:shadow-lg transition-all duration-300 hover:scale-110">
+            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+            </svg>
+        </button>
+    </div>
+
+    <style>
+        /* Estilos adicionales para el reproductor */
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 14px;
+            height: 14px;
+            background: linear-gradient(45deg, #db0455, #ff1744);
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(219, 4, 85, 0.4);
+        }
+
+        .slider::-moz-range-thumb {
+            width: 14px;
+            height: 14px;
+            background: linear-gradient(45deg, #db0455, #ff1744);
+            cursor: pointer;
+            border-radius: 50%;
+            border: none;
+            box-shadow: 0 2px 6px rgba(219, 4, 85, 0.4);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes gradient-x {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes spin-slow {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-gradient-x {
+            background-size: 200% 200%;
+            animation: gradient-x 3s ease infinite;
+        }
+
+        .animate-spin-slow {
+            animation: spin-slow 8s linear infinite;
+        }
+
+        .playing-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Efecto hover para el reproductor completo */
+        #audioPlayer:hover {
+            transform: translateY(-5px);
+            filter: drop-shadow(0 25px 50px rgba(219, 4, 85, 0.3));
+        }
+
+        /* Efecto brillante para el texto */
+        @keyframes shimmer {
+            0% {
+                background-position: -200% center;
+            }
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        .shimmer-text {
+            background: linear-gradient(90deg, #db0455 0%, #ff1744 25%, #db0455 50%, #ff1744 75%, #db0455 100%);
+            background-size: 200% auto;
+            animation: shimmer 3s linear infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+
+    <script>
+        let audio = document.getElementById('himnoAudio');
+        let isPlaying = false;
+        let progressBar = document.getElementById('progressBar');
+        let progressHandle = document.getElementById('progressHandle');
+        let currentTimeSpan = document.getElementById('currentTime');
+        let durationSpan = document.getElementById('duration');
+        let playIcon = document.getElementById('playIcon');
+        let pauseIcon = document.getElementById('pauseIcon');
+        let playIconMobile = document.getElementById('playIconMobile');
+        let pauseIconMobile = document.getElementById('pauseIconMobile');
+        let volumeIcon = document.getElementById('volumeIcon');
+        let muteIcon = document.getElementById('muteIcon');
+        let soundWaves = document.getElementById('soundWaves');
+        let soundWavesMobile = document.getElementById('soundWavesMobile');
+        let musicIcon = document.getElementById('musicIcon');
+        let volumeSlider = document.getElementById('volumeSlider');
+        let audioPlayer = document.getElementById('audioPlayer');
+        let audioPlayerMini = document.getElementById('audioPlayerMini');
+        let mobileInfo = document.getElementById('mobileInfo');
+
+        // Inicializar volumen
+        audio.volume = 0.7;
+
+        // Función para alternar reproducción (Desktop)
+        function togglePlay() {
+            if (isPlaying) {
+                audio.pause();
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+                playIconMobile.classList.remove('hidden');
+                pauseIconMobile.classList.add('hidden');
+                soundWaves.classList.add('hidden');
+                soundWavesMobile.classList.add('hidden');
+                musicIcon.classList.remove('playing-animation');
+            } else {
+                audio.play();
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+                playIconMobile.classList.add('hidden');
+                pauseIconMobile.classList.remove('hidden');
+                soundWaves.classList.remove('hidden');
+                soundWavesMobile.classList.remove('hidden');
+                musicIcon.classList.add('playing-animation');
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Función para alternar reproducción (Móvil)
+        function togglePlayMobile() {
+            if (isPlaying) {
+                audio.pause();
+                playIconMobile.classList.remove('hidden');
+                pauseIconMobile.classList.add('hidden');
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+                soundWavesMobile.classList.add('hidden');
+                soundWaves.classList.add('hidden');
+                mobileInfo.classList.add('hidden');
+            } else {
+                audio.play();
+                playIconMobile.classList.add('hidden');
+                pauseIconMobile.classList.remove('hidden');
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+                soundWavesMobile.classList.remove('hidden');
+                soundWaves.classList.remove('hidden');
+                // Mostrar info brevemente
+                mobileInfo.classList.remove('hidden');
+                setTimeout(() => {
+                    mobileInfo.classList.add('hidden');
+                }, 3000);
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Función para cambiar volumen
+        function changeVolume(value) {
+            audio.volume = value / 100;
+            if (value == 0) {
+                volumeIcon.classList.add('hidden');
+                muteIcon.classList.remove('hidden');
+            } else {
+                volumeIcon.classList.remove('hidden');
+                muteIcon.classList.add('hidden');
+            }
+        }
+
+        // Función para mutear/desmutear
+        function toggleMute() {
+            if (audio.muted) {
+                audio.muted = false;
+                volumeIcon.classList.remove('hidden');
+                muteIcon.classList.add('hidden');
+                volumeSlider.value = audio.volume * 100;
+            } else {
+                audio.muted = true;
+                volumeIcon.classList.add('hidden');
+                muteIcon.classList.remove('hidden');
+                volumeSlider.value = 0;
+            }
+        }
+
+        // Función para buscar en el audio
+        function seekAudio(event) {
+            let rect = event.currentTarget.getBoundingClientRect();
+            let x = event.clientX - rect.left;
+            let percentage = (x / rect.width) * 100;
+            audio.currentTime = (percentage / 100) * audio.duration;
+        }
+
+        // Función para minimizar/maximizar el reproductor
+        function togglePlayerSize() {
+            if (audioPlayer.classList.contains('hidden')) {
+                audioPlayer.classList.remove('hidden');
+                audioPlayerMini.classList.add('hidden');
+            } else {
+                audioPlayer.classList.add('hidden');
+                audioPlayerMini.classList.remove('hidden');
+            }
+        }
+
+        // Actualizar barra de progreso
+        audio.addEventListener('timeupdate', function() {
+            if (audio.duration) {
+                let percentage = (audio.currentTime / audio.duration) * 100;
+                progressBar.style.width = percentage + '%';
+                progressHandle.style.left = percentage + '%';
+                currentTimeSpan.textContent = formatTime(audio.currentTime);
+            }
+        });
+
+        // Cargar duración
+        audio.addEventListener('loadedmetadata', function() {
+            durationSpan.textContent = formatTime(audio.duration);
+        });
+
+        // Cuando termina la canción
+        audio.addEventListener('ended', function() {
+            isPlaying = false;
+            playIcon.classList.remove('hidden');
+            pauseIcon.classList.add('hidden');
+            soundWaves.classList.add('hidden');
+            musicIcon.classList.remove('playing-animation');
+            progressBar.style.width = '0%';
+            progressHandle.style.left = '0%';
+        });
+
+        // Función para formatear tiempo
+        function formatTime(seconds) {
+            let minutes = Math.floor(seconds / 60);
+            let secs = Math.floor(seconds % 60);
+            return minutes + ':' + (secs < 10 ? '0' : '') + secs;
+        }
+    </script>
+
     @stack('scripts')
 </body>
 
