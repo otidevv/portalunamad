@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ComunicadoController;
 use App\Http\Controllers\Admin\DocumentoController;
 use App\Http\Controllers\DocumentosPublicosController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SessionCleanupController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/anuncio/{anuncio}', [HomeController::class, 'verAnuncio'])->name('anuncio.ver');
@@ -290,6 +291,10 @@ Route::get('/transparencia/indicador-55/mv12', function () {
 Route::get('/transparencia/articulo-11', function () {
     return view('transparencia.articulo-11.index');
 });
+
+// Rutas de limpieza de sesión (disponibles siempre)
+Route::get('/session/clear', [SessionCleanupController::class, 'clearSession'])->name('session.clear');
+Route::get('/session/force-cleanup', [SessionCleanupController::class, 'forceCleanup'])->name('session.force-cleanup');
 
 // Rutas de Autenticación
 Route::middleware('guest')->group(function () {
