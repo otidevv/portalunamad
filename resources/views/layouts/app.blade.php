@@ -2702,6 +2702,78 @@
     </script>
 
     @stack('scripts')
+
+    <!-- Script de limpieza automática de cookies antiguas -->
+    <script>
+    (function() {
+        // Detectar si hay problemas de sesión (error 403 o cookies antiguas)
+        var hasOldSession = false;
+        var problematicCookies = ['portal_session', 'old_session', 'PHPSESSID'];
+
+        // Verificar si hay cookies problemáticas
+        problematicCookies.forEach(function(cookieName) {
+            if (document.cookie.indexOf(cookieName) !== -1) {
+                hasOldSession = true;
+            }
+        });
+
+        // Si detectamos cookies antiguas, limpiar automáticamente
+        if (hasOldSession) {
+            console.log('Detectadas cookies de sesión antigua. Limpiando...');
+
+            // Función para eliminar cookie
+            function deleteCookie(name) {
+                document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+                document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=' + window.location.hostname;
+                document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=.' + window.location.hostname;
+
+                // Para subdominios
+                var parts = window.location.hostname.split('.');
+                if (parts.length >= 2) {
+                    var domain = parts.slice(-2).join('.');
+                    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=.' + domain;
+                }
+            }
+
+            // Limpiar todas las cookies
+            document.cookie.split(';').forEach(function(c) {
+                var cookie = c.trim();
+                var eqPos = cookie.indexOf('=');
+                var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                if (name) {
+                    deleteCookie(name);
+                }
+            });
+
+            // Limpiar localStorage y sessionStorage de items antiguos
+            try {
+                // Solo limpiar items relacionados con sesiones
+                ['session', 'token', 'auth', 'csrf'].forEach(function(keyword) {
+                    for (var key in localStorage) {
+                        if (key.toLowerCase().indexOf(keyword) !== -1) {
+                            localStorage.removeItem(key);
+                        }
+                    }
+                });
+
+                // Limpiar sessionStorage completamente
+                sessionStorage.clear();
+            } catch(e) {}
+
+            // Recargar la página una sola vez
+            if (!window.location.search.includes('cleaned=1')) {
+                var separator = window.location.search ? '&' : '?';
+                window.location.href = window.location.href + separator + 'cleaned=1';
+            }
+        }
+
+        // Remover parámetro cleaned de la URL si existe
+        if (window.location.search.includes('cleaned=1')) {
+            var url = window.location.href.replace(/[\?&]cleaned=1/, '');
+            window.history.replaceState({}, document.title, url);
+        }
+    })();
+    </script>
 </body>
 
 </html>
