@@ -13,8 +13,9 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         // Middleware global para todas las rutas web
         $middleware->web(append: [
-            \App\Http\Middleware\CleanOldCookies::class,  // Primero limpiar cookies antiguas
-            \App\Http\Middleware\HandleForbiddenErrors::class,  // Manejar errores 403
+            // \App\Http\Middleware\ForceCleanHomePage::class,  // Temporalmente desactivado para evitar loops
+            \App\Http\Middleware\CleanOldCookies::class,     // Limpiar cookies antiguas
+            \App\Http\Middleware\HandleForbiddenErrors::class, // Manejar errores 403
         ]);
 
         // Middleware para rutas autenticadas
@@ -29,6 +30,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'no.cache' => \App\Http\Middleware\PreventCacheHeaders::class,
             'handle.403' => \App\Http\Middleware\HandleForbiddenErrors::class,
             'clean.cookies' => \App\Http\Middleware\CleanOldCookies::class,
+            'force.clean.home' => \App\Http\Middleware\ForceCleanHomePage::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

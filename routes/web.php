@@ -10,7 +10,7 @@ use App\Http\Controllers\DocumentosPublicosController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SessionCleanupController;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home')->middleware('force.clean.home');
 Route::get('/anuncio/{anuncio}', [HomeController::class, 'verAnuncio'])->name('anuncio.ver');
 Route::get('/comunicados', [HomeController::class, 'listarComunicados'])->name('comunicados.index');
 Route::get('/comunicado/{comunicado}', [HomeController::class, 'verComunicado'])->name('comunicado.ver');
