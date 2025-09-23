@@ -327,6 +327,18 @@
                     <h3 class="text-base font-bold text-[#0056ac] group-hover:text-[#003d7a] text-center leading-tight min-h-[3rem] flex items-center justify-center">Planta Piloto de Tecnología de la Madera - PPTM</h3>
                 </div>
             </a>
+
+            <!-- Comité Electoral -->
+            <a href="https://www.gob.pe/institucion/unamad/colecciones/10084-resolucion-de-comite-electoral-universitario" target="_blank" class="flex bg-white rounded-lg shadow-lg border-l-4 min-h-[180px] border-indigo-600 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                <div class="p-4 text-center flex flex-col items-center justify-center w-full h-full">
+                    <div class="bg-indigo-600 rounded-lg p-4 w-16 h-16 mx-auto mb-4 group-hover:bg-indigo-700 transition-colors duration-300">
+                        <svg class="w-8 h-8 text-white mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-base font-bold text-[#0056ac] group-hover:text-[#003d7a] text-center leading-tight min-h-[3rem] flex items-center justify-center">Comité Electoral</h3>
+                </div>
+            </a>
                 </div>
             </div>
 
@@ -417,6 +429,16 @@
                         <a href="https://www.gob.pe/institucion/unamad/informes-publicaciones/4990906-resolucion-de-tribunal-de-honor" target="_blank" class="block bg-white/90 hover:bg-white rounded-lg p-3 text-sm transition-all duration-300 group">
                             <div class="flex items-center justify-between">
                                 <span class="font-medium text-gray-700 group-hover:text-gray-900">Resolución de Tribunal de Honor Universitario</span>
+                                <svg class="w-4 h-4 text-gray-500 group-hover:text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <!-- Comité Electoral -->
+                        <a href="https://www.gob.pe/institucion/unamad/colecciones/10084-resolucion-de-comite-electoral-universitario" target="_blank" class="block bg-white/90 hover:bg-white rounded-lg p-3 text-sm transition-all duration-300 group">
+                            <div class="flex items-center justify-between">
+                                <span class="font-medium text-gray-700 group-hover:text-gray-900">Comité Electoral</span>
                                 <svg class="w-4 h-4 text-gray-500 group-hover:text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
@@ -709,8 +731,8 @@
                         <div class="space-y-0">
                             <!-- Imagen superior clickeable -->
                             <a href="https://heyzine.com/flip-book/2915c9cb36.html" target="_blank" class="block">
-                                <img src="https://portal.unamad.edu.pe/img/boletin_unamad.png" 
-                                     alt="Boletín UNAMAD" 
+                                <img src="{{ asset('img/boletin_unamad.png') }}"
+                                     alt="Boletín UNAMAD"
                                      class="w-full rounded-t-lg shadow-lg hover:opacity-95 transition-opacity duration-300">
                             </a>
                             <!-- Tarjeta inferior -->
