@@ -313,6 +313,11 @@ Route::middleware('auth')->group(function () {
         Route::resource('anuncios', AnuncioController::class);
         Route::post('anuncios/{anuncio}/estado', [AnuncioController::class, 'cambiarEstado'])->name('anuncios.estado');
         Route::post('anuncios/{anuncio}/destacado', [AnuncioController::class, 'toggleDestacado'])->name('anuncios.destacado');
+
+        // Rutas de Usuarios
+        Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
+        Route::post('users/{user}/estado', [\App\Http\Controllers\Admin\UserController::class, 'toggleEstado'])->name('users.estado');
+        Route::post('users/{user}/password', [\App\Http\Controllers\Admin\UserController::class, 'changePassword'])->name('users.password');
         
         // Rutas de Comunicado Categorías
         Route::resource('comunicado-categorias', ComunicadoCategoriaController::class);

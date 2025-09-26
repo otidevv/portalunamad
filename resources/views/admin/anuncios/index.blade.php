@@ -222,13 +222,13 @@
                                                   d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                                         </svg>
                                     </a>
-                                    <a href="{{ route('admin.anuncios.edit', $anuncio) }}" 
-                                       class="text-blue-600 hover:text-blue-900" title="Editar">
+                                    <button onclick="openAnuncioModal({{ $anuncio->id }})"
+                                            class="text-blue-600 hover:text-blue-900" title="Editar">
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                   d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                                         </svg>
-                                    </a>
+                                    </button>
                                     <form action="{{ route('admin.anuncios.destroy', $anuncio) }}" 
                                           method="POST" 
                                           class="inline-block"
@@ -571,25 +571,63 @@
 
 @push('scripts')
 <script>
-// Simple modal functions
+// Modal state variables
 let enlaceIndex = 0;
+let currentAnuncioId = null;
+let isEditMode = false;
 
-function openAnuncioModal() {
+function openAnuncioModal(anuncioId = null) {
+    currentAnuncioId = anuncioId;
+    isEditMode = anuncioId !== null;
+
+    // Show modal
     document.getElementById('anuncioModal').classList.remove('hidden');
+
+    // Update modal title and button text
+    const modalTitle = document.getElementById('modal-title');
+    const submitText = document.getElementById('submitText');
+    const submitBtn = document.getElementById('submitBtn');
+
+    if (isEditMode) {
+        modalTitle.textContent = 'Editar Anuncio';
+        modalTitle.nextElementSibling.textContent = 'Modifique los campos necesarios para actualizar el anuncio';
+        submitText.innerHTML = `
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Actualizar Anuncio
+        `;
+        // Load announcement data
+        loadAnuncioData(anuncioId);
+    } else {
+        modalTitle.textContent = 'Crear Nuevo Anuncio';
+        modalTitle.nextElementSibling.textContent = 'Complete todos los campos para crear el anuncio';
+        submitText.innerHTML = `
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Crear Anuncio
+        `;
+        // Reset form for create mode
+        resetFormForCreate();
+    }
+}
+
+function resetFormForCreate() {
     document.getElementById('anuncioForm').reset();
     // Reset enlaces to just one input
     enlaceIndex = 0;
     document.getElementById('enlaces-container').innerHTML = `
         <div class="enlace-item">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <input type="text" name="enlaces[0][titulo]" 
+                <input type="text" name="enlaces[0][titulo]"
                        class="px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                        placeholder="📝 Título del enlace">
                 <div class="flex gap-2">
-                    <input type="url" name="enlaces[0][url]" 
+                    <input type="url" name="enlaces[0][url]"
                            class="flex-1 px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                            placeholder="🔗 https://ejemplo.com">
-                    <button type="button" onclick="addEnlace()" 
+                    <button type="button" onclick="addEnlace()"
                             class="px-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
@@ -599,6 +637,7 @@ function openAnuncioModal() {
             </div>
         </div>
     `;
+    clearErrors();
 }
 
 function closeAnuncioModal() {
@@ -655,28 +694,159 @@ function showErrors(errors) {
     }
 }
 
+// Load announcement data for editing
+function loadAnuncioData(anuncioId) {
+    fetch(`/admin/api/anuncios/${anuncioId}`, {
+        method: 'GET',
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.data) {
+            const anuncio = data.data;
+
+            // Populate form fields
+            document.getElementById('titulo').value = anuncio.titulo || '';
+            document.getElementById('descripcion').value = anuncio.descripcion || '';
+            document.getElementById('categoria').value = anuncio.categoria || '';
+            document.getElementById('estado').value = anuncio.estado || '';
+            document.getElementById('destacado').checked = anuncio.destacado || false;
+
+            // Format dates for datetime-local inputs
+            if (anuncio.fecha_publicacion) {
+                const fechaPub = new Date(anuncio.fecha_publicacion);
+                document.getElementById('fecha_publicacion').value = fechaPub.toISOString().slice(0, 16);
+            }
+            if (anuncio.fecha_expiracion) {
+                const fechaExp = new Date(anuncio.fecha_expiracion);
+                document.getElementById('fecha_expiracion').value = fechaExp.toISOString().slice(0, 16);
+            }
+
+            // Load enlaces
+            loadEnlaces(anuncio.enlaces || []);
+        }
+    })
+    .catch(error => {
+        console.error('Error loading anuncio data:', error);
+        toastr.error('Error al cargar los datos del anuncio');
+    });
+}
+
+// Load enlaces into the form
+function loadEnlaces(enlaces) {
+    const container = document.getElementById('enlaces-container');
+    container.innerHTML = '';
+    enlaceIndex = 0;
+
+    if (enlaces.length === 0) {
+        // Add default empty enlace
+        addDefaultEnlace();
+    } else {
+        enlaces.forEach((enlace, index) => {
+            addEnlaceWithData(enlace.titulo, enlace.url, index === 0);
+        });
+        enlaceIndex = enlaces.length - 1;
+    }
+}
+
+function addDefaultEnlace() {
+    const container = document.getElementById('enlaces-container');
+    const enlaceDiv = document.createElement('div');
+    enlaceDiv.className = 'enlace-item';
+    enlaceDiv.innerHTML = `
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <input type="text" name="enlaces[0][titulo]"
+                   class="px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
+                   placeholder="📝 Título del enlace">
+            <div class="flex gap-2">
+                <input type="url" name="enlaces[0][url]"
+                       class="flex-1 px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
+                       placeholder="🔗 https://ejemplo.com">
+                <button type="button" onclick="addEnlace()"
+                        class="px-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    `;
+    container.appendChild(enlaceDiv);
+}
+
+function addEnlaceWithData(titulo, url, isFirst) {
+    const container = document.getElementById('enlaces-container');
+    const enlaceDiv = document.createElement('div');
+    enlaceDiv.className = 'enlace-item';
+
+    const buttonHtml = isFirst ? `
+        <button type="button" onclick="addEnlace()"
+                class="px-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+            </svg>
+        </button>
+    ` : `
+        <button type="button" onclick="removeEnlace(this)"
+                class="px-4 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    `;
+
+    enlaceDiv.innerHTML = `
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <input type="text" name="enlaces[${container.children.length}][titulo]"
+                   value="${titulo}"
+                   class="px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
+                   placeholder="📝 Título del enlace">
+            <div class="flex gap-2">
+                <input type="url" name="enlaces[${container.children.length}][url]"
+                       value="${url}"
+                       class="flex-1 px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
+                       placeholder="🔗 https://ejemplo.com">
+                ${buttonHtml}
+            </div>
+        </div>
+    `;
+    container.appendChild(enlaceDiv);
+}
+
 // Form submission
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('anuncioForm');
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             // Show loading state
             const submitBtn = document.getElementById('submitBtn');
             const submitText = document.getElementById('submitText');
             const loadingText = document.getElementById('loadingText');
-            
+
             submitBtn.disabled = true;
             submitText.classList.add('hidden');
             loadingText.classList.remove('hidden');
-            
+
             clearErrors();
-            
+
             const formData = new FormData(form);
-            
-            fetch('/admin/api/anuncios', {
-                method: 'POST',
+
+            // Determine URL and method based on mode
+            let url = '/admin/api/anuncios';
+            let method = 'POST';
+
+            if (isEditMode && currentAnuncioId) {
+                url = `/admin/api/anuncios/${currentAnuncioId}`;
+                method = 'POST'; // We'll use POST with _method override
+                formData.append('_method', 'PUT');
+            }
+
+            fetch(url, {
+                method: method,
                 body: formData,
                 headers: {
                     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
@@ -685,7 +855,8 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    toastr.success(data.message || 'Anuncio creado exitosamente');
+                    const message = isEditMode ? 'Anuncio actualizado exitosamente' : 'Anuncio creado exitosamente';
+                    toastr.success(data.message || message);
                     closeAnuncioModal();
                     setTimeout(() => {
                         window.location.reload();
@@ -693,26 +864,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else if (data.errors) {
                     toastr.error('Por favor, corrija los errores en el formulario');
                     showErrors(data.errors);
-                    // Reset button state
-                    submitBtn.disabled = false;
-                    submitText.classList.remove('hidden');
-                    loadingText.classList.add('hidden');
+                    resetButtonState();
                 } else {
-                    toastr.error(data.message || 'Error al crear el anuncio');
-                    // Reset button state
-                    submitBtn.disabled = false;
-                    submitText.classList.remove('hidden');
-                    loadingText.classList.add('hidden');
+                    const errorMessage = isEditMode ? 'Error al actualizar el anuncio' : 'Error al crear el anuncio';
+                    toastr.error(data.message || errorMessage);
+                    resetButtonState();
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
                 toastr.error('Error al procesar la solicitud');
-                // Reset button state
+                resetButtonState();
+            });
+
+            function resetButtonState() {
                 submitBtn.disabled = false;
                 submitText.classList.remove('hidden');
                 loadingText.classList.add('hidden');
-            });
+            }
         });
     }
 });

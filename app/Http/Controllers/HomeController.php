@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Anuncio;
 use App\Models\Comunicado;
 use App\Models\ComunicadoCategoria;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -152,7 +153,7 @@ class HomeController extends Controller
                 'fecha_publicacion' => $anuncio->fecha_publicacion ? $anuncio->fecha_publicacion->format('d/m/Y') : $anuncio->created_at->format('d/m/Y'),
                 'vistas' => $anuncio->vistas,
                 'autor' => $anuncio->user->name,
-                'created_at_human' => $anuncio->created_at->diffForHumans(),
+                'created_at_human' => $anuncio->created_at->locale('es')->diffForHumans(),
             ]
         ]);
     }
@@ -235,7 +236,7 @@ class HomeController extends Controller
                                  'destacado' => $anuncio->destacado,
                                  'fecha_publicacion' => $anuncio->fecha_publicacion ? $anuncio->fecha_publicacion->format('d/m/Y') : $anuncio->created_at->format('d/m/Y'),
                                  'vistas' => $anuncio->vistas,
-                                 'created_at_human' => $anuncio->created_at->diffForHumans(),
+                                 'created_at_human' => $anuncio->created_at->locale('es')->diffForHumans(),
                              ];
                          });
 

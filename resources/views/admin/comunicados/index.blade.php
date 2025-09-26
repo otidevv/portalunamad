@@ -180,13 +180,13 @@
                                                   d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                                         </svg>
                                     </a>
-                                    <a href="{{ route('admin.comunicados.edit', $comunicado) }}" 
-                                       class="text-blue-600 hover:text-blue-900" title="Editar">
+                                    <button onclick="openComunicadoModal({{ $comunicado->id }})"
+                                            class="text-blue-600 hover:text-blue-900" title="Editar">
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                   d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                                         </svg>
-                                    </a>
+                                    </button>
                                     <form action="{{ route('admin.comunicados.destroy', $comunicado) }}" 
                                           method="POST" 
                                           class="inline-block"
@@ -539,13 +539,101 @@ function toggleEstado(comunicadoId, estadoActual) {
     });
 }
 
+// Modal state variables
+let currentComunicadoId = null;
+let isEditMode = false;
+
 // Modal functions
-function openComunicadoModal() {
+function openComunicadoModal(comunicadoId = null) {
+    currentComunicadoId = comunicadoId;
+    isEditMode = comunicadoId !== null;
+
+    // Show modal
     document.getElementById('comunicadoModal').classList.remove('hidden');
+
+    // Update modal title and button text
+    const modalTitle = document.getElementById('modal-title');
+    const submitText = document.getElementById('submitText');
+    const submitBtn = document.getElementById('submitBtn');
+
+    if (isEditMode) {
+        modalTitle.textContent = 'Editar Comunicado';
+        modalTitle.nextElementSibling.textContent = 'Modifique los campos necesarios para actualizar el comunicado';
+        submitText.innerHTML = `
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Actualizar Comunicado
+        `;
+        // Load comunicado data
+        loadComunicadoData(comunicadoId);
+    } else {
+        modalTitle.textContent = 'Crear Nuevo Comunicado';
+        modalTitle.nextElementSibling.textContent = 'Complete todos los campos para crear el comunicado';
+        submitText.innerHTML = `
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            Crear Comunicado
+        `;
+        // Reset form for create mode
+        resetFormForCreate();
+    }
+}
+
+function resetFormForCreate() {
     document.getElementById('comunicadoForm').reset();
     document.getElementById('editor-content').innerHTML = '';
     document.getElementById('estado').checked = true;
+
+    // Reset editor placeholder
+    const editor = document.getElementById('editor-content');
+    const placeholderText = 'Escriba el contenido del comunicado aquí...';
+    editor.textContent = placeholderText;
+    editor.classList.add('text-gray-400');
+
     clearErrors();
+}
+
+// Load comunicado data for editing
+function loadComunicadoData(comunicadoId) {
+    fetch(`/admin/comunicados/${comunicadoId}`, {
+        method: 'GET',
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success && data.comunicado) {
+            const comunicado = data.comunicado;
+
+            // Populate form fields
+            document.getElementById('titulo').value = comunicado.titulo || '';
+            document.getElementById('categoria_id').value = comunicado.comunicado_categoria_id || '';
+            document.getElementById('duracion').value = comunicado.duracion || '';
+            document.getElementById('estado').checked = comunicado.estado || false;
+
+            // Load content into editor
+            const editor = document.getElementById('editor-content');
+            if (comunicado.contenido && comunicado.contenido.trim()) {
+                editor.innerHTML = comunicado.contenido;
+                editor.classList.remove('text-gray-400');
+            } else {
+                const placeholderText = 'Escriba el contenido del comunicado aquí...';
+                editor.textContent = placeholderText;
+                editor.classList.add('text-gray-400');
+            }
+
+            // Clear any existing errors
+            clearErrors();
+        }
+    })
+    .catch(error => {
+        console.error('Error loading comunicado data:', error);
+        toastr.error('Error al cargar los datos del comunicado');
+    });
 }
 
 function closeComunicadoModal() {
@@ -759,11 +847,21 @@ document.addEventListener('DOMContentLoaded', function() {
             loadingText.classList.remove('hidden');
             
             clearErrors();
-            
+
             const formData = new FormData(form);
-            
-            fetch('/admin/comunicados', {
-                method: 'POST',
+
+            // Determine URL and method based on mode
+            let url = '/admin/comunicados';
+            let method = 'POST';
+
+            if (isEditMode && currentComunicadoId) {
+                url = `/admin/comunicados/${currentComunicadoId}`;
+                method = 'POST'; // We'll use POST with _method override
+                formData.append('_method', 'PUT');
+            }
+
+            fetch(url, {
+                method: method,
                 body: formData,
                 headers: {
                     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
@@ -773,7 +871,8 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    toastr.success(data.message || 'Comunicado creado exitosamente');
+                    const message = isEditMode ? 'Comunicado actualizado exitosamente' : 'Comunicado creado exitosamente';
+                    toastr.success(data.message || message);
                     closeComunicadoModal();
                     setTimeout(() => {
                         window.location.reload();
@@ -786,7 +885,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     submitText.classList.remove('hidden');
                     loadingText.classList.add('hidden');
                 } else {
-                    toastr.error(data.message || 'Error al crear el comunicado');
+                    const errorMessage = isEditMode ? 'Error al actualizar el comunicado' : 'Error al crear el comunicado';
+                    toastr.error(data.message || errorMessage);
                     // Reset button state
                     submitBtn.disabled = false;
                     submitText.classList.remove('hidden');
