@@ -5,6 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google-site-verification" content="pC-r851R3L-qFAUloNkV8HtyT09GIZMJhl_-z8PpiwM" />
+    <!-- Meta descripción - MUY IMPORTANTE para SEO -->
+    <meta name="description" content="@yield('description', 'Universidad Nacional Amazónica de Madre de Dios - Portal oficial con información académica, admisión, carreras profesionales y servicios universitarios en Puerto Maldonado')">
+    
+    <!-- Meta keywords (menos importante hoy, pero útil) -->
+    <meta name="keywords" content="@yield('keywords', 'UNAMAD, universidad madre de dios, universidad amazónica, puerto maldonado, educación superior, carreras universitarias')">
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="@yield('og_title', 'Portal UNAMAD - Universidad Nacional Amazónica')">
+    <meta property="og:description" content="@yield('og_description', 'Universidad pública en la Amazonía peruana')">
+    <meta property="og:image" content="@yield('og_image', asset('img/logo/logo.png'))">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('twitter_title', 'Portal UNAMAD')">
+    <meta name="twitter:description" content="@yield('twitter_description', 'Universidad Nacional Amazónica de Madre de Dios')">
+    <meta name="twitter:image" content="@yield('twitter_image', asset('img/logo/logo.png'))">
+    
+    <!-- Meta robots - controla la indexación -->
+    <meta name="robots" content="@yield('robots', 'index, follow')">
+    
+    <!-- Canonical URL - evita contenido duplicado -->
+    <link rel="canonical" href="@yield('canonical', url()->current())">
+    
+    <!-- Meta autor y copyright -->
+    <meta name="author" content="Universidad Nacional Amazónica de Madre de Dios">
+    <meta name="copyright" content="UNAMAD {{ date('Y') }}">
+    
+    <!-- Idioma -->
+    <meta name="language" content="Spanish">
+    <meta http-equiv="content-language" content="es">
     <title>@yield('title', 'Portal UNAMAD - Universidad Nacional Amazónica de Madre de Dios')</title>
     
     <!-- Favicon -->

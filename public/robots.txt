@@ -1,2 +1,9 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /admin/
+Disallow: /intranet/
+Disallow: /temp/
+Disallow: /private/
+Crawl-delay: 1
+
+Sitemap: https://portal.unamad.edu.pe/sitemap.xml
