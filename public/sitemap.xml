@@ -1,369 +1,369 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
     <url>
-    <loc>http://localhost</loc>
-    <lastmod>2025-10-06T16:26:51+00:00</lastmod>
+    <loc>https://portal.unamad.edu.pe</loc>
+    <lastmod>2025-10-06T16:52:31+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
             </url>
     <url>
-    <loc>http://localhost/universidad/presentacion</loc>
+    <loc>https://portal.unamad.edu.pe/universidad/presentacion</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/universidad/autoridades</loc>
+    <loc>https://portal.unamad.edu.pe/universidad/autoridades</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/universidad/historia</loc>
+    <loc>https://portal.unamad.edu.pe/universidad/historia</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/universidad/sedes</loc>
+    <loc>https://portal.unamad.edu.pe/universidad/sedes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/universidad/politicas</loc>
+    <loc>https://portal.unamad.edu.pe/universidad/politicas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/asamblea</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/asamblea</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/consejo</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/consejo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/decanatura</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/decanatura</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/secretaria</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/secretaria</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/calidad</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/calidad</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/cooperacion</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/cooperacion</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/cooperacion/mision-vision</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/cooperacion/mision-vision</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/cooperacion/estructura-organica</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/cooperacion/estructura-organica</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/cooperacion/personal-administrativo</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/cooperacion/personal-administrativo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/cooperacion/directorio</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/cooperacion/directorio</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/cooperacion/servicios</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/cooperacion/servicios</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/cooperacion/convenios</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/cooperacion/convenios</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/ambiental</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/ambiental</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/ambiental/actividades</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/ambiental/actividades</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/administracion</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/administracion</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/oti</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/oti</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/planeamiento</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/planeamiento</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/admision</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/admision</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/biblioteca</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/biblioteca</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/academicos</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/academicos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/bienestar</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/bienestar</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/bienestar/actividades</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/bienestar/actividades</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/incubadora</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/incubadora</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/innovacion</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/innovacion</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/oficinas/investigacion</loc>
+    <loc>https://portal.unamad.edu.pe/oficinas/investigacion</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/facultades/agroindustrial</loc>
+    <loc>https://portal.unamad.edu.pe/facultades/agroindustrial</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/facultades/agroindustrial/resena-historica</loc>
+    <loc>https://portal.unamad.edu.pe/facultades/agroindustrial/resena-historica</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/facultades/agroindustrial/vision-mision</loc>
+    <loc>https://portal.unamad.edu.pe/facultades/agroindustrial/vision-mision</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/facultades/agroindustrial/perfil-profesional</loc>
+    <loc>https://portal.unamad.edu.pe/facultades/agroindustrial/perfil-profesional</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/facultades/agroindustrial/campo-ocupacional</loc>
+    <loc>https://portal.unamad.edu.pe/facultades/agroindustrial/campo-ocupacional</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/facultades/agroindustrial/objetivos-academicos</loc>
+    <loc>https://portal.unamad.edu.pe/facultades/agroindustrial/objetivos-academicos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/facultades/forestal</loc>
+    <loc>https://portal.unamad.edu.pe/facultades/forestal</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/facultades/sistemas</loc>
+    <loc>https://portal.unamad.edu.pe/facultades/sistemas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/facultades/veterinaria</loc>
+    <loc>https://portal.unamad.edu.pe/facultades/veterinaria</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/facultades/matematica</loc>
+    <loc>https://portal.unamad.edu.pe/facultades/matematica</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/facultades/derecho</loc>
+    <loc>https://portal.unamad.edu.pe/facultades/derecho</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/facultades/enfermeria</loc>
+    <loc>https://portal.unamad.edu.pe/facultades/enfermeria</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/facultades/ecoturismo</loc>
+    <loc>https://portal.unamad.edu.pe/facultades/ecoturismo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/facultades/administracion</loc>
+    <loc>https://portal.unamad.edu.pe/facultades/administracion</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/facultades/contabilidad</loc>
+    <loc>https://portal.unamad.edu.pe/facultades/contabilidad</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
             </url>
     <url>
-    <loc>http://localhost/posgrado</loc>
+    <loc>https://portal.unamad.edu.pe/posgrado</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/proyectos/jardin</loc>
+    <loc>https://portal.unamad.edu.pe/proyectos/jardin</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
             </url>
     <url>
-    <loc>http://localhost/proyectos/panificadora</loc>
+    <loc>https://portal.unamad.edu.pe/proyectos/panificadora</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
             </url>
     <url>
-    <loc>http://localhost/proyectos/bus</loc>
+    <loc>https://portal.unamad.edu.pe/proyectos/bus</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
             </url>
     <url>
-    <loc>http://localhost/proyectos/herbario</loc>
+    <loc>https://portal.unamad.edu.pe/proyectos/herbario</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
             </url>
     <url>
-    <loc>http://localhost/proyectos/estacion</loc>
+    <loc>https://portal.unamad.edu.pe/proyectos/estacion</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
             </url>
     <url>
-    <loc>http://localhost/proyectos/aldea</loc>
+    <loc>https://portal.unamad.edu.pe/proyectos/aldea</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
             </url>
     <url>
-    <loc>http://localhost/proyectos/km16</loc>
+    <loc>https://portal.unamad.edu.pe/proyectos/km16</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
             </url>
     <url>
-    <loc>http://localhost/proyectos/km18</loc>
+    <loc>https://portal.unamad.edu.pe/proyectos/km18</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
             </url>
     <url>
-    <loc>http://localhost/transparencia/documentos</loc>
+    <loc>https://portal.unamad.edu.pe/transparencia/documentos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/transparencia/indicador-55</loc>
+    <loc>https://portal.unamad.edu.pe/transparencia/indicador-55</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/transparencia/indicador-55/mv1</loc>
+    <loc>https://portal.unamad.edu.pe/transparencia/indicador-55/mv1</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/transparencia/indicador-55/mv2</loc>
+    <loc>https://portal.unamad.edu.pe/transparencia/indicador-55/mv2</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/transparencia/indicador-55/mv3</loc>
+    <loc>https://portal.unamad.edu.pe/transparencia/indicador-55/mv3</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/transparencia/indicador-55/mv4</loc>
+    <loc>https://portal.unamad.edu.pe/transparencia/indicador-55/mv4</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/transparencia/indicador-55/mv5</loc>
+    <loc>https://portal.unamad.edu.pe/transparencia/indicador-55/mv5</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/transparencia/indicador-55/mv6</loc>
+    <loc>https://portal.unamad.edu.pe/transparencia/indicador-55/mv6</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/transparencia/indicador-55/mv7</loc>
+    <loc>https://portal.unamad.edu.pe/transparencia/indicador-55/mv7</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/transparencia/indicador-55/mv8</loc>
+    <loc>https://portal.unamad.edu.pe/transparencia/indicador-55/mv8</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/transparencia/indicador-55/mv9</loc>
+    <loc>https://portal.unamad.edu.pe/transparencia/indicador-55/mv9</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/transparencia/indicador-55/mv10</loc>
+    <loc>https://portal.unamad.edu.pe/transparencia/indicador-55/mv10</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/transparencia/indicador-55/mv11</loc>
+    <loc>https://portal.unamad.edu.pe/transparencia/indicador-55/mv11</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/transparencia/indicador-55/mv12</loc>
+    <loc>https://portal.unamad.edu.pe/transparencia/indicador-55/mv12</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/transparencia/articulo-11</loc>
+    <loc>https://portal.unamad.edu.pe/transparencia/articulo-11</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
             </url>
     <url>
-    <loc>http://localhost/comunicados</loc>
+    <loc>https://portal.unamad.edu.pe/comunicados</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
             </url>
     <url>
-    <loc>http://localhost/comunicado/160</loc>
+    <loc>https://portal.unamad.edu.pe/comunicado/160</loc>
     <lastmod>2025-09-13T15:06:45+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
             </url>
     <url>
-    <loc>http://localhost/comunicado/161</loc>
+    <loc>https://portal.unamad.edu.pe/comunicado/161</loc>
     <lastmod>2025-09-26T00:07:34+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
