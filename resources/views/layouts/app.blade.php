@@ -42,9 +42,9 @@
     <title>@yield('title', 'Portal UNAMAD - Universidad Nacional Amazónica de Madre de Dios')</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('img/iconweb/favicon_unamad.ico') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/iconweb/favicon_unamad.ico') }}">
-    <link rel="apple-touch-icon" href="{{ asset('img/iconweb/favicon_unamad.ico') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/logo/logo.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/logo/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('img/logo/logo.png') }}">
     
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
