@@ -398,7 +398,7 @@
                         </a>
 
                         <!-- Defensoría Universitaria -->
-                        <a href="https://denuncias.unamad.edu.pe/" target="_blank"
+                        <a href="https://denuncia.unamad.edu.pe/" target="_blank"
                             class="flex bg-white rounded-lg shadow-lg border-l-4 min-h-[180px] border-gray-600 overflow-hidden hover:shadow-xl transition-all duration-300 group">
                             <div class="p-4 text-center flex flex-col items-center justify-center w-full h-full">
                                 <div
@@ -1968,12 +1968,12 @@
                  onclick="abrirAnuncioEspecifico(${anuncio.id})">
 
             ${anuncio.imagen_principal_url && anuncio.imagen_principal_url.includes('/storage/') ? `
-                        <div class="h-32 overflow-hidden">
-                            <img src="${anuncio.imagen_principal_url}"
-                                 alt="${anuncio.titulo}"
-                                 class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
-                        </div>
-                    ` : ''}
+                            <div class="h-32 overflow-hidden">
+                                <img src="${anuncio.imagen_principal_url}"
+                                     alt="${anuncio.titulo}"
+                                     class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
+                            </div>
+                        ` : ''}
 
             <div class="p-4">
                 <div class="mb-2">
