@@ -474,7 +474,7 @@
 
                         <div class="space-y-3 mb-6">
                             <!-- Resoluciones Rectorales -->
-                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/tipos/237-resolucion-rectoral"
+                            <a href="https://www.gob.pe/institucion/unamad/colecciones/70121-resolucion-rectoral"
                                 target="_blank"
                                 class="block bg-white/90 hover:bg-white rounded-lg p-3 text-sm transition-all duration-300 group">
                                 <div class="flex items-center justify-between">
