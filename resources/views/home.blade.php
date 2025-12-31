@@ -844,6 +844,22 @@
                         </div>
                     </div>
                 </a>
+
+                <!-- Videos de Capacitación SERVIR -->
+                <a href="{{ url('capacitaciones-servir') }}"
+                    class="block bg-gradient-to-r from-red-500 to-red-600 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group">
+                    <div class="flex items-center">
+                        <div class="bg-white/20 rounded-lg p-3 mr-4 group-hover:bg-white/30 transition-colors">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-white">Videos de Capacitación SERVIR</h3>
+                            <p class="text-white/90 text-sm">Material audiovisual de capacitación para servidores públicos</p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
