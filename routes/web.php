@@ -236,6 +236,10 @@ Route::get('/proyectos/km18', function () {
     return view('proyectos.km18');
 });
 
+Route::get('/capacitaciones-servir', function () {
+    return view('capacitaciones-servir');
+});
+
 Route::get('/transparencia/indicador-55', function () {
     return view('transparencia.indicador-55');
 });
