@@ -81,7 +81,7 @@
                     <div class="space-y-2 md:space-y-3 mb-4 md:mb-6">
                         <a href="https://admision.unamad.edu.pe/" target="_blank"
                             class="block bg-[#db0455] hover:bg-[#a00340] text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-all duration-300 text-center text-xs md:text-sm">
-                            📚 Admisión 2025
+                            Admisión 2025
                         </a>
                     </div>
 
