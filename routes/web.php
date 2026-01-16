@@ -240,57 +240,10 @@ Route::get('/capacitaciones-servir', function () {
     return view('capacitaciones-servir');
 });
 
-Route::get('/transparencia/indicador-55', function () {
-    return view('transparencia.indicador-55');
-});
-
-Route::get('/transparencia/indicador-55/mv1', function () {
-    return view('transparencia.indicador-55.mv1');
-});
-
-Route::get('/transparencia/indicador-55/mv2', function () {
-    return view('transparencia.indicador-55.mv2');
-});
-
-Route::get('/transparencia/indicador-55/mv3', function () {
-    return view('transparencia.indicador-55.mv3');
-});
-
-Route::get('/transparencia/indicador-55/mv4', function () {
-    return view('transparencia.indicador-55.mv4');
-});
-
-Route::get('/transparencia/indicador-55/mv5', function () {
-    return view('transparencia.indicador-55.mv5');
-});
-
-Route::get('/transparencia/indicador-55/mv6', function () {
-    return view('transparencia.indicador-55.mv6');
-});
-
-Route::get('/transparencia/indicador-55/mv7', function () {
-    return view('transparencia.indicador-55.mv7');
-});
-
-Route::get('/transparencia/indicador-55/mv8', function () {
-    return view('transparencia.indicador-55.mv8');
-});
-
-Route::get('/transparencia/indicador-55/mv9', function () {
-    return view('transparencia.indicador-55.mv9');
-});
-
-Route::get('/transparencia/indicador-55/mv10', function () {
-    return view('transparencia.indicador-55.mv10');
-});
-
-Route::get('/transparencia/indicador-55/mv11', function () {
-    return view('transparencia.indicador-55.mv11');
-});
-
-Route::get('/transparencia/indicador-55/mv12', function () {
-    return view('transparencia.indicador-55.mv12');
-});
+// Rutas dinámicas de Indicador 55 (desde BD)
+Route::get('/transparencia/indicador-55', [\App\Http\Controllers\TransparenciaController::class, 'indicador55Index']);
+Route::get('/transparencia/indicador-55/{codigo}', [\App\Http\Controllers\TransparenciaController::class, 'indicador55Show'])
+    ->where('codigo', 'mv[0-9]+');
 
 Route::get('/transparencia/articulo-11', function () {
     return view('transparencia.articulo-11.index');
@@ -351,7 +304,13 @@ Route::middleware('auth')->group(function () {
         // Rutas de edición de carpetas
         Route::get('documentos/carpeta/{carpeta}/edit', [DocumentoController::class, 'editCarpeta'])->name('documentos.carpeta.edit');
         Route::put('documentos/carpeta/{carpeta}', [DocumentoController::class, 'updateCarpeta'])->name('documentos.carpeta.update');
-        
+
+        // Rutas de Indicador 55
+        Route::get('indicador55', [\App\Http\Controllers\Admin\Indicador55Controller::class, 'index'])->name('indicador55.index');
+        Route::get('indicador55/{indicador55}/edit', [\App\Http\Controllers\Admin\Indicador55Controller::class, 'edit'])->name('indicador55.edit');
+        Route::put('indicador55/{indicador55}', [\App\Http\Controllers\Admin\Indicador55Controller::class, 'update'])->name('indicador55.update');
+        Route::post('indicador55/{indicador55}/toggle-estado', [\App\Http\Controllers\Admin\Indicador55Controller::class, 'toggleEstado'])->name('indicador55.toggle-estado');
+
         // Rutas API para anuncios
         Route::prefix('api')->name('api.')->group(function () {
             Route::get('anuncios', [App\Http\Controllers\Api\AnuncioController::class, 'index'])->name('anuncios.index');

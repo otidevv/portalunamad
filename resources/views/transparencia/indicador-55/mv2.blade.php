@@ -75,8 +75,77 @@
                     </div>
                 </div>
 
-                <!-- Documentos por Año -->
+                <!-- Documentos Dinámicos desde BD -->
+                @php
+                    $docs = $documentos ?? [];
+                    if (is_string($docs)) {
+                        $docs = json_decode($docs, true) ?? [];
+                    }
+                    // Agrupar por año
+                    $docsPorAnio = [];
+                    foreach ($docs as $doc) {
+                        $anio = $doc['anio'] ?? 'Sin año';
+                        $docsPorAnio[$anio][] = $doc;
+                    }
+                    krsort($docsPorAnio); // Ordenar años de mayor a menor
+
+                    // Colores por año
+                    $colores = [
+                        '2025' => 'emerald',
+                        '2024' => 'green',
+                        '2023' => 'blue',
+                        '2022' => 'indigo',
+                        '2021' => 'purple',
+                        '2020' => 'pink',
+                    ];
+                @endphp
+
+                @if(count($docsPorAnio) > 0)
                 <div class="space-y-8">
+                    @foreach($docsPorAnio as $anio => $docsAnio)
+                    @php
+                        $color = $colores[$anio] ?? 'gray';
+                    @endphp
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-{{ $color }}-600">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-{{ $color }}-600 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white font-bold text-lg">{{ substr($anio, -2) }}</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800">{{ $anio }}</h3>
+                            </div>
+
+                            <div class="grid gap-3">
+                                @foreach($docsAnio as $doc)
+                                <a href="{{ $doc['url'] ?? '#' }}"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="flex items-center p-3 bg-{{ $color }}-50 rounded-lg border border-{{ $color }}-200 hover:bg-{{ $color }}-100 transition-colors duration-200 group">
+                                    <div class="flex items-center justify-center w-8 h-8 rounded-full bg-{{ $color }}-100 group-hover:bg-{{ $color }}-200 flex-shrink-0 mr-3">
+                                        <svg class="w-4 h-4 text-{{ $color }}-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <span class="font-semibold text-gray-800">{{ $doc['titulo'] ?? 'Documento' }}</span>
+                                        @if(isset($doc['descripcion']))
+                                        <p class="text-xs text-gray-600">{{ $doc['descripcion'] }}</p>
+                                        @endif
+                                    </div>
+                                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                @endif
+
+                <!-- Documentos Estáticos (históricos) -->
+                <div class="space-y-8 mt-8">
                     <!-- 2024 -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-green-600">
                         <div class="p-6">
@@ -435,7 +504,7 @@
 
             <!-- Sidebar -->
             <div class="lg:col-span-1">
-                @include('transparencia.indicador-55.partials.navigation')
+                @include('transparencia.indicador-55.partials.navigation-dynamic', ['variables' => $variables ?? collect(), 'currentCodigo' => 'mv2'])
             </div>
         </div>
     </div>

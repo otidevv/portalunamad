@@ -14,7 +14,8 @@
       "Bash(php:*)",
       "Bash(findstr:*)",
       "Bash(mkdir:*)",
-      "Bash(mysql:*)"
+      "Bash(mysql:*)",
+      "Bash(docker compose exec:*)"
     ],
     "deny": [],
     "ask": []

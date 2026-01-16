@@ -41,6 +41,55 @@
                         </p>
                     </div>
 
+                    <!-- Documentos desde Base de Datos -->
+                    @php
+                        $docs = $documentos ?? [];
+                        if (is_string($docs)) {
+                            $docs = json_decode($docs, true) ?? [];
+                        }
+                    @endphp
+
+                    @if(count($docs) > 0)
+                    <div class="space-y-8">
+                        @foreach($docs as $seccion)
+                            @php
+                                $nombreSeccion = $seccion['seccion'] ?? 'Documentos';
+                                $descripcionSeccion = $seccion['descripcion'] ?? '';
+                                $items = $seccion['items'] ?? [];
+                            @endphp
+                            <div class="border-l-4 border-purple-500 pl-6 py-4 bg-purple-50">
+                                <h3 class="text-xl font-semibold text-purple-800 mb-4">{{ $nombreSeccion }}</h3>
+                                @if($descripcionSeccion)
+                                    <p class="text-gray-700 mb-4">{{ $descripcionSeccion }}</p>
+                                @endif
+                                <div class="space-y-3">
+                                    @foreach($items as $item)
+                                    <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-purple-200 hover:bg-purple-50 transition-colors">
+                                        <div class="flex items-center">
+                                            <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                            </svg>
+                                            <div>
+                                                <h4 class="font-medium text-gray-900">{{ $item['titulo'] ?? 'Documento' }}</h4>
+                                                @if(isset($item['descripcion']))
+                                                    <p class="text-sm text-gray-600">{{ $item['descripcion'] }}</p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <a href="{{ $item['url'] ?? '#' }}"
+                                           target="_blank"
+                                           rel="noopener noreferrer"
+                                           class="text-purple-600 hover:text-purple-800 font-medium">
+                                            Ver documento →
+                                        </a>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    @else
+                    <!-- Contenido Histórico (solo si no hay datos de BD) -->
                     <div class="space-y-8">
                         <div class="border-l-4 border-purple-500 pl-6 py-4 bg-purple-50">
                             <h3 class="text-xl font-semibold text-purple-800 mb-4">Reglamento Académico General v3.0 (Febrero 2023)</h3>
@@ -113,6 +162,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
 
                     <div class="mt-8 p-6 bg-purple-50 rounded-lg border border-purple-200">
                         <h3 class="text-lg font-semibold text-purple-800 mb-3 flex items-center">
@@ -164,7 +214,7 @@
 
             <div class="lg:col-span-1">
                 <div class="sticky top-8">
-                    @include('transparencia.indicador-55.partials.navigation')
+                    @include('transparencia.indicador-55.partials.navigation-dynamic', ['variables' => $variables ?? collect(), 'currentCodigo' => 'mv7'])
                 </div>
             </div>
         </div>

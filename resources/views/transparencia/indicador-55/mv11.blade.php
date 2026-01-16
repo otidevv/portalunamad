@@ -41,6 +41,76 @@
                         </p>
                     </div>
 
+                    <!-- Documentos desde Base de Datos -->
+                    @php
+                        $docs = $documentos ?? [];
+                        if (is_string($docs)) {
+                            $docs = json_decode($docs, true) ?? [];
+                        }
+
+                        // Agrupar documentos por año
+                        $docsPorAnio = [];
+                        foreach ($docs as $doc) {
+                            $anio = $doc['anio'] ?? 'Sin año';
+                            $docsPorAnio[$anio][] = $doc;
+                        }
+                        krsort($docsPorAnio);
+                    @endphp
+
+                    @if(count($docsPorAnio) > 0)
+                    <div class="space-y-8">
+                        @foreach($docsPorAnio as $anio => $docsAnio)
+                            <div class="border-l-4 border-indigo-500 pl-6 py-4 bg-indigo-50">
+                                <h3 class="text-xl font-semibold text-indigo-800 mb-4">{{ $anio }}</h3>
+
+                                <div class="space-y-4">
+                                    @foreach($docsAnio as $doc)
+                                        @if(isset($doc['items']))
+                                            {{-- Documento con items (departamento) --}}
+                                            <div class="bg-white rounded-lg border border-indigo-200 p-4">
+                                                <h5 class="font-medium text-gray-900 mb-2">{{ $doc['departamento'] ?? $doc['titulo'] ?? 'Departamento' }}</h5>
+                                                <div class="flex flex-wrap gap-3">
+                                                    @foreach($doc['items'] as $item)
+                                                        <a href="{{ $item['url'] ?? '#' }}"
+                                                           target="_blank" rel="noopener noreferrer"
+                                                           class="inline-flex items-center px-3 py-1 {{ ($item['tipo'] ?? 'pdf') === 'excel' ? 'bg-green-50 text-green-700 hover:bg-green-100' : 'bg-red-50 text-red-700 hover:bg-red-100' }} rounded-md text-sm">
+                                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                                            </svg>
+                                                            {{ $item['titulo'] ?? 'Documento' }}
+                                                        </a>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        @else
+                                            {{-- Documento simple --}}
+                                            <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-indigo-200 hover:bg-indigo-50 transition-colors">
+                                                <div class="flex items-center">
+                                                    <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                                        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                                    </svg>
+                                                    <div>
+                                                        <h4 class="font-medium text-gray-900">{{ $doc['titulo'] ?? 'Documento' }}</h4>
+                                                        @if(isset($doc['descripcion']))
+                                                            <p class="text-sm text-gray-600">{{ $doc['descripcion'] }}</p>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <a href="{{ $doc['url'] ?? '#' }}"
+                                                   target="_blank"
+                                                   rel="noopener noreferrer"
+                                                   class="text-indigo-600 hover:text-indigo-800 font-medium">
+                                                    Ver documento →
+                                                </a>
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    @else
+                    <!-- Contenido Histórico (solo si no hay datos de BD) -->
                     <div class="space-y-8">
                         <!-- 2024 Section -->
                         <div class="border-l-4 border-indigo-500 pl-6 py-4 bg-indigo-50">
@@ -1546,6 +1616,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
 
                     <div class="mt-8 p-6 bg-indigo-50 rounded-lg border border-indigo-200">
                         <h3 class="text-lg font-semibold text-indigo-800 mb-3 flex items-center">
@@ -1598,7 +1669,7 @@
 
             <div class="lg:col-span-1">
                 <div class="sticky top-8">
-                    @include('transparencia.indicador-55.partials.navigation')
+                    @include('transparencia.indicador-55.partials.navigation-dynamic', ['variables' => $variables ?? collect(), 'currentCodigo' => 'mv11'])
                 </div>
             </div>
         </div>

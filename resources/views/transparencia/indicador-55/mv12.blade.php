@@ -42,6 +42,62 @@
                         </p>
                     </div>
 
+                    <!-- Documentos desde Base de Datos -->
+                    @php
+                        $docs = $documentos ?? [];
+                        if (is_string($docs)) {
+                            $docs = json_decode($docs, true) ?? [];
+                        }
+                        // Ordenar por año descendente
+                        usort($docs, function($a, $b) {
+                            return ($b['anio'] ?? 0) <=> ($a['anio'] ?? 0);
+                        });
+
+                        // Colores por año
+                        $colores = [
+                            '2025' => 'emerald',
+                            '2024' => 'teal',
+                            '2023' => 'cyan',
+                            '2022' => 'blue',
+                            'default' => 'teal'
+                        ];
+                    @endphp
+
+                    @if(count($docs) > 0)
+                    <div class="space-y-8">
+                        @foreach($docs as $seccion)
+                            @php
+                                $anio = $seccion['anio'] ?? '';
+                                $color = $colores[$anio] ?? $colores['default'];
+                                $items = $seccion['items'] ?? [];
+                                $nombreSeccion = $seccion['seccion'] ?? "Diseño Curricular {$anio}";
+                            @endphp
+                            <div class="border-l-4 border-{{ $color }}-500 pl-6 py-4 bg-{{ $color }}-50">
+                                <h3 class="text-xl font-semibold text-{{ $color }}-800 mb-4">{{ $nombreSeccion }}</h3>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    @foreach($items as $item)
+                                    <div class="bg-white rounded-lg border border-{{ $color }}-200 p-4">
+                                        <h4 class="font-medium text-gray-900 mb-2">{{ $item['titulo'] ?? 'Documento' }}</h4>
+                                        @if(isset($item['descripcion']))
+                                            <p class="text-sm text-gray-600 mb-2">{{ $item['descripcion'] }}</p>
+                                        @endif
+                                        <a href="{{ $item['url'] ?? '#' }}"
+                                           target="_blank" rel="noopener noreferrer"
+                                           class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
+                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                            </svg>
+                                            Ver Documento
+                                        </a>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    @else
+                    <!-- Contenido Histórico (solo si no hay datos de BD) -->
                     <div class="space-y-8">
                         <!-- 2024 Section -->
                         <div class="border-l-4 border-teal-500 pl-6 py-4 bg-teal-50">
@@ -369,6 +425,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
 
                     <div class="mt-8 p-6 bg-teal-50 rounded-lg border border-teal-200">
                         <h3 class="text-lg font-semibold text-teal-800 mb-3 flex items-center">
@@ -417,7 +474,7 @@
 
             <div class="lg:col-span-1">
                 <div class="sticky top-8">
-                    @include('transparencia.indicador-55.partials.navigation')
+                    @include('transparencia.indicador-55.partials.navigation-dynamic', ['variables' => $variables ?? collect(), 'currentCodigo' => 'mv12'])
                 </div>
             </div>
         </div>

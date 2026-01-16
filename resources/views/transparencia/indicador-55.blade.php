@@ -136,7 +136,7 @@
 
             <!-- Sidebar -->
             <div class="lg:col-span-1">
-                @include('transparencia.indicador-55.partials.navigation')
+                @include('transparencia.indicador-55.partials.navigation-dynamic', ['variables' => $variables, 'currentCodigo' => null])
             </div>
         </div>
     </div>

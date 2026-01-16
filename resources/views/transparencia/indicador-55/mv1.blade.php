@@ -67,7 +67,7 @@
 
                         <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-6">
                             <p class="text-lg text-blue-900 font-medium leading-relaxed italic">
-                                "Formar Profesionales líderes, investigadores e innovadores con orientación humanística, científica y tecnológica, que contribuyan al desarrollo sostenible de la Amazonía y competitividad del país con identidad cultural, espíritu emprendedor y responsabilidad social".
+                                "{{ $variable->texto_mision ?? 'Formar Profesionales líderes, investigadores e innovadores con orientación humanística, científica y tecnológica, que contribuyan al desarrollo sostenible de la Amazonía y competitividad del país con identidad cultural, espíritu emprendedor y responsabilidad social.' }}"
                             </p>
                         </div>
 
@@ -120,7 +120,7 @@
 
                         <div class="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg mb-6">
                             <p class="text-lg text-emerald-900 font-medium leading-relaxed italic">
-                                "Ser la Universidad líder en la Región Amazónica, holística, humanística, democrática, innovadora, con vocación de servicio, comprometida con la solución de los problemas de nuestra sociedad pluricultural, de la biodiversidad y del medio ambiente, orientada al desarrollo sostenible a través de principios y valores éticos, en el marco de una gestión eficiente, eficaz y transparente".
+                                "{{ $variable->texto_vision ?? 'Ser la Universidad líder en la Región Amazónica, holística, humanística, democrática, innovadora, con vocación de servicio, comprometida con la solución de los problemas de nuestra sociedad pluricultural, de la biodiversidad y del medio ambiente, orientada al desarrollo sostenible a través de principios y valores éticos, en el marco de una gestión eficiente, eficaz y transparente.' }}"
                             </p>
                         </div>
 
@@ -201,8 +201,15 @@
                         </div>
 
                         <div class="space-y-4">
-                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3606406-183-2018-unamad-r" 
-                               target="_blank" 
+                            @php
+                                $docs = $documentos ?? [];
+                                if (is_string($docs)) {
+                                    $docs = json_decode($docs, true) ?? [];
+                                }
+                            @endphp
+                            @forelse($docs as $doc)
+                            <a href="{{ $doc['url'] ?? '#' }}"
+                               target="_blank"
                                rel="noopener noreferrer"
                                class="flex items-center p-4 bg-gray-50 rounded-lg border border-gray-200 hover:bg-gray-100 transition-colors duration-200 group">
                                 <div class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 group-hover:bg-gray-200 flex-shrink-0 mr-4">
@@ -211,31 +218,18 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 class="font-semibold text-gray-800 group-hover:text-gray-900">Resolución 183-2018-UNAMAD-R</h3>
-                                    <p class="text-sm text-gray-600 mt-1">Documento legal que establece la Misión y Visión institucional</p>
+                                    <h3 class="font-semibold text-gray-800 group-hover:text-gray-900">{{ $doc['titulo'] ?? 'Documento' }}</h3>
+                                    @if(isset($doc['descripcion']))
+                                    <p class="text-sm text-gray-600 mt-1">{{ $doc['descripcion'] }}</p>
+                                    @endif
                                 </div>
                                 <svg class="w-5 h-5 text-gray-400 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                 </svg>
                             </a>
-
-                            <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RESOLUCI%C3%93N_N_277-2021-UNAMAD-R.pdf_WfxTkAB.pdf" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               class="flex items-center p-4 bg-gray-50 rounded-lg border border-gray-200 hover:bg-gray-100 transition-colors duration-200 group">
-                                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 group-hover:bg-gray-200 flex-shrink-0 mr-4">
-                                    <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-gray-800 group-hover:text-gray-900">Resolución 277-2021-UNAMAD-R</h3>
-                                    <p class="text-sm text-gray-600 mt-1">Actualización y ratificación de la Misión y Visión universitaria</p>
-                                </div>
-                                <svg class="w-5 h-5 text-gray-400 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                                </svg>
-                            </a>
+                            @empty
+                            <p class="text-gray-500 text-center py-4">No hay documentos disponibles.</p>
+                            @endforelse
                         </div>
                     </div>
                 </div>
@@ -243,7 +237,7 @@
 
             <!-- Sidebar -->
             <div class="lg:col-span-1">
-                @include('transparencia.indicador-55.partials.navigation')
+                @include('transparencia.indicador-55.partials.navigation-dynamic', ['variables' => $variables ?? collect(), 'currentCodigo' => 'mv1'])
             </div>
         </div>
     </div>

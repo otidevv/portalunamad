@@ -41,6 +41,67 @@
                         </p>
                     </div>
 
+                    <!-- Documentos desde Base de Datos -->
+                    @php
+                        $docs = $documentos ?? [];
+                        if (is_string($docs)) {
+                            $docs = json_decode($docs, true) ?? [];
+                        }
+                    @endphp
+
+                    @if(count($docs) > 0)
+                    <div class="space-y-8">
+                        @foreach($docs as $seccion)
+                            @php
+                                $nombreSeccion = $seccion['seccion'] ?? 'Documentos';
+                                $descripcionSeccion = $seccion['descripcion'] ?? '';
+                                $items = $seccion['items'] ?? [];
+                                $vigente = $seccion['vigente'] ?? false;
+                            @endphp
+                            <div class="border-l-4 border-orange-500 pl-6 py-4 bg-orange-50">
+                                <h3 class="text-xl font-semibold text-orange-800 mb-4 flex items-center">
+                                    @if($vigente)
+                                        <svg class="w-5 h-5 mr-2 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12,2L13.09,8.26L22,9L17,14L18.18,22L12,19L5.82,22L7,14L2,9L10.91,8.26L12,2Z"/>
+                                        </svg>
+                                    @else
+                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z"/>
+                                        </svg>
+                                    @endif
+                                    {{ $nombreSeccion }}
+                                </h3>
+                                @if($descripcionSeccion)
+                                    <p class="text-gray-700 mb-4">{{ $descripcionSeccion }}</p>
+                                @endif
+                                <div class="space-y-3">
+                                    @foreach($items as $item)
+                                    <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-orange-200 hover:bg-orange-50 transition-colors">
+                                        <div class="flex items-center">
+                                            <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                            </svg>
+                                            <div>
+                                                <h4 class="font-medium text-gray-900">{{ $item['titulo'] ?? 'Documento' }}</h4>
+                                                @if(isset($item['descripcion']))
+                                                    <p class="text-sm text-gray-600">{{ $item['descripcion'] }}</p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <a href="{{ $item['url'] ?? '#' }}"
+                                           target="_blank"
+                                           rel="noopener noreferrer"
+                                           class="text-orange-600 hover:text-orange-800 font-medium">
+                                            Ver documento →
+                                        </a>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    @else
+                    <!-- Contenido Histórico (solo si no hay datos de BD) -->
                     <div class="space-y-8">
                         <div class="border-l-4 border-orange-500 pl-6 py-4 bg-orange-50">
                             <h3 class="text-xl font-semibold text-orange-800 mb-4 flex items-center">
@@ -263,6 +324,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
 
                     <div class="mt-8 p-6 bg-orange-50 rounded-lg border border-orange-200">
                         <h3 class="text-lg font-semibold text-orange-800 mb-3 flex items-center">
@@ -314,7 +376,7 @@
 
             <div class="lg:col-span-1">
                 <div class="sticky top-8">
-                    @include('transparencia.indicador-55.partials.navigation')
+                    @include('transparencia.indicador-55.partials.navigation-dynamic', ['variables' => $variables ?? collect(), 'currentCodigo' => 'mv10'])
                 </div>
             </div>
         </div>
