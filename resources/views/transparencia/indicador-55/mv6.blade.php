@@ -112,9 +112,8 @@
                             </div>
                         @endforeach
                     </div>
-                    @endif
-
-                    <!-- Contenido Histórico -->
+                    @else
+                    <!-- Contenido Histórico (solo si no hay datos de BD) -->
                     <div class="space-y-6">
                         <div class="border-l-4 border-green-500 pl-6 py-4 bg-green-50">
                             <h3 class="text-xl font-semibold text-green-800 mb-3">2024</h3>
@@ -254,6 +253,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
 
                     <div class="mt-8 p-6 bg-green-50 rounded-lg border border-green-200">
                         <h3 class="text-lg font-semibold text-green-800 mb-3 flex items-center">

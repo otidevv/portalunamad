@@ -196,9 +196,8 @@
                         </div>
                     @endforeach
                 </div>
-                @endif
-
-                <!-- Convocatorias por Año (Contenido Histórico) -->
+                @else
+                <!-- Convocatorias por Año (Contenido Histórico - solo si no hay datos de BD) -->
                 <div class="space-y-8">
                     <!-- 2024 -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-emerald-600">
@@ -630,6 +629,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
 
                 <!-- Información Importante -->
                 <div class="bg-gradient-to-r from-rose-50 to-pink-50 rounded-xl shadow-lg overflow-hidden border border-rose-200 mt-8">
