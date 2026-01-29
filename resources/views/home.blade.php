@@ -59,7 +59,7 @@
                 </div>
 
                 <!-- Contenido del card -->
-                <div class="relative z-10 p-4 md:p-8">
+                <div class="relative z-10 px-4 md:px-8 pt-4 md:pt-8 pb-1 md:pb-2">
                     <!-- Logo centrado -->
                     <div class="flex justify-center mb-4 md:mb-6">
                         <img src="{{ asset('img/header/logounamad.png') }}" alt="UNAMAD" class="h-8 w-28 md:h-12 md:w-40">
@@ -73,30 +73,19 @@
                     </h1>
 
                     <!-- Lema reducido -->
-                    <p class="text-gray-600 mb-4 md:mb-6 text-xs md:text-sm leading-relaxed text-center md:text-left">
+                    <p class="text-gray-600 mb-1 md:mb-2 text-xs md:text-sm leading-relaxed text-center md:text-left">
                         Formando profesionales comprometidos con el desarrollo sostenible de la Amazonía peruana.
                     </p>
 
                     <!-- Botón Calendario Académico con Mascota -->
-                    <div class="flex items-center gap-3 mb-4 md:mb-6">
+                    <div class="flex items-center gap-2 mb-2">
                         <a href="https://calendario-academico.unamad.edu.pe/" target="_blank"
-                            class="bg-[#db0455] hover:bg-[#a00340] text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-all duration-300 text-center text-xs md:text-sm">
+                            class="bg-[#db0455] hover:bg-[#a00340] text-white px-5 py-3 md:px-6 md:py-4 rounded-lg font-semibold transition-all duration-300 text-center text-sm md:text-base">
                             Calendario Académico 2026
                         </a>
                         <img src="{{ asset('img/mascota/mascota.png') }}" alt="Mascota UNAMAD" class="h-64 md:h-80 w-auto object-contain">
                     </div>
 
-                    <!-- Estadísticas compactas -->
-                    <div class="grid grid-cols-2 gap-2 md:gap-4 text-center">
-                        <div class="bg-gray-50 rounded-lg p-2 md:p-3">
-                            <div class="text-lg md:text-xl font-bold text-[#db0455]">10+</div>
-                            <div class="text-xs text-gray-600">Carreras</div>
-                        </div>
-                        <div class="bg-gray-50 rounded-lg p-2 md:p-3">
-                            <div class="text-lg md:text-xl font-bold text-green-600">2K+</div>
-                            <div class="text-xs text-gray-600">Estudiantes</div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
