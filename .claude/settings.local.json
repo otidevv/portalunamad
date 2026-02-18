@@ -15,7 +15,8 @@
       "Bash(findstr:*)",
       "Bash(mkdir:*)",
       "Bash(mysql:*)",
-      "Bash(docker compose exec:*)"
+      "Bash(docker compose exec:*)",
+      "WebFetch(domain:www.unamad.edu.pe)"
     ],
     "deny": [],
     "ask": []
