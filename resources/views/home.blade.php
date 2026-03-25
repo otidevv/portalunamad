@@ -71,46 +71,50 @@
             <div
                 class="rounded-xl sm:rounded-2xl shadow-2xl max-w-[280px] sm:max-w-xs md:max-w-md mx-auto md:mx-0 border border-gray-200/20 relative overflow-hidden bg-white">
                 <!-- Franja superior con imagen de hojas -->
-                <div class="absolute top-0 left-0 right-0 h-8 sm:h-12 md:h-16 rounded-t-xl sm:rounded-t-2xl overflow-hidden"
+                <div class="absolute top-0 left-0 right-0 h-6 sm:h-10 md:h-12 rounded-t-xl sm:rounded-t-2xl overflow-hidden"
                     style="background-image: url('/img/banners/backgroundbanner/background_card.webp'); background-size: cover; background-position: top center;">
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/80"></div>
                 </div>
 
                 <!-- Franja inferior con imagen de hojas -->
-                <div class="absolute bottom-0 left-0 right-0 h-8 sm:h-12 md:h-16 rounded-b-xl sm:rounded-b-2xl overflow-hidden"
+                <div class="absolute bottom-0 left-0 right-0 h-6 sm:h-10 md:h-12 rounded-b-xl sm:rounded-b-2xl overflow-hidden"
                     style="background-image: url('/img/banners/backgroundbanner/background_card.webp'); background-size: cover; background-position: bottom center;">
                     <div class="absolute inset-0 bg-gradient-to-t from-transparent to-white/80"></div>
                 </div>
 
                 <!-- Contenido del card -->
-                <div class="relative z-10 px-3 sm:px-4 md:px-8 pt-3 sm:pt-4 md:pt-8 pb-1 md:pb-2">
+                <div class="relative z-10 px-3 sm:px-4 md:px-6 pt-2 sm:pt-3 md:pt-5 pb-0">
                     <!-- Logo centrado -->
-                    <div class="flex justify-center mb-2 sm:mb-4 md:mb-6">
-                        <img src="{{ asset('img/header/logounamad.png') }}" alt="UNAMAD" class="h-6 w-20 sm:h-8 sm:w-28 md:h-12 md:w-40" width="160" height="48">
+                    <div class="flex justify-center mb-1 sm:mb-2 md:mb-3">
+                        <img src="{{ asset('img/header/logounamad.png') }}" alt="UNAMAD" class="h-5 w-16 sm:h-7 sm:w-24 md:h-10 md:w-36" width="160" height="48">
                     </div>
 
                     <!-- Título principal conciso -->
                     <h1
-                        class="text-sm sm:text-lg md:text-2xl font-bold text-gray-800 mb-2 sm:mb-3 md:mb-4 leading-tight text-center md:text-left">
+                        class="text-xs sm:text-base md:text-xl font-bold text-gray-800 mb-1 sm:mb-2 md:mb-3 leading-tight text-center md:text-left">
                         Universidad Nacional<br>
                         <span class="text-[#db0455]">Amazónica de Madre de Dios</span>
                     </h1>
 
                     <!-- Lema reducido -->
-                    <p class="text-gray-600 mb-1 md:mb-2 text-[11px] sm:text-xs md:text-sm leading-relaxed text-center md:text-left">
+                    <p class="text-gray-600 mb-1 text-[10px] sm:text-xs md:text-sm leading-snug text-center md:text-left">
                         Formando profesionales comprometidos con el desarrollo sostenible de la Amazonía peruana.
                     </p>
 
                     <!-- Botón Calendario Académico con Mascota -->
-                    <div class="flex items-end gap-1 sm:gap-2 mb-1 sm:mb-2">
-                        <a href="https://calendario-academico.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
-                            class="bg-[#db0455] hover:bg-[#a00340] text-white px-3 py-2 sm:px-5 sm:py-3 md:px-6 md:py-4 rounded-lg font-semibold transition-all duration-300 text-center text-xs sm:text-sm md:text-base flex-shrink-0">
-                            Calendario Académico 2026
-                        </a>
-                        <picture>
-                            <source srcset="{{ asset('img/mascota/mascota.webp') }}" type="image/webp">
-                            <img loading="lazy" src="{{ asset('img/mascota/mascota.png') }}" alt="Mascota UNAMAD" class="h-32 sm:h-48 md:h-64 lg:h-80 w-auto object-contain" width="215" height="320">
-                        </picture>
+                    <div class="flex items-stretch gap-1">
+                        <div class="flex items-center">
+                            <a href="https://calendario-academico.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
+                                class="bg-[#db0455] hover:bg-[#a00340] text-white px-2.5 py-1.5 sm:px-4 sm:py-2.5 md:px-5 md:py-3 rounded-lg font-semibold transition-all duration-300 text-center text-[10px] sm:text-xs md:text-sm inline-block">
+                                Calendario Académico 2026
+                            </a>
+                        </div>
+                        <div>
+                            <picture>
+                                <source srcset="{{ asset('img/mascota/mascota.webp') }}" type="image/webp">
+                                <img loading="lazy" src="{{ asset('img/mascota/mascota.png') }}" alt="Mascota UNAMAD" class="h-24 sm:h-36 md:h-48 lg:h-56 w-auto object-contain" width="215" height="320">
+                            </picture>
+                        </div>
                     </div>
 
                 </div>
