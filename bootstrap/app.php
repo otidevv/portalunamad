@@ -23,6 +23,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
         // Middleware para rutas autenticadas
         $middleware->group('auth', [
+            \Illuminate\Auth\Middleware\Authenticate::class,
             \App\Http\Middleware\ValidateSession::class,
             \App\Http\Middleware\PreventCacheHeaders::class,
         ]);

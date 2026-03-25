@@ -30,12 +30,12 @@ class SecurityHeaders
         // Content Security Policy - previene inyección de scripts/iframes de terceros
         $response->headers->set('Content-Security-Policy',
             "default-src 'self'; " .
-            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com https://www.youtube.com https://s.ytimg.com; " .
-            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " .
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com https://www.youtube.com https://s.ytimg.com https://cdnjs.cloudflare.com; " .
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; " .
             "img-src 'self' data: https: blob:; " .
             "font-src 'self' https://fonts.gstatic.com; " .
             "frame-src 'self' https://www.google.com https://www.youtube.com https://maps.googleapis.com https://www.google.com/maps/; " .
-            "connect-src 'self'; " .
+            "connect-src 'self' https://cdnjs.cloudflare.com; " .
             "object-src 'none'; " .
             "base-uri 'self'; " .
             "form-action 'self';"

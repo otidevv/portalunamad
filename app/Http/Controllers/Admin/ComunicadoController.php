@@ -7,6 +7,7 @@ use App\Models\Comunicado;
 use App\Models\ComunicadoCategoria;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class ComunicadoController extends Controller
@@ -70,11 +71,10 @@ class ComunicadoController extends Controller
             $comunicado = new Comunicado;
             $comunicado->comunicado_categoria_id = $validated['categoria_id'];
             $comunicado->titulo = $validated['titulo'];
-            $comunicado->contenido = $validated['contenido'];
+            $comunicado->contenido = strip_tags($validated['contenido'], '<p><br><b><strong><i><em><u><ul><ol><li><a><h1><h2><h3><h4><h5><h6><span><div><blockquote>');
             $comunicado->duracion = (int) $validated['duracion'];
             $comunicado->estado = $request->boolean('estado', true);
             $comunicado->user_id = Auth::id();
-            $comunicado->oficina = $request->input('oficina', null);
 
             // Calcular fecha_fin basada en duración
             if ($validated['duracion']) {
@@ -111,14 +111,16 @@ class ComunicadoController extends Controller
             }
             throw $e;
         } catch (\Exception $e) {
+            Log::error('Error al crear comunicado: '.$e->getMessage());
+
             if ($request->expectsJson()) {
                 return response()->json([
                     'success' => false,
-                    'message' => 'Error al crear el comunicado: '.$e->getMessage(),
+                    'message' => 'Error al crear el comunicado. Intente nuevamente.',
                 ], 500);
             }
 
-            return back()->with('error', 'Error al crear el comunicado: '.$e->getMessage());
+            return back()->with('error', 'Error al crear el comunicado. Intente nuevamente.');
         }
     }
 
@@ -169,13 +171,14 @@ class ComunicadoController extends Controller
 
             $comunicado->comunicado_categoria_id = $validated['categoria_id'];
             $comunicado->titulo = $validated['titulo'];
-            $comunicado->contenido = $validated['contenido'];
-            $comunicado->duracion = (int) $validated['duracion'];
+            $comunicado->contenido = strip_tags($validated['contenido'], '<p><br><b><strong><i><em><u><ul><ol><li><a><h1><h2><h3><h4><h5><h6><span><div><blockquote>');
             $comunicado->estado = $request->boolean('estado', true);
 
-            // Recalcular fecha_fin basada en duración
-            if ($validated['duracion']) {
-                $comunicado->fecha_fin = now()->addDays((int) $validated['duracion']);
+            // Solo recalcular fecha_fin si la duración cambió
+            $newDuracion = (int) $validated['duracion'];
+            if ($comunicado->duracion !== $newDuracion) {
+                $comunicado->duracion = $newDuracion;
+                $comunicado->fecha_fin = now()->addDays($newDuracion);
             }
 
             // Eliminar imagen actual si se solicita
@@ -220,14 +223,16 @@ class ComunicadoController extends Controller
             }
             throw $e;
         } catch (\Exception $e) {
+            Log::error('Error al actualizar comunicado #'.$comunicado->id.': '.$e->getMessage());
+
             if ($request->expectsJson()) {
                 return response()->json([
                     'success' => false,
-                    'message' => 'Error al actualizar el comunicado: '.$e->getMessage(),
+                    'message' => 'Error al actualizar el comunicado. Intente nuevamente.',
                 ], 500);
             }
 
-            return back()->with('error', 'Error al actualizar el comunicado: '.$e->getMessage());
+            return back()->with('error', 'Error al actualizar el comunicado. Intente nuevamente.');
         }
     }
 

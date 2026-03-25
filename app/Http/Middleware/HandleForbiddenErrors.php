@@ -54,6 +54,6 @@ class HandleForbiddenErrors
 
         // Redirigir al login con mensaje explicativo
         return redirect()->route('login')
-            ->with('warning', 'Tu sesión ha expirado o no tienes permisos para acceder. Por favor, inicia sesión nuevamente.');
+            ->with('error', 'Tu sesión ha expirado o no tienes permisos para acceder. Por favor, inicia sesión nuevamente.');
     }
 }

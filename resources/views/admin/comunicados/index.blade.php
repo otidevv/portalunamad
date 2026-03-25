@@ -228,8 +228,10 @@
 
     <!-- Modal para crear/editar comunicado -->
     <div id="comunicadoModal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Overlay -->
+        <div class="fixed inset-0 bg-black bg-opacity-50 transition-opacity" onclick="closeComunicadoModal()"></div>
         <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-            <!-- Modal panel (sin overlay de fondo) -->
+            <!-- Modal panel -->
             <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-5xl sm:w-full">
                 <!-- Header -->
                 <div class="bg-gradient-to-r from-[#db0455] to-[#a00340] px-6 py-4">
@@ -744,41 +746,57 @@ function closeLinkModal() {
     }
 }
 
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+function isValidUrl(string) {
+    try {
+        const url = new URL(string);
+        return url.protocol === 'http:' || url.protocol === 'https:';
+    } catch (_) {
+        return false;
+    }
+}
+
 function insertLinkFromModal() {
     const linkText = document.getElementById('linkTextInput').value.trim();
     const linkUrl = document.getElementById('linkUrlInput').value.trim();
-    
-    console.log('Insertando enlace:', linkText, linkUrl); // Debug
-    
+
     if (!linkText || !linkUrl || linkUrl === 'https://') {
         alert('Por favor, complete tanto el texto como la URL del enlace.');
         return;
     }
-    
+
+    if (!isValidUrl(linkUrl)) {
+        alert('La URL debe comenzar con http:// o https://');
+        return;
+    }
+
     const editor = document.getElementById('editor-content');
-    
+
     // Limpiar placeholder si existe
     if (editor.textContent.trim() === 'Escriba el contenido del comunicado aquí...') {
         editor.innerHTML = '';
         editor.classList.remove('text-gray-400');
     }
-    
+
     // Cerrar modal
     closeLinkModal();
-    
+
     // Enfocar el editor
     editor.focus();
-    
-    // Crear el enlace
-    const link = `<a href="${linkUrl}" target="_blank" class="text-blue-600 underline hover:text-blue-800">${linkText}</a>&nbsp;`;
-    
-    // Insertar usando execCommand (más compatible)
+
+    // Crear el enlace con texto y URL escapados
+    const safeText = escapeHtml(linkText);
+    const safeUrl = encodeURI(linkUrl);
+    const link = `<a href="${safeUrl}" target="_blank" class="text-blue-600 underline hover:text-blue-800">${safeText}</a>&nbsp;`;
+
     try {
         document.execCommand('insertHTML', false, link);
-        console.log('Enlace insertado con execCommand'); // Debug
     } catch (e) {
-        // Fallback: insertar directamente
-        console.log('Fallback: insertando directamente'); // Debug
         const currentContent = editor.innerHTML;
         editor.innerHTML = currentContent + link;
     }

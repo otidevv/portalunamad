@@ -20,6 +20,8 @@ class UserSeeder extends Seeder
             'email' => 'admin@unamad.edu.pe',
             'password' => Hash::make('password123'),
             'email_verified_at' => now(),
+            'rol' => 'admin',
+            'estado' => true,
         ]);
 
         // Crear usuarios adicionales de prueba
@@ -28,6 +30,8 @@ class UserSeeder extends Seeder
             'email' => 'juan.perez@unamad.edu.pe',
             'password' => Hash::make('password123'),
             'email_verified_at' => now(),
+            'rol' => 'editor',
+            'estado' => true,
         ]);
 
         User::create([
@@ -35,6 +39,8 @@ class UserSeeder extends Seeder
             'email' => 'maria.garcia@unamad.edu.pe',
             'password' => Hash::make('password123'),
             'email_verified_at' => now(),
+            'rol' => 'moderador',
+            'estado' => true,
         ]);
     }
 }
