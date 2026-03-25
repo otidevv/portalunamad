@@ -94,13 +94,15 @@
                     </div>
                 </div>
 
-                <!-- reCAPTCHA v2 -->
+                <!-- reCAPTCHA v2 (solo en producción) -->
+                @if(app()->environment('production'))
                 <div class="flex justify-center">
                     <div class="g-recaptcha" data-sitekey="{{ config('recaptcha.site_key') }}"></div>
                 </div>
                 @error('g-recaptcha-response')
                     <p class="text-sm text-red-600 text-center">{{ $message }}</p>
                 @enderror
+                @endif
 
                 <!-- Botón de submit -->
                 <div>

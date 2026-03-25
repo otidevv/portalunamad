@@ -83,7 +83,7 @@
                 <!-- Contenido -->
                 @if($comunicado->contenido)
                     <div class="comunicado-content">
-                        {!! $comunicado->contenido !!}
+                        {!! \App\Helpers\HtmlSanitizer::clean($comunicado->contenido) !!}
                     </div>
                 @else
                     <p class="text-gray-600 italic">Este comunicado no tiene contenido adicional.</p>

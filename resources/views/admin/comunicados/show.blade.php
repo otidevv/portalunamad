@@ -43,7 +43,7 @@
                 
                 @if($comunicado->contenido)
                     <div class="prose max-w-none comunicado-content">
-                        <div class="text-gray-700">{!! $comunicado->contenido !!}</div>
+                        <div class="text-gray-700">{!! \App\Helpers\HtmlSanitizer::clean($comunicado->contenido) !!}</div>
                     </div>
                 @else
                     <p class="text-gray-500 italic">Sin contenido adicional</p>

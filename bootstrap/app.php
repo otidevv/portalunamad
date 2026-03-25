@@ -17,6 +17,8 @@ return Application::configure(basePath: dirname(__DIR__))
             \App\Http\Middleware\CleanOldCookies::class,     // Limpiar cookies antiguas
             \App\Http\Middleware\HandleForbiddenErrors::class, // Manejar errores 403
             \App\Http\Middleware\CacheStaticAssets::class,   // Cache y rendimiento
+            \App\Http\Middleware\SecurityHeaders::class,     // Headers de seguridad (anti-XSS, anti-clickjacking, CSP)
+            \App\Http\Middleware\ValidateFileUpload::class,  // Bloquear uploads peligrosos (.php, .exe, etc.)
         ]);
 
         // Middleware para rutas autenticadas
@@ -32,6 +34,8 @@ return Application::configure(basePath: dirname(__DIR__))
             'handle.403' => \App\Http\Middleware\HandleForbiddenErrors::class,
             'clean.cookies' => \App\Http\Middleware\CleanOldCookies::class,
             'force.clean.home' => \App\Http\Middleware\ForceCleanHomePage::class,
+            'role' => \App\Http\Middleware\CheckRole::class,
+            'login.ratelimit' => \App\Http\Middleware\LoginRateLimit::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

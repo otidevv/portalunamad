@@ -256,14 +256,14 @@ Route::get('/session/force-cleanup', [SessionCleanupController::class, 'forceCle
 // Rutas de Autenticación
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-    Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+    Route::post('/login', [AuthController::class, 'login'])->middleware('login.ratelimit')->name('login.post');
 });
 
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-    
-    // Panel de Administración
-    Route::prefix('admin')->name('admin.')->group(function () {
+
+    // Panel de Administración - Solo admin y editor pueden acceder
+    Route::prefix('admin')->name('admin.')->middleware('role:admin,editor,moderador')->group(function () {
         Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
         
         // Rutas de Anuncios
@@ -271,10 +271,12 @@ Route::middleware('auth')->group(function () {
         Route::post('anuncios/{anuncio}/estado', [AnuncioController::class, 'cambiarEstado'])->name('anuncios.estado');
         Route::post('anuncios/{anuncio}/destacado', [AnuncioController::class, 'toggleDestacado'])->name('anuncios.destacado');
 
-        // Rutas de Usuarios
-        Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
-        Route::post('users/{user}/estado', [\App\Http\Controllers\Admin\UserController::class, 'toggleEstado'])->name('users.estado');
-        Route::post('users/{user}/password', [\App\Http\Controllers\Admin\UserController::class, 'changePassword'])->name('users.password');
+        // Rutas de Usuarios - SOLO admin puede gestionar usuarios
+        Route::middleware('role:admin')->group(function () {
+            Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
+            Route::post('users/{user}/estado', [\App\Http\Controllers\Admin\UserController::class, 'toggleEstado'])->name('users.estado');
+            Route::post('users/{user}/password', [\App\Http\Controllers\Admin\UserController::class, 'changePassword'])->name('users.password');
+        });
         
         // Rutas de Comunicado Categorías
         Route::resource('comunicado-categorias', ComunicadoCategoriaController::class);

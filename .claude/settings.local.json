@@ -21,7 +21,9 @@
       "Bash(magick --version)",
       "Bash(convert --version)",
       "Bash(du -sh public/img/banners/*.webp)",
-      "Bash(grep -v 'id=\"\"\"\"modal\\\\|id=\"\"\"\"lightbox\\\\|src=\"\"\"\"\\\\$')"
+      "Bash(grep -v 'id=\"\"\"\"modal\\\\|id=\"\"\"\"lightbox\\\\|src=\"\"\"\"\\\\$')",
+      "Read(//c/portalunamad/**)",
+      "Bash(icacls public/)"
     ],
     "deny": [],
     "ask": []

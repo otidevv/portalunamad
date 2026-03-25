@@ -1,0 +1,11 @@
+# Bloquear ejecución de scripts en directorio de imágenes
+<FilesMatch "\.(php|php3|php4|php5|php7|php8|phtml|phar|cgi|pl|py|jsp|asp|aspx)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+
+Options -Indexes -ExecCGI

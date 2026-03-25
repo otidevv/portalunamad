@@ -34,7 +34,7 @@
                     <!-- Contenido HTML dinámico -->
                     @if($variable->contenido)
                         <div class="prose max-w-none mb-8">
-                            {!! $variable->contenido !!}
+                            {!! \App\Helpers\HtmlSanitizer::clean($variable->contenido) !!}
                         </div>
                     @endif
 

@@ -53,7 +53,7 @@ class AnuncioController extends Controller
         
         // Apply ordering
         $orderColumn = $request->get('order')[0]['column'] ?? 0;
-        $orderDir = $request->get('order')[0]['dir'] ?? 'desc';
+        $orderDir = in_array($request->get('order')[0]['dir'] ?? 'desc', ['asc', 'desc']) ? $request->get('order')[0]['dir'] : 'desc';
         $columns = ['id', 'imagen_principal', 'titulo', 'categoria', 'estado', 'destacado', 'vistas', 'created_at'];
         
         if (isset($columns[$orderColumn])) {
