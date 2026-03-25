@@ -67,49 +67,49 @@
         </div>
 
         <!-- Content Card - Responsive -->
-        <div class="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 z-10 w-[calc(100%-2rem)] md:w-auto">
+        <div class="absolute left-2 sm:left-4 md:left-8 top-1/2 transform -translate-y-1/2 z-10 w-[calc(100%-1rem)] sm:w-[calc(100%-2rem)] md:w-auto">
             <div
-                class="rounded-2xl shadow-2xl max-w-xs md:max-w-md mx-auto md:mx-0 border border-gray-200/20 relative overflow-hidden bg-white">
+                class="rounded-xl sm:rounded-2xl shadow-2xl max-w-[280px] sm:max-w-xs md:max-w-md mx-auto md:mx-0 border border-gray-200/20 relative overflow-hidden bg-white">
                 <!-- Franja superior con imagen de hojas -->
-                <div class="absolute top-0 left-0 right-0 h-12 md:h-16 rounded-t-2xl overflow-hidden"
+                <div class="absolute top-0 left-0 right-0 h-8 sm:h-12 md:h-16 rounded-t-xl sm:rounded-t-2xl overflow-hidden"
                     style="background-image: url('/img/banners/backgroundbanner/background_card.webp'); background-size: cover; background-position: top center;">
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/80"></div>
                 </div>
 
                 <!-- Franja inferior con imagen de hojas -->
-                <div class="absolute bottom-0 left-0 right-0 h-12 md:h-16 rounded-b-2xl overflow-hidden"
+                <div class="absolute bottom-0 left-0 right-0 h-8 sm:h-12 md:h-16 rounded-b-xl sm:rounded-b-2xl overflow-hidden"
                     style="background-image: url('/img/banners/backgroundbanner/background_card.webp'); background-size: cover; background-position: bottom center;">
                     <div class="absolute inset-0 bg-gradient-to-t from-transparent to-white/80"></div>
                 </div>
 
                 <!-- Contenido del card -->
-                <div class="relative z-10 px-4 md:px-8 pt-4 md:pt-8 pb-1 md:pb-2">
+                <div class="relative z-10 px-3 sm:px-4 md:px-8 pt-3 sm:pt-4 md:pt-8 pb-1 md:pb-2">
                     <!-- Logo centrado -->
-                    <div class="flex justify-center mb-4 md:mb-6">
-                        <img src="{{ asset('img/header/logounamad.png') }}" alt="UNAMAD" class="h-8 w-28 md:h-12 md:w-40" width="160" height="48">
+                    <div class="flex justify-center mb-2 sm:mb-4 md:mb-6">
+                        <img src="{{ asset('img/header/logounamad.png') }}" alt="UNAMAD" class="h-6 w-20 sm:h-8 sm:w-28 md:h-12 md:w-40" width="160" height="48">
                     </div>
 
                     <!-- Título principal conciso -->
                     <h1
-                        class="text-lg md:text-2xl font-bold text-gray-800 mb-3 md:mb-4 leading-tight text-center md:text-left">
+                        class="text-sm sm:text-lg md:text-2xl font-bold text-gray-800 mb-2 sm:mb-3 md:mb-4 leading-tight text-center md:text-left">
                         Universidad Nacional<br>
                         <span class="text-[#db0455]">Amazónica de Madre de Dios</span>
                     </h1>
 
                     <!-- Lema reducido -->
-                    <p class="text-gray-600 mb-1 md:mb-2 text-xs md:text-sm leading-relaxed text-center md:text-left">
+                    <p class="text-gray-600 mb-1 md:mb-2 text-[11px] sm:text-xs md:text-sm leading-relaxed text-center md:text-left">
                         Formando profesionales comprometidos con el desarrollo sostenible de la Amazonía peruana.
                     </p>
 
                     <!-- Botón Calendario Académico con Mascota -->
-                    <div class="flex items-center gap-2 mb-2">
+                    <div class="flex items-end gap-1 sm:gap-2 mb-1 sm:mb-2">
                         <a href="https://calendario-academico.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
-                            class="bg-[#db0455] hover:bg-[#a00340] text-white px-5 py-3 md:px-6 md:py-4 rounded-lg font-semibold transition-all duration-300 text-center text-sm md:text-base">
+                            class="bg-[#db0455] hover:bg-[#a00340] text-white px-3 py-2 sm:px-5 sm:py-3 md:px-6 md:py-4 rounded-lg font-semibold transition-all duration-300 text-center text-xs sm:text-sm md:text-base flex-shrink-0">
                             Calendario Académico 2026
                         </a>
                         <picture>
                             <source srcset="{{ asset('img/mascota/mascota.webp') }}" type="image/webp">
-                            <img loading="lazy" src="{{ asset('img/mascota/mascota.png') }}" alt="Mascota UNAMAD" class="h-64 md:h-80 w-auto object-contain" width="215" height="320">
+                            <img loading="lazy" src="{{ asset('img/mascota/mascota.png') }}" alt="Mascota UNAMAD" class="h-32 sm:h-48 md:h-64 lg:h-80 w-auto object-contain" width="215" height="320">
                         </picture>
                     </div>
 
@@ -192,7 +192,7 @@
                             {{ $comunicado->oficina ?? ($comunicado->categoria->nombre ?? 'OFICINA') }}
                         </p>
                         <div class="text-sm text-gray-500 border-t pt-3 mt-auto">
-                            <span>{{ $comunicado->created_at->format('d \d\e F \d\e Y - g:i a') }}</span>
+                            <span>{{ $comunicado->created_at->translatedFormat('d \d\e F \d\e Y - g:i a') }}</span>
                         </div>
                     </article>
                 @empty
@@ -1416,6 +1416,38 @@
         let audioPlayer = document.getElementById('audioPlayer');
         let audioPlayerMini = document.getElementById('audioPlayerMini');
         let mobileInfo = document.getElementById('mobileInfo');
+
+        // Detectar zoom del navegador y cambiar a modo compacto (solo icono)
+        function detectZoomAndAdapt() {
+            const zoomLevel = Math.round(window.devicePixelRatio * 100);
+            const viewportWidth = window.innerWidth;
+
+            // Si el zoom es >= 150% O el viewport efectivo es <= 800px, modo compacto
+            if (zoomLevel >= 150 || viewportWidth <= 800) {
+                // Ocultar reproductor completo desktop
+                if (audioPlayer) {
+                    audioPlayer.classList.add('!hidden');
+                    audioPlayer.classList.remove('lg:flex');
+                }
+                // Mostrar solo el botón compacto (móvil) en todas las resoluciones
+                if (document.getElementById('audioPlayerMobile')) {
+                    document.getElementById('audioPlayerMobile').classList.remove('lg:hidden');
+                }
+            } else {
+                // Restaurar comportamiento normal
+                if (audioPlayer) {
+                    audioPlayer.classList.remove('!hidden');
+                    audioPlayer.classList.add('lg:flex');
+                }
+                if (document.getElementById('audioPlayerMobile')) {
+                    document.getElementById('audioPlayerMobile').classList.add('lg:hidden');
+                }
+            }
+        }
+
+        // Ejecutar al cargar y al cambiar zoom/resize
+        detectZoomAndAdapt();
+        window.addEventListener('resize', detectZoomAndAdapt);
 
         // Inicializar volumen
         audio.volume = 0.7;

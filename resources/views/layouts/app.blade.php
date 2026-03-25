@@ -2721,6 +2721,8 @@
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('hidden');
             if (!menu.classList.contains('hidden')) {
+                // Scroll al inicio para que el menú sea visible completo
+                window.scrollTo({ top: 0, behavior: 'smooth' });
                 const rect = menu.getBoundingClientRect();
                 menu.style.maxHeight = (window.innerHeight - rect.top) + 'px';
                 document.body.style.overflow = 'hidden';
