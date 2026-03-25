@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 use App\Models\User;
 
 class AuthController extends Controller
@@ -29,12 +30,27 @@ class AuthController extends Controller
         $request->validate([
             'email' => 'required|email',
             'password' => 'required|min:6',
+            'g-recaptcha-response' => 'required',
         ], [
             'email.required' => 'El correo electrónico es obligatorio.',
             'email.email' => 'El formato del correo electrónico no es válido.',
             'password.required' => 'La contraseña es obligatoria.',
             'password.min' => 'La contraseña debe tener al menos 6 caracteres.',
+            'g-recaptcha-response.required' => 'Por favor, complete el captcha.',
         ]);
+
+        // Verificar reCAPTCHA con Google
+        $recaptchaResponse = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => config('recaptcha.secret_key'),
+            'response' => $request->input('g-recaptcha-response'),
+            'remoteip' => $request->ip(),
+        ]);
+
+        if (!$recaptchaResponse->json('success')) {
+            return back()->withErrors([
+                'g-recaptcha-response' => 'La verificación del captcha falló. Inténtelo de nuevo.',
+            ])->withInput($request->only('email'));
+        }
 
         $credentials = $request->only('email', 'password');
         $remember = $request->has('remember');

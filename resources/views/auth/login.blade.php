@@ -94,6 +94,14 @@
                     </div>
                 </div>
 
+                <!-- reCAPTCHA v2 -->
+                <div class="flex justify-center">
+                    <div class="g-recaptcha" data-sitekey="{{ config('recaptcha.site_key') }}"></div>
+                </div>
+                @error('g-recaptcha-response')
+                    <p class="text-sm text-red-600 text-center">{{ $message }}</p>
+                @enderror
+
                 <!-- Botón de submit -->
                 <div>
                     <button type="submit"
@@ -138,6 +146,7 @@
     </div>
 </div>
 
+<script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
 <script>
 function togglePassword() {
     const passwordInput = document.getElementById('password');
