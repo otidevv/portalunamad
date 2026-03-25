@@ -16,6 +16,7 @@ return Application::configure(basePath: dirname(__DIR__))
             // \App\Http\Middleware\ForceCleanHomePage::class,  // Temporalmente desactivado para evitar loops
             \App\Http\Middleware\CleanOldCookies::class,     // Limpiar cookies antiguas
             \App\Http\Middleware\HandleForbiddenErrors::class, // Manejar errores 403
+            \App\Http\Middleware\CacheStaticAssets::class,   // Cache y rendimiento
         ]);
 
         // Middleware para rutas autenticadas

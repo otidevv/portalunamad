@@ -9,3 +9,10 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* Asegurar font-display: swap para evitar FOIT (Flash of Invisible Text) */
+@font-face {
+    font-family: 'Instrument Sans';
+    font-display: swap;
+    src: local('Instrument Sans');
+}

@@ -16,7 +16,12 @@
       "Bash(mkdir:*)",
       "Bash(mysql:*)",
       "Bash(docker compose exec:*)",
-      "WebFetch(domain:www.unamad.edu.pe)"
+      "WebFetch(domain:www.unamad.edu.pe)",
+      "Bash(du -sh public/img/banners/*.jpg)",
+      "Bash(magick --version)",
+      "Bash(convert --version)",
+      "Bash(du -sh public/img/banners/*.webp)",
+      "Bash(grep -v 'id=\"\"\"\"modal\\\\|id=\"\"\"\"lightbox\\\\|src=\"\"\"\"\\\\$')"
     ],
     "deny": [],
     "ask": []
