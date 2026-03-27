@@ -3,6 +3,9 @@
         Options -MultiViews -Indexes
     </IfModule>
 
+    # Asegurar MIME type para WebP (algunos Apache no lo tienen)
+    AddType image/webp .webp
+
     RewriteEngine On
 
     # Compresión GZIP
