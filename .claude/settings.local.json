@@ -23,7 +23,10 @@
       "Bash(du -sh public/img/banners/*.webp)",
       "Bash(grep -v 'id=\"\"\"\"modal\\\\|id=\"\"\"\"lightbox\\\\|src=\"\"\"\"\\\\$')",
       "Read(//c/portalunamad/**)",
-      "Bash(icacls public/)"
+      "Bash(icacls public/)",
+      "Bash(where php *)",
+      "Read(//c/xampp/php/**)",
+      "Bash(docker exec *)"
     ],
     "deny": [],
     "ask": []
