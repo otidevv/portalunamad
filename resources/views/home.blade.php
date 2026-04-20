@@ -270,6 +270,25 @@
                             </div>
                         </a>
 
+                        <!-- Biblioteca UNAMAD -->
+                        <a href="https://biblioteca.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
+                            class="flex bg-white rounded-lg shadow-lg border-l-4 min-h-[180px] border-emerald-600 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                            <div class="p-4 text-center flex flex-col items-center justify-center w-full h-full">
+                                <div
+                                    class="bg-emerald-600 rounded-lg p-4 w-16 h-16 mx-auto mb-4 group-hover:bg-emerald-700 transition-colors duration-300">
+                                    <svg class="w-8 h-8 text-white mx-auto" aria-hidden="true" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 6h16M4 10h16M4 14h10M4 18h10M18 14l3 3-3 3m3-3h-7">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3
+                                    class="text-base font-bold text-[#0056ac] group-hover:text-[#003d7a] text-center leading-tight min-h-[3rem] flex items-center justify-center">
+                                    Biblioteca UNAMAD</h3>
+                            </div>
+                        </a>
+
                         <!-- Centro de Idiomas -->
                         <a href="https://cidiomas.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
                             class="flex bg-white rounded-lg shadow-lg border-l-4 min-h-[180px] border-blue-600 overflow-hidden hover:shadow-xl transition-all duration-300 group">
