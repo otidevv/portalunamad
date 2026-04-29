@@ -203,8 +203,8 @@ class HomeController extends Controller
             abort(404);
         }
 
-        // Cargar relación de categoría
-        $comunicado->load('categoria', 'user');
+        // Cargar relación de categoría, autor y archivos adjuntos
+        $comunicado->load('categoria', 'user', 'archivos');
 
         return view('comunicado', compact('comunicado'));
     }

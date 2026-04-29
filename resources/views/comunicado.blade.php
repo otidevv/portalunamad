@@ -88,6 +88,37 @@
                 @else
                     <p class="text-gray-600 italic">Este comunicado no tiene contenido adicional.</p>
                 @endif
+
+                @if($comunicado->archivos->count() > 0)
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 10-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/>
+                            </svg>
+                            Archivos adjuntos ({{ $comunicado->archivos->count() }})
+                        </h3>
+                        <ul class="space-y-2">
+                            @foreach($comunicado->archivos as $archivo)
+                                @php $ext = strtoupper($archivo->extension ?? pathinfo($archivo->ruta, PATHINFO_EXTENSION)); @endphp
+                                <li>
+                                    <a href="{{ $archivo->url }}" target="_blank" rel="noopener"
+                                       class="flex items-center gap-3 px-4 py-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors group">
+                                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-md text-xs font-bold flex-shrink-0
+                                                     {{ $ext === 'PDF' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700' }}">
+                                            {{ $ext }}
+                                        </span>
+                                        <span class="text-sm text-gray-800 flex-1 truncate group-hover:text-[#db0455]">
+                                            {{ $archivo->nombre_original ?? basename($archivo->ruta) }}
+                                        </span>
+                                        <svg class="w-5 h-5 text-gray-400 group-hover:text-[#db0455] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/>
+                                        </svg>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             </article>
         </div>
 
