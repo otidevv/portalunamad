@@ -14,7 +14,7 @@ class ComunicadoController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Comunicado::with(['categoria', 'user']);
+        $query = Comunicado::with(['categoria', 'user', 'archivos']);
 
         // Aplicar filtros
         if ($request->filled('categoria')) {
@@ -53,6 +53,8 @@ class ComunicadoController extends Controller
                 'categoria_id' => 'required|exists:comunicado_categorias,id',
                 'titulo' => 'required|string|max:255',
                 'imagen' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
+                'archivos' => 'nullable|array|max:10',
+                'archivos.*' => 'file|mimes:pdf,xls,xlsx,csv|max:20480',
                 'contenido' => 'required|string',
                 'duracion' => 'required|integer|min:1|max:365',
                 'estado' => 'boolean',
@@ -66,6 +68,9 @@ class ComunicadoController extends Controller
                 'duracion.max' => 'La duración no puede superar 365 días.',
                 'imagen.image' => 'El archivo debe ser una imagen.',
                 'imagen.max' => 'La imagen no debe superar los 5MB.',
+                'archivos.max' => 'No se pueden subir más de 10 archivos a la vez.',
+                'archivos.*.mimes' => 'Cada archivo debe ser PDF, XLS, XLSX o CSV.',
+                'archivos.*.max' => 'Cada archivo no debe superar los 20MB.',
             ]);
 
             $comunicado = new Comunicado;
@@ -88,6 +93,20 @@ class ComunicadoController extends Controller
             }
 
             $comunicado->save();
+
+            // Procesar archivos adjuntos (PDF/Excel)
+            if ($request->hasFile('archivos')) {
+                $orden = 0;
+                foreach ($request->file('archivos') as $file) {
+                    $ruta = $file->store('comunicados/archivos', 'public');
+                    $comunicado->archivos()->create([
+                        'ruta' => $ruta,
+                        'nombre_original' => $file->getClientOriginalName(),
+                        'extension' => strtolower($file->getClientOriginalExtension()),
+                        'orden' => $orden++,
+                    ]);
+                }
+            }
 
             // Si es una petición AJAX, devolver JSON
             if ($request->expectsJson()) {
@@ -126,7 +145,7 @@ class ComunicadoController extends Controller
 
     public function show(Comunicado $comunicado)
     {
-        $comunicado->load(['categoria', 'user']);
+        $comunicado->load(['categoria', 'user', 'archivos']);
 
         // Si es una petición AJAX, devolver JSON
         if (request()->expectsJson()) {
@@ -153,10 +172,14 @@ class ComunicadoController extends Controller
                 'categoria_id' => 'required|exists:comunicado_categorias,id',
                 'titulo' => 'required|string|max:255',
                 'imagen' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
+                'archivos' => 'nullable|array|max:10',
+                'archivos.*' => 'file|mimes:pdf,xls,xlsx,csv|max:20480',
                 'contenido' => 'required|string',
                 'duracion' => 'required|integer|min:1|max:365',
                 'estado' => 'boolean',
                 'eliminar_imagen' => 'boolean',
+                'eliminar_archivos' => 'nullable|array',
+                'eliminar_archivos.*' => 'integer',
             ], [
                 'categoria_id.required' => 'La categoría es obligatoria.',
                 'categoria_id.exists' => 'La categoría seleccionada no es válida.',
@@ -167,6 +190,9 @@ class ComunicadoController extends Controller
                 'duracion.max' => 'La duración no puede superar 365 días.',
                 'imagen.image' => 'El archivo debe ser una imagen.',
                 'imagen.max' => 'La imagen no debe superar los 5MB.',
+                'archivos.max' => 'No se pueden subir más de 10 archivos a la vez.',
+                'archivos.*.mimes' => 'Cada archivo debe ser PDF, XLS, XLSX o CSV.',
+                'archivos.*.max' => 'Cada archivo no debe superar los 20MB.',
             ]);
 
             $comunicado->comunicado_categoria_id = $validated['categoria_id'];
@@ -200,6 +226,31 @@ class ComunicadoController extends Controller
             }
 
             $comunicado->save();
+
+            // Eliminar archivos seleccionados
+            if (!empty($validated['eliminar_archivos'] ?? [])) {
+                $archivosEliminar = $comunicado->archivos()
+                    ->whereIn('id', $validated['eliminar_archivos'])
+                    ->get();
+                foreach ($archivosEliminar as $a) {
+                    Storage::disk('public')->delete($a->ruta);
+                    $a->delete();
+                }
+            }
+
+            // Agregar nuevos archivos
+            if ($request->hasFile('archivos')) {
+                $orden = (int) $comunicado->archivos()->max('orden') + 1;
+                foreach ($request->file('archivos') as $file) {
+                    $ruta = $file->store('comunicados/archivos', 'public');
+                    $comunicado->archivos()->create([
+                        'ruta' => $ruta,
+                        'nombre_original' => $file->getClientOriginalName(),
+                        'extension' => strtolower($file->getClientOriginalExtension()),
+                        'orden' => $orden++,
+                    ]);
+                }
+            }
 
             // Si es una petición AJAX, devolver JSON
             if ($request->expectsJson()) {
@@ -241,6 +292,11 @@ class ComunicadoController extends Controller
         // Eliminar imagen
         if ($comunicado->imagen) {
             Storage::disk('public')->delete($comunicado->imagen);
+        }
+
+        // Eliminar archivos adjuntos del storage (las filas se eliminan en cascada)
+        foreach ($comunicado->archivos as $a) {
+            Storage::disk('public')->delete($a->ruta);
         }
 
         $comunicado->delete();

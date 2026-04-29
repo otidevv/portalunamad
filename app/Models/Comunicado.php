@@ -38,6 +38,11 @@ class Comunicado extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function archivos()
+    {
+        return $this->hasMany(ComunicadoArchivo::class)->orderBy('orden');
+    }
+
     public function scopeActivos($query)
     {
         return $query->where('estado', 1);

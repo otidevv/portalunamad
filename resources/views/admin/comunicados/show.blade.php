@@ -48,6 +48,31 @@
                 @else
                     <p class="text-gray-500 italic">Sin contenido adicional</p>
                 @endif
+
+                @if($comunicado->archivos->count() > 0)
+                    <div class="mt-6 border-t pt-4">
+                        <h3 class="text-sm font-semibold text-gray-700 mb-3">
+                            Archivos adjuntos ({{ $comunicado->archivos->count() }})
+                        </h3>
+                        <ul class="space-y-2">
+                            @foreach($comunicado->archivos as $archivo)
+                                @php $ext = strtoupper($archivo->extension ?? pathinfo($archivo->ruta, PATHINFO_EXTENSION)); @endphp
+                                <li>
+                                    <a href="{{ $archivo->url }}" target="_blank"
+                                       class="inline-flex items-center gap-2 px-4 py-2 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors w-full">
+                                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-md text-xs font-bold {{ $ext === 'PDF' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700' }}">
+                                            {{ $ext }}
+                                        </span>
+                                        <span class="text-sm text-gray-800 flex-1 truncate">{{ $archivo->nombre_original ?? basename($archivo->ruta) }}</span>
+                                        <svg class="w-4 h-4 text-gray-500 ml-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             </div>
         </div>
 

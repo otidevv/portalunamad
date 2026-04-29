@@ -117,8 +117,17 @@
                             </td>
                             <td class="px-6 py-4">
                                 <div>
-                                    <div class="text-sm font-medium text-gray-900">
-                                        {{ Str::limit($comunicado->titulo, 50) }}
+                                    <div class="text-sm font-medium text-gray-900 flex items-center gap-2">
+                                        <span>{{ Str::limit($comunicado->titulo, 50) }}</span>
+                                        @if($comunicado->archivos->count() > 0)
+                                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-blue-100 text-blue-700"
+                                                  title="{{ $comunicado->archivos->pluck('nombre_original')->implode(', ') }}">
+                                                <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 10-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/>
+                                                </svg>
+                                                {{ $comunicado->archivos->count() }} {{ Str::plural('archivo', $comunicado->archivos->count()) }}
+                                            </span>
+                                        @endif
                                     </div>
                                     <div class="text-xs text-gray-500 mt-1">
                                         Por: {{ $comunicado->user->name ?? 'N/A' }} • {{ $comunicado->created_at->format('d/m/Y H:i') }}
@@ -426,12 +435,12 @@
                         <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-5 border border-gray-200">
                             <h4 class="text-sm font-semibold text-gray-900 mb-4 flex items-center">
                                 <svg class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                           d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                 </svg>
                                 Imagen del Comunicado
                             </h4>
-                            
+
                             <div>
                                 <label class="block text-sm font-semibold text-gray-700 mb-2">
                                     Seleccionar Imagen <span class="text-gray-400 font-normal">(Opcional)</span>
@@ -451,6 +460,40 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
                                     Formatos: JPG, PNG, GIF • Máximo 5MB
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Archivos adjuntos (PDF/Excel, varios) -->
+                        <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-5 border border-gray-200">
+                            <h4 class="text-sm font-semibold text-gray-900 mb-4 flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                Archivos Adjuntos (PDF o Excel)
+                            </h4>
+
+                            <div id="archivosActualesWrapper" class="hidden mb-3">
+                                <p class="text-sm text-gray-700 mb-2">Archivos actuales:</p>
+                                <ul id="archivosActualesList" class="space-y-2"></ul>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    Añadir Archivos <span class="text-gray-400 font-normal">(Opcional, varios permitidos)</span>
+                                </label>
+                                <div class="relative">
+                                    <input type="file" name="archivos[]" id="archivos" multiple
+                                           accept=".pdf,.xls,.xlsx,.csv,application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv"
+                                           class="w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-xl hover:border-[#db0455] transition-colors duration-200 text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gradient-to-r file:from-[#db0455] file:to-[#a00340] file:text-white hover:file:shadow-lg file:cursor-pointer">
+                                </div>
+                                <div class="text-red-600 text-sm mt-1" id="error-archivos"></div>
+                                <p class="text-xs text-gray-500 mt-2 flex items-center">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    Formatos: PDF, XLS, XLSX, CSV • Máximo 20MB por archivo • Hasta 10 archivos
                                 </p>
                             </div>
                         </div>
@@ -594,7 +637,46 @@ function resetFormForCreate() {
     editor.textContent = placeholderText;
     editor.classList.add('text-gray-400');
 
+    // Ocultar archivos actuales
+    const wrapper = document.getElementById('archivosActualesWrapper');
+    const list = document.getElementById('archivosActualesList');
+    if (wrapper) wrapper.classList.add('hidden');
+    if (list) list.innerHTML = '';
+
     clearErrors();
+}
+
+function renderArchivosActuales(archivos) {
+    const wrapper = document.getElementById('archivosActualesWrapper');
+    const list = document.getElementById('archivosActualesList');
+    list.innerHTML = '';
+
+    if (!archivos || archivos.length === 0) {
+        wrapper.classList.add('hidden');
+        return;
+    }
+
+    archivos.forEach(arch => {
+        const url = arch.url || (arch.ruta && arch.ruta.startsWith('http') ? arch.ruta : `/storage/${arch.ruta}`);
+        const ext = (arch.extension || '').toUpperCase();
+        const nombre = arch.nombre_original || (arch.ruta ? arch.ruta.split('/').pop() : 'archivo');
+        const badgeClass = ext === 'PDF' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700';
+
+        const li = document.createElement('li');
+        li.className = 'flex items-center justify-between bg-white border border-gray-200 rounded-lg px-3 py-2';
+        li.innerHTML = `
+            <a href="${url}" target="_blank" class="flex items-center text-sm text-gray-800 hover:text-[#db0455] truncate flex-1 mr-3">
+                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold mr-2 ${badgeClass}">${ext}</span>
+                <span class="truncate">${nombre}</span>
+            </a>
+            <label class="flex items-center text-xs text-red-600 whitespace-nowrap cursor-pointer">
+                <input type="checkbox" name="eliminar_archivos[]" value="${arch.id}" class="rounded border-gray-300 text-red-600 focus:ring-red-200 mr-1">
+                Eliminar
+            </label>
+        `;
+        list.appendChild(li);
+    });
+    wrapper.classList.remove('hidden');
 }
 
 // Load comunicado data for editing
@@ -627,6 +709,9 @@ function loadComunicadoData(comunicadoId) {
                 editor.textContent = placeholderText;
                 editor.classList.add('text-gray-400');
             }
+
+            // Mostrar archivos adjuntos actuales
+            renderArchivosActuales(comunicado.archivos || []);
 
             // Clear any existing errors
             clearErrors();

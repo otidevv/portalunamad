@@ -136,9 +136,9 @@
                         <label for="imagen" class="block text-sm font-medium text-gray-700 mb-1">
                             {{ $comunicado->imagen ? 'Cambiar Imagen' : 'Seleccionar Imagen *' }}
                         </label>
-                        <input type="file" 
-                               name="imagen" 
-                               id="imagen" 
+                        <input type="file"
+                               name="imagen"
+                               id="imagen"
                                accept="image/*"
                                class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-[#db0455] file:text-white hover:file:bg-[#a00340] file:cursor-pointer @error('imagen') border-red-300 @enderror"
                                {{ !$comunicado->imagen ? 'required' : '' }}>
@@ -146,6 +146,56 @@
                             <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
                         @enderror
                         <p class="text-xs text-gray-500 mt-1">Máximo 5MB. Formatos: JPG, PNG, GIF</p>
+                    </div>
+                </div>
+
+                <!-- Archivos adjuntos (PDF/Excel, varios) -->
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h4 class="text-sm font-medium text-gray-900 mb-3 flex items-center">
+                        <svg class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        Archivos Adjuntos (PDF o Excel)
+                    </h4>
+
+                    @if($comunicado->archivos->count() > 0)
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-700 mb-2">Archivos actuales:</p>
+                            <ul class="space-y-2">
+                                @foreach($comunicado->archivos as $archivo)
+                                    @php $ext = strtoupper($archivo->extension ?? pathinfo($archivo->ruta, PATHINFO_EXTENSION)); @endphp
+                                    <li class="flex items-center justify-between bg-white border border-gray-200 rounded-lg px-3 py-2">
+                                        <a href="{{ $archivo->url }}" target="_blank" class="flex items-center text-sm text-gray-800 hover:text-[#db0455] truncate flex-1 mr-3">
+                                            <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold mr-2 {{ $ext === 'PDF' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700' }}">
+                                                {{ $ext }}
+                                            </span>
+                                            <span class="truncate">{{ $archivo->nombre_original ?? basename($archivo->ruta) }}</span>
+                                        </a>
+                                        <label class="flex items-center text-xs text-red-600 whitespace-nowrap cursor-pointer">
+                                            <input type="checkbox" name="eliminar_archivos[]" value="{{ $archivo->id }}" class="rounded border-gray-300 text-red-600 focus:ring-red-200 mr-1">
+                                            Eliminar
+                                        </label>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <div>
+                        <label for="archivos" class="block text-sm font-medium text-gray-700 mb-1">
+                            Añadir Archivos (Opcional, varios permitidos)
+                        </label>
+                        <input type="file"
+                               name="archivos[]"
+                               id="archivos"
+                               multiple
+                               accept=".pdf,.xls,.xlsx,.csv,application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv"
+                               class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-[#db0455] file:text-white hover:file:bg-[#a00340] file:cursor-pointer @error('archivos.*') border-red-300 @enderror">
+                        @error('archivos.*')
+                            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                        @enderror
+                        <p class="text-xs text-gray-500 mt-1">Máximo 20MB por archivo • Hasta 10 archivos • Formatos: PDF, XLS, XLSX, CSV</p>
                     </div>
                 </div>
 
