@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Anuncio;
 use App\Models\Comunicado;
 use App\Models\ComunicadoCategoria;
+use App\Services\NoticiasGobPeService;
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -13,7 +14,7 @@ class HomeController extends Controller
     /**
      * Mostrar la página de inicio con anuncios destacados
      */
-    public function index(Request $request)
+    public function index(Request $request, NoticiasGobPeService $noticiasService)
     {
         try {
             // Verificar si venimos de una limpieza móvil
@@ -46,7 +47,16 @@ class HomeController extends Controller
                 ->take(12)
                 ->get();
 
-            return view('home', compact('anunciosDestacados', 'anunciosRecientes', 'comunicadosOficina'));
+            $noticiasGobPe = $noticiasService->obtener(8);
+            $noticiasGobPeFuente = $noticiasService->fuenteUrl();
+
+            return view('home', compact(
+                'anunciosDestacados',
+                'anunciosRecientes',
+                'comunicadosOficina',
+                'noticiasGobPe',
+                'noticiasGobPeFuente'
+            ));
 
         } catch (\Exception $e) {
             // Si hay cualquier error (incluyendo problemas de sesión), manejar de forma segura
@@ -60,8 +70,16 @@ class HomeController extends Controller
                 $anunciosDestacados = collect();
                 $anunciosRecientes = collect();
                 $comunicadosOficina = collect();
+                $noticiasGobPe = [];
+                $noticiasGobPeFuente = $noticiasService->fuenteUrl();
 
-                return view('home', compact('anunciosDestacados', 'anunciosRecientes', 'comunicadosOficina'));
+                return view('home', compact(
+                    'anunciosDestacados',
+                    'anunciosRecientes',
+                    'comunicadosOficina',
+                    'noticiasGobPe',
+                    'noticiasGobPeFuente'
+                ));
             } catch (\Exception $e2) {
                 // Si todo falla, mostrar página de recuperación
                 return $this->recoveryPage($request);

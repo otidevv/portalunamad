@@ -27,7 +27,10 @@
       "Bash(where php *)",
       "Read(//c/xampp/php/**)",
       "Bash(docker exec *)",
-      "Bash(./vendor/bin/sail ps *)"
+      "Bash(./vendor/bin/sail ps *)",
+      "Bash(docker compose *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} | tiempo: %{time_total}s\\\\n\" http://localhost:8080/)",
+      "Bash(curl -s http://localhost:8080/)"
     ],
     "deny": [],
     "ask": []

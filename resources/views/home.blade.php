@@ -749,6 +749,65 @@
         </div>
     </section>
 
+    <!-- Sección Noticias (gob.pe/unamad) -->
+    @if (!empty($noticiasGobPe))
+    <section class="py-16 bg-white" aria-labelledby="noticias-gobpe-label">
+        <div class="container mx-auto px-4">
+            <p class="text-sm font-medium text-gray-600 text-center mb-2">Información oficial publicada en gob.pe</p>
+            <h2 id="noticias-gobpe-label" class="text-2xl sm:text-3xl font-bold text-center text-[#db0455] mb-8 sm:mb-12">Noticias</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                @foreach ($noticiasGobPe as $noticia)
+                    <a href="{{ $noticia['enlace'] }}" target="_blank" rel="noopener noreferrer"
+                        class="group bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:border-[#ed145b]/40 transition-all duration-300 flex flex-col">
+                        @if (!empty($noticia['imagen']))
+                            <div class="aspect-[16/10] bg-gray-100 overflow-hidden">
+                                <img src="{{ $noticia['imagen'] }}" alt="{{ $noticia['titulo'] }}"
+                                    loading="lazy" referrerpolicy="no-referrer"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                        @else
+                            <div class="aspect-[16/10] bg-gradient-to-br from-[#ed145b]/10 to-[#db0455]/10 flex items-center justify-center">
+                                <svg class="w-12 h-12 text-[#ed145b]/40" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l4 4v10a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                        @endif
+                        <div class="p-4 flex flex-col flex-1">
+                            @if (!empty($noticia['fecha_texto']))
+                                <time @if (!empty($noticia['fecha_iso'])) datetime="{{ $noticia['fecha_iso'] }}" @endif
+                                    class="block text-xs text-gray-500 mb-2">{{ $noticia['fecha_texto'] }}</time>
+                            @endif
+                            <h3 class="text-sm font-semibold text-gray-800 group-hover:text-[#db0455] line-clamp-3 mb-3 flex-1">
+                                {{ $noticia['titulo'] }}
+                            </h3>
+                            <span class="text-xs font-medium text-[#db0455] inline-flex items-center mt-auto">
+                                Leer en gob.pe
+                                <svg class="w-3 h-3 ml-1" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
+
+            <div class="text-center mt-8 sm:mt-10">
+                <a href="{{ $noticiasGobPeFuente }}" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center px-6 py-3 bg-[#db0455] text-white font-semibold rounded-lg hover:bg-[#a00340] transition-colors">
+                    Ver todas las noticias en gob.pe
+                    <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+    @endif
+
     <!-- Sección Otros enlaces -->
     <section class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
