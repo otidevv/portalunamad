@@ -30,7 +30,11 @@
       "Bash(./vendor/bin/sail ps *)",
       "Bash(docker compose *)",
       "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} | tiempo: %{time_total}s\\\\n\" http://localhost:8080/)",
-      "Bash(curl -s http://localhost:8080/)"
+      "Bash(curl -s http://localhost:8080/)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:8080/)",
+      "Bash(curl -s -o /dev/null -w \"vite HTTP %{http_code}\\\\n\" http://localhost:5173/)",
+      "Bash(curl -s http://localhost:8080/build/manifest.json)",
+      "Bash(curl -s http://localhost:8080/build/assets/app-CmOCXzaS.css)"
     ],
     "deny": [],
     "ask": []

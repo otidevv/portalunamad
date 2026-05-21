@@ -166,54 +166,64 @@
     </section>
 
 
-    <!-- Sección Oficina -->
-    <section class="py-16 bg-white">
+    <!-- Sección Noticias (gob.pe/unamad) -->
+    @if (!empty($noticiasGobPe))
+    <section class="py-16 bg-white" aria-labelledby="noticias-gobpe-label">
         <div class="container mx-auto px-4">
-            <!-- Header con título y enlace -->
-            <div class="flex justify-between items-center mb-8">
-                <h2 class="text-2xl font-bold text-[#db0455]">Oficina</h2>
-                <a href="{{ route('comunicados.index') }}"
-                    class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                    Ver todos los comunicados
-                    <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            <p class="text-sm font-medium text-gray-600 text-center mb-2">Información oficial publicada en gob.pe</p>
+            <h2 id="noticias-gobpe-label" class="text-2xl sm:text-3xl font-bold text-center text-[#db0455] mb-8 sm:mb-12">Noticias</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                @foreach ($noticiasGobPe as $noticia)
+                    <a href="{{ $noticia['enlace'] }}" target="_blank" rel="noopener noreferrer"
+                        class="group bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:border-[#ed145b]/40 transition-all duration-300 flex flex-col">
+                        @if (!empty($noticia['imagen']))
+                            <div class="aspect-[16/10] bg-gray-100 overflow-hidden">
+                                <img src="{{ $noticia['imagen'] }}" alt="{{ $noticia['titulo'] }}"
+                                    loading="lazy" referrerpolicy="no-referrer"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                        @else
+                            <div class="aspect-[16/10] bg-gradient-to-br from-[#ed145b]/10 to-[#db0455]/10 flex items-center justify-center">
+                                <svg class="w-12 h-12 text-[#ed145b]/40" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l4 4v10a2 2 0 01-2 2z"></path>
+                                </svg>
+                            </div>
+                        @endif
+                        <div class="p-4 flex flex-col flex-1">
+                            @if (!empty($noticia['fecha_texto']))
+                                <time @if (!empty($noticia['fecha_iso'])) datetime="{{ $noticia['fecha_iso'] }}" @endif
+                                    class="block text-xs text-gray-500 mb-2">{{ $noticia['fecha_texto'] }}</time>
+                            @endif
+                            <h3 class="text-sm font-semibold text-gray-800 group-hover:text-[#db0455] line-clamp-3 mb-3 flex-1">
+                                {{ $noticia['titulo'] }}
+                            </h3>
+                            <span class="text-xs font-medium text-[#db0455] inline-flex items-center mt-auto">
+                                Leer en gob.pe
+                                <svg class="w-3 h-3 ml-1" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
+
+            <div class="text-center mt-8 sm:mt-10">
+                <a href="{{ $noticiasGobPeFuente }}" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center px-6 py-3 bg-[#db0455] text-white font-semibold rounded-lg hover:bg-[#a00340] transition-colors">
+                    Ver todas las noticias en gob.pe
+                    <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                     </svg>
                 </a>
             </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
-                @forelse($comunicadosOficina as $comunicado)
-                    <article
-                        class="bg-white p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col border-b-4 border-b-[#db0455] overflow-hidden hover:scale-105 cursor-pointer"
-                        style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 -4px 6px -1px rgba(0, 0, 0, 0.08);"
-                        role="link" tabindex="0" aria-label="{{ $comunicado->titulo }}"
-                        onclick="window.location.href='{{ route('comunicado.ver', $comunicado) }}'"
-                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='{{ route('comunicado.ver', $comunicado) }}'}">
-                        <h3 class="text-blue-600 hover:text-blue-800 font-semibold mb-4 line-clamp-3">
-                            {{ $comunicado->titulo }}
-                        </h3>
-                        <p class="text-gray-700 text-sm mb-6 font-bold">
-                            {{ $comunicado->oficina ?? ($comunicado->categoria->nombre ?? 'OFICINA') }}
-                        </p>
-                        <div class="text-sm text-gray-500 border-t pt-3 mt-auto">
-                            <span>{{ $comunicado->created_at->translatedFormat('d \d\e F \d\e Y - g:i a') }}</span>
-                        </div>
-                    </article>
-                @empty
-                    <!-- Mensaje cuando no hay comunicados -->
-                    <div class="col-span-full text-center py-12">
-                        <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" aria-hidden="true" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z">
-                            </path>
-                        </svg>
-                        <p class="text-gray-500 text-lg">No hay comunicados disponibles en este momento</p>
-                    </div>
-                @endforelse
-            </div>
         </div>
     </section>
+    @endif
 
 
     <!-- Sección Nuestros Servicios y Documentos -->
@@ -230,6 +240,25 @@
                 <div class="lg:col-span-4">
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Plataforma de Servicios Digitales -->
+                        <a href="https://sgd.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
+                            class="flex bg-white rounded-lg shadow-lg border-l-4 min-h-[180px] border-cyan-600 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+                            <div class="p-4 text-center flex flex-col items-center justify-center w-full h-full">
+                                <div
+                                    class="bg-cyan-600 rounded-lg p-4 w-16 h-16 mx-auto mb-4 group-hover:bg-cyan-700 transition-colors duration-300">
+                                    <svg class="w-8 h-8 text-white mx-auto" aria-hidden="true" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 01-1.125-1.125v-3.75zM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-8.25zM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 01-1.125-1.125v-2.25z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3
+                                    class="text-base font-bold text-[#0056ac] group-hover:text-[#003d7a] text-center leading-tight min-h-[3rem] flex items-center justify-center">
+                                    Plataforma de Servicios Digitales</h3>
+                            </div>
+                        </a>
+
                         <!-- Campus Virtual -->
                         <a href="https://campus.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
                             class="flex bg-white rounded-lg shadow-lg border-l-4 min-h-[180px] border-[#db0455] overflow-hidden hover:shadow-xl transition-all duration-300 group min-h-[180px]">
@@ -664,6 +693,187 @@
         </div>
     </section>
 
+    <!-- Sección Comunicados -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Header con título y enlace -->
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-bold text-[#db0455]">Comunicados</h2>
+                <a href="{{ route('comunicados.index') }}"
+                    class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                    Ver todos los comunicados
+                    <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
+                @forelse($comunicadosOficina as $comunicado)
+                    <article
+                        class="bg-white p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col border-b-4 border-b-[#db0455] overflow-hidden hover:scale-105 cursor-pointer"
+                        style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 -4px 6px -1px rgba(0, 0, 0, 0.08);"
+                        role="link" tabindex="0" aria-label="{{ $comunicado->titulo }}"
+                        onclick="window.location.href='{{ route('comunicado.ver', $comunicado) }}'"
+                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='{{ route('comunicado.ver', $comunicado) }}'}">
+                        <h3 class="text-blue-600 hover:text-blue-800 font-semibold mb-4 line-clamp-3">
+                            {{ $comunicado->titulo }}
+                        </h3>
+                        <p class="text-gray-700 text-sm mb-6 font-bold">
+                            {{ $comunicado->oficina ?? ($comunicado->categoria->nombre ?? 'OFICINA') }}
+                        </p>
+                        <div class="text-sm text-gray-500 border-t pt-3 mt-auto">
+                            <span>{{ $comunicado->created_at->translatedFormat('d \d\e F \d\e Y - g:i a') }}</span>
+                        </div>
+                    </article>
+                @empty
+                    <!-- Mensaje cuando no hay comunicados -->
+                    <div class="col-span-full text-center py-12">
+                        <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" aria-hidden="true" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z">
+                            </path>
+                        </svg>
+                        <p class="text-gray-500 text-lg">No hay comunicados disponibles en este momento</p>
+                    </div>
+                @endforelse
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Campañas y eventos (gob.pe/unamad) -->
+    @if (!empty($campanasGobPe))
+    <section class="py-16 bg-gray-50" aria-labelledby="campanas-gobpe-label">
+        <div class="container mx-auto px-4">
+            <p class="text-sm font-medium text-gray-600 text-center mb-2">Convocatorias y actividades publicadas en gob.pe</p>
+            <h2 id="campanas-gobpe-label" class="text-2xl sm:text-3xl font-bold text-center text-[#db0455] mb-8 sm:mb-12">Campañas y eventos</h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <!-- Columna IZQUIERDA - Campañas (80%) -->
+                <div class="lg:col-span-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                        @foreach ($campanasGobPe as $campana)
+                            <a href="{{ $campana['enlace'] }}" target="_blank" rel="noopener noreferrer"
+                                class="group bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:border-[#ed145b]/40 transition-all duration-300 flex flex-col">
+                                @if (!empty($campana['imagen']))
+                                    <div class="aspect-[16/10] bg-gray-100 overflow-hidden">
+                                        <img src="{{ $campana['imagen'] }}" alt="{{ $campana['titulo'] }}"
+                                            loading="lazy" referrerpolicy="no-referrer"
+                                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                    </div>
+                                @else
+                                    <div class="aspect-[16/10] bg-gradient-to-br from-[#ed145b]/10 to-[#db0455]/10 flex items-center justify-center">
+                                        <svg class="w-12 h-12 text-[#ed145b]/40" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+                                        </svg>
+                                    </div>
+                                @endif
+                                <div class="p-4 flex flex-col flex-1">
+                                    @if (!empty($campana['fecha_texto']))
+                                        <time @if (!empty($campana['fecha_iso'])) datetime="{{ $campana['fecha_iso'] }}" @endif
+                                            class="block text-xs text-gray-500 mb-2">{{ $campana['fecha_texto'] }}</time>
+                                    @endif
+                                    <h3 class="text-sm font-semibold text-gray-800 group-hover:text-[#db0455] line-clamp-3 mb-3 flex-1">
+                                        {{ $campana['titulo'] }}
+                                    </h3>
+                                    <span class="text-xs font-medium text-[#db0455] inline-flex items-center mt-auto">
+                                        Ver detalle en gob.pe
+                                        <svg class="w-3 h-3 ml-1" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </a>
+                        @endforeach
+                    </div>
+
+                    <div class="text-center mt-8 sm:mt-10">
+                        <a href="{{ $campanasGobPeFuente }}" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center px-6 py-3 bg-[#db0455] text-white font-semibold rounded-lg hover:bg-[#a00340] transition-colors">
+                            Ver todas las campañas y eventos
+                            <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna DERECHA - Facebook (20%) -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-lg shadow-xl overflow-hidden">
+                        <!-- Cabecera con marca Facebook -->
+                        <div class="text-white p-6 text-center" style="background-color:#1877F2;">
+                            <svg class="w-12 h-12 mx-auto mb-3" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                            <h3 class="text-xl font-bold leading-tight">Conéctate con nosotros</h3>
+                            <p class="text-sm opacity-90 mt-1">@unamad.oficial</p>
+                        </div>
+
+                        <!-- Cuerpo -->
+                        <div class="p-5">
+                            <p class="text-sm text-gray-700 mb-5 leading-relaxed text-center">
+                                Mantente al día con las noticias, eventos y actividades oficiales de la UNAMAD.
+                            </p>
+
+                            <ul class="space-y-3 mb-6 text-sm text-gray-700">
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" aria-hidden="true"
+                                        style="color:#1877F2;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Notas de prensa institucionales
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" aria-hidden="true"
+                                        style="color:#1877F2;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Convocatorias y eventos
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" aria-hidden="true"
+                                        style="color:#1877F2;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Comunicados oficiales
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" aria-hidden="true"
+                                        style="color:#1877F2;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Transmisiones en vivo
+                                </li>
+                            </ul>
+
+                            <a href="https://www.facebook.com/unamad.oficial/?locale=es_LA"
+                                target="_blank" rel="noopener noreferrer"
+                                class="block w-full text-center text-white font-bold py-3 px-4 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                                style="background-color:#1877F2;">
+                                <span class="inline-flex items-center justify-center">
+                                    <svg class="w-5 h-5 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                    </svg>
+                                    Seguir en Facebook
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    @endif
+
     <!-- Sección La UNAMAD en cifras con efecto de ola -->
     <!-- Primera sección - Ola superior -->
     <section class="wave-section" style="margin-bottom: -1px;">
@@ -748,65 +958,6 @@
             </svg>
         </div>
     </section>
-
-    <!-- Sección Noticias (gob.pe/unamad) -->
-    @if (!empty($noticiasGobPe))
-    <section class="py-16 bg-white" aria-labelledby="noticias-gobpe-label">
-        <div class="container mx-auto px-4">
-            <p class="text-sm font-medium text-gray-600 text-center mb-2">Información oficial publicada en gob.pe</p>
-            <h2 id="noticias-gobpe-label" class="text-2xl sm:text-3xl font-bold text-center text-[#db0455] mb-8 sm:mb-12">Noticias</h2>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                @foreach ($noticiasGobPe as $noticia)
-                    <a href="{{ $noticia['enlace'] }}" target="_blank" rel="noopener noreferrer"
-                        class="group bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:border-[#ed145b]/40 transition-all duration-300 flex flex-col">
-                        @if (!empty($noticia['imagen']))
-                            <div class="aspect-[16/10] bg-gray-100 overflow-hidden">
-                                <img src="{{ $noticia['imagen'] }}" alt="{{ $noticia['titulo'] }}"
-                                    loading="lazy" referrerpolicy="no-referrer"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                            </div>
-                        @else
-                            <div class="aspect-[16/10] bg-gradient-to-br from-[#ed145b]/10 to-[#db0455]/10 flex items-center justify-center">
-                                <svg class="w-12 h-12 text-[#ed145b]/40" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l4 4v10a2 2 0 01-2 2z"></path>
-                                </svg>
-                            </div>
-                        @endif
-                        <div class="p-4 flex flex-col flex-1">
-                            @if (!empty($noticia['fecha_texto']))
-                                <time @if (!empty($noticia['fecha_iso'])) datetime="{{ $noticia['fecha_iso'] }}" @endif
-                                    class="block text-xs text-gray-500 mb-2">{{ $noticia['fecha_texto'] }}</time>
-                            @endif
-                            <h3 class="text-sm font-semibold text-gray-800 group-hover:text-[#db0455] line-clamp-3 mb-3 flex-1">
-                                {{ $noticia['titulo'] }}
-                            </h3>
-                            <span class="text-xs font-medium text-[#db0455] inline-flex items-center mt-auto">
-                                Leer en gob.pe
-                                <svg class="w-3 h-3 ml-1" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                </svg>
-                            </span>
-                        </div>
-                    </a>
-                @endforeach
-            </div>
-
-            <div class="text-center mt-8 sm:mt-10">
-                <a href="{{ $noticiasGobPeFuente }}" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center px-6 py-3 bg-[#db0455] text-white font-semibold rounded-lg hover:bg-[#a00340] transition-colors">
-                    Ver todas las noticias en gob.pe
-                    <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
-    @endif
 
     <!-- Sección Otros enlaces -->
     <section class="py-16 bg-gray-100">

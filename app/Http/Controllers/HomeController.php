@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Anuncio;
 use App\Models\Comunicado;
 use App\Models\ComunicadoCategoria;
+use App\Services\CampanasGobPeService;
 use App\Services\NoticiasGobPeService;
 use Carbon\Carbon;
 
@@ -14,7 +15,7 @@ class HomeController extends Controller
     /**
      * Mostrar la página de inicio con anuncios destacados
      */
-    public function index(Request $request, NoticiasGobPeService $noticiasService)
+    public function index(Request $request, NoticiasGobPeService $noticiasService, CampanasGobPeService $campanasService)
     {
         try {
             // Verificar si venimos de una limpieza móvil
@@ -49,13 +50,17 @@ class HomeController extends Controller
 
             $noticiasGobPe = $noticiasService->obtener(8);
             $noticiasGobPeFuente = $noticiasService->fuenteUrl();
+            $campanasGobPe = $campanasService->obtener(9);
+            $campanasGobPeFuente = $campanasService->fuenteUrl();
 
             return view('home', compact(
                 'anunciosDestacados',
                 'anunciosRecientes',
                 'comunicadosOficina',
                 'noticiasGobPe',
-                'noticiasGobPeFuente'
+                'noticiasGobPeFuente',
+                'campanasGobPe',
+                'campanasGobPeFuente'
             ));
 
         } catch (\Exception $e) {
@@ -72,13 +77,17 @@ class HomeController extends Controller
                 $comunicadosOficina = collect();
                 $noticiasGobPe = [];
                 $noticiasGobPeFuente = $noticiasService->fuenteUrl();
+                $campanasGobPe = [];
+                $campanasGobPeFuente = $campanasService->fuenteUrl();
 
                 return view('home', compact(
                     'anunciosDestacados',
                     'anunciosRecientes',
                     'comunicadosOficina',
                     'noticiasGobPe',
-                    'noticiasGobPeFuente'
+                    'noticiasGobPeFuente',
+                    'campanasGobPe',
+                    'campanasGobPeFuente'
                 ));
             } catch (\Exception $e2) {
                 // Si todo falla, mostrar página de recuperación
