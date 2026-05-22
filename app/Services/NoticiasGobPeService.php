@@ -18,11 +18,15 @@ class NoticiasGobPeService
 
     public function obtener(int $limite = 8): array
     {
-        $noticias = Cache::remember(
-            self::CACHE_KEY,
-            now()->addMinutes(self::CACHE_TTL_MIN),
-            fn () => $this->fetch()
-        );
+        $noticias = Cache::get(self::CACHE_KEY);
+
+        if (! is_array($noticias) || empty($noticias)) {
+            $noticias = $this->fetch();
+            // Solo cacheamos si hubo resultado real; los fallos no contaminan el caché
+            if (! empty($noticias)) {
+                Cache::put(self::CACHE_KEY, $noticias, now()->addMinutes(self::CACHE_TTL_MIN));
+            }
+        }
 
         return array_slice($noticias, 0, $limite);
     }

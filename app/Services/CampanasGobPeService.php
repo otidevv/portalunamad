@@ -20,11 +20,15 @@ class CampanasGobPeService
 
     public function obtener(int $limite = 8): array
     {
-        $items = Cache::remember(
-            self::CACHE_KEY,
-            now()->addMinutes(self::CACHE_TTL_MIN),
-            fn () => $this->fetch()
-        );
+        $items = Cache::get(self::CACHE_KEY);
+
+        if (! is_array($items) || empty($items)) {
+            $items = $this->fetch();
+            // Solo cacheamos si hubo resultado real; los fallos no contaminan el caché
+            if (! empty($items)) {
+                Cache::put(self::CACHE_KEY, $items, now()->addMinutes(self::CACHE_TTL_MIN));
+            }
+        }
 
         return array_slice($items, 0, $limite);
     }

@@ -171,7 +171,8 @@
     <section class="py-16 bg-white" aria-labelledby="noticias-gobpe-label">
         <div class="container mx-auto px-4">
             <p class="text-sm font-medium text-gray-600 text-center mb-2">Información oficial publicada en gob.pe</p>
-            <h2 id="noticias-gobpe-label" class="text-2xl sm:text-3xl font-bold text-center text-[#db0455] mb-8 sm:mb-12">Noticias</h2>
+            <h2 id="noticias-gobpe-label" class="text-2xl sm:text-3xl font-bold text-center text-[#db0455]">Noticias</h2>
+            <div class="w-20 h-1 mx-auto rounded-full mt-4 mb-8 sm:mb-12" style="background:linear-gradient(to right,#ed145b,#db0455);"></div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 @foreach ($noticiasGobPe as $noticia)
@@ -227,12 +228,13 @@
 
 
     <!-- Sección Nuestros Servicios y Documentos -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <!-- Título Principal de la Sección -->
             <div class="text-center mb-12">
                 <p class="text-sm font-medium text-gray-600 mb-2">CONOCE TODOS</p>
                 <h2 class="text-2xl sm:text-3xl font-bold text-[#db0455]">Nuestros Servicios</h2>
+                <div class="w-20 h-1 mx-auto rounded-full mt-4" style="background:linear-gradient(to right,#ed145b,#db0455);"></div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -698,7 +700,10 @@
         <div class="container mx-auto px-4">
             <!-- Header con título y enlace -->
             <div class="flex justify-between items-center mb-8">
-                <h2 class="text-2xl font-bold text-[#db0455]">Comunicados</h2>
+                <div>
+                    <h2 class="text-2xl font-bold text-[#db0455]">Comunicados</h2>
+                    <div class="w-16 h-1 rounded-full mt-2" style="background:linear-gradient(to right,#ed145b,#db0455);"></div>
+                </div>
                 <a href="{{ route('comunicados.index') }}"
                     class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
                     Ver todos los comunicados
@@ -747,7 +752,8 @@
     <section class="py-16 bg-gray-50" aria-labelledby="campanas-gobpe-label">
         <div class="container mx-auto px-4">
             <p class="text-sm font-medium text-gray-600 text-center mb-2">Convocatorias y actividades publicadas en gob.pe</p>
-            <h2 id="campanas-gobpe-label" class="text-2xl sm:text-3xl font-bold text-center text-[#db0455] mb-8 sm:mb-12">Campañas y eventos</h2>
+            <h2 id="campanas-gobpe-label" class="text-2xl sm:text-3xl font-bold text-center text-[#db0455]">Campañas y eventos</h2>
+            <div class="w-20 h-1 mx-auto rounded-full mt-4 mb-8 sm:mb-12" style="background:linear-gradient(to right,#ed145b,#db0455);"></div>
 
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
                 <!-- Columna IZQUIERDA - Campañas (80%) -->
@@ -963,7 +969,8 @@
     <section class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
             <p class="text-sm font-medium text-gray-600 text-center mb-2">También te puede interesar</p>
-            <h2 class="text-2xl sm:text-3xl font-bold text-center text-[#db0455] mb-8 sm:mb-12">Otros enlaces</h2>
+            <h2 class="text-2xl sm:text-3xl font-bold text-center text-[#db0455]">Otros enlaces</h2>
+            <div class="w-20 h-1 mx-auto rounded-full mt-4 mb-8 sm:mb-12" style="background:linear-gradient(to right,#ed145b,#db0455);"></div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <!-- Directorio de Funcionarios -->
@@ -1119,7 +1126,8 @@
     <!-- Sección Actividades -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-8 sm:mb-12">Actividades</h2>
+            <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-800">Actividades</h2>
+            <div class="w-20 h-1 mx-auto rounded-full mt-4 mb-8 sm:mb-12" style="background:linear-gradient(to right,#ed145b,#db0455);"></div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
                 <!-- Columna Izquierda - Video YouTube (50%) -->
@@ -1223,7 +1231,8 @@
     <!-- Sección Enlaces Externos -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-2xl sm:text-3xl font-bold text-center text-[#db0455] mb-8 sm:mb-12">Enlaces Externos</h2>
+            <h2 class="text-2xl sm:text-3xl font-bold text-center text-[#db0455]">Enlaces Externos</h2>
+            <div class="w-20 h-1 mx-auto rounded-full mt-4 mb-8 sm:mb-12" style="background:linear-gradient(to right,#ed145b,#db0455);"></div>
 
             <!-- Slider Container -->
             <div class="relative overflow-hidden">
