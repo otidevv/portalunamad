@@ -200,6 +200,28 @@ Route::get('/facultades/contabilidad', function () {
     return view('facultades.contabilidad');
 });
 
+// Facultad de Ciencias de la Salud y Biológicas - carreras en desarrollo
+Route::get('/facultades/medicina-humana', function () {
+    return view('facultades.en-desarrollo', [
+        'carrera' => 'Medicina Humana',
+        'facultad' => 'Facultad de Ciencias de la Salud y Biológicas',
+    ]);
+});
+
+Route::get('/facultades/biologia', function () {
+    return view('facultades.en-desarrollo', [
+        'carrera' => 'Biología',
+        'facultad' => 'Facultad de Ciencias de la Salud y Biológicas',
+    ]);
+});
+
+Route::get('/facultades/psicologia', function () {
+    return view('facultades.en-desarrollo', [
+        'carrera' => 'Psicología',
+        'facultad' => 'Facultad de Ciencias de la Salud y Biológicas',
+    ]);
+});
+
 Route::get('/posgrado', function () {
     return view('posgrado');
 });

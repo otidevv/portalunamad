@@ -56,6 +56,18 @@
             overflow-x: hidden;
         }
 
+        /* Tailwind v4 quitó el cursor:pointer por defecto en botones e
+           interactivos. Lo restauramos para que toda la navegación
+           (toggles de menú, enlaces, etiquetas clicables) muestre la manita. */
+        a[href],
+        button:not(:disabled),
+        [role="button"]:not(:disabled),
+        label[for],
+        summary,
+        select {
+            cursor: pointer;
+        }
+
         /* Accesibilidad: indicador de foco visible para navegación por teclado (WCAG 2.4.7) */
         *:focus-visible {
             outline: 3px solid #db0455;
@@ -136,7 +148,7 @@
                             class="hover:text-[#ed145b] transition-colors">Mesa de Partes Virtual</a>
                         <a href="mailto:tramite-documentario@unamad.edu.pe"
                             class="hover:text-[#ed145b] transition-colors">Correo Institucional</a>
-                        <a href="https://elibro.net/es/lc/unamad/login_usuario/" target="_blank" rel="noopener noreferrer"
+                        <a href="https://biblioteca.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
                             class="hover:text-[#ed145b] transition-colors">Biblioteca Virtual</a>
                     </div>
                     <div class="flex items-center space-x-3">
@@ -720,7 +732,7 @@
                                     <h3 class="text-xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">
                                         Nuestras Facultades y Escuelas Profesionales</h3>
 
-                                    <div class="grid grid-cols-3 gap-x-8 gap-y-6">
+                                    <div class="grid grid-cols-4 gap-x-6 gap-y-6">
                                         <!-- Facultad de Ingeniería -->
                                         <div>
                                             <h5
@@ -775,22 +787,6 @@
                                                         class="font-medium {{ request()->is('facultades/sistemas*') ? 'text-blue-600' : 'text-gray-800' }} text-sm">Ingeniería
                                                         de Sistemas e Informática</span>
                                                 </a>
-                                                <a href="/facultades/veterinaria"
-                                                    class="facultades-dropdown-link {{ request()->is('facultades/veterinaria*') ? 'bg-emerald-500/5 border-l-4 border-emerald-500' : '' }}">
-                                                    <div
-                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500/10 flex-shrink-0">
-                                                        <svg class="w-4 h-4 text-emerald-600" aria-hidden="true" fill="none"
-                                                            stroke="currentColor" viewBox="0 0 24 24">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                stroke-width="2"
-                                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                                                            </path>
-                                                        </svg>
-                                                    </div>
-                                                    <span
-                                                        class="font-medium {{ request()->is('facultades/veterinaria*') ? 'text-emerald-600' : 'text-gray-800' }} text-sm">Medicina
-                                                        Veterinaria y Zootecnia</span>
-                                                </a>
                                             </div>
                                         </div>
 
@@ -831,21 +827,6 @@
                                                     <span
                                                         class="font-medium {{ request()->is('facultades/derecho*') ? 'text-amber-600' : 'text-gray-800' }} text-sm">Derecho
                                                         y Ciencias Políticas</span>
-                                                </a>
-                                                <a href="/facultades/enfermeria"
-                                                    class="facultades-dropdown-link {{ request()->is('facultades/enfermeria*') ? 'bg-pink-500/5 border-l-4 border-pink-500' : '' }}">
-                                                    <div
-                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-pink-500/10 flex-shrink-0">
-                                                        <svg class="w-4 h-4 text-pink-600" aria-hidden="true" fill="none"
-                                                            stroke="currentColor" viewBox="0 0 24 24">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                stroke-width="2"
-                                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                                                            </path>
-                                                        </svg>
-                                                    </div>
-                                                    <span
-                                                        class="font-medium {{ request()->is('facultades/enfermeria*') ? 'text-pink-600' : 'text-gray-800' }} text-sm">Enfermería</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -902,6 +883,92 @@
                                                     <span
                                                         class="font-medium {{ request()->is('facultades/contabilidad*') ? 'text-slate-600' : 'text-gray-800' }} text-sm">Contabilidad
                                                         y Finanzas</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <!-- Facultad de Ciencias de la Salud y Biológicas -->
+                                        <div>
+                                            <h5
+                                                class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#ed145b]">
+                                                Facultad de Ciencias de la Salud y Biológicas</h5>
+                                            <div class="space-y-2">
+                                                <a href="/facultades/enfermeria"
+                                                    class="facultades-dropdown-link {{ request()->is('facultades/enfermeria*') ? 'bg-pink-500/5 border-l-4 border-pink-500' : '' }}">
+                                                    <div
+                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-pink-500/10 flex-shrink-0">
+                                                        <svg class="w-4 h-4 text-pink-600" aria-hidden="true" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <span
+                                                        class="font-medium {{ request()->is('facultades/enfermeria*') ? 'text-pink-600' : 'text-gray-800' }} text-sm">Enfermería</span>
+                                                </a>
+                                                <a href="/facultades/veterinaria"
+                                                    class="facultades-dropdown-link {{ request()->is('facultades/veterinaria*') ? 'bg-emerald-500/5 border-l-4 border-emerald-500' : '' }}">
+                                                    <div
+                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500/10 flex-shrink-0">
+                                                        <svg class="w-4 h-4 text-emerald-600" aria-hidden="true" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <span
+                                                        class="font-medium {{ request()->is('facultades/veterinaria*') ? 'text-emerald-600' : 'text-gray-800' }} text-sm">Medicina
+                                                        Veterinaria y Zootecnia</span>
+                                                </a>
+                                                <a href="/facultades/medicina-humana"
+                                                    class="facultades-dropdown-link {{ request()->is('facultades/medicina-humana*') ? 'bg-red-500/5 border-l-4 border-red-500' : '' }}">
+                                                    <div
+                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-red-500/10 flex-shrink-0">
+                                                        <svg class="w-4 h-4 text-red-600" aria-hidden="true" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3.75 12h3.75l1.5-3 3 6 1.5-3h6.75">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <span
+                                                        class="font-medium {{ request()->is('facultades/medicina-humana*') ? 'text-red-600' : 'text-gray-800' }} text-sm">Medicina
+                                                        Humana</span>
+                                                </a>
+                                                <a href="/facultades/biologia"
+                                                    class="facultades-dropdown-link {{ request()->is('facultades/biologia*') ? 'bg-green-500/5 border-l-4 border-green-500' : '' }}">
+                                                    <div
+                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-green-500/10 flex-shrink-0">
+                                                        <svg class="w-4 h-4 text-green-600" aria-hidden="true" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <span
+                                                        class="font-medium {{ request()->is('facultades/biologia*') ? 'text-green-600' : 'text-gray-800' }} text-sm">Biología</span>
+                                                </a>
+                                                <a href="/facultades/psicologia"
+                                                    class="facultades-dropdown-link {{ request()->is('facultades/psicologia*') ? 'bg-purple-500/5 border-l-4 border-purple-500' : '' }}">
+                                                    <div
+                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-purple-500/10 flex-shrink-0">
+                                                        <svg class="w-4 h-4 text-purple-600" aria-hidden="true" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                    <span
+                                                        class="font-medium {{ request()->is('facultades/psicologia*') ? 'text-purple-600' : 'text-gray-800' }} text-sm">Psicología</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -1573,8 +1640,6 @@
                                     Ambiente</a>
                                 <a href="/facultades/sistemas" class="mobile-sublink">Ingeniería de Sistemas e
                                     Informática</a>
-                                <a href="/facultades/veterinaria" class="mobile-sublink">Medicina Veterinaria y
-                                    Zootecnia</a>
                             </div>
                         </div>
                         <div class="mb-3">
@@ -1584,7 +1649,6 @@
                                     Computación</a>
                                 <a href="/facultades/derecho" class="mobile-sublink">Derecho y Ciencias
                                     Políticas</a>
-                                <a href="/facultades/enfermeria" class="mobile-sublink">Enfermería</a>
                             </div>
                         </div>
                         <div class="mb-3">
@@ -1596,6 +1660,18 @@
                                     Negocios Internacionales</a>
                                 <a href="/facultades/contabilidad" class="mobile-sublink">Contabilidad y
                                     Finanzas</a>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <h6 class="text-xs font-semibold text-gray-500 uppercase mb-2">Facultad de Ciencias de la
+                                Salud y Biológicas</h6>
+                            <div class="space-y-2">
+                                <a href="/facultades/enfermeria" class="mobile-sublink">Enfermería</a>
+                                <a href="/facultades/veterinaria" class="mobile-sublink">Medicina Veterinaria y
+                                    Zootecnia</a>
+                                <a href="/facultades/medicina-humana" class="mobile-sublink">Medicina Humana</a>
+                                <a href="/facultades/biologia" class="mobile-sublink">Biología</a>
+                                <a href="/facultades/psicologia" class="mobile-sublink">Psicología</a>
                             </div>
                         </div>
                     </div>
@@ -1983,7 +2059,7 @@
                 left: 50%;
                 transform: translateX(-50%) translateY(-0.5rem) scale(0.95);
                 margin-top: 0;
-                width: 65rem;
+                width: 82rem;
                 max-width: calc(100vw - 2rem);
                 min-height: 28rem;
                 max-height: calc(100vh - 8rem);
@@ -2584,7 +2660,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://elibro.net/es/lc/unamad/login_usuario/" target="_blank" rel="noopener noreferrer"
+                            <a href="https://biblioteca.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
                                 class="text-sm text-gray-700 hover:text-[#ed145b] transition-colors duration-300 flex items-center group">
                                 <span
                                     class="w-1 h-1 bg-[#ed145b] rounded-full mr-2 group-hover:w-2 transition-all duration-300"></span>
