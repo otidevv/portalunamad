@@ -197,7 +197,7 @@
                                         </svg>
                                         Contacto
                                     </h4>
-                                    <p class="text-sm text-gray-600">ocri@unamad.edu.pe<br>+51 975 845 006</p>
+                                    <p class="text-sm text-gray-600">ocri@unamad.edu.pe<br>+51 994 949 243</p>
                                 </div>
                             </div>
                             <div class="mt-4 pt-4 border-t border-gray-200">

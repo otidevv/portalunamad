@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\AnuncioController;
 use App\Http\Controllers\Admin\ComunicadoCategoriaController;
 use App\Http\Controllers\Admin\ComunicadoController;
 use App\Http\Controllers\Admin\DocumentoController;
+use App\Http\Controllers\Admin\DatasetController;
+use App\Http\Controllers\DatasetPublicController;
 use App\Http\Controllers\DocumentosPublicosController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SessionCleanupController;
@@ -19,6 +21,12 @@ Route::get('/api/anuncios/categoria', [HomeController::class, 'anunciosPorCatego
 // Rutas públicas de documentos
 Route::get('/transparencia/documentos', [DocumentosPublicosController::class, 'index'])->name('documentos.publicos');
 Route::get('/transparencia/documento/{documento}/acceder', [DocumentosPublicosController::class, 'acceder'])->name('documentos.publicos.acceder');
+
+// Rutas públicas de Datasets (gráficos en el portal)
+Route::middleware('throttle:120,1')->group(function () {
+    Route::get('/datos/{dataset:slug}', [DatasetPublicController::class, 'show'])->name('datasets.publico');
+    Route::get('/datos/{dataset:slug}/json', [DatasetPublicController::class, 'datos'])->name('datasets.publico.json');
+});
 
 Route::get('/universidad/presentacion', function () {
     return view('universidad.presentacion');
@@ -334,6 +342,12 @@ Route::middleware('auth')->group(function () {
         Route::get('indicador55/{indicador55}/edit', [\App\Http\Controllers\Admin\Indicador55Controller::class, 'edit'])->name('indicador55.edit');
         Route::put('indicador55/{indicador55}', [\App\Http\Controllers\Admin\Indicador55Controller::class, 'update'])->name('indicador55.update');
         Route::post('indicador55/{indicador55}/toggle-estado', [\App\Http\Controllers\Admin\Indicador55Controller::class, 'toggleEstado'])->name('indicador55.toggle-estado');
+
+        // Rutas de Datasets
+        Route::resource('datasets', DatasetController::class);
+        Route::post('datasets/{dataset}/estado', [DatasetController::class, 'toggleEstado'])->name('datasets.estado');
+        Route::get('datasets/{dataset}/datos', [DatasetController::class, 'datos'])->name('datasets.datos');
+        Route::get('datasets/{dataset}/plantilla', [DatasetController::class, 'plantilla'])->name('datasets.plantilla');
 
         // Rutas API para anuncios
         Route::prefix('api')->name('api.')->group(function () {

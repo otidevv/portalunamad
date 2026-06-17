@@ -119,7 +119,7 @@
                                 </div>
                             </div>
 
-                            <!-- Gertson Akhiles Gaona Mendoza -->
+                            <!-- Rosmeri Liset Ccoyuri Rojas -->
                             <div class="bg-gradient-to-r from-[#ed145b]/5 to-[#db0455]/5 rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-[#ed145b] to-[#db0455] p-3 rounded-full flex-shrink-0">
@@ -128,7 +128,7 @@
                                         </svg>
                                     </div>
                                     <div class="flex-1">
-                                        <h3 class="text-xl font-bold text-gray-800 mb-2">Bach. Gertson Akhiles Gaona Mendoza</h3>
+                                        <h3 class="text-xl font-bold text-gray-800 mb-2">Mg. Rosmeri Liset Ccoyuri Rojas</h3>
                                         <div class="space-y-2">
                                             <div class="flex items-center space-x-2">
                                                 <svg class="w-4 h-4 text-[#ed145b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -140,7 +140,7 @@
                                                 <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                                                 </svg>
-                                                <a href="mailto:ggaonam@unamad.edu.pe" class="text-gray-600 hover:text-[#ed145b] transition-colors">ggaonam@unamad.edu.pe</a>
+                                                <a href="mailto:rccoyuri@unamad.edu.pe" class="text-gray-600 hover:text-[#ed145b] transition-colors">rccoyuri@unamad.edu.pe</a>
                                             </div>
                                             <div class="flex items-center space-x-2">
                                                 <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
