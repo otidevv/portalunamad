@@ -217,10 +217,27 @@ Route::get('/facultades/medicina-humana', function () {
 });
 
 Route::get('/facultades/biologia', function () {
-    return view('facultades.en-desarrollo', [
-        'carrera' => 'Biología',
-        'facultad' => 'Facultad de Ciencias de la Salud y Biológicas',
-    ]);
+    return view('facultades.biologia');
+});
+
+Route::get('/facultades/biologia/resena-historica', function () {
+    return view('facultades.biologia.resena-historica');
+});
+
+Route::get('/facultades/biologia/vision-mision', function () {
+    return view('facultades.biologia.vision-mision');
+});
+
+Route::get('/facultades/biologia/perfil-profesional', function () {
+    return view('facultades.biologia.perfil-profesional');
+});
+
+Route::get('/facultades/biologia/campo-ocupacional', function () {
+    return view('facultades.biologia.campo-ocupacional');
+});
+
+Route::get('/facultades/biologia/objetivos-academicos', function () {
+    return view('facultades.biologia.objetivos-academicos');
 });
 
 Route::get('/facultades/psicologia', function () {
