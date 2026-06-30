@@ -631,6 +631,195 @@
                 </div>
             </div>
 
+            <!-- ============================================================
+                 SECCIÓN: Videos de las Matrices MCP (Excel - Tabla 1)
+                 Para agregar un video nuevo, añade un elemento al arreglo $videosMatrices.
+                 ============================================================ -->
+            @php
+                $videosMatrices = [
+                    [
+                        'id' => '0sE6Unt8dtE',
+                        'titulo' => 'Matrices de contenidos de las Materias de Capacitación Prioritarias (MCP)',
+                        'youtube' => 'https://youtube.com/shorts/0sE6Unt8dtE?feature=share',
+                        'descarga' => 'https://cutt.ly/ntGqcuiG',
+                        'pieza' => 'https://cutt.ly/CtGgkwlY',
+                    ],
+                    [
+                        'id' => 'LyWyLX24f4M',
+                        'titulo' => 'Conoce más sobre las matrices de las Materias de Capacitación Prioritarias (MCP) 2024–2026',
+                        'youtube' => 'https://youtube.com/shorts/LyWyLX24f4M?feature=share',
+                        'descarga' => 'https://cutt.ly/JtGqv8qO',
+                        'pieza' => 'https://cutt.ly/GtGgl0dm',
+                    ],
+                    [
+                        'id' => 'P36Oanc6lBs',
+                        'titulo' => '¿Qué deben aprender los servidores civiles respecto a cada Materia de Capacitación Prioritaria (MCP)?',
+                        'youtube' => 'https://www.youtube.com/shorts/P36Oanc6lBs',
+                        'descarga' => 'https://cutt.ly/btGh9llp',
+                        'pieza' => 'https://cutt.ly/ztGqznJC',
+                    ],
+                    [
+                        'id' => 'ZJG_3XaLCdc',
+                        'titulo' => 'Conoce los lineamientos para el uso de las matrices de las Materias de Capacitación Prioritarias (MCP)',
+                        'youtube' => 'https://youtube.com/shorts/ZJG_3XaLCdc?si=YEVHAqv4ok9Qa-Jx',
+                        'descarga' => 'https://cutt.ly/8tGqnfCJ',
+                        'pieza' => 'https://cutt.ly/7tGqzVVP',
+                    ],
+                ];
+            @endphp
+
+            <div class="mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center mr-3">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">Conoce las Matrices de las MCP</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    @foreach ($videosMatrices as $i => $video)
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <div class="relative">
+                                <img src="https://img.youtube.com/vi/{{ $video['id'] }}/maxresdefault.jpg"
+                                     alt="{{ $video['titulo'] }}"
+                                     class="w-full h-48 object-cover"
+                                     onerror="this.src='https://img.youtube.com/vi/{{ $video['id'] }}/hqdefault.jpg'">
+                                <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                                    <a href="{{ $video['youtube'] }}" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+                                        <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <span class="absolute top-3 left-3 bg-orange-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                    Video {{ $i + 1 }}
+                                </span>
+                            </div>
+                            <div class="p-5">
+                                <h3 class="text-base font-bold text-gray-800 mb-3 line-clamp-3">{{ $video['titulo'] }}</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="{{ $video['youtube'] }}" target="_blank"
+                                       class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-xs font-medium rounded-lg hover:bg-red-700 transition-colors">
+                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                                        </svg>
+                                        Ver
+                                    </a>
+                                    <a href="{{ $video['descarga'] }}" target="_blank"
+                                       class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-200 transition-colors">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                        </svg>
+                                        Descargar
+                                    </a>
+                                    <a href="{{ $video['pieza'] }}" target="_blank"
+                                       class="inline-flex items-center px-3 py-2 bg-amber-100 text-amber-700 text-xs font-medium rounded-lg hover:bg-amber-200 transition-colors">
+                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                        </svg>
+                                        Pieza gráfica
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <!-- ============================================================
+                 SECCIÓN: Piezas gráficas / Matrices MCP (Excel - Tabla 2)
+                 Para agregar una matriz nueva, añade un elemento al arreglo $matricesMcp.
+                 ============================================================ -->
+            @php
+                $matricesMcp = [
+                    [
+                        'titulo' => 'Modernización de la Gestión Pública',
+                        'descarga' => 'https://cutt.ly/rtK62gK4',
+                        'matriz' => 'https://cdn.www.gob.pe/uploads/document/file/7833914/6607641-matriz-de-materia-de-capacitacion-prioritaria-2024-2026_modernizacion-de-la-gestion-publica.pdf?v=1743017715',
+                    ],
+                    [
+                        'titulo' => 'Gestión de Recursos Humanos',
+                        'descarga' => 'https://cutt.ly/htK69JaL',
+                        'matriz' => 'https://cdn.www.gob.pe/uploads/document/file/7833916/6607641-matriz-de-materia-de-capacitacion-prioritaria-2024-2026_gestion-de-recursos-humanos-_1_.pdf?v=1743017846',
+                    ],
+                    [
+                        'titulo' => 'Planeamiento Estratégico',
+                        'descarga' => 'https://cutt.ly/ztK63sRT',
+                        'matriz' => 'https://cdn.www.gob.pe/uploads/document/file/7833913/6607641-matriz-de-materia-de-capacitacion-prioritaria-2024-2026_planeamiento-estrategico.pdf?v=1743017714',
+                    ],
+                    [
+                        'titulo' => 'Presupuesto Público',
+                        'descarga' => 'https://cutt.ly/TtK63v6y',
+                        'matriz' => 'https://cdn.www.gob.pe/uploads/document/file/7833912/6607641-matriz-de-materia-de-capacitacion-prioritaria-2024-2026_presupuesto-publico-_1_.pdf?v=1743017846',
+                    ],
+                    [
+                        'titulo' => 'Gobierno y Transformación Digital',
+                        'descarga' => 'https://cutt.ly/XtK63Fq6',
+                        'matriz' => 'https://cdn.www.gob.pe/uploads/document/file/7833915/6607641-matriz-de-materia-de-capacitacion-prioritaria-2024-2026_gobierno-y-transformacion-digital.pdf?v=1743017716',
+                    ],
+                    [
+                        'titulo' => 'Integridad',
+                        'descarga' => 'https://cutt.ly/XtK636Gu',
+                        'matriz' => 'https://cdn.www.gob.pe/uploads/document/file/7833930/6607641-matriz-de-materia-de-capacitacion-prioritaria-2024-2026_integridad.pdf?v=1743017772',
+                    ],
+                ];
+            @endphp
+
+            <!-- Encabezado Piezas gráficas -->
+            <div class="bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl p-6 border border-orange-100 mb-8">
+                <div class="flex items-start space-x-4">
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 mb-2">Matrices de las Materias de Capacitación Prioritarias (MCP)</h2>
+                        <p class="text-gray-600">Descarga las piezas gráficas de difusión y accede a las matrices oficiales de cada Materia de Capacitación Prioritaria 2024-2026.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    @foreach ($matricesMcp as $i => $matriz)
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border-t-4 border-orange-500">
+                            <div class="p-6">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                        <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                        </svg>
+                                    </div>
+                                    <span class="text-xs font-semibold text-orange-600 uppercase tracking-wide">Matriz MCP {{ $i + 1 }}</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-800 mb-4 line-clamp-2">{{ $matriz['titulo'] }}</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="{{ $matriz['matriz'] }}" target="_blank"
+                                       class="inline-flex items-center px-4 py-2 bg-orange-600 text-white text-sm font-medium rounded-lg hover:bg-orange-700 transition-colors">
+                                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                                        </svg>
+                                        Ver Matriz (PDF)
+                                    </a>
+                                    <a href="{{ $matriz['descarga'] }}" target="_blank"
+                                       class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
+                                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                        </svg>
+                                        Pieza gráfica
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
             <!-- Botón de regreso -->
             <div class="text-center mt-12">
                 <a href="/" class="inline-flex items-center px-6 py-3 bg-gray-800 text-white font-medium rounded-lg hover:bg-gray-900 transition-colors">
