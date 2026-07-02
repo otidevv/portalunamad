@@ -208,12 +208,29 @@ Route::get('/facultades/contabilidad', function () {
     return view('facultades.contabilidad');
 });
 
-// Facultad de Ciencias de la Salud y Biológicas - carreras en desarrollo
+// Facultad de Ciencias de la Salud y Biológicas
 Route::get('/facultades/medicina-humana', function () {
-    return view('facultades.en-desarrollo', [
-        'carrera' => 'Medicina Humana',
-        'facultad' => 'Facultad de Ciencias de la Salud y Biológicas',
-    ]);
+    return view('facultades.medicina-humana');
+});
+
+Route::get('/facultades/medicina-humana/resena-historica', function () {
+    return view('facultades.medicina-humana.resena-historica');
+});
+
+Route::get('/facultades/medicina-humana/vision-mision', function () {
+    return view('facultades.medicina-humana.vision-mision');
+});
+
+Route::get('/facultades/medicina-humana/perfil-profesional', function () {
+    return view('facultades.medicina-humana.perfil-profesional');
+});
+
+Route::get('/facultades/medicina-humana/campo-ocupacional', function () {
+    return view('facultades.medicina-humana.campo-ocupacional');
+});
+
+Route::get('/facultades/medicina-humana/objetivos-academicos', function () {
+    return view('facultades.medicina-humana.objetivos-academicos');
 });
 
 Route::get('/facultades/biologia', function () {
@@ -241,10 +258,27 @@ Route::get('/facultades/biologia/objetivos-academicos', function () {
 });
 
 Route::get('/facultades/psicologia', function () {
-    return view('facultades.en-desarrollo', [
-        'carrera' => 'Psicología',
-        'facultad' => 'Facultad de Ciencias de la Salud y Biológicas',
-    ]);
+    return view('facultades.psicologia');
+});
+
+Route::get('/facultades/psicologia/resena-historica', function () {
+    return view('facultades.psicologia.resena-historica');
+});
+
+Route::get('/facultades/psicologia/vision-mision', function () {
+    return view('facultades.psicologia.vision-mision');
+});
+
+Route::get('/facultades/psicologia/perfil-profesional', function () {
+    return view('facultades.psicologia.perfil-profesional');
+});
+
+Route::get('/facultades/psicologia/campo-ocupacional', function () {
+    return view('facultades.psicologia.campo-ocupacional');
+});
+
+Route::get('/facultades/psicologia/objetivos-academicos', function () {
+    return view('facultades.psicologia.objetivos-academicos');
 });
 
 Route::get('/posgrado', function () {
