@@ -101,12 +101,12 @@
                         Formando profesionales comprometidos con el desarrollo sostenible de la Amazonía peruana.
                     </p>
 
-                    <!-- Botón Calendario Académico con Mascota -->
+                    <!-- Botón Admisión 2026 con Mascota -->
                     <div class="flex items-stretch gap-1">
                         <div class="flex items-center">
-                            <a href="https://calendario-academico.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
+                            <a href="mailto:admision@unamad.edu.pe"
                                 class="bg-[#db0455] hover:bg-[#a00340] text-white px-2.5 py-1.5 sm:px-4 sm:py-2.5 md:px-5 md:py-3 rounded-lg font-semibold transition-all duration-300 text-center text-[10px] sm:text-xs md:text-sm inline-block">
-                                Calendario Académico 2026
+                                Admisión 2026
                             </a>
                         </div>
                         <div>
