@@ -1093,6 +1093,25 @@
                                                     ciencias de la educación</p>
                                             </div>
                                         </a>
+
+                                        <a href="https://posgrado-ingenieria.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
+                                            class="programas-dropdown-link">
+                                            <div
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M12 14v7"></path>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <span class="font-semibold text-gray-800">Posgrado Ingeniería</span>
+                                                <p class="text-xs text-gray-600 mt-1">Programas especializados en
+                                                    ciencias de la ingeniería</p>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -1705,6 +1724,8 @@
                         <a href="/posgrado" class="mobile-sublink">Escuela de Posgrado</a>
                         <a href="https://posgrado-educacion.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
                             class="mobile-sublink">Posgrado Educación</a>
+                        <a href="https://posgrado-ingenieria.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
+                            class="mobile-sublink">Posgrado Ingeniería</a>
                     </div>
                 </div>
 
