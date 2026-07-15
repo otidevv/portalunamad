@@ -95,6 +95,15 @@
                         <span>Documentos</span>
                     </a>
 
+                    <a href="{{ route('admin.enlaces-normativos.index') }}"
+                       class="flex items-center space-x-3 p-3 rounded-lg {{ request()->routeIs('admin.enlaces-normativos.*') ? 'bg-[#db0455] text-white' : 'hover:bg-gray-700' }} transition-all duration-200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                        </svg>
+                        <span>Enlaces Normativos</span>
+                    </a>
+
                     <a href="{{ route('admin.indicador55.index') }}"
                        class="flex items-center space-x-3 p-3 rounded-lg {{ request()->routeIs('admin.indicador55.*') ? 'bg-[#db0455] text-white' : 'hover:bg-gray-700' }} transition-all duration-200">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             AnuncioSeeder::class,
             Indicador55Seeder::class,
             DatasetSeeder::class,
+            EnlaceNormativoSeeder::class,
         ]);
     }
 }

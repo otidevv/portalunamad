@@ -546,138 +546,22 @@
                         </div>
 
                         <div class="space-y-3 mb-6">
-                            <!-- Resoluciones Rectorales -->
-                            <a href="https://www.gob.pe/institucion/unamad/colecciones/70121-resolucion-rectoral"
-                                target="_blank" rel="noopener noreferrer"
-                                class="block bg-white/90 hover:bg-white rounded-lg p-3 text-sm transition-all duration-300 group">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-medium text-gray-700 group-hover:text-gray-900">Resoluciones
-                                        Rectorales</span>
-                                    <svg class="w-4 h-4 text-gray-500 group-hover:text-gray-700" aria-hidden="true" fill="none"
-                                        stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                </div>
-                            </a>
-
-                            <!-- Resoluciones de Consejo Universitario -->
-                            <a href="https://www.gob.pe/institucion/unamad/colecciones/10080-resolucion-de-consejo-universitario"
-                                target="_blank" rel="noopener noreferrer"
-                                class="block bg-white/90 hover:bg-white rounded-lg p-3 text-sm transition-all duration-300 group">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-medium text-gray-700 group-hover:text-gray-900">Resoluciones de
-                                        Consejo Universitario</span>
-                                    <svg class="w-4 h-4 text-gray-500 group-hover:text-gray-700" aria-hidden="true" fill="none"
-                                        stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                </div>
-                            </a>
-
-                            <!-- Resoluciones de Vicerectorado Académico -->
-                            <a href="https://www.gob.pe/institucion/unamad/colecciones/10013-resolucion-de-vicerrectorado-academico"
-                                target="_blank" rel="noopener noreferrer"
-                                class="block bg-white/90 hover:bg-white rounded-lg p-3 text-sm transition-all duration-300 group">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-medium text-gray-700 group-hover:text-gray-900">Resoluciones de
-                                        Vicerectorado Académico</span>
-                                    <svg class="w-4 h-4 text-gray-500 group-hover:text-gray-700" aria-hidden="true" fill="none"
-                                        stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                </div>
-                            </a>
-
-                            <!-- Resoluciones de Vicerectorado de Investigación -->
-                            <a href="https://www.gob.pe/institucion/unamad/colecciones/10418-resolucion-de-vicerrectorado-de-investigacion"
-                                target="_blank" rel="noopener noreferrer"
-                                class="block bg-white/90 hover:bg-white rounded-lg p-3 text-sm transition-all duration-300 group">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-medium text-gray-700 group-hover:text-gray-900">Resoluciones de
-                                        Vicerectorado de Investigación</span>
-                                    <svg class="w-4 h-4 text-gray-500 group-hover:text-gray-700" aria-hidden="true" fill="none"
-                                        stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                </div>
-                            </a>
-
-                            <!-- Reglamentos -->
-                            <a href="https://www.gob.pe/institucion/unamad/informes-publicaciones/tipos/168-reglamento"
-                                target="_blank" rel="noopener noreferrer"
-                                class="block bg-white/90 hover:bg-white rounded-lg p-3 text-sm transition-all duration-300 group">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-medium text-gray-700 group-hover:text-gray-900">Reglamentos</span>
-                                    <svg class="w-4 h-4 text-gray-500 group-hover:text-gray-700" aria-hidden="true" fill="none"
-                                        stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                </div>
-                            </a>
-
-                            <!-- Directivas -->
-                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/tipos/28-directiva"
-                                target="_blank" rel="noopener noreferrer"
-                                class="block bg-white/90 hover:bg-white rounded-lg p-3 text-sm transition-all duration-300 group">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-medium text-gray-700 group-hover:text-gray-900">Directivas</span>
-                                    <svg class="w-4 h-4 text-gray-500 group-hover:text-gray-700" aria-hidden="true" fill="none"
-                                        stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                </div>
-                            </a>
-
-                            <!-- Convenios Institucionales -->
-                            <a href="https://www.gob.pe/institucion/unamad/colecciones/16884-convenios-institucionales"
-                                target="_blank" rel="noopener noreferrer"
-                                class="block bg-white/90 hover:bg-white rounded-lg p-3 text-sm transition-all duration-300 group">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-medium text-gray-700 group-hover:text-gray-900">Convenios
-                                        Institucionales</span>
-                                    <svg class="w-4 h-4 text-gray-500 group-hover:text-gray-700" aria-hidden="true" fill="none"
-                                        stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                </div>
-                            </a>
-
-                            <!-- Resolución de Tribunal de Honor Universitario -->
-                            <a href="https://www.gob.pe/institucion/unamad/informes-publicaciones/4990906-resolucion-de-tribunal-de-honor"
-                                target="_blank" rel="noopener noreferrer"
-                                class="block bg-white/90 hover:bg-white rounded-lg p-3 text-sm transition-all duration-300 group">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-medium text-gray-700 group-hover:text-gray-900">Resolución de
-                                        Tribunal de Honor Universitario</span>
-                                    <svg class="w-4 h-4 text-gray-500 group-hover:text-gray-700" aria-hidden="true" fill="none"
-                                        stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                </div>
-                            </a>
-
-                            <!-- Comité Electoral -->
-                            <a href="https://www.gob.pe/institucion/unamad/colecciones/10084-resolucion-de-comite-electoral-universitario"
-                                target="_blank" rel="noopener noreferrer"
-                                class="block bg-white/90 hover:bg-white rounded-lg p-3 text-sm transition-all duration-300 group">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-medium text-gray-700 group-hover:text-gray-900">Comité
-                                        Electoral</span>
-                                    <svg class="w-4 h-4 text-gray-500 group-hover:text-gray-700" aria-hidden="true" fill="none"
-                                        stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                </div>
-                            </a>
+                            @forelse($enlacesNormativos as $enlace)
+                                <a href="{{ $enlace->url }}"
+                                    target="_blank" rel="noopener noreferrer"
+                                    class="block bg-white/90 hover:bg-white rounded-lg p-3 text-sm transition-all duration-300 group">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-medium text-gray-700 group-hover:text-gray-900">{{ $enlace->titulo }}</span>
+                                        <svg class="w-4 h-4 text-gray-500 group-hover:text-gray-700" aria-hidden="true" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7"></path>
+                                        </svg>
+                                    </div>
+                                </a>
+                            @empty
+                                <p class="text-center text-gray-600 text-sm py-2">No hay enlaces disponibles por el momento.</p>
+                            @endforelse
                         </div>
 
                         <!-- Botón Ver más documentos -->

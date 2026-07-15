@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Anuncio;
 use App\Models\Comunicado;
 use App\Models\ComunicadoCategoria;
+use App\Models\EnlaceNormativo;
 use App\Services\CampanasGobPeService;
 use App\Services\NoticiasGobPeService;
 use Carbon\Carbon;
@@ -48,6 +49,9 @@ class HomeController extends Controller
                 ->take(12)
                 ->get();
 
+            // Enlaces normativos administrables (sección "Documentos Normativos y de Gestión")
+            $enlacesNormativos = EnlaceNormativo::activos()->ordenado()->get();
+
             $noticiasGobPe = $noticiasService->obtener(8);
             $noticiasGobPeFuente = $noticiasService->fuenteUrl();
             $campanasGobPe = $campanasService->obtener(9);
@@ -57,6 +61,7 @@ class HomeController extends Controller
                 'anunciosDestacados',
                 'anunciosRecientes',
                 'comunicadosOficina',
+                'enlacesNormativos',
                 'noticiasGobPe',
                 'noticiasGobPeFuente',
                 'campanasGobPe',
@@ -75,6 +80,7 @@ class HomeController extends Controller
                 $anunciosDestacados = collect();
                 $anunciosRecientes = collect();
                 $comunicadosOficina = collect();
+                $enlacesNormativos = collect();
                 $noticiasGobPe = [];
                 $noticiasGobPeFuente = $noticiasService->fuenteUrl();
                 $campanasGobPe = [];
@@ -84,6 +90,7 @@ class HomeController extends Controller
                     'anunciosDestacados',
                     'anunciosRecientes',
                     'comunicadosOficina',
+                    'enlacesNormativos',
                     'noticiasGobPe',
                     'noticiasGobPeFuente',
                     'campanasGobPe',

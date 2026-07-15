@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AnuncioController;
 use App\Http\Controllers\Admin\ComunicadoCategoriaController;
 use App\Http\Controllers\Admin\ComunicadoController;
 use App\Http\Controllers\Admin\DocumentoController;
+use App\Http\Controllers\Admin\EnlaceNormativoController;
 use App\Http\Controllers\Admin\DatasetController;
 use App\Http\Controllers\DatasetPublicController;
 use App\Http\Controllers\DocumentosPublicosController;
@@ -387,6 +388,15 @@ Route::middleware('auth')->group(function () {
         // Rutas de edición de carpetas
         Route::get('documentos/carpeta/{carpeta}/edit', [DocumentoController::class, 'editCarpeta'])->name('documentos.carpeta.edit');
         Route::put('documentos/carpeta/{carpeta}', [DocumentoController::class, 'updateCarpeta'])->name('documentos.carpeta.update');
+
+        // Rutas de Enlaces Normativos (sección "Documentos Normativos y de Gestión" del home)
+        Route::get('enlaces-normativos', [EnlaceNormativoController::class, 'index'])->name('enlaces-normativos.index');
+        Route::get('enlaces-normativos/create', [EnlaceNormativoController::class, 'create'])->name('enlaces-normativos.create');
+        Route::post('enlaces-normativos', [EnlaceNormativoController::class, 'store'])->name('enlaces-normativos.store');
+        Route::get('enlaces-normativos/{enlace}/edit', [EnlaceNormativoController::class, 'edit'])->name('enlaces-normativos.edit');
+        Route::put('enlaces-normativos/{enlace}', [EnlaceNormativoController::class, 'update'])->name('enlaces-normativos.update');
+        Route::delete('enlaces-normativos/{enlace}', [EnlaceNormativoController::class, 'destroy'])->name('enlaces-normativos.destroy');
+        Route::post('enlaces-normativos/{enlace}/estado', [EnlaceNormativoController::class, 'toggleEstado'])->name('enlaces-normativos.estado');
 
         // Rutas de Indicador 55
         Route::get('indicador55', [\App\Http\Controllers\Admin\Indicador55Controller::class, 'index'])->name('indicador55.index');
