@@ -1918,8 +1918,7 @@
                 margin-top: 0;
                 width: 42rem;
                 max-width: calc(100vw - 2rem);
-                min-height: 24rem;
-                max-height: calc(100vh - 8rem);
+                max-height: calc(100vh - 7rem);
                 background: white;
                 border-radius: 1rem;
                 box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -1928,7 +1927,9 @@
                 visibility: hidden;
                 transition: opacity 0.22s ease-out, transform 0.22s ease-out, visibility 0.22s;
                 z-index: 50;
-                overflow: hidden;
+                overflow-y: auto;
+                overflow-x: hidden;
+                overscroll-behavior: contain;
             }
 
             .group:hover .mega-dropdown-menu,
@@ -1983,8 +1984,7 @@
                 margin-top: 0;
                 width: 70rem;
                 max-width: calc(100vw - 2rem);
-                min-height: 32rem;
-                max-height: calc(100vh - 8rem);
+                max-height: calc(100vh - 7rem);
                 background: white;
                 border-radius: 1rem;
                 box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -1993,7 +1993,9 @@
                 visibility: hidden;
                 transition: opacity 0.22s ease-out, transform 0.22s ease-out, visibility 0.22s;
                 z-index: 50;
-                overflow: visible;
+                overflow-y: auto;
+                overflow-x: hidden;
+                overscroll-behavior: contain;
             }
 
             .group:hover .mega-dropdown-menu-oficinas,
@@ -2129,8 +2131,7 @@
                 margin-top: 0;
                 width: 82rem;
                 max-width: calc(100vw - 2rem);
-                min-height: 28rem;
-                max-height: calc(100vh - 8rem);
+                max-height: calc(100vh - 7rem);
                 background: white;
                 border-radius: 1rem;
                 box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -2139,7 +2140,9 @@
                 visibility: hidden;
                 transition: opacity 0.22s ease-out, transform 0.22s ease-out, visibility 0.22s;
                 z-index: 50;
-                overflow: auto;
+                overflow-y: auto;
+                overflow-x: hidden;
+                overscroll-behavior: contain;
             }
 
             .group:hover .mega-dropdown-menu-facultades,
@@ -2189,8 +2192,7 @@
                 margin-top: 0;
                 width: 45rem;
                 max-width: calc(100vw - 2rem);
-                min-height: 42rem;
-                max-height: calc(100vh - 8rem);
+                max-height: calc(100vh - 7rem);
                 background: white;
                 border-radius: 1rem;
                 box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -2199,7 +2201,9 @@
                 visibility: hidden;
                 transition: opacity 0.22s ease-out, transform 0.22s ease-out, visibility 0.22s;
                 z-index: 50;
-                overflow: auto;
+                overflow-y: auto;
+                overflow-x: hidden;
+                overscroll-behavior: contain;
             }
 
             .group:hover .mega-dropdown-menu-programas,
@@ -2246,8 +2250,7 @@
                 margin-top: 0;
                 width: 58rem;
                 max-width: calc(100vw - 2rem);
-                min-height: 34rem;
-                max-height: calc(100vh - 8rem);
+                max-height: calc(100vh - 7rem);
                 background: white;
                 border-radius: 1rem;
                 box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -2256,7 +2259,9 @@
                 visibility: hidden;
                 transition: opacity 0.22s ease-out, transform 0.22s ease-out, visibility 0.22s;
                 z-index: 50;
-                overflow: auto;
+                overflow-y: auto;
+                overflow-x: hidden;
+                overscroll-behavior: contain;
             }
 
             .group:hover .mega-dropdown-menu-proyectos,
@@ -2304,8 +2309,7 @@
                 margin-top: 0;
                 width: 45rem;
                 max-width: calc(100vw - 2rem);
-                min-height: 40rem;
-                max-height: calc(100vh - 8rem);
+                max-height: calc(100vh - 7rem);
                 background: white;
                 border-radius: 1rem;
                 box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -2314,7 +2318,9 @@
                 visibility: hidden;
                 transition: opacity 0.22s ease-out, transform 0.22s ease-out, visibility 0.22s;
                 z-index: 50;
-                overflow: auto;
+                overflow-y: auto;
+                overflow-x: hidden;
+                overscroll-behavior: contain;
             }
 
             .group:hover .mega-dropdown-menu-transparencia,
