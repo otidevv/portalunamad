@@ -1710,6 +1710,9 @@
         }
     </script>
 
+    <!-- Video emergente administrable (Panel -> Videos Destacados) -->
+    @include("partials.video-destacado")
+
 @endsection
 
 @push('scripts')

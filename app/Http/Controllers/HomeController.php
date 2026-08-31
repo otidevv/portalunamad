@@ -7,6 +7,7 @@ use App\Models\Anuncio;
 use App\Models\Comunicado;
 use App\Models\ComunicadoCategoria;
 use App\Models\EnlaceNormativo;
+use App\Models\VideoDestacado;
 use App\Services\CampanasGobPeService;
 use App\Services\NoticiasGobPeService;
 use Carbon\Carbon;
@@ -52,6 +53,9 @@ class HomeController extends Controller
             // Enlaces normativos administrables (sección "Documentos Normativos y de Gestión")
             $enlacesNormativos = EnlaceNormativo::activos()->ordenado()->get();
 
+            // Video emergente de la pagina de inicio (administrable desde el panel)
+            $videoDestacado = VideoDestacado::activos()->ordenado()->first();
+
             $noticiasGobPe = $noticiasService->obtener(8);
             $noticiasGobPeFuente = $noticiasService->fuenteUrl();
             $campanasGobPe = $campanasService->obtener(9);
@@ -62,6 +66,7 @@ class HomeController extends Controller
                 'anunciosRecientes',
                 'comunicadosOficina',
                 'enlacesNormativos',
+                'videoDestacado',
                 'noticiasGobPe',
                 'noticiasGobPeFuente',
                 'campanasGobPe',
@@ -81,6 +86,7 @@ class HomeController extends Controller
                 $anunciosRecientes = collect();
                 $comunicadosOficina = collect();
                 $enlacesNormativos = collect();
+                $videoDestacado = null;
                 $noticiasGobPe = [];
                 $noticiasGobPeFuente = $noticiasService->fuenteUrl();
                 $campanasGobPe = [];
@@ -91,6 +97,7 @@ class HomeController extends Controller
                     'anunciosRecientes',
                     'comunicadosOficina',
                     'enlacesNormativos',
+                    'videoDestacado',
                     'noticiasGobPe',
                     'noticiasGobPeFuente',
                     'campanasGobPe',

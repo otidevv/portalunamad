@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ComunicadoCategoriaController;
 use App\Http\Controllers\Admin\ComunicadoController;
 use App\Http\Controllers\Admin\DocumentoController;
 use App\Http\Controllers\Admin\EnlaceNormativoController;
+use App\Http\Controllers\Admin\VideoDestacadoController;
 use App\Http\Controllers\Admin\DatasetController;
 use App\Http\Controllers\DatasetPublicController;
 use App\Http\Controllers\DocumentosPublicosController;
@@ -397,6 +398,15 @@ Route::middleware('auth')->group(function () {
         Route::put('enlaces-normativos/{enlace}', [EnlaceNormativoController::class, 'update'])->name('enlaces-normativos.update');
         Route::delete('enlaces-normativos/{enlace}', [EnlaceNormativoController::class, 'destroy'])->name('enlaces-normativos.destroy');
         Route::post('enlaces-normativos/{enlace}/estado', [EnlaceNormativoController::class, 'toggleEstado'])->name('enlaces-normativos.estado');
+
+        // Rutas de Videos Destacados (ventana emergente de la pagina de inicio)
+        Route::get('videos-destacados', [VideoDestacadoController::class, 'index'])->name('videos-destacados.index');
+        Route::get('videos-destacados/create', [VideoDestacadoController::class, 'create'])->name('videos-destacados.create');
+        Route::post('videos-destacados', [VideoDestacadoController::class, 'store'])->name('videos-destacados.store');
+        Route::get('videos-destacados/{video}/edit', [VideoDestacadoController::class, 'edit'])->name('videos-destacados.edit');
+        Route::put('videos-destacados/{video}', [VideoDestacadoController::class, 'update'])->name('videos-destacados.update');
+        Route::delete('videos-destacados/{video}', [VideoDestacadoController::class, 'destroy'])->name('videos-destacados.destroy');
+        Route::post('videos-destacados/{video}/estado', [VideoDestacadoController::class, 'toggleEstado'])->name('videos-destacados.estado');
 
         // Rutas de Indicador 55
         Route::get('indicador55', [\App\Http\Controllers\Admin\Indicador55Controller::class, 'index'])->name('indicador55.index');
