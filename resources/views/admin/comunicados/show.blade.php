@@ -11,7 +11,7 @@
         <div class="flex space-x-3">
             <a href="{{ route('admin.comunicados.edit', $comunicado) }}" 
                class="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                           d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                 </svg>
@@ -19,7 +19,7 @@
             </a>
             <a href="{{ route('admin.comunicados.index') }}" 
                class="flex items-center space-x-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                           d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                 </svg>
@@ -64,7 +64,8 @@
                                             {{ $ext }}
                                         </span>
                                         <span class="text-sm text-gray-800 flex-1 truncate">{{ $archivo->nombre_original ?? basename($archivo->ruta) }}</span>
-                                        <svg class="w-4 h-4 text-gray-500 ml-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <span class="sr-only">(archivo {{ $ext }}, descargar)</span>
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-500 ml-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"></path>
                                         </svg>
                                     </a>

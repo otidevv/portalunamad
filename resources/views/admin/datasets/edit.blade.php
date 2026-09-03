@@ -21,7 +21,7 @@
         <div class="flex space-x-3">
             <a href="{{ route('admin.datasets.show', $dataset) }}"
                class="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                 </svg>
@@ -29,7 +29,7 @@
             </a>
             <a href="{{ route('admin.datasets.index') }}"
                class="flex items-center space-x-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                 </svg>
                 <span>Volver</span>
@@ -167,7 +167,7 @@
                 <h2 class="text-sm font-semibold text-gray-800 uppercase tracking-wide">Diccionario de datos</h2>
                 <button type="button" id="btn-agregar-campo"
                         class="inline-flex items-center gap-1 text-sm text-[#db0455] hover:text-[#a00340] font-medium">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                    <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
                     Agregar campo
                 </button>
             </div>
@@ -213,8 +213,8 @@
                                            class="w-32 rounded border-gray-300 text-sm focus:border-[#db0455] focus:ring-[#db0455]" placeholder="Ej: 2025-I">
                                 </td>
                                 <td class="px-2 py-2 text-right">
-                                    <button type="button" class="btn-quitar-campo text-red-500 hover:text-red-700" title="Quitar">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                                    <button type="button" class="btn-quitar-campo text-red-500 hover:text-red-700" title="Quitar" aria-label="Quitar campo {{ data_get($col, 'label') ?: 'de la fila ' . $loop->iteration }}">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                                     </button>
                                 </td>
                             </tr>
@@ -235,7 +235,7 @@
                     <label for="archivo" class="block text-sm font-medium text-gray-700 mb-1">Archivo CSV</label>
                     <input type="file" name="archivo" id="archivo" accept=".csv,.txt"
                            class="w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-[#db0455] file:text-white hover:file:bg-[#a00340] @error('archivo') border border-red-300 rounded-lg @enderror">
-                    <p class="text-xs text-amber-600 mt-1">⚠️ Al subir un CSV nuevo se eliminan todas las filas actuales y se regenera el diccionario.</p>
+                    <p class="text-xs text-amber-600 mt-1"><span aria-hidden="true">⚠️</span> Al subir un CSV nuevo se eliminan todas las filas actuales y se regenera el diccionario.</p>
                     @error('archivo')<p class="text-red-600 text-sm mt-1">{{ $message }}</p>@enderror
                 </div>
                 <div>
@@ -263,7 +263,7 @@
                class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:text-gray-500 transition">Cancelar</a>
             <button type="submit"
                     class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-[#db0455] to-[#a00340] hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 Actualizar
@@ -300,8 +300,8 @@
                    class="w-32 rounded border-gray-300 text-sm focus:border-[#db0455] focus:ring-[#db0455]" placeholder="Ej: 2025-I">
         </td>
         <td class="px-2 py-2 text-right">
-            <button type="button" class="btn-quitar-campo text-red-500 hover:text-red-700" title="Quitar">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            <button type="button" class="btn-quitar-campo text-red-500 hover:text-red-700" title="Quitar" aria-label="Quitar este campo">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </td>
     </tr>

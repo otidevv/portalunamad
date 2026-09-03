@@ -21,7 +21,7 @@
             @if(!empty($dataset->columnas))
                 <a href="{{ route('admin.datasets.plantilla', $dataset) }}"
                    class="flex items-center space-x-2 px-3 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-sm">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                     </svg>
                     <span>Plantilla CSV</span>
@@ -30,7 +30,7 @@
             @if($dataset->activo && $dataset->tieneDatos())
                 <a href="{{ route('datasets.publico', $dataset->slug) }}" target="_blank"
                    class="flex items-center space-x-2 px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                     </svg>
                     <span>Portal</span>
@@ -38,14 +38,14 @@
             @endif
             <a href="{{ route('admin.datasets.edit', $dataset) }}"
                class="flex items-center space-x-2 px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                 </svg>
                 <span>Editar</span>
             </a>
             <a href="{{ route('admin.datasets.index') }}"
                class="flex items-center space-x-2 px-3 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                 </svg>
                 <span>Volver</span>
@@ -60,7 +60,7 @@
     @if($dataset->observaciones)
         <div class="bg-amber-50 border-l-4 border-amber-400 text-amber-800 p-4 mb-6 rounded-lg">
             <div class="flex items-start gap-2">
-                <svg class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
                 </svg>
                 <div>
@@ -194,7 +194,9 @@
             </div>
             <p id="grafico-aviso" class="text-xs text-amber-600 mb-2 hidden"></p>
             <div class="relative" style="height: 420px;">
-                <canvas id="grafico-dataset"></canvas>
+                <canvas id="grafico-dataset" role="img" aria-label="Gráfico del dataset {{ $dataset->nombre }}. Los datos de origen se muestran en la tabla de filas de esta página.">
+                    Gráfico del dataset {{ $dataset->nombre }}. Los datos de origen se muestran en la tabla de filas de esta página.
+                </canvas>
             </div>
         </div>
 
@@ -229,7 +231,7 @@
     @else
         <!-- Sin datos: dataset planificado -->
         <div class="bg-white rounded-lg shadow-sm p-10 text-center">
-            <svg class="w-12 h-12 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
             </svg>
             <p class="text-gray-600 font-medium">Este dataset aún no tiene datos cargados</p>

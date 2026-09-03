@@ -8,9 +8,9 @@
     <nav class="mb-6 text-sm">
         <ol class="flex items-center space-x-2">
             <li><a href="{{ route('admin.dashboard') }}" class="text-gray-500 hover:text-gray-700">Dashboard</a></li>
-            <li><span class="text-gray-400">/</span></li>
+            <li aria-hidden="true"><span class="text-gray-400">/</span></li>
             <li><a href="{{ route('admin.anuncios.index') }}" class="text-gray-500 hover:text-gray-700">Anuncios</a></li>
-            <li><span class="text-gray-400">/</span></li>
+            <li aria-hidden="true"><span class="text-gray-400">/</span></li>
             <li class="text-gray-700 font-medium">Crear Nuevo</li>
         </ol>
     </nav>
@@ -113,7 +113,7 @@
                             </label>
                             <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg hover:border-[#db0455] transition-colors">
                                 <div class="space-y-1 text-center">
-                                    <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                                    <svg aria-hidden="true" focusable="false" class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
                                         <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                     <div class="flex text-sm text-gray-600">
@@ -270,10 +270,11 @@ function agregarEnlace() {
                    name="enlaces[${enlaceIndex}][url]" 
                    placeholder="https://ejemplo.com"
                    class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] pr-10">
-            <button type="button" 
-                    onclick="this.closest('.enlace-item').remove()" 
+            <button type="button"
+                    onclick="this.closest('.enlace-item').remove()"
+                    aria-label="Eliminar este enlace"
                     class="absolute right-2 top-1/2 -translate-y-1/2 text-red-500 hover:text-red-700">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
@@ -291,7 +292,7 @@ function previewImage(input, previewId) {
         const reader = new FileReader();
         reader.onload = function(e) {
             preview.innerHTML = `
-                <img src="${e.target.result}" class="mt-2 h-32 w-auto rounded-lg shadow-md">
+                <img src="${e.target.result}" alt="Vista previa de la imagen seleccionada" class="mt-2 h-32 w-auto rounded-lg shadow-md">
             `;
         }
         reader.readAsDataURL(input.files[0]);
@@ -303,11 +304,12 @@ function previewMultipleImages(input, previewId) {
     preview.innerHTML = '';
     
     if (input.files) {
-        Array.from(input.files).forEach(file => {
+        Array.from(input.files).forEach((file, idx) => {
             const reader = new FileReader();
             reader.onload = function(e) {
                 const img = document.createElement('img');
                 img.src = e.target.result;
+                img.alt = 'Vista previa de la imagen adicional ' + (idx + 1);
                 img.className = 'h-20 w-20 object-cover rounded-lg shadow-md';
                 preview.appendChild(img);
             }

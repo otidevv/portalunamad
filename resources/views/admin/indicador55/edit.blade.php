@@ -6,8 +6,8 @@
     <div class="flex justify-between items-center mb-6">
         <div>
             <div class="flex items-center mb-2">
-                <a href="{{ route('admin.indicador55.index') }}" class="text-gray-500 hover:text-gray-700 mr-3">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <a href="{{ route('admin.indicador55.index') }}" aria-label="Volver al listado del Indicador 55" class="text-gray-500 hover:text-gray-700 mr-3">
+                    <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                     </svg>
                 </a>
@@ -17,7 +17,7 @@
         </div>
         <a href="/transparencia/indicador-55/{{ $indicador55->codigo }}" target="_blank"
            class="flex items-center space-x-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
             </svg>
@@ -46,7 +46,7 @@
                 <!-- Información Básica -->
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                     <h2 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                        <svg class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                         Información Básica
@@ -90,7 +90,7 @@
                 <!-- Campos específicos para MV1: Misión y Visión -->
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                     <h2 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                        <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                         </svg>
@@ -130,7 +130,7 @@
                 <!-- Contenido HTML -->
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                     <h2 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                        <svg class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
                         Contenido Principal (HTML)
@@ -145,7 +145,7 @@
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                     <div class="flex items-center justify-between mb-4">
                         <h2 class="text-lg font-semibold text-gray-800 flex items-center">
-                            <svg class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                             </svg>
                             Documentos
@@ -174,7 +174,7 @@
                             <!-- Los documentos se cargarán dinámicamente con JavaScript -->
                         </div>
                         <button type="button" onclick="addSimpleDocument()" class="mt-4 flex items-center px-4 py-2 bg-green-50 text-green-700 rounded-lg hover:bg-green-100 transition-colors border border-green-200">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                             </svg>
                             Agregar Documento
@@ -185,7 +185,7 @@
                             <!-- Las secciones se cargarán dinámicamente con JavaScript -->
                         </div>
                         <button type="button" onclick="addSection()" class="mt-4 flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors border border-blue-200">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                             </svg>
                             Agregar Sección
@@ -202,13 +202,13 @@
                         </div>
                         <div class="flex space-x-2 mt-4">
                             <button type="button" onclick="addMV11SimpleDoc(new Date().getFullYear().toString())" class="flex items-center px-4 py-2 bg-indigo-50 text-indigo-700 rounded-lg hover:bg-indigo-100 transition-colors border border-indigo-200">
-                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                                 </svg>
                                 Documento Simple
                             </button>
                             <button type="button" onclick="addMV11Department(new Date().getFullYear().toString())" class="flex items-center px-4 py-2 bg-amber-50 text-amber-700 rounded-lg hover:bg-amber-100 transition-colors border border-amber-200">
-                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                                 </svg>
                                 Departamento
@@ -225,7 +225,7 @@
                             <!-- Las secciones se cargarán dinámicamente con JavaScript -->
                         </div>
                         <button type="button" onclick="addMV12Section()" class="mt-4 flex items-center px-4 py-2 bg-purple-50 text-purple-700 rounded-lg hover:bg-purple-100 transition-colors border border-purple-200">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                             </svg>
                             Agregar Sección
@@ -272,7 +272,7 @@
                         <div class="pt-4 border-t border-gray-200">
                             <button type="submit"
                                     class="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-[#db0455] to-[#a00340] text-white rounded-lg hover:shadow-lg transition-all">
-                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
                                 Guardar Cambios
@@ -324,7 +324,7 @@
                     <h2 class="text-lg font-semibold text-gray-800 mb-4">Icono SVG</h2>
 
                     <div class="flex items-center justify-center mb-4 p-4 bg-gray-100 rounded-lg">
-                        <svg class="w-16 h-16 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                        <svg role="img" aria-label="Vista previa del icono" focusable="false" class="w-16 h-16 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
                             <path d="{{ $indicador55->icono }}"/>
                         </svg>
                     </div>
@@ -454,7 +454,7 @@ function renderSimpleDocuments() {
     if (documentsData.length === 0) {
         container.innerHTML = `
             <div class="text-center py-8 text-gray-500 border-2 border-dashed border-gray-200 rounded-lg">
-                <svg class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                 </svg>
                 <p>No hay documentos agregados</p>
@@ -476,9 +476,9 @@ function createSimpleDocumentCard(doc, index) {
     const div = document.createElement('div');
     div.className = 'bg-gray-50 border border-gray-200 rounded-lg p-4 relative group';
     div.innerHTML = `
-        <button type="button" onclick="removeSimpleDocument(${index})"
+        <button type="button" onclick="removeSimpleDocument(${index})" aria-label="Eliminar documento ${index + 1}"
                 class="absolute top-2 right-2 p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
             </svg>
         </button>
@@ -548,7 +548,7 @@ function renderSections() {
     if (sectionsData.length === 0) {
         container.innerHTML = `
             <div class="text-center py-8 text-gray-500 border-2 border-dashed border-gray-200 rounded-lg">
-                <svg class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                 </svg>
                 <p>No hay secciones agregadas</p>
@@ -576,9 +576,9 @@ function createSectionCard(section, sectionIndex) {
     items.forEach((item, itemIndex) => {
         itemsHtml += `
             <div class="bg-white border border-gray-200 rounded-lg p-3 relative group">
-                <button type="button" onclick="removeSectionItem(${sectionIndex}, ${itemIndex})"
+                <button type="button" onclick="removeSectionItem(${sectionIndex}, ${itemIndex})" aria-label="Eliminar item ${itemIndex + 1} de la sección ${sectionIndex + 1}"
                         class="absolute top-2 right-2 p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
@@ -609,9 +609,9 @@ function createSectionCard(section, sectionIndex) {
                        class="w-full px-3 py-2 text-sm rounded-lg border border-blue-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 bg-white"
                        placeholder="Nombre de la sección">
             </div>
-            <button type="button" onclick="removeSection(${sectionIndex})"
+            <button type="button" onclick="removeSection(${sectionIndex})" aria-label="Eliminar sección ${sectionIndex + 1}"
                     class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                 </svg>
             </button>
@@ -628,7 +628,7 @@ function createSectionCard(section, sectionIndex) {
         </div>
         <button type="button" onclick="addSectionItem(${sectionIndex})"
                 class="mt-3 flex items-center px-3 py-1.5 text-sm bg-white text-blue-600 rounded border border-blue-300 hover:bg-blue-50 transition-colors">
-            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
             Agregar Item
@@ -714,7 +714,7 @@ function renderMV11() {
     if (years.length === 0) {
         container.innerHTML = `
             <div class="text-center py-8 text-gray-500 border-2 border-dashed border-gray-200 rounded-lg">
-                <svg class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                 </svg>
                 <p>No hay documentos agregados</p>
@@ -761,14 +761,14 @@ function createMV11YearCard(year, docs) {
         <div class="flex space-x-2 mt-4">
             <button type="button" onclick="addMV11SimpleDoc('${year}')"
                     class="flex items-center px-3 py-1.5 text-sm bg-white text-indigo-600 rounded border border-indigo-300 hover:bg-indigo-50 transition-colors">
-                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                 </svg>
                 Documento Simple
             </button>
             <button type="button" onclick="addMV11Department('${year}')"
                     class="flex items-center px-3 py-1.5 text-sm bg-white text-amber-600 rounded border border-amber-300 hover:bg-amber-50 transition-colors">
-                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                 </svg>
                 Departamento
@@ -781,9 +781,9 @@ function createMV11YearCard(year, docs) {
 function createMV11SimpleDocHtml(docIndex, doc) {
     return `
         <div class="bg-white border border-gray-200 rounded-lg p-3 relative group">
-            <button type="button" onclick="removeMV11Doc(${docIndex})"
+            <button type="button" onclick="removeMV11Doc(${docIndex})" aria-label="Eliminar documento simple ${docIndex + 1}"
                     class="absolute top-2 right-2 p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
@@ -819,9 +819,9 @@ function createMV11DepartmentHtml(docIndex, doc) {
     (doc.items || []).forEach((item, itemIndex) => {
         itemsHtml += `
             <div class="bg-gray-50 border border-gray-200 rounded p-2 relative group/item">
-                <button type="button" onclick="removeMV11DeptItem(${docIndex}, ${itemIndex})"
+                <button type="button" onclick="removeMV11DeptItem(${docIndex}, ${itemIndex})" aria-label="Eliminar item ${itemIndex + 1} del departamento"
                         class="absolute top-1 right-1 p-0.5 text-gray-400 hover:text-red-500 rounded transition-colors opacity-0 group-hover/item:opacity-100">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
@@ -841,9 +841,9 @@ function createMV11DepartmentHtml(docIndex, doc) {
 
     return `
         <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 relative group">
-            <button type="button" onclick="removeMV11Doc(${docIndex})"
+            <button type="button" onclick="removeMV11Doc(${docIndex})" aria-label="Eliminar departamento ${docIndex + 1}"
                     class="absolute top-2 right-2 p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
@@ -869,7 +869,7 @@ function createMV11DepartmentHtml(docIndex, doc) {
             </div>
             <button type="button" onclick="addMV11DeptItem(${docIndex})"
                     class="mt-2 flex items-center px-2 py-1 text-xs bg-white text-amber-600 rounded border border-amber-300 hover:bg-amber-50 transition-colors">
-                <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                 </svg>
                 Agregar Item
@@ -943,7 +943,7 @@ function renderMV12() {
     if (mv12Data.length === 0) {
         container.innerHTML = `
             <div class="text-center py-8 text-gray-500 border-2 border-dashed border-gray-200 rounded-lg">
-                <svg class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                 </svg>
                 <p>No hay secciones agregadas</p>
@@ -969,9 +969,9 @@ function createMV12SectionCard(section, sectionIndex) {
     (section.items || []).forEach((item, itemIndex) => {
         itemsHtml += `
             <div class="bg-white border border-gray-200 rounded-lg p-3 relative group">
-                <button type="button" onclick="removeMV12Item(${sectionIndex}, ${itemIndex})"
+                <button type="button" onclick="removeMV12Item(${sectionIndex}, ${itemIndex})" aria-label="Eliminar documento ${itemIndex + 1} de la sección ${sectionIndex + 1}"
                         class="absolute top-2 right-2 p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
@@ -998,9 +998,9 @@ function createMV12SectionCard(section, sectionIndex) {
             <div class="flex items-center space-x-3">
                 <span class="bg-purple-600 text-white px-3 py-1 rounded-lg font-bold">${section.anio || '----'}</span>
             </div>
-            <button type="button" onclick="removeMV12Section(${sectionIndex})"
+            <button type="button" onclick="removeMV12Section(${sectionIndex})" aria-label="Eliminar sección ${sectionIndex + 1}"
                     class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                 </svg>
             </button>
@@ -1026,7 +1026,7 @@ function createMV12SectionCard(section, sectionIndex) {
         </div>
         <button type="button" onclick="addMV12Item(${sectionIndex})"
                 class="mt-3 flex items-center px-3 py-1.5 text-sm bg-white text-purple-600 rounded border border-purple-300 hover:bg-purple-50 transition-colors">
-            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
             Agregar Documento
