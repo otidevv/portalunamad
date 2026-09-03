@@ -23,7 +23,7 @@
                         <li class="inline-flex items-center">
                             <a href="/"
                                 class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
-                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                     <path
                                         d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
                                     </path>
@@ -33,7 +33,7 @@
                         </li>
                         <li>
                             <div class="flex items-center">
-                                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                         clip-rule="evenodd"></path>
@@ -43,7 +43,7 @@
                         </li>
                         <li>
                             <div class="flex items-center">
-                                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                         clip-rule="evenodd"></path>
@@ -54,7 +54,7 @@
                         </li>
                         <li aria-current="page">
                             <div class="flex items-center">
-                                <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                         clip-rule="evenodd"></path>
@@ -80,7 +80,7 @@
                     <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
                         <div class="flex items-start space-x-4 mb-8">
                             <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-4 rounded-full">
-                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
                                     </path>
@@ -97,7 +97,7 @@
                             <div
                                 class="bg-gradient-to-r from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 border-l-4 border-[#db0455] mb-8">
                                 <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                                    <svg class="w-6 h-6 mr-2 text-[#db0455]" fill="none" stroke="currentColor"
+                                    <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2 text-[#db0455]" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
@@ -134,7 +134,7 @@
                             <!-- Modalidades de Cooperación -->
                             <div class="mb-8">
                                 <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                                    <svg class="w-7 h-7 mr-2 text-[#db0455]" fill="none" stroke="currentColor"
+                                    <svg aria-hidden="true" focusable="false" class="w-7 h-7 mr-2 text-[#db0455]" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
@@ -148,8 +148,7 @@
                                     <div
                                         class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                         <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
-                                            <span
-                                                class="bg-[#db0455] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">A</span>
+                                            <span aria-hidden="true" class="bg-[#db0455] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">A</span>
                                             Programa de Intercambio Académico
                                         </h4>
                                         <ul class="space-y-2 text-sm text-gray-700">
@@ -176,8 +175,7 @@
                                     <div
                                         class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                         <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
-                                            <span
-                                                class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">B</span>
+                                            <span aria-hidden="true" class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">B</span>
                                             Proyectos para Investigaciones Conjuntas
                                         </h4>
                                         <p class="text-sm text-gray-700">
@@ -190,8 +188,7 @@
                                     <div
                                         class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                         <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
-                                            <span
-                                                class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">C</span>
+                                            <span aria-hidden="true" class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">C</span>
                                             Proyectos de Desarrollo
                                         </h4>
                                         <p class="text-sm text-gray-700">
@@ -204,8 +201,7 @@
                                     <div
                                         class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                         <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
-                                            <span
-                                                class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">D</span>
+                                            <span aria-hidden="true" class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">D</span>
                                             Prácticas Pre Profesionales
                                         </h4>
                                         <p class="text-sm text-gray-700">
@@ -218,8 +214,7 @@
                                     <div
                                         class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                         <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
-                                            <span
-                                                class="bg-orange-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">E</span>
+                                            <span aria-hidden="true" class="bg-orange-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">E</span>
                                             Donaciones
                                         </h4>
                                         <p class="text-sm text-gray-700">
@@ -232,8 +227,7 @@
                                     <div
                                         class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                         <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
-                                            <span
-                                                class="bg-indigo-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">F</span>
+                                            <span aria-hidden="true" class="bg-indigo-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">F</span>
                                             Capacitación y Extensión
                                         </h4>
                                         <p class="text-sm text-gray-700">
@@ -248,7 +242,7 @@
                             <div
                                 class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 border-l-4 border-green-500 mb-8">
                                 <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                                    <svg class="w-6 h-6 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                    <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2 text-green-500" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
@@ -264,7 +258,7 @@
                                         <div class="space-y-2">
                                             <a href="#"
                                                 class="inline-flex items-center text-sm text-[#db0455] hover:text-[#ed145b] transition-colors">
-                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
+                                                <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
@@ -275,7 +269,7 @@
                                             <br>
                                             <a href="#"
                                                 class="inline-flex items-center text-sm text-[#db0455] hover:text-[#ed145b] transition-colors">
-                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
+                                                <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
@@ -290,7 +284,7 @@
                                         <div class="space-y-2">
                                             <a href="#"
                                                 class="inline-flex items-center text-sm text-[#db0455] hover:text-[#ed145b] transition-colors">
-                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
+                                                <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
@@ -301,7 +295,7 @@
                                             <br>
                                             <a href="#"
                                                 class="inline-flex items-center text-sm text-[#db0455] hover:text-[#ed145b] transition-colors">
-                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
+                                                <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
@@ -317,7 +311,7 @@
                             <!-- Procedimiento de Suscripción -->
                             <div class="mb-8">
                                 <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                                    <svg class="w-7 h-7 mr-2 text-[#db0455]" fill="none" stroke="currentColor"
+                                    <svg aria-hidden="true" focusable="false" class="w-7 h-7 mr-2 text-[#db0455]" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
@@ -326,10 +320,9 @@
                                     Suscripción de Convenios - Procedimiento
                                 </h3>
 
-                                <div class="space-y-4 mb-6">
+                                <div id="procedimiento-suscripcion" class="space-y-4 mb-6">
                                     <div class="flex items-start space-x-4 p-4 bg-white rounded-lg border border-gray-200">
-                                        <div
-                                            class="bg-[#db0455] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0">
+                                        <div aria-hidden="true" class="bg-[#db0455] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0">
                                             A</div>
                                         <div>
                                             <p class="text-gray-700">
@@ -341,8 +334,7 @@
                                     </div>
 
                                     <div class="flex items-start space-x-4 p-4 bg-white rounded-lg border border-gray-200">
-                                        <div
-                                            class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0">
+                                        <div aria-hidden="true" class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0">
                                             B</div>
                                         <div>
                                             <p class="text-gray-700">
@@ -356,8 +348,7 @@
                                     </div>
 
                                     <div class="flex items-start space-x-4 p-4 bg-white rounded-lg border border-gray-200">
-                                        <div
-                                            class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0">
+                                        <div aria-hidden="true" class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0">
                                             C</div>
                                         <div>
                                             <p class="text-gray-700">
@@ -374,7 +365,7 @@
                             <div
                                 class="bg-gradient-to-r from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 border-l-4 border-[#db0455] mb-8">
                                 <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
-                                    <svg class="w-6 h-6 mr-2 text-[#db0455]" fill="none" stroke="currentColor"
+                                    <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2 text-[#db0455]" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
@@ -383,22 +374,22 @@
                                     Flujograma de Suscripción
                                 </h3>
 
-                                <div class="flex justify-center mb-6">
-                                    <img src="{{ asset('img/section/cooperacionrelacionesinternacionales/flujogramasuscripcion.png') }}"
-                                        alt="Flujograma de Suscripción de Convenios"
-                                        class="max-w-full h-auto rounded-lg shadow-lg border border-gray-200">
-                                </div>
-
-                                <div class="text-center text-sm text-gray-600">
-                                    <p class="italic">Proceso de suscripción de convenios - OCRI UNAMAD</p>
-                                </div>
+                                <figure class="mb-6">
+                                    <div class="flex justify-center">
+                                        <img src="{{ asset('img/section/cooperacionrelacionesinternacionales/flujogramasuscripcion.png') }}"
+                                            alt="Flujograma de suscripción de convenios: presentación del proyecto al Rectorado, revisión de la OCRI, informe legal de la OAL, corrección de observaciones y aprobación en Consejo Universitario"
+                                            aria-describedby="procedimiento-suscripcion"
+                                            class="max-w-full h-auto rounded-lg shadow-lg border border-gray-200">
+                                    </div>
+                                    <figcaption class="text-center text-sm text-gray-600 italic mt-4">Proceso de suscripción de convenios - OCRI UNAMAD. Los pasos se describen en el texto de la sección «Suscripción de Convenios - Procedimiento».</figcaption>
+                                </figure>
                             </div>
 
                             <!-- Convenios Institucionales -->
                             <div
                                 class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-lg p-6 border-l-4 border-indigo-500">
                                 <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                                    <svg class="w-6 h-6 mr-2 text-indigo-500" fill="none" stroke="currentColor"
+                                    <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2 text-indigo-500" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
@@ -413,7 +404,7 @@
                                 <a href="https://www.gob.pe/institucion/unamad/colecciones/16884-convenios-institucionales"
                                     target="_blank"
                                     class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white font-semibold rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
                                         </path>

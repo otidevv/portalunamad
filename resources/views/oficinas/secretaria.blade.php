@@ -20,7 +20,7 @@
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
-                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
                             </svg>
                             Inicio
@@ -28,7 +28,7 @@
                     </li>
                     <li>
                         <div class="flex items-center">
-                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Oficinas</span>
@@ -36,7 +36,7 @@
                     </li>
                     <li aria-current="page">
                         <div class="flex items-center">
-                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="ml-1 text-sm font-medium text-[#db0455] md:ml-2">Secretaría General</span>
@@ -53,7 +53,7 @@
         <div class="bg-white rounded-lg shadow-lg mb-12 overflow-hidden border-t-4 border-[#db0455]">
             <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
                 <h2 class="text-3xl font-bold flex items-center">
-                    <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                     </svg>
                     SECRETARÍA GENERAL
@@ -73,7 +73,7 @@
                 <!-- Functions Section -->
                 <div>
                     <h4 class="text-xl font-bold text-[#db0455] mb-6 flex items-center">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
                         </svg>
                         FUNCIONES DE LA SECRETARÍA GENERAL
@@ -81,7 +81,7 @@
                     
                     <div class="space-y-4">
                         <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                            <div class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
+                            <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                 1
                             </div>
                             <p class="text-gray-700 flex-1">
@@ -90,7 +90,7 @@
                         </div>
 
                         <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                            <div class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
+                            <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                 2
                             </div>
                             <p class="text-gray-700 flex-1">
@@ -99,7 +99,7 @@
                         </div>
 
                         <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                            <div class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
+                            <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                 3
                             </div>
                             <p class="text-gray-700 flex-1">
@@ -108,7 +108,7 @@
                         </div>
 
                         <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                            <div class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
+                            <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                 4
                             </div>
                             <p class="text-gray-700 flex-1">
@@ -117,7 +117,7 @@
                         </div>
 
                         <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                            <div class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
+                            <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                 5
                             </div>
                             <p class="text-gray-700 flex-1">
@@ -126,7 +126,7 @@
                         </div>
 
                         <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                            <div class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
+                            <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                 6
                             </div>
                             <p class="text-gray-700 flex-1">
@@ -135,7 +135,7 @@
                         </div>
 
                         <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                            <div class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
+                            <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                 7
                             </div>
                             <p class="text-gray-700 flex-1">
@@ -144,7 +144,7 @@
                         </div>
 
                         <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                            <div class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
+                            <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                 8
                             </div>
                             <p class="text-gray-700 flex-1">
@@ -153,7 +153,7 @@
                         </div>
 
                         <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                            <div class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
+                            <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                 9
                             </div>
                             <p class="text-gray-700 flex-1">
