@@ -8,7 +8,8 @@
          data-retardo="{{ $videoDestacado->retardo }}"
          role="dialog"
          aria-modal="true"
-         aria-labelledby="video-destacado-titulo">
+         aria-labelledby="video-destacado-titulo"
+         @if($videoDestacado->descripcion) aria-describedby="video-destacado-descripcion" @endif>
 
         <!-- Fondo oscuro -->
         <div id="video-destacado-fondo"
@@ -22,8 +23,8 @@
             <button type="button"
                     id="video-destacado-cerrar"
                     aria-label="Cerrar video"
-                    class="absolute top-3 right-3 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-black/50 text-white hover:bg-black/70 focus:outline-none focus:ring-2 focus:ring-white/70 transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    class="absolute top-3 right-3 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-black/50 text-white hover:bg-black/70 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white transition-colors">
+                <svg class="w-5 h-5" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
@@ -36,12 +37,17 @@
                            class="w-full h-full"
                            controls
                            playsinline
-                           @if($videoDestacado->autoplay) muted @endif></video>
+                           @if($videoDestacado->autoplay) muted @endif>
+                        @if(!empty($videoDestacado->subtitulos_url))
+                            <track kind="captions" src="{{ $videoDestacado->subtitulos_url }}" srclang="es" label="Español" default>
+                        @endif
+                        Su navegador no admite la reproducción de video.
+                    </video>
                 @else
                     <iframe id="video-destacado-marco"
                             data-src="{{ $videoDestacado->embed_url }}"
                             class="w-full h-full"
-                            title="{{ $videoDestacado->titulo }}"
+                            title="Video: {{ $videoDestacado->titulo }}"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
@@ -54,8 +60,9 @@
                     {{ $videoDestacado->titulo }}
                 </h2>
                 @if($videoDestacado->descripcion)
-                    <p class="text-sm text-gray-600 mt-1">{{ $videoDestacado->descripcion }}</p>
+                    <p id="video-destacado-descripcion" class="text-sm text-gray-600 mt-1">{{ $videoDestacado->descripcion }}</p>
                 @endif
+                <p class="text-xs text-gray-600 mt-2">Puede cerrar esta ventana con la tecla Escape. @if($videoDestacado->tipo !== 'archivo')Los subtítulos se activan desde el botón «CC» del reproductor.@endif</p>
                 <div class="flex justify-end mt-3">
                     <button type="button"
                             id="video-destacado-cerrar-pie"
@@ -94,10 +101,15 @@
             }
 
             let abierto = false;
+            let focoPrevio = null;
+            const fondoPagina = ['siteHeader', 'contenido-principal'].map(function (id) { return document.getElementById(id); })
+                .concat([document.querySelector('footer'), document.getElementById('barra-accesibilidad')]).filter(Boolean);
 
             function abrir() {
                 if (abierto) return;
                 abierto = true;
+                focoPrevio = document.activeElement;
+                fondoPagina.forEach(function (el) { el.setAttribute('inert', ''); });
 
                 if (!marco.src) {
                     marco.src = marco.dataset.src;
@@ -110,6 +122,8 @@
                 requestAnimationFrame(function () {
                     fondo.classList.remove('opacity-0');
                     tarjeta.classList.remove('opacity-0', 'scale-95');
+                    // El foco pasa al diálogo (WCAG 2.4.3): primero al botón de cierre
+                    document.getElementById('video-destacado-cerrar').focus();
                 });
 
                 if (esVideo && marco.muted) {
@@ -131,6 +145,13 @@
                 fondo.classList.add('opacity-0');
                 tarjeta.classList.add('opacity-0', 'scale-95');
                 document.body.style.overflow = '';
+                fondoPagina.forEach(function (el) { el.removeAttribute('inert'); });
+                if (focoPrevio && focoPrevio.focus && document.contains(focoPrevio)) {
+                    focoPrevio.focus();
+                } else {
+                    const salto = document.querySelector('a[href="#contenido-principal"]');
+                    if (salto) salto.focus();
+                }
 
                 setTimeout(function () {
                     modal.classList.add('hidden');
@@ -151,7 +172,16 @@
             fondo.addEventListener('click', cerrar);
 
             document.addEventListener('keydown', function (evento) {
-                if (evento.key === 'Escape') cerrar();
+                if (!abierto) return;
+                if (evento.key === 'Escape') { cerrar(); return; }
+                // Mantener el foco dentro del diálogo (trampa de foco accesible)
+                if (evento.key === 'Tab') {
+                    const focables = tarjeta.querySelectorAll('button, [href], iframe, video, [tabindex]:not([tabindex="-1"])');
+                    if (!focables.length) return;
+                    const primero = focables[0], ultimo = focables[focables.length - 1];
+                    if (evento.shiftKey && document.activeElement === primero) { evento.preventDefault(); ultimo.focus(); }
+                    else if (!evento.shiftKey && document.activeElement === ultimo) { evento.preventDefault(); primero.focus(); }
+                }
             });
 
             setTimeout(abrir, retardo);

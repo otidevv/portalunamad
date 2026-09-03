@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Reaplicar preferencias de accesibilidad guardadas antes del primer render (evita parpadeo)
+        (function () { try { var p = JSON.parse(localStorage.getItem("unamad_a11y") || "{}"); var c = []; if (p.texto) c.push("a11y-texto-" + p.texto); if (p.contraste) c.push("a11y-contraste"); if (p.grises) c.push("a11y-grises"); if (p.enlaces) c.push("a11y-enlaces"); if (p.dislexia) c.push("a11y-dislexia"); if (p.sinAnimacion) c.push("a11y-sin-animacion"); if (c.length) document.documentElement.className += " " + c.join(" "); } catch (e) {} })();
+    </script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google-site-verification" content="pC-r851R3L-qFAUloNkV8HtyT09GIZMJhl_-z8PpiwM" />
     <!-- Meta descripción - MUY IMPORTANTE para SEO -->
@@ -121,14 +125,14 @@
         Ir al contenido principal
     </a>
     <!-- Loading Screen -->
-    <div id="loading-screen" class="fixed inset-0 bg-white flex items-center justify-center z-[9999]">
+    <div id="loading-screen" class="fixed inset-0 bg-white flex items-center justify-center z-[9999]" role="status" aria-label="Cargando la página">
         <div class="text-center">
             <div class="mb-0">
                 <picture>
                     <source srcset="{{ asset('img/logo/logo.webp') }}" type="image/webp">
-                    <img src="{{ asset('img/logo/logo.png') }}" alt="Logo UNAMAD" class="w-16 h-22 mx-auto" width="64" height="88">
+                    <img src="{{ asset('img/logo/logo.png') }}" alt="" class="w-16 h-22 mx-auto" width="64" height="88">
                 </picture>
-                <div style="color: #db0455; line-height: 1;">
+                <div style="color: #db0455; line-height: 1;" aria-hidden="true">
                     <span class="loading-dots">
                         <span>.</span><span>.</span><span>.</span>
                     </span>
@@ -154,14 +158,14 @@
                     <div class="flex items-center space-x-3">
                         <!-- Redes sociales pequeñas -->
                         <a href="https://www.facebook.com/unamad.oficial/" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-[#ff8fb5] transition-colors" aria-label="Facebook UNAMAD">
+                            class="hover:text-[#ff8fb5] transition-colors" aria-label="Facebook de la UNAMAD (se abre en una ventana nueva)">
                             <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                             </svg>
                         </a>
                         <a href="https://www.youtube.com/channel/UCUNGgRNunGECIxEd_-qv_oA" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-[#ff8fb5] transition-colors" aria-label="YouTube UNAMAD">
+                            class="hover:text-[#ff8fb5] transition-colors" aria-label="Canal de YouTube de la UNAMAD (se abre en una ventana nueva)">
                             <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
@@ -174,7 +178,7 @@
                         <!-- Icono de Login/Admin discreto -->
                         @auth
                             <a href="{{ route('admin.dashboard') }}" class="hover:text-[#ff8fb5] transition-colors"
-                                title="Panel Admin" aria-label="Panel de administración">
+                                aria-label="Panel de administración">
                                 <svg class="w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
@@ -183,7 +187,7 @@
                             </a>
                         @else
                             <a href="{{ route('login') }}" class="hover:text-[#ff8fb5] transition-colors"
-                                title="Iniciar Sesión" aria-label="Iniciar sesión">
+                                aria-label="Iniciar sesión">
                                 <svg class="w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -203,7 +207,7 @@
                     <a href="/" class="flex items-center">
                         <picture>
                             <source srcset="{{ asset('img/header/logounamad.webp') }}" type="image/webp">
-                            <img src="{{ asset('img/header/logounamad.png') }}" alt="Logo UNAMAD" class="nav-logo" width="160" height="40" decoding="async" fetchpriority="high">
+                            <img src="{{ asset('img/header/logounamad.png') }}" alt="UNAMAD - Ir a la página de inicio" class="nav-logo" width="160" height="40" decoding="async" fetchpriority="high">
                         </picture>
                     </a>
                 </div>
@@ -219,7 +223,7 @@
                     <div class="group h-full">
                         <button type="button"
                             class="nav-link flex items-center h-full {{ request()->is('universidad*') ? 'active' : '' }}"
-                            aria-expanded="false" aria-haspopup="true">
+                            aria-expanded="false">
                             Universidad
                             <svg aria-hidden="true" class="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -232,8 +236,8 @@
                             <div>
                                 <!-- Enlaces organizados -->
                                 <div class="flex-1 p-8">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">La
-                                        Universidad</h3>
+                                    <p class="text-xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">La
+                                        Universidad</p>
 
                                     <div class="grid grid-cols-1 gap-y-4">
                                         <a href="/universidad/presentacion"
@@ -349,7 +353,7 @@
                     <div class="group h-full">
                         <button type="button"
                             class="nav-link flex items-center h-full {{ request()->is('oficinas*') ? 'active' : '' }}"
-                            aria-expanded="false" aria-haspopup="true">
+                            aria-expanded="false">
                             Oficinas
                             <svg aria-hidden="true" class="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -362,15 +366,15 @@
                             <div>
                                 <!-- Enlaces organizados -->
                                 <div class="flex-1 p-8">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">
-                                        Organización Administrativa</h3>
+                                    <p class="text-xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">
+                                        Organización Administrativa</p>
 
                                     <div class="grid grid-cols-2 gap-x-8 gap-y-4">
                                         <!-- Columna 1: Órganos de Gobierno -->
                                         <div>
-                                            <h5
+                                            <p
                                                 class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#db0455]">
-                                                Órganos de Gobierno</h5>
+                                                Órganos de Gobierno</p>
                                             <div class="space-y-2">
                                                 <a href="/oficinas/asamblea"
                                                     class="oficinas-dropdown-link {{ request()->is('oficinas/asamblea') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
@@ -421,12 +425,12 @@
                                                 </a>
                                             </div>
 
-                                            <h5
+                                            <p
                                                 class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#db0455] mt-6">
-                                                Vicerrectorados</h5>
+                                                Vicerrectorados</p>
                                             <div class="space-y-2">
                                                 <div class="relative group-vicerrectorado">
-                                                    <button type="button" class="oficinas-dropdown-link has-subdropdown" aria-expanded="false" aria-haspopup="true">
+                                                    <button type="button" class="oficinas-dropdown-link has-subdropdown" aria-expanded="false">
                                                         <div
                                                             class="flex items-center justify-center w-8 h-8 rounded-full bg-[#db0455]/10 flex-shrink-0">
                                                             <svg class="w-4 h-4 text-[#db0455]" aria-hidden="true" fill="none"
@@ -448,9 +452,9 @@
                                                     <!-- Sub-dropdown para Vicerrectorado Académico -->
                                                     <div class="sub-dropdown-menu-academico">
                                                         <div class="p-4">
-                                                            <h6
+                                                            <p
                                                                 class="font-bold text-gray-800 mb-3 text-sm border-b border-gray-200 pb-2">
-                                                                Vicerrectorado Académico</h6>
+                                                                Vicerrectorado Académico</p>
                                                             <div class="space-y-2">
                                                                 <a href="/oficinas/admision"
                                                                     class="sub-dropdown-link">
@@ -513,7 +517,7 @@
                                                 </div>
 
                                                 <div class="relative group-vicerrectorado">
-                                                    <button type="button" class="oficinas-dropdown-link has-subdropdown" aria-expanded="false" aria-haspopup="true">
+                                                    <button type="button" class="oficinas-dropdown-link has-subdropdown" aria-expanded="false">
                                                         <div
                                                             class="flex items-center justify-center w-8 h-8 rounded-full bg-[#db0455]/10 flex-shrink-0">
                                                             <svg class="w-4 h-4 text-[#db0455]" aria-hidden="true" fill="none"
@@ -535,9 +539,9 @@
                                                     <!-- Sub-dropdown para Vicerrectorado de Investigación -->
                                                     <div class="sub-dropdown-menu-investigacion">
                                                         <div class="p-4">
-                                                            <h6
+                                                            <p
                                                                 class="font-bold text-gray-800 mb-3 text-sm border-b border-gray-200 pb-2">
-                                                                Vicerrectorado de Investigación</h6>
+                                                                Vicerrectorado de Investigación</p>
                                                             <div class="space-y-2">
                                                                 <a href="/oficinas/incubadora"
                                                                     class="sub-dropdown-link">
@@ -588,9 +592,9 @@
 
                                         <!-- Columna 2: Oficinas Administrativas -->
                                         <div>
-                                            <h5
+                                            <p
                                                 class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#db0455]">
-                                                Oficinas Centrales</h5>
+                                                Oficinas Centrales</p>
                                             <div class="space-y-2">
                                                 <a href="/oficinas/secretaria"
                                                     class="oficinas-dropdown-link {{ request()->is('oficinas/secretaria') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
@@ -714,7 +718,7 @@
                     <div class="group h-full">
                         <button type="button"
                             class="nav-link flex items-center h-full {{ request()->is('facultades*') ? 'active' : '' }}"
-                            aria-expanded="false" aria-haspopup="true">
+                            aria-expanded="false">
                             Facultades
                             <svg aria-hidden="true" class="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -727,15 +731,15 @@
                             <div>
                                 <!-- Enlaces organizados por facultad -->
                                 <div class="flex-1 p-8">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">
-                                        Nuestras Facultades y Escuelas Profesionales</h3>
+                                    <p class="text-xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">
+                                        Nuestras Facultades y Escuelas Profesionales</p>
 
                                     <div class="grid grid-cols-4 gap-x-6 gap-y-6">
                                         <!-- Facultad de Ingeniería -->
                                         <div>
-                                            <h5
+                                            <p
                                                 class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#db0455]">
-                                                Facultad de Ingeniería</h5>
+                                                Facultad de Ingeniería</p>
                                             <div class="space-y-2">
                                                 <a href="/facultades/agroindustrial"
                                                     class="facultades-dropdown-link {{ request()->is('facultades/agroindustrial*') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
@@ -790,9 +794,9 @@
 
                                         <!-- Facultad de Educación -->
                                         <div>
-                                            <h5
+                                            <p
                                                 class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#db0455]">
-                                                Facultad de Educación</h5>
+                                                Facultad de Educación</p>
                                             <div class="space-y-2">
                                                 <a href="/facultades/matematica"
                                                     class="facultades-dropdown-link {{ request()->is('facultades/matematica*') ? 'bg-violet-500/5 border-l-4 border-violet-500' : '' }}">
@@ -831,9 +835,9 @@
 
                                         <!-- Facultad de Ecoturismo -->
                                         <div>
-                                            <h5
+                                            <p
                                                 class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#db0455]">
-                                                FACULTAD DE CIENCIAS EMPRESARIALES</h5>
+                                                FACULTAD DE CIENCIAS EMPRESARIALES</p>
                                             <div class="space-y-2">
                                                 <a href="/facultades/ecoturismo"
                                                     class="facultades-dropdown-link {{ request()->is('facultades/ecoturismo*') ? 'bg-teal-500/5 border-l-4 border-teal-500' : '' }}">
@@ -887,9 +891,9 @@
 
                                         <!-- Facultad de Ciencias de la Salud y Biológicas -->
                                         <div>
-                                            <h5
+                                            <p
                                                 class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#db0455]">
-                                                Facultad de Ciencias de la Salud y Biológicas</h5>
+                                                Facultad de Ciencias de la Salud y Biológicas</p>
                                             <div class="space-y-2">
                                                 <a href="/facultades/enfermeria"
                                                     class="facultades-dropdown-link {{ request()->is('facultades/enfermeria*') ? 'bg-pink-500/5 border-l-4 border-pink-500' : '' }}">
@@ -980,7 +984,7 @@
                     <div class="group h-full">
                         <button type="button"
                             class="nav-link flex items-center h-full {{ request()->is('posgrado*') ? 'active' : '' }}"
-                            aria-expanded="false" aria-haspopup="true">
+                            aria-expanded="false">
                             Programas
                             <svg aria-hidden="true" class="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -993,8 +997,8 @@
                             <div>
                                 <!-- Enlaces organizados -->
                                 <div class="flex-1 p-8">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">
-                                        Programas Académicos y Servicios Educativos</h3>
+                                    <p class="text-xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">
+                                        Programas Académicos y Servicios Educativos</p>
 
                                     <div class="grid grid-cols-1 gap-y-4">
                                         <a href="https://ceinfo.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
@@ -1122,7 +1126,7 @@
                     <div class="group h-full">
                         <button type="button"
                             class="nav-link flex items-center h-full {{ request()->is('proyectos*') ? 'active' : '' }}"
-                            aria-expanded="false" aria-haspopup="true">
+                            aria-expanded="false">
                             Proyectos
                             <svg aria-hidden="true" class="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1135,8 +1139,8 @@
                             <div>
                                 <!-- Enlaces organizados en 2 columnas -->
                                 <div class="flex-1 p-8">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">
-                                        Proyectos e Infraestructura Universitaria</h3>
+                                    <p class="text-xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">
+                                        Proyectos e Infraestructura Universitaria</p>
 
                                     <div class="grid grid-cols-2 gap-x-8 gap-y-4">
                                         <!-- Columna 1 -->
@@ -1294,7 +1298,7 @@
                     <div class="group h-full">
                         <button type="button"
                             class="nav-link flex items-center h-full {{ request()->is('transparencia*') ? 'active' : '' }}"
-                            aria-expanded="false" aria-haspopup="true">
+                            aria-expanded="false">
                             Transparencia
                             <svg aria-hidden="true" class="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1307,8 +1311,8 @@
                             <div>
                                 <!-- Enlaces organizados -->
                                 <div class="flex-1 p-8">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">
-                                        Portal de Transparencia Institucional</h3>
+                                    <p class="text-xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">
+                                        Portal de Transparencia Institucional</p>
 
                                     <div class="grid grid-cols-1 gap-y-4">
                                         <a href="/transparencia/indicador-55" class="transparencia-dropdown-link">
@@ -1438,8 +1442,8 @@
                 </div>
 
                 <!-- Menú móvil -->
-                <button class="lg:hidden text-gray-700 hover:text-[#db0455] transition-colors"
-                    onclick="toggleMobileMenu()" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileMenu">
+                <button type="button" class="lg:hidden text-gray-700 hover:text-[#db0455] transition-colors"
+                    onclick="toggleMobileMenu()" aria-label="Menú de navegación" aria-expanded="false" aria-controls="mobileMenu">
                     <svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16"></path>
@@ -1463,7 +1467,7 @@
 
                 <!-- Universidad -->
                 <div class="mobile-dropdown">
-                    <button onclick="toggleMobileSubmenu('universidad', this)"
+                    <button type="button" aria-expanded="false" aria-controls="mm-universidad" onclick="toggleMobileSubmenu('mm-universidad', this)"
                         class="mobile-link w-full text-left justify-between {{ request()->is('universidad*') ? 'text-[#db0455] bg-[#db0455]/5' : '' }}">
                         <div class="flex items-center">
                             <svg class="w-5 h-5 mr-3" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1479,7 +1483,7 @@
                                 d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                    <div id="universidad" class="mobile-submenu hidden pl-8 mt-2 space-y-2">
+                    <div id="mm-universidad" class="mobile-submenu hidden pl-8 mt-2 space-y-2">
                         <a href="/universidad/presentacion"
                             class="mobile-sublink {{ request()->is('universidad/presentacion') ? 'text-[#db0455] bg-[#db0455]/10 border-l-4 border-[#db0455]' : '' }}">
                             <svg class="w-4 h-4 mr-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1531,7 +1535,7 @@
 
                 <!-- Oficinas -->
                 <div class="mobile-dropdown">
-                    <button onclick="toggleMobileSubmenu('oficinas', this)"
+                    <button type="button" aria-expanded="false" aria-controls="mm-oficinas" onclick="toggleMobileSubmenu('mm-oficinas', this)"
                         class="mobile-link w-full text-left justify-between {{ request()->is('oficinas*') ? 'text-[#db0455] bg-[#db0455]/5' : '' }}">
                         <div class="flex items-center">
                             <svg class="w-5 h-5 mr-3" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1547,9 +1551,9 @@
                                 d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                    <div id="oficinas" class="mobile-submenu hidden pl-8 mt-2 space-y-2">
+                    <div id="mm-oficinas" class="mobile-submenu hidden pl-8 mt-2 space-y-2">
                         <div class="mb-3">
-                            <h6 class="text-xs font-semibold text-gray-500 uppercase mb-2">Órganos de Gobierno</h6>
+                            <p class="text-xs font-semibold text-gray-500 uppercase mb-2">Órganos de Gobierno</p>
                             <div class="space-y-2">
                                 <a href="/oficinas/asamblea" class="mobile-sublink">Asamblea Universitaria</a>
                                 <a href="/oficinas/consejo" class="mobile-sublink">Consejo Universitario</a>
@@ -1557,11 +1561,11 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <h6 class="text-xs font-semibold text-gray-500 uppercase mb-2">Vicerrectorados</h6>
+                            <p class="text-xs font-semibold text-gray-500 uppercase mb-2">Vicerrectorados</p>
                             <div class="space-y-2">
                                 <!-- Vicerrectorado Académico con sub-oficinas -->
                                 <div class="mobile-sub-dropdown">
-                                    <button onclick="toggleMobileSubSubmenu('vicerrectorado-academico', this)"
+                                    <button type="button" aria-expanded="false" aria-controls="mm-vicerrectorado-academico" onclick="toggleMobileSubSubmenu('mm-vicerrectorado-academico', this)"
                                         class="mobile-sublink w-full text-left justify-between">
                                         <span>Vicerrectorado Académico</span>
                                         <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" fill="none"
@@ -1570,7 +1574,7 @@
                                                 d="M19 9l-7 7-7-7"></path>
                                         </svg>
                                     </button>
-                                    <div id="vicerrectorado-academico"
+                                    <div id="mm-vicerrectorado-academico"
                                         class="mobile-sub-submenu hidden pl-6 mt-1 space-y-1">
                                         <a href="/oficinas/admision" class="mobile-sub-sublink">Dirección de
                                             Admisión</a>
@@ -1587,7 +1591,7 @@
 
                                 <!-- Vicerrectorado de Investigación con sub-oficinas -->
                                 <div class="mobile-sub-dropdown">
-                                    <button onclick="toggleMobileSubSubmenu('vicerrectorado-investigacion', this)"
+                                    <button type="button" aria-expanded="false" aria-controls="mm-vicerrectorado-investigacion" onclick="toggleMobileSubSubmenu('mm-vicerrectorado-investigacion', this)"
                                         class="mobile-sublink w-full text-left justify-between">
                                         <span>Vicerrectorado de Investigación</span>
                                         <svg class="w-3 h-3 transition-transform duration-200" aria-hidden="true" fill="none"
@@ -1596,7 +1600,7 @@
                                                 d="M19 9l-7 7-7-7"></path>
                                         </svg>
                                     </button>
-                                    <div id="vicerrectorado-investigacion"
+                                    <div id="mm-vicerrectorado-investigacion"
                                         class="mobile-sub-submenu hidden pl-6 mt-1 space-y-1">
                                         <a href="/oficinas/incubadora" class="mobile-sub-sublink">Incubadora de
                                             Empresas</a>
@@ -1609,7 +1613,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <h6 class="text-xs font-semibold text-gray-500 uppercase mb-2">Oficinas Centrales</h6>
+                            <p class="text-xs font-semibold text-gray-500 uppercase mb-2">Oficinas Centrales</p>
                             <div class="space-y-2">
                                 <a href="/oficinas/secretaria" class="mobile-sublink">Secretaría General</a>
                                 <a href="/oficinas/calidad" class="mobile-sublink">Gestión de la Calidad</a>
@@ -1629,7 +1633,7 @@
 
                 <!-- Facultades -->
                 <div class="mobile-dropdown">
-                    <button onclick="toggleMobileSubmenu('facultades', this)"
+                    <button type="button" aria-expanded="false" aria-controls="mm-facultades" onclick="toggleMobileSubmenu('mm-facultades', this)"
                         class="mobile-link w-full text-left justify-between {{ request()->is('facultades*') ? 'text-[#db0455] bg-[#db0455]/5' : '' }}">
                         <div class="flex items-center">
                             <svg class="w-5 h-5 mr-3" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1649,9 +1653,9 @@
                                 d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                    <div id="facultades" class="mobile-submenu hidden pl-8 mt-2 space-y-2">
+                    <div id="mm-facultades" class="mobile-submenu hidden pl-8 mt-2 space-y-2">
                         <div class="mb-3">
-                            <h6 class="text-xs font-semibold text-gray-500 uppercase mb-2">Facultad de Ingeniería</h6>
+                            <p class="text-xs font-semibold text-gray-500 uppercase mb-2">Facultad de Ingeniería</p>
                             <div class="space-y-2">
                                 <a href="/facultades/agroindustrial" class="mobile-sublink">Ingeniería
                                     Agroindustrial</a>
@@ -1662,7 +1666,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <h6 class="text-xs font-semibold text-gray-500 uppercase mb-2">Facultad de Educación</h6>
+                            <p class="text-xs font-semibold text-gray-500 uppercase mb-2">Facultad de Educación</p>
                             <div class="space-y-2">
                                 <a href="/facultades/matematica" class="mobile-sublink">Educación Matemática y
                                     Computación</a>
@@ -1671,8 +1675,8 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <h6 class="text-xs font-semibold text-gray-500 uppercase mb-2">FACULTAD DE CIENCIAS
-                                EMPRESARIALES</h6>
+                            <p class="text-xs font-semibold text-gray-500 uppercase mb-2">FACULTAD DE CIENCIAS
+                                EMPRESARIALES</p>
                             <div class="space-y-2">
                                 <a href="/facultades/ecoturismo" class="mobile-sublink">Ecoturismo</a>
                                 <a href="/facultades/administracion" class="mobile-sublink">Administración y
@@ -1682,8 +1686,8 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <h6 class="text-xs font-semibold text-gray-500 uppercase mb-2">Facultad de Ciencias de la
-                                Salud y Biológicas</h6>
+                            <p class="text-xs font-semibold text-gray-500 uppercase mb-2">Facultad de Ciencias de la
+                                Salud y Biológicas</p>
                             <div class="space-y-2">
                                 <a href="/facultades/enfermeria" class="mobile-sublink">Enfermería</a>
                                 <a href="/facultades/veterinaria" class="mobile-sublink">Medicina Veterinaria y
@@ -1698,7 +1702,7 @@
 
                 <!-- Programas -->
                 <div class="mobile-dropdown">
-                    <button onclick="toggleMobileSubmenu('programas', this)"
+                    <button type="button" aria-expanded="false" aria-controls="mm-programas" onclick="toggleMobileSubmenu('mm-programas', this)"
                         class="mobile-link w-full text-left justify-between {{ request()->is('posgrado*') ? 'text-[#db0455] bg-[#db0455]/5' : '' }}">
                         <div class="flex items-center">
                             <svg class="w-5 h-5 mr-3" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1714,7 +1718,7 @@
                                 d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                    <div id="programas" class="mobile-submenu hidden pl-8 mt-2 space-y-2">
+                    <div id="mm-programas" class="mobile-submenu hidden pl-8 mt-2 space-y-2">
                         <a href="https://ceinfo.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
                             class="mobile-sublink">Centro de Informática</a>
                         <a href="https://cidiomas.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
@@ -1731,7 +1735,7 @@
 
                 <!-- Proyectos -->
                 <div class="mobile-dropdown">
-                    <button onclick="toggleMobileSubmenu('proyectos', this)"
+                    <button type="button" aria-expanded="false" aria-controls="mm-proyectos" onclick="toggleMobileSubmenu('mm-proyectos', this)"
                         class="mobile-link w-full text-left justify-between {{ request()->is('proyectos*') ? 'text-[#db0455] bg-[#db0455]/5' : '' }}">
                         <div class="flex items-center">
                             <svg class="w-5 h-5 mr-3" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1747,7 +1751,7 @@
                                 d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                    <div id="proyectos" class="mobile-submenu hidden pl-8 mt-2 space-y-2">
+                    <div id="mm-proyectos" class="mobile-submenu hidden pl-8 mt-2 space-y-2">
                         <a href="/proyectos/jardin" class="mobile-sublink">Cuna Jardín</a>
                         <a href="/proyectos/panificadora" class="mobile-sublink">Panificadora UNAMAD</a>
                         <a href="/proyectos/bus" class="mobile-sublink">Bus Universitario</a>
@@ -1761,7 +1765,7 @@
 
                 <!-- Transparencia -->
                 <div class="mobile-dropdown">
-                    <button onclick="toggleMobileSubmenu('transparencia', this)"
+                    <button type="button" aria-expanded="false" aria-controls="mm-transparencia" onclick="toggleMobileSubmenu('mm-transparencia', this)"
                         class="mobile-link w-full text-left justify-between {{ request()->is('transparencia*') ? 'text-[#db0455] bg-[#db0455]/5' : '' }}">
                         <div class="flex items-center">
                             <svg class="w-5 h-5 mr-3" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1777,7 +1781,7 @@
                                 d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </button>
-                    <div id="transparencia" class="mobile-submenu hidden pl-8 mt-2 space-y-2">
+                    <div id="mm-transparencia" class="mobile-submenu hidden pl-8 mt-2 space-y-2">
                         <a href="/transparencia/indicador-55" class="mobile-sublink">Indicador 55</a>
                         <a href="/transparencia/articulo-11" class="mobile-sublink">Artículo 11</a>
                         <div class="mb-2">
@@ -1896,7 +1900,7 @@
                 border: 0;
                 text-align: left;
                 font: inherit;
-                cursor: default;
+                cursor: pointer;
             }
 
             /* Ajustar el grupo para ocupar el alto completo.
@@ -1933,7 +1937,7 @@
             }
 
             .group:hover .mega-dropdown-menu,
-            .group:focus-within .mega-dropdown-menu {
+            .group.is-open .mega-dropdown-menu {
                 opacity: 1;
                 visibility: visible;
                 transform: translateX(-50%) translateY(0);
@@ -1999,7 +2003,7 @@
             }
 
             .group:hover .mega-dropdown-menu-oficinas,
-            .group:focus-within .mega-dropdown-menu-oficinas {
+            .group.is-open .mega-dropdown-menu-oficinas {
                 opacity: 1;
                 visibility: visible;
                 transform: translateX(-50%) translateY(0);
@@ -2073,8 +2077,8 @@
 
             .group-vicerrectorado:hover .sub-dropdown-menu-academico,
             .group-vicerrectorado:hover .sub-dropdown-menu-investigacion,
-            .group-vicerrectorado:focus-within .sub-dropdown-menu-academico,
-            .group-vicerrectorado:focus-within .sub-dropdown-menu-investigacion {
+            .group-vicerrectorado.is-open .sub-dropdown-menu-academico,
+            .group-vicerrectorado.is-open .sub-dropdown-menu-investigacion {
                 opacity: 1;
                 visibility: visible;
                 transform: translateX(0) scale(1);
@@ -2146,7 +2150,7 @@
             }
 
             .group:hover .mega-dropdown-menu-facultades,
-            .group:focus-within .mega-dropdown-menu-facultades {
+            .group.is-open .mega-dropdown-menu-facultades {
                 opacity: 1;
                 visibility: visible;
                 transform: translateX(-50%) translateY(0);
@@ -2207,7 +2211,7 @@
             }
 
             .group:hover .mega-dropdown-menu-programas,
-            .group:focus-within .mega-dropdown-menu-programas {
+            .group.is-open .mega-dropdown-menu-programas {
                 opacity: 1;
                 visibility: visible;
                 transform: translateX(-50%) translateY(0);
@@ -2265,7 +2269,7 @@
             }
 
             .group:hover .mega-dropdown-menu-proyectos,
-            .group:focus-within .mega-dropdown-menu-proyectos {
+            .group.is-open .mega-dropdown-menu-proyectos {
                 opacity: 1;
                 visibility: visible;
                 transform: translateX(-50%) translateY(0);
@@ -2324,7 +2328,7 @@
             }
 
             .group:hover .mega-dropdown-menu-transparencia,
-            .group:focus-within .mega-dropdown-menu-transparencia {
+            .group.is-open .mega-dropdown-menu-transparencia {
                 opacity: 1;
                 visibility: visible;
                 transform: translateX(-50%) translateY(0);
@@ -2432,7 +2436,7 @@
             }
 
             .mobile-submenu.show {
-                max-height: 500px;
+                max-height: 3000px;
                 display: block !important;
             }
 
@@ -2478,7 +2482,7 @@
             }
 
             .mobile-sub-submenu.show {
-                max-height: 300px;
+                max-height: 1500px;
                 display: block !important;
             }
 
@@ -2659,7 +2663,7 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold text-[#db0455]">UNAMAD</h3>
+                            <h2 class="text-lg font-bold text-[#db0455]">UNAMAD</h2>
                             <p class="text-sm text-gray-600">Universidad Nacional Amazónica de Madre de Dios</p>
                         </div>
                     </div>
@@ -2689,7 +2693,7 @@
                                         d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                 </svg>
                             </div>
-                            <p class="text-sm text-gray-700">+51 993115418</p>
+                            <p class="text-sm text-gray-700"><a href="tel:+51993115418" class="hover:underline">+51 993 115 418</a></p>
                         </div>
 
                         <div class="flex items-center space-x-3">
@@ -2700,7 +2704,7 @@
                                         d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 012 2z" />
                                 </svg>
                             </div>
-                            <p class="text-sm text-gray-700">tramite-documentario@unamad.edu.pe</p>
+                            <p class="text-sm text-gray-700"><a href="mailto:tramite-documentario@unamad.edu.pe" class="hover:underline break-all">tramite-documentario@unamad.edu.pe</a></p>
                         </div>
 
                         <div class="flex items-center space-x-3">
@@ -2713,7 +2717,7 @@
                             </div>
                             <div>
                                 <p class="text-sm text-gray-700">Lunes - Viernes</p>
-                                <p class="text-sm text-gray-600">07:00am - 16:00pm</p>
+                                <p class="text-sm text-gray-600">07:00 a 16:00 horas</p>
                             </div>
                         </div>
                     </div>
@@ -2721,13 +2725,13 @@
 
                 <!-- Enlaces Rápidos -->
                 <div>
-                    <h4 class="text-lg font-bold mb-4 text-[#db0455] flex items-center">
+                    <h2 class="text-lg font-bold mb-4 text-[#db0455] flex items-center">
                         <svg class="w-5 h-5 mr-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                         </svg>
                         Enlaces Rápidos
-                    </h4>
+                    </h2>
                     <ul class="space-y-2">
                         <li>
                             <a href="https://admision.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
@@ -2775,13 +2779,13 @@
 
                 <!-- Síguenos -->
                 <div>
-                    <h4 class="text-lg font-bold mb-4 text-[#db0455] flex items-center">
+                    <h2 class="text-lg font-bold mb-4 text-[#db0455] flex items-center">
                         <svg class="w-5 h-5 mr-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 3v10a2 2 0 002 2h6a2 2 0 002-2V7H7z" />
                         </svg>
                         Síguenos
-                    </h4>
+                    </h2>
 
                     <div class="grid grid-cols-2 gap-3">
                         <a href="https://www.facebook.com/unamad.oficial/" target="_blank" rel="noopener noreferrer" aria-label="Facebook UNAMAD (abre en nueva pestaña)"
@@ -2818,13 +2822,13 @@
 
                 <!-- Mapa y Ubicación -->
                 <div>
-                    <h4 class="text-lg font-bold mb-4 text-[#db0455] flex items-center">
+                    <h2 class="text-lg font-bold mb-4 text-[#db0455] flex items-center">
                         <svg class="w-5 h-5 mr-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                         </svg>
                         Ubicación
-                    </h4>
+                    </h2>
 
                     <div class="bg-gray-800 rounded-lg overflow-hidden">
                         <iframe
@@ -2859,7 +2863,7 @@
                             </svg>
                         </div>
                         <div>
-                            <p class="text-sm text-gray-700">© 2024 Universidad Nacional Amazónica de Madre de Dios
+                            <p class="text-sm text-gray-700">© {{ date('Y') }} Universidad Nacional Amazónica de Madre de Dios
                             </p>
                             <p class="text-xs text-gray-600">Todos los derechos reservados</p>
                         </div>
@@ -2878,6 +2882,11 @@
             const open = !menu.classList.contains('hidden');
             if (btn) btn.setAttribute('aria-expanded', String(open));
             document.body.style.overflow = open ? 'hidden' : '';
+            // Mientras el menú móvil está abierto, el contenido de fondo no recibe foco (WCAG 2.4.3)
+            [document.getElementById('contenido-principal'), document.querySelector('footer')].forEach(function (el) {
+                if (!el) return;
+                if (open) el.setAttribute('inert', ''); else el.removeAttribute('inert');
+            });
             if (open) {
                 const first = menu.querySelector('a, button');
                 if (first) first.focus();
@@ -2885,6 +2894,16 @@
                 btn.focus();
             }
         }
+
+        // Escape cierra el menú móvil y devuelve el foco al botón
+        document.addEventListener('keydown', function (e) {
+            if (e.key !== 'Escape') return;
+            const menu = document.getElementById('mobileMenu');
+            if (menu && !menu.classList.contains('hidden')) {
+                e.preventDefault();
+                toggleMobileMenu();
+            }
+        });
 
         function toggleMobileSubmenu(submenuId, button) {
             const submenu = document.getElementById(submenuId);
@@ -2966,46 +2985,72 @@
 
         });
 
-        // ===== Accesibilidad de los mega-menús de escritorio =====
-        // Los menús se abren por :hover y :focus-within (CSS). Aquí sólo
-        // sincronizamos aria-expanded y añadimos cierre con Escape / clic fuera.
+        // ===== Accesibilidad de los mega-menús de escritorio (patrón "disclosure") =====
+        // Ratón: se abren por :hover (CSS). Teclado: Enter/Espacio en el botón alterna
+        // la clase .is-open y aria-expanded; Escape cierra y devuelve el foco al botón;
+        // al salir con Tab del grupo o hacer clic fuera, se cierra.
         (function () {
             const nav = document.querySelector('nav[aria-label="Navegación principal"]');
             if (!nav) return;
-            const groups = nav.querySelectorAll(':scope > .group');
-            groups.forEach(function (g) {
-                const btn = g.querySelector(':scope > button');
-                const menu = g.querySelector(':scope > div');
+
+            function slug(t) {
+                return (t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+            }
+
+            function configurar(grupo, btn, menu, prefijo) {
                 if (!btn || !menu) return;
-                if (!menu.id) {
-                    menu.id = 'ddmenu-' + Math.random().toString(36).slice(2, 8);
-                }
+                if (!menu.id) menu.id = prefijo + '-' + slug(btn.textContent);
                 btn.setAttribute('aria-controls', menu.id);
-                const set = function (open) { btn.setAttribute('aria-expanded', open ? 'true' : 'false'); };
-                g.addEventListener('mouseenter', function () { set(true); });
-                g.addEventListener('mouseleave', function () { set(false); });
-                g.addEventListener('focusin', function () { set(true); });
-                g.addEventListener('focusout', function (e) {
-                    if (!g.contains(e.relatedTarget)) set(false);
-                });
-                g.addEventListener('keydown', function (e) {
-                    if (e.key === 'Escape') {
-                        // El menú se muestra con :focus-within, así que hay que
-                        // SACAR el foco del grupo (no enfocar el botón interno,
-                        // que lo mantendría abierto).
-                        var a = document.activeElement;
-                        if (a && g.contains(a) && a.blur) a.blur();
-                        set(false);
+                btn.setAttribute('aria-expanded', 'false');
+                if (!menu.getAttribute('aria-label')) {
+                    menu.setAttribute('role', 'group');
+                    menu.setAttribute('aria-label', 'Submenú de ' + btn.textContent.replace(/\s+/g, ' ').trim());
+                }
+                const abrir = function () { grupo.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); };
+                const cerrar = function () { grupo.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); };
+                grupo._a11yCerrar = cerrar;
+
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (grupo.classList.contains('is-open')) {
+                        cerrar();
+                    } else {
+                        nav.querySelectorAll('.is-open').forEach(function (g) {
+                            if (g !== grupo && !g.contains(grupo)) g._a11yCerrar && g._a11yCerrar();
+                        });
+                        abrir();
+                        // Patrón disclosure: el foco permanece en el botón; Tab entra al panel ya visible.
                     }
                 });
+                grupo.addEventListener('mouseenter', function () { btn.setAttribute('aria-expanded', 'true'); });
+                grupo.addEventListener('mouseleave', function () {
+                    if (!grupo.classList.contains('is-open')) btn.setAttribute('aria-expanded', 'false');
+                });
+                grupo.addEventListener('focusout', function (e) {
+                    if (!grupo.contains(e.relatedTarget)) cerrar();
+                });
+                grupo.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && grupo.classList.contains('is-open')) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        cerrar();
+                        btn.focus();
+                    }
+                });
+            }
+
+            nav.querySelectorAll(':scope > .group').forEach(function (g) {
+                configurar(g, g.querySelector(':scope > button'), g.querySelector(':scope > div'), 'menu');
             });
-            // Clic fuera: quita el foco de cualquier menú abierto por teclado.
+            nav.querySelectorAll('.group-vicerrectorado').forEach(function (g) {
+                configurar(g, g.querySelector(':scope > button'), g.querySelector(':scope > div'), 'submenu');
+            });
+
+            // Clic fuera: cierra los menús abiertos por teclado.
             document.addEventListener('click', function (e) {
                 if (!e.target.closest('nav[aria-label="Navegación principal"] .group')) {
-                    const active = document.activeElement;
-                    if (active && active.closest && active.closest('nav[aria-label="Navegación principal"] .group')) {
-                        active.blur();
-                    }
+                    nav.querySelectorAll('.is-open').forEach(function (g) { g._a11yCerrar && g._a11yCerrar(); });
                 }
             });
         })();
@@ -3058,18 +3103,12 @@
             }
         });
     </script>
-    <!-- Mini info móvil -->
-    <div id="mobileInfo"
-        class="absolute bottom-full left-0 mb-2 bg-white rounded-lg shadow-lg p-2 text-xs whitespace-nowrap hidden">
-        <span class="font-bold text-[#db0455]">Himno UNAMAD</span>
-    </div>
-    </div>
 
     <!-- Versión minimizada del reproductor Desktop -->
     <div id="audioPlayerMini"
         class="fixed bottom-4 left-4 z-50 bg-white rounded-full shadow-2xl p-3 hidden lg:hidden"
         role="region" aria-label="Reproductor de audio minimizado">
-        <button onclick="togglePlayerSize()" aria-label="Expandir reproductor de audio"
+        <button type="button" onclick="togglePlayerSize()" aria-label="Expandir reproductor de audio"
             class="bg-gradient-to-br from-[#db0455] to-[#a00340] text-white rounded-full p-4 hover:shadow-lg transition-all duration-300 hover:scale-110">
             <svg class="w-7 h-7" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24" >
                 <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
@@ -3195,6 +3234,55 @@
             -webkit-text-fill-color: transparent;
         }
     </style>
+
+    {{-- Barra de accesibilidad (WCAG 2.1 AA · Ley N° 29973) --}}
+    @include('partials.barra-accesibilidad')
+
+    <script>
+        // ===== Ayudantes globales de accesibilidad =====
+        (function () {
+            // 2.4.4 / 3.2.5: avisar cuando un enlace abre una ventana nueva
+            var aviso = ' (se abre en una ventana nueva)';
+            function marcarEnlacesExternos() {
+            document.querySelectorAll('a[target="_blank"]').forEach(function (a) {
+                if (!/noopener/.test(a.rel || '')) a.rel = ((a.rel || '') + ' noopener noreferrer').trim();
+                var etiqueta = a.getAttribute('aria-label');
+                var texto = (etiqueta || a.textContent || '').toLowerCase();
+                if (/(ventana|pestaña) nueva|nueva (ventana|pestaña)/.test(texto)) return;
+                if (etiqueta) {
+                    a.setAttribute('aria-label', etiqueta + aviso);
+                } else {
+                    var span = document.createElement('span');
+                    span.className = 'sr-only';
+                    span.textContent = aviso;
+                    a.appendChild(span);
+                }
+            });
+            }
+            marcarEnlacesExternos();
+            // Contenido cargado dinámicamente (anuncios por categoría, etc.)
+            if (window.MutationObserver) {
+                var temporizador = null;
+                new MutationObserver(function () {
+                    clearTimeout(temporizador);
+                    temporizador = setTimeout(marcarEnlacesExternos, 200);
+                }).observe(document.body, { childList: true, subtree: true });
+            }
+
+            // 4.1.2: marcar la página actual en las navegaciones
+            var actual = window.location.pathname.replace(/\/+$/, '') || '/';
+            document.querySelectorAll('nav a[href], aside a[href]').forEach(function (a) {
+                if (a.hasAttribute('aria-current')) return;
+                var href = a.getAttribute('href');
+                if (!href || href.charAt(0) === '#' || /^(mailto|tel|javascript):/.test(href)) return;
+                var ruta;
+                try { ruta = new URL(href, window.location.origin); } catch (e) { return; }
+                if (ruta.origin !== window.location.origin) return;
+                var destino = ruta.pathname.replace(/\/+$/, '') || '/';
+                if (destino === actual) a.setAttribute('aria-current', 'page');
+            });
+        })();
+    </script>
 
     @stack('scripts')
 
