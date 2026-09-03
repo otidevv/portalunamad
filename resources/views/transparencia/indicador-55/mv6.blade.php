@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'MV6: Número de Estudiantes por Facultades - Indicador 55 UNAMAD')
+
 @section('content')
 <div class="bg-gradient-to-br from-green-50 to-teal-50 min-h-screen">
     <div class="bg-gradient-to-r from-green-600 to-teal-600 text-white py-16">
@@ -18,11 +20,11 @@
     </div>
 
     <div class="container mx-auto px-4 py-8">
-        <nav class="text-sm text-gray-600 mb-8">
+        <nav aria-label="Ruta de navegación" class="text-sm text-gray-600 mb-8">
             <a href="/" class="hover:text-green-600">Inicio</a>
-            <span class="mx-2">›</span>
+            <span class="mx-2" aria-hidden="true">›</span>
             <a href="/transparencia/indicador-55" class="hover:text-green-600">Transparencia - Indicador 55</a>
-            <span class="mx-2">›</span>
+            <span class="mx-2" aria-hidden="true">›</span>
             <span class="text-gray-800">MV6: Número de Estudiantes por Facultades</span>
         </nav>
 
@@ -185,7 +187,7 @@
                         </div>
 
                         <div class="border-l-4 border-green-500 pl-6 py-4 bg-green-50">
-                            <h3 class="text-xl font-semibred text-green-800 mb-3">2021</h3>
+                            <h3 class="text-xl font-semibold text-green-800 mb-3">2021</h3>
                             <div class="space-y-2">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-green-200 hover:bg-green-50 transition-colors">
                                     <div class="flex items-center">
@@ -262,21 +264,21 @@
                             </svg>
                             Información Importante
                         </h3>
-                        <ul class="text-sm text-green-700 space-y-2">
+                        <ul role="list" class="text-sm text-green-700 space-y-2">
                             <li class="flex items-start">
-                                <span class="text-green-600 mr-2">•</span>
+                                <span class="text-green-600 mr-2" aria-hidden="true">•</span>
                                 Los documentos contienen estadísticas detalladas de matrícula por cada facultad y programa de estudio
                             </li>
                             <li class="flex items-start">
-                                <span class="text-green-600 mr-2">•</span>
+                                <span class="text-green-600 mr-2" aria-hidden="true">•</span>
                                 Las estadísticas incluyen datos de ambos períodos académicos (I y II) cuando están disponibles
                             </li>
                             <li class="flex items-start">
-                                <span class="text-green-600 mr-2">•</span>
+                                <span class="text-green-600 mr-2" aria-hidden="true">•</span>
                                 Los reportes son elaborados por la Oficina de Registro Académico de UNAMAD
                             </li>
                             <li class="flex items-start">
-                                <span class="text-green-600 mr-2">•</span>
+                                <span class="text-green-600 mr-2" aria-hidden="true">•</span>
                                 Esta información forma parte del compromiso de transparencia universitaria
                             </li>
                         </ul>

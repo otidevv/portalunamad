@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'MV12: Malla Curricular - Indicador 55 UNAMAD')
+
 @section('content')
 <div class="bg-gradient-to-br from-teal-50 to-emerald-50 min-h-screen">
     <div class="bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-16">
@@ -17,11 +19,11 @@
     </div>
 
     <div class="container mx-auto px-4 py-8">
-        <nav class="text-sm text-gray-600 mb-8">
+        <nav aria-label="Ruta de navegación" class="text-sm text-gray-600 mb-8">
             <a href="/" class="hover:text-teal-600">Inicio</a>
-            <span class="mx-2">›</span>
+            <span class="mx-2" aria-hidden="true">›</span>
             <a href="/transparencia/indicador-55" class="hover:text-teal-600">Transparencia - Indicador 55</a>
-            <span class="mx-2">›</span>
+            <span class="mx-2" aria-hidden="true">›</span>
             <span class="text-gray-800">MV12: Malla Curricular</span>
         </nav>
 
@@ -434,21 +436,21 @@
                             </svg>
                             Información Importante
                         </h3>
-                        <ul class="text-sm text-teal-700 space-y-2">
+                        <ul role="list" class="text-sm text-teal-700 space-y-2">
                             <li class="flex items-start">
-                                <span class="text-teal-600 mr-2">•</span>
+                                <span class="text-teal-600 mr-2" aria-hidden="true">•</span>
                                 Los diseños curriculares están actualizados según las normativas vigentes
                             </li>
                             <li class="flex items-start">
-                                <span class="text-teal-600 mr-2">•</span>
+                                <span class="text-teal-600 mr-2" aria-hidden="true">•</span>
                                 Cada programa de estudios cuenta con su malla curricular específica
                             </li>
                             <li class="flex items-start">
-                                <span class="text-teal-600 mr-2">•</span>
+                                <span class="text-teal-600 mr-2" aria-hidden="true">•</span>
                                 Los documentos incluyen plan de estudios, competencias y perfil profesional
                             </li>
                             <li class="flex items-start">
-                                <span class="text-teal-600 mr-2">•</span>
+                                <span class="text-teal-600 mr-2" aria-hidden="true">•</span>
                                 Para consultas específicas sobre cursos, contacte con la Dirección Académica correspondiente
                             </li>
                         </ul>

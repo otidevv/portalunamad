@@ -29,7 +29,7 @@
     <!-- Breadcrumb -->
     <div class="bg-gradient-to-r from-gray-50 to-gray-100 border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <nav class="flex items-center space-x-2 text-sm">
+            <nav aria-label="Ruta de navegación" class="flex items-center space-x-2 text-sm">
                 <a href="/" class="text-gray-600 hover:text-gray-800 transition-colors font-medium">Inicio</a>
                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
@@ -643,12 +643,12 @@
                             <h3 class="text-lg font-bold text-rose-800">Información sobre los Concursos</h3>
                         </div>
                         
-                        <div class="text-rose-700 space-y-2 text-sm">
-                            <p><strong>• Múltiples convocatorias:</strong> UNAMAD realiza varias convocatorias anuales para cubrir necesidades docentes</p>
-                            <p><strong>• Modalidades virtuales:</strong> Desde 2022 se implementaron concursos públicos virtuales</p>
-                            <p><strong>• Cargos disponibles:</strong> Contratación de docentes y jefes de prácticas para diferentes facultades</p>
-                            <p><strong>• Base legal:</strong> Todas las convocatorias se sustentan en resoluciones del Consejo Universitario</p>
-                        </div>
+                        <ul role="list" class="text-rose-700 space-y-2 text-sm">
+                            <li><strong>Múltiples convocatorias:</strong> UNAMAD realiza varias convocatorias anuales para cubrir necesidades docentes</li>
+                            <li><strong>Modalidades virtuales:</strong> Desde 2022 se implementaron concursos públicos virtuales</li>
+                            <li><strong>Cargos disponibles:</strong> Contratación de docentes y jefes de prácticas para diferentes facultades</li>
+                            <li><strong>Base legal:</strong> Todas las convocatorias se sustentan en resoluciones del Consejo Universitario</li>
+                        </ul>
                     </div>
                 </div>
             </div>

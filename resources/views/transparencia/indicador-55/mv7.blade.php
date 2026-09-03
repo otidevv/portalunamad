@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'MV7: Reglamento de Estudiantes - Indicador 55 UNAMAD')
+
 @section('content')
 <div class="bg-gradient-to-br from-purple-50 to-violet-50 min-h-screen">
     <div class="bg-gradient-to-r from-purple-600 to-violet-600 text-white py-16">
@@ -17,11 +19,11 @@
     </div>
 
     <div class="container mx-auto px-4 py-8">
-        <nav class="text-sm text-gray-600 mb-8">
+        <nav aria-label="Ruta de navegación" class="text-sm text-gray-600 mb-8">
             <a href="/" class="hover:text-purple-600">Inicio</a>
-            <span class="mx-2">›</span>
+            <span class="mx-2" aria-hidden="true">›</span>
             <a href="/transparencia/indicador-55" class="hover:text-purple-600">Transparencia - Indicador 55</a>
-            <span class="mx-2">›</span>
+            <span class="mx-2" aria-hidden="true">›</span>
             <span class="text-gray-800">MV7: Reglamento de Estudiantes</span>
         </nav>
 
@@ -171,25 +173,25 @@
                             </svg>
                             Información Importante
                         </h3>
-                        <ul class="text-sm text-purple-700 space-y-2">
+                        <ul role="list" class="text-sm text-purple-700 space-y-2">
                             <li class="flex items-start">
-                                <span class="text-purple-600 mr-2">•</span>
+                                <span class="text-purple-600 mr-2" aria-hidden="true">•</span>
                                 El Reglamento Académico General v3.0 es la versión vigente y actualizada
                             </li>
                             <li class="flex items-start">
-                                <span class="text-purple-600 mr-2">•</span>
+                                <span class="text-purple-600 mr-2" aria-hidden="true">•</span>
                                 Los reglamentos establecen los derechos, deberes y procedimientos académicos
                             </li>
                             <li class="flex items-start">
-                                <span class="text-purple-600 mr-2">•</span>
+                                <span class="text-purple-600 mr-2" aria-hidden="true">•</span>
                                 Las resoluciones del Consejo Universitario tienen carácter oficial y vinculante
                             </li>
                             <li class="flex items-start">
-                                <span class="text-purple-600 mr-2">•</span>
+                                <span class="text-purple-600 mr-2" aria-hidden="true">•</span>
                                 Estos documentos son fundamentales para la vida académica universitaria
                             </li>
                             <li class="flex items-start">
-                                <span class="text-purple-600 mr-2">•</span>
+                                <span class="text-purple-600 mr-2" aria-hidden="true">•</span>
                                 Se recomienda revisar la versión más reciente para información actualizada
                             </li>
                         </ul>

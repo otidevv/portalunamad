@@ -29,7 +29,7 @@
     <!-- Breadcrumb -->
     <div class="bg-gradient-to-r from-gray-50 to-gray-100 border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <nav class="flex items-center space-x-2 text-sm">
+            <nav aria-label="Ruta de navegación" class="flex items-center space-x-2 text-sm">
                 <a href="/" class="text-gray-600 hover:text-gray-800 transition-colors font-medium">Inicio</a>
                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
@@ -383,12 +383,12 @@
                             <h3 class="text-lg font-bold text-amber-800">Información Importante</h3>
                         </div>
                         
-                        <div class="text-amber-700 space-y-2 text-sm">
-                            <p><strong>• Revisión constante:</strong> Los temarios pueden ser actualizados según las necesidades académicas</p>
-                            <p><strong>• Preparación integral:</strong> Se recomienda estudiar todos los contenidos indicados en el temario oficial</p>
-                            <p><strong>• Consultas oficiales:</strong> Para dudas específicas, contactar directamente con la oficina de admisión</p>
-                            <p><strong>• Documentos oficiales:</strong> Solo los temarios publicados en el sistema oficial son válidos</p>
-                        </div>
+                        <ul role="list" class="text-amber-700 space-y-2 text-sm">
+                            <li><strong>Revisión constante:</strong> Los temarios pueden ser actualizados según las necesidades académicas</li>
+                            <li><strong>Preparación integral:</strong> Se recomienda estudiar todos los contenidos indicados en el temario oficial</li>
+                            <li><strong>Consultas oficiales:</strong> Para dudas específicas, contactar directamente con la oficina de admisión</li>
+                            <li><strong>Documentos oficiales:</strong> Solo los temarios publicados en el sistema oficial son válidos</li>
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -10,7 +10,9 @@
         <p class="text-sm text-gray-600">Transparencia Universitaria</p>
     </div>
     
-    <nav class="space-y-1">
+    <nav aria-label="Secciones del Indicador 55">
+        <ul role="list" class="space-y-1">
+        <li>
         <a href="/transparencia/indicador-55" 
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('transparencia/indicador-55') ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -18,8 +20,10 @@
             </svg>
             Inicio
         </a>
+        </li>
 
         <!-- MV1: MISIÓN Y VISIÓN -->
+        <li>
         <a href="/transparencia/indicador-55/mv1" 
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('transparencia/indicador-55/mv1') ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -28,8 +32,10 @@
             </svg>
             <span class="truncate">MV1: Misión y Visión</span>
         </a>
+        </li>
 
         <!-- MV2: REGLAMENTO Y CALENDARIO DE ADMISIÓN -->
+        <li>
         <a href="/transparencia/indicador-55/mv2" 
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('transparencia/indicador-55/mv2') ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,8 +43,10 @@
             </svg>
             <span class="truncate">MV2: Reglamento de Admisión</span>
         </a>
+        </li>
 
         <!-- MV3: TEMARIOS DE EXÁMENES DE ADMISIÓN -->
+        <li>
         <a href="/transparencia/indicador-55/mv3" 
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('transparencia/indicador-55/mv3') ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -46,8 +54,10 @@
             </svg>
             <span class="truncate">MV3: Temarios de Examen</span>
         </a>
+        </li>
 
         <!-- MV4: POSTULANTES E INGRESANTES -->
+        <li>
         <a href="/transparencia/indicador-55/mv4" 
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('transparencia/indicador-55/mv4') ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -55,8 +65,10 @@
             </svg>
             <span class="truncate">MV4: Postulantes e Ingresantes</span>
         </a>
+        </li>
 
         <!-- MV5: CONCURSOS DE SELECCIÓN PARA DOCENTES -->
+        <li>
         <a href="/transparencia/indicador-55/mv5" 
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('transparencia/indicador-55/mv5') ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,8 +76,10 @@
             </svg>
             <span class="truncate">MV5: Concursos Docentes</span>
         </a>
+        </li>
 
         <!-- MV6: NÚMERO DE ESTUDIANTES POR FACULTADES -->
+        <li>
         <a href="/transparencia/indicador-55/mv6" 
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('transparencia/indicador-55/mv6') ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -73,8 +87,10 @@
             </svg>
             <span class="truncate">MV6: Estudiantes por Facultad</span>
         </a>
+        </li>
 
         <!-- MV7: REGLAMENTO DE ESTUDIANTES -->
+        <li>
         <a href="/transparencia/indicador-55/mv7" 
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('transparencia/indicador-55/mv7') ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -82,8 +98,10 @@
             </svg>
             <span class="truncate">MV7: Reglamento Estudiantil</span>
         </a>
+        </li>
 
         <!-- MV8: AMBIENTES O ESPACIOS DESTINADOS A SERVICIOS -->
+        <li>
         <a href="/transparencia/indicador-55/mv8" 
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('transparencia/indicador-55/mv8') ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,8 +109,10 @@
             </svg>
             <span class="truncate">MV8: Espacios y Servicios</span>
         </a>
+        </li>
 
         <!-- MV9: TÍTULOS DE PROYECTOS DE INVESTIGACIÓN -->
+        <li>
         <a href="/transparencia/indicador-55/mv9" 
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('transparencia/indicador-55/mv9') ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -100,8 +120,10 @@
             </svg>
             <span class="truncate">MV9: Proyectos Investigación</span>
         </a>
+        </li>
 
         <!-- MV10: TARIFAS DE SERVICIOS -->
+        <li>
         <a href="/transparencia/indicador-55/mv10" 
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('transparencia/indicador-55/mv10') ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,8 +131,10 @@
             </svg>
             <span class="truncate">MV10: Tarifas de Servicios</span>
         </a>
+        </li>
 
         <!-- MV11: PLANA DOCENTE Y DOCENTES INVESTIGADORES -->
+        <li>
         <a href="/transparencia/indicador-55/mv11" 
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('transparencia/indicador-55/mv11') ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,8 +142,10 @@
             </svg>
             <span class="truncate">MV11: Plana Docente</span>
         </a>
+        </li>
 
         <!-- MV12: MALLA CURRICULAR DE PROGRAMAS -->
+        <li>
         <a href="/transparencia/indicador-55/mv12" 
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('transparencia/indicador-55/mv12') ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,6 +153,8 @@
             </svg>
             <span class="truncate">MV12: Mallas Curriculares</span>
         </a>
+        </li>
+        </ul>
     </nav>
     
     <div class="mt-8 p-4 bg-gray-50 rounded-lg border border-gray-200">

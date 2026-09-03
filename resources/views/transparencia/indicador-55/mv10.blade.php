@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'MV10: Tarifas de Servicios - Indicador 55 UNAMAD')
+
 @section('content')
 <div class="bg-gradient-to-br from-orange-50 to-amber-50 min-h-screen">
     <div class="bg-gradient-to-r from-orange-600 to-amber-600 text-white py-16">
@@ -17,11 +19,11 @@
     </div>
 
     <div class="container mx-auto px-4 py-8">
-        <nav class="text-sm text-gray-600 mb-8">
+        <nav aria-label="Ruta de navegación" class="text-sm text-gray-600 mb-8">
             <a href="/" class="hover:text-orange-600">Inicio</a>
-            <span class="mx-2">›</span>
+            <span class="mx-2" aria-hidden="true">›</span>
             <a href="/transparencia/indicador-55" class="hover:text-orange-600">Transparencia - Indicador 55</a>
-            <span class="mx-2">›</span>
+            <span class="mx-2" aria-hidden="true">›</span>
             <span class="text-gray-800">MV10: Tarifas de Servicios</span>
         </nav>
 
@@ -333,25 +335,25 @@
                             </svg>
                             Información Importante
                         </h3>
-                        <ul class="text-sm text-orange-700 space-y-2">
+                        <ul role="list" class="text-sm text-orange-700 space-y-2">
                             <li class="flex items-start">
-                                <span class="text-orange-600 mr-2">•</span>
+                                <span class="text-orange-600 mr-2" aria-hidden="true">•</span>
                                 El TUPA establece las tarifas oficiales para todos los servicios universitarios
                             </li>
                             <li class="flex items-start">
-                                <span class="text-orange-600 mr-2">•</span>
+                                <span class="text-orange-600 mr-2" aria-hidden="true">•</span>
                                 Incluye costos de matrículas, pensiones, constancias, certificados y trámites diversos
                             </li>
                             <li class="flex items-start">
-                                <span class="text-orange-600 mr-2">•</span>
+                                <span class="text-orange-600 mr-2" aria-hidden="true">•</span>
                                 Las tarifas son aprobadas mediante resolución del Consejo Universitario o Rectorado
                             </li>
                             <li class="flex items-start">
-                                <span class="text-orange-600 mr-2">•</span>
+                                <span class="text-orange-600 mr-2" aria-hidden="true">•</span>
                                 Se actualizan periódicamente para reflejar cambios en costos administrativos
                             </li>
                             <li class="flex items-start">
-                                <span class="text-orange-600 mr-2">•</span>
+                                <span class="text-orange-600 mr-2" aria-hidden="true">•</span>
                                 Para consultas específicas, dirigirse a la Oficina de Servicios Académicos
                             </li>
                         </ul>

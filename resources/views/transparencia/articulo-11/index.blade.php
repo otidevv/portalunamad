@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Transparencia - Artículo 11 - UNAMAD')
+
 @section('content')
 <div class="bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen">
     <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16">
@@ -17,9 +19,9 @@
     </div>
 
     <div class="container mx-auto px-4 py-8">
-        <nav class="text-sm text-gray-600 mb-8">
+        <nav aria-label="Ruta de navegación" class="text-sm text-gray-600 mb-8">
             <a href="/" class="hover:text-blue-600">Inicio</a>
-            <span class="mx-2">›</span>
+            <span class="mx-2" aria-hidden="true">›</span>
             <span class="text-gray-800">Transparencia - Artículo 11</span>
         </nav>
 
@@ -346,21 +348,21 @@
                             </svg>
                             Marco Legal
                         </h3>
-                        <ul class="text-sm text-blue-700 space-y-2">
+                        <ul role="list" class="text-sm text-blue-700 space-y-2">
                             <li class="flex items-start">
-                                <span class="text-blue-600 mr-2">•</span>
+                                <span class="text-blue-600 mr-2" aria-hidden="true">•</span>
                                 Esta información se publica en cumplimiento del Artículo 11 de la Ley Universitaria N° 30220
                             </li>
                             <li class="flex items-start">
-                                <span class="text-blue-600 mr-2">•</span>
+                                <span class="text-blue-600 mr-2" aria-hidden="true">•</span>
                                 Garantiza la transparencia y el acceso a la información pública universitaria
                             </li>
                             <li class="flex items-start">
-                                <span class="text-blue-600 mr-2">•</span>
+                                <span class="text-blue-600 mr-2" aria-hidden="true">•</span>
                                 Los documentos se actualizan periódicamente según la normativa vigente
                             </li>
                             <li class="flex items-start">
-                                <span class="text-blue-600 mr-2">•</span>
+                                <span class="text-blue-600 mr-2" aria-hidden="true">•</span>
                                 Para consultas específicas, contacte con la Oficina de Transparencia Universitaria
                             </li>
                         </ul>

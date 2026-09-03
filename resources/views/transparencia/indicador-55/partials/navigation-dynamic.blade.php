@@ -10,7 +10,9 @@
         <p class="text-sm text-gray-600">Transparencia Universitaria</p>
     </div>
 
-    <nav class="space-y-1">
+    <nav aria-label="Secciones del Indicador 55">
+        <ul role="list" class="space-y-1">
+        <li>
         <a href="/transparencia/indicador-55"
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('transparencia/indicador-55') && !isset($currentCodigo) ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -18,6 +20,7 @@
             </svg>
             Inicio
         </a>
+        </li>
 
         @php
             // Iconos SVG para cada MV (se mantienen los originales)
@@ -42,6 +45,7 @@
                 $isActive = isset($currentCodigo) && $currentCodigo == $var->codigo;
                 $icono = $iconos[$var->codigo] ?? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>';
             @endphp
+            <li>
             <a href="/transparencia/indicador-55/{{ $var->codigo }}"
                class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ $isActive ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -49,7 +53,9 @@
                 </svg>
                 <span class="truncate">{{ $var->titulo_completo }}</span>
             </a>
+            </li>
         @endforeach
+        </ul>
     </nav>
 
     <div class="mt-8 p-4 bg-gray-50 rounded-lg border border-gray-200">

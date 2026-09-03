@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'MV8: Espacios y Servicios - Indicador 55 UNAMAD')
+
 @section('content')
 <div class="bg-gradient-to-br from-sky-50 to-blue-50 min-h-screen">
     <div class="bg-gradient-to-r from-sky-600 to-blue-600 text-white py-16">
@@ -17,11 +19,11 @@
     </div>
 
     <div class="container mx-auto px-4 py-8">
-        <nav class="text-sm text-gray-600 mb-8">
+        <nav aria-label="Ruta de navegación" class="text-sm text-gray-600 mb-8">
             <a href="/" class="hover:text-sky-600">Inicio</a>
-            <span class="mx-2">›</span>
+            <span class="mx-2" aria-hidden="true">›</span>
             <a href="/transparencia/indicador-55" class="hover:text-sky-600">Transparencia - Indicador 55</a>
-            <span class="mx-2">›</span>
+            <span class="mx-2" aria-hidden="true">›</span>
             <span class="text-gray-800">MV8: Espacios y Servicios</span>
         </nav>
 
@@ -228,25 +230,25 @@
                             </svg>
                             Información Importante
                         </h3>
-                        <ul class="text-sm text-sky-700 space-y-2">
+                        <ul role="list" class="text-sm text-sky-700 space-y-2">
                             <li class="flex items-start">
-                                <span class="text-sky-600 mr-2">•</span>
+                                <span class="text-sky-600 mr-2" aria-hidden="true">•</span>
                                 Los espacios están disponibles para uso de toda la comunidad universitaria
                             </li>
                             <li class="flex items-start">
-                                <span class="text-sky-600 mr-2">•</span>
+                                <span class="text-sky-600 mr-2" aria-hidden="true">•</span>
                                 Se requiere coordinación previa con las unidades correspondientes
                             </li>
                             <li class="flex items-start">
-                                <span class="text-sky-600 mr-2">•</span>
+                                <span class="text-sky-600 mr-2" aria-hidden="true">•</span>
                                 Los horarios y disponibilidad pueden variar según el periodo académico
                             </li>
                             <li class="flex items-start">
-                                <span class="text-sky-600 mr-2">•</span>
+                                <span class="text-sky-600 mr-2" aria-hidden="true">•</span>
                                 Las galerías fotográficas muestran el estado actual de las instalaciones
                             </li>
                             <li class="flex items-start">
-                                <span class="text-sky-600 mr-2">•</span>
+                                <span class="text-sky-600 mr-2" aria-hidden="true">•</span>
                                 Para más información, consulte directamente con cada unidad responsable
                             </li>
                         </ul>

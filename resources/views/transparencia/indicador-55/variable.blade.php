@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', $variable->titulo_completo . ' - Indicador 55 UNAMAD')
+
 @section('content')
 <div class="bg-gradient-to-br from-{{ $variable->bg_light }} to-{{ str_replace('-50', '-100', $variable->bg_light) }} min-h-screen">
     <!-- Hero Section -->
@@ -19,11 +21,11 @@
 
     <div class="container mx-auto px-4 py-8">
         <!-- Breadcrumb -->
-        <nav class="text-sm text-gray-600 mb-8">
+        <nav aria-label="Ruta de navegación" class="text-sm text-gray-600 mb-8">
             <a href="/" class="hover:text-{{ explode('-', $variable->gradiente_from)[0] }}-600">Inicio</a>
-            <span class="mx-2">&rsaquo;</span>
+            <span class="mx-2" aria-hidden="true">&rsaquo;</span>
             <a href="/transparencia/indicador-55" class="hover:text-{{ explode('-', $variable->gradiente_from)[0] }}-600">Transparencia - Indicador 55</a>
-            <span class="mx-2">&rsaquo;</span>
+            <span class="mx-2" aria-hidden="true">&rsaquo;</span>
             <span class="text-gray-800">{{ $variable->titulo_completo }}</span>
         </nav>
 
@@ -70,14 +72,14 @@
                             {{-- Documentos organizados por año --}}
                             @foreach($documentosPorAnio as $anio => $docs)
                                 <div class="border-l-4 border-{{ explode('-', $variable->gradiente_from)[0] }}-500 pl-6 py-4 bg-{{ $variable->bg_light }}">
-                                    <h3 class="text-xl font-semibold text-{{ explode('-', $variable->gradiente_from)[0] }}-800 mb-4">{{ $anio }}</h3>
+                                    <h2 class="text-xl font-semibold text-{{ explode('-', $variable->gradiente_from)[0] }}-800 mb-4">{{ $anio }}</h2>
 
                                     <div class="space-y-3">
                                         @foreach($docs as $doc)
                                             @if(isset($doc['departamento']))
                                                 {{-- Documento con departamento (como MV11) --}}
                                                 <div class="bg-white rounded-lg border border-{{ explode('-', $variable->gradiente_from)[0] }}-200 p-4">
-                                                    <h5 class="font-medium text-gray-900 mb-2">{{ $doc['departamento'] }}</h5>
+                                                    <h3 class="font-medium text-gray-900 mb-2">{{ $doc['departamento'] }}</h3>
                                                     @if(isset($doc['items']))
                                                         <div class="flex flex-wrap gap-3">
                                                             @foreach($doc['items'] as $item)
@@ -104,7 +106,7 @@
                                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                     @foreach($doc['items'] as $item)
                                                         <div class="bg-white rounded-lg border border-{{ explode('-', $variable->gradiente_from)[0] }}-200 p-4">
-                                                            <h4 class="font-medium text-gray-900 mb-2">{{ $item['titulo'] }}</h4>
+                                                            <h3 class="font-medium text-gray-900 mb-2">{{ $item['titulo'] }}</h3>
                                                             <a href="{{ $item['url'] }}"
                                                                target="_blank" rel="noopener noreferrer"
                                                                class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
@@ -124,7 +126,7 @@
                                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                                         </svg>
                                                         <div>
-                                                            <h4 class="font-medium text-gray-900">{{ $doc['titulo'] }}</h4>
+                                                            <h3 class="font-medium text-gray-900">{{ $doc['titulo'] }}</h3>
                                                             @if(isset($doc['descripcion']))
                                                                 <p class="text-sm text-gray-600">{{ $doc['descripcion'] }}</p>
                                                             @endif
@@ -147,7 +149,7 @@
                             @foreach($documentosPorSeccion as $seccion)
                                 <div class="border-l-4 border-{{ explode('-', $variable->gradiente_from)[0] }}-500 pl-6 py-4 bg-{{ $variable->bg_light }} @if(isset($seccion['vigente']) && $seccion['vigente']) ring-2 ring-green-400 @endif">
                                     <div class="flex items-center justify-between mb-2">
-                                        <h3 class="text-xl font-semibold text-{{ explode('-', $variable->gradiente_from)[0] }}-800">{{ $seccion['seccion'] }}</h3>
+                                        <h2 class="text-xl font-semibold text-{{ explode('-', $variable->gradiente_from)[0] }}-800">{{ $seccion['seccion'] }}</h2>
                                         @if(isset($seccion['vigente']) && $seccion['vigente'])
                                             <span class="px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">VIGENTE</span>
                                         @endif
@@ -165,7 +167,7 @@
                                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                                         </svg>
                                                         <div>
-                                                            <h4 class="font-medium text-gray-900">{{ $item['titulo'] }}</h4>
+                                                            <h3 class="font-medium text-gray-900">{{ $item['titulo'] }}</h3>
                                                             @if(isset($item['descripcion']))
                                                                 <p class="text-sm text-gray-600">{{ $item['descripcion'] }}</p>
                                                             @endif
@@ -201,7 +203,7 @@
                                                     <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                                 </svg>
                                                 <div>
-                                                    <h4 class="font-medium text-gray-900">{{ $doc['titulo'] }}</h4>
+                                                    <h2 class="font-medium text-gray-900">{{ $doc['titulo'] }}</h2>
                                                     @if(isset($doc['descripcion']))
                                                         <p class="text-sm text-gray-600">{{ $doc['descripcion'] }}</p>
                                                     @endif
@@ -222,12 +224,12 @@
 
                     <!-- Información adicional -->
                     <div class="mt-8 p-6 bg-{{ $variable->bg_light }} rounded-lg border border-{{ explode('-', $variable->gradiente_from)[0] }}-200">
-                        <h3 class="text-lg font-semibold text-{{ explode('-', $variable->gradiente_from)[0] }}-800 mb-3 flex items-center">
+                        <h2 class="text-lg font-semibold text-{{ explode('-', $variable->gradiente_from)[0] }}-800 mb-3 flex items-center">
                             <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
                             </svg>
                             Transparencia Universitaria
-                        </h3>
+                        </h2>
                         <p class="text-sm text-{{ explode('-', $variable->gradiente_from)[0] }}-700">
                             Esta información se publica en cumplimiento del Indicador 55 de Transparencia Universitaria,
                             garantizando el acceso público a información institucional relevante.

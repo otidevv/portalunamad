@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'MV11: Plana Docente - Indicador 55 UNAMAD')
+
 @section('content')
 <div class="bg-gradient-to-br from-indigo-50 to-blue-50 min-h-screen">
     <div class="bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-16">
@@ -17,11 +19,11 @@
     </div>
 
     <div class="container mx-auto px-4 py-8">
-        <nav class="text-sm text-gray-600 mb-8">
+        <nav aria-label="Ruta de navegación" class="text-sm text-gray-600 mb-8">
             <a href="/" class="hover:text-indigo-600">Inicio</a>
-            <span class="mx-2">›</span>
+            <span class="mx-2" aria-hidden="true">›</span>
             <a href="/transparencia/indicador-55" class="hover:text-indigo-600">Transparencia - Indicador 55</a>
-            <span class="mx-2">›</span>
+            <span class="mx-2" aria-hidden="true">›</span>
             <span class="text-gray-800">MV11: Plana Docente</span>
         </nav>
 
@@ -68,7 +70,7 @@
                                         @if(isset($doc['items']))
                                             {{-- Documento con items (departamento) --}}
                                             <div class="bg-white rounded-lg border border-indigo-200 p-4">
-                                                <h5 class="font-medium text-gray-900 mb-2">{{ $doc['departamento'] ?? $doc['titulo'] ?? 'Departamento' }}</h5>
+                                                <h4 class="font-medium text-gray-900 mb-2">{{ $doc['departamento'] ?? $doc['titulo'] ?? 'Departamento' }}</h4>
                                                 <div class="flex flex-wrap gap-3">
                                                     @foreach($doc['items'] as $item)
                                                         <a href="{{ $item['url'] ?? '#' }}"
@@ -136,7 +138,7 @@
                                 </div>
                             </div>
 
-                            <h4 class="text-lg font-semibold text-indigo-700 mb-3">Plana Docente por Departamento Académico:</h4>
+                            <h4 class="text-lg font-semibold text-indigo-700 mb-3">Plana Docente por Departamento Académico</h4>
                             
                             <div class="space-y-3">
                                 <!-- D.A. Administración y Contabilidad 2024 -->
@@ -243,16 +245,16 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-2 font-medium">Resoluciones:</p>
-                                        <div class="grid grid-cols-2 gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/5628184-278-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">278-2024</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/5628101-277-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">277-2024</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/5627844-263-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">263-2024</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/5627742-248-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">248-2024</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/5613941-238-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">238-2024</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/5474315-189-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">189-2024</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/5389447-144-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">144-2024</a>
-                                        </div>
+                                        <p id="mv11-res-1" class="mb-2 font-medium">Resoluciones:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-1" class="grid grid-cols-2 gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5628184-278-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">278-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5628101-277-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">277-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5627844-263-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">263-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5627742-248-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">248-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5613941-238-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">238-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5474315-189-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">189-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5389447-144-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">144-2024</a></li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -270,14 +272,14 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones:</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/6006729-410-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">410-2024</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/6131333-544-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">544-2024</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/5613941-238-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">238-2024</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/5474315-189-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">189-2024</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/5389447-144-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">144-2024</a>
-                                        </div>
+                                        <p id="mv11-res-2" class="mb-1 font-medium">Resoluciones:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-2" class="flex flex-wrap gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/6006729-410-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">410-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/6131333-544-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">544-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5613941-238-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">238-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5474315-189-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">189-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5389447-144-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">144-2024</a></li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -333,12 +335,12 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones:</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/5614023-240-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">240-2024</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/5394526-142-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">142-2024</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/5614093-243-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">243-2024</a>
-                                        </div>
+                                        <p id="mv11-res-3" class="mb-1 font-medium">Resoluciones:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-3" class="flex flex-wrap gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5614023-240-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">240-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5394526-142-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">142-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5614093-243-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">243-2024</a></li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -356,13 +358,13 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones CU:</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/6016806-473-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">473-2024</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/5394526-142-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">142-2024</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/5614093-243-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">243-2024</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/5614023-240-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">240-2024</a>
-                                        </div>
+                                        <p id="mv11-res-4" class="mb-1 font-medium">Resoluciones CU:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-4" class="flex flex-wrap gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/6016806-473-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">473-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5394526-142-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">142-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5614093-243-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">243-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5614023-240-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">240-2024</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -392,7 +394,7 @@
                                 </div>
                             </div>
 
-                            <h4 class="text-lg font-semibold text-indigo-700 mb-3">Plana Docente por Departamento Académico:</h4>
+                            <h4 class="text-lg font-semibold text-indigo-700 mb-3">Plana Docente por Departamento Académico</h4>
                             
                             <div class="space-y-3">
                                 <!-- D.A. Administración y Contabilidad -->
@@ -478,7 +480,7 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resolución:</p>
+                                        <p id="mv11-res-5" class="mb-1 font-medium">Resolución:</p>
                                         <a href="https://www.gob.pe/institucion/unamad/normas-legales/4286921-113-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">113-2023</a>
                                     </div>
                                 </div>
@@ -497,19 +499,19 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones:</p>
-                                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-1 text-xs">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/6568033-736-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">736-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4865899-580-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">580-2023</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4729481-517-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">517-2023</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4723478-488-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">488-2023</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4484392-381-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">381-2023</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4412212-357-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">357-2023</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4296518-231-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">231-2023</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4296498-229-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">229-2023</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4293300-171-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">171-2023</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4286929-114-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">114-2023</a>
-                                        </div>
+                                        <p id="mv11-res-6" class="mb-1 font-medium">Resoluciones:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-6" class="grid grid-cols-2 sm:grid-cols-3 gap-1 text-xs">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/6568033-736-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">736-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4865899-580-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">580-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4729481-517-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">517-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4723478-488-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">488-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4484392-381-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">381-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4412212-357-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">357-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296518-231-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">231-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296498-229-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">229-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4293300-171-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">171-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4286929-114-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">114-2023</a></li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -527,14 +529,14 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones:</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4412118-353-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">353-2023</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4302938-293-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">293-2023</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4302927-292-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">292-2023</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4293300-171-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">171-2023</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4286929-114-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">114-2023</a>
-                                        </div>
+                                        <p id="mv11-res-7" class="mb-1 font-medium">Resoluciones:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-7" class="flex flex-wrap gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4412118-353-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">353-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4302938-293-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">293-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4302927-292-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">292-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4293300-171-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">171-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4286929-114-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">114-2023</a></li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -590,13 +592,13 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones:</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4296494-228-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">228-2023</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4296489-227-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">227-2023</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4728803-505-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">505-2023</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4728822-506-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">506-2023</a>
-                                        </div>
+                                        <p id="mv11-res-8" class="mb-1 font-medium">Resoluciones:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-8" class="flex flex-wrap gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296494-228-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">228-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296489-227-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">227-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4728803-505-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">505-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4728822-506-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">506-2023</a></li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -614,16 +616,16 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resolución de Consejo de Facultad:</p>
-                                        <div class="mb-2">
-                                            <a href="https://sinc.unamad.edu.pe:8000/media/pdf/4846932-resolucion-de-consejo-de-facultad-de-ingenieria-n-019-2023-unamad-cfi.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 text-xs block">N° 019-2023-UNAMAD-CF</a>
-                                        </div>
-                                        <p class="mb-1 font-medium">Resoluciones CU:</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4296494-228-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">228-2023</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4286916-112-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">112-2023</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/4296489-227-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">227-2023</a>
-                                        </div>
+                                        <p id="mv11-res-9" class="mb-1 font-medium">Resolución de Consejo de Facultad:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-9" class="mb-2">
+                                            <li><a href="https://sinc.unamad.edu.pe:8000/media/pdf/4846932-resolucion-de-consejo-de-facultad-de-ingenieria-n-019-2023-unamad-cfi.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 text-xs block">N° 019-2023-UNAMAD-CF</a></li>
+                                        </ul>
+                                        <p id="mv11-res-10" class="mb-1 font-medium">Resoluciones CU:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-10" class="flex flex-wrap gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296494-228-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">228-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4286916-112-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">112-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296489-227-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">227-2023</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -653,7 +655,7 @@
                                 </div>
                             </div>
 
-                            <h4 class="text-lg font-semibold text-indigo-700 mb-3">Plana Docente por Departamento Académico:</h4>
+                            <h4 class="text-lg font-semibold text-indigo-700 mb-3">Plana Docente por Departamento Académico</h4>
                             
                             <div class="space-y-3">
                                 <!-- D.A. Administración y Contabilidad -->
@@ -739,7 +741,7 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resolución:</p>
+                                        <p id="mv11-res-11" class="mb-1 font-medium">Resolución:</p>
                                         <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478397-129-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">129-2022</a>
                                     </div>
                                 </div>
@@ -758,20 +760,20 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones:</p>
-                                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-1 text-xs">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478400-130-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">130-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478510-182-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">182-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478592-222-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">222-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478636-244-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">244-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478717-284-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">284-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478719-285-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">285-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478988-400-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">400-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3670602-416-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">416-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3675424-513-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">513-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3479106-517-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">517-2021</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/6568033-736-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">736-2022</a>
-                                        </div>
+                                        <p id="mv11-res-12" class="mb-1 font-medium">Resoluciones:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-12" class="grid grid-cols-2 sm:grid-cols-3 gap-1 text-xs">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478400-130-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">130-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478510-182-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">182-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478592-222-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">222-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478636-244-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">244-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478717-284-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">284-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478719-285-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">285-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478988-400-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">400-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3670602-416-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">416-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3675424-513-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">513-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3479106-517-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">517-2021</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/6568033-736-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">736-2022</a></li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -789,14 +791,14 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones:</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478592-222-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">222-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478510-182-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">182-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478400-130-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">130-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3675393-586-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">586-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478636-244-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">244-2022</a>
-                                        </div>
+                                        <p id="mv11-res-13" class="mb-1 font-medium">Resoluciones:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-13" class="flex flex-wrap gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478592-222-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">222-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478510-182-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">182-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478400-130-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">130-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3675393-586-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">586-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478636-244-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">244-2022</a></li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -852,13 +854,13 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones:</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3468568-362-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">362-2020</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3675408-588-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">588-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3675050-576-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">576-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478395-128-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">128-2022</a>
-                                        </div>
+                                        <p id="mv11-res-14" class="mb-1 font-medium">Resoluciones:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-14" class="flex flex-wrap gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468568-362-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">362-2020</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3675408-588-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">588-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3675050-576-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">576-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478395-128-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">128-2022</a></li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -876,18 +878,18 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones de Consejo de Facultad:</p>
-                                        <div class="space-y-1 mb-2">
-                                            <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RESOL._CON_FAC._019_-_Aprobar_informe_final_del_concurso_docente_2022_III_convocator_ODZb4A8.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 text-xs block">N° 019-2022-UNAMAD-CF</a>
-                                            <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RESOl._CON_FAC._026_-_Contrato_por_necesidad_institucional.pdf.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 text-xs block">N° 026-2022-UNAMAD-CFI</a>
-                                        </div>
-                                        <p class="mb-1 font-medium">Resoluciones CU:</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478395-128-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">128-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478504-180-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">180-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478632-242-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">242-2022</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478988-400-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">400-2022</a>
-                                        </div>
+                                        <p id="mv11-res-15" class="mb-1 font-medium">Resoluciones de Consejo de Facultad:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-15" class="space-y-1 mb-2">
+                                            <li><a href="https://sinc.unamad.edu.pe:8000/media/pdf/RESOL._CON_FAC._019_-_Aprobar_informe_final_del_concurso_docente_2022_III_convocator_ODZb4A8.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 text-xs block">N° 019-2022-UNAMAD-CF</a></li>
+                                            <li><a href="https://sinc.unamad.edu.pe:8000/media/pdf/RESOl._CON_FAC._026_-_Contrato_por_necesidad_institucional.pdf.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 text-xs block">N° 026-2022-UNAMAD-CFI</a></li>
+                                        </ul>
+                                        <p id="mv11-res-16" class="mb-1 font-medium">Resoluciones CU:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-16" class="flex flex-wrap gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478395-128-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">128-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478504-180-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">180-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478632-242-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">242-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478988-400-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">400-2022</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -917,7 +919,7 @@
                                 </div>
                             </div>
 
-                            <h4 class="text-lg font-semibold text-indigo-700 mb-3">Plana Docente por Departamento Académico:</h4>
+                            <h4 class="text-lg font-semibold text-indigo-700 mb-3">Plana Docente por Departamento Académico</h4>
                             
                             <div class="space-y-3">
                                 <!-- D.A. Administración y Contabilidad -->
@@ -980,7 +982,7 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resolución:</p>
+                                        <p id="mv11-res-17" class="mb-1 font-medium">Resolución:</p>
                                         <a href="https://www.gob.pe/institucion/unamad/normas-legales/3479075-487-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">487-2021</a>
                                     </div>
                                 </div>
@@ -1022,15 +1024,15 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones:</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3468171-125-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">125-2021</a>
-                                            <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RESOLUCI%C3%93N_N_152-2021-UNAMAD-CU.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">152-2021</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478616-234-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">234-2021</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478620-236-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">236-2021</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3479081-493-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">493-2021</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3479106-517-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">517-2021</a>
-                                        </div>
+                                        <p id="mv11-res-18" class="mb-1 font-medium">Resoluciones:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-18" class="flex flex-wrap gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468171-125-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">125-2021</a></li>
+                                            <li><a href="https://sinc.unamad.edu.pe:8000/media/pdf/RESOLUCI%C3%93N_N_152-2021-UNAMAD-CU.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">152-2021</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478616-234-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">234-2021</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478620-236-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">236-2021</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3479081-493-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">493-2021</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3479106-517-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">517-2021</a></li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -1048,7 +1050,7 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resolución:</p>
+                                        <p id="mv11-res-19" class="mb-1 font-medium">Resolución:</p>
                                         <a href="https://www.gob.pe/institucion/unamad/normas-legales/3468171-125-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">125-2021</a>
                                     </div>
                                 </div>
@@ -1105,7 +1107,7 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resolución:</p>
+                                        <p id="mv11-res-20" class="mb-1 font-medium">Resolución:</p>
                                         <a href="https://www.gob.pe/institucion/unamad/normas-legales/3468568-362-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">362-2020</a>
                                     </div>
                                 </div>
@@ -1124,13 +1126,13 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones:</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3468568-362-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">362-2020</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3468598-393-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">393-2020</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3468168-122-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">122-2021</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478507-181-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">181-2021</a>
-                                        </div>
+                                        <p id="mv11-res-21" class="mb-1 font-medium">Resoluciones:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-21" class="flex flex-wrap gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468568-362-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">362-2020</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468598-393-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">393-2020</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468168-122-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">122-2021</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478507-181-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">181-2021</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -1160,7 +1162,7 @@
                                 </div>
                             </div>
 
-                            <h4 class="text-lg font-semibold text-indigo-700 mb-3">Plana Docente por Departamento Académico:</h4>
+                            <h4 class="text-lg font-semibold text-indigo-700 mb-3">Plana Docente por Departamento Académico</h4>
                             
                             <div class="space-y-3">
                                 <!-- D.A. Administración y Contabilidad -->
@@ -1261,15 +1263,15 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones:</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3477598-529-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">529-2019</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3469197-023-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">023-2020</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3469423-068-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">068-2020</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3468152-102-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">102-2020</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3479989-113-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">113-2020</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3479995-123-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">123-2020</a>
-                                        </div>
+                                        <p id="mv11-res-22" class="mb-1 font-medium">Resoluciones:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-22" class="flex flex-wrap gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3477598-529-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">529-2019</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469197-023-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">023-2020</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469423-068-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">068-2020</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468152-102-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">102-2020</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3479989-113-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">113-2020</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3479995-123-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">123-2020</a></li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -1287,11 +1289,11 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones:</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3469197-023-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">023-2020</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3468569-363-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">363-2020</a>
-                                        </div>
+                                        <p id="mv11-res-23" class="mb-1 font-medium">Resoluciones:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-23" class="flex flex-wrap gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469197-023-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">023-2020</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468569-363-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">363-2020</a></li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -1362,13 +1364,13 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones:</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3475431-397-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">397-2019</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3476330-507-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">507-2019</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3469165-018-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">018-2020</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3469418-067-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">067-2020</a>
-                                        </div>
+                                        <p id="mv11-res-24" class="mb-1 font-medium">Resoluciones:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-24" class="flex flex-wrap gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3475431-397-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">397-2019</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3476330-507-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">507-2019</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469165-018-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">018-2020</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469418-067-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">067-2020</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -1398,7 +1400,7 @@
                                 </div>
                             </div>
 
-                            <h4 class="text-lg font-semibold text-indigo-700 mb-3">Plana Docente por Departamento Académico:</h4>
+                            <h4 class="text-lg font-semibold text-indigo-700 mb-3">Plana Docente por Departamento Académico</h4>
                             
                             <div class="space-y-3">
                                 <!-- D.A. Administración y Contabilidad -->
@@ -1490,18 +1492,18 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones:</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3470912-120-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">120-2019</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3471033-151-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">151-2019</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3471126-175-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">175-2019</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3471133-177-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">177-2019</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3471307-221-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">221-2019</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3472929-256-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">256-2019</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3474262-382-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">382-2019</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3475489-411-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">411-2019</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3475558-427-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">427-2019</a>
-                                        </div>
+                                        <p id="mv11-res-25" class="mb-1 font-medium">Resoluciones:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-25" class="flex flex-wrap gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3470912-120-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">120-2019</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3471033-151-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">151-2019</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3471126-175-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">175-2019</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3471133-177-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">177-2019</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3471307-221-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">221-2019</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3472929-256-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">256-2019</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3474262-382-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">382-2019</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3475489-411-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">411-2019</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3475558-427-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">427-2019</a></li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -1519,11 +1521,11 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones:</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3611126-117-2019-unamad-r-his" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">117-2019-R</a>
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3470912-120-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">120-2019-CU</a>
-                                        </div>
+                                        <p id="mv11-res-26" class="mb-1 font-medium">Resoluciones:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-26" class="flex flex-wrap gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3611126-117-2019-unamad-r-his" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">117-2019-R</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3470912-120-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">120-2019-CU</a></li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -1541,7 +1543,7 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resolución:</p>
+                                        <p id="mv11-res-27" class="mb-1 font-medium">Resolución:</p>
                                         <a href="https://www.gob.pe/institucion/unamad/normas-legales/3469565-098-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">N.° 098-2019-UNAMAD-R</a>
                                     </div>
                                 </div>
@@ -1560,7 +1562,7 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resolución:</p>
+                                        <p id="mv11-res-28" class="mb-1 font-medium">Resolución:</p>
                                         <a href="https://www.gob.pe/institucion/unamad/normas-legales/3469565-098-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">N.° 098-2019-UNAMAD-R</a>
                                     </div>
                                 </div>
@@ -1587,7 +1589,7 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resolución:</p>
+                                        <p id="mv11-res-29" class="mb-1 font-medium">Resolución:</p>
                                         <a href="https://www.gob.pe/institucion/unamad/normas-legales/3469565-098-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">N.° 098-2019-UNAMAD-R</a>
                                     </div>
                                 </div>
@@ -1606,11 +1608,11 @@
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
-                                        <p class="mb-1 font-medium">Resoluciones:</p>
-                                        <div class="flex flex-wrap gap-2">
-                                            <a href="https://www.gob.pe/institucion/unamad/normas-legales/3469565-098-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">098-2019-R</a>
-                                            <a href="https://sinc.unamad.edu.pe:8000/media/pdf/CamScanner_03-04-2025_09.16.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">028-2019-CFI</a>
-                                        </div>
+                                        <p id="mv11-res-30" class="mb-1 font-medium">Resoluciones:</p>
+                                        <ul role="list" aria-labelledby="mv11-res-30" class="flex flex-wrap gap-2">
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469565-098-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">098-2019-R</a></li>
+                                            <li><a href="https://sinc.unamad.edu.pe:8000/media/pdf/CamScanner_03-04-2025_09.16.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">028-2019-CFI</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -1625,25 +1627,25 @@
                             </svg>
                             Información Importante
                         </h3>
-                        <ul class="text-sm text-indigo-700 space-y-2">
+                        <ul role="list" class="text-sm text-indigo-700 space-y-2">
                             <li class="flex items-start">
-                                <span class="text-indigo-600 mr-2">•</span>
+                                <span class="text-indigo-600 mr-2" aria-hidden="true">•</span>
                                 Los documentos incluyen información de docentes nombrados y contratados por departamento
                             </li>
                             <li class="flex items-start">
-                                <span class="text-indigo-600 mr-2">•</span>
+                                <span class="text-indigo-600 mr-2" aria-hidden="true">•</span>
                                 Los archivos están disponibles en múltiples formatos (PDF, Excel, DOCX)
                             </li>
                             <li class="flex items-start">
-                                <span class="text-indigo-600 mr-2">•</span>
+                                <span class="text-indigo-600 mr-2" aria-hidden="true">•</span>
                                 Incluye resoluciones oficiales de aprobación y nombramiento
                             </li>
                             <li class="flex items-start">
-                                <span class="text-indigo-600 mr-2">•</span>
+                                <span class="text-indigo-600 mr-2" aria-hidden="true">•</span>
                                 Los docentes investigadores se registran anualmente de manera separada
                             </li>
                             <li class="flex items-start">
-                                <span class="text-indigo-600 mr-2">•</span>
+                                <span class="text-indigo-600 mr-2" aria-hidden="true">•</span>
                                 Para información detallada por departamento, consulte los años 2019-2024
                             </li>
                         </ul>
