@@ -177,20 +177,29 @@
                             </svg>
                             Horarios de Atención
                         </h4>
-                        <div class="space-y-2 text-sm">
-                            <div class="flex justify-between">
-                                <span class="font-medium">Lunes - Viernes:</span>
-                                <span>7:00 AM - 4:00 PM</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="font-medium">Sábados:</span>
-                                <span>Cerrado</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="font-medium">Domingos:</span>
-                                <span>Cerrado</span>
-                            </div>
-                        </div>
+                        <table class="w-full text-sm">
+                            <caption class="sr-only">Horarios de atención de la sede principal por día de la semana</caption>
+                            <thead class="sr-only">
+                                <tr>
+                                    <th scope="col">Días</th>
+                                    <th scope="col">Horario</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="font-medium text-left py-1">Lunes a viernes</th>
+                                    <td class="text-right py-1">7:00 a. m. - 4:00 p. m.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="font-medium text-left py-1">Sábados</th>
+                                    <td class="text-right py-1">Cerrado</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="font-medium text-left py-1">Domingos</th>
+                                    <td class="text-right py-1">Cerrado</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">

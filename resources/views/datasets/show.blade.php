@@ -115,18 +115,19 @@
                 </h2>
                 <div id="contenido-diccionario" class="overflow-x-auto border-t border-gray-100">
                     <table class="w-full text-sm">
+                        <caption class="sr-only">Diccionario de datos de {{ $dataset->nombre }}: campos, tipo, descripción y ejemplo</caption>
                         <thead class="bg-gray-50 text-xs text-gray-500 uppercase">
                             <tr>
-                                <th class="px-4 py-2 text-left">Campo</th>
-                                <th class="px-4 py-2 text-left">Tipo</th>
-                                <th class="px-4 py-2 text-left">Descripción</th>
-                                <th class="px-4 py-2 text-left">Ejemplo</th>
+                                <th scope="col" class="px-4 py-2 text-left">Campo</th>
+                                <th scope="col" class="px-4 py-2 text-left">Tipo</th>
+                                <th scope="col" class="px-4 py-2 text-left">Descripción</th>
+                                <th scope="col" class="px-4 py-2 text-left">Ejemplo</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100">
                             @foreach($dataset->columnas as $col)
                                 <tr>
-                                    <td class="px-4 py-2 font-mono text-gray-800 whitespace-nowrap">{{ data_get($col, 'label') }}</td>
+                                    <th scope="row" class="px-4 py-2 font-mono font-normal text-left text-gray-800 whitespace-nowrap">{{ data_get($col, 'label') }}</th>
                                     <td class="px-4 py-2 text-gray-600">{{ \App\Models\Dataset::TIPOS_COLUMNA[data_get($col, 'tipo')] ?? data_get($col, 'tipo') }}</td>
                                     <td class="px-4 py-2 text-gray-600">{{ data_get($col, 'descripcion') ?: '—' }}</td>
                                     <td class="px-4 py-2 text-gray-500">{{ data_get($col, 'ejemplo') ?: '—' }}</td>

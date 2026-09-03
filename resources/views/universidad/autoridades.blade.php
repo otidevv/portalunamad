@@ -112,11 +112,12 @@
                             </h4>
                             <div class="overflow-x-auto">
                                 <table class="w-full text-sm border-collapse border border-gray-300">
+                                    <caption class="sr-only">Datos académicos del Dr. Joab Maquera Ramírez: grado, título y centro de estudios</caption>
                                     <thead>
                                         <tr class="bg-gray-100">
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">GRADO</th>
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">TÍTULO</th>
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">CENTRO DE ESTUDIOS</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">GRADO</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">TÍTULO</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">CENTRO DE ESTUDIOS</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -155,11 +156,12 @@
                             </h4>
                             <div class="overflow-x-auto">
                                 <table class="w-full text-sm border-collapse border border-gray-300">
+                                    <caption class="sr-only">Experiencia laboral del Dr. Joab Maquera Ramírez: periodo, cargo e institución</caption>
                                     <thead>
                                         <tr class="bg-gray-100">
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">PERIODO</th>
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">CARGO</th>
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">INSTITUCIÓN</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">PERIODO</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">CARGO</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">INSTITUCIÓN</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -188,12 +190,13 @@
                             </h4>
                             <div class="overflow-x-auto">
                                 <table class="w-full text-sm border-collapse border border-gray-300">
+                                    <caption class="sr-only">Producción científica y de investigación del Dr. Joab Maquera Ramírez: tipo, título, fecha y fuente</caption>
                                     <thead>
                                         <tr class="bg-gray-100">
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">TIPO PRODUCCIÓN</th>
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">TÍTULO</th>
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">FECHA</th>
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">FUENTE</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">TIPO PRODUCCIÓN</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">TÍTULO</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">FECHA</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">FUENTE</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -279,11 +282,12 @@
                             </h4>
                             <div class="overflow-x-auto">
                                 <table class="w-full text-sm border-collapse border border-gray-300">
+                                    <caption class="sr-only">Datos académicos de la Dra. Luz Marina Almanza Huamán: grado, título y centro de estudios</caption>
                                     <thead>
                                         <tr class="bg-gray-100">
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">GRADO</th>
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">TÍTULO</th>
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">CENTRO DE ESTUDIOS</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">GRADO</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">TÍTULO</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">CENTRO DE ESTUDIOS</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -337,11 +341,12 @@
                             </h4>
                             <div class="overflow-x-auto">
                                 <table class="w-full text-sm border-collapse border border-gray-300">
+                                    <caption class="sr-only">Experiencia laboral de la Dra. Luz Marina Almanza Huamán: periodo, cargo e institución</caption>
                                     <thead>
                                         <tr class="bg-gray-100">
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">PERIODO</th>
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">CARGO</th>
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">INSTITUCIÓN</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">PERIODO</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">CARGO</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">INSTITUCIÓN</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -370,12 +375,13 @@
                             </h4>
                             <div class="overflow-x-auto">
                                 <table class="w-full text-sm border-collapse border border-gray-300">
+                                    <caption class="sr-only">Producción científica y de investigación de la Dra. Luz Marina Almanza Huamán: tipo, título, fecha y fuente</caption>
                                     <thead>
                                         <tr class="bg-gray-100">
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">TIPO PRODUCCIÓN</th>
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">TÍTULO</th>
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">FECHA</th>
-                                            <th class="border border-gray-300 px-4 py-2 text-left font-semibold">FUENTE</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">TIPO PRODUCCIÓN</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">TÍTULO</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">FECHA</th>
+                                            <th scope="col" class="border border-gray-300 px-4 py-2 text-left font-semibold">FUENTE</th>
                                         </tr>
                                     </thead>
                                     <tbody>
