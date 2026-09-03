@@ -83,11 +83,9 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <a href="{{ $item['url'] ?? '#' }}"
-                                           target="_blank"
-                                           rel="noopener noreferrer"
+                                        <a @if(!empty($item['url'])) href="{{ $item['url'] }}" target="_blank" rel="noopener noreferrer" @endif
                                            class="text-sky-600 hover:text-sky-800 font-medium">
-                                            Ver documento →
+                                            Ver documento<span class="sr-only">: {{ $item['titulo'] ?? 'Documento' }}</span> <span aria-hidden="true">→</span>
                                         </a>
                                     </div>
                                     @endforeach
@@ -124,7 +122,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-sky-600 hover:text-sky-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: Espacios Destinados a Servicios Deportivos (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -156,7 +154,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-blue-600 hover:text-blue-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: Lista de Espacios 2024 - II (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>

@@ -78,11 +78,9 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <a href="{{ $item['url'] ?? '#' }}"
-                                           target="_blank"
-                                           rel="noopener noreferrer"
+                                        <a @if(!empty($item['url'])) href="{{ $item['url'] }}" target="_blank" rel="noopener noreferrer" @endif
                                            class="text-purple-600 hover:text-purple-800 font-medium">
-                                            Ver documento →
+                                            Ver documento<span class="sr-only">: {{ $item['titulo'] ?? 'Documento' }}</span> <span aria-hidden="true">→</span>
                                         </a>
                                     </div>
                                     @endforeach
@@ -114,7 +112,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-purple-600 hover:text-purple-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: Reglamento Académico General v3.0 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-purple-200 hover:bg-purple-50 transition-colors">
@@ -131,7 +129,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-purple-600 hover:text-purple-800 font-medium">
-                                        Ver resolución →
+                                        Ver resolución<span class="sr-only">: Resolución N° 100-2023-UNAMAD-CU</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -158,7 +156,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-purple-600 hover:text-purple-800 font-medium">
-                                        Ver resolución →
+                                        Ver resolución<span class="sr-only">: Resolución N° 503-2017-UNAMAD-CU</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>

@@ -113,7 +113,7 @@
                                                                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                                     <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                                                 </svg>
-                                                                Ver documento
+                                                                Ver documento<span class="sr-only">: {{ $item['titulo'] }}</span>
                                                             </a>
                                                         </div>
                                                     @endforeach
@@ -136,7 +136,7 @@
                                                        target="_blank"
                                                        rel="noopener noreferrer"
                                                        class="text-{{ explode('-', $variable->gradiente_from)[0] }}-600 hover:text-{{ explode('-', $variable->gradiente_from)[0] }}-800 font-medium">
-                                                        Ver documento &rarr;
+                                                        Ver documento<span class="sr-only">: {{ $doc['titulo'] }}</span> <span aria-hidden="true">&rarr;</span>
                                                     </a>
                                                 </div>
                                             @endif
@@ -184,7 +184,7 @@
                                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                                         </svg>
-                                                        {{ ($item['tipo'] ?? 'pdf') == 'resolucion' ? 'Ver Resolución' : 'Ver PDF' }}
+                                                        {{ ($item['tipo'] ?? 'pdf') == 'resolucion' ? 'Ver Resolución' : 'Ver PDF' }}<span class="sr-only">: {{ $item['titulo'] }}</span>
                                                     </a>
                                                 </div>
                                             @endforeach
@@ -213,7 +213,7 @@
                                                target="_blank"
                                                rel="noopener noreferrer"
                                                class="text-{{ explode('-', $variable->gradiente_from)[0] }}-600 hover:text-{{ explode('-', $variable->gradiente_from)[0] }}-800 font-medium">
-                                                Ver documento &rarr;
+                                                Ver documento<span class="sr-only">: {{ $doc['titulo'] }}</span> <span aria-hidden="true">&rarr;</span>
                                             </a>
                                         </div>
                                     @endforeach

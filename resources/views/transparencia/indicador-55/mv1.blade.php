@@ -208,9 +208,7 @@
                                 }
                             @endphp
                             @forelse($docs as $doc)
-                            <a href="{{ $doc['url'] ?? '#' }}"
-                               target="_blank"
-                               rel="noopener noreferrer"
+                            <a @if(!empty($doc['url'])) href="{{ $doc['url'] }}" target="_blank" rel="noopener noreferrer" @endif
                                class="flex items-center p-4 bg-gray-50 rounded-lg border border-gray-200 hover:bg-gray-100 transition-colors duration-200 group">
                                 <div class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 group-hover:bg-gray-200 flex-shrink-0 mr-4">
                                     <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">

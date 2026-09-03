@@ -73,13 +73,12 @@
                                                 <h4 class="font-medium text-gray-900 mb-2">{{ $doc['departamento'] ?? $doc['titulo'] ?? 'Departamento' }}</h4>
                                                 <div class="flex flex-wrap gap-3">
                                                     @foreach($doc['items'] as $item)
-                                                        <a href="{{ $item['url'] ?? '#' }}"
-                                                           target="_blank" rel="noopener noreferrer"
+                                                        <a @if(!empty($item['url'])) href="{{ $item['url'] }}" target="_blank" rel="noopener noreferrer" @endif
                                                            class="inline-flex items-center px-3 py-1 {{ ($item['tipo'] ?? 'pdf') === 'excel' ? 'bg-green-50 text-green-700 hover:bg-green-100' : 'bg-red-50 text-red-700 hover:bg-red-100' }} rounded-md text-sm">
                                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                                             </svg>
-                                                            {{ $item['titulo'] ?? 'Documento' }}
+                                                            {{ $item['titulo'] ?? 'Documento' }}<span class="sr-only">: {{ $doc['departamento'] ?? $doc['titulo'] ?? 'Departamento' }}, {{ $anio }}</span>
                                                         </a>
                                                     @endforeach
                                                 </div>
@@ -98,11 +97,9 @@
                                                         @endif
                                                     </div>
                                                 </div>
-                                                <a href="{{ $doc['url'] ?? '#' }}"
-                                                   target="_blank"
-                                                   rel="noopener noreferrer"
+                                                <a @if(!empty($doc['url'])) href="{{ $doc['url'] }}" target="_blank" rel="noopener noreferrer" @endif
                                                    class="text-indigo-600 hover:text-indigo-800 font-medium">
-                                                    Ver documento →
+                                                    Ver documento<span class="sr-only">: {{ $doc['titulo'] ?? 'Documento' }}</span> <span aria-hidden="true">→</span>
                                                 </a>
                                             </div>
                                         @endif
@@ -133,7 +130,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-indigo-600 hover:text-indigo-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: Docentes Investigadores 2024 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -151,7 +148,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            PDF
+                                            PDF<span class="sr-only">: D.A. Administración y Contabilidad, 2024</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DOCENTES_NOMBRADOS_Y_CONTRATADOS_2024.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
@@ -159,7 +156,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Excel
+                                            Excel<span class="sr-only">: D.A. Administración y Contabilidad, 2024</span>
                                         </a>
                                     </div>
                                 </div>
@@ -174,7 +171,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ordinarios
+                                            Ordinarios<span class="sr-only">: D.A. Ciencias Básicas, 2024 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACIÓN_DE_DOCENTES_CONTRATADOS_2024.pdf" 
                                            target="_blank" rel="noopener noreferrer"
@@ -182,7 +179,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Contratados
+                                            Contratados<span class="sr-only">: D.A. Ciencias Básicas, 2024 (PDF)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -197,7 +194,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            PDF
+                                            PDF<span class="sr-only">: D.A. Derecho y Ciencias Políticas, 2024</span>
                                         </a>
                                         <a href="https://www.gob.pe/institucion/unamad/normas-legales/5628265-282-2024-unamad-cu" 
                                            target="_blank" rel="noopener noreferrer"
@@ -205,7 +202,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M9,12L11,14L15,10M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/>
                                             </svg>
-                                            Resolución
+                                            Resolución<span class="sr-only">: D.A. Derecho y Ciencias Políticas, 2024</span>
                                         </a>
                                     </div>
                                 </div>
@@ -216,13 +213,13 @@
                                     <div class="flex flex-wrap gap-3">
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DE_DOCENTES_2024_-_DDA_ECOT.pdf" 
                                            target="_blank" rel="noopener noreferrer"
-                                           class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">PDF</a>
+                                           class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">PDF<span class="sr-only">: D.A. Ecoturismo, 2024</span></a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DE_DOCENTES_2024_-_DDA_ECOT_gXN32jP.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
-                                           class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">Excel</a>
+                                           class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">Excel<span class="sr-only">: D.A. Ecoturismo, 2024</span></a>
                                         <a href="https://www.gob.pe/institucion/unamad/normas-legales/5389432-143-2024-unamad-cu" 
                                            target="_blank" rel="noopener noreferrer"
-                                           class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-md hover:bg-blue-100 text-sm">Resolución</a>
+                                           class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-md hover:bg-blue-100 text-sm">Resolución<span class="sr-only">: D.A. Ecoturismo, 2024</span></a>
                                     </div>
                                 </div>
 
@@ -241,19 +238,19 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Educación y Humanidades, 2024 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-1" class="mb-2 font-medium">Resoluciones:</p>
                                         <ul role="list" aria-labelledby="mv11-res-1" class="grid grid-cols-2 gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5628184-278-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">278-2024</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5628101-277-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">277-2024</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5627844-263-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">263-2024</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5627742-248-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">248-2024</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5613941-238-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">238-2024</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5474315-189-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">189-2024</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5389447-144-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">144-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5628184-278-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>278-2024<span class="sr-only"> – D.A. Educación y Humanidades, 2024</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5628101-277-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>277-2024<span class="sr-only"> – D.A. Educación y Humanidades, 2024</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5627844-263-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>263-2024<span class="sr-only"> – D.A. Educación y Humanidades, 2024</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5627742-248-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>248-2024<span class="sr-only"> – D.A. Educación y Humanidades, 2024</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5613941-238-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>238-2024<span class="sr-only"> – D.A. Educación y Humanidades, 2024</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5474315-189-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>189-2024<span class="sr-only"> – D.A. Educación y Humanidades, 2024</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5389447-144-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>144-2024<span class="sr-only"> – D.A. Educación y Humanidades, 2024</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -268,17 +265,17 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Enfermería, 2024 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-2" class="mb-1 font-medium">Resoluciones:</p>
                                         <ul role="list" aria-labelledby="mv11-res-2" class="flex flex-wrap gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/6006729-410-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">410-2024</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/6131333-544-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">544-2024</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5613941-238-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">238-2024</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5474315-189-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">189-2024</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5389447-144-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">144-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/6006729-410-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>410-2024<span class="sr-only"> – D.A. Enfermería, 2024</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/6131333-544-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>544-2024<span class="sr-only"> – D.A. Enfermería, 2024</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5613941-238-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>238-2024<span class="sr-only"> – D.A. Enfermería, 2024</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5474315-189-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>189-2024<span class="sr-only"> – D.A. Enfermería, 2024</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5389447-144-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>144-2024<span class="sr-only"> – D.A. Enfermería, 2024</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -293,7 +290,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Ingeniería Agroindustrial, 2024 (DOCX)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -308,7 +305,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Ingeniería de Sistemas e Informática, 2024 (Excel)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -323,7 +320,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Ingeniería Forestal y Medio Ambiente, 2024 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/2024_DOCENTES_NOMBRADOS_Y_CONTRATADOS.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
@@ -331,15 +328,15 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Ingeniería Forestal y Medio Ambiente, 2024 (Excel)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-3" class="mb-1 font-medium">Resoluciones:</p>
                                         <ul role="list" aria-labelledby="mv11-res-3" class="flex flex-wrap gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5614023-240-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">240-2024</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5394526-142-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">142-2024</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5614093-243-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">243-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5614023-240-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>240-2024<span class="sr-only"> – D.A. Ingeniería Forestal y Medio Ambiente, 2024</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5394526-142-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>142-2024<span class="sr-only"> – D.A. Ingeniería Forestal y Medio Ambiente, 2024</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5614093-243-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>243-2024<span class="sr-only"> – D.A. Ingeniería Forestal y Medio Ambiente, 2024</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -354,16 +351,16 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Medicina Veterinaria - Zootecnia, 2024 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-4" class="mb-1 font-medium">Resoluciones CU:</p>
                                         <ul role="list" aria-labelledby="mv11-res-4" class="flex flex-wrap gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/6016806-473-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">473-2024</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5394526-142-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">142-2024</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5614093-243-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">243-2024</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5614023-240-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">240-2024</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/6016806-473-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>473-2024<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2024</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5394526-142-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>142-2024<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2024</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5614093-243-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>243-2024<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2024</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/5614023-240-2024-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>240-2024<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2024</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -389,7 +386,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-indigo-600 hover:text-indigo-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: Docentes Investigadores 2023 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -407,7 +404,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Administración y Contabilidad, 2023 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DOCENTES_NOMBRADOS_Y_CONTRATADOS_2023.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
@@ -415,7 +412,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Administración y Contabilidad, 2023 (Excel)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -430,7 +427,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ordinarios
+                                            Ordinarios<span class="sr-only">: D.A. Ciencias Básicas, 2023 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACIÓN_DE_DOCENTES_CONTRATADOS_2023.pdf" 
                                            target="_blank" rel="noopener noreferrer"
@@ -438,7 +435,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Contratados
+                                            Contratados<span class="sr-only">: D.A. Ciencias Básicas, 2023 (PDF)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -453,7 +450,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Derecho y Ciencias Políticas, 2023 (PDF)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -468,7 +465,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Ecoturismo, 2023 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DE_DOCENTES_2023_DDA_ECOT.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
@@ -476,12 +473,12 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Ecoturismo, 2023 (Excel)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-5" class="mb-1 font-medium">Resolución:</p>
-                                        <a href="https://www.gob.pe/institucion/unamad/normas-legales/4286921-113-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">113-2023</a>
+                                        <a href="https://www.gob.pe/institucion/unamad/normas-legales/4286921-113-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>113-2023<span class="sr-only"> – D.A. Ecoturismo, 2023</span></a>
                                     </div>
                                 </div>
 
@@ -495,22 +492,22 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Educación y Humanidades, 2023 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-6" class="mb-1 font-medium">Resoluciones:</p>
                                         <ul role="list" aria-labelledby="mv11-res-6" class="grid grid-cols-2 sm:grid-cols-3 gap-1 text-xs">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/6568033-736-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">736-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4865899-580-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">580-2023</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4729481-517-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">517-2023</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4723478-488-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">488-2023</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4484392-381-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">381-2023</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4412212-357-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">357-2023</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296518-231-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">231-2023</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296498-229-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">229-2023</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4293300-171-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">171-2023</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4286929-114-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">114-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/6568033-736-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>736-2022<span class="sr-only"> – D.A. Educación y Humanidades, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4865899-580-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>580-2023<span class="sr-only"> – D.A. Educación y Humanidades, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4729481-517-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>517-2023<span class="sr-only"> – D.A. Educación y Humanidades, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4723478-488-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>488-2023<span class="sr-only"> – D.A. Educación y Humanidades, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4484392-381-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>381-2023<span class="sr-only"> – D.A. Educación y Humanidades, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4412212-357-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>357-2023<span class="sr-only"> – D.A. Educación y Humanidades, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296518-231-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>231-2023<span class="sr-only"> – D.A. Educación y Humanidades, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296498-229-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>229-2023<span class="sr-only"> – D.A. Educación y Humanidades, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4293300-171-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>171-2023<span class="sr-only"> – D.A. Educación y Humanidades, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4286929-114-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>114-2023<span class="sr-only"> – D.A. Educación y Humanidades, 2023</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -525,17 +522,17 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Enfermería, 2023 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-7" class="mb-1 font-medium">Resoluciones:</p>
                                         <ul role="list" aria-labelledby="mv11-res-7" class="flex flex-wrap gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4412118-353-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">353-2023</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4302938-293-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">293-2023</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4302927-292-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">292-2023</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4293300-171-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">171-2023</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4286929-114-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">114-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4412118-353-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>353-2023<span class="sr-only"> – D.A. Enfermería, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4302938-293-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>293-2023<span class="sr-only"> – D.A. Enfermería, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4302927-292-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>292-2023<span class="sr-only"> – D.A. Enfermería, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4293300-171-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>171-2023<span class="sr-only"> – D.A. Enfermería, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4286929-114-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>114-2023<span class="sr-only"> – D.A. Enfermería, 2023</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -550,7 +547,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar Excel
+                                            Descargar Excel<span class="sr-only">: D.A. Ingeniería Agroindustrial, 2023</span>
                                         </a>
                                     </div>
                                 </div>
@@ -565,7 +562,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar Excel
+                                            Descargar Excel<span class="sr-only">: D.A. Ingeniería de Sistemas e Informática, 2023</span>
                                         </a>
                                     </div>
                                 </div>
@@ -580,7 +577,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Ingeniería Forestal y Medio Ambiente, 2023 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/2023_DOCENTES_NOMBRADOS_Y_CONTRATADOS.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
@@ -588,16 +585,16 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Ingeniería Forestal y Medio Ambiente, 2023 (Excel)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-8" class="mb-1 font-medium">Resoluciones:</p>
                                         <ul role="list" aria-labelledby="mv11-res-8" class="flex flex-wrap gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296494-228-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">228-2023</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296489-227-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">227-2023</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4728803-505-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">505-2023</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4728822-506-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">506-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296494-228-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>228-2023<span class="sr-only"> – D.A. Ingeniería Forestal y Medio Ambiente, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296489-227-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>227-2023<span class="sr-only"> – D.A. Ingeniería Forestal y Medio Ambiente, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4728803-505-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>505-2023<span class="sr-only"> – D.A. Ingeniería Forestal y Medio Ambiente, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4728822-506-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>506-2023<span class="sr-only"> – D.A. Ingeniería Forestal y Medio Ambiente, 2023</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -612,19 +609,19 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Medicina Veterinaria - Zootecnia, 2023 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-9" class="mb-1 font-medium">Resolución de Consejo de Facultad:</p>
                                         <ul role="list" aria-labelledby="mv11-res-9" class="mb-2">
-                                            <li><a href="https://sinc.unamad.edu.pe:8000/media/pdf/4846932-resolucion-de-consejo-de-facultad-de-ingenieria-n-019-2023-unamad-cfi.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 text-xs block">N° 019-2023-UNAMAD-CF</a></li>
+                                            <li><a href="https://sinc.unamad.edu.pe:8000/media/pdf/4846932-resolucion-de-consejo-de-facultad-de-ingenieria-n-019-2023-unamad-cfi.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 text-xs block"><span class="sr-only">Resolución </span>N° 019-2023-UNAMAD-CF<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2023 (PDF)</span></a></li>
                                         </ul>
                                         <p id="mv11-res-10" class="mb-1 font-medium">Resoluciones CU:</p>
                                         <ul role="list" aria-labelledby="mv11-res-10" class="flex flex-wrap gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296494-228-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">228-2023</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4286916-112-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">112-2023</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296489-227-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">227-2023</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296494-228-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>228-2023<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4286916-112-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>112-2023<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2023</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/4296489-227-2023-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>227-2023<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2023</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -650,7 +647,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-indigo-600 hover:text-indigo-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: Docentes Investigadores 2022 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -668,7 +665,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Administración y Contabilidad, 2022 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DOCENTES_NOMBRADOS_Y_CONTRATADOS_2022.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
@@ -676,7 +673,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Administración y Contabilidad, 2022 (Excel)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -691,7 +688,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ordinarios
+                                            Ordinarios<span class="sr-only">: D.A. Ciencias Básicas, 2022 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACIÓN_DE_DOCENTES_CONTRATADOS_2022.pdf" 
                                            target="_blank" rel="noopener noreferrer"
@@ -699,7 +696,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Contratados
+                                            Contratados<span class="sr-only">: D.A. Ciencias Básicas, 2022 (PDF)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -714,7 +711,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Derecho y Ciencias Políticas, 2022 (PDF)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -729,7 +726,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Ecoturismo, 2022 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DE_DOCENTES_2022_DDA_ECOT.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
@@ -737,12 +734,12 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Ecoturismo, 2022 (Excel)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-11" class="mb-1 font-medium">Resolución:</p>
-                                        <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478397-129-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">129-2022</a>
+                                        <a href="https://www.gob.pe/institucion/unamad/normas-legales/3478397-129-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>129-2022<span class="sr-only"> – D.A. Ecoturismo, 2022</span></a>
                                     </div>
                                 </div>
 
@@ -756,23 +753,23 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Educación y Humanidades, 2022 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-12" class="mb-1 font-medium">Resoluciones:</p>
                                         <ul role="list" aria-labelledby="mv11-res-12" class="grid grid-cols-2 sm:grid-cols-3 gap-1 text-xs">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478400-130-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">130-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478510-182-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">182-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478592-222-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">222-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478636-244-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">244-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478717-284-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">284-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478719-285-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">285-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478988-400-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">400-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3670602-416-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">416-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3675424-513-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">513-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3479106-517-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">517-2021</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/6568033-736-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">736-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478400-130-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>130-2022<span class="sr-only"> – D.A. Educación y Humanidades, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478510-182-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>182-2022<span class="sr-only"> – D.A. Educación y Humanidades, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478592-222-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>222-2022<span class="sr-only"> – D.A. Educación y Humanidades, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478636-244-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>244-2022<span class="sr-only"> – D.A. Educación y Humanidades, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478717-284-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>284-2022<span class="sr-only"> – D.A. Educación y Humanidades, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478719-285-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>285-2022<span class="sr-only"> – D.A. Educación y Humanidades, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478988-400-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>400-2022<span class="sr-only"> – D.A. Educación y Humanidades, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3670602-416-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>416-2022<span class="sr-only"> – D.A. Educación y Humanidades, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3675424-513-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>513-2022<span class="sr-only"> – D.A. Educación y Humanidades, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3479106-517-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>517-2021<span class="sr-only"> – D.A. Educación y Humanidades, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/6568033-736-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>736-2022<span class="sr-only"> – D.A. Educación y Humanidades, 2022</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -787,17 +784,17 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Enfermería, 2022 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-13" class="mb-1 font-medium">Resoluciones:</p>
                                         <ul role="list" aria-labelledby="mv11-res-13" class="flex flex-wrap gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478592-222-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">222-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478510-182-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">182-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478400-130-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">130-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3675393-586-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">586-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478636-244-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">244-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478592-222-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>222-2022<span class="sr-only"> – D.A. Enfermería, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478510-182-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>182-2022<span class="sr-only"> – D.A. Enfermería, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478400-130-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>130-2022<span class="sr-only"> – D.A. Enfermería, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3675393-586-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>586-2022<span class="sr-only"> – D.A. Enfermería, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478636-244-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>244-2022<span class="sr-only"> – D.A. Enfermería, 2022</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -812,7 +809,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Descargar DOCX
+                                            Descargar DOCX<span class="sr-only">: D.A. Ingeniería Agroindustrial, 2022</span>
                                         </a>
                                     </div>
                                 </div>
@@ -827,7 +824,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar Excel
+                                            Descargar Excel<span class="sr-only">: D.A. Ingeniería de Sistemas e Informática, 2022</span>
                                         </a>
                                     </div>
                                 </div>
@@ -842,7 +839,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Ingeniería Forestal y Medio Ambiente, 2022 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/2022_DOCENTES_NOMBRADOS_Y_CONTRATADOS.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
@@ -850,16 +847,16 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Ingeniería Forestal y Medio Ambiente, 2022 (Excel)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-14" class="mb-1 font-medium">Resoluciones:</p>
                                         <ul role="list" aria-labelledby="mv11-res-14" class="flex flex-wrap gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468568-362-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">362-2020</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3675408-588-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">588-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3675050-576-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">576-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478395-128-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">128-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468568-362-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>362-2020<span class="sr-only"> – D.A. Ingeniería Forestal y Medio Ambiente, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3675408-588-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>588-2022<span class="sr-only"> – D.A. Ingeniería Forestal y Medio Ambiente, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3675050-576-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>576-2022<span class="sr-only"> – D.A. Ingeniería Forestal y Medio Ambiente, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478395-128-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>128-2022<span class="sr-only"> – D.A. Ingeniería Forestal y Medio Ambiente, 2022</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -874,21 +871,21 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Medicina Veterinaria - Zootecnia, 2022 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-15" class="mb-1 font-medium">Resoluciones de Consejo de Facultad:</p>
                                         <ul role="list" aria-labelledby="mv11-res-15" class="space-y-1 mb-2">
-                                            <li><a href="https://sinc.unamad.edu.pe:8000/media/pdf/RESOL._CON_FAC._019_-_Aprobar_informe_final_del_concurso_docente_2022_III_convocator_ODZb4A8.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 text-xs block">N° 019-2022-UNAMAD-CF</a></li>
-                                            <li><a href="https://sinc.unamad.edu.pe:8000/media/pdf/RESOl._CON_FAC._026_-_Contrato_por_necesidad_institucional.pdf.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 text-xs block">N° 026-2022-UNAMAD-CFI</a></li>
+                                            <li><a href="https://sinc.unamad.edu.pe:8000/media/pdf/RESOL._CON_FAC._019_-_Aprobar_informe_final_del_concurso_docente_2022_III_convocator_ODZb4A8.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 text-xs block"><span class="sr-only">Resolución </span>N° 019-2022-UNAMAD-CF<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2022 (PDF)</span></a></li>
+                                            <li><a href="https://sinc.unamad.edu.pe:8000/media/pdf/RESOl._CON_FAC._026_-_Contrato_por_necesidad_institucional.pdf.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 text-xs block"><span class="sr-only">Resolución </span>N° 026-2022-UNAMAD-CFI<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2022 (PDF)</span></a></li>
                                         </ul>
                                         <p id="mv11-res-16" class="mb-1 font-medium">Resoluciones CU:</p>
                                         <ul role="list" aria-labelledby="mv11-res-16" class="flex flex-wrap gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478395-128-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">128-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478504-180-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">180-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478632-242-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">242-2022</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478988-400-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">400-2022</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478395-128-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>128-2022<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478504-180-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>180-2022<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478632-242-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>242-2022<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2022</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478988-400-2022-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>400-2022<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2022</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -914,7 +911,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-indigo-600 hover:text-indigo-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: Docentes Investigadores 2021 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -932,7 +929,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Administración y Contabilidad, 2021 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTE_NOMBRADOS_Y_CONTRATADOS_2021.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
@@ -940,7 +937,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Administración y Contabilidad, 2021 (Excel)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -955,7 +952,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ordinarios
+                                            Ordinarios<span class="sr-only">: D.A. Ciencias Básicas, 2021 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACIÓN_DE_DOCENTES_CONTRATADOS_2021.pdf" 
                                            target="_blank" rel="noopener noreferrer"
@@ -963,7 +960,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Contratados
+                                            Contratados<span class="sr-only">: D.A. Ciencias Básicas, 2021 (PDF)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -978,12 +975,12 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Derecho y Ciencias Políticas, 2021 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-17" class="mb-1 font-medium">Resolución:</p>
-                                        <a href="https://www.gob.pe/institucion/unamad/normas-legales/3479075-487-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">487-2021</a>
+                                        <a href="https://www.gob.pe/institucion/unamad/normas-legales/3479075-487-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>487-2021<span class="sr-only"> – D.A. Derecho y Ciencias Políticas, 2021</span></a>
                                     </div>
                                 </div>
 
@@ -997,7 +994,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Ecoturismo, 2021 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DE_DOCENTES_2021_DDA_ECOT.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
@@ -1005,7 +1002,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Ecoturismo, 2021 (Excel)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -1020,18 +1017,18 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Educación y Humanidades, 2021 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-18" class="mb-1 font-medium">Resoluciones:</p>
                                         <ul role="list" aria-labelledby="mv11-res-18" class="flex flex-wrap gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468171-125-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">125-2021</a></li>
-                                            <li><a href="https://sinc.unamad.edu.pe:8000/media/pdf/RESOLUCI%C3%93N_N_152-2021-UNAMAD-CU.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">152-2021</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478616-234-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">234-2021</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478620-236-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">236-2021</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3479081-493-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">493-2021</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3479106-517-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">517-2021</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468171-125-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>125-2021<span class="sr-only"> – D.A. Educación y Humanidades, 2021</span></a></li>
+                                            <li><a href="https://sinc.unamad.edu.pe:8000/media/pdf/RESOLUCI%C3%93N_N_152-2021-UNAMAD-CU.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>152-2021<span class="sr-only"> – D.A. Educación y Humanidades, 2021 (PDF)</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478616-234-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>234-2021<span class="sr-only"> – D.A. Educación y Humanidades, 2021</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478620-236-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>236-2021<span class="sr-only"> – D.A. Educación y Humanidades, 2021</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3479081-493-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>493-2021<span class="sr-only"> – D.A. Educación y Humanidades, 2021</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3479106-517-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>517-2021<span class="sr-only"> – D.A. Educación y Humanidades, 2021</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1046,12 +1043,12 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Enfermería, 2021 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-19" class="mb-1 font-medium">Resolución:</p>
-                                        <a href="https://www.gob.pe/institucion/unamad/normas-legales/3468171-125-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">125-2021</a>
+                                        <a href="https://www.gob.pe/institucion/unamad/normas-legales/3468171-125-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>125-2021<span class="sr-only"> – D.A. Enfermería, 2021</span></a>
                                     </div>
                                 </div>
 
@@ -1065,7 +1062,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Descargar DOCX
+                                            Descargar DOCX<span class="sr-only">: D.A. Ingeniería Agroindustrial, 2021</span>
                                         </a>
                                     </div>
                                 </div>
@@ -1080,7 +1077,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar Excel
+                                            Descargar Excel<span class="sr-only">: D.A. Ingeniería de Sistemas e Informática, 2021</span>
                                         </a>
                                     </div>
                                 </div>
@@ -1095,7 +1092,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Ingeniería Forestal y Medio Ambiente, 2021 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/2021_DOCENTES_NOMBRADOS_Y_CONTRATADOS_-_copia_-_copia.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
@@ -1103,12 +1100,12 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Ingeniería Forestal y Medio Ambiente, 2021 (Excel)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-20" class="mb-1 font-medium">Resolución:</p>
-                                        <a href="https://www.gob.pe/institucion/unamad/normas-legales/3468568-362-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">362-2020</a>
+                                        <a href="https://www.gob.pe/institucion/unamad/normas-legales/3468568-362-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>362-2020<span class="sr-only"> – D.A. Ingeniería Forestal y Medio Ambiente, 2021</span></a>
                                     </div>
                                 </div>
 
@@ -1122,16 +1119,16 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Medicina Veterinaria - Zootecnia, 2021 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-21" class="mb-1 font-medium">Resoluciones:</p>
                                         <ul role="list" aria-labelledby="mv11-res-21" class="flex flex-wrap gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468568-362-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">362-2020</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468598-393-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">393-2020</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468168-122-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">122-2021</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478507-181-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">181-2021</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468568-362-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>362-2020<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2021</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468598-393-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>393-2020<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2021</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468168-122-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>122-2021<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2021</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3478507-181-2021-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>181-2021<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2021</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1157,7 +1154,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-indigo-600 hover:text-indigo-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: Docentes Investigadores 2020 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -1175,7 +1172,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Administración y Contabilidad, 2020 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_NOMBRADOS_Y_CONTRATADOS_2020.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
@@ -1183,7 +1180,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Administración y Contabilidad, 2020 (Excel)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -1198,7 +1195,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ordinarios
+                                            Ordinarios<span class="sr-only">: D.A. Ciencias Básicas, 2020 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACI%C3%93N_DE_DOCENTES_CONTRATADOS_2020.pdf" 
                                            target="_blank" rel="noopener noreferrer"
@@ -1206,7 +1203,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Contratados
+                                            Contratados<span class="sr-only">: D.A. Ciencias Básicas, 2020 (PDF)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -1221,7 +1218,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Derecho y Ciencias Políticas, 2020 (PDF)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -1236,7 +1233,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Ecoturismo, 2020 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DE_DOCENTES_2020_-_DDA_ECOT.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
@@ -1244,7 +1241,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Ecoturismo, 2020 (Excel)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -1259,18 +1256,18 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Educación y Humanidades, 2020 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-22" class="mb-1 font-medium">Resoluciones:</p>
                                         <ul role="list" aria-labelledby="mv11-res-22" class="flex flex-wrap gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3477598-529-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">529-2019</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469197-023-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">023-2020</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469423-068-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">068-2020</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468152-102-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">102-2020</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3479989-113-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">113-2020</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3479995-123-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">123-2020</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3477598-529-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>529-2019<span class="sr-only"> – D.A. Educación y Humanidades, 2020</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469197-023-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>023-2020<span class="sr-only"> – D.A. Educación y Humanidades, 2020</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469423-068-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>068-2020<span class="sr-only"> – D.A. Educación y Humanidades, 2020</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468152-102-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>102-2020<span class="sr-only"> – D.A. Educación y Humanidades, 2020</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3479989-113-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>113-2020<span class="sr-only"> – D.A. Educación y Humanidades, 2020</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3479995-123-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>123-2020<span class="sr-only"> – D.A. Educación y Humanidades, 2020</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1285,14 +1282,14 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Enfermería, 2020 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-23" class="mb-1 font-medium">Resoluciones:</p>
                                         <ul role="list" aria-labelledby="mv11-res-23" class="flex flex-wrap gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469197-023-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">023-2020</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468569-363-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">363-2020</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469197-023-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>023-2020<span class="sr-only"> – D.A. Enfermería, 2020</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3468569-363-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>363-2020<span class="sr-only"> – D.A. Enfermería, 2020</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1307,7 +1304,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Descargar DOCX
+                                            Descargar DOCX<span class="sr-only">: D.A. Ingeniería Agroindustrial, 2020</span>
                                         </a>
                                     </div>
                                 </div>
@@ -1322,7 +1319,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar Excel
+                                            Descargar Excel<span class="sr-only">: D.A. Ingeniería de Sistemas e Informática, 2020</span>
                                         </a>
                                     </div>
                                 </div>
@@ -1337,7 +1334,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Ingeniería Forestal y Medio Ambiente, 2020 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/2020_DOCENTES_NOMBRADOS_Y_CONTRATADOS_-_copia.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
@@ -1345,7 +1342,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Ingeniería Forestal y Medio Ambiente, 2020 (Excel)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -1360,16 +1357,16 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Medicina Veterinaria - Zootecnia, 2020 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-24" class="mb-1 font-medium">Resoluciones:</p>
                                         <ul role="list" aria-labelledby="mv11-res-24" class="flex flex-wrap gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3475431-397-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">397-2019</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3476330-507-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">507-2019</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469165-018-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">018-2020</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469418-067-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">067-2020</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3475431-397-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>397-2019<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2020</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3476330-507-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>507-2019<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2020</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469165-018-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>018-2020<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2020</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469418-067-2020-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>067-2020<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2020</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1395,7 +1392,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-indigo-600 hover:text-indigo-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: Docentes Investigadores 2019 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -1413,7 +1410,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Administración y Contabilidad, 2019 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_NOMBRADOS_Y_CONTRATADOS_2019.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
@@ -1421,7 +1418,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Administración y Contabilidad, 2019 (Excel)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -1442,7 +1439,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Derecho y Ciencias Políticas, 2019 (PDF)</span>
                                         </a>
                                         <a href="https://www.gob.pe/institucion/unamad/normas-legales/3604780-133-2013-unamad-r" 
                                            target="_blank" rel="noopener noreferrer"
@@ -1465,7 +1462,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Ecoturismo, 2019 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DE_DOCENTES_2019_-_DDA_-_ECOTURISMO.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
@@ -1473,7 +1470,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Ecoturismo, 2019 (Excel)</span>
                                         </a>
                                     </div>
                                 </div>
@@ -1488,21 +1485,21 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Educación y Humanidades, 2019 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-25" class="mb-1 font-medium">Resoluciones:</p>
                                         <ul role="list" aria-labelledby="mv11-res-25" class="flex flex-wrap gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3470912-120-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">120-2019</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3471033-151-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">151-2019</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3471126-175-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">175-2019</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3471133-177-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">177-2019</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3471307-221-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">221-2019</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3472929-256-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">256-2019</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3474262-382-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">382-2019</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3475489-411-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">411-2019</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3475558-427-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">427-2019</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3470912-120-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>120-2019<span class="sr-only"> – D.A. Educación y Humanidades, 2019</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3471033-151-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>151-2019<span class="sr-only"> – D.A. Educación y Humanidades, 2019</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3471126-175-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>175-2019<span class="sr-only"> – D.A. Educación y Humanidades, 2019</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3471133-177-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>177-2019<span class="sr-only"> – D.A. Educación y Humanidades, 2019</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3471307-221-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>221-2019<span class="sr-only"> – D.A. Educación y Humanidades, 2019</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3472929-256-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>256-2019<span class="sr-only"> – D.A. Educación y Humanidades, 2019</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3474262-382-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>382-2019<span class="sr-only"> – D.A. Educación y Humanidades, 2019</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3475489-411-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>411-2019<span class="sr-only"> – D.A. Educación y Humanidades, 2019</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3475558-427-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>427-2019<span class="sr-only"> – D.A. Educación y Humanidades, 2019</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1517,14 +1514,14 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Enfermería, 2019 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-26" class="mb-1 font-medium">Resoluciones:</p>
                                         <ul role="list" aria-labelledby="mv11-res-26" class="flex flex-wrap gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3611126-117-2019-unamad-r-his" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">117-2019-R</a></li>
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3470912-120-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">120-2019-CU</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3611126-117-2019-unamad-r-his" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>117-2019-R<span class="sr-only"> – D.A. Enfermería, 2019</span></a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3470912-120-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>120-2019-CU<span class="sr-only"> – D.A. Enfermería, 2019</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1539,12 +1536,12 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Descargar DOCX
+                                            Descargar DOCX<span class="sr-only">: D.A. Ingeniería Agroindustrial, 2019</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-27" class="mb-1 font-medium">Resolución:</p>
-                                        <a href="https://www.gob.pe/institucion/unamad/normas-legales/3469565-098-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">N.° 098-2019-UNAMAD-R</a>
+                                        <a href="https://www.gob.pe/institucion/unamad/normas-legales/3469565-098-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>N.° 098-2019-UNAMAD-R<span class="sr-only"> – D.A. Ingeniería Agroindustrial, 2019</span></a>
                                     </div>
                                 </div>
 
@@ -1558,12 +1555,12 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar Excel
+                                            Descargar Excel<span class="sr-only">: D.A. Ingeniería de Sistemas e Informática, 2019</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-28" class="mb-1 font-medium">Resolución:</p>
-                                        <a href="https://www.gob.pe/institucion/unamad/normas-legales/3469565-098-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">N.° 098-2019-UNAMAD-R</a>
+                                        <a href="https://www.gob.pe/institucion/unamad/normas-legales/3469565-098-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>N.° 098-2019-UNAMAD-R<span class="sr-only"> – D.A. Ingeniería de Sistemas e Informática, 2019</span></a>
                                     </div>
                                 </div>
 
@@ -1577,7 +1574,7 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Ingeniería Forestal y Medio Ambiente, 2019 (PDF)</span>
                                         </a>
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/2019_DOCENTES_NOMBRADOS_Y_CONTRATADOS.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
@@ -1585,12 +1582,12 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
-                                            Descargar
+                                            Descargar<span class="sr-only">: D.A. Ingeniería Forestal y Medio Ambiente, 2019 (Excel)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-29" class="mb-1 font-medium">Resolución:</p>
-                                        <a href="https://www.gob.pe/institucion/unamad/normas-legales/3469565-098-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">N.° 098-2019-UNAMAD-R</a>
+                                        <a href="https://www.gob.pe/institucion/unamad/normas-legales/3469565-098-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>N.° 098-2019-UNAMAD-R<span class="sr-only"> – D.A. Ingeniería Forestal y Medio Ambiente, 2019</span></a>
                                     </div>
                                 </div>
 
@@ -1604,14 +1601,14 @@
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Relación
+                                            Ver Relación<span class="sr-only">: D.A. Medicina Veterinaria - Zootecnia, 2019 (PDF)</span>
                                         </a>
                                     </div>
                                     <div class="text-xs text-gray-600">
                                         <p id="mv11-res-30" class="mb-1 font-medium">Resoluciones:</p>
                                         <ul role="list" aria-labelledby="mv11-res-30" class="flex flex-wrap gap-2">
-                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469565-098-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">098-2019-R</a></li>
-                                            <li><a href="https://sinc.unamad.edu.pe:8000/media/pdf/CamScanner_03-04-2025_09.16.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">028-2019-CFI</a></li>
+                                            <li><a href="https://www.gob.pe/institucion/unamad/normas-legales/3469565-098-2019-unamad-cu" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>098-2019-R<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2019</span></a></li>
+                                            <li><a href="https://sinc.unamad.edu.pe:8000/media/pdf/CamScanner_03-04-2025_09.16.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800"><span class="sr-only">Resolución </span>028-2019-CFI<span class="sr-only"> – D.A. Medicina Veterinaria - Zootecnia, 2019 (PDF)</span></a></li>
                                         </ul>
                                     </div>
                                 </div>

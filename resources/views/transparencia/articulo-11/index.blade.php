@@ -60,7 +60,7 @@
                                    target="_blank" 
                                    rel="noopener noreferrer"
                                    class="text-blue-600 hover:text-blue-800 font-medium">
-                                    Ver documento →
+                                    Ver documento<span class="sr-only">: Estatuto UNAMAD</span> <span aria-hidden="true">→</span>
                                 </a>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                                    target="_blank" 
                                    rel="noopener noreferrer"
                                    class="text-blue-600 hover:text-blue-800 font-medium">
-                                    Ver TUPA →
+                                    Ver TUPA<span class="sr-only">: TUPA 2022</span> <span aria-hidden="true">→</span>
                                 </a>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                                    target="_blank" 
                                    rel="noopener noreferrer"
                                    class="text-blue-600 hover:text-blue-800 font-medium">
-                                    Ver presupuesto →
+                                    Ver presupuesto<span class="sr-only">: Presupuesto Institucional y Ejecución Presupuestal</span> <span aria-hidden="true">→</span>
                                 </a>
                             </div>
                         </div>
@@ -127,7 +127,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-blue-600 hover:text-blue-800 font-medium">
-                                        Ver actas →
+                                        Ver actas<span class="sr-only">: Actas de Facultad</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
 
@@ -145,7 +145,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-blue-600 hover:text-blue-800 font-medium">
-                                        Ver actas →
+                                        Ver actas<span class="sr-only">: Actas de Asamblea Universitaria</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
 
@@ -163,7 +163,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-blue-600 hover:text-blue-800 font-medium">
-                                        Ver actas →
+                                        Ver actas<span class="sr-only">: Actas de Consejo Universitario</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -186,7 +186,7 @@
                                    target="_blank" 
                                    rel="noopener noreferrer"
                                    class="text-blue-600 hover:text-blue-800 font-medium">
-                                    Ver reportes →
+                                    Ver reportes<span class="sr-only">: Proyectos de Inversión y su Ejecución</span> <span aria-hidden="true">→</span>
                                 </a>
                             </div>
                         </div>
@@ -208,7 +208,7 @@
                                    target="_blank" 
                                    rel="noopener noreferrer"
                                    class="text-blue-600 hover:text-blue-800 font-medium">
-                                    Ver reportes →
+                                    Ver reportes<span class="sr-only">: Proyectos de Investigación</span> <span aria-hidden="true">→</span>
                                 </a>
                             </div>
                         </div>
@@ -230,7 +230,7 @@
                                    target="_blank" 
                                    rel="noopener noreferrer"
                                    class="text-blue-600 hover:text-blue-800 font-medium">
-                                    Ver estadísticas →
+                                    Ver estadísticas<span class="sr-only">: Estadísticas de Egresados</span> <span aria-hidden="true">→</span>
                                 </a>
                             </div>
                         </div>
@@ -252,7 +252,7 @@
                                    target="_blank" 
                                    rel="noopener noreferrer"
                                    class="text-blue-600 hover:text-blue-800 font-medium">
-                                    Ver proceso →
+                                    Ver proceso<span class="sr-only">: Proceso de Selección de Docentes</span> <span aria-hidden="true">→</span>
                                 </a>
                             </div>
                         </div>
@@ -274,7 +274,7 @@
                                    target="_blank" 
                                    rel="noopener noreferrer"
                                    class="text-blue-600 hover:text-blue-800 font-medium">
-                                    Verificar reporte →
+                                    Verificar reporte<span class="sr-only">: Remuneraciones y Bonificaciones</span> <span aria-hidden="true">→</span>
                                 </a>
                             </div>
                         </div>
@@ -296,7 +296,7 @@
                                    target="_blank" 
                                    rel="noopener noreferrer"
                                    class="text-blue-600 hover:text-blue-800 font-medium">
-                                    Ver ROF →
+                                    Ver ROF<span class="sr-only">: ROF Institucional</span> <span aria-hidden="true">→</span>
                                 </a>
                             </div>
                         </div>
@@ -318,7 +318,7 @@
                                    target="_blank" 
                                    rel="noopener noreferrer"
                                    class="text-blue-600 hover:text-blue-800 font-medium">
-                                    Ver POI →
+                                    Ver POI<span class="sr-only">: POI 2024</span> <span aria-hidden="true">→</span>
                                 </a>
                             </div>
                         </div>

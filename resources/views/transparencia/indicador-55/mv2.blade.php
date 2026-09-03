@@ -117,9 +117,7 @@
 
                             <div class="grid gap-3">
                                 @foreach($docsAnio as $doc)
-                                <a href="{{ $doc['url'] ?? '#' }}"
-                                   target="_blank"
-                                   rel="noopener noreferrer"
+                                <a @if(!empty($doc['url'])) href="{{ $doc['url'] }}" target="_blank" rel="noopener noreferrer" @endif
                                    class="flex items-center p-3 bg-{{ $color }}-50 rounded-lg border border-{{ $color }}-200 hover:bg-{{ $color }}-100 transition-colors duration-200 group">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-{{ $color }}-100 group-hover:bg-{{ $color }}-200 flex-shrink-0 mr-3">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-{{ $color }}-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">

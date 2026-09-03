@@ -84,13 +84,12 @@
                                         @if(isset($item['descripcion']))
                                             <p class="text-sm text-gray-600 mb-2">{{ $item['descripcion'] }}</p>
                                         @endif
-                                        <a href="{{ $item['url'] ?? '#' }}"
-                                           target="_blank" rel="noopener noreferrer"
+                                        <a @if(!empty($item['url'])) href="{{ $item['url'] }}" target="_blank" rel="noopener noreferrer" @endif
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
-                                            Ver Documento
+                                            Ver Documento<span class="sr-only">: {{ $item['titulo'] ?? 'Documento' }}</span>
                                         </a>
                                     </div>
                                     @endforeach
@@ -115,7 +114,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Diseño Curricular
+                                        Ver Diseño Curricular<span class="sr-only">: Administración y Negocios Internacionales (PDF)</span>
                                     </a>
                                 </div>
 
@@ -128,7 +127,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Diseño Curricular
+                                        Ver Diseño Curricular<span class="sr-only">: Contabilidad y Finanzas (PDF)</span>
                                     </a>
                                 </div>
 
@@ -141,7 +140,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Diseño Curricular
+                                        Ver Diseño Curricular<span class="sr-only">: Ecoturismo (PDF)</span>
                                     </a>
                                 </div>
 
@@ -154,7 +153,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Diseño Curricular
+                                        Ver Diseño Curricular<span class="sr-only">: Derecho y Ciencias Políticas (PDF)</span>
                                     </a>
                                 </div>
 
@@ -167,7 +166,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Diseño Curricular
+                                        Ver Diseño Curricular<span class="sr-only">: Enfermería (PDF)</span>
                                     </a>
                                 </div>
 
@@ -180,7 +179,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Diseño Curricular
+                                        Ver Diseño Curricular<span class="sr-only">: Educación: Especialidad Inicial y Especial (PDF)</span>
                                     </a>
                                 </div>
 
@@ -193,7 +192,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Diseño Curricular
+                                        Ver Diseño Curricular<span class="sr-only">: Educación: Especialidad Matemática y Computación (PDF)</span>
                                     </a>
                                 </div>
 
@@ -206,7 +205,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Diseño Curricular
+                                        Ver Diseño Curricular<span class="sr-only">: Educación: Especialidad Primaria e Informática (PDF)</span>
                                     </a>
                                 </div>
 
@@ -219,7 +218,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Diseño Curricular
+                                        Ver Diseño Curricular<span class="sr-only">: Ingeniería Agroindustrial (PDF)</span>
                                     </a>
                                 </div>
 
@@ -232,7 +231,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Diseño Curricular
+                                        Ver Diseño Curricular<span class="sr-only">: Ingeniería Forestal y Medio Ambiente (PDF)</span>
                                     </a>
                                 </div>
 
@@ -245,7 +244,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Diseño Curricular
+                                        Ver Diseño Curricular<span class="sr-only">: Ingeniería de Sistemas e Informática (PDF)</span>
                                     </a>
                                 </div>
 
@@ -258,7 +257,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Diseño Curricular
+                                        Ver Diseño Curricular<span class="sr-only">: Medicina Veterinaria Zootecnia (PDF)</span>
                                     </a>
                                 </div>
                             </div>
@@ -278,7 +277,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Malla Curricular
+                                        Ver Malla Curricular<span class="sr-only">: Administración y Negocios Internacionales (PDF)</span>
                                     </a>
                                 </div>
 
@@ -291,7 +290,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Malla Curricular
+                                        Ver Malla Curricular<span class="sr-only">: Contabilidad y Finanzas (PDF)</span>
                                     </a>
                                 </div>
 
@@ -304,7 +303,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Malla Curricular
+                                        Ver Malla Curricular<span class="sr-only">: Ecoturismo (PDF)</span>
                                     </a>
                                 </div>
 
@@ -317,7 +316,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Malla Curricular
+                                        Ver Malla Curricular<span class="sr-only">: Derecho y Ciencias Políticas (PDF)</span>
                                     </a>
                                 </div>
 
@@ -330,7 +329,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Malla Curricular
+                                        Ver Malla Curricular<span class="sr-only">: Enfermería (PDF)</span>
                                     </a>
                                 </div>
 
@@ -343,7 +342,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Malla Curricular
+                                        Ver Malla Curricular<span class="sr-only">: Educación: Especialidad Inicial y Especial (PDF)</span>
                                     </a>
                                 </div>
 
@@ -356,7 +355,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Malla Curricular
+                                        Ver Malla Curricular<span class="sr-only">: Educación: Especialidad Matemática y Computación (PDF)</span>
                                     </a>
                                 </div>
 
@@ -369,7 +368,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Malla Curricular
+                                        Ver Malla Curricular<span class="sr-only">: Educación: Especialidad Primaria e Informática (PDF)</span>
                                     </a>
                                 </div>
 
@@ -382,7 +381,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Malla Curricular
+                                        Ver Malla Curricular<span class="sr-only">: Ingeniería Agroindustrial (PDF)</span>
                                     </a>
                                 </div>
 
@@ -395,7 +394,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Malla Curricular
+                                        Ver Malla Curricular<span class="sr-only">: Ingeniería Forestal y Medio Ambiente (PDF)</span>
                                     </a>
                                 </div>
 
@@ -408,7 +407,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Malla Curricular
+                                        Ver Malla Curricular<span class="sr-only">: Ingeniería de Sistemas e Informática (PDF)</span>
                                     </a>
                                 </div>
 
@@ -421,7 +420,7 @@
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
-                                        Ver Malla Curricular
+                                        Ver Malla Curricular<span class="sr-only">: Medicina Veterinaria Zootecnia (PDF)</span>
                                     </a>
                                 </div>
                             </div>

@@ -102,11 +102,9 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <a href="{{ $doc['url'] ?? '#' }}"
-                                           target="_blank"
-                                           rel="noopener noreferrer"
+                                        <a @if(!empty($doc['url'])) href="{{ $doc['url'] }}" target="_blank" rel="noopener noreferrer" @endif
                                            class="text-{{ $color }}-600 hover:text-{{ $color }}-800 font-medium">
-                                            Ver documento →
+                                            Ver documento<span class="sr-only">: {{ $doc['titulo'] ?? 'Documento' }}</span> <span aria-hidden="true">→</span>
                                         </a>
                                     </div>
                                     @endforeach
@@ -134,7 +132,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-green-600 hover:text-green-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: 2024 (Período I) (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -157,7 +155,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-green-600 hover:text-green-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: 2023 (Períodos I y II) (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -180,7 +178,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-green-600 hover:text-green-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: 2022 (Períodos I y II) (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -203,7 +201,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-green-600 hover:text-green-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: 2021 (Períodos I y II) (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -226,7 +224,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-green-600 hover:text-green-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: 2020 (Períodos I y II) (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -249,7 +247,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-green-600 hover:text-green-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: 2019 (Períodos I y II) (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>

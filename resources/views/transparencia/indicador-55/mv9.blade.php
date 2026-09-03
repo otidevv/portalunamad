@@ -100,11 +100,9 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <a href="{{ $doc['url'] ?? '#' }}"
-                                           target="_blank"
-                                           rel="noopener noreferrer"
+                                        <a @if(!empty($doc['url'])) href="{{ $doc['url'] }}" target="_blank" rel="noopener noreferrer" @endif
                                            class="text-{{ $color }}-600 hover:text-{{ $color }}-800 font-medium">
-                                            Ver documento →
+                                            Ver documento<span class="sr-only">: {{ $doc['titulo'] ?? 'Documento' }}</span> <span aria-hidden="true">→</span>
                                         </a>
                                     </div>
                                     @endforeach
@@ -132,7 +130,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-teal-600 hover:text-teal-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: Proyectos de Investigación 2024 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -155,7 +153,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-teal-600 hover:text-teal-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: Proyectos de Investigación 2023 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -178,7 +176,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-teal-600 hover:text-teal-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: Proyectos de Investigación 2022 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -201,7 +199,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-teal-600 hover:text-teal-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: Proyectos de Investigación 2021 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -224,7 +222,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-teal-600 hover:text-teal-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: Proyectos de Investigación 2020 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -247,7 +245,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-teal-600 hover:text-teal-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: Proyectos de Investigación 2019 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>

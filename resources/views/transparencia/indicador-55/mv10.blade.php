@@ -90,11 +90,9 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <a href="{{ $item['url'] ?? '#' }}"
-                                           target="_blank"
-                                           rel="noopener noreferrer"
+                                        <a @if(!empty($item['url'])) href="{{ $item['url'] }}" target="_blank" rel="noopener noreferrer" @endif
                                            class="text-orange-600 hover:text-orange-800 font-medium">
-                                            Ver documento →
+                                            Ver documento<span class="sr-only">: {{ $item['titulo'] ?? 'Documento' }}</span> <span aria-hidden="true">→</span>
                                         </a>
                                     </div>
                                     @endforeach
@@ -131,7 +129,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-orange-600 hover:text-orange-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: TUPA 2022 Digital Actualizado (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-orange-200 hover:bg-orange-50 transition-colors">
@@ -148,7 +146,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-orange-600 hover:text-orange-800 font-medium">
-                                        Ver resolución →
+                                        Ver resolución<span class="sr-only">: Resolución N° 107-2024-UNAMAD-R</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -174,7 +172,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-amber-600 hover:text-amber-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: TUPA 2022 Digital (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-amber-200 hover:bg-amber-50 transition-colors">
@@ -191,7 +189,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-amber-600 hover:text-amber-800 font-medium">
-                                        Ver resolución →
+                                        Ver resolución<span class="sr-only">: Resolución N° 281-2023-UNAMAD-R</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -217,7 +215,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-yellow-600 hover:text-yellow-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: TUPA 2022 I (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-yellow-200 hover:bg-yellow-50 transition-colors">
@@ -234,7 +232,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-yellow-600 hover:text-yellow-800 font-medium">
-                                        Ver resolución →
+                                        Ver resolución<span class="sr-only">: Resolución N° 149-2023-UNAMAD-R</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -260,7 +258,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-orange-600 hover:text-orange-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: TUPA 2022 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-orange-200 hover:bg-orange-50 transition-colors">
@@ -277,7 +275,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-orange-600 hover:text-orange-800 font-medium">
-                                        Ver resolución →
+                                        Ver resolución<span class="sr-only">: Resolución N° 625-2022-UNAMAD-CU</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -303,7 +301,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-amber-600 hover:text-amber-800 font-medium">
-                                        Ver documento →
+                                        Ver documento<span class="sr-only">: TUPA UNAMAD 2018 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-amber-200 hover:bg-amber-50 transition-colors">
@@ -320,7 +318,7 @@
                                        target="_blank" 
                                        rel="noopener noreferrer"
                                        class="text-amber-600 hover:text-amber-800 font-medium">
-                                        Ver resolución →
+                                        Ver resolución<span class="sr-only">: Resolución N° 005-2018-UNAMAD-CU</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
