@@ -92,8 +92,8 @@
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"/>
                                     </svg>
-                                    <a href="https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=23590" target="_blank" class="text-sm text-[#db0455] hover:text-[#ed145b] transition-colors font-medium">
-                                        Web Info
+                                    <a href="https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=23590" target="_blank" rel="noopener noreferrer" class="text-sm text-[#db0455] hover:text-[#ed145b] transition-colors font-medium">
+                                        Perfil en CTI Vitae (CONCYTEC)<span class="sr-only"> del Dr. Joab Maquera Ramírez</span>
                                     </a>
                                 </div>
                             </div>
@@ -262,8 +262,8 @@
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"/>
                                     </svg>
-                                    <a href="https://dina.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do;jsessionid=826642570f15c1f72462218ecdde?id_investigador=86686" target="_blank" class="text-sm text-[#db0455] hover:text-[#ed145b] transition-colors font-medium">
-                                        Web Info
+                                    <a href="https://dina.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=86686" target="_blank" rel="noopener noreferrer" class="text-sm text-[#db0455] hover:text-[#ed145b] transition-colors font-medium">
+                                        Perfil en CTI Vitae (CONCYTEC)<span class="sr-only"> de la Dra. Luz Marina Almanza Huamán</span>
                                     </a>
                                 </div>
                             </div>

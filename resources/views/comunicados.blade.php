@@ -98,8 +98,7 @@
         <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 list-none m-0 p-0">
             @foreach($comunicados as $comunicado)
                 <li>
-                <article class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
-                         onclick="window.location.href='{{ route('comunicado.ver', $comunicado) }}'">
+                <article class="relative bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
                     <!-- Imagen -->
                     @if($comunicado->imagen)
                         <div class="aspect-w-16 aspect-h-9 overflow-hidden">
@@ -126,7 +125,10 @@
 
                         <!-- Título -->
                         <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#db0455] transition-colors line-clamp-2">
-                            {{ $comunicado->titulo }}
+                            {{-- Enlace "extendido": el pseudoelemento cubre toda la tarjeta para conservar el clic en cualquier punto --}}
+                            <a href="{{ route('comunicado.ver', $comunicado) }}" class="after:absolute after:inset-0 after:content-['']">
+                                {{ $comunicado->titulo }}
+                            </a>
                         </h2>
 
                         <!-- Contenido preview -->
@@ -144,7 +146,7 @@
                                 </svg>
                                 {{ $comunicado->created_at->format('d/m/Y') }}
                             </div>
-                            <span class="text-[#db0455] font-medium group-hover:underline">
+                            <span class="text-[#db0455] font-medium group-hover:underline" aria-hidden="true">
                                 Leer más →
                             </span>
                         </div>

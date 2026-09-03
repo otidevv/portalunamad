@@ -181,10 +181,10 @@
 
                         <!-- Botón de acción -->
                         <div class="ml-4">
-                            <a href="{{ route('documentos.publicos.acceder', $documento) }}" 
-                               target="{{ $documento->esEnlaceExterno() ? '_blank' : '_self' }}"
+                            <a href="{{ route('documentos.publicos.acceder', $documento) }}"
+                               target="{{ $documento->esEnlaceExterno() ? '_blank' : '_self' }}" rel="noopener noreferrer"
                                class="inline-flex items-center px-3 py-1.5 bg-[#db0455] text-white text-xs font-medium rounded hover:bg-[#a00340] transition-colors">
-                                {{ $documento->tipo_enlace === 'archivo' ? 'Descargar' : 'Acceder' }}
+                                {{ $documento->tipo_enlace === 'archivo' ? 'Descargar' : 'Acceder' }}<span class="sr-only">: {{ $documento->titulo }}{{ $documento->tipo_enlace === 'archivo' ? ' (' . strtoupper($documento->tipo_documento ?: 'archivo') . ($documento->tamaño_formateado ? ', ' . $documento->tamaño_formateado : '') . ')' : '' }}</span>
                             </a>
                         </div>
                     </li>
@@ -212,6 +212,11 @@
 // Variables globales
 let searchTimeout;
 let expandedFolders = new Set();
+
+function escapeHtml(str) {
+    return String(str ?? '')
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
 
 // Función de búsqueda
 document.getElementById('searchInput').addEventListener('input', function(e) {
@@ -270,10 +275,10 @@ function displaySearchResults(results) {
                     <h4 class="text-sm font-medium text-gray-900 truncate">${doc.titulo}</h4>
                     <p class="text-xs text-gray-600 truncate">${doc.ruta}</p>
                 </div>
-                <a href="${doc.url}" 
-                   target="${doc.externo ? '_blank' : '_self'}"
+                <a href="${doc.url}"
+                   target="${doc.externo ? '_blank' : '_self'}" rel="noopener noreferrer"
                    class="ml-3 inline-flex items-center px-2 py-1 bg-[#db0455] text-white text-xs rounded hover:bg-[#a00340] transition-colors">
-                    ${doc.tipo_enlace === 'archivo' ? 'Descargar' : 'Acceder'}
+                    ${doc.tipo_enlace === 'archivo' ? 'Descargar' : 'Acceder'}<span class="sr-only">: ${escapeHtml(doc.titulo)}</span>
                 </a>
             </div>
         `).join('');
@@ -388,10 +393,10 @@ function generateFolderContent(carpetas, documentos) {
                 <div class="flex-1 min-w-0">
                     <h4 class="text-sm font-medium text-gray-900 truncate">${documento.titulo}</h4>
                 </div>
-                <a href="${documento.url}" 
-                   target="${documento.externo ? '_blank' : '_self'}"
+                <a href="${documento.url}"
+                   target="${documento.externo ? '_blank' : '_self'}" rel="noopener noreferrer"
                    class="ml-2 inline-flex items-center px-2 py-1 bg-[#db0455] text-white text-xs rounded hover:bg-[#a00340] transition-colors">
-                    ${documento.tipo_enlace === 'archivo' ? 'Descargar' : 'Acceder'}
+                    ${documento.tipo_enlace === 'archivo' ? 'Descargar' : 'Acceder'}<span class="sr-only">: ${escapeHtml(documento.titulo)}</span>
                 </a>
             </li>
         `;

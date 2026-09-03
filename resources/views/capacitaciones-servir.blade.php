@@ -92,7 +92,7 @@
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/1mMzMEXEzy0/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                                <a href="https://www.youtube.com/watch?v=1mMzMEXEzy0" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+                                <a href="https://www.youtube.com/watch?v=1mMzMEXEzy0" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Más que gestión, es transformación: El rol de las Oficinas de Recursos Humanos" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
@@ -113,19 +113,19 @@
                                 </span>
                             </p>
                             <div class="flex flex-wrap gap-2">
-                                <a href="https://www.youtube.com/watch?v=1mMzMEXEzy0" target="_blank"
+                                <a href="https://www.youtube.com/watch?v=1mMzMEXEzy0" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
-                                    Ver en YouTube
+                                    Ver en YouTube<span class="sr-only">: Más que gestión, es transformación: El rol de las Oficinas de Recursos Humanos</span>
                                 </a>
-                                <a href="https://cutt.ly/crV0YrRY" target="_blank"
+                                <a href="https://cutt.ly/crV0YrRY" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
-                                    Descargar
+                                    Descargar<span class="sr-only"> el video «Más que gestión, es transformación: El rol de las Oficinas de Recursos Humanos» (MP4)</span>
                                 </a>
                             </div>
                         </div>
@@ -153,7 +153,7 @@
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/qLFlbYLgqRk/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                                <a href="https://www.youtube.com/watch?v=qLFlbYLgqRk" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+                                <a href="https://www.youtube.com/watch?v=qLFlbYLgqRk" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Brechas de capacitación en el Estado: El Rol Clave de los Directivos" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
@@ -174,19 +174,19 @@
                                 </span>
                             </p>
                             <div class="flex flex-wrap gap-2">
-                                <a href="https://www.youtube.com/watch?v=qLFlbYLgqRk" target="_blank"
+                                <a href="https://www.youtube.com/watch?v=qLFlbYLgqRk" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
-                                    YouTube
+                                    YouTube<span class="sr-only">: Brechas de capacitación en el Estado: El Rol Clave de los Directivos</span>
                                 </a>
-                                <a href="https://cutt.ly/jrV09s9P" target="_blank"
+                                <a href="https://cutt.ly/jrV09s9P" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
-                                    Descargar
+                                    Descargar<span class="sr-only"> el video «Brechas de capacitación en el Estado: El Rol Clave de los Directivos» (MP4)</span>
                                 </a>
                             </div>
                         </div>
@@ -200,7 +200,7 @@
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/FG609uRqMpE/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                                <a href="https://www.youtube.com/watch?v=FG609uRqMpE" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+                                <a href="https://www.youtube.com/watch?v=FG609uRqMpE" target="_blank" rel="noopener noreferrer" aria-label="Ver video: El rol del directivo en una capacitación efectiva: liderar es también formar" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
@@ -221,19 +221,19 @@
                                 </span>
                             </p>
                             <div class="flex flex-wrap gap-2">
-                                <a href="https://www.youtube.com/watch?v=FG609uRqMpE" target="_blank"
+                                <a href="https://www.youtube.com/watch?v=FG609uRqMpE" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
-                                    YouTube
+                                    YouTube<span class="sr-only">: El rol del directivo en una capacitación efectiva: liderar es también formar</span>
                                 </a>
-                                <a href="https://cutt.ly/OrV03nEy" target="_blank"
+                                <a href="https://cutt.ly/OrV03nEy" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
-                                    Descargar
+                                    Descargar<span class="sr-only"> el video «El rol del directivo en una capacitación efectiva: liderar es también formar» (MP4)</span>
                                 </a>
                             </div>
                         </div>
@@ -247,7 +247,7 @@
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/R0Bvaftc9E/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                                <a href="https://www.youtube.com/watch?v=R0Bvaftc9E" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+                                <a href="https://www.youtube.com/watch?v=R0Bvaftc9E" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Cuando lideras, dejas aprender: el impacto del directivo en la capacitación" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
@@ -268,19 +268,19 @@
                                 </span>
                             </p>
                             <div class="flex flex-wrap gap-2">
-                                <a href="https://www.youtube.com/watch?v=R0Bvaftc9E" target="_blank"
+                                <a href="https://www.youtube.com/watch?v=R0Bvaftc9E" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
-                                    YouTube
+                                    YouTube<span class="sr-only">: Cuando lideras, dejas aprender: el impacto del directivo en la capacitación</span>
                                 </a>
-                                <a href="https://cutt.ly/xrV039Hu" target="_blank"
+                                <a href="https://cutt.ly/xrV039Hu" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
-                                    Descargar
+                                    Descargar<span class="sr-only"> el video «Cuando lideras, dejas aprender: el impacto del directivo en la capacitación» (MP4)</span>
                                 </a>
                             </div>
                         </div>
@@ -308,7 +308,7 @@
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/XL8MA-Tz7Cg/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                                <a href="https://www.youtube.com/watch?v=XL8MA-Tz7Cg" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+                                <a href="https://www.youtube.com/watch?v=XL8MA-Tz7Cg" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Beneficios de la capacitación para servidores públicos" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
@@ -329,19 +329,19 @@
                                 </span>
                             </p>
                             <div class="flex flex-wrap gap-2">
-                                <a href="https://www.youtube.com/watch?v=XL8MA-Tz7Cg" target="_blank"
+                                <a href="https://www.youtube.com/watch?v=XL8MA-Tz7Cg" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
-                                    YouTube
+                                    YouTube<span class="sr-only">: Beneficios de la capacitación para servidores públicos</span>
                                 </a>
-                                <a href="https://cutt.ly/urV0E6AF" target="_blank"
+                                <a href="https://cutt.ly/urV0E6AF" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
-                                    Descargar
+                                    Descargar<span class="sr-only"> el video «Beneficios de la capacitación para servidores públicos» (MP4)</span>
                                 </a>
                             </div>
                         </div>
@@ -355,7 +355,7 @@
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/I4ccjU9cRrw/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                                <a href="https://www.youtube.com/watch?v=I4ccjU9cRrw" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+                                <a href="https://www.youtube.com/watch?v=I4ccjU9cRrw" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Capacitación en el Estado: 3 Pasos clave después de culminar tu capacitación" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
@@ -376,19 +376,19 @@
                                 </span>
                             </p>
                             <div class="flex flex-wrap gap-2">
-                                <a href="https://www.youtube.com/watch?v=I4ccjU9cRrw" target="_blank"
+                                <a href="https://www.youtube.com/watch?v=I4ccjU9cRrw" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
-                                    YouTube
+                                    YouTube<span class="sr-only">: Capacitación en el Estado: 3 Pasos clave después de culminar tu capacitación</span>
                                 </a>
-                                <a href="https://cutt.ly/8rV099dg" target="_blank"
+                                <a href="https://cutt.ly/8rV099dg" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
-                                    Descargar
+                                    Descargar<span class="sr-only"> el video «Capacitación en el Estado: 3 Pasos clave después de culminar tu capacitación» (MP4)</span>
                                 </a>
                             </div>
                         </div>
@@ -402,7 +402,7 @@
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/TlJxyaLkd4I/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                                <a href="https://www.youtube.com/watch?v=TlJxyaLkd4I" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+                                <a href="https://www.youtube.com/watch?v=TlJxyaLkd4I" target="_blank" rel="noopener noreferrer" aria-label="Ver video: ¿Cómo aplicar tu aprendizaje en el trabajo?" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
@@ -423,19 +423,19 @@
                                 </span>
                             </p>
                             <div class="flex flex-wrap gap-2">
-                                <a href="https://www.youtube.com/watch?v=TlJxyaLkd4I" target="_blank"
+                                <a href="https://www.youtube.com/watch?v=TlJxyaLkd4I" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
-                                    YouTube
+                                    YouTube<span class="sr-only">: ¿Cómo aplicar tu aprendizaje en el trabajo?</span>
                                 </a>
-                                <a href="https://cutt.ly/IrV0Rn9q" target="_blank"
+                                <a href="https://cutt.ly/IrV0Rn9q" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
-                                    Descargar
+                                    Descargar<span class="sr-only"> el video «¿Cómo aplicar tu aprendizaje en el trabajo?» (MP4)</span>
                                 </a>
                             </div>
                         </div>
@@ -483,7 +483,7 @@
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/nt89n4PAnrY/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                                <a href="https://youtube.com/shorts/nt89n4PAnrY" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+                                <a href="https://youtube.com/shorts/nt89n4PAnrY" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Brechas de capacitación de los servidores civiles" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
@@ -496,19 +496,19 @@
                         <div class="p-5">
                             <h3 class="text-base font-bold text-gray-800 mb-2 line-clamp-3">Brechas de capacitación de los servidores civiles</h3>
                             <div class="flex flex-wrap gap-2">
-                                <a href="https://youtube.com/shorts/nt89n4PAnrY" target="_blank"
+                                <a href="https://youtube.com/shorts/nt89n4PAnrY" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-xs font-medium rounded-lg hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
-                                    Ver
+                                    Ver<span class="sr-only">: Brechas de capacitación de los servidores civiles</span>
                                 </a>
-                                <a href="https://cutt.ly/XrMuhLcJ" target="_blank"
+                                <a href="https://cutt.ly/XrMuhLcJ" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-200 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
-                                    Descargar
+                                    Descargar<span class="sr-only"> el video «Brechas de capacitación de los servidores civiles» (MP4)</span>
                                 </a>
                             </div>
                         </div>
@@ -522,7 +522,7 @@
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/ialDfhO-yPw/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                                <a href="https://youtube.com/shorts/ialDfhO-yPw" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+                                <a href="https://youtube.com/shorts/ialDfhO-yPw" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Necesidades organizacionales para el buen desempeño de la administración pública" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
@@ -535,19 +535,19 @@
                         <div class="p-5">
                             <h3 class="text-base font-bold text-gray-800 mb-2 line-clamp-3">Necesidades organizacionales para el buen desempeño de la administración pública</h3>
                             <div class="flex flex-wrap gap-2">
-                                <a href="https://youtube.com/shorts/ialDfhO-yPw" target="_blank"
+                                <a href="https://youtube.com/shorts/ialDfhO-yPw" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-xs font-medium rounded-lg hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
-                                    Ver
+                                    Ver<span class="sr-only">: Necesidades organizacionales para el buen desempeño de la administración pública</span>
                                 </a>
-                                <a href="https://cutt.ly/WrMuzhhH" target="_blank"
+                                <a href="https://cutt.ly/WrMuzhhH" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-200 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
-                                    Descargar
+                                    Descargar<span class="sr-only"> el video «Necesidades organizacionales para el buen desempeño de la administración pública» (MP4)</span>
                                 </a>
                             </div>
                         </div>
@@ -561,7 +561,7 @@
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/zaKkPC6cpNo/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                                <a href="https://youtube.com/shorts/zaKkPC6cpNo" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+                                <a href="https://youtube.com/shorts/zaKkPC6cpNo" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Análisis de la inversión en capacitación" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
@@ -574,19 +574,19 @@
                         <div class="p-5">
                             <h3 class="text-base font-bold text-gray-800 mb-2 line-clamp-3">Análisis de la inversión en capacitación</h3>
                             <div class="flex flex-wrap gap-2">
-                                <a href="https://youtube.com/shorts/zaKkPC6cpNo" target="_blank"
+                                <a href="https://youtube.com/shorts/zaKkPC6cpNo" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-xs font-medium rounded-lg hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
-                                    Ver
+                                    Ver<span class="sr-only">: Análisis de la inversión en capacitación</span>
                                 </a>
-                                <a href="https://cutt.ly/trMuzK4F" target="_blank"
+                                <a href="https://cutt.ly/trMuzK4F" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-200 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
-                                    Descargar
+                                    Descargar<span class="sr-only"> el video «Análisis de la inversión en capacitación» (MP4)</span>
                                 </a>
                             </div>
                         </div>
@@ -600,7 +600,7 @@
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/5QusdOShehY/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                                <a href="https://youtube.com/shorts/5QusdOShehY" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+                                <a href="https://youtube.com/shorts/5QusdOShehY" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Importancia de priorización de cada materia" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
@@ -613,19 +613,19 @@
                         <div class="p-5">
                             <h3 class="text-base font-bold text-gray-800 mb-2 line-clamp-3">Importancia de priorización de cada materia</h3>
                             <div class="flex flex-wrap gap-2">
-                                <a href="https://youtube.com/shorts/5QusdOShehY" target="_blank"
+                                <a href="https://youtube.com/shorts/5QusdOShehY" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-xs font-medium rounded-lg hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
-                                    Ver
+                                    Ver<span class="sr-only">: Importancia de priorización de cada materia</span>
                                 </a>
-                                <a href="https://cutt.ly/qrMuYUQx" target="_blank"
+                                <a href="https://cutt.ly/qrMuYUQx" target="_blank" rel="noopener noreferrer"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-200 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
-                                    Descargar
+                                    Descargar<span class="sr-only"> el video «Importancia de priorización de cada materia» (MP4)</span>
                                 </a>
                             </div>
                         </div>
@@ -689,7 +689,7 @@
                                      class="w-full h-48 object-cover"
                                      onerror="this.src='https://img.youtube.com/vi/{{ $video['id'] }}/hqdefault.jpg'">
                                 <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                                    <a href="{{ $video['youtube'] }}" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
+                                    <a href="{{ $video['youtube'] }}" target="_blank" rel="noopener noreferrer" aria-label="Ver video: {{ $video['titulo'] }}" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                         <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M8 5v14l11-7z"/>
                                         </svg>
@@ -702,26 +702,26 @@
                             <div class="p-5">
                                 <h3 class="text-base font-bold text-gray-800 mb-3 line-clamp-3">{{ $video['titulo'] }}</h3>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="{{ $video['youtube'] }}" target="_blank"
+                                    <a href="{{ $video['youtube'] }}" target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-xs font-medium rounded-lg hover:bg-red-700 transition-colors">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                         </svg>
-                                        Ver
+                                        Ver<span class="sr-only">: {{ $video['titulo'] }}</span>
                                     </a>
-                                    <a href="{{ $video['descarga'] }}" target="_blank"
+                                    <a href="{{ $video['descarga'] }}" target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-200 transition-colors">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                         </svg>
-                                        Descargar
+                                        Descargar<span class="sr-only"> el video «{{ $video['titulo'] }}» (MP4)</span>
                                     </a>
-                                    <a href="{{ $video['pieza'] }}" target="_blank"
+                                    <a href="{{ $video['pieza'] }}" target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-2 bg-amber-100 text-amber-700 text-xs font-medium rounded-lg hover:bg-amber-200 transition-colors">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                         </svg>
-                                        Pieza gráfica
+                                        Pieza gráfica<span class="sr-only"> de «{{ $video['titulo'] }}»</span>
                                     </a>
                                 </div>
                             </div>
@@ -801,19 +801,19 @@
                                 </div>
                                 <h3 class="text-lg font-bold text-gray-800 mb-4 line-clamp-2">{{ $matriz['titulo'] }}</h3>
                                 <div class="flex flex-wrap gap-2">
-                                    <a href="{{ $matriz['matriz'] }}" target="_blank"
+                                    <a href="{{ $matriz['matriz'] }}" target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-4 py-2 bg-orange-600 text-white text-sm font-medium rounded-lg hover:bg-orange-700 transition-colors">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                                         </svg>
-                                        Ver Matriz (PDF)
+                                        Ver Matriz (PDF)<span class="sr-only"> de {{ $matriz['titulo'] }}</span>
                                     </a>
-                                    <a href="{{ $matriz['descarga'] }}" target="_blank"
+                                    <a href="{{ $matriz['descarga'] }}" target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                         </svg>
-                                        Pieza gráfica
+                                        Pieza gráfica<span class="sr-only"> de «{{ $matriz['titulo'] }}»</span>
                                     </a>
                                 </div>
                             </div>

@@ -107,7 +107,7 @@
                                         </svg>
                                         <div>
                                             <dt class="font-medium text-gray-800">Correo electrónico</dt>
-                                            <dd class="text-gray-700">info@unamad.edu.pe</dd>
+                                            <dd class="text-gray-700"><a href="mailto:info@unamad.edu.pe" class="underline hover:text-[#db0455]">info@unamad.edu.pe</a></dd>
                                         </div>
                                     </div>
                                 </dl>

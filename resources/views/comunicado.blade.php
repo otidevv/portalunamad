@@ -104,7 +104,8 @@
                             @foreach($comunicado->archivos as $archivo)
                                 @php $ext = strtoupper($archivo->extension ?? pathinfo($archivo->ruta, PATHINFO_EXTENSION)); @endphp
                                 <li>
-                                    <a href="{{ $archivo->url }}" target="_blank" rel="noopener"
+                                    <a href="{{ $archivo->url }}" target="_blank" rel="noopener noreferrer"
+                                       aria-label="Descargar {{ $archivo->nombre_original ?? basename($archivo->ruta) }} (archivo {{ $ext }})"
                                        class="flex items-center gap-3 px-4 py-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors group">
                                         <span class="inline-flex items-center justify-center w-10 h-10 rounded-md text-xs font-bold flex-shrink-0
                                                      {{ $ext === 'PDF' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700' }}">

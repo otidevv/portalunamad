@@ -266,24 +266,28 @@
                         <p class="text-lg mb-6 opacity-95">
                             Para acceder a los documentos completos de nuestra política institucional, contáctanos a través de los siguientes medios:
                         </p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-md mx-auto">
-                            <div class="bg-white/20 rounded-lg p-4 opacity-50 cursor-not-allowed">
-                                <div class="flex items-center justify-center">
-                                    <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                    </svg>
-                                    Email
-                                </div>
-                            </div>
-                            <div class="bg-white/20 rounded-lg p-4 opacity-50 cursor-not-allowed">
-                                <div class="flex items-center justify-center">
-                                    <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                    </svg>
-                                    Teléfono
-                                </div>
-                            </div>
-                        </div>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-md mx-auto list-none m-0 p-0">
+                            <li>
+                                <a href="mailto:documentario@unamad.edu.pe" class="block bg-white/20 hover:bg-white/30 rounded-lg p-4 text-white transition-colors">
+                                    <span class="flex items-center justify-center">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                        </svg>
+                                        <span>Correo electrónico<span class="sr-only">: documentario@unamad.edu.pe</span></span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+51993115418" class="block bg-white/20 hover:bg-white/30 rounded-lg p-4 text-white transition-colors">
+                                    <span class="flex items-center justify-center">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                        </svg>
+                                        <span>Teléfono<span class="sr-only">: +51 993 115 418</span></span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

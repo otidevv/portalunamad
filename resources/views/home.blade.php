@@ -452,7 +452,7 @@
                         </a>
 
                         <!-- Oficina de Gestión de la Calidad -->
-                        <a href="https://portal.unamad.edu.pe/oficinas/calidad" target="_blank" rel="noopener noreferrer"
+                        <a href="{{ url('oficinas/calidad') }}"
                             class="flex bg-white rounded-lg shadow-lg border-l-4 min-h-[180px] border-yellow-600 overflow-hidden hover:shadow-xl transition-all duration-300 group">
                             <div class="p-4 text-center flex flex-col items-center justify-center w-full h-full">
                                 <div
@@ -490,7 +490,7 @@
                         </a>
 
                         <!-- Planta Piloto de Tecnología de la Madera -->
-                        <a href="https://portal.unamad.edu.pe/facultades/forestal" target="_blank" rel="noopener noreferrer"
+                        <a href="{{ url('facultades/forestal') }}"
                             class="flex bg-white rounded-lg shadow-lg border-l-4 min-h-[180px] border-emerald-600 overflow-hidden hover:shadow-xl transition-all duration-300 group">
                             <div class="p-4 text-center flex flex-col items-center justify-center w-full h-full">
                                 <div
@@ -600,13 +600,14 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
                 @forelse($comunicadosOficina as $comunicado)
                     <article
-                        class="bg-white p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col border-b-4 border-b-[#db0455] overflow-hidden hover:scale-105 cursor-pointer"
-                        style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 -4px 6px -1px rgba(0, 0, 0, 0.08);"
-                        role="link" tabindex="0" aria-label="{{ $comunicado->titulo }}"
-                        onclick="window.location.href='{{ route('comunicado.ver', $comunicado) }}'"
-                        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='{{ route('comunicado.ver', $comunicado) }}'}">
-                        <h3 class="text-blue-600 hover:text-blue-800 font-semibold mb-4 line-clamp-3">
-                            {{ $comunicado->titulo }}
+                        class="relative bg-white p-6 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col border-b-4 border-b-[#db0455] overflow-hidden hover:scale-105"
+                        style="box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 -4px 6px -1px rgba(0, 0, 0, 0.08);">
+                        <h3 class="font-semibold mb-4 line-clamp-3">
+                            {{-- Enlace "extendido": el pseudoelemento cubre toda la tarjeta para conservar el clic en cualquier punto --}}
+                            <a href="{{ route('comunicado.ver', $comunicado) }}"
+                               class="text-blue-600 hover:text-blue-800 after:absolute after:inset-0 after:content-['']">
+                                {{ $comunicado->titulo }}
+                            </a>
                         </h3>
                         <p class="text-gray-700 text-sm mb-6 font-bold">
                             {{ $comunicado->oficina ?? ($comunicado->categoria->nombre ?? 'OFICINA') }}
@@ -1089,7 +1090,7 @@
                             <!-- Boletín Digital UNAMAD AL DÍA - Estructura especial -->
                             <div class="space-y-0">
                                 <!-- Imagen superior clickeable -->
-                                <a href="https://heyzine.com/flip-book/ec58c00b66.html" target="_blank" rel="noopener noreferrer" class="block">
+                                <a href="https://heyzine.com/flip-book/ec58c00b66.html" target="_blank" rel="noopener noreferrer" class="block" tabindex="-1" aria-hidden="true">
                                     <img loading="lazy" src="{{ asset('img/boletin/boletin2025.JPG') }}" alt="Portada del Boletín Digital UNAMAD al Día 2025: Felices Bodas de Plata, 25 años impulsando el desarrollo en la Amazonía"
                                         class="w-full rounded-t-lg shadow-lg hover:opacity-95 transition-opacity duration-300">
                                 </a>
@@ -2055,12 +2056,15 @@
         function abrirImagenLightbox(url, titulo) {
             const lightbox = document.createElement('div');
             lightbox.className = 'fixed inset-0 bg-black bg-opacity-90 z-[10000] flex items-center justify-center p-4';
+            lightbox.setAttribute('role', 'dialog');
+            lightbox.setAttribute('aria-modal', 'true');
+            lightbox.setAttribute('aria-label', 'Imagen ampliada: ' + titulo);
             lightbox.onclick = () => lightbox.remove();
 
             lightbox.innerHTML = `
         <div class="relative max-w-6xl max-h-[95vh] flex items-center justify-center">
             <img src="${url}" alt="${titulo}" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl">
-            <button onclick="event.stopPropagation(); this.parentElement.parentElement.remove()"
+            <button type="button" aria-label="Cerrar imagen" onclick="event.stopPropagation(); this.parentElement.parentElement.remove()"
                     class="absolute top-4 right-4 w-12 h-12 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 flex items-center justify-center text-white transition-all">
                 <svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -2167,11 +2171,8 @@
             };
 
             contenedor.innerHTML = anuncios.map(anuncio => `
-        <article class="anuncio-item bg-white rounded-lg shadow-md overflow-hidden border-b-4 border-[#db0455] hover:shadow-xl transition-all duration-300 cursor-pointer"
-                 data-categoria="${anuncio.categoria}"
-                 role="link" tabindex="0" aria-label="${anuncio.titulo}"
-                 onclick="abrirAnuncioEspecifico(${anuncio.id})"
-                 onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirAnuncioEspecifico(${anuncio.id})}">
+        <article class="anuncio-item relative bg-white rounded-lg shadow-md overflow-hidden border-b-4 border-[#db0455] hover:shadow-xl transition-all duration-300"
+                 data-categoria="${anuncio.categoria}">
 
             ${anuncio.imagen_principal_url && anuncio.imagen_principal_url.includes('/storage/') ? `
                             <div class="h-32 overflow-hidden">
@@ -2190,7 +2191,11 @@
                 </div>
 
                 <h3 class="text-base font-bold text-gray-800 mb-2 line-clamp-2 hover:text-[#db0455] transition-colors">
-                    ${anuncio.titulo.length > 60 ? anuncio.titulo.substring(0, 60) + '...' : anuncio.titulo}
+                    <button type="button" onclick="abrirAnuncioEspecifico(${anuncio.id})"
+                            class="text-left after:absolute after:inset-0 after:content-['']"
+                            aria-label="Abrir anuncio: ${anuncio.titulo.replace(/"/g, '&quot;')}">
+                        ${anuncio.titulo.length > 60 ? anuncio.titulo.substring(0, 60) + '...' : anuncio.titulo}
+                    </button>
                 </h3>
 
                 <p class="text-gray-600 text-sm mb-3 line-clamp-2">
