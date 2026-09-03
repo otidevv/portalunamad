@@ -91,7 +91,7 @@
                                  alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/1mMzMEXEzy0/hqdefault.jpg'">
-                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 focus-within:opacity-100 transition-opacity">
                                 <a href="https://www.youtube.com/watch?v=1mMzMEXEzy0" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Más que gestión, es transformación: El rol de las Oficinas de Recursos Humanos" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
@@ -152,7 +152,7 @@
                                  alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/qLFlbYLgqRk/hqdefault.jpg'">
-                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 focus-within:opacity-100 transition-opacity">
                                 <a href="https://www.youtube.com/watch?v=qLFlbYLgqRk" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Brechas de capacitación en el Estado: El Rol Clave de los Directivos" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
@@ -199,7 +199,7 @@
                                  alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/FG609uRqMpE/hqdefault.jpg'">
-                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 focus-within:opacity-100 transition-opacity">
                                 <a href="https://www.youtube.com/watch?v=FG609uRqMpE" target="_blank" rel="noopener noreferrer" aria-label="Ver video: El rol del directivo en una capacitación efectiva: liderar es también formar" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
@@ -246,7 +246,7 @@
                                  alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/R0Bvaftc9E/hqdefault.jpg'">
-                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 focus-within:opacity-100 transition-opacity">
                                 <a href="https://www.youtube.com/watch?v=R0Bvaftc9E" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Cuando lideras, dejas aprender: el impacto del directivo en la capacitación" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
@@ -307,7 +307,7 @@
                                  alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/XL8MA-Tz7Cg/hqdefault.jpg'">
-                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 focus-within:opacity-100 transition-opacity">
                                 <a href="https://www.youtube.com/watch?v=XL8MA-Tz7Cg" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Beneficios de la capacitación para servidores públicos" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
@@ -354,7 +354,7 @@
                                  alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/I4ccjU9cRrw/hqdefault.jpg'">
-                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 focus-within:opacity-100 transition-opacity">
                                 <a href="https://www.youtube.com/watch?v=I4ccjU9cRrw" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Capacitación en el Estado: 3 Pasos clave después de culminar tu capacitación" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
@@ -401,7 +401,7 @@
                                  alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/TlJxyaLkd4I/hqdefault.jpg'">
-                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 focus-within:opacity-100 transition-opacity">
                                 <a href="https://www.youtube.com/watch?v=TlJxyaLkd4I" target="_blank" rel="noopener noreferrer" aria-label="Ver video: ¿Cómo aplicar tu aprendizaje en el trabajo?" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
@@ -482,7 +482,7 @@
                                  alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/nt89n4PAnrY/hqdefault.jpg'">
-                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 focus-within:opacity-100 transition-opacity">
                                 <a href="https://youtube.com/shorts/nt89n4PAnrY" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Brechas de capacitación de los servidores civiles" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
@@ -521,7 +521,7 @@
                                  alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/ialDfhO-yPw/hqdefault.jpg'">
-                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 focus-within:opacity-100 transition-opacity">
                                 <a href="https://youtube.com/shorts/ialDfhO-yPw" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Necesidades organizacionales para el buen desempeño de la administración pública" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
@@ -560,7 +560,7 @@
                                  alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/zaKkPC6cpNo/hqdefault.jpg'">
-                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 focus-within:opacity-100 transition-opacity">
                                 <a href="https://youtube.com/shorts/zaKkPC6cpNo" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Análisis de la inversión en capacitación" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
@@ -599,7 +599,7 @@
                                  alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/5QusdOShehY/hqdefault.jpg'">
-                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 focus-within:opacity-100 transition-opacity">
                                 <a href="https://youtube.com/shorts/5QusdOShehY" target="_blank" rel="noopener noreferrer" aria-label="Ver video: Importancia de priorización de cada materia" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
@@ -688,7 +688,7 @@
                                      alt=""
                                      class="w-full h-48 object-cover"
                                      onerror="this.src='https://img.youtube.com/vi/{{ $video['id'] }}/hqdefault.jpg'">
-                                <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                                <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 focus-within:opacity-100 transition-opacity">
                                     <a href="{{ $video['youtube'] }}" target="_blank" rel="noopener noreferrer" aria-label="Ver video: {{ $video['titulo'] }}" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
                                         <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M8 5v14l11-7z"/>

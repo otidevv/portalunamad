@@ -7,58 +7,58 @@
     <!-- Hero Section con Slider - Portal Principal UNAMAD -->
     <section class="hero-slider" aria-roledescription="carrusel" aria-label="Banners destacados de la UNAMAD">
         <!-- Slider Container -->
-        <div class="slider-container">
+        <div class="slider-container" id="hero-slides" aria-live="off">
             <!-- Slide 1 (LCP - carga prioritaria) -->
-            <div class="slide active">
+            <div class="slide active" role="group" aria-roledescription="diapositiva" aria-label="1 de 8">
                 <picture>
                     <source srcset="/img/banners/1.webp" type="image/webp">
                     <img src="/img/banners/1.jpg" alt="Banner institucional de la Universidad Nacional Amazónica de Madre de Dios" fetchpriority="high" width="1920" height="1080" decoding="async">
                 </picture>
             </div>
             <!-- Slide 2 -->
-            <div class="slide">
+            <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 8" aria-hidden="true">
                 <picture>
                     <source srcset="/img/banners/2.webp" type="image/webp">
                     <img src="/img/banners/2.jpg" alt="Campus de la UNAMAD en Puerto Maldonado" loading="lazy" width="1920" height="1080" decoding="async">
                 </picture>
             </div>
             <!-- Slide 3 -->
-            <div class="slide">
+            <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 8" aria-hidden="true">
                 <picture>
                     <source srcset="/img/banners/3.webp" type="image/webp">
                     <img src="/img/banners/3.jpg" alt="Estudiantes de la UNAMAD en el campus universitario" loading="lazy" width="1920" height="1080" decoding="async">
                 </picture>
             </div>
             <!-- Slide 4 -->
-            <div class="slide">
+            <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 8" aria-hidden="true">
                 <picture>
                     <source srcset="/img/banners/4.webp" type="image/webp">
                     <img src="/img/banners/4.jpg" alt="Investigadores de la UNAMAD realizando trabajo científico en laboratorio" loading="lazy" width="1920" height="1080" decoding="async">
                 </picture>
             </div>
             <!-- Slide 5 -->
-            <div class="slide">
+            <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="5 de 8" aria-hidden="true">
                 <picture>
                     <source srcset="/img/banners/5.webp" type="image/webp">
                     <img src="/img/banners/5.jpg" alt="Paisaje de la Amazonía y biodiversidad de Madre de Dios" loading="lazy" width="1920" height="1080" decoding="async">
                 </picture>
             </div>
             <!-- Slide 6 -->
-            <div class="slide">
+            <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="6 de 8" aria-hidden="true">
                 <picture>
                     <source srcset="/img/banners/6.webp" type="image/webp">
                     <img src="/img/banners/6.jpg" alt="Tecnología e innovación en la UNAMAD" loading="lazy" width="1920" height="1080" decoding="async">
                 </picture>
             </div>
             <!-- Slide 7 -->
-            <div class="slide">
+            <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="7 de 8" aria-hidden="true">
                 <picture>
                     <source srcset="/img/banners/7.webp" type="image/webp">
                     <img src="/img/banners/7.jpg" alt="Cultura y tradición amazónica de Madre de Dios" loading="lazy" width="1920" height="1080" decoding="async">
                 </picture>
             </div>
             <!-- Slide 8 -->
-            <div class="slide">
+            <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="8 de 8" aria-hidden="true">
                 <picture>
                     <source srcset="/img/banners/8.webp" type="image/webp">
                     <img src="/img/banners/8.jpg" alt="Futuro y desarrollo sostenible de la Amazonía" loading="lazy" width="1920" height="1080" decoding="async">
@@ -122,43 +122,54 @@
         </div>
 
         <!-- Indicadores de slide -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3" role="tablist" aria-label="Indicadores del carrusel">
-            <button class="indicator active w-4 h-4 rounded-full bg-white transition-all duration-300 shadow-lg"
-                data-slide="0" aria-label="Slide 1" role="tab" aria-selected="true"></button>
-            <button class="indicator w-4 h-4 rounded-full bg-white/70 transition-all duration-300 shadow-lg"
-                data-slide="1" aria-label="Slide 2" role="tab" aria-selected="false"></button>
-            <button class="indicator w-4 h-4 rounded-full bg-white/70 transition-all duration-300 shadow-lg"
-                data-slide="2" aria-label="Slide 3" role="tab" aria-selected="false"></button>
-            <button class="indicator w-4 h-4 rounded-full bg-white/70 transition-all duration-300 shadow-lg"
-                data-slide="3" aria-label="Slide 4" role="tab" aria-selected="false"></button>
-            <button class="indicator w-4 h-4 rounded-full bg-white/70 transition-all duration-300 shadow-lg"
-                data-slide="4" aria-label="Slide 5" role="tab" aria-selected="false"></button>
-            <button class="indicator w-4 h-4 rounded-full bg-white/70 transition-all duration-300 shadow-lg"
-                data-slide="5" aria-label="Slide 6" role="tab" aria-selected="false"></button>
-            <button class="indicator w-4 h-4 rounded-full bg-white/70 transition-all duration-300 shadow-lg"
-                data-slide="6" aria-label="Slide 7" role="tab" aria-selected="false"></button>
-            <button class="indicator w-4 h-4 rounded-full bg-white/70 transition-all duration-300 shadow-lg"
-                data-slide="7" aria-label="Slide 8" role="tab" aria-selected="false"></button>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3" role="group" aria-label="Seleccionar diapositiva">
+            <button type="button" class="indicator active w-4 h-4 rounded-full bg-white ring-2 ring-[#db0455] ring-offset-1 transition-all duration-300 shadow-lg"
+                data-slide="0" aria-label="Ir a la diapositiva 1 de 8" aria-current="true"></button>
+            <button type="button" class="indicator w-4 h-4 rounded-full bg-white/70 transition-all duration-300 shadow-lg"
+                data-slide="1" aria-label="Ir a la diapositiva 2 de 8" aria-current="false"></button>
+            <button type="button" class="indicator w-4 h-4 rounded-full bg-white/70 transition-all duration-300 shadow-lg"
+                data-slide="2" aria-label="Ir a la diapositiva 3 de 8" aria-current="false"></button>
+            <button type="button" class="indicator w-4 h-4 rounded-full bg-white/70 transition-all duration-300 shadow-lg"
+                data-slide="3" aria-label="Ir a la diapositiva 4 de 8" aria-current="false"></button>
+            <button type="button" class="indicator w-4 h-4 rounded-full bg-white/70 transition-all duration-300 shadow-lg"
+                data-slide="4" aria-label="Ir a la diapositiva 5 de 8" aria-current="false"></button>
+            <button type="button" class="indicator w-4 h-4 rounded-full bg-white/70 transition-all duration-300 shadow-lg"
+                data-slide="5" aria-label="Ir a la diapositiva 6 de 8" aria-current="false"></button>
+            <button type="button" class="indicator w-4 h-4 rounded-full bg-white/70 transition-all duration-300 shadow-lg"
+                data-slide="6" aria-label="Ir a la diapositiva 7 de 8" aria-current="false"></button>
+            <button type="button" class="indicator w-4 h-4 rounded-full bg-white/70 transition-all duration-300 shadow-lg"
+                data-slide="7" aria-label="Ir a la diapositiva 8 de 8" aria-current="false"></button>
         </div>
 
         <!-- Controles de navegación -->
         <button
             class="absolute left-6 top-1/2 transform -translate-y-1/2 text-white hover:text-[#db0455] transition-all duration-300 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-4 shadow-2xl drop-shadow-2xl hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_-25px_25px_rgba(0,0,0,0.3)] border border-white/20 hover:border-[#db0455]/50"
-            onclick="prevSlide()" aria-label="Slide anterior">
+            type="button" onclick="prevSlide()" aria-label="Diapositiva anterior">
             <svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
             </svg>
         </button>
         <button
             class="absolute right-6 top-1/2 transform -translate-y-1/2 text-white hover:text-[#db0455] transition-all duration-300 bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-4 shadow-2xl drop-shadow-2xl hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)] hover:drop-shadow-[0_-25px_25px_rgba(0,0,0,0.3)] border border-white/20 hover:border-[#db0455]/50"
-            onclick="nextSlide()" aria-label="Slide siguiente">
+            type="button" onclick="nextSlide()" aria-label="Diapositiva siguiente">
             <svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
             </svg>
         </button>
 
+        <!-- Pausar / reanudar el avance automático (WCAG 2.2.2) -->
+        <button type="button" id="hero-pause" onclick="toggleHeroAutoplay()" aria-pressed="false" aria-label="Pausar el avance automático del carrusel"
+            class="absolute right-6 bottom-8 z-20 text-white bg-black/50 hover:bg-black/70 backdrop-blur-sm rounded-full p-3 shadow-2xl border border-white/20 hover:border-[#db0455]/50 transition-all duration-300">
+            <svg id="hero-pause-icon" class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+            </svg>
+            <svg id="hero-play-icon" class="w-5 h-5 hidden" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+            </svg>
+        </button>
+
         <!-- Scroll indicator -->
-        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce" aria-hidden="true">
             <svg class="w-6 h-6 text-white/60" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
@@ -1120,7 +1131,7 @@
             <div class="w-20 h-1 mx-auto rounded-full mt-4 mb-8 sm:mb-12" style="background:linear-gradient(to right,#ed145b,#db0455);"></div>
 
             <!-- Slider Container -->
-            <div class="relative overflow-hidden">
+            <div class="relative overflow-hidden" role="region" aria-roledescription="carrusel" aria-label="Logotipos de entidades externas">
                 <ul class="enlaces-slider flex list-none m-0 p-0" id="enlacesSlider">
                     <!-- Items individuales para desplazamiento continuo -->
                     <li class="flex-shrink-0"><a href="https://www.sunedu.gob.pe/" target="_blank" rel="noopener noreferrer"
@@ -1171,7 +1182,7 @@
                     </a></li>
 
                     <!-- Duplicado para bucle infinito -->
-                    <li class="flex-shrink-0"><a href="https://www.sunedu.gob.pe/" target="_blank" rel="noopener noreferrer"
+                    <li class="flex-shrink-0" aria-hidden="true"><a tabindex="-1" href="https://www.sunedu.gob.pe/" target="_blank" rel="noopener noreferrer"
                         class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/logo-sunedu.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
@@ -1179,7 +1190,7 @@
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             SUNEDU</h3>
                     </a></li>
-                    <li class="flex-shrink-0"><a href="https://www.pronabec.gob.pe/" target="_blank" rel="noopener noreferrer"
+                    <li class="flex-shrink-0" aria-hidden="true"><a tabindex="-1" href="https://www.pronabec.gob.pe/" target="_blank" rel="noopener noreferrer"
                         class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/logoPronabec_hd.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
@@ -1187,7 +1198,7 @@
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             PRONABEC</h3>
                     </a></li>
-                    <li class="flex-shrink-0"><a href="https://www.prociencia.gob.pe/" target="_blank" rel="noopener noreferrer"
+                    <li class="flex-shrink-0" aria-hidden="true"><a tabindex="-1" href="https://www.prociencia.gob.pe/" target="_blank" rel="noopener noreferrer"
                         class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/prociencia.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
@@ -1195,7 +1206,7 @@
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             PROCIENCIA</h3>
                     </a></li>
-                    <li class="flex-shrink-0"><a href="https://portal.rnssc.gob.pe/" target="_blank" rel="noopener noreferrer"
+                    <li class="flex-shrink-0" aria-hidden="true"><a tabindex="-1" href="https://portal.rnssc.gob.pe/" target="_blank" rel="noopener noreferrer"
                         class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/rnssc.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
@@ -1203,14 +1214,14 @@
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             RNSSC</h3>
                     </a></li>
-                    <li class="flex-shrink-0"><a href="https://www.rpu.edu.pe/" target="_blank" rel="noopener noreferrer" class="block p-6 mx-4 text-center group">
+                    <li class="flex-shrink-0" aria-hidden="true"><a tabindex="-1" href="https://www.rpu.edu.pe/" target="_blank" rel="noopener noreferrer" class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/rpu.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             RPU</h3>
                     </a></li>
-                    <li class="flex-shrink-0"><a href="https://www.scopus.com/" target="_blank" rel="noopener noreferrer" class="block p-6 mx-4 text-center group">
+                    <li class="flex-shrink-0" aria-hidden="true"><a tabindex="-1" href="https://www.scopus.com/" target="_blank" rel="noopener noreferrer" class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/scopus.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
@@ -1219,20 +1230,28 @@
                     </a></li>
                 </ul>
             </div>
+            <div class="text-center mt-6">
+                <button type="button" id="enlaces-pause" onclick="toggleEnlacesSlider()" aria-pressed="false" aria-controls="enlacesSlider"
+                    class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors">
+                    <svg id="enlaces-pause-icon" class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" /></svg>
+                    <svg id="enlaces-play-icon" class="w-4 h-4 hidden" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                    <span id="enlaces-pause-text">Pausar el desplazamiento</span>
+                </button>
+            </div>
         </div>
     </section>
 
     <!-- Modal Flotante de Anuncios -->
     <div id="modal-anuncios"
         class="fixed inset-0 bg-transparent bg-opacity-50 z-[9999] hidden items-center justify-center p-4 backdrop-blur-sm"
-        role="dialog" aria-modal="true" aria-label="Anuncios">
+        role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
         <div class="bg-white rounded-2xl sm:rounded-3xl max-w-2xl w-full max-h-[95vh] overflow-hidden shadow-2xl transform transition-all duration-500 scale-95 animate-pulse-glow"
             id="modal-contenido">
 
             <!-- Header del Modal con navegación -->
             <div class="relative bg-gradient-to-r from-[#db0455] to-[#a00340] text-white p-6">
                 <!-- Botón Cerrar -->
-                <button onclick="cerrarModalAnuncios()" aria-label="Cerrar anuncios"
+                <button type="button" id="modal-cerrar" onclick="cerrarModalAnuncios()" aria-label="Cerrar anuncios"
                     class="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-all duration-300 hover:scale-110 group">
                     <svg class="w-6 h-6 group-hover:rotate-90 transition-transform duration-300" aria-hidden="true" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
@@ -1243,14 +1262,14 @@
 
                 <!-- Controles de navegación -->
                 <div id="controles-navegacion" class="absolute top-4 left-4 flex items-center space-x-2">
-                    <button onclick="anuncioAnterior()" id="btn-anterior" aria-label="Anuncio anterior"
+                    <button type="button" onclick="anuncioAnterior()" id="btn-anterior" aria-label="Anuncio anterior"
                         class="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-all duration-300 hover:scale-110">
                         <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
                             </path>
                         </svg>
                     </button>
-                    <button onclick="anuncioSiguiente()" id="btn-siguiente" aria-label="Anuncio siguiente"
+                    <button type="button" onclick="anuncioSiguiente()" id="btn-siguiente" aria-label="Anuncio siguiente"
                         class="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-all duration-300 hover:scale-110">
                         <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
@@ -1259,8 +1278,8 @@
                     </button>
 
                     <!-- Indicador de posición -->
-                    <div class="text-white text-sm font-medium ml-2">
-                        <span id="anuncio-actual">1</span> / <span id="total-anuncios">1</span>
+                    <div class="text-white text-sm font-medium ml-2" aria-live="polite">
+                        <span class="sr-only">Anuncio </span><span id="anuncio-actual">1</span> <span aria-hidden="true">/</span><span class="sr-only">de</span> <span id="total-anuncios">1</span>
                     </div>
                 </div>
 
@@ -1268,7 +1287,7 @@
                 <div class="mt-8">
                     <div id="modal-categoria"
                         class="inline-block px-3 py-1 bg-white/20 rounded-full text-sm font-bold mb-3"></div>
-                    <h2 id="modal-titulo" class="text-2xl font-bold leading-tight mb-2"></h2>
+                    <h2 id="modal-titulo" class="text-2xl font-bold leading-tight mb-2 focus:outline-none" tabindex="-1"></h2>
                     <div class="flex items-center space-x-4 text-white text-sm">
                         <div class="flex items-center">
                             <svg class="w-4 h-4 mr-1" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1303,7 +1322,9 @@
             <div class="p-6 overflow-y-auto" style="max-height: calc(95vh - 200px);">
                 <!-- Imagen principal -->
                 <div id="modal-imagen-container" class="mb-6 hidden">
-                    <img id="modal-imagen" class="w-full max-h-80 object-cover rounded-xl shadow-lg" alt="Imagen principal del anuncio">
+                    <button type="button" id="modal-imagen-btn" class="block w-full rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0455] focus-visible:ring-offset-2" aria-label="Ampliar la imagen principal del anuncio">
+                        <img id="modal-imagen" class="w-full max-h-80 object-cover rounded-xl shadow-lg" alt="Imagen principal del anuncio">
+                    </button>
                 </div>
 
                 <!-- Descripción -->
@@ -1332,7 +1353,7 @@
             <div class="bg-gray-50 px-6 py-4 flex justify-between items-center border-t">
                 <div class="text-sm text-gray-500" id="modal-tiempo"></div>
                 <div class="flex items-center space-x-3">
-                    <button onclick="cerrarModalAnuncios()"
+                    <button type="button" onclick="cerrarModalAnuncios()"
                         class="px-6 py-2 bg-[#db0455] hover:bg-[#a00340] text-white rounded-lg transition-all duration-300 transform hover:scale-105">
                         Cerrar
                     </button>
@@ -1370,7 +1391,7 @@
         <div class="relative max-w-7xl max-h-full w-full h-full flex items-center justify-center"
             onclick="event.stopPropagation()">
             <!-- Botón cerrar -->
-            <button onclick="cerrarLightbox()" aria-label="Cerrar imagen"
+            <button type="button" id="lightbox-cerrar" onclick="cerrarLightbox()" aria-label="Cerrar imagen"
                 class="absolute top-4 right-4 w-12 h-12 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 z-10">
                 <svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
@@ -1383,14 +1404,14 @@
                 onclick="event.stopPropagation()">
 
             <!-- Botones de navegación (si hay múltiples imágenes) -->
-            <button id="lightbox-prev" onclick="imagenAnteriorLightbox()" aria-label="Imagen anterior"
+            <button type="button" id="lightbox-prev" onclick="imagenAnteriorLightbox()" aria-label="Imagen anterior"
                 class="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hidden">
                 <svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                 </svg>
             </button>
 
-            <button id="lightbox-next" onclick="imagenSiguienteLightbox()" aria-label="Imagen siguiente"
+            <button type="button" id="lightbox-next" onclick="imagenSiguienteLightbox()" aria-label="Imagen siguiente"
                 class="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 hidden">
                 <svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -1398,9 +1419,9 @@
             </button>
 
             <!-- Indicador de imagen actual -->
-            <div id="lightbox-counter"
+            <div id="lightbox-counter" aria-live="polite"
                 class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full text-sm hidden">
-                <span id="imagen-actual-lightbox">1</span> / <span id="total-imagenes-lightbox">1</span>
+                <span class="sr-only">Imagen </span><span id="imagen-actual-lightbox">1</span> <span aria-hidden="true">/</span><span class="sr-only">de</span> <span id="total-imagenes-lightbox">1</span>
             </div>
         </div>
     </div>
@@ -1436,7 +1457,7 @@
                     <p class="text-sm text-gray-500">Universidad Nacional Amazónica de Madre de Dios</p>
                 </div>
                 <!-- Botón de minimizar -->
-                <button onclick="togglePlayerSize()" class="text-gray-600 hover:text-gray-800 transition-colors" aria-label="Minimizar reproductor">
+                <button type="button" onclick="togglePlayerSize()" class="text-gray-600 hover:text-gray-800 transition-colors" aria-label="Minimizar reproductor" aria-expanded="true" aria-controls="audioPlayer">
                     <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
@@ -1444,7 +1465,7 @@
             </div>
 
             <!-- Barra de progreso -->
-            <div class="relative w-full h-2 bg-gray-200 rounded-full mb-4 cursor-pointer" onclick="seekAudio(event)" role="slider" aria-label="Progreso del audio" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+            <div id="progressSlider" class="relative w-full h-2 bg-gray-200 rounded-full mb-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0455] focus-visible:ring-offset-2" onclick="seekAudio(event)" onkeydown="teclasProgreso(event)" role="slider" aria-label="Progreso del himno" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="0:00 de 0:00" tabindex="0">
                 <div id="progressBar"
                     class="absolute h-full bg-gradient-to-r from-[#db0455] to-[#a00340] rounded-full transition-all duration-300"
                     style="width: 0%"></div>
@@ -1457,7 +1478,7 @@
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-3">
                     <!-- Botón Play/Pause -->
-                    <button id="playPauseBtn" onclick="togglePlay()"
+                    <button type="button" id="playPauseBtn" onclick="togglePlay()"
                         class="bg-gradient-to-r from-[#db0455] to-[#a00340] text-white rounded-full p-2.5 hover:shadow-lg transition-all duration-300 hover:scale-110"
                         aria-label="Reproducir himno">
                         <svg id="playIcon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -1470,7 +1491,7 @@
 
                     <!-- Control de volumen -->
                     <div class="flex items-center gap-2">
-                        <button onclick="toggleMute()" class="text-gray-600 hover:text-[#db0455] transition-colors" aria-label="Silenciar">
+                        <button type="button" id="muteBtn" onclick="toggleMute()" class="text-gray-600 hover:text-[#db0455] transition-colors" aria-label="Silenciar" aria-pressed="false">
                             <svg id="volumeIcon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path
                                     d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
@@ -1481,7 +1502,7 @@
                             </svg>
                         </button>
                         <input type="range" id="volumeSlider" min="0" max="100" value="70"
-                            onchange="changeVolume(this.value)"
+                            onchange="changeVolume(this.value)" oninput="changeVolume(this.value)"
                             aria-label="Volumen"
                             class="w-24 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
                     </div>
@@ -1489,7 +1510,7 @@
 
                 <!-- Tiempo -->
                 <div class="text-sm text-gray-500 font-medium">
-                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                    <span id="currentTime">0:00</span> <span aria-hidden="true">/</span><span class="sr-only">de</span> <span id="duration">0:00</span>
                 </div>
             </div>
         </div>
@@ -1498,9 +1519,19 @@
         <audio id="himnoAudio" src="{{ asset('audio/HimnoUnamad.mp3') }}" preload="metadata"></audio>
     </div>
 
+    <!-- Reproductor minimizado (escritorio): permite restaurar el reproductor completo -->
+    <div id="audioPlayerMini" class="fixed bottom-4 left-4 z-50 hidden">
+        <button type="button" onclick="togglePlayerSize()" aria-label="Mostrar el reproductor del himno" aria-expanded="false" aria-controls="audioPlayer"
+            class="bg-gradient-to-br from-[#db0455] to-[#a00340] text-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+            </svg>
+        </button>
+    </div>
+
     <!-- Reproductor Móvil - Solo botón flotante -->
     <div id="audioPlayerMobile" class="fixed bottom-4 left-4 z-50 lg:hidden" role="region" aria-label="Reproductor de audio móvil">
-        <button onclick="togglePlayMobile()"
+        <button type="button" id="playPauseBtnMobile" onclick="togglePlayMobile()"
             aria-label="Reproducir himno UNAMAD"
             class="relative bg-gradient-to-br from-[#db0455] to-[#a00340] text-white rounded-full p-3 shadow-lg active:scale-95 transition-transform">
             <!-- Ondas de sonido móvil -->
@@ -1517,8 +1548,8 @@
             </svg>
         </button>
         <!-- Mini info móvil -->
-        <div id="mobileInfo"
-            class="absolute bottom-full left-0 mb-2 bg-white rounded-lg shadow-lg p-2 text-xs whitespace-nowrap hidden">
+        <div id="mobileInfo" role="status"
+            class="absolute bottom-full left-0 mb-2 bg-white rounded-lg shadow-lg p-2 text-xs hidden">
             <span class="font-bold text-[#db0455]">Himno UNAMAD</span>
         </div>
     </div>
@@ -1543,6 +1574,16 @@
         let audioPlayer = document.getElementById('audioPlayer');
         let audioPlayerMini = document.getElementById('audioPlayerMini');
         let mobileInfo = document.getElementById('mobileInfo');
+        let progressSlider = document.getElementById('progressSlider');
+        let playPauseBtn = document.getElementById('playPauseBtn');
+        let playPauseBtnMobile = document.getElementById('playPauseBtnMobile');
+        let muteBtn = document.getElementById('muteBtn');
+
+        // Sincroniza el nombre accesible de los botones de reproducción con el estado real (WCAG 4.1.2)
+        function actualizarEstadoReproduccion() {
+            if (playPauseBtn) playPauseBtn.setAttribute('aria-label', isPlaying ? 'Pausar himno' : 'Reproducir himno');
+            if (playPauseBtnMobile) playPauseBtnMobile.setAttribute('aria-label', isPlaying ? 'Pausar himno UNAMAD' : 'Reproducir himno UNAMAD');
+        }
 
         // Detectar zoom del navegador y cambiar a modo compacto (solo icono)
         function detectZoomAndAdapt() {
@@ -1601,6 +1642,7 @@
                 musicIcon.classList.add('playing-animation');
             }
             isPlaying = !isPlaying;
+            actualizarEstadoReproduccion();
         }
 
         // Función para alternar reproducción (Móvil)
@@ -1629,6 +1671,7 @@
                 }, 3000);
             }
             isPlaying = !isPlaying;
+            actualizarEstadoReproduccion();
         }
 
         // Función para cambiar volumen
@@ -1656,6 +1699,10 @@
                 muteIcon.classList.remove('hidden');
                 volumeSlider.value = 0;
             }
+            if (muteBtn) {
+                muteBtn.setAttribute('aria-pressed', audio.muted ? 'true' : 'false');
+                muteBtn.setAttribute('aria-label', audio.muted ? 'Activar sonido' : 'Silenciar');
+            }
         }
 
         // Función para buscar en el audio
@@ -1666,30 +1713,78 @@
             audio.currentTime = (percentage / 100) * audio.duration;
         }
 
+        // Manejo por teclado de la barra de progreso (WCAG 2.1.1): flechas ±5 s, Re Pág/Av Pág ±30 s, Inicio/Fin
+        function teclasProgreso(event) {
+            if (!audio.duration) return;
+            let nuevo = null;
+            switch (event.key) {
+                case 'ArrowRight':
+                case 'ArrowUp':
+                    nuevo = Math.min(audio.duration, audio.currentTime + 5);
+                    break;
+                case 'ArrowLeft':
+                case 'ArrowDown':
+                    nuevo = Math.max(0, audio.currentTime - 5);
+                    break;
+                case 'PageUp':
+                    nuevo = Math.min(audio.duration, audio.currentTime + 30);
+                    break;
+                case 'PageDown':
+                    nuevo = Math.max(0, audio.currentTime - 30);
+                    break;
+                case 'Home':
+                    nuevo = 0;
+                    break;
+                case 'End':
+                    nuevo = audio.duration;
+                    break;
+                default:
+                    return;
+            }
+            event.preventDefault();
+            audio.currentTime = nuevo;
+            actualizarProgreso();
+        }
+
         // Función para minimizar/maximizar el reproductor
         function togglePlayerSize() {
-            if (audioPlayer.classList.contains('hidden')) {
-                audioPlayer.classList.remove('hidden');
-                audioPlayerMini.classList.add('hidden');
+            const minimizar = !audioPlayer.classList.contains('!hidden');
+            const btnMinimizar = audioPlayer.querySelector('[aria-controls="audioPlayer"]');
+            const btnRestaurar = audioPlayerMini ? audioPlayerMini.querySelector('button') : null;
+            if (minimizar) {
+                audioPlayer.classList.add('!hidden');
+                if (audioPlayerMini) audioPlayerMini.classList.remove('hidden');
+                if (btnMinimizar) btnMinimizar.setAttribute('aria-expanded', 'false');
+                if (btnRestaurar) btnRestaurar.focus();
             } else {
-                audioPlayer.classList.add('hidden');
-                audioPlayerMini.classList.remove('hidden');
+                audioPlayer.classList.remove('!hidden');
+                if (audioPlayerMini) audioPlayerMini.classList.add('hidden');
+                if (btnMinimizar) {
+                    btnMinimizar.setAttribute('aria-expanded', 'true');
+                    btnMinimizar.focus();
+                }
             }
         }
 
-        // Actualizar barra de progreso
-        audio.addEventListener('timeupdate', function() {
+        // Actualizar barra de progreso (visual y valores ARIA del slider)
+        function actualizarProgreso() {
             if (audio.duration) {
                 let percentage = (audio.currentTime / audio.duration) * 100;
                 progressBar.style.width = percentage + '%';
                 progressHandle.style.left = percentage + '%';
                 currentTimeSpan.textContent = formatTime(audio.currentTime);
+                if (progressSlider) {
+                    progressSlider.setAttribute('aria-valuenow', Math.round(percentage));
+                    progressSlider.setAttribute('aria-valuetext', formatTime(audio.currentTime) + ' de ' + formatTime(audio.duration));
+                }
             }
-        });
+        }
+        audio.addEventListener('timeupdate', actualizarProgreso);
 
         // Cargar duración
         audio.addEventListener('loadedmetadata', function() {
             durationSpan.textContent = formatTime(audio.duration);
+            if (progressSlider) progressSlider.setAttribute('aria-valuetext', '0:00 de ' + formatTime(audio.duration));
         });
 
         // Cuando termina la canción
@@ -1697,10 +1792,18 @@
             isPlaying = false;
             playIcon.classList.remove('hidden');
             pauseIcon.classList.add('hidden');
+            playIconMobile.classList.remove('hidden');
+            pauseIconMobile.classList.add('hidden');
             soundWaves.classList.add('hidden');
+            soundWavesMobile.classList.add('hidden');
             musicIcon.classList.remove('playing-animation');
             progressBar.style.width = '0%';
             progressHandle.style.left = '0%';
+            if (progressSlider) {
+                progressSlider.setAttribute('aria-valuenow', '0');
+                progressSlider.setAttribute('aria-valuetext', '0:00 de ' + formatTime(audio.duration));
+            }
+            actualizarEstadoReproduccion();
         });
 
         // Función para formatear tiempo
@@ -1722,10 +1825,16 @@
         let currentSlide = 0;
         const totalSlides = 8;
         let slideInterval;
+        // Pausa explícita del usuario (botón) o por preferencia de movimiento reducido (WCAG 2.2.2 / 2.3.3)
+        const prefiereMenosMovimiento = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let heroPausadoPorUsuario = prefiereMenosMovimiento;
 
         // Initialize slider
         document.addEventListener('DOMContentLoaded', function() {
-            startAutoSlider();
+            actualizarBotonPausaHero();
+            if (!heroPausadoPorUsuario) {
+                startAutoSlider();
+            }
 
             // Add click events to indicators
             const indicators = document.querySelectorAll('.indicator');
@@ -1733,11 +1842,41 @@
                 indicator.addEventListener('click', () => goToSlide(index));
             });
 
-            // Pause auto-slider on hover
+            // Pause auto-slider on hover / keyboard focus
             const heroSlider = document.querySelector('.hero-slider');
             heroSlider.addEventListener('mouseenter', stopAutoSlider);
-            heroSlider.addEventListener('mouseleave', startAutoSlider);
+            heroSlider.addEventListener('mouseleave', reanudarSiNoPausado);
+            heroSlider.addEventListener('focusin', stopAutoSlider);
+            heroSlider.addEventListener('focusout', function(e) {
+                if (!heroSlider.contains(e.relatedTarget)) reanudarSiNoPausado();
+            });
         });
+
+        function reanudarSiNoPausado() {
+            if (!heroPausadoPorUsuario) startAutoSlider();
+        }
+
+        function toggleHeroAutoplay() {
+            heroPausadoPorUsuario = !heroPausadoPorUsuario;
+            if (heroPausadoPorUsuario) {
+                stopAutoSlider();
+            } else {
+                startAutoSlider();
+            }
+            actualizarBotonPausaHero();
+        }
+
+        function actualizarBotonPausaHero() {
+            const btn = document.getElementById('hero-pause');
+            const contenedor = document.getElementById('hero-slides');
+            if (!btn) return;
+            btn.setAttribute('aria-pressed', heroPausadoPorUsuario ? 'true' : 'false');
+            btn.setAttribute('aria-label', heroPausadoPorUsuario ? 'Reanudar el avance automático del carrusel' : 'Pausar el avance automático del carrusel');
+            document.getElementById('hero-pause-icon').classList.toggle('hidden', heroPausadoPorUsuario);
+            document.getElementById('hero-play-icon').classList.toggle('hidden', !heroPausadoPorUsuario);
+            // Con el carrusel detenido se anuncian los cambios de diapositiva; en automático no, para no interrumpir
+            if (contenedor) contenedor.setAttribute('aria-live', heroPausadoPorUsuario ? 'polite' : 'off');
+        }
 
         function goToSlide(slideIndex) {
             const slides = document.querySelectorAll('.slide');
@@ -1746,17 +1885,19 @@
             // Hide current slide
             slides[currentSlide].classList.remove('active');
             slides[currentSlide].style.opacity = '0';
-            indicators[currentSlide].classList.remove('active');
+            slides[currentSlide].setAttribute('aria-hidden', 'true');
+            indicators[currentSlide].classList.remove('active', 'bg-white', 'ring-2', 'ring-[#db0455]', 'ring-offset-1');
             indicators[currentSlide].classList.add('bg-white/70');
-            indicators[currentSlide].classList.remove('bg-white');
+            indicators[currentSlide].setAttribute('aria-current', 'false');
 
             // Show new slide
             currentSlide = slideIndex;
             slides[currentSlide].classList.add('active');
             slides[currentSlide].style.opacity = '1';
-            indicators[currentSlide].classList.add('active');
+            slides[currentSlide].removeAttribute('aria-hidden');
+            indicators[currentSlide].classList.add('active', 'bg-white', 'ring-2', 'ring-[#db0455]', 'ring-offset-1');
             indicators[currentSlide].classList.remove('bg-white/70');
-            indicators[currentSlide].classList.add('bg-white');
+            indicators[currentSlide].setAttribute('aria-current', 'true');
         }
 
         function nextSlide() {
@@ -1770,6 +1911,7 @@
         }
 
         function startAutoSlider() {
+            stopAutoSlider();
             slideInterval = setInterval(nextSlide, 4000); // Change slide every 4 seconds
         }
 
@@ -1779,22 +1921,54 @@
             }
         }
 
-        // Enlaces Externos Slider JavaScript - Desplazamiento continuo sin pausas
+        // Enlaces Externos Slider JavaScript - Desplazamiento continuo con pausa accesible
         let enlaceSlideInterval;
         let currentEnlacePosition = 0;
         let isMoving = true;
+        // Pausa explícita (botón) o por preferencia de movimiento reducido (WCAG 2.2.2 / 2.3.3)
+        let enlacesPausadoPorUsuario = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         // Initialize enlaces slider
         document.addEventListener('DOMContentLoaded', function() {
-            startContinuousEnlaceSlider();
+            actualizarBotonPausaEnlaces();
+            if (!enlacesPausadoPorUsuario) {
+                startContinuousEnlaceSlider();
+            }
 
-            // Pause auto-slider on hover
+            // Pause auto-slider on hover / keyboard focus
             const enlacesSlider = document.querySelector('#enlacesSlider');
             if (enlacesSlider) {
                 enlacesSlider.addEventListener('mouseenter', stopEnlaceAutoSlider);
-                enlacesSlider.addEventListener('mouseleave', startContinuousEnlaceSlider);
+                enlacesSlider.addEventListener('mouseleave', reanudarEnlacesSiNoPausado);
+                enlacesSlider.addEventListener('focusin', stopEnlaceAutoSlider);
+                enlacesSlider.addEventListener('focusout', function(e) {
+                    if (!enlacesSlider.contains(e.relatedTarget)) reanudarEnlacesSiNoPausado();
+                });
             }
         });
+
+        function reanudarEnlacesSiNoPausado() {
+            if (!enlacesPausadoPorUsuario) startContinuousEnlaceSlider();
+        }
+
+        function toggleEnlacesSlider() {
+            enlacesPausadoPorUsuario = !enlacesPausadoPorUsuario;
+            if (enlacesPausadoPorUsuario) {
+                stopEnlaceAutoSlider();
+            } else {
+                startContinuousEnlaceSlider();
+            }
+            actualizarBotonPausaEnlaces();
+        }
+
+        function actualizarBotonPausaEnlaces() {
+            const btn = document.getElementById('enlaces-pause');
+            if (!btn) return;
+            btn.setAttribute('aria-pressed', enlacesPausadoPorUsuario ? 'true' : 'false');
+            document.getElementById('enlaces-pause-text').textContent = enlacesPausadoPorUsuario ? 'Reanudar el desplazamiento' : 'Pausar el desplazamiento';
+            document.getElementById('enlaces-pause-icon').classList.toggle('hidden', enlacesPausadoPorUsuario);
+            document.getElementById('enlaces-play-icon').classList.toggle('hidden', !enlacesPausadoPorUsuario);
+        }
 
         function startContinuousEnlaceSlider() {
             const slider = document.getElementById('enlacesSlider');
@@ -1832,6 +2006,25 @@
         let anunciosDisponibles = [];
         let indiceActual = 0;
         let modalVisible = false;
+        let modalOpener = null; // elemento que tenía el foco antes de abrir el diálogo
+
+        // Mantiene el foco dentro del diálogo (trampa de foco) mientras está abierto (WCAG 2.4.3)
+        function atraparFocoEn(contenedor, e) {
+            const focusables = contenedor.querySelectorAll(
+                'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+            );
+            const visibles = Array.from(focusables).filter(el => el.offsetParent !== null);
+            if (!visibles.length) return;
+            const primero = visibles[0];
+            const ultimo = visibles[visibles.length - 1];
+            if (e.shiftKey && (document.activeElement === primero || !contenedor.contains(document.activeElement))) {
+                e.preventDefault();
+                ultimo.focus();
+            } else if (!e.shiftKey && document.activeElement === ultimo) {
+                e.preventDefault();
+                primero.focus();
+            }
+        }
 
         // Inicializar modal después de que la página esté completamente cargada (no bloquea LCP)
         window.addEventListener('load', function() {
@@ -1871,6 +2064,7 @@
             if (anunciosDisponibles.length === 0) return;
 
             const modal = document.getElementById('modal-anuncios');
+            modalOpener = document.activeElement;
             modal.classList.remove('hidden');
             modal.classList.add('flex');
 
@@ -1885,6 +2079,10 @@
 
             modalVisible = true;
             actualizarControlesNavegacion();
+
+            // Gestión de foco: al abrir, el foco pasa al botón de cierre del diálogo (WCAG 4.1.2 / 2.4.3)
+            const btnCerrar = document.getElementById('modal-cerrar');
+            if (btnCerrar) btnCerrar.focus();
         }
 
         // Cargar detalles de un anuncio específico
@@ -1931,10 +2129,10 @@
                 imagenElement.alt = 'Imagen principal del anuncio: ' + anuncio.titulo;
                 imagenContainer.classList.remove('hidden');
 
-                // Agregar cursor pointer y funcionalidad de click para mostrar en lightbox
-                imagenElement.style.cursor = 'pointer';
-                imagenElement.title = 'Clic para ver en tamaño completo';
-                imagenElement.onclick = function() {
+                // El botón que envuelve la imagen abre el lightbox (operable con teclado)
+                const imagenBtn = document.getElementById('modal-imagen-btn');
+                imagenBtn.title = 'Ver en tamaño completo';
+                imagenBtn.onclick = function() {
                     abrirLightbox(anuncio.imagen_principal_url, anuncio.titulo);
                 };
             } else {
@@ -1954,10 +2152,16 @@
                         img.src = url;
                         img.alt = anuncio.titulo + ' – imagen adicional ' + (idx + 1) + ' de ' + totalAdicionales;
                         img.className =
-                            'w-full h-24 object-cover rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-shadow';
-                        img.title = 'Clic para ver en tamaño completo';
-                        img.onclick = () => abrirLightbox(url, anuncio.titulo);
-                        imagenesAdicionalesElement.appendChild(img);
+                            'w-full h-24 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow';
+                        // Botón envolvente para que la ampliación sea operable con teclado (WCAG 2.1.1)
+                        const btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.className = 'block w-full rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0455] focus-visible:ring-offset-2';
+                        btn.setAttribute('aria-label', 'Ampliar imagen adicional ' + (idx + 1) + ' de ' + totalAdicionales);
+                        btn.title = 'Ver en tamaño completo';
+                        btn.onclick = () => abrirLightbox(url, anuncio.titulo);
+                        btn.appendChild(img);
+                        imagenesAdicionalesElement.appendChild(btn);
                     }
                 });
                 imagenesAdicionalesContainer.classList.remove('hidden');
@@ -2021,12 +2225,19 @@
             }
         }
 
+        // Tras cambiar de anuncio, llevar el foco al título para que se anuncie el nuevo contenido (WCAG 4.1.3)
+        function enfocarTituloModal() {
+            const titulo = document.getElementById('modal-titulo');
+            if (titulo) titulo.focus();
+        }
+
         // Navegar al anuncio anterior
         async function anuncioAnterior() {
             if (indiceActual > 0) {
                 indiceActual--;
                 await cargarDetalleAnuncio(anunciosDisponibles[indiceActual].id);
                 actualizarControlesNavegacion();
+                enfocarTituloModal();
             }
         }
 
@@ -2036,6 +2247,7 @@
                 indiceActual++;
                 await cargarDetalleAnuncio(anunciosDisponibles[indiceActual].id);
                 actualizarControlesNavegacion();
+                enfocarTituloModal();
             }
         }
 
@@ -2052,6 +2264,17 @@
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
                 modalVisible = false;
+                // Devolver el foco al elemento que abrió el diálogo (WCAG 2.4.3)
+                if (modalOpener && typeof modalOpener.focus === 'function' && document.body.contains(modalOpener) && modalOpener !== document.body) {
+                    modalOpener.focus();
+                } else {
+                    const principal = document.getElementById('contenido-principal');
+                    if (principal) {
+                        if (!principal.hasAttribute('tabindex')) principal.setAttribute('tabindex', '-1');
+                        principal.focus();
+                    }
+                }
+                modalOpener = null;
             }, 300);
         }
 
@@ -2084,7 +2307,14 @@
         document.addEventListener('keydown', function(e) {
             if (!modalVisible) return;
 
+            // No interferir con el lightbox abierto encima del modal
+            const lightboxAbierto = !document.getElementById('lightbox-modal').classList.contains('hidden');
+            if (lightboxAbierto) return;
+
             switch (e.key) {
+                case 'Tab':
+                    atraparFocoEn(document.getElementById('modal-contenido'), e);
+                    break;
                 case 'Escape':
                     cerrarModalAnuncios();
                     break;
@@ -2117,10 +2347,12 @@
             botones.forEach(btn => {
                 btn.classList.remove('active', 'bg-[#db0455]', 'text-white');
                 btn.classList.add('bg-gray-200', 'text-gray-700');
+                btn.setAttribute('aria-pressed', 'false');
             });
 
             event.target.classList.add('active', 'bg-[#db0455]', 'text-white');
             event.target.classList.remove('bg-gray-200', 'text-gray-700');
+            event.target.setAttribute('aria-pressed', 'true');
 
             // Mostrar loading
             contenedor.classList.add('hidden');
@@ -2218,12 +2450,18 @@
         // ============= FUNCIONES DEL LIGHTBOX =============
         let imagenesLightbox = [];
         let indiceImagenActual = 0;
+        let lightboxOpener = null;
 
         // Abrir lightbox con una imagen
         function abrirLightbox(urlImagen, alt) {
             imagenesLightbox = [urlImagen];
             indiceImagenActual = 0;
+            lightboxOpener = document.activeElement;
+            if (alt) document.getElementById('lightbox-imagen').alt = 'Imagen ampliada: ' + alt;
             mostrarImagenLightbox();
+            // Gestión de foco: al abrir, foco al botón de cierre (WCAG 4.1.2 / 2.4.3)
+            const btnCerrar = document.getElementById('lightbox-cerrar');
+            if (btnCerrar) btnCerrar.focus();
         }
 
         // Mostrar imagen en el lightbox
@@ -2258,6 +2496,11 @@
             const modal = document.getElementById('lightbox-modal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
+            // Devolver el foco al elemento que abrió el lightbox
+            if (lightboxOpener && typeof lightboxOpener.focus === 'function' && document.body.contains(lightboxOpener)) {
+                lightboxOpener.focus();
+            }
+            lightboxOpener = null;
         }
 
         // Navegación en lightbox
@@ -2280,7 +2523,11 @@
             const lightboxModal = document.getElementById('lightbox-modal');
             if (!lightboxModal.classList.contains('hidden')) {
                 switch (e.key) {
+                    case 'Tab':
+                        atraparFocoEn(lightboxModal, e);
+                        break;
                     case 'Escape':
+                        e.stopPropagation();
                         cerrarLightbox();
                         break;
                     case 'ArrowLeft':

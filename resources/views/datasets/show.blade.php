@@ -106,9 +106,9 @@
         @if(!empty($dataset->columnas))
             <div class="bg-white rounded-xl shadow-sm overflow-hidden mt-8">
                 <h2 class="m-0">
-                <button type="button" id="toggle-diccionario" class="w-full flex items-center justify-between px-6 py-4 text-left">
+                <button type="button" id="toggle-diccionario" aria-expanded="true" aria-controls="contenido-diccionario" class="w-full flex items-center justify-between px-6 py-4 text-left">
                     <span class="text-lg font-semibold text-gray-800">Diccionario de datos</span>
-                    <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg id="icono-diccionario" aria-hidden="true" focusable="false" class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
@@ -160,9 +160,12 @@
     (function () {
         var btn = document.getElementById('toggle-diccionario');
         var cont = document.getElementById('contenido-diccionario');
+        var icono = document.getElementById('icono-diccionario');
         if (btn && cont) {
             btn.addEventListener('click', function () {
-                cont.classList.toggle('hidden');
+                var oculto = cont.classList.toggle('hidden');
+                btn.setAttribute('aria-expanded', oculto ? 'false' : 'true');
+                if (icono) icono.style.transform = oculto ? 'rotate(-90deg)' : '';
             });
         }
     })();

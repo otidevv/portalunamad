@@ -63,7 +63,7 @@
                     <div id="searchResults" class="hidden mt-4 border-t border-gray-200 pt-4">
                         <div class="flex items-center justify-between mb-3">
                             <h2 class="text-sm font-medium text-gray-700">Resultados de búsqueda</h2>
-                            <button onclick="clearSearch()" class="text-xs text-[#db0455] hover:text-[#a00340]">Limpiar</button>
+                            <button type="button" onclick="clearSearch()" class="text-xs text-[#db0455] hover:text-[#a00340]">Limpiar<span class="sr-only"> la búsqueda</span></button>
                         </div>
                         <div id="searchResultsContent" class="space-y-2 max-h-96 overflow-y-auto" role="status" aria-live="polite"></div>
                     </div>
@@ -89,8 +89,9 @@
                     <!-- Carpetas -->
                     @foreach($carpetas as $carpeta)
                     <li class="folder-item" data-folder-id="{{ $carpeta->id }}">
-                        <div class="flex items-center p-4 hover:bg-gray-50 cursor-pointer transition-colors" 
-                             onclick="toggleFolder({{ $carpeta->id }})">
+                        <button type="button" class="w-full text-left flex items-center p-4 hover:bg-gray-50 cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#db0455]"
+                                aria-expanded="false" aria-controls="folder-content-{{ $carpeta->id }}"
+                                onclick="toggleFolder({{ $carpeta->id }})">
                             <div class="flex items-center flex-1">
                                 <!-- Botón expandir/colapsar -->
                                 <div class="expand-btn w-6 h-6 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center mr-3 transition-colors">
@@ -126,10 +127,10 @@
                                     @endif
                                 </div>
                             </div>
-                        </div>
+                        </button>
 
                         <!-- Contenido expandible de la carpeta -->
-                        <div class="folder-content hidden ml-12 border-l-2 border-gray-100">
+                        <div id="folder-content-{{ $carpeta->id }}" class="folder-content hidden ml-12 border-l-2 border-gray-100">
                             <div class="loading-content p-4 text-center text-gray-500 text-sm" role="status">
                                 <svg aria-hidden="true" focusable="false" class="animate-spin h-5 w-5 mx-auto mb-2" fill="none" viewBox="0 0 24 24">
                                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -306,16 +307,19 @@ function toggleFolder(folderId) {
     const folderItem = document.querySelector(`[data-folder-id="${folderId}"]`);
     const content = folderItem.querySelector('.folder-content');
     const expandBtn = folderItem.querySelector('.expand-btn svg');
-    
+    const toggleBtn = folderItem.querySelector(':scope > button[aria-controls]');
+
     if (expandedFolders.has(folderId)) {
         // Colapsar
         content.classList.add('hidden');
         expandBtn.style.transform = 'rotate(0deg)';
+        if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
         expandedFolders.delete(folderId);
     } else {
         // Expandir
         content.classList.remove('hidden');
         expandBtn.style.transform = 'rotate(45deg)';
+        if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
         expandedFolders.add(folderId);
         
         // Cargar contenido si no está cargado
@@ -354,8 +358,9 @@ function generateFolderContent(carpetas, documentos) {
     carpetas.forEach(carpeta => {
         html += `
             <li class="folder-item" data-folder-id="${carpeta.id}">
-                <div class="flex items-center p-3 hover:bg-gray-50 cursor-pointer transition-colors" 
-                     onclick="toggleFolder(${carpeta.id})">
+                <button type="button" class="w-full text-left flex items-center p-3 hover:bg-gray-50 cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#db0455]"
+                        aria-expanded="false" aria-controls="folder-content-${carpeta.id}"
+                        onclick="toggleFolder(${carpeta.id})">
                     <div class="expand-btn w-5 h-5 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center mr-2">
                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-gray-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -365,11 +370,11 @@ function generateFolderContent(carpetas, documentos) {
                         <span aria-hidden="true">${getIcono(carpeta.icono)}</span>
                     </div>
                     <div class="flex-1">
-                        <h4 class="text-sm font-medium text-gray-900">${carpeta.nombre}</h4>
+                        <h4 class="text-sm font-medium text-gray-900">${escapeHtml(carpeta.nombre)}</h4>
                         <span class="text-xs text-gray-600">(${carpeta.elementos_count || 0} elementos)</span>
                     </div>
-                </div>
-                <div class="folder-content hidden ml-8 border-l border-gray-100">
+                </button>
+                <div id="folder-content-${carpeta.id}" class="folder-content hidden ml-8 border-l border-gray-100">
                     <div class="loading-content p-3 text-center text-gray-500 text-xs" role="status">
                         <svg aria-hidden="true" focusable="false" class="animate-spin h-4 w-4 mx-auto mb-1" fill="none" viewBox="0 0 24 24">
                             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
