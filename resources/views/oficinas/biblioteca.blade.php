@@ -83,7 +83,7 @@
                                 </li>
                                 <li class="flex items-start">
                                     <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                    <span>Preponer políticas de mantenimiento, conservación y seguridad del acervo bibliográfico.</span>
+                                    <span>Proponer políticas de mantenimiento, conservación y seguridad del acervo bibliográfico.</span>
                                 </li>
                                 <li class="flex items-start">
                                     <div class="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>

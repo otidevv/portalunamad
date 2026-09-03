@@ -51,9 +51,9 @@
 
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-12">
-        <div class="flex gap-8">
+        <div class="flex flex-col lg:flex-row gap-8">
             <!-- Sidebar Navigation -->
-            <aside class="w-80 flex-shrink-0">
+            <aside class="w-full lg:w-80 lg:flex-shrink-0">
                 <!-- Navigation Card -->
                 <div class="bg-white rounded-lg shadow-xl mb-8 overflow-hidden border-t-4 border-[#db0455]">
                     <div class="bg-gradient-to-r from-[#b8003f] to-[#db0455] text-white p-6">

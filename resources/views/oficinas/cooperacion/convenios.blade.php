@@ -162,7 +162,7 @@
                                             <li class="flex items-start space-x-2">
                                                 <span
                                                     class="w-1.5 h-1.5 bg-[#db0455] rounded-full mt-2 flex-shrink-0"></span>
-                                                <span>Intercambio de docentes, investigadores y staff profesional</span>
+                                                <span>Intercambio de docentes, investigadores y personal profesional</span>
                                             </li>
                                             <li class="flex items-start space-x-2">
                                                 <span
