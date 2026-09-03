@@ -65,8 +65,9 @@
                         </div>
                     </div>
                     <div class="p-3">
-                        <nav class="space-y-1" aria-label="Secciones de Gestión de la Calidad">
-                            <a href="#inicio" class="calidad-nav-link active" data-section="inicio">
+                        <nav aria-label="Secciones de Gestión de la Calidad">
+                            <ul class="space-y-1">
+                            <li><a href="/oficinas/calidad" class="calidad-nav-link active">
                                 <div class="flex items-center space-x-3">
                                     <div class="flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,8 +79,8 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                     </svg>
                                 </div>
-                            </a>
-                            <div class="calidad-nav-link-disabled">
+                            </a></li>
+                            <li class="calidad-nav-link-disabled">
                                 <div class="flex items-center space-x-3">
                                     <div class="flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,8 +90,8 @@
                                     <span class="flex-1 text-sm font-medium">Estructura Orgánica</span>
                                     <span class="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full">Próximamente</span>
                                 </div>
-                            </div>
-                            <div class="calidad-nav-link-disabled">
+                            </li>
+                            <li class="calidad-nav-link-disabled">
                                 <div class="flex items-center space-x-3">
                                     <div class="flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -100,8 +101,8 @@
                                     <span class="flex-1 text-sm font-medium">Personal Administrativo</span>
                                     <span class="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full">Próximamente</span>
                                 </div>
-                            </div>
-                            <div class="calidad-nav-link-disabled">
+                            </li>
+                            <li class="calidad-nav-link-disabled">
                                 <div class="flex items-center space-x-3">
                                     <div class="flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,8 +112,8 @@
                                     <span class="flex-1 text-sm font-medium">Directorio</span>
                                     <span class="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full">Próximamente</span>
                                 </div>
-                            </div>
-                            <div class="calidad-nav-link-disabled">
+                            </li>
+                            <li class="calidad-nav-link-disabled">
                                 <div class="flex items-center space-x-3">
                                     <div class="flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -122,7 +123,8 @@
                                     <span class="flex-1 text-sm font-medium">SINC</span>
                                     <span class="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full">Próximamente</span>
                                 </div>
-                            </div>
+                            </li>
+                            </ul>
                         </nav>
                     </div>
                 </div>
@@ -337,6 +339,10 @@
                     </div>
                 </div>
 
+                {{-- Secciones pendientes de publicación: en el menú figuran como "Próximamente" y no eran alcanzables
+                     ni con ratón ni con teclado. Se conservan como comentario Blade (no se envían al navegador) hasta que
+                     el área usuaria valide su contenido; para publicarlas, retirar el comentario y enlazarlas desde el menú. --}}
+                {{--
                 <!-- Estructura Orgánica Section -->
                 <div id="estructura" class="content-section hidden">
                     <div class="bg-white rounded-lg shadow-lg mb-12 overflow-hidden border-t-4 border-[#db0455]">
@@ -705,6 +711,7 @@
                         </div>
                     </div>
                 </div>
+                --}}
             </div>
         </div>
     </div>
@@ -770,38 +777,5 @@
 }
 </style>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('.calidad-nav-link');
-    const contentSections = document.querySelectorAll('.content-section');
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetSection = this.getAttribute('data-section');
-            
-            // Remove active class from all nav links
-            navLinks.forEach(nav => nav.classList.remove('active'));
-            
-            // Add active class to clicked nav link
-            this.classList.add('active');
-            
-            // Hide all content sections
-            contentSections.forEach(section => {
-                section.classList.remove('active');
-                section.classList.add('hidden');
-            });
-            
-            // Show target content section
-            const targetElement = document.getElementById(targetSection);
-            if (targetElement) {
-                targetElement.classList.remove('hidden');
-                targetElement.classList.add('active');
-            }
-        });
-    });
-});
-</script>
 
 @endsection
