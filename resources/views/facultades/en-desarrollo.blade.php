@@ -4,12 +4,12 @@
 
 @section('content')
     <!-- Hero Section -->
-    <div class="relative h-64 sm:h-80 lg:h-96 overflow-hidden bg-gradient-to-r from-[#ed145b] via-[#db0455] to-rose-700">
+    <div class="relative min-h-64 sm:min-h-80 lg:min-h-96 flex bg-gradient-to-r from-[#ed145b] via-[#db0455] to-rose-700">
         <div class="absolute inset-0 bg-black/20"></div>
         <img src="{{ asset('img/presentacion/presentacionbackground.jpg') }}"
              alt=""
              class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30">
-        <div class="relative h-full flex items-center justify-center px-6">
+        <div class="relative w-full flex items-center justify-center px-6 py-8">
             <div class="text-center text-white max-w-4xl mx-auto">
                 <div class="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 border border-white/20">
                     <svg aria-hidden="true" focusable="false" class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
