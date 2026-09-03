@@ -1,5 +1,7 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Editar ' . $indicador55->titulo)
+@section('header', 'Editar: ' . $indicador55->titulo_completo)
 @section('content')
 <div class="p-6">
     <!-- Header -->
@@ -11,7 +13,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                     </svg>
                 </a>
-                <h1 class="text-2xl font-bold text-gray-800">Editar: {{ $indicador55->titulo_completo }}</h1>
+                <h2 class="text-2xl font-bold text-gray-800">Editar: {{ $indicador55->titulo_completo }}</h2>
             </div>
             <p class="text-gray-600 text-sm">Modifica el contenido y documentos de esta variable</p>
         </div>

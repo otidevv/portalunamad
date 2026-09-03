@@ -8,7 +8,7 @@
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">Datasets</h1>
+            <h2 class="text-2xl font-bold text-gray-800">Datasets</h2>
             <p class="text-gray-600 text-sm mt-1">Catálogo del Plan de Apertura de Datos (PNDA) de la UNAMAD</p>
         </div>
         <a href="{{ route('admin.datasets.create') }}"

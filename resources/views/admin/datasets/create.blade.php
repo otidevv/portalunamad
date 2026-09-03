@@ -13,7 +13,7 @@
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">Nuevo Dataset</h1>
+            <h2 class="text-2xl font-bold text-gray-800">Nuevo Dataset</h2>
             <p class="text-gray-600 text-sm mt-1">Registra un dataset del Plan de Apertura de Datos. El CSV es opcional: puedes registrar el plan ahora y subir los datos después.</p>
         </div>
         <a href="{{ route('admin.datasets.index') }}"

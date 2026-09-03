@@ -1,17 +1,18 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Crear anuncio')
 @section('header', 'Crear Nuevo Anuncio')
 
 @section('content')
 <div class="p-6">
     <!-- Breadcrumb -->
-    <nav class="mb-6 text-sm">
+    <nav class="mb-6 text-sm" aria-label="Migas de pan">
         <ol class="flex items-center space-x-2">
-            <li><a href="{{ route('admin.dashboard') }}" class="text-gray-500 hover:text-gray-700">Dashboard</a></li>
+            <li><a href="{{ route('admin.dashboard') }}" class="text-gray-500 hover:text-gray-700">Panel de administración</a></li>
             <li aria-hidden="true"><span class="text-gray-400">/</span></li>
             <li><a href="{{ route('admin.anuncios.index') }}" class="text-gray-500 hover:text-gray-700">Anuncios</a></li>
             <li aria-hidden="true"><span class="text-gray-400">/</span></li>
-            <li class="text-gray-700 font-medium">Crear Nuevo</li>
+            <li class="text-gray-700 font-medium" aria-current="page">Crear Nuevo</li>
         </ol>
     </nav>
 

@@ -1,11 +1,13 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Comunicado: ' . $comunicado->titulo)
+@section('header', 'Detalle del Comunicado')
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">Detalle del Comunicado</h1>
+            <h2 class="text-2xl font-bold text-gray-800">Detalle del Comunicado</h2>
             <p class="text-gray-600 text-sm mt-1">Vista completa del comunicado #{{ $comunicado->id }}</p>
         </div>
         <div class="flex space-x-3">
@@ -82,99 +84,99 @@
             <!-- Status Card -->
             <div class="bg-white rounded-lg shadow-sm p-6">
                 <h3 class="text-lg font-semibold text-gray-800 mb-4">Estado y Configuración</h3>
-                
-                <div class="space-y-3">
+
+                <dl class="space-y-3">
                     <!-- Estado -->
                     <div>
-                        <span class="text-sm text-gray-600">Estado:</span>
-                        <span class="ml-2 px-2 py-1 text-xs font-medium rounded-full {{ $comunicado->estado ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
+                        <dt class="text-sm text-gray-600 inline">Estado:</dt>
+                        <dd class="inline ml-2 px-2 py-1 text-xs font-medium rounded-full {{ $comunicado->estado ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
                             {{ $comunicado->estado_texto }}
-                        </span>
+                        </dd>
                     </div>
 
                     <!-- Categoría -->
                     <div>
-                        <span class="text-sm text-gray-600">Categoría:</span>
-                        <span class="ml-2 px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">
+                        <dt class="text-sm text-gray-600 inline">Categoría:</dt>
+                        <dd class="inline ml-2 px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">
                             {{ $comunicado->categoria->nombre ?? 'Sin categoría' }}
-                        </span>
+                        </dd>
                     </div>
 
                     <!-- Vigencia -->
                     <div>
-                        <span class="text-sm text-gray-600">Vigencia:</span>
+                        <dt class="text-sm text-gray-600 inline">Vigencia:</dt>
                         @if($comunicado->fecha_fin && $comunicado->fecha_fin <= now())
-                            <span class="ml-2 px-2 py-1 text-xs font-medium rounded-full bg-red-100 text-red-800">
+                            <dd class="inline ml-2 px-2 py-1 text-xs font-medium rounded-full bg-red-100 text-red-800">
                                 Vencido
-                            </span>
+                            </dd>
                         @else
-                            <span class="ml-2 px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800">
+                            <dd class="inline ml-2 px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800">
                                 Vigente
-                            </span>
+                            </dd>
                         @endif
                     </div>
 
                     <!-- Duración -->
                     @if($comunicado->duracion)
                         <div class="flex items-center">
-                            <span class="text-sm text-gray-600">Duración:</span>
-                            <span class="ml-2 font-semibold">{{ $comunicado->duracion }} días</span>
+                            <dt class="text-sm text-gray-600">Duración:</dt>
+                            <dd class="ml-2 font-semibold">{{ $comunicado->duracion }} días</dd>
                         </div>
                     @endif
-                </div>
+                </dl>
             </div>
 
             <!-- Time Card -->
             <div class="bg-white rounded-lg shadow-sm p-6">
                 <h3 class="text-lg font-semibold text-gray-800 mb-4">Fechas Importantes</h3>
-                
-                <div class="space-y-3">
+
+                <dl class="space-y-3">
                     <div>
-                        <span class="text-sm text-gray-600">Creado:</span>
-                        <p class="font-medium">{{ $comunicado->created_at->format('d/m/Y H:i') }}</p>
+                        <dt class="text-sm text-gray-600">Creado:</dt>
+                        <dd class="font-medium">{{ $comunicado->created_at->format('d/m/Y H:i') }}</dd>
                     </div>
-                    
+
                     <div>
-                        <span class="text-sm text-gray-600">Última actualización:</span>
-                        <p class="font-medium">{{ $comunicado->updated_at->format('d/m/Y H:i') }}</p>
+                        <dt class="text-sm text-gray-600">Última actualización:</dt>
+                        <dd class="font-medium">{{ $comunicado->updated_at->format('d/m/Y H:i') }}</dd>
                     </div>
-                    
+
                     @if($comunicado->fecha_fin)
                         <div>
-                            <span class="text-sm text-gray-600">Fecha de expiración:</span>
-                            <p class="font-medium">{{ $comunicado->fecha_fin->format('d/m/Y H:i') }}</p>
+                            <dt class="text-sm text-gray-600">Fecha de expiración:</dt>
+                            <dd class="font-medium">{{ $comunicado->fecha_fin->format('d/m/Y H:i') }}</dd>
                             @if($comunicado->fecha_fin > now())
-                                <p class="text-xs text-green-600">
+                                <dd class="text-xs text-green-600">
                                     Expira en {{ $comunicado->fecha_fin->diffForHumans() }}
-                                </p>
+                                </dd>
                             @else
-                                <p class="text-xs text-red-600">
+                                <dd class="text-xs text-red-600">
                                     Expiró {{ $comunicado->fecha_fin->diffForHumans() }}
-                                </p>
+                                </dd>
                             @endif
                         </div>
                     @endif
-                </div>
+                </dl>
             </div>
 
             <!-- Category Details -->
             @if($comunicado->categoria)
                 <div class="bg-white rounded-lg shadow-sm p-6">
                     <h3 class="text-lg font-semibold text-gray-800 mb-4">Detalles de Categoría</h3>
-                    
-                    <div class="space-y-3">
+
+                    <dl class="space-y-3">
                         <div>
-                            <span class="text-sm text-gray-600">Nombre:</span>
-                            <p class="font-medium">{{ $comunicado->categoria->nombre }}</p>
+                            <dt class="text-sm text-gray-600">Nombre:</dt>
+                            <dd class="font-medium">{{ $comunicado->categoria->nombre }}</dd>
                         </div>
-                        
+
                         @if($comunicado->categoria->descripcion)
                             <div>
-                                <span class="text-sm text-gray-600">Descripción:</span>
-                                <p class="text-sm text-gray-700">{{ $comunicado->categoria->descripcion }}</p>
+                                <dt class="text-sm text-gray-600">Descripción:</dt>
+                                <dd class="text-sm text-gray-700">{{ $comunicado->categoria->descripcion }}</dd>
                             </div>
                         @endif
-                    </div>
+                    </dl>
                 </div>
             @endif
 

@@ -1,11 +1,13 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Nueva categoría de comunicado')
+@section('header', 'Nueva Categoría de Comunicado')
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">Nueva Categoría de Comunicado</h1>
+            <h2 class="text-2xl font-bold text-gray-800">Nueva Categoría de Comunicado</h2>
             <p class="text-gray-600 text-sm mt-1">Complete el formulario para crear una nueva categoría</p>
         </div>
         <a href="{{ route('admin.comunicado-categorias.index') }}" 

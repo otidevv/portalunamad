@@ -1,11 +1,13 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Documentos' . ($carpetaActual ? ' - ' . $carpetaActual->nombre : ''))
+@section('header', 'Gestión de Documentos')
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800"><span aria-hidden="true">📁</span> Gestión de Documentos</h1>
+            <h2 class="text-2xl font-bold text-gray-800"><span aria-hidden="true">📁</span> Gestión de Documentos</h2>
             <p class="text-gray-600 text-sm mt-1">Administra documentos y carpetas del portal</p>
         </div>
         <div class="flex space-x-3">
@@ -30,28 +32,32 @@
 
     <!-- Breadcrumb -->
     @if($breadcrumb->count() > 0)
-    <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
-        <div class="flex items-center space-x-2 text-sm">
-            <a href="{{ route('admin.documentos.index') }}" aria-label="Raíz de documentos" class="text-gray-500 hover:text-[#db0455] transition-colors">
-                <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h0a2 2 0 012 2v0H8v0z"></path>
-                </svg>
-            </a>
-            <span class="text-gray-400" aria-hidden="true">/</span>
+    <nav class="bg-white rounded-lg shadow-sm p-4 mb-6" aria-label="Migas de pan">
+        <ol class="flex items-center space-x-2 text-sm">
+            <li>
+                <a href="{{ route('admin.documentos.index') }}" aria-label="Raíz de documentos" class="text-gray-500 hover:text-[#db0455] transition-colors">
+                    <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h0a2 2 0 012 2v0H8v0z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li class="text-gray-400" aria-hidden="true">/</li>
             @foreach($breadcrumb as $carpeta)
                 @if($loop->last)
-                    <span class="text-[#db0455] font-medium"><span aria-hidden="true">{{ $carpeta->icono_completo }}</span> {{ $carpeta->nombre }}</span>
+                    <li class="text-[#db0455] font-medium" aria-current="page"><span aria-hidden="true">{{ $carpeta->icono_completo }}</span> {{ $carpeta->nombre }}</li>
                 @else
-                    <a href="{{ route('admin.documentos.index', ['carpeta_id' => $carpeta->id]) }}"
-                       class="text-gray-500 hover:text-[#db0455] transition-colors">
-                        <span aria-hidden="true">{{ $carpeta->icono_completo }}</span> {{ $carpeta->nombre }}
-                    </a>
-                    <span class="text-gray-400" aria-hidden="true">/</span>
+                    <li>
+                        <a href="{{ route('admin.documentos.index', ['carpeta_id' => $carpeta->id]) }}"
+                           class="text-gray-500 hover:text-[#db0455] transition-colors">
+                            <span aria-hidden="true">{{ $carpeta->icono_completo }}</span> {{ $carpeta->nombre }}
+                        </a>
+                    </li>
+                    <li class="text-gray-400" aria-hidden="true">/</li>
                 @endif
             @endforeach
-        </div>
-    </div>
+        </ol>
+    </nav>
     @endif
 
     <!-- Mensajes -->
@@ -80,10 +86,10 @@
     <!-- Explorador de Archivos -->
     <div class="bg-white rounded-lg shadow-sm overflow-hidden">
         @if($carpetas->count() > 0 || $documentos->count() > 0)
-            <div class="divide-y divide-gray-200">
+            <ul class="divide-y divide-gray-200">
                 <!-- Carpetas -->
                 @foreach($carpetas as $carpeta)
-                <div class="group hover:bg-gray-50 transition-colors">
+                <li class="group hover:bg-gray-50 transition-colors">
                     <div class="p-4 flex items-center justify-between">
                         <div class="flex items-center space-x-4 flex-1">
                             <div class="flex-shrink-0">
@@ -154,12 +160,12 @@
                             </form>
                         </div>
                     </div>
-                </div>
+                </li>
                 @endforeach
 
                 <!-- Documentos -->
                 @foreach($documentos as $documento)
-                <div class="group hover:bg-gray-50 transition-colors">
+                <li class="group hover:bg-gray-50 transition-colors">
                     <div class="p-4 flex items-center justify-between">
                         <div class="flex items-center space-x-4 flex-1">
                             <div class="flex-shrink-0">
@@ -235,9 +241,9 @@
                             </form>
                         </div>
                     </div>
-                </div>
+                </li>
                 @endforeach
-            </div>
+            </ul>
         @else
             <!-- Estado vacío -->
             <div class="text-center py-12">

@@ -1,11 +1,13 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Categoría: ' . $comunicadoCategoria->nombre)
+@section('header', 'Detalle de Categoría')
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">Detalle de Categoría</h1>
+            <h2 class="text-2xl font-bold text-gray-800">Detalle de Categoría</h2>
             <p class="text-gray-600 text-sm mt-1">Vista completa de la categoría "{{ $comunicadoCategoria->nombre }}"</p>
         </div>
         <div class="flex space-x-3">
@@ -62,9 +64,9 @@
                 </div>
                 
                 @if($comunicadoCategoria->comunicados->count() > 0)
-                    <div class="divide-y divide-gray-200">
+                    <ul class="divide-y divide-gray-200">
                         @foreach($comunicadoCategoria->comunicados as $comunicado)
-                            <div class="px-6 py-4 hover:bg-gray-50 transition-colors">
+                            <li class="px-6 py-4 hover:bg-gray-50 transition-colors">
                                 <div class="flex items-start justify-between">
                                     <div class="flex-1">
                                         <h4 class="font-medium text-gray-900">{{ $comunicado->titulo }}</h4>
@@ -95,9 +97,9 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
                         @endforeach
-                    </div>
+                    </ul>
                 @else
                     <div class="px-6 py-12 text-center text-gray-500">
                         <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -122,52 +124,52 @@
             <!-- Estadísticas -->
             <div class="bg-white rounded-lg shadow-sm p-6">
                 <h3 class="text-lg font-semibold text-gray-800 mb-4">Estadísticas</h3>
-                
-                <div class="space-y-4">
+
+                <dl class="space-y-4">
                     <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-600">Total de comunicados:</span>
-                        <span class="font-semibold text-lg">{{ $comunicadoCategoria->comunicados->count() }}</span>
+                        <dt class="text-sm text-gray-600">Total de comunicados:</dt>
+                        <dd class="font-semibold text-lg">{{ $comunicadoCategoria->comunicados->count() }}</dd>
                     </div>
-                    
+
                     <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-600">Comunicados activos:</span>
-                        <span class="font-semibold text-green-600">{{ $comunicadoCategoria->comunicados->where('estado', 1)->count() }}</span>
+                        <dt class="text-sm text-gray-600">Comunicados activos:</dt>
+                        <dd class="font-semibold text-green-600">{{ $comunicadoCategoria->comunicados->where('estado', 1)->count() }}</dd>
                     </div>
-                    
+
                     <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-600">Comunicados inactivos:</span>
-                        <span class="font-semibold text-red-600">{{ $comunicadoCategoria->comunicados->where('estado', 0)->count() }}</span>
+                        <dt class="text-sm text-gray-600">Comunicados inactivos:</dt>
+                        <dd class="font-semibold text-red-600">{{ $comunicadoCategoria->comunicados->where('estado', 0)->count() }}</dd>
                     </div>
-                    
+
                     <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-600">Comunicados vigentes:</span>
-                        <span class="font-semibold text-blue-600">
+                        <dt class="text-sm text-gray-600">Comunicados vigentes:</dt>
+                        <dd class="font-semibold text-blue-600">
                             {{ $comunicadoCategoria->comunicados->filter(function($c) { return !$c->fecha_fin || $c->fecha_fin > now(); })->count() }}
-                        </span>
+                        </dd>
                     </div>
-                </div>
+                </dl>
             </div>
 
             <!-- Información -->
             <div class="bg-white rounded-lg shadow-sm p-6">
                 <h3 class="text-lg font-semibold text-gray-800 mb-4">Información</h3>
-                
-                <div class="space-y-3">
+
+                <dl class="space-y-3">
                     <div>
-                        <span class="text-sm text-gray-600">Estado:</span>
-                        <p class="font-medium">{{ $comunicadoCategoria->estado ? 'Activa' : 'Inactiva' }}</p>
+                        <dt class="text-sm text-gray-600">Estado:</dt>
+                        <dd class="font-medium">{{ $comunicadoCategoria->estado ? 'Activa' : 'Inactiva' }}</dd>
                     </div>
-                    
+
                     <div>
-                        <span class="text-sm text-gray-600">Creada:</span>
-                        <p class="font-medium">{{ $comunicadoCategoria->created_at->format('d/m/Y H:i') }}</p>
+                        <dt class="text-sm text-gray-600">Creada:</dt>
+                        <dd class="font-medium">{{ $comunicadoCategoria->created_at->format('d/m/Y H:i') }}</dd>
                     </div>
-                    
+
                     <div>
-                        <span class="text-sm text-gray-600">Última actualización:</span>
-                        <p class="font-medium">{{ $comunicadoCategoria->updated_at->format('d/m/Y H:i') }}</p>
+                        <dt class="text-sm text-gray-600">Última actualización:</dt>
+                        <dd class="font-medium">{{ $comunicadoCategoria->updated_at->format('d/m/Y H:i') }}</dd>
                     </div>
-                </div>
+                </dl>
             </div>
 
             <!-- Acciones -->

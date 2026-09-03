@@ -1,10 +1,12 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Panel de administración')
 @section('header', 'Panel de Administración')
 
 @section('content')
 <div class="p-6">
     <!-- Stats Cards -->
+    <h2 class="sr-only">Resumen general</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <!-- Card 1 -->
         <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-blue-500">
@@ -81,13 +83,12 @@
         <!-- Recent Activity -->
         <div class="lg:col-span-2 bg-white rounded-xl shadow-sm p-6">
             <h2 class="text-lg font-semibold text-gray-800 mb-4">Anuncios Recientes</h2>
-            <div class="space-y-4">
-                @php
-                    $anunciosRecientes = \App\Models\Anuncio::with('user')->latest()->take(5)->get();
-                @endphp
-                
+            @php
+                $anunciosRecientes = \App\Models\Anuncio::with('user')->latest()->take(5)->get();
+            @endphp
+            <ul class="space-y-4">
                 @forelse($anunciosRecientes as $anuncio)
-                    <div class="flex items-start space-x-3 p-3 hover:bg-gray-50 rounded-lg transition-colors">
+                    <li class="flex items-start space-x-3 p-3 hover:bg-gray-50 rounded-lg transition-colors">
                         <div class="flex-shrink-0 w-2 h-2 
                             @if($anuncio->estado === 'publicado') bg-green-500
                             @elseif($anuncio->estado === 'borrador') bg-gray-500
@@ -114,17 +115,17 @@
                                 </svg>
                             </a>
                         </div>
-                    </div>
+                    </li>
                 @empty
-                    <div class="text-center text-gray-500 py-8">
+                    <li class="text-center text-gray-500 py-8">
                         <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                                   d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
                         No hay anuncios registrados
-                    </div>
+                    </li>
                 @endforelse
-            </div>
+            </ul>
         </div>
         
         <!-- Quick Actions -->

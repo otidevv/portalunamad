@@ -1,11 +1,13 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Editar categoría: ' . $comunicadoCategoria->nombre)
+@section('header', 'Editar Categoría')
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">Editar Categoría</h1>
+            <h2 class="text-2xl font-bold text-gray-800">Editar Categoría</h2>
             <p class="text-gray-600 text-sm mt-1">Modifique los datos de la categoría</p>
         </div>
         <div class="flex space-x-3">

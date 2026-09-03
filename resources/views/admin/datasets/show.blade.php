@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @section('title', $dataset->nombre)
-@section('header', 'Dataset')
+@section('header', $dataset->nombre)
 
 @section('content')
 <div class="p-6">
@@ -9,7 +9,7 @@
     <div class="flex justify-between items-start mb-6">
         <div>
             <div class="flex items-center gap-3">
-                <h1 class="text-2xl font-bold text-gray-800">{{ $dataset->nombre }}</h1>
+                <h2 class="text-2xl font-bold text-gray-800">{{ $dataset->nombre }}</h2>
                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium {{ $dataset->estado_publicacion_color }}">
                     {{ $dataset->estado_publicacion_label }}
                 </span>
@@ -73,47 +73,50 @@
 
     <!-- Metadatos del plan -->
     <div class="bg-white rounded-lg shadow-sm p-5 mb-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4 text-sm">
+        <h2 class="sr-only">Metadatos del plan de apertura</h2>
+        <dl class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4 text-sm">
             <div>
-                <p class="text-xs text-gray-500 uppercase">Área responsable</p>
-                <p class="font-medium text-gray-800">{{ $dataset->area_responsable ?: '—' }}</p>
+                <dt class="text-xs text-gray-500 uppercase">Área responsable</dt>
+                <dd class="font-medium text-gray-800">{{ $dataset->area_responsable ?: '—' }}</dd>
             </div>
             <div>
-                <p class="text-xs text-gray-500 uppercase">Categoría</p>
-                <p class="font-medium text-gray-800">{{ $dataset->categoria ?: '—' }}</p>
+                <dt class="text-xs text-gray-500 uppercase">Categoría</dt>
+                <dd class="font-medium text-gray-800">{{ $dataset->categoria ?: '—' }}</dd>
             </div>
             <div>
-                <p class="text-xs text-gray-500 uppercase">Frecuencia</p>
-                <p class="font-medium text-gray-800">{{ $dataset->frecuencia_actualizacion ?: '—' }}</p>
+                <dt class="text-xs text-gray-500 uppercase">Frecuencia</dt>
+                <dd class="font-medium text-gray-800">{{ $dataset->frecuencia_actualizacion ?: '—' }}</dd>
             </div>
             <div>
-                <p class="text-xs text-gray-500 uppercase">Licencia</p>
-                <p class="font-medium text-gray-800">{{ $dataset->licencia ?: '—' }}</p>
+                <dt class="text-xs text-gray-500 uppercase">Licencia</dt>
+                <dd class="font-medium text-gray-800">{{ $dataset->licencia ?: '—' }}</dd>
             </div>
             <div>
-                <p class="text-xs text-gray-500 uppercase">Fecha de corte</p>
-                <p class="font-medium text-gray-800">{{ $dataset->fecha_corte ? $dataset->fecha_corte->format('d/m/Y') : '—' }}</p>
+                <dt class="text-xs text-gray-500 uppercase">Fecha de corte</dt>
+                <dd class="font-medium text-gray-800">{{ $dataset->fecha_corte ? $dataset->fecha_corte->format('d/m/Y') : '—' }}</dd>
             </div>
             <div>
-                <p class="text-xs text-gray-500 uppercase">Publicación PNDA</p>
-                <p class="font-medium {{ $dataset->estaDesfasado() ? 'text-red-600' : 'text-gray-800' }}">
+                <dt class="text-xs text-gray-500 uppercase">Publicación PNDA</dt>
+                <dd class="font-medium {{ $dataset->estaDesfasado() ? 'text-red-600' : 'text-gray-800' }}">
                     {{ $dataset->fecha_publicacion ? $dataset->fecha_publicacion->format('d/m/Y') : '—' }}
                     @if($dataset->estaDesfasado())<span class="text-xs">(vencida)</span>@endif
-                </p>
+                </dd>
             </div>
             <div>
-                <p class="text-xs text-gray-500 uppercase">Filas / Columnas</p>
-                <p class="font-medium text-gray-800">{{ number_format($dataset->total_filas) }} · {{ count($dataset->columnas ?? []) }}</p>
+                <dt class="text-xs text-gray-500 uppercase">Filas / Columnas</dt>
+                <dd class="font-medium text-gray-800">{{ number_format($dataset->total_filas) }} · {{ count($dataset->columnas ?? []) }}</dd>
             </div>
             <div>
-                <p class="text-xs text-gray-500 uppercase">Fuente</p>
+                <dt class="text-xs text-gray-500 uppercase">Fuente</dt>
+                <dd>
                 @if($dataset->fuente_url)
                     <a href="{{ $dataset->fuente_url }}" target="_blank" class="font-medium text-[#db0455] hover:underline break-all">Ver origen</a>
                 @else
-                    <p class="font-medium text-gray-400">—</p>
+                    <span class="font-medium text-gray-400">—</span>
                 @endif
+                </dd>
             </div>
-        </div>
+        </dl>
     </div>
 
     <!-- Diccionario de datos -->

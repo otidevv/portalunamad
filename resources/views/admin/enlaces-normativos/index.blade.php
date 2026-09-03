@@ -1,11 +1,13 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Enlaces normativos')
+@section('header', 'Enlaces Normativos')
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800"><span aria-hidden="true">🔗</span> Enlaces Normativos</h1>
+            <h2 class="text-2xl font-bold text-gray-800"><span aria-hidden="true">🔗</span> Enlaces Normativos</h2>
             <p class="text-gray-600 text-sm mt-1">
                 Gestiona los enlaces de la sección <strong>"Documentos Normativos y de Gestión"</strong> de la página de inicio
             </p>

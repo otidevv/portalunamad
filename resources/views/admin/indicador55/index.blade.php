@@ -1,11 +1,13 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Indicador 55 - Transparencia')
+@section('header', 'Indicador 55 - Transparencia')
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">Indicador 55 - Transparencia</h1>
+            <h2 class="text-2xl font-bold text-gray-800">Indicador 55 - Transparencia</h2>
             <p class="text-gray-600 text-sm mt-1">Gestiona las 12 variables del Indicador de Transparencia Universitaria</p>
         </div>
         <a href="/transparencia/indicador-55" target="_blank"
@@ -41,9 +43,9 @@
     @endif
 
     <!-- Grid de Variables -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         @foreach($variables as $variable)
-            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
+            <li class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
                 <!-- Header con gradiente -->
                 <div class="bg-gradient-to-r from-{{ $variable->gradiente_from }} to-{{ $variable->gradiente_to }} p-4">
                     <div class="flex items-center justify-between">
@@ -107,9 +109,9 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </li>
         @endforeach
-    </div>
+    </ul>
 
     <!-- Información adicional -->
     <div class="mt-8 bg-blue-50 rounded-lg p-6 border border-blue-200">

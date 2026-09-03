@@ -1,11 +1,13 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Editar video: ' . $video->titulo)
+@section('header', 'Editar Video Destacado')
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">Editar Video Destacado</h1>
+            <h2 class="text-2xl font-bold text-gray-800">Editar Video Destacado</h2>
             <p class="text-gray-600 text-sm mt-1">Actualice los datos del video</p>
         </div>
         <a href="{{ route('admin.videos-destacados.index') }}"

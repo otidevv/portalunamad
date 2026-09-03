@@ -1,11 +1,13 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Categorías de comunicados')
+@section('header', 'Categorías de Comunicados')
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">Categorías de Comunicados</h1>
+            <h2 class="text-2xl font-bold text-gray-800">Categorías de Comunicados</h2>
             <p class="text-gray-600 text-sm mt-1">Gestiona las categorías para organizar los comunicados</p>
         </div>
         <a href="{{ route('admin.comunicado-categorias.create') }}" 

@@ -1,11 +1,13 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Comunicados')
+@section('header', 'Gestión de Comunicados')
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">Gestión de Comunicados</h1>
+            <h2 class="text-2xl font-bold text-gray-800">Gestión de Comunicados</h2>
             <p class="text-gray-600 text-sm mt-1">Administra los comunicados del portal</p>
         </div>
         <button onclick="openComunicadoModal()" 

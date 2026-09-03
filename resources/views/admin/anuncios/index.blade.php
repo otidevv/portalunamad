@@ -1,12 +1,14 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Anuncios')
+@section('header', 'Gestión de Anuncios')
 
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">Gestión de Anuncios</h1>
+            <h2 class="text-2xl font-bold text-gray-800">Gestión de Anuncios</h2>
             <p class="text-gray-600 text-sm mt-1">Administra las publicaciones y anuncios del portal</p>
         </div>
         <button onclick="openAnuncioModal()" 

@@ -15,7 +15,7 @@
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">Editar Dataset</h1>
+            <h2 class="text-2xl font-bold text-gray-800">Editar Dataset</h2>
             <p class="text-gray-600 text-sm mt-1">Modifica los metadatos y el diccionario. Sube un CSV nuevo solo si quieres reemplazar las filas.</p>
         </div>
         <div class="flex space-x-3">

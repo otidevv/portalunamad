@@ -1,11 +1,13 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Videos destacados')
+@section('header', 'Videos Destacados')
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800"><span aria-hidden="true">🎬</span> Videos Destacados</h1>
+            <h2 class="text-2xl font-bold text-gray-800"><span aria-hidden="true">🎬</span> Videos Destacados</h2>
             <p class="text-gray-600 text-sm mt-1">
                 Gestiona el <strong>video emergente</strong> que salta al abrir la página de inicio
             </p>

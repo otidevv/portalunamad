@@ -1,11 +1,13 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Anuncio: ' . $anuncio->titulo)
+@section('header', 'Detalle del Anuncio')
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">Detalle del Anuncio</h1>
+            <h2 class="text-2xl font-bold text-gray-800">Detalle del Anuncio</h2>
             <p class="text-gray-600 text-sm mt-1">Vista completa del anuncio #{{ $anuncio->id }}</p>
         </div>
         <div class="flex space-x-3">
@@ -60,9 +62,9 @@
                         </svg>
                         Enlaces Relacionados
                     </h3>
-                    <div class="space-y-3">
+                    <ul class="space-y-3">
                         @foreach($anuncio->enlaces as $enlace)
-                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <li class="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                                 <div class="flex-1">
                                     <h4 class="font-medium text-gray-800">{{ $enlace['titulo'] ?? 'Sin título' }}</h4>
                                     <a href="{{ $enlace['url'] }}" target="_blank" 
@@ -78,9 +80,9 @@
                                               d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </a>
-                            </div>
+                            </li>
                         @endforeach
-                    </div>
+                    </ul>
                 </div>
             @endif
         </div>
@@ -90,11 +92,11 @@
             <!-- Status Card -->
             <div class="bg-white rounded-lg shadow-sm p-6">
                 <h3 class="text-lg font-semibold text-gray-800 mb-4">Estado y Configuración</h3>
-                
-                <div class="space-y-3">
+
+                <dl class="space-y-3">
                     <!-- Estado -->
                     <div>
-                        <span class="text-sm text-gray-600">Estado:</span>
+                        <dt class="text-sm text-gray-600 inline">Estado:</dt>
                         @php
                             $estadoColors = [
                                 'publicado' => 'bg-green-100 text-green-800',
@@ -102,14 +104,14 @@
                                 'archivado' => 'bg-red-100 text-red-800',
                             ];
                         @endphp
-                        <span class="ml-2 px-2 py-1 text-xs font-medium rounded-full {{ $estadoColors[$anuncio->estado] }}">
+                        <dd class="inline ml-2 px-2 py-1 text-xs font-medium rounded-full {{ $estadoColors[$anuncio->estado] }}">
                             {{ ucfirst($anuncio->estado) }}
-                        </span>
+                        </dd>
                     </div>
 
                     <!-- Categoría -->
                     <div>
-                        <span class="text-sm text-gray-600">Categoría:</span>
+                        <dt class="text-sm text-gray-600 inline">Categoría:</dt>
                         @php
                             $categoriaColors = [
                                 'noticia' => 'bg-blue-100 text-blue-800',
@@ -119,14 +121,15 @@
                                 'otro' => 'bg-gray-100 text-gray-800',
                             ];
                         @endphp
-                        <span class="ml-2 px-2 py-1 text-xs font-medium rounded-full {{ $categoriaColors[$anuncio->categoria] }}">
+                        <dd class="inline ml-2 px-2 py-1 text-xs font-medium rounded-full {{ $categoriaColors[$anuncio->categoria] }}">
                             {{ ucfirst($anuncio->categoria) }}
-                        </span>
+                        </dd>
                     </div>
 
                     <!-- Destacado -->
                     <div class="flex items-center">
-                        <span class="text-sm text-gray-600">Destacado:</span>
+                        <dt class="text-sm text-gray-600">Destacado:</dt>
+                        <dd class="flex items-center">
                         @if($anuncio->destacado)
                             <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-yellow-500 ml-2" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
@@ -135,40 +138,41 @@
                         @else
                             <span class="ml-2 text-gray-500">No</span>
                         @endif
+                        </dd>
                     </div>
 
                     <!-- Vistas -->
                     <div class="flex items-center">
-                        <span class="text-sm text-gray-600">Vistas:</span>
-                        <span class="ml-2 font-semibold">{{ number_format($anuncio->vistas) }}</span>
+                        <dt class="text-sm text-gray-600">Vistas:</dt>
+                        <dd class="ml-2 font-semibold">{{ number_format($anuncio->vistas) }}</dd>
                     </div>
-                </div>
+                </dl>
             </div>
 
             <!-- Dates Card -->
             <div class="bg-white rounded-lg shadow-sm p-6">
                 <h3 class="text-lg font-semibold text-gray-800 mb-4">Fechas</h3>
-                
-                <div class="space-y-3">
+
+                <dl class="space-y-3">
                     <div>
-                        <span class="text-sm text-gray-600">Creado:</span>
-                        <p class="font-medium">{{ $anuncio->created_at->format('d/m/Y H:i') }}</p>
+                        <dt class="text-sm text-gray-600">Creado:</dt>
+                        <dd class="font-medium">{{ $anuncio->created_at->format('d/m/Y H:i') }}</dd>
                     </div>
-                    
+
                     @if($anuncio->fecha_publicacion)
                         <div>
-                            <span class="text-sm text-gray-600">Publicación:</span>
-                            <p class="font-medium">{{ $anuncio->fecha_publicacion->format('d/m/Y') }}</p>
+                            <dt class="text-sm text-gray-600">Publicación:</dt>
+                            <dd class="font-medium">{{ $anuncio->fecha_publicacion->format('d/m/Y') }}</dd>
                         </div>
                     @endif
-                    
+
                     @if($anuncio->fecha_expiracion)
                         <div>
-                            <span class="text-sm text-gray-600">Expiración:</span>
-                            <p class="font-medium">{{ $anuncio->fecha_expiracion->format('d/m/Y') }}</p>
+                            <dt class="text-sm text-gray-600">Expiración:</dt>
+                            <dd class="font-medium">{{ $anuncio->fecha_expiracion->format('d/m/Y') }}</dd>
                         </div>
                     @endif
-                </div>
+                </dl>
             </div>
 
             <!-- Author Card -->
