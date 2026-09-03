@@ -12,56 +12,56 @@
             <div class="slide active">
                 <picture>
                     <source srcset="/img/banners/1.webp" type="image/webp">
-                    <img src="/img/banners/1.jpg" alt="Universidad Nacional Amazónica de Madre de Dios" fetchpriority="high" width="1920" height="1080" decoding="async">
+                    <img src="/img/banners/1.jpg" alt="Banner institucional de la Universidad Nacional Amazónica de Madre de Dios" fetchpriority="high" width="1920" height="1080" decoding="async">
                 </picture>
             </div>
             <!-- Slide 2 -->
             <div class="slide">
                 <picture>
                     <source srcset="/img/banners/2.webp" type="image/webp">
-                    <img src="/img/banners/2.jpg" alt="Campus UNAMAD" loading="lazy" width="1920" height="1080" decoding="async">
+                    <img src="/img/banners/2.jpg" alt="Campus de la UNAMAD en Puerto Maldonado" loading="lazy" width="1920" height="1080" decoding="async">
                 </picture>
             </div>
             <!-- Slide 3 -->
             <div class="slide">
                 <picture>
                     <source srcset="/img/banners/3.webp" type="image/webp">
-                    <img src="/img/banners/3.jpg" alt="Estudiantes UNAMAD" loading="lazy" width="1920" height="1080" decoding="async">
+                    <img src="/img/banners/3.jpg" alt="Estudiantes de la UNAMAD en el campus universitario" loading="lazy" width="1920" height="1080" decoding="async">
                 </picture>
             </div>
             <!-- Slide 4 -->
             <div class="slide">
                 <picture>
                     <source srcset="/img/banners/4.webp" type="image/webp">
-                    <img src="/img/banners/4.jpg" alt="Investigación UNAMAD" loading="lazy" width="1920" height="1080" decoding="async">
+                    <img src="/img/banners/4.jpg" alt="Investigadores de la UNAMAD realizando trabajo científico en laboratorio" loading="lazy" width="1920" height="1080" decoding="async">
                 </picture>
             </div>
             <!-- Slide 5 -->
             <div class="slide">
                 <picture>
                     <source srcset="/img/banners/5.webp" type="image/webp">
-                    <img src="/img/banners/5.jpg" alt="Amazonía y Biodiversidad" loading="lazy" width="1920" height="1080" decoding="async">
+                    <img src="/img/banners/5.jpg" alt="Paisaje de la Amazonía y biodiversidad de Madre de Dios" loading="lazy" width="1920" height="1080" decoding="async">
                 </picture>
             </div>
             <!-- Slide 6 -->
             <div class="slide">
                 <picture>
                     <source srcset="/img/banners/6.webp" type="image/webp">
-                    <img src="/img/banners/6.jpg" alt="Tecnología e Innovación" loading="lazy" width="1920" height="1080" decoding="async">
+                    <img src="/img/banners/6.jpg" alt="Tecnología e innovación en la UNAMAD" loading="lazy" width="1920" height="1080" decoding="async">
                 </picture>
             </div>
             <!-- Slide 7 -->
             <div class="slide">
                 <picture>
                     <source srcset="/img/banners/7.webp" type="image/webp">
-                    <img src="/img/banners/7.jpg" alt="Cultura y Tradición Amazónica" loading="lazy" width="1920" height="1080" decoding="async">
+                    <img src="/img/banners/7.jpg" alt="Cultura y tradición amazónica de Madre de Dios" loading="lazy" width="1920" height="1080" decoding="async">
                 </picture>
             </div>
             <!-- Slide 8 -->
             <div class="slide">
                 <picture>
                     <source srcset="/img/banners/8.webp" type="image/webp">
-                    <img src="/img/banners/8.jpg" alt="Futuro y Desarrollo Sostenible" loading="lazy" width="1920" height="1080" decoding="async">
+                    <img src="/img/banners/8.jpg" alt="Futuro y desarrollo sostenible de la Amazonía" loading="lazy" width="1920" height="1080" decoding="async">
                 </picture>
             </div>
         </div>
@@ -86,7 +86,7 @@
                 <div class="relative z-10 px-3 sm:px-4 md:px-6 pt-2 sm:pt-3 md:pt-5 pb-0">
                     <!-- Logo centrado -->
                     <div class="flex justify-center mb-1 sm:mb-2 md:mb-3">
-                        <img src="{{ asset('img/header/logounamad.png') }}" alt="UNAMAD" class="h-5 w-16 sm:h-7 sm:w-24 md:h-10 md:w-36" width="160" height="48">
+                        <img src="{{ asset('img/header/logounamad.png') }}" alt="Logotipo de la Universidad Nacional Amazónica de Madre de Dios" class="h-5 w-16 sm:h-7 sm:w-24 md:h-10 md:w-36" width="160" height="48">
                     </div>
 
                     <!-- Título principal conciso -->
@@ -112,7 +112,7 @@
                         <div>
                             <picture>
                                 <source srcset="{{ asset('img/mascota/mascota.webp') }}" type="image/webp">
-                                <img loading="lazy" src="{{ asset('img/mascota/mascota.png') }}" alt="Mascota UNAMAD" class="h-24 sm:h-36 md:h-48 lg:h-56 w-auto object-contain" width="215" height="320">
+                                <img loading="lazy" src="{{ asset('img/mascota/mascota.png') }}" alt="" class="h-24 sm:h-36 md:h-48 lg:h-56 w-auto object-contain" width="215" height="320">
                             </picture>
                         </div>
                     </div>
@@ -180,7 +180,7 @@
                         class="group bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:border-[#ed145b]/40 transition-all duration-300 flex flex-col">
                         @if (!empty($noticia['imagen']))
                             <div class="aspect-[16/10] bg-gray-100 overflow-hidden">
-                                <img src="{{ $noticia['imagen'] }}" alt="{{ $noticia['titulo'] }}"
+                                <img src="{{ $noticia['imagen'] }}" alt=""
                                     loading="lazy" referrerpolicy="no-referrer"
                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                             </div>
@@ -648,7 +648,7 @@
                                 class="group bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:border-[#ed145b]/40 transition-all duration-300 flex flex-col">
                                 @if (!empty($campana['imagen']))
                                     <div class="aspect-[16/10] bg-gray-100 overflow-hidden">
-                                        <img src="{{ $campana['imagen'] }}" alt="{{ $campana['titulo'] }}"
+                                        <img src="{{ $campana['imagen'] }}" alt=""
                                             loading="lazy" referrerpolicy="no-referrer"
                                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                                     </div>
@@ -784,7 +784,7 @@
                 <!-- Cifra 1 - Docentes Investigadores -->
                 <div class="text-center">
                     <div class="mb-4">
-                        <img width="64" height="64" loading="lazy" src="/img/sectioncifras/investigadores.svg" alt="Investigadores" class="w-16 h-16 mx-auto">
+                        <img width="64" height="64" loading="lazy" src="/img/sectioncifras/investigadores.svg" alt="" class="w-16 h-16 mx-auto">
                     </div>
                     <div class="text-4xl md:text-5xl font-bold text-white mb-2">24</div>
                     <div class="bg-[#0056ac] text-white px-3 py-1 rounded text-sm font-semibold">
@@ -795,7 +795,7 @@
                 <!-- Cifra 2 - Años de Fundación -->
                 <div class="text-center">
                     <div class="mb-4">
-                        <img width="64" height="64" loading="lazy" src="/img/sectioncifras/fundacion.svg" alt="Fundación" class="w-16 h-16 mx-auto">
+                        <img width="64" height="64" loading="lazy" src="/img/sectioncifras/fundacion.svg" alt="" class="w-16 h-16 mx-auto">
                     </div>
                     <div class="text-4xl md:text-5xl font-bold text-white mb-2">25</div>
                     <div class="bg-[#0056ac] text-white px-3 py-1 rounded text-sm font-semibold">
@@ -806,7 +806,7 @@
                 <!-- Cifra 3 - Estudiantes Matriculados -->
                 <div class="text-center">
                     <div class="mb-4">
-                        <img width="64" height="64" loading="lazy" src="/img/sectioncifras/estudiantes.svg" alt="Estudiantes" class="w-16 h-16 mx-auto">
+                        <img width="64" height="64" loading="lazy" src="/img/sectioncifras/estudiantes.svg" alt="" class="w-16 h-16 mx-auto">
                     </div>
                     <div class="text-4xl md:text-5xl font-bold text-white mb-2">3917</div>
                     <div class="bg-[#0056ac] text-white px-3 py-1 rounded text-sm font-semibold">
@@ -817,7 +817,7 @@
                 <!-- Cifra 4 - Escuelas Profesionales -->
                 <div class="text-center">
                     <div class="mb-4">
-                        <img width="64" height="64" loading="lazy" src="/img/sectioncifras/escuelas.svg" alt="Escuelas" class="w-16 h-16 mx-auto">
+                        <img width="64" height="64" loading="lazy" src="/img/sectioncifras/escuelas.svg" alt="" class="w-16 h-16 mx-auto">
                     </div>
                     <div class="text-4xl md:text-5xl font-bold text-white mb-2">10</div>
                     <div class="bg-[#0056ac] text-white px-3 py-1 rounded text-sm font-semibold">
@@ -828,7 +828,7 @@
                 <!-- Cifra 5 - Convenios Institucionales -->
                 <div class="text-center">
                     <div class="mb-4">
-                        <img width="64" height="64" loading="lazy" src="/img/sectioncifras/convenio.svg" alt="Convenios" class="w-16 h-16 mx-auto">
+                        <img width="64" height="64" loading="lazy" src="/img/sectioncifras/convenio.svg" alt="" class="w-16 h-16 mx-auto">
                     </div>
                     <div class="text-4xl md:text-5xl font-bold text-white mb-2">139</div>
                     <div class="bg-[#0056ac] text-white px-3 py-1 rounded text-sm font-semibold">
@@ -1090,7 +1090,7 @@
                             <div class="space-y-0">
                                 <!-- Imagen superior clickeable -->
                                 <a href="https://heyzine.com/flip-book/ec58c00b66.html" target="_blank" rel="noopener noreferrer" class="block">
-                                    <img loading="lazy" src="{{ asset('img/boletin/boletin2025.JPG') }}" alt="Boletín UNAMAD"
+                                    <img loading="lazy" src="{{ asset('img/boletin/boletin2025.JPG') }}" alt="Portada del Boletín Digital UNAMAD al Día 2025: Felices Bodas de Plata, 25 años impulsando el desarrollo en la Amazonía"
                                         class="w-full rounded-t-lg shadow-lg hover:opacity-95 transition-opacity duration-300">
                                 </a>
                                 <!-- Tarjeta inferior -->
@@ -1124,7 +1124,7 @@
                     <!-- Items individuales para desplazamiento continuo -->
                     <a href="https://www.sunedu.gob.pe/" target="_blank" rel="noopener noreferrer"
                         class="flex-shrink-0 p-6 mx-4 text-center group">
-                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/logo-sunedu.png" alt="SUNEDU"
+                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/logo-sunedu.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
@@ -1132,7 +1132,7 @@
                     </a>
                     <a href="https://www.pronabec.gob.pe/" target="_blank" rel="noopener noreferrer"
                         class="flex-shrink-0 p-6 mx-4 text-center group">
-                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/logoPronabec_hd.png" alt="PRONABEC"
+                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/logoPronabec_hd.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
@@ -1140,7 +1140,7 @@
                     </a>
                     <a href="https://www.prociencia.gob.pe/" target="_blank" rel="noopener noreferrer"
                         class="flex-shrink-0 p-6 mx-4 text-center group">
-                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/prociencia.png" alt="PROCIENCIA"
+                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/prociencia.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
@@ -1148,21 +1148,21 @@
                     </a>
                     <a href="https://portal.rnssc.gob.pe/" target="_blank" rel="noopener noreferrer"
                         class="flex-shrink-0 p-6 mx-4 text-center group">
-                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/rnssc.png" alt="RNSSC"
+                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/rnssc.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             RNSSC</h3>
                     </a>
                     <a href="https://www.rpu.edu.pe/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 p-6 mx-4 text-center group">
-                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/rpu.png" alt="RPU"
+                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/rpu.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             RPU</h3>
                     </a>
                     <a href="https://www.scopus.com/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 p-6 mx-4 text-center group">
-                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/scopus.png" alt="SCOPUS"
+                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/scopus.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
@@ -1172,7 +1172,7 @@
                     <!-- Duplicado para bucle infinito -->
                     <a href="https://www.sunedu.gob.pe/" target="_blank" rel="noopener noreferrer"
                         class="flex-shrink-0 p-6 mx-4 text-center group">
-                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/logo-sunedu.png" alt="SUNEDU"
+                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/logo-sunedu.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
@@ -1180,7 +1180,7 @@
                     </a>
                     <a href="https://www.pronabec.gob.pe/" target="_blank" rel="noopener noreferrer"
                         class="flex-shrink-0 p-6 mx-4 text-center group">
-                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/logoPronabec_hd.png" alt="PRONABEC"
+                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/logoPronabec_hd.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
@@ -1188,7 +1188,7 @@
                     </a>
                     <a href="https://www.prociencia.gob.pe/" target="_blank" rel="noopener noreferrer"
                         class="flex-shrink-0 p-6 mx-4 text-center group">
-                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/prociencia.png" alt="PROCIENCIA"
+                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/prociencia.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
@@ -1196,21 +1196,21 @@
                     </a>
                     <a href="https://portal.rnssc.gob.pe/" target="_blank" rel="noopener noreferrer"
                         class="flex-shrink-0 p-6 mx-4 text-center group">
-                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/rnssc.png" alt="RNSSC"
+                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/rnssc.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             RNSSC</h3>
                     </a>
                     <a href="https://www.rpu.edu.pe/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 p-6 mx-4 text-center group">
-                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/rpu.png" alt="RPU"
+                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/rpu.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             RPU</h3>
                     </a>
                     <a href="https://www.scopus.com/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 p-6 mx-4 text-center group">
-                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/scopus.png" alt="SCOPUS"
+                        <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/scopus.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
@@ -1234,7 +1234,7 @@
                 <button onclick="cerrarModalAnuncios()" aria-label="Cerrar anuncios"
                     class="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-all duration-300 hover:scale-110 group">
                     <svg class="w-6 h-6 group-hover:rotate-90 transition-transform duration-300" aria-hidden="true" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
                         </path>
                     </svg>
@@ -1302,7 +1302,7 @@
             <div class="p-6 overflow-y-auto" style="max-height: calc(95vh - 200px);">
                 <!-- Imagen principal -->
                 <div id="modal-imagen-container" class="mb-6 hidden">
-                    <img id="modal-imagen" class="w-full max-h-80 object-cover rounded-xl shadow-lg" alt="Imagen del anuncio">
+                    <img id="modal-imagen" class="w-full max-h-80 object-cover rounded-xl shadow-lg" alt="Imagen principal del anuncio">
                 </div>
 
                 <!-- Descripción -->
@@ -1313,7 +1313,7 @@
                 <!-- Imágenes adicionales -->
                 <div id="modal-imagenes-adicionales-container" class="mb-6 hidden">
                     <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
-                        🖼️ Más Imágenes
+                        <span aria-hidden="true">🖼️</span> Más imágenes
                     </h3>
                     <div id="modal-imagenes-adicionales" class="grid grid-cols-2 gap-3"></div>
                 </div>
@@ -1321,7 +1321,7 @@
                 <!-- Enlaces relacionados -->
                 <div id="modal-enlaces-container" class="hidden">
                     <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
-                        🔗 Enlaces Relacionados
+                        <span aria-hidden="true">🔗</span> Enlaces relacionados
                     </h3>
                     <div id="modal-enlaces" class="space-y-2"></div>
                 </div>
@@ -1927,7 +1927,7 @@
 
             if (anuncio.imagen_principal_url && anuncio.imagen_principal_url.includes('/storage/')) {
                 imagenElement.src = anuncio.imagen_principal_url;
-                imagenElement.alt = anuncio.titulo;
+                imagenElement.alt = 'Imagen principal del anuncio: ' + anuncio.titulo;
                 imagenContainer.classList.remove('hidden');
 
                 // Agregar cursor pointer y funcionalidad de click para mostrar en lightbox
@@ -1946,11 +1946,12 @@
 
             if (anuncio.imagenes_adicionales_urls && anuncio.imagenes_adicionales_urls.length > 0) {
                 imagenesAdicionalesElement.innerHTML = '';
-                anuncio.imagenes_adicionales_urls.forEach(url => {
+                const totalAdicionales = anuncio.imagenes_adicionales_urls.length;
+                anuncio.imagenes_adicionales_urls.forEach((url, idx) => {
                     if (url && url.includes('/storage/')) {
                         const img = document.createElement('img');
                         img.src = url;
-                        img.alt = anuncio.titulo;
+                        img.alt = anuncio.titulo + ' – imagen adicional ' + (idx + 1) + ' de ' + totalAdicionales;
                         img.className =
                             'w-full h-24 object-cover rounded-lg shadow-md cursor-pointer hover:shadow-lg transition-shadow';
                         img.title = 'Clic para ver en tamaño completo';
@@ -2175,7 +2176,7 @@
             ${anuncio.imagen_principal_url && anuncio.imagen_principal_url.includes('/storage/') ? `
                             <div class="h-32 overflow-hidden">
                                 <img src="${anuncio.imagen_principal_url}"
-                                     alt="${anuncio.titulo}"
+                                     alt=""
                                      class="w-full h-full object-cover hover:scale-110 transition-transform duration-300">
                             </div>
                         ` : ''}
@@ -2185,7 +2186,7 @@
                     <span class="text-xs px-2 py-1 rounded-full font-medium ${categoriaColors[anuncio.categoria]}">
                         ${categoriaLabels[anuncio.categoria]}
                     </span>
-                    ${anuncio.destacado ? '<span class="text-xs px-2 py-1 rounded-full font-medium bg-yellow-100 text-yellow-800 ml-1">⭐ Destacado</span>' : ''}
+                    ${anuncio.destacado ? '<span class="text-xs px-2 py-1 rounded-full font-medium bg-yellow-100 text-yellow-800 ml-1"><span aria-hidden="true">⭐</span> Destacado</span>' : ''}
                 </div>
 
                 <h3 class="text-base font-bold text-gray-800 mb-2 line-clamp-2 hover:text-[#db0455] transition-colors">

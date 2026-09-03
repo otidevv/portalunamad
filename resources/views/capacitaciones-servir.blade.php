@@ -7,12 +7,12 @@
     <div class="relative h-64 sm:h-80 lg:h-96 overflow-hidden bg-gradient-to-r from-red-600 via-red-700 to-red-800">
         <div class="absolute inset-0 bg-black/20"></div>
         <img src="{{ asset('img/presentacion/presentacionbackground.jpg') }}"
-             alt="Videos de Capacitación SERVIR"
+             alt=""
              class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30">
         <div class="relative h-full flex items-center justify-center px-6">
             <div class="text-center text-white max-w-4xl mx-auto">
                 <div class="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 border border-white/20">
-                    <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z"/>
                     </svg>
                 </div>
@@ -31,7 +31,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <nav class="flex items-center space-x-2 text-sm">
                 <a href="/" class="text-gray-600 hover:text-red-600 transition-colors font-medium">Inicio</a>
-                <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
                 </svg>
                 <span class="text-red-600 font-semibold">Videos de Capacitación SERVIR</span>
@@ -46,7 +46,7 @@
                 <div class="flex items-start space-x-4">
                     <div class="flex-shrink-0">
                         <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-                            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                         </div>
@@ -70,7 +70,7 @@
             <div class="mb-12">
                 <div class="flex items-center mb-6">
                     <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                         </svg>
                     </div>
@@ -82,12 +82,12 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/1mMzMEXEzy0/maxresdefault.jpg"
-                                 alt="Más que gestión, es transformación"
+                                 alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/1mMzMEXEzy0/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                                 <a href="https://www.youtube.com/watch?v=1mMzMEXEzy0" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
                                 </a>
@@ -100,7 +100,7 @@
                             <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">Más que gestión, es transformación: El rol de las Oficinas de Recursos Humanos</h3>
                             <p class="text-sm text-gray-500 mb-4">
                                 <span class="inline-flex items-center">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
                                     </svg>
                                     Oficina de Recursos Humanos
@@ -109,14 +109,14 @@
                             <div class="flex flex-wrap gap-2">
                                 <a href="https://www.youtube.com/watch?v=1mMzMEXEzy0" target="_blank"
                                    class="inline-flex items-center px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors">
-                                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
                                     Ver en YouTube
                                 </a>
                                 <a href="https://cutt.ly/crV0YrRY" target="_blank"
                                    class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
-                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
                                     Descargar
@@ -131,7 +131,7 @@
             <div class="mb-12">
                 <div class="flex items-center mb-6">
                     <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center mr-3">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                         </svg>
                     </div>
@@ -143,12 +143,12 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/qLFlbYLgqRk/maxresdefault.jpg"
-                                 alt="Brechas de capacitación en el Estado"
+                                 alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/qLFlbYLgqRk/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                                 <a href="https://www.youtube.com/watch?v=qLFlbYLgqRk" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
                                 </a>
@@ -161,7 +161,7 @@
                             <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">Brechas de capacitación en el Estado: El Rol Clave de los Directivos</h3>
                             <p class="text-sm text-gray-500 mb-4">
                                 <span class="inline-flex items-center">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5"/>
                                     </svg>
                                     Directivos y mandos medios
@@ -170,14 +170,14 @@
                             <div class="flex flex-wrap gap-2">
                                 <a href="https://www.youtube.com/watch?v=qLFlbYLgqRk" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
                                     YouTube
                                 </a>
                                 <a href="https://cutt.ly/jrV09s9P" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
                                     Descargar
@@ -190,12 +190,12 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/FG609uRqMpE/maxresdefault.jpg"
-                                 alt="El rol del directivo en una capacitación efectiva"
+                                 alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/FG609uRqMpE/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                                 <a href="https://www.youtube.com/watch?v=FG609uRqMpE" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
                                 </a>
@@ -208,7 +208,7 @@
                             <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">El rol del directivo en una capacitación efectiva: liderar es también formar</h3>
                             <p class="text-sm text-gray-500 mb-4">
                                 <span class="inline-flex items-center">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5"/>
                                     </svg>
                                     Directivos y mandos medios
@@ -217,14 +217,14 @@
                             <div class="flex flex-wrap gap-2">
                                 <a href="https://www.youtube.com/watch?v=FG609uRqMpE" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
                                     YouTube
                                 </a>
                                 <a href="https://cutt.ly/OrV03nEy" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
                                     Descargar
@@ -237,12 +237,12 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/R0Bvaftc9E/maxresdefault.jpg"
-                                 alt="Cuando lideras, dejas aprender"
+                                 alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/R0Bvaftc9E/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                                 <a href="https://www.youtube.com/watch?v=R0Bvaftc9E" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
                                 </a>
@@ -255,7 +255,7 @@
                             <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">Cuando lideras, dejas aprender: el impacto del directivo en la capacitación</h3>
                             <p class="text-sm text-gray-500 mb-4">
                                 <span class="inline-flex items-center">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5"/>
                                     </svg>
                                     Directivos y mandos medios
@@ -264,14 +264,14 @@
                             <div class="flex flex-wrap gap-2">
                                 <a href="https://www.youtube.com/watch?v=R0Bvaftc9E" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
                                     YouTube
                                 </a>
                                 <a href="https://cutt.ly/xrV039Hu" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
                                     Descargar
@@ -286,7 +286,7 @@
             <div class="mb-12">
                 <div class="flex items-center mb-6">
                     <div class="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center mr-3">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
                         </svg>
                     </div>
@@ -298,12 +298,12 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/XL8MA-Tz7Cg/maxresdefault.jpg"
-                                 alt="Beneficios de la capacitación para servidores públicos"
+                                 alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/XL8MA-Tz7Cg/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                                 <a href="https://www.youtube.com/watch?v=XL8MA-Tz7Cg" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
                                 </a>
@@ -316,7 +316,7 @@
                             <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">Beneficios de la capacitación para servidores públicos</h3>
                             <p class="text-sm text-gray-500 mb-4">
                                 <span class="inline-flex items-center">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197"/>
                                     </svg>
                                     Servidores civiles en general
@@ -325,14 +325,14 @@
                             <div class="flex flex-wrap gap-2">
                                 <a href="https://www.youtube.com/watch?v=XL8MA-Tz7Cg" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
                                     YouTube
                                 </a>
                                 <a href="https://cutt.ly/urV0E6AF" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
                                     Descargar
@@ -345,12 +345,12 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/I4ccjU9cRrw/maxresdefault.jpg"
-                                 alt="3 Pasos clave después de culminar tu capacitación"
+                                 alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/I4ccjU9cRrw/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                                 <a href="https://www.youtube.com/watch?v=I4ccjU9cRrw" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
                                 </a>
@@ -363,7 +363,7 @@
                             <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">Capacitación en el Estado: 3 Pasos clave después de culminar tu capacitación</h3>
                             <p class="text-sm text-gray-500 mb-4">
                                 <span class="inline-flex items-center">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197"/>
                                     </svg>
                                     Servidores civiles en general
@@ -372,14 +372,14 @@
                             <div class="flex flex-wrap gap-2">
                                 <a href="https://www.youtube.com/watch?v=I4ccjU9cRrw" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
                                     YouTube
                                 </a>
                                 <a href="https://cutt.ly/8rV099dg" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
                                     Descargar
@@ -392,12 +392,12 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/TlJxyaLkd4I/maxresdefault.jpg"
-                                 alt="¿Cómo aplicar tu aprendizaje en el trabajo?"
+                                 alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/TlJxyaLkd4I/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                                 <a href="https://www.youtube.com/watch?v=TlJxyaLkd4I" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
                                 </a>
@@ -410,7 +410,7 @@
                             <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">¿Cómo aplicar tu aprendizaje en el trabajo?</h3>
                             <p class="text-sm text-gray-500 mb-4">
                                 <span class="inline-flex items-center">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197"/>
                                     </svg>
                                     Servidores civiles en general
@@ -419,14 +419,14 @@
                             <div class="flex flex-wrap gap-2">
                                 <a href="https://www.youtube.com/watch?v=TlJxyaLkd4I" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-sm font-medium rounded-lg hover:bg-red-700 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
                                     YouTube
                                 </a>
                                 <a href="https://cutt.ly/IrV0Rn9q" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
                                     Descargar
@@ -449,7 +449,7 @@
                 <div class="flex items-start space-x-4">
                     <div class="flex-shrink-0">
                         <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
                             </svg>
                         </div>
@@ -465,7 +465,7 @@
             <div class="mb-12">
                 <div class="flex items-center mb-6">
                     <div class="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center mr-3">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
                         </svg>
                     </div>
@@ -477,12 +477,12 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/nt89n4PAnrY/maxresdefault.jpg"
-                                 alt="Brechas de capacitación de los servidores civiles"
+                                 alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/nt89n4PAnrY/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                                 <a href="https://youtube.com/shorts/nt89n4PAnrY" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
                                 </a>
@@ -496,14 +496,14 @@
                             <div class="flex flex-wrap gap-2">
                                 <a href="https://youtube.com/shorts/nt89n4PAnrY" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-xs font-medium rounded-lg hover:bg-red-700 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
                                     Ver
                                 </a>
                                 <a href="https://cutt.ly/XrMuhLcJ" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-200 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
                                     Descargar
@@ -516,12 +516,12 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/ialDfhO-yPw/maxresdefault.jpg"
-                                 alt="Necesidades organizacionales"
+                                 alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/ialDfhO-yPw/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                                 <a href="https://youtube.com/shorts/ialDfhO-yPw" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
                                 </a>
@@ -535,14 +535,14 @@
                             <div class="flex flex-wrap gap-2">
                                 <a href="https://youtube.com/shorts/ialDfhO-yPw" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-xs font-medium rounded-lg hover:bg-red-700 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
                                     Ver
                                 </a>
                                 <a href="https://cutt.ly/WrMuzhhH" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-200 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
                                     Descargar
@@ -555,12 +555,12 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/zaKkPC6cpNo/maxresdefault.jpg"
-                                 alt="Análisis de la inversión en capacitación"
+                                 alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/zaKkPC6cpNo/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                                 <a href="https://youtube.com/shorts/zaKkPC6cpNo" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
                                 </a>
@@ -574,14 +574,14 @@
                             <div class="flex flex-wrap gap-2">
                                 <a href="https://youtube.com/shorts/zaKkPC6cpNo" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-xs font-medium rounded-lg hover:bg-red-700 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
                                     Ver
                                 </a>
                                 <a href="https://cutt.ly/trMuzK4F" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-200 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
                                     Descargar
@@ -594,12 +594,12 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/5QusdOShehY/maxresdefault.jpg"
-                                 alt="Importancia de priorización de cada materia"
+                                 alt=""
                                  class="w-full h-48 object-cover"
                                  onerror="this.src='https://img.youtube.com/vi/5QusdOShehY/hqdefault.jpg'">
                             <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                                 <a href="https://youtube.com/shorts/5QusdOShehY" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z"/>
                                     </svg>
                                 </a>
@@ -613,14 +613,14 @@
                             <div class="flex flex-wrap gap-2">
                                 <a href="https://youtube.com/shorts/5QusdOShehY" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-xs font-medium rounded-lg hover:bg-red-700 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                     </svg>
                                     Ver
                                 </a>
                                 <a href="https://cutt.ly/qrMuYUQx" target="_blank"
                                    class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-200 transition-colors">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                     </svg>
                                     Descargar
@@ -671,7 +671,7 @@
             <div class="mb-12">
                 <div class="flex items-center mb-6">
                     <div class="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center mr-3">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                         </svg>
                     </div>
@@ -683,12 +683,12 @@
                         <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <div class="relative">
                                 <img src="https://img.youtube.com/vi/{{ $video['id'] }}/maxresdefault.jpg"
-                                     alt="{{ $video['titulo'] }}"
+                                     alt=""
                                      class="w-full h-48 object-cover"
                                      onerror="this.src='https://img.youtube.com/vi/{{ $video['id'] }}/hqdefault.jpg'">
                                 <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                                     <a href="{{ $video['youtube'] }}" target="_blank" class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors">
-                                        <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M8 5v14l11-7z"/>
                                         </svg>
                                     </a>
@@ -702,21 +702,21 @@
                                 <div class="flex flex-wrap gap-2">
                                     <a href="{{ $video['youtube'] }}" target="_blank"
                                        class="inline-flex items-center px-3 py-2 bg-red-600 text-white text-xs font-medium rounded-lg hover:bg-red-700 transition-colors">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                                         </svg>
                                         Ver
                                     </a>
                                     <a href="{{ $video['descarga'] }}" target="_blank"
                                        class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-200 transition-colors">
-                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                         </svg>
                                         Descargar
                                     </a>
                                     <a href="{{ $video['pieza'] }}" target="_blank"
                                        class="inline-flex items-center px-3 py-2 bg-amber-100 text-amber-700 text-xs font-medium rounded-lg hover:bg-amber-200 transition-colors">
-                                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                         </svg>
                                         Pieza gráfica
@@ -772,7 +772,7 @@
                 <div class="flex items-start space-x-4">
                     <div class="flex-shrink-0">
                         <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                             </svg>
                         </div>
@@ -791,7 +791,7 @@
                             <div class="p-6">
                                 <div class="flex items-center mb-4">
                                     <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                                        <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                                         </svg>
                                     </div>
@@ -801,14 +801,14 @@
                                 <div class="flex flex-wrap gap-2">
                                     <a href="{{ $matriz['matriz'] }}" target="_blank"
                                        class="inline-flex items-center px-4 py-2 bg-orange-600 text-white text-sm font-medium rounded-lg hover:bg-orange-700 transition-colors">
-                                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                                         </svg>
                                         Ver Matriz (PDF)
                                     </a>
                                     <a href="{{ $matriz['descarga'] }}" target="_blank"
                                        class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
-                                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                         </svg>
                                         Pieza gráfica
@@ -823,7 +823,7 @@
             <!-- Botón de regreso -->
             <div class="text-center mt-12">
                 <a href="/" class="inline-flex items-center px-6 py-3 bg-gray-800 text-white font-medium rounded-lg hover:bg-gray-900 transition-colors">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
                     </svg>
                     Volver al Inicio

@@ -18,7 +18,7 @@
                         </p>
                     </div>
                     <div class="hidden md:flex items-center bg-white/10 rounded-lg p-3">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
                     </div>
@@ -36,7 +36,7 @@
                 <div class="p-6">
                     <div class="relative">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
                         </div>
@@ -46,7 +46,7 @@
                                class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#db0455] focus:border-transparent text-sm">
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
                             <div id="searchLoader" class="hidden">
-                                <svg class="animate-spin h-5 w-5 text-[#db0455]" fill="none" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="animate-spin h-5 w-5 text-[#db0455]" fill="none" viewBox="0 0 24 24">
                                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                 </svg>
@@ -89,7 +89,7 @@
                             <div class="flex items-center flex-1">
                                 <!-- Botón expandir/colapsar -->
                                 <div class="expand-btn w-6 h-6 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center mr-3 transition-colors">
-                                    <svg class="w-4 h-4 text-gray-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                                     </svg>
                                 </div>
@@ -97,6 +97,7 @@
                                 <!-- Icono de carpeta -->
                                 <div class="w-8 h-8 flex items-center justify-center mr-3" 
                                      style="color: {{ $carpeta->color }};">
+                                    <span aria-hidden="true">
                                     @if($carpeta->icono === 'folder') 📁
                                     @elseif($carpeta->icono === 'archive') 🗃️
                                     @elseif($carpeta->icono === 'briefcase') 💼
@@ -104,6 +105,7 @@
                                     @elseif($carpeta->icono === 'library') 🏛️
                                     @else 📁
                                     @endif
+                                    </span>
                                 </div>
 
                                 <!-- Información de la carpeta -->
@@ -124,7 +126,7 @@
                         <!-- Contenido expandible de la carpeta -->
                         <div class="folder-content hidden ml-12 border-l-2 border-gray-100">
                             <div class="loading-content p-4 text-center text-gray-500 text-sm">
-                                <svg class="animate-spin h-5 w-5 mx-auto mb-2" fill="none" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="animate-spin h-5 w-5 mx-auto mb-2" fill="none" viewBox="0 0 24 24">
                                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                 </svg>
@@ -141,7 +143,7 @@
                         
                         <!-- Icono del documento -->
                         <div class="w-8 h-8 rounded bg-gray-100 flex items-center justify-center mr-3 text-sm">
-                            {{ $documento->icono_completo }}
+                            <span aria-hidden="true">{{ $documento->icono_completo }}</span>
                         </div>
 
                         <!-- Información del documento -->
@@ -150,12 +152,12 @@
                                 <h3 class="text-sm font-medium text-gray-900 truncate">{{ $documento->titulo }}</h3>
                                 @if($documento->destacado)
                                     <span class="ml-2 inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                                        ⭐
+                                        <span aria-hidden="true">⭐</span><span class="sr-only">Documento destacado</span>
                                     </span>
                                 @endif
                                 @if($documento->esEnlaceExterno())
                                     <span class="ml-2 inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                                        🔗
+                                        <span aria-hidden="true">🔗</span><span class="sr-only">Enlace externo</span>
                                     </span>
                                 @endif
                             </div>
@@ -186,7 +188,7 @@
                     <!-- Estado vacío -->
                     @if($carpetas->count() === 0 && $documentos->count() === 0)
                     <div class="text-center py-12">
-                        <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-5l-2-2H5a2 2 0 00-2 2z"></path>
                         </svg>
                         <h3 class="mt-2 text-sm font-medium text-gray-900">No hay documentos disponibles</h3>
@@ -257,7 +259,7 @@ function displaySearchResults(results) {
         resultsContainer.innerHTML = results.map(doc => `
             <div class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                 <div class="w-8 h-8 rounded bg-white flex items-center justify-center mr-3 text-sm">
-                    ${doc.icono}
+                    <span aria-hidden="true">${doc.icono}</span>
                 </div>
                 <div class="flex-1 min-w-0">
                     <h4 class="text-sm font-medium text-gray-900 truncate">${doc.titulo}</h4>
@@ -340,12 +342,12 @@ function generateFolderContent(carpetas, documentos) {
                 <div class="flex items-center p-3 hover:bg-gray-50 cursor-pointer transition-colors" 
                      onclick="toggleFolder(${carpeta.id})">
                     <div class="expand-btn w-5 h-5 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center mr-2">
-                        <svg class="w-3 h-3 text-gray-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-gray-600 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                         </svg>
                     </div>
                     <div class="w-6 h-6 flex items-center justify-center mr-2 text-sm" style="color: ${carpeta.color};">
-                        ${getIcono(carpeta.icono)}
+                        <span aria-hidden="true">${getIcono(carpeta.icono)}</span>
                     </div>
                     <div class="flex-1">
                         <h4 class="text-sm font-medium text-gray-900">${carpeta.nombre}</h4>
@@ -354,7 +356,7 @@ function generateFolderContent(carpetas, documentos) {
                 </div>
                 <div class="folder-content hidden ml-8 border-l border-gray-100">
                     <div class="loading-content p-3 text-center text-gray-500 text-xs">
-                        <svg class="animate-spin h-4 w-4 mx-auto mb-1" fill="none" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="animate-spin h-4 w-4 mx-auto mb-1" fill="none" viewBox="0 0 24 24">
                             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
@@ -371,7 +373,7 @@ function generateFolderContent(carpetas, documentos) {
             <div class="flex items-center p-3 hover:bg-gray-50 transition-colors">
                 <div class="w-5 h-5 mr-2"></div>
                 <div class="w-6 h-6 rounded bg-gray-100 flex items-center justify-center mr-2 text-xs">
-                    ${documento.icono}
+                    <span aria-hidden="true">${documento.icono}</span>
                 </div>
                 <div class="flex-1 min-w-0">
                     <h4 class="text-sm font-medium text-gray-900 truncate">${documento.titulo}</h4>

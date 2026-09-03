@@ -28,7 +28,7 @@
                 @if($dataset->fuente_url)
                     <a href="{{ $dataset->fuente_url }}" target="_blank" rel="noopener noreferrer" class="text-[#db0455] hover:underline inline-flex items-center gap-1">
                         Fuente de datos
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
                     </a>
@@ -90,7 +90,12 @@
             </div>
             <p id="grafico-aviso" class="text-xs text-amber-600 mb-2 hidden"></p>
             <div class="relative" style="height: 460px;">
-                <canvas id="grafico-dataset"></canvas>
+                <canvas id="grafico-dataset" role="img" aria-label="Gráfico de datos del conjunto {{ $dataset->nombre }}"></canvas>
+            </div>
+            <div class="mt-3">
+                <button type="button" id="toggle-tabla-grafico" aria-expanded="false" aria-controls="grafico-tabla"
+                    class="text-sm text-[#db0455] font-medium hover:underline">Ver los datos del gráfico en una tabla</button>
+                <div id="grafico-tabla" class="sr-only"></div>
             </div>
         </div>
 
@@ -99,7 +104,7 @@
             <div class="bg-white rounded-xl shadow-sm overflow-hidden mt-8">
                 <button type="button" id="toggle-diccionario" class="w-full flex items-center justify-between px-6 py-4 text-left">
                     <span class="text-lg font-semibold text-gray-800">Diccionario de datos</span>
-                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
