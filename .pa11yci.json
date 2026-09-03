@@ -1,0 +1,45 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "runners": [
+      "axe",
+      "htmlcs"
+    ],
+    "timeout": 60000,
+    "wait": 1500,
+    "chromeLaunchConfig": {
+      "args": [
+        "--no-sandbox",
+        "--disable-dev-shm-usage"
+      ]
+    },
+    "viewport": {
+      "width": 1366,
+      "height": 768
+    },
+    "levelCapWhenNeedsReview": "warning",
+    "includeWarnings": true,
+    "ignore": [
+      "frame-tested"
+    ]
+  },
+  "urls": [
+    "http://localhost:8085/",
+    "http://localhost:8085/comunicados",
+    "http://localhost:8085/transparencia/documentos",
+    "http://localhost:8085/transparencia/indicador-55",
+    "http://localhost:8085/transparencia/articulo-11",
+    "http://localhost:8085/universidad/presentacion",
+    "http://localhost:8085/universidad/autoridades",
+    "http://localhost:8085/oficinas/admision",
+    "http://localhost:8085/oficinas/biblioteca",
+    "http://localhost:8085/oficinas/cooperacion/directorio",
+    "http://localhost:8085/facultades/sistemas",
+    "http://localhost:8085/facultades/medicina-humana",
+    "http://localhost:8085/facultades/biologia/perfil-profesional",
+    "http://localhost:8085/posgrado",
+    "http://localhost:8085/proyectos/jardin",
+    "http://localhost:8085/capacitaciones-servir",
+    "http://localhost:8085/login"
+  ]
+}
