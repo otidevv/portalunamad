@@ -102,7 +102,7 @@
                             </p>
                             <div class="bg-white rounded-lg p-4 border border-gray-200">
                                 <p class="text-sm text-gray-600">
-                                    Para conocer más sobre nuestra <strong>Misión, Visión y Objetivos</strong>, así como la base legal que nos rige, utiliza el menú de navegación de la izquierda.
+                                    Para conocer más, consulta la página de <a href="/oficinas/cooperacion/mision-vision" class="font-semibold text-[#db0455] underline hover:text-[#b8003f]">Misión, Visión y Objetivos de la OCRI</a>, así como la base legal que nos rige.
                                 </p>
                             </div>
                         </div>

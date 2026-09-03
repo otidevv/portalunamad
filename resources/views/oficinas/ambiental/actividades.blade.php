@@ -151,12 +151,12 @@
                                             
                                             <div class="flex flex-col sm:flex-row gap-4">
                                                 <a href="https://cepalorg.zoom.us/webinar/register/WN_BQa5a_SsRaKYL6JEkQJWoA" 
-                                                   target="_blank" 
+                                                   target="_blank" rel="noopener" 
                                                    class="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-500 to-green-500 text-white font-semibold rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200">
                                                     <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-2M7 7l10 10M17 7v4m0 0h-4"></path>
                                                     </svg>
-                                                    Link de Inscripción
+                                                    Enlace de inscripción a la videoconferencia
                                                 </a>
                                                 
                                                 <div class="flex items-center text-sm text-gray-600">

@@ -56,7 +56,7 @@
                 </svg>
                 <div>
                     <dt class="text-xs font-semibold text-gray-800">Teléfono</dt>
-                    <dd class="text-xs text-orange-700">+51 956344053</dd>
+                    <dd class="text-xs text-orange-700"><a href="tel:+51956344053" class="hover:underline">+51 956344053</a></dd>
                 </div>
             </div>
 
@@ -67,7 +67,7 @@
                 </svg>
                 <div>
                     <dt class="text-xs font-semibold text-gray-800">Correo</dt>
-                    <dd class="text-xs text-orange-700">bienestar@unamad.edu.pe</dd>
+                    <dd class="text-xs text-orange-700"><a href="mailto:bienestar@unamad.edu.pe" class="hover:underline">bienestar@unamad.edu.pe</a></dd>
                 </div>
             </div>
 

@@ -258,56 +258,57 @@
                                     <div class="bg-white rounded-lg p-4 border border-gray-200">
                                         <h4 class="font-semibold text-gray-800 mb-2">Convenio Marco</h4>
                                         <div class="space-y-2">
-                                            <a href="#"
-                                                class="inline-flex items-center text-sm text-[#db0455] hover:text-[#ed145b] transition-colors">
+                                            <button type="button" disabled aria-describedby="modelos-convenio-nota"
+                                                class="inline-flex items-center text-sm text-gray-600 cursor-not-allowed">
                                                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
                                                     </path>
                                                 </svg>
-                                                Español
-                                            </a>
+                                                Español <span class="sr-only">(modelo de Convenio Marco, archivo pendiente de publicación)</span>
+                                            </button>
                                             <br>
-                                            <a href="#"
-                                                class="inline-flex items-center text-sm text-[#db0455] hover:text-[#ed145b] transition-colors">
+                                            <button type="button" disabled aria-describedby="modelos-convenio-nota"
+                                                class="inline-flex items-center text-sm text-gray-600 cursor-not-allowed">
                                                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
                                                     </path>
                                                 </svg>
-                                                Inglés
-                                            </a>
+                                                Inglés <span class="sr-only">(modelo de Convenio Marco, archivo pendiente de publicación)</span>
+                                            </button>
                                         </div>
                                     </div>
                                     <div class="bg-white rounded-lg p-4 border border-gray-200">
                                         <h4 class="font-semibold text-gray-800 mb-2">Convenio Específico</h4>
                                         <div class="space-y-2">
-                                            <a href="#"
-                                                class="inline-flex items-center text-sm text-[#db0455] hover:text-[#ed145b] transition-colors">
+                                            <button type="button" disabled aria-describedby="modelos-convenio-nota"
+                                                class="inline-flex items-center text-sm text-gray-600 cursor-not-allowed">
                                                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
                                                     </path>
                                                 </svg>
-                                                Español
-                                            </a>
+                                                Español <span class="sr-only">(modelo de Convenio Específico, archivo pendiente de publicación)</span>
+                                            </button>
                                             <br>
-                                            <a href="#"
-                                                class="inline-flex items-center text-sm text-[#db0455] hover:text-[#ed145b] transition-colors">
+                                            <button type="button" disabled aria-describedby="modelos-convenio-nota"
+                                                class="inline-flex items-center text-sm text-gray-600 cursor-not-allowed">
                                                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
                                                     </path>
                                                 </svg>
-                                                Inglés
-                                            </a>
+                                                Inglés <span class="sr-only">(modelo de Convenio Específico, archivo pendiente de publicación)</span>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
+                                <p id="modelos-convenio-nota" class="text-sm text-gray-600 mt-4">Los archivos de los modelos de convenio estarán disponibles próximamente; mientras tanto puede solicitarlos a <a href="mailto:ocri@unamad.edu.pe" class="underline text-[#db0455] hover:text-[#b8003f]">ocri@unamad.edu.pe</a>.</p>
                             </div>
 
                             <!-- Procedimiento de Suscripción -->
@@ -404,7 +405,7 @@
                                     Nacional Amazónica de Madre de Dios.
                                 </p>
                                 <a href="https://www.gob.pe/institucion/unamad/colecciones/16884-convenios-institucionales"
-                                    target="_blank"
+                                    target="_blank" rel="noopener"
                                     class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white font-semibold rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200">
                                     <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

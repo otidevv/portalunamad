@@ -156,7 +156,7 @@
                         <!-- Call to Action -->
                         <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 border-l-4 border-blue-500">
                             <p class="text-gray-700">
-                                Para conocer más sobre nuestras <strong>actividades</strong> y programas ambientales, utiliza el menú de navegación de la izquierda.
+                                Para conocer más sobre nuestras actividades y programas ambientales, consulta la página de <a href="/oficinas/ambiental/actividades" class="font-semibold text-[#db0455] underline hover:text-[#b8003f]">Actividades del Comité Ambiental Universitario</a>.
                             </p>
                         </div>
                     </div>

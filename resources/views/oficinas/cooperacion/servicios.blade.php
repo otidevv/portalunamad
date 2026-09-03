@@ -199,7 +199,7 @@
                                         </svg>
                                         Contacto
                                     </h4>
-                                    <p class="text-sm text-gray-600">ocri@unamad.edu.pe<br>+51 994 949 243</p>
+                                    <p class="text-sm text-gray-600"><a href="mailto:ocri@unamad.edu.pe" class="hover:text-[#db0455] underline">ocri@unamad.edu.pe</a><br><a href="tel:+51994949243" class="hover:text-[#db0455] underline">+51 994 949 243</a></p>
                                 </div>
                             </div>
                             <div class="mt-4 pt-4 border-t border-gray-200">

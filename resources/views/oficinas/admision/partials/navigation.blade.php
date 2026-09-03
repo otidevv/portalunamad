@@ -72,7 +72,7 @@
                 </svg>
                 <div>
                     <dt class="text-xs font-semibold text-gray-800">Portal de Admisión</dt>
-                    <dd><a href="https://admision.unamad.edu.pe/" target="_blank" class="text-xs text-blue-600 hover:text-blue-700 transition-colors">admision.unamad.edu.pe</a></dd>
+                    <dd><a href="https://admision.unamad.edu.pe/" target="_blank" rel="noopener" class="text-xs text-blue-600 hover:text-blue-700 transition-colors">admision.unamad.edu.pe</a></dd>
                 </div>
             </div>
         </dl>

@@ -19,7 +19,7 @@
     <div class="container mx-auto px-4">
         <nav aria-label="Miga de pan" class="text-sm">
             <ol class="flex items-center space-x-2">
-                <li><a href="/" class="text-gray-500 hover:text-[#db0455] transition-colors">
+                <li><a href="/" aria-label="Inicio" class="text-gray-500 hover:text-[#db0455] transition-colors">
                     <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
                     </svg>
@@ -64,7 +64,7 @@
                                     </svg>
                                 </div>
                                 <h3 class="text-sm font-semibold text-gray-800 mb-2">Información Temporal</h3>
-                                <p class="text-xs text-gray-600">Para consultas sobre admisión, visite el portal principal de admisiones</p>
+                                <p class="text-xs text-gray-600">Para consultas sobre admisión, visite el <a href="https://admision.unamad.edu.pe/" rel="noopener" class="text-blue-700 underline hover:text-blue-800">portal de admisión de la UNAMAD</a></p>
                             </div>
                             <div class="text-center">
                                 <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
