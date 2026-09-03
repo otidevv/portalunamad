@@ -7,12 +7,12 @@
     <div class="relative h-64 sm:h-80 lg:h-96 overflow-hidden bg-gradient-to-r from-gray-700 via-slate-600 to-gray-800">
         <div class="absolute inset-0 bg-black/20"></div>
         <img src="{{ asset('img/presentacion/presentacionbackground.jpg') }}" 
-             alt="Indicador 55 Transparencia" 
+             alt="" 
              class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30">
         <div class="relative h-full flex items-center justify-center px-6">
             <div class="text-center text-white max-w-4xl mx-auto">
                 <div class="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 border border-white/20">
-                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                     </svg>
                 </div>
@@ -31,11 +31,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <nav class="flex items-center space-x-2 text-sm">
                 <a href="/" class="text-gray-600 hover:text-gray-800 transition-colors font-medium">Inicio</a>
-                <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
                 </svg>
                 <a href="/transparencia" class="text-gray-600 hover:text-gray-800 transition-colors font-medium">Transparencia</a>
-                <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
                 </svg>
                 <span class="text-gray-800 font-semibold">Indicador 55</span>
@@ -53,7 +53,7 @@
                     <div class="p-8">
                         <div class="flex items-center mb-6">
                             <div class="w-12 h-12 bg-gradient-to-r from-gray-700 to-slate-600 rounded-lg flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                                 </svg>
                             </div>
@@ -81,7 +81,7 @@
                     <div class="p-8">
                         <div class="flex items-center mb-6">
                             <div class="w-12 h-12 bg-gradient-to-r from-slate-600 to-gray-600 rounded-lg flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                                 </svg>
@@ -92,7 +92,7 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
                                 <div class="flex items-center mb-2">
-                                    <svg class="w-5 h-5 text-gray-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-gray-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
                                     <h3 class="text-lg font-semibold text-gray-800">Acceso a la Información</h3>
@@ -102,7 +102,7 @@
 
                             <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
                                 <div class="flex items-center mb-2">
-                                    <svg class="w-5 h-5 text-slate-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-slate-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                                     </svg>
                                     <h3 class="text-lg font-semibold text-slate-800">Cumplimiento Normativo</h3>
@@ -112,7 +112,7 @@
 
                             <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
                                 <div class="flex items-center mb-2">
-                                    <svg class="w-5 h-5 text-gray-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-gray-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
                                     </svg>
                                     <h3 class="text-lg font-semibold text-gray-800">Rendición de Cuentas</h3>
@@ -122,7 +122,7 @@
 
                             <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
                                 <div class="flex items-center mb-2">
-                                    <svg class="w-5 h-5 text-slate-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-slate-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                     </svg>
                                     <h3 class="text-lg font-semibold text-slate-800">Actualización Continua</h3>

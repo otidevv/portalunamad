@@ -5,7 +5,7 @@
     <div class="bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-16">
         <div class="container mx-auto px-4">
             <div class="flex items-center mb-4">
-                <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M16,8C16,10.21 14.21,12 12,12C9.79,12 8,10.21 8,8L8.11,7.06L5.5,5.5L3.77,8.71C2.73,8.3 2,7.25 2,6A2,2 0 0,1 4,4H6L7.5,2L8.5,3L9.44,2.06C9.92,2.03 10.42,2 10.92,2C12.11,2 13.27,2.16 14.37,2.44L18.5,3.5L21,5V7L19.04,6.24L18.5,7.5L17.5,6.5L16.5,7.5L15.41,6.41C15.78,7.03 16,7.76 16,8M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
                 </svg>
                 <h1 class="text-4xl font-bold">MV11: Plana Docente</h1>
@@ -30,7 +30,7 @@
                 <div class="bg-white rounded-lg shadow-md p-8">
                     <div class="mb-8">
                         <h2 class="text-2xl font-bold text-indigo-800 mb-4 flex items-center">
-                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M16,8C16,10.21 14.21,12 12,12C9.79,12 8,10.21 8,8L8.11,7.06L5.5,5.5L3.77,8.71C2.73,8.3 2,7.25 2,6A2,2 0 0,1 4,4H6L7.5,2L8.5,3L9.44,2.06C9.92,2.03 10.42,2 10.92,2C12.11,2 13.27,2.16 14.37,2.44L18.5,3.5L21,5V7L19.04,6.24L18.5,7.5L17.5,6.5L16.5,7.5L15.41,6.41C15.78,7.03 16,7.76 16,8M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
                             </svg>
                             Plana Docente y Docentes Investigadores
@@ -74,7 +74,7 @@
                                                         <a href="{{ $item['url'] ?? '#' }}"
                                                            target="_blank" rel="noopener noreferrer"
                                                            class="inline-flex items-center px-3 py-1 {{ ($item['tipo'] ?? 'pdf') === 'excel' ? 'bg-green-50 text-green-700 hover:bg-green-100' : 'bg-red-50 text-red-700 hover:bg-red-100' }} rounded-md text-sm">
-                                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                                             </svg>
                                                             {{ $item['titulo'] ?? 'Documento' }}
@@ -86,7 +86,7 @@
                                             {{-- Documento simple --}}
                                             <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-indigo-200 hover:bg-indigo-50 transition-colors">
                                                 <div class="flex items-center">
-                                                    <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                                    <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                                         <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                                     </svg>
                                                     <div>
@@ -119,7 +119,7 @@
                             <div class="mb-6">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-indigo-200 hover:bg-indigo-50 transition-colors mb-4">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
                                         </svg>
                                         <div>
@@ -146,7 +146,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_NOMBRADOS_Y_CONTRATADOS_2024.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             PDF
@@ -154,7 +154,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DOCENTES_NOMBRADOS_Y_CONTRATADOS_2024.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Excel
@@ -169,7 +169,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_ORDINARIOS_2024.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ordinarios
@@ -177,7 +177,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACIÓN_DE_DOCENTES_CONTRATADOS_2024.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-orange-50 text-orange-700 rounded-md hover:bg-orange-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Contratados
@@ -192,7 +192,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_2024.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             PDF
@@ -200,7 +200,7 @@
                                         <a href="https://www.gob.pe/institucion/unamad/normas-legales/5628265-282-2024-unamad-cu" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-md hover:bg-blue-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M9,12L11,14L15,10M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/>
                                             </svg>
                                             Resolución
@@ -236,7 +236,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_DEL_DPTO_DE_EDUCACION_Y_HUMANIDADES_2024.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -263,7 +263,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DOCENTE_2024.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -288,7 +288,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_DEL_DEPARTAMENTO_ACADEMICO_DE__INGENIERIA__AGROINDUSTRIAL_2024.docx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-md hover:bg-blue-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Descargar
@@ -303,7 +303,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/INDICADOR_55_AÑO_2024.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar
@@ -318,7 +318,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DOCENTE_2024_FS5Jd12.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -326,7 +326,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/2024_DOCENTES_NOMBRADOS_Y_CONTRATADOS.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar
@@ -349,7 +349,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/Relación_de_docentes_2024.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -375,7 +375,7 @@
                             <div class="mb-6">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-indigo-200 hover:bg-indigo-50 transition-colors mb-4">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
                                         </svg>
                                         <div>
@@ -402,7 +402,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_NOMBRADOS_Y_CONTRATADOS_2023.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -410,7 +410,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DOCENTES_NOMBRADOS_Y_CONTRATADOS_2023.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar
@@ -425,7 +425,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_ORDINARIOS_2023.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ordinarios
@@ -433,7 +433,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACIÓN_DE_DOCENTES_CONTRATADOS_2023.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-orange-50 text-orange-700 rounded-md hover:bg-orange-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Contratados
@@ -448,7 +448,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_2023.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -463,7 +463,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DE_DOCENTES_2023_DDA_ECOT.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -471,7 +471,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DE_DOCENTES_2023_DDA_ECOT.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar
@@ -490,7 +490,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_DEL_DPTO_DE_EDUCACION_Y_HUMANIDADES_2023.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -520,7 +520,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DOCENTE_2023.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -545,7 +545,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_DEL_DEPARTAMENTO_ACADEMICO_DE__INGENIERIA__AGROINDUSTRIAL__2023.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar Excel
@@ -560,7 +560,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/INDICADOR_55_AÑO_2023.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar Excel
@@ -575,7 +575,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DOCENTE_2023_MbNQxBG.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -583,7 +583,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/2023_DOCENTES_NOMBRADOS_Y_CONTRATADOS.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar
@@ -607,7 +607,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/Relación_de_docentes_2023.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -636,7 +636,7 @@
                             <div class="mb-6">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-indigo-200 hover:bg-indigo-50 transition-colors mb-4">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
                                         </svg>
                                         <div>
@@ -663,7 +663,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_NOMBRADOS_Y_CONTRATADOS_2022.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -671,7 +671,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DOCENTES_NOMBRADOS_Y_CONTRATADOS_2022.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar
@@ -686,7 +686,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_ORDINARIOS_2022.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ordinarios
@@ -694,7 +694,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACIÓN_DE_DOCENTES_CONTRATADOS_2022.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-orange-50 text-orange-700 rounded-md hover:bg-orange-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Contratados
@@ -709,7 +709,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_2022.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -724,7 +724,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DE_DOCENTES_2022_DDA_ECOT.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -732,7 +732,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DE_DOCENTES_2022_DDA_ECOT.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar
@@ -751,7 +751,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_DEL_DPTO_DE_EDUCACION_Y_HUMANIDADES_2022.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -782,7 +782,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DOCENTE_2022.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -807,7 +807,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_DEL_DEPARTAMENTO_ACADEMICO_DE__INGENIERIA__AGROINDUSTRIAL_2022.docx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-md hover:bg-blue-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Descargar DOCX
@@ -822,7 +822,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/INDICADOR_55_AÑO_2022.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar Excel
@@ -837,7 +837,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DOCENTE_2022_LLo5UQ1.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -845,7 +845,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/2022_DOCENTES_NOMBRADOS_Y_CONTRATADOS.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar
@@ -869,7 +869,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/Relación_de_docentes_2022.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -900,7 +900,7 @@
                             <div class="mb-6">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-indigo-200 hover:bg-indigo-50 transition-colors mb-4">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
                                         </svg>
                                         <div>
@@ -927,7 +927,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DOCENTES_NOMBRADOS_Y_CONTRATADOS_2021.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -935,7 +935,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTE_NOMBRADOS_Y_CONTRATADOS_2021.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar
@@ -950,7 +950,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_ORDINARIOS_2021.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ordinarios
@@ -958,7 +958,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACIÓN_DE_DOCENTES_CONTRATADOS_2021.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-orange-50 text-orange-700 rounded-md hover:bg-orange-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Contratados
@@ -973,7 +973,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_2021.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -992,7 +992,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DE_DOCENTES_2021_DDA_ECOT.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1000,7 +1000,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DE_DOCENTES_2021_DDA_ECOT.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar
@@ -1015,7 +1015,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_DEL_DPTO_DE_EDUCACION_Y_HUMANIDADES_2021.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1041,7 +1041,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DOCENTE_2021.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1060,7 +1060,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_DEL_DEPARTAMENTO_ACADEMICO_DE__INGENIERIA__AGROINDUSTRIAL_2021.docx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-md hover:bg-blue-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Descargar DOCX
@@ -1075,7 +1075,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/INDICADOR_55_AÑO_2021.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar Excel
@@ -1090,7 +1090,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DOCENTE_2021_UrGGyOm.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1098,7 +1098,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/2021_DOCENTES_NOMBRADOS_Y_CONTRATADOS_-_copia_-_copia.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar
@@ -1117,7 +1117,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/Relación_de_docentes_2021.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1143,7 +1143,7 @@
                             <div class="mb-6">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-indigo-200 hover:bg-indigo-50 transition-colors mb-4">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
                                         </svg>
                                         <div>
@@ -1170,7 +1170,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DOCENTE_NOMBRADOS_Y_CONTRATADOS_2020.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1178,7 +1178,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_NOMBRADOS_Y_CONTRATADOS_2020.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar
@@ -1193,7 +1193,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_ORDINARIOS_2020.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ordinarios
@@ -1201,7 +1201,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACI%C3%93N_DE_DOCENTES_CONTRATADOS_2020.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-orange-50 text-orange-700 rounded-md hover:bg-orange-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Contratados
@@ -1216,7 +1216,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_2020.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1231,7 +1231,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DE_DOCENTES_2020_-_DDA_ECOT.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1239,7 +1239,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DE_DOCENTES_2020_-_DDA_ECOT.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar
@@ -1254,7 +1254,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_DEL_DPTO_DE_EDUCACION_Y_HUMANIDADES_2020.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1280,7 +1280,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DOCENTE_2020.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1302,7 +1302,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_DEL_DEPARTAMENTO_ACADEMICO_DE__INGENIERIA__AGROINDUSTRIAL_2020.docx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-md hover:bg-blue-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Descargar DOCX
@@ -1317,7 +1317,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/INDICADOR_55_AÑO_2020.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar Excel
@@ -1332,7 +1332,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DOCENTE_2020_TMsdGDD.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1340,7 +1340,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/2020_DOCENTES_NOMBRADOS_Y_CONTRATADOS_-_copia.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar
@@ -1355,7 +1355,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/Relaci%C3%B3n_de_docentes_2020.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1381,7 +1381,7 @@
                             <div class="mb-6">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-indigo-200 hover:bg-indigo-50 transition-colors mb-4">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
                                         </svg>
                                         <div>
@@ -1408,7 +1408,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_NOMBRADOS_Y_CONTRATADOS_2019.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1416,7 +1416,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_NOMBRADOS_Y_CONTRATADOS_2019.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar
@@ -1437,7 +1437,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_2019.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1445,7 +1445,7 @@
                                         <a href="https://www.gob.pe/institucion/unamad/normas-legales/3604780-133-2013-unamad-r" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-md hover:bg-blue-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M9,12L11,14L15,10M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/>
                                             </svg>
                                             Resolución N.° 133-2019
@@ -1460,7 +1460,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DE_DOCENTES_2019_-_DDA_-_ECOTURISMO.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1468,7 +1468,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DE_DOCENTES_2019_-_DDA_-_ECOTURISMO.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar
@@ -1483,7 +1483,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_DEL_DPTO_DE_EDUCACION_Y_HUMANIDADES_2019.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1512,7 +1512,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DOCENTE_2019.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1534,7 +1534,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/RELACION_DE_DOCENTES_DEL_DEPARTAMENTO_ACADEMICO_DE__INGENIERIA__AGROINDUSTRIAL_2019.docx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-md hover:bg-blue-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Descargar DOCX
@@ -1553,7 +1553,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/INDICADOR_55_AÑO_2019.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar Excel
@@ -1572,7 +1572,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/PLANA_DOCENTE_2019_mfOb0hW.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1580,7 +1580,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/2019_DOCENTES_NOMBRADOS_Y_CONTRATADOS.xlsx" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-md hover:bg-green-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,12H15V16H12V12M8,12H11V18H8V12Z"/>
                                             </svg>
                                             Descargar
@@ -1599,7 +1599,7 @@
                                         <a href="https://sinc.unamad.edu.pe:8000/media/pdf/Relacion_de_docentes_2019.pdf" 
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Relación
@@ -1620,7 +1620,7 @@
 
                     <div class="mt-8 p-6 bg-indigo-50 rounded-lg border border-indigo-200">
                         <h3 class="text-lg font-semibold text-indigo-800 mb-3 flex items-center">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
                             </svg>
                             Información Importante
@@ -1651,7 +1651,7 @@
 
                     <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
                         <div class="flex items-start">
-                            <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12,2L13.09,8.26L22,9L17,14L18.18,22L12,19L5.82,22L7,14L2,9L10.91,8.26L12,2Z"/>
                             </svg>
                             <div>

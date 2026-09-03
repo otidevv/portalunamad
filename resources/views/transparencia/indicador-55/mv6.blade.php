@@ -5,7 +5,7 @@
     <div class="bg-gradient-to-r from-green-600 to-teal-600 text-white py-16">
         <div class="container mx-auto px-4">
             <div class="flex items-center mb-4">
-                <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 14l9-5-9-5-9 5 9 5z"/>
                     <path d="m12 14 6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
                 </svg>
@@ -31,7 +31,7 @@
                 <div class="bg-white rounded-lg shadow-md p-8">
                     <div class="mb-8">
                         <h2 class="text-2xl font-bold text-green-800 mb-4 flex items-center">
-                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 14l9-5-9-5-9 5 9 5z"/>
                                 <path d="m12 14 6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
                             </svg>
@@ -75,7 +75,7 @@
                     @if(count($docsPorAnio) > 0)
                     <div class="space-y-6 mb-8">
                         <h3 class="text-lg font-semibold text-green-800 flex items-center">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>
                             </svg>
                             Documentos Actualizados
@@ -90,7 +90,7 @@
                                     @foreach($docsAnio as $doc)
                                     <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-{{ $color }}-200 hover:bg-{{ $color }}-50 transition-colors">
                                         <div class="flex items-center">
-                                            <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             <div>
@@ -120,7 +120,7 @@
                             <div class="space-y-2">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-green-200 hover:bg-green-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         <div>
@@ -143,7 +143,7 @@
                             <div class="space-y-2">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-green-200 hover:bg-green-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         <div>
@@ -166,7 +166,7 @@
                             <div class="space-y-2">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-green-200 hover:bg-green-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         <div>
@@ -189,7 +189,7 @@
                             <div class="space-y-2">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-green-200 hover:bg-green-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         <div>
@@ -212,7 +212,7 @@
                             <div class="space-y-2">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-green-200 hover:bg-green-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         <div>
@@ -235,7 +235,7 @@
                             <div class="space-y-2">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-green-200 hover:bg-green-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         <div>
@@ -257,7 +257,7 @@
 
                     <div class="mt-8 p-6 bg-green-50 rounded-lg border border-green-200">
                         <h3 class="text-lg font-semibold text-green-800 mb-3 flex items-center">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
                             </svg>
                             Información Importante

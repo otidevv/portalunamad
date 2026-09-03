@@ -5,7 +5,7 @@
     <div class="bg-gradient-to-r from-orange-600 to-amber-600 text-white py-16">
         <div class="container mx-auto px-4">
             <div class="flex items-center mb-4">
-                <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z"/>
                 </svg>
                 <h1 class="text-4xl font-bold">MV10: Tarifas de Servicios</h1>
@@ -30,7 +30,7 @@
                 <div class="bg-white rounded-lg shadow-md p-8">
                     <div class="mb-8">
                         <h2 class="text-2xl font-bold text-orange-800 mb-4 flex items-center">
-                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z"/>
                             </svg>
                             Tarifas de los Servicios Prestados por Toda Índole
@@ -61,11 +61,11 @@
                             <div class="border-l-4 border-orange-500 pl-6 py-4 bg-orange-50">
                                 <h3 class="text-xl font-semibold text-orange-800 mb-4 flex items-center">
                                     @if($vigente)
-                                        <svg class="w-5 h-5 mr-2 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-green-600" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M12,2L13.09,8.26L22,9L17,14L18.18,22L12,19L5.82,22L7,14L2,9L10.91,8.26L12,2Z"/>
                                         </svg>
                                     @else
-                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z"/>
                                         </svg>
                                     @endif
@@ -78,7 +78,7 @@
                                     @foreach($items as $item)
                                     <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-orange-200 hover:bg-orange-50 transition-colors">
                                         <div class="flex items-center">
-                                            <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             <div>
@@ -105,7 +105,7 @@
                     <div class="space-y-8">
                         <div class="border-l-4 border-orange-500 pl-6 py-4 bg-orange-50">
                             <h3 class="text-xl font-semibold text-orange-800 mb-4 flex items-center">
-                                <svg class="w-5 h-5 mr-2 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-green-600" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M12,2L13.09,8.26L22,9L17,14L18.18,22L12,19L5.82,22L7,14L2,9L10.91,8.26L12,2Z"/>
                                 </svg>
                                 TUPA 2022 (Modificado - 2024) - VIGENTE
@@ -117,7 +117,7 @@
                             <div class="space-y-3">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-orange-200 hover:bg-orange-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         <div>
@@ -134,7 +134,7 @@
                                 </div>
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-orange-200 hover:bg-orange-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M9,12L11,14L15,10M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/>
                                         </svg>
                                         <div>
@@ -160,7 +160,7 @@
                             <div class="space-y-3">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-amber-200 hover:bg-amber-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         <div>
@@ -177,7 +177,7 @@
                                 </div>
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-amber-200 hover:bg-amber-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M9,12L11,14L15,10M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/>
                                         </svg>
                                         <div>
@@ -203,7 +203,7 @@
                             <div class="space-y-3">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-yellow-200 hover:bg-yellow-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         <div>
@@ -220,7 +220,7 @@
                                 </div>
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-yellow-200 hover:bg-yellow-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M9,12L11,14L15,10M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/>
                                         </svg>
                                         <div>
@@ -246,7 +246,7 @@
                             <div class="space-y-3">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-orange-200 hover:bg-orange-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         <div>
@@ -263,7 +263,7 @@
                                 </div>
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-orange-200 hover:bg-orange-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M9,12L11,14L15,10M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/>
                                         </svg>
                                         <div>
@@ -289,7 +289,7 @@
                             <div class="space-y-3">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-amber-200 hover:bg-amber-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         <div>
@@ -306,7 +306,7 @@
                                 </div>
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-amber-200 hover:bg-amber-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M9,12L11,14L15,10M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/>
                                         </svg>
                                         <div>
@@ -328,7 +328,7 @@
 
                     <div class="mt-8 p-6 bg-orange-50 rounded-lg border border-orange-200">
                         <h3 class="text-lg font-semibold text-orange-800 mb-3 flex items-center">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
                             </svg>
                             Información Importante
@@ -359,7 +359,7 @@
 
                     <div class="mt-6 p-4 bg-green-50 rounded-lg border border-green-200">
                         <div class="flex items-start">
-                            <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12,2L13.09,8.26L22,9L17,14L18.18,22L12,19L5.82,22L7,14L2,9L10.91,8.26L12,2Z"/>
                             </svg>
                             <div>

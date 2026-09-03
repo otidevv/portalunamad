@@ -6,7 +6,7 @@
     <div class="bg-gradient-to-r from-{{ $variable->gradiente_from }} to-{{ $variable->gradiente_to }} text-white py-16">
         <div class="container mx-auto px-4">
             <div class="flex items-center mb-4">
-                <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
                     <path d="{{ $variable->icono }}"/>
                 </svg>
                 <h1 class="text-4xl font-bold">{{ $variable->titulo_completo }}</h1>
@@ -90,7 +90,7 @@
                                                                           @else bg-gray-50 text-gray-700 hover:bg-gray-100
                                                                           @endif
                                                                           rounded-md text-sm">
-                                                                    <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                                         <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                                                     </svg>
                                                                     {{ $item['titulo'] }}
@@ -108,7 +108,7 @@
                                                             <a href="{{ $item['url'] }}"
                                                                target="_blank" rel="noopener noreferrer"
                                                                class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                                                <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                                     <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                                                 </svg>
                                                                 Ver documento
@@ -120,7 +120,7 @@
                                                 {{-- Documento simple con año --}}
                                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-{{ explode('-', $variable->gradiente_from)[0] }}-200 hover:bg-{{ $variable->bg_light }} transition-colors">
                                                     <div class="flex items-center">
-                                                        <svg class="w-5 h-5 text-{{ explode('-', $variable->gradiente_from)[0] }}-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-{{ explode('-', $variable->gradiente_from)[0] }}-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                                         </svg>
                                                         <div>
@@ -161,7 +161,7 @@
                                             @foreach($seccion['items'] as $item)
                                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-{{ explode('-', $variable->gradiente_from)[0] }}-200 hover:bg-{{ $variable->bg_light }} transition-colors">
                                                     <div class="flex items-center">
-                                                        <svg class="w-5 h-5 text-{{ explode('-', $variable->gradiente_from)[0] }}-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-{{ explode('-', $variable->gradiente_from)[0] }}-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                                         </svg>
                                                         <div>
@@ -179,7 +179,7 @@
                                                               @else bg-red-50 text-red-700 hover:bg-red-100
                                                               @endif
                                                               rounded-md text-sm">
-                                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                                         </svg>
                                                         {{ ($item['tipo'] ?? 'pdf') == 'resolucion' ? 'Ver Resolución' : 'Ver PDF' }}
@@ -197,7 +197,7 @@
                                     @foreach($documentosSimples as $doc)
                                         <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-{{ explode('-', $variable->gradiente_from)[0] }}-200 hover:bg-{{ $variable->bg_light }} transition-colors">
                                             <div class="flex items-center">
-                                                <svg class="w-5 h-5 text-{{ explode('-', $variable->gradiente_from)[0] }}-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                                <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-{{ explode('-', $variable->gradiente_from)[0] }}-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                                     <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                                 </svg>
                                                 <div>
@@ -223,7 +223,7 @@
                     <!-- Información adicional -->
                     <div class="mt-8 p-6 bg-{{ $variable->bg_light }} rounded-lg border border-{{ explode('-', $variable->gradiente_from)[0] }}-200">
                         <h3 class="text-lg font-semibold text-{{ explode('-', $variable->gradiente_from)[0] }}-800 mb-3 flex items-center">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
                             </svg>
                             Transparencia Universitaria

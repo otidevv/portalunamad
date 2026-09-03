@@ -2,7 +2,7 @@
 <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-gray-700">
     <div class="text-center mb-6">
         <div class="w-16 h-16 bg-gradient-to-r from-gray-700 to-slate-600 rounded-full flex items-center justify-center mx-auto mb-3">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
             </svg>
         </div>
@@ -13,7 +13,7 @@
     <nav class="space-y-1">
         <a href="/transparencia/indicador-55"
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('transparencia/indicador-55') && !isset($currentCodigo) ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
-            <svg class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
             </svg>
             Inicio
@@ -44,7 +44,7 @@
             @endphp
             <a href="/transparencia/indicador-55/{{ $var->codigo }}"
                class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ $isActive ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
-                <svg class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {!! $icono !!}
                 </svg>
                 <span class="truncate">{{ $var->titulo_completo }}</span>
@@ -54,7 +54,7 @@
 
     <div class="mt-8 p-4 bg-gray-50 rounded-lg border border-gray-200">
         <div class="flex items-center mb-2">
-            <svg class="w-5 h-5 text-gray-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-gray-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
             </svg>
             <h4 class="text-sm font-semibold text-gray-800">Transparencia</h4>

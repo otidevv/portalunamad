@@ -5,7 +5,7 @@
     <div class="bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-16">
         <div class="container mx-auto px-4">
             <div class="flex items-center mb-4">
-                <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M19,3H5C3.89,3 3,3.89 3,5V19A3,3 0 0,0 6,22H18A3,3 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,5V19A1,1 0 0,1 18,20H6A1,1 0 0,1 5,19V5H19M7,7V9H17V7H7M7,11V13H17V11H7M7,15V17H17V15H7Z"/>
                 </svg>
                 <h1 class="text-4xl font-bold">MV12: Malla Curricular</h1>
@@ -30,7 +30,7 @@
                 <div class="bg-white rounded-lg shadow-md p-8">
                     <div class="mb-8">
                         <h2 class="text-2xl font-bold text-teal-800 mb-4 flex items-center">
-                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M19,3H5C3.89,3 3,3.89 3,5V19A3,3 0 0,0 6,22H18A3,3 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,5V19A1,1 0 0,1 18,20H6A1,1 0 0,1 5,19V5H19M7,7V9H17V7H7M7,11V13H17V11H7M7,15V17H17V15H7Z"/>
                             </svg>
                             Mallas Curriculares de Programas de Estudios
@@ -85,7 +85,7 @@
                                         <a href="{{ $item['url'] ?? '#' }}"
                                            target="_blank" rel="noopener noreferrer"
                                            class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             Ver Documento
@@ -110,7 +110,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_ADMINISTRACION_Y_NEGOCIOS_INTERNACIONALES.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Diseño Curricular
@@ -123,7 +123,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_CONTABILIDAD_Y_FINANZAS__UNAMAD_...pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Diseño Curricular
@@ -136,7 +136,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_ECOTURISMO.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Diseño Curricular
@@ -149,7 +149,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_DERECHO_Y_CIENCIAS_POLITICAS.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Diseño Curricular
@@ -162,7 +162,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_ENFERMERIA.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Diseño Curricular
@@ -175,7 +175,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_EDUCACION_ESPECIALIDAD_INICIAL_Y_ESPECIAL_baXj1V7.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Diseño Curricular
@@ -188,7 +188,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_EDUCACION_ESPECIALIDAD_MATEMATICA_Y_COMPUTACION.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Diseño Curricular
@@ -201,7 +201,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_CARRERA_PROFESIONAL_DE_EDUCACIÓN_ESPECIALIDAD_PRIMARIA_E_INFORMÁTICA.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Diseño Curricular
@@ -214,7 +214,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_INGENIERIA_AGROINDUSTRIAL.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Diseño Curricular
@@ -227,7 +227,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_INGENIERIA_FORESTAL_Y_MEDIO_AMBIENTE.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Diseño Curricular
@@ -240,7 +240,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_INGENIERIA_DE_SISTEMAS_E_INFORMATICA_L9cRoLi.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Diseño Curricular
@@ -253,7 +253,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_MEDICINA_VETERINARIA-ZOOTECNIA.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Diseño Curricular
@@ -273,7 +273,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_ADMINISTRACION_Y_NEGOCIOS_INTERNACIONALES.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Malla Curricular
@@ -286,7 +286,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_CONTABILIDAD_Y_FINANZAS__UNAMAD_...pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Malla Curricular
@@ -299,7 +299,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_ECOTURISMO.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Malla Curricular
@@ -312,7 +312,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_DERECHO_Y_CIENCIAS_POLITICAS.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Malla Curricular
@@ -325,7 +325,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_ENFERMERIA.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Malla Curricular
@@ -338,7 +338,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_EDUCACION_ESPECIALIDAD_INICIAL_Y_ESPECIAL_baXj1V7.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Malla Curricular
@@ -351,7 +351,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_EDUCACION_ESPECIALIDAD_MATEMATICA_Y_COMPUTACION.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Malla Curricular
@@ -364,7 +364,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_CARRERA_PROFESIONAL_DE_EDUCACIÓN_ESPECIALIDAD_PRIMARIA_E_INFORMÁTICA.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Malla Curricular
@@ -377,7 +377,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_INGENIERIA_AGROINDUSTRIAL.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Malla Curricular
@@ -390,7 +390,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_INGENIERIA_FORESTAL_Y_MEDIO_AMBIENTE.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Malla Curricular
@@ -403,7 +403,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_INGENIERIA_DE_SISTEMAS_E_INFORMATICA_L9cRoLi.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Malla Curricular
@@ -416,7 +416,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/DISEÑO_CURRICULAR_DE_MEDICINA_VETERINARIA-ZOOTECNIA.pdf" 
                                        target="_blank" rel="noopener noreferrer"
                                        class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 rounded-md hover:bg-red-100 text-sm">
-                                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         Ver Malla Curricular
@@ -429,7 +429,7 @@
 
                     <div class="mt-8 p-6 bg-teal-50 rounded-lg border border-teal-200">
                         <h3 class="text-lg font-semibold text-teal-800 mb-3 flex items-center">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
                             </svg>
                             Información Importante
@@ -456,7 +456,7 @@
 
                     <div class="mt-6 p-4 bg-emerald-50 rounded-lg border border-emerald-200">
                         <div class="flex items-start">
-                            <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12,2L13.09,8.26L22,9L17,14L18.18,22L12,19L5.82,22L7,14L2,9L10.91,8.26L12,2Z"/>
                             </svg>
                             <div>
