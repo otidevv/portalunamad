@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Dirección General de Administración - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Miga de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -51,9 +53,9 @@
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Sidebar -->
-            <div class="lg:col-span-1">
+            <aside class="lg:col-span-1">
                 @include('oficinas.administracion.partials.navigation')
-            </div>
+            </aside>
 
             <!-- Main Content -->
             <div class="lg:col-span-2">
@@ -86,133 +88,133 @@
                                 Funciones de la Dirección General de Administración
                             </h3>
                             
-                            <div class="space-y-4 text-gray-700">
-                                <div class="flex items-start space-x-3">
+                            <ul class="space-y-4 text-gray-700">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Organizar, planificar, coordinar y supervisar las actividades administrativas de la UNAMAD en función de los requerimientos académicos.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Gestionar, administrar, conducir y supervisar, el eficiente y buen uso de los recursos humanos, económicos, financieros y patrimoniales de la UNAMAD.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Coordinar la elaboración del presupuesto general de la UNAMAD.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Proponer al Rector las políticas y normas internas de carácter administrativo.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Promover la capacitación y el perfeccionamiento de los servidores no docentes de la universidad.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Conducir y evaluar los sistemas administrativos de contabilidad, tesorería, abastecimiento, gestión de recursos humanos; así como la ejecución de las inversiones, servicios generales, mantenimiento y patrimonio.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Emitir opinión técnica en materia de su competencia.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Formular y proponer documentos normativos para la implementación de los sistemas administrativos en la institución.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Establecer y mantener el Sistema de Control Interno conforme a las normas legales vigentes.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Conducir la ejecución de operaciones orientadas a la gestión de los fondos que administran, de acuerdo con la normativa vigente.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Promover la capacitación profesional y la especialización de los servidores administrativos de la institución.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Planificar, dirigir, ejecutar, controlar y evaluar las actividades de mantenimiento y servicios generales de la universidad.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Emitir resoluciones dentro del ámbito de su competencia.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Las demás funciones asignadas por el Rectorado, o aquellas que sean otorgadas por norma expresa.</p>
-                                </div>
-                            </div>
+                                </li>
+                            </ul>
                         </div>
 
                         <!-- Información Adicional -->

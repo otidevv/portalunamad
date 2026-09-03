@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Directorio - OCRI - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Miga de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -59,9 +61,9 @@
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Sidebar -->
-            <div class="lg:col-span-1">
+            <aside class="lg:col-span-1">
                 @include('oficinas.cooperacion.partials.navigation')
-            </div>
+            </aside>
 
             <!-- Main Content -->
             <div class="lg:col-span-2">
@@ -192,11 +194,11 @@
                             </h3>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
                                 <div>
-                                    <p class="font-semibold mb-2">Horario de Atención</p>
+                                    <h4 class="font-semibold mb-2">Horario de Atención</h4>
                                     <p class="text-sm">Lunes a Viernes: 7:00 AM - 4:00 PM</p>
                                 </div>
                                 <div>
-                                    <p class="font-semibold mb-2">Oficina</p>
+                                    <h4 class="font-semibold mb-2">Oficina</h4>
                                     <p class="text-sm">Av. Jorge Chávez N°1160 - 2do piso<br>Biblioteca Central de la Ciudad Universitaria</p>
                                 </div>
                             </div>

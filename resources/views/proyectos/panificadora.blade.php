@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Panificadora UNAMAD - UNAMAD')
+@section('title', 'Panificadora - UNAMAD')
 
 @section('content')
     <!-- Hero Section -->
@@ -29,16 +29,12 @@
     <!-- Breadcrumb -->
     <div class="bg-gradient-to-r from-gray-50 to-gray-100 border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <nav class="flex items-center space-x-2 text-sm">
-                <a href="/" class="text-gray-600 hover:text-yellow-600 transition-colors font-medium">Inicio</a>
-                <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <a href="/proyectos" class="text-gray-600 hover:text-yellow-600 transition-colors font-medium">Proyectos</a>
-                <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-yellow-600 font-semibold">Panificadora UNAMAD</span>
+            <nav aria-label="Miga de pan" class="text-sm">
+                <ol class="flex items-center space-x-2">
+                    <li><a href="/" class="text-gray-600 hover:text-yellow-600 transition-colors font-medium">Inicio</a></li>
+                    <li class="flex items-center"><svg aria-hidden="true" focusable="false" class="mr-2 w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"> <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/> </svg> <a href="/proyectos" class="text-gray-600 hover:text-yellow-600 transition-colors font-medium">Proyectos</a></li>
+                    <li class="flex items-center"><svg aria-hidden="true" focusable="false" class="mr-2 w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"> <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/> </svg> <span aria-current="page" class="text-yellow-600 font-semibold">Panificadora UNAMAD</span></li>
+                </ol>
             </nav>
         </div>
     </div>
@@ -80,8 +76,8 @@
                             <h2 class="text-2xl font-bold text-gray-800">Objetivos</h2>
                         </div>
 
-                        <div class="space-y-6">
-                            <div class="flex items-start space-x-4">
+                        <ol class="space-y-6">
+                            <li class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
                                     <div aria-hidden="true" class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
                                         <span class="text-yellow-600 font-bold text-sm">1</span>
@@ -90,9 +86,9 @@
                                 <p class="text-gray-700 text-sm leading-relaxed">
                                     Realizar trabajos de investigación y desarrollo de productos de panadería y pastelería.
                                 </p>
-                            </div>
+                            </li>
 
-                            <div class="flex items-start space-x-4">
+                            <li class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
                                     <div aria-hidden="true" class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
                                         <span class="text-orange-600 font-bold text-sm">2</span>
@@ -101,9 +97,9 @@
                                 <p class="text-gray-700 text-sm leading-relaxed">
                                     Apoyar a la enseñanza a través de las prácticas pre-profesionales, y a cursos de pre y postgrado y tesistas.
                                 </p>
-                            </div>
+                            </li>
 
-                            <div class="flex items-start space-x-4">
+                            <li class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
                                     <div aria-hidden="true" class="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center">
                                         <span class="text-amber-600 font-bold text-sm">3</span>
@@ -112,9 +108,9 @@
                                 <p class="text-gray-700 text-sm leading-relaxed">
                                     Brindar cursos de extensión y proyección social a la comunidad.
                                 </p>
-                            </div>
+                            </li>
 
-                            <div class="flex items-start space-x-4">
+                            <li class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
                                     <div aria-hidden="true" class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
                                         <span class="text-yellow-600 font-bold text-sm">4</span>
@@ -123,9 +119,9 @@
                                 <p class="text-gray-700 text-sm leading-relaxed">
                                     Mejorar la gestión administrativa a través de la capacitación del recurso humano para la mejora continua de los procesos productivos y administrativos. Así como la implementación de equipos y maquinarias con tecnología de punta.
                                 </p>
-                            </div>
+                            </li>
 
-                            <div class="flex items-start space-x-4">
+                            <li class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
                                     <div aria-hidden="true" class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
                                         <span class="text-orange-600 font-bold text-sm">5</span>
@@ -134,9 +130,9 @@
                                 <p class="text-gray-700 text-sm leading-relaxed">
                                     Mejorar el sistema de ventas y comercialización de los productos para su auto sostenimiento.
                                 </p>
-                            </div>
+                            </li>
 
-                            <div class="flex items-start space-x-4">
+                            <li class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
                                     <div aria-hidden="true" class="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center">
                                         <span class="text-amber-600 font-bold text-sm">6</span>
@@ -145,8 +141,8 @@
                                 <p class="text-gray-700 text-sm leading-relaxed">
                                     Ofrecer productos de panificación de calidad y nutritivos para satisfacer a los clientes.
                                 </p>
-                            </div>
-                        </div>
+                            </li>
+                        </ol>
                     </div>
                 </div>
             </div>

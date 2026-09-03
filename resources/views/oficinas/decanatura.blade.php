@@ -28,7 +28,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Miga de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -106,9 +106,9 @@
                         Funciones de los Decanatos
                     </h3>
 
-                    <div class="space-y-6">
+                    <ol class="space-y-6">
                         <!-- Función 1 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     1
@@ -120,10 +120,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 2 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     2
@@ -135,10 +135,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 3 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     3
@@ -150,10 +150,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 4 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     4
@@ -165,10 +165,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 5 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     5
@@ -180,10 +180,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 6 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     6
@@ -195,10 +195,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 7 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     7
@@ -210,10 +210,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 8 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     8
@@ -225,10 +225,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 9 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     9
@@ -240,10 +240,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 10 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     10
@@ -255,10 +255,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 11 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     11
@@ -270,10 +270,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 12 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     12
@@ -285,10 +285,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 13 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     13
@@ -300,10 +300,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 14 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     14
@@ -315,10 +315,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 15 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     15
@@ -330,10 +330,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 16 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     16
@@ -345,10 +345,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 17 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     17
@@ -360,10 +360,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 18 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     18
@@ -375,8 +375,8 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </li>
+                    </ol>
                 </div>
 
                 <!-- Áreas de Responsabilidad -->
@@ -388,9 +388,9 @@
                         Áreas de Responsabilidad del Decanato
                     </h3>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <!-- Gestión Académica -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-[#db0455]/10 rounded-full flex items-center justify-center">
                                     <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -400,10 +400,10 @@
                                 <h4 class="text-lg font-semibold text-gray-800 ml-3">Gestión Académica</h4>
                             </div>
                             <p class="text-gray-600 text-sm">Dirección de escuelas profesionales, currículos de estudio, programas académicos y formación profesional.</p>
-                        </div>
+                        </li>
 
                         <!-- Gestión Administrativa -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-[#db0455]/10 rounded-full flex items-center justify-center">
                                     <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -413,10 +413,10 @@
                                 <h4 class="text-lg font-semibold text-gray-800 ml-3">Gestión Administrativa</h4>
                             </div>
                             <p class="text-gray-600 text-sm">Administración de la facultad, designación de autoridades, permisos y resoluciones decanales.</p>
-                        </div>
+                        </li>
 
                         <!-- Representación Institucional -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-[#db0455]/10 rounded-full flex items-center justify-center">
                                     <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -426,10 +426,10 @@
                                 <h4 class="text-lg font-semibold text-gray-800 ml-3">Representación</h4>
                             </div>
                             <p class="text-gray-600 text-sm">Representación ante Asamblea y Consejo Universitario, presidencia del Consejo de Facultad.</p>
-                        </div>
+                        </li>
 
                         <!-- Gestión Estudiantil -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-[#db0455]/10 rounded-full flex items-center justify-center">
                                     <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -441,10 +441,10 @@
                                 <h4 class="text-lg font-semibold text-gray-800 ml-3">Gestión Estudiantil</h4>
                             </div>
                             <p class="text-gray-600 text-sm">Admisión, certificados, diplomas, prácticas pre-profesionales y actividades de campo.</p>
-                        </div>
+                        </li>
 
                         <!-- Planificación -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-[#db0455]/10 rounded-full flex items-center justify-center">
                                     <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -454,10 +454,10 @@
                                 <h4 class="text-lg font-semibold text-gray-800 ml-3">Planificación</h4>
                             </div>
                             <p class="text-gray-600 text-sm">Planes de desarrollo, informes de gestión, propuestas de vacantes y planificación estratégica.</p>
-                        </div>
+                        </li>
 
                         <!-- Control Disciplinario -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-center mb-4">
                                 <div class="w-12 h-12 bg-[#db0455]/10 rounded-full flex items-center justify-center">
                                     <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -467,8 +467,8 @@
                                 <h4 class="text-lg font-semibold text-gray-800 ml-3">Control y Disciplina</h4>
                             </div>
                             <p class="text-gray-600 text-sm">Propuestas de sanciones, cumplimiento de acuerdos, comisiones de trabajo y control normativo.</p>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
 
                 <!-- Periodo y Elección -->
@@ -481,8 +481,8 @@
                         <p class="text-lg mb-6 opacity-95">
                             El Decano es elegido democráticamente por la comunidad facultativa
                         </p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                            <div class="bg-white/20 rounded-lg p-6">
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                            <li class="bg-white/20 rounded-lg p-6">
                                 <div class="flex items-center justify-center mb-3">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -490,8 +490,8 @@
                                     <span class="text-xl font-bold">4 años</span>
                                 </div>
                                 <p class="text-sm opacity-90">Periodo de mandato</p>
-                            </div>
-                            <div class="bg-white/20 rounded-lg p-6">
+                            </li>
+                            <li class="bg-white/20 rounded-lg p-6">
                                 <div class="flex items-center justify-center mb-3">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728L5.636 5.636m12.728 12.728L12 21l-6.364-6.364M5.636 5.636L12 3l6.364 6.364"></path>
@@ -499,8 +499,8 @@
                                     <span class="text-xl font-bold">Sin reelección</span>
                                 </div>
                                 <p class="text-sm opacity-90">Inmediata</p>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

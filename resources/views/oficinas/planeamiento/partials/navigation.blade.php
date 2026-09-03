@@ -5,11 +5,11 @@
             <svg aria-hidden="true" focusable="false" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
-            <h3 class="text-xl font-bold">Navegación</h3>
+            <h2 class="text-xl font-bold">Navegación</h2>
         </div>
     </div>
     <div class="p-6">
-        <nav class="space-y-1">
+        <nav class="space-y-1" aria-label="Secciones de Planeamiento y Presupuesto">
             <a href="/oficinas/planeamiento" class="planeamiento-nav-link group {{ Request::is('oficinas/planeamiento') ? 'active' : '' }}">
                 <div class="flex items-center space-x-3">
                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-600 group-hover:text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -27,12 +27,12 @@
 
 <!-- Contact Card -->
 <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-[#db0455]">
-    <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
+    <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
         <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
         </svg>
         Contacto
-    </h3>
+    </h2>
     <div class="space-y-3 text-sm text-gray-600">
         <div class="flex items-start space-x-2">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mt-1 text-[#db0455] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

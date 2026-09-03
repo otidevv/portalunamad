@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Gestión de la Calidad - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Miga de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -51,7 +53,7 @@
     <div class="container mx-auto px-4 py-12">
         <div class="flex gap-8">
             <!-- Sidebar Navigation -->
-            <div class="w-80 flex-shrink-0">
+            <aside class="w-80 flex-shrink-0">
                 <!-- Navigation Card -->
                 <div class="bg-white rounded-lg shadow-xl mb-8 overflow-hidden border-t-4 border-[#db0455]">
                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
@@ -59,11 +61,11 @@
                             <svg aria-hidden="true" focusable="false" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                             </svg>
-                            <h3 class="text-xl font-bold">Navegación</h3>
+                            <h2 class="text-xl font-bold">Navegación</h2>
                         </div>
                     </div>
                     <div class="p-3">
-                        <nav class="space-y-1">
+                        <nav class="space-y-1" aria-label="Secciones de Gestión de la Calidad">
                             <a href="#inicio" class="calidad-nav-link active" data-section="inicio">
                                 <div class="flex items-center space-x-3">
                                     <div class="flex-shrink-0">
@@ -128,7 +130,7 @@
                 <!-- Contact Information Card -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-4">
-                        <h3 class="text-lg font-bold">Datos de contacto</h3>
+                        <h2 class="text-lg font-bold">Datos de contacto</h2>
                     </div>
                     <div class="p-6">
                         <div class="space-y-4">
@@ -163,7 +165,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </aside>
 
             <!-- Main Content Area -->
             <div class="flex-1">
@@ -205,25 +207,25 @@
                                 <!-- Mission and Vision -->
                                 <div class="grid md:grid-cols-2 gap-8 mt-8">
                                     <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
-                                        <h4 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
+                                        <h3 class="text-xl font-bold text-blue-800 mb-4 flex items-center">
                                             <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                                             </svg>
                                             Misión
-                                        </h4>
+                                        </h3>
                                         <p class="text-gray-700">
                                             Promover y asegurar la calidad académica y administrativa de la UNAMAD a través de la implementación de sistemas de gestión de calidad eficaces y procesos de mejora continua.
                                         </p>
                                     </div>
                                     
                                     <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
-                                        <h4 class="text-xl font-bold text-green-800 mb-4 flex items-center">
+                                        <h3 class="text-xl font-bold text-green-800 mb-4 flex items-center">
                                             <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                                             </svg>
                                             Visión
-                                        </h4>
+                                        </h3>
                                         <p class="text-gray-700">
                                             Ser reconocidos como una oficina líder en gestión de calidad universitaria, contribuyendo al posicionamiento de la UNAMAD como una institución de excelencia académica en la región amazónica.
                                         </p>
@@ -246,90 +248,90 @@
                         
                         <div class="p-8">
                             <div class="grid md:grid-cols-2 gap-6">
-                                <div class="space-y-4">
-                                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                <ol class="space-y-4">
+                                    <li class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                                         <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                             1
                                         </div>
                                         <p class="text-gray-700 flex-1 text-sm">
                                             Gestionar, monitorear y evaluar lineamientos de política, programas, proyectos y acciones de aseguramiento de la calidad institucional.
                                         </p>
-                                    </div>
+                                    </li>
 
-                                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                    <li class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                                         <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                             2
                                         </div>
                                         <p class="text-gray-700 flex-1 text-sm">
                                             Diseñar, proponer, gestionar y asegurar la gestión efectiva del Sistema de Gestión de la Calidad Institucional.
                                         </p>
-                                    </div>
+                                    </li>
 
-                                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                    <li class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                                         <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                             3
                                         </div>
                                         <p class="text-gray-700 flex-1 text-sm">
                                             Monitorear los sistemas y procesos trasversales de autoevaluación, licenciamiento y acreditación institucional.
                                         </p>
-                                    </div>
+                                    </li>
 
-                                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                    <li class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                                         <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                             4
                                         </div>
                                         <p class="text-gray-700 flex-1 text-sm">
                                             Fomentar el fortalecimiento de las capacidades de los miembros de la comunidad universitaria.
                                         </p>
-                                    </div>
+                                    </li>
 
-                                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                    <li class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                                         <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                             5
                                         </div>
                                         <p class="text-gray-700 flex-1 text-sm">
                                             Difundir los resultados o niveles de calidad que alcance la universidad.
                                         </p>
-                                    </div>
-                                </div>
+                                    </li>
+                                </ol>
 
-                                <div class="space-y-4">
-                                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                <ol class="space-y-4" start="6">
+                                    <li class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                                         <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                             6
                                         </div>
                                         <p class="text-gray-700 flex-1 text-sm">
                                             Emitir opiniones técnicas en materia de su competencia.
                                         </p>
-                                    </div>
+                                    </li>
 
-                                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                    <li class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                                         <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                             7
                                         </div>
                                         <p class="text-gray-700 flex-1 text-sm">
                                             Capacitar a los miembros de la comunidad universitaria sobre sistema de gestión de la calidad.
                                         </p>
-                                    </div>
+                                    </li>
 
-                                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                    <li class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                                         <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                             8
                                         </div>
                                         <p class="text-gray-700 flex-1 text-sm">
                                             Brindar asesoramiento y apoyo a los procesos de acreditación institucional.
                                         </p>
-                                    </div>
+                                    </li>
 
-                                    <div class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                    <li class="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                                         <div aria-hidden="true" class="flex-shrink-0 w-10 h-10 bg-[#db0455] text-white rounded-full flex items-center justify-center font-bold">
                                             9
                                         </div>
                                         <p class="text-gray-700 flex-1 text-sm">
                                             Las demás funciones asignadas por el Rectorado, o aquellas que sean otorgadas por norma expresa.
                                         </p>
-                                    </div>
-                                </div>
+                                    </li>
+                                </ol>
                             </div>
                         </div>
                     </div>
@@ -339,23 +341,24 @@
                 <div id="estructura" class="content-section hidden">
                     <div class="bg-white rounded-lg shadow-lg mb-12 overflow-hidden border-t-4 border-[#db0455]">
                         <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
-                            <h2 class="text-3xl font-bold flex items-center">
+                            <h2 class="text-3xl font-bold flex items-center uppercase">
                                 <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                                 </svg>
-                                ESTRUCTURA ORGÁNICA
+                                Estructura Orgánica
                             </h2>
                         </div>
                         <div class="p-8">
                             <!-- Organigrama -->
                             <div class="mb-8">
                                 <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">Organigrama de la Oficina de Gestión de la Calidad</h3>
+                                <p class="sr-only">El Director o Directora General de Gestión de la Calidad dirige tres unidades: Licenciamiento, Acreditación y Evaluación.</p>
                                 
                                 <div class="flex flex-col items-center space-y-6">
                                     <!-- Director General -->
                                     <div class="bg-[#db0455] text-white px-6 py-4 rounded-lg shadow-lg">
                                         <div class="text-center">
-                                            <h4 class="font-bold">DIRECTOR(A) GENERAL</h4>
+                                            <h4 class="font-bold uppercase">Director(a) General</h4>
                                             <p class="text-sm opacity-90">Gestión de la Calidad</p>
                                         </div>
                                     </div>
@@ -366,18 +369,15 @@
                                     <!-- Subdivisiones -->
                                     <div class="grid md:grid-cols-3 gap-8 w-full">
                                         <div class="bg-blue-500 text-white px-4 py-3 rounded-lg shadow-lg text-center">
-                                            <h5 class="font-bold text-sm">UNIDAD DE</h5>
-                                            <h5 class="font-bold text-sm">LICENCIAMIENTO</h5>
+                                            <h5 class="font-bold text-sm uppercase">Unidad de Licenciamiento</h5>
                                         </div>
                                         
                                         <div class="bg-green-500 text-white px-4 py-3 rounded-lg shadow-lg text-center">
-                                            <h5 class="font-bold text-sm">UNIDAD DE</h5>
-                                            <h5 class="font-bold text-sm">ACREDITACIÓN</h5>
+                                            <h5 class="font-bold text-sm uppercase">Unidad de Acreditación</h5>
                                         </div>
                                         
                                         <div class="bg-purple-500 text-white px-4 py-3 rounded-lg shadow-lg text-center">
-                                            <h5 class="font-bold text-sm">UNIDAD DE</h5>
-                                            <h5 class="font-bold text-sm">EVALUACIÓN</h5>
+                                            <h5 class="font-bold text-sm uppercase">Unidad de Evaluación</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -414,11 +414,11 @@
                 <div id="personal" class="content-section hidden">
                     <div class="bg-white rounded-lg shadow-lg mb-12 overflow-hidden border-t-4 border-[#db0455]">
                         <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
-                            <h2 class="text-3xl font-bold flex items-center">
+                            <h2 class="text-3xl font-bold flex items-center uppercase">
                                 <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
                                 </svg>
-                                PERSONAL ADMINISTRATIVO
+                                Personal Administrativo
                             </h2>
                         </div>
                         <div class="p-8">
@@ -486,11 +486,11 @@
                 <div id="directorio" class="content-section hidden">
                     <div class="bg-white rounded-lg shadow-lg mb-12 overflow-hidden border-t-4 border-[#db0455]">
                         <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
-                            <h2 class="text-3xl font-bold flex items-center">
+                            <h2 class="text-3xl font-bold flex items-center uppercase">
                                 <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                                 </svg>
-                                DIRECTORIO DE CONTACTOS
+                                Directorio de Contactos
                             </h2>
                         </div>
                         <div class="p-8">
@@ -593,11 +593,11 @@
                 <div id="sinc" class="content-section hidden">
                     <div class="bg-white rounded-lg shadow-lg mb-12 overflow-hidden border-t-4 border-[#db0455]">
                         <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
-                            <h2 class="text-3xl font-bold flex items-center">
+                            <h2 class="text-3xl font-bold flex items-center uppercase">
                                 <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                 </svg>
-                                SISTEMA INTEGRADO DE NORMALIZACIÓN Y CONTROL
+                                Sistema Integrado de Normalización y Control
                             </h2>
                         </div>
                         <div class="p-8">

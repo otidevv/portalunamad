@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Convenios - Cooperación y Relaciones Internacionales - UNAMAD')
+
 @section('content')
     <div class="bg-gray-50 min-h-screen">
         <!-- Hero Section -->
@@ -18,7 +20,7 @@
         <!-- Navigation Breadcrumb -->
         <div class="bg-white border-b border-gray-200">
             <div class="container mx-auto px-4 py-4">
-                <nav class="flex" aria-label="Breadcrumb">
+                <nav class="flex" aria-label="Miga de pan">
                     <ol class="inline-flex items-center space-x-1 md:space-x-3">
                         <li class="inline-flex items-center">
                             <a href="/"
@@ -71,9 +73,9 @@
         <div class="container mx-auto px-4 py-8">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- Sidebar -->
-                <div class="lg:col-span-1">
+                <aside class="lg:col-span-1">
                     @include('oficinas.cooperacion.partials.navigation')
-                </div>
+                </aside>
 
                 <!-- Main Content -->
                 <div class="lg:col-span-2">
@@ -143,9 +145,9 @@
                                     Principales Modalidades de Cooperación
                                 </h3>
 
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <!-- Programa de Intercambio Académico -->
-                                    <div
+                                    <li
                                         class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                         <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
                                             <span aria-hidden="true" class="bg-[#db0455] text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">A</span>
@@ -169,10 +171,10 @@
                                                     estudiantil</span>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </li>
 
                                     <!-- Proyectos para Investigaciones Conjuntas -->
-                                    <div
+                                    <li
                                         class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                         <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
                                             <span aria-hidden="true" class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">B</span>
@@ -182,10 +184,10 @@
                                             Desarrollo colaborativo de proyectos de investigación entre instituciones para
                                             el avance del conocimiento científico y académico.
                                         </p>
-                                    </div>
+                                    </li>
 
                                     <!-- Proyectos de Desarrollo -->
-                                    <div
+                                    <li
                                         class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                         <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
                                             <span aria-hidden="true" class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">C</span>
@@ -195,10 +197,10 @@
                                             Iniciativas orientadas al desarrollo institucional, académico y comunitario a
                                             través de la cooperación interinstitucional.
                                         </p>
-                                    </div>
+                                    </li>
 
                                     <!-- Prácticas Pre Profesionales -->
-                                    <div
+                                    <li
                                         class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                         <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
                                             <span aria-hidden="true" class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">D</span>
@@ -208,10 +210,10 @@
                                             Oportunidades de experiencia laboral y formación práctica para estudiantes en
                                             instituciones aliadas.
                                         </p>
-                                    </div>
+                                    </li>
 
                                     <!-- Donaciones -->
-                                    <div
+                                    <li
                                         class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                         <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
                                             <span aria-hidden="true" class="bg-orange-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">E</span>
@@ -221,10 +223,10 @@
                                             Transferencia de recursos, equipos, materiales o conocimientos entre
                                             instituciones para fortalecer capacidades.
                                         </p>
-                                    </div>
+                                    </li>
 
                                     <!-- Capacitación y Extensión -->
-                                    <div
+                                    <li
                                         class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                         <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
                                             <span aria-hidden="true" class="bg-indigo-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-2">F</span>
@@ -234,8 +236,8 @@
                                             Actividades de capacitación y programas de extensión con instituciones privadas
                                             dirigidas al público en general.
                                         </p>
-                                    </div>
-                                </div>
+                                    </li>
+                                </ul>
                             </div>
 
                             <!-- Modelos de Convenios -->
@@ -320,8 +322,8 @@
                                     Suscripción de Convenios - Procedimiento
                                 </h3>
 
-                                <div id="procedimiento-suscripcion" class="space-y-4 mb-6">
-                                    <div class="flex items-start space-x-4 p-4 bg-white rounded-lg border border-gray-200">
+                                <ol id="procedimiento-suscripcion" class="space-y-4 mb-6" type="A">
+                                    <li class="flex items-start space-x-4 p-4 bg-white rounded-lg border border-gray-200">
                                         <div aria-hidden="true" class="bg-[#db0455] text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0">
                                             A</div>
                                         <div>
@@ -331,9 +333,9 @@
                                                 <strong>OCRI</strong> para su revisión y opinión.
                                             </p>
                                         </div>
-                                    </div>
+                                    </li>
 
-                                    <div class="flex items-start space-x-4 p-4 bg-white rounded-lg border border-gray-200">
+                                    <li class="flex items-start space-x-4 p-4 bg-white rounded-lg border border-gray-200">
                                         <div aria-hidden="true" class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0">
                                             B</div>
                                         <div>
@@ -345,9 +347,9 @@
                                                 aprobado en el consejo universitario.
                                             </p>
                                         </div>
-                                    </div>
+                                    </li>
 
-                                    <div class="flex items-start space-x-4 p-4 bg-white rounded-lg border border-gray-200">
+                                    <li class="flex items-start space-x-4 p-4 bg-white rounded-lg border border-gray-200">
                                         <div aria-hidden="true" class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold flex-shrink-0">
                                             C</div>
                                         <div>
@@ -357,8 +359,8 @@
                                                 convenio.
                                             </p>
                                         </div>
-                                    </div>
-                                </div>
+                                    </li>
+                                </ol>
                             </div>
 
                             <!-- Flujograma -->

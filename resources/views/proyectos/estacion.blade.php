@@ -29,16 +29,12 @@
     <!-- Breadcrumb -->
     <div class="bg-gradient-to-r from-gray-50 to-gray-100 border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <nav class="flex items-center space-x-2 text-sm">
-                <a href="/" class="text-gray-600 hover:text-orange-600 transition-colors font-medium">Inicio</a>
-                <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <a href="/proyectos" class="text-gray-600 hover:text-orange-600 transition-colors font-medium">Proyectos</a>
-                <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-orange-600 font-semibold">Estación Geológica</span>
+            <nav aria-label="Miga de pan" class="text-sm">
+                <ol class="flex items-center space-x-2">
+                    <li><a href="/" class="text-gray-600 hover:text-orange-600 transition-colors font-medium">Inicio</a></li>
+                    <li class="flex items-center"><svg aria-hidden="true" focusable="false" class="mr-2 w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"> <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/> </svg> <a href="/proyectos" class="text-gray-600 hover:text-orange-600 transition-colors font-medium">Proyectos</a></li>
+                    <li class="flex items-center"><svg aria-hidden="true" focusable="false" class="mr-2 w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"> <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/> </svg> <span aria-current="page" class="text-orange-600 font-semibold">Estación Geológica</span></li>
+                </ol>
             </nav>
         </div>
     </div>
@@ -84,27 +80,27 @@
                             <h2 class="text-2xl font-bold text-gray-800">Áreas de Investigación</h2>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 bg-orange-50 rounded-lg border border-orange-200">
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <li class="p-4 bg-orange-50 rounded-lg border border-orange-200">
                                 <h3 class="text-lg font-semibold text-orange-800 mb-2">Composición del Planeta</h3>
                                 <p class="text-sm text-orange-700">Análisis químico, físico, mineralógico y petrológico de materiales terrestres</p>
-                            </div>
+                            </li>
 
-                            <div class="p-4 bg-amber-50 rounded-lg border border-amber-200">
+                            <li class="p-4 bg-amber-50 rounded-lg border border-amber-200">
                                 <h3 class="text-lg font-semibold text-amber-800 mb-2">Dinámica Terrestre</h3>
                                 <p class="text-sm text-amber-700">Estudio de procesos internos y externos que modelan la superficie terrestre</p>
-                            </div>
+                            </li>
 
-                            <div class="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                            <li class="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
                                 <h3 class="text-lg font-semibold text-yellow-800 mb-2">Recursos Minerales</h3>
                                 <p class="text-sm text-yellow-700">Localización de sustancias minerales y energéticas para el desarrollo humano</p>
-                            </div>
+                            </li>
 
-                            <div class="p-4 bg-orange-50 rounded-lg border border-orange-200">
+                            <li class="p-4 bg-orange-50 rounded-lg border border-orange-200">
                                 <h3 class="text-lg font-semibold text-orange-800 mb-2">Investigación Avanzada</h3>
                                 <p class="text-sm text-orange-700">Equipos analíticos modernos y acceso a información científica global</p>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

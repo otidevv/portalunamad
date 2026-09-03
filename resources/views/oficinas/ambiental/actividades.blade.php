@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Actividades - Comité Ambiental Universitario - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Miga de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -59,9 +61,9 @@
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Sidebar -->
-            <div class="lg:col-span-1">
+            <aside class="lg:col-span-1">
                 @include('oficinas.ambiental.partials.navigation')
-            </div>
+            </aside>
 
             <!-- Main Content -->
             <div class="lg:col-span-2">
@@ -95,7 +97,7 @@
                                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Videoconferencia de Diálogos Regionales del Agua en América Latina y el Caribe 2023</h3>
                                     
                                     <div class="bg-white rounded-lg p-6 border border-gray-200 mb-6">
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                        <dl class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                                             <div class="flex items-center space-x-3">
                                                 <div class="bg-gradient-to-r from-blue-500 to-green-500 p-2 rounded-full">
                                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -103,8 +105,8 @@
                                                     </svg>
                                                 </div>
                                                 <div>
-                                                    <p class="text-sm text-gray-600">Evento</p>
-                                                    <p class="font-semibold text-gray-800">Videoconferencia Regional</p>
+                                                    <dt class="text-sm text-gray-600">Evento</dt>
+                                                    <dd class="font-semibold text-gray-800">Videoconferencia Regional</dd>
                                                 </div>
                                             </div>
                                             <div class="flex items-center space-x-3">
@@ -114,8 +116,8 @@
                                                     </svg>
                                                 </div>
                                                 <div>
-                                                    <p class="text-sm text-gray-600">Tema</p>
-                                                    <p class="font-semibold text-gray-800">Gestión del Agua</p>
+                                                    <dt class="text-sm text-gray-600">Tema</dt>
+                                                    <dd class="font-semibold text-gray-800">Gestión del Agua</dd>
                                                 </div>
                                             </div>
                                             <div class="flex items-center space-x-3">
@@ -125,8 +127,8 @@
                                                     </svg>
                                                 </div>
                                                 <div>
-                                                    <p class="text-sm text-gray-600">Alcance</p>
-                                                    <p class="font-semibold text-gray-800">América Latina y el Caribe</p>
+                                                    <dt class="text-sm text-gray-600">Alcance</dt>
+                                                    <dd class="font-semibold text-gray-800">América Latina y el Caribe</dd>
                                                 </div>
                                             </div>
                                             <div class="flex items-center space-x-3">
@@ -136,11 +138,11 @@
                                                     </svg>
                                                 </div>
                                                 <div>
-                                                    <p class="text-sm text-gray-600">Año</p>
-                                                    <p class="font-semibold text-gray-800">2023</p>
+                                                    <dt class="text-sm text-gray-600">Año</dt>
+                                                    <dd class="font-semibold text-gray-800">2023</dd>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </dl>
 
                                         <div class="border-t border-gray-200 pt-6">
                                             <p class="text-gray-700 mb-6">

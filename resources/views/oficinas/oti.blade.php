@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Oficina de Tecnologías de la Información - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Miga de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -51,9 +53,9 @@
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Sidebar -->
-            <div class="lg:col-span-1">
+            <aside class="lg:col-span-1">
                 @include('oficinas.oti.partials.navigation')
-            </div>
+            </aside>
 
             <!-- Main Content -->
             <div class="lg:col-span-2">
@@ -84,169 +86,169 @@
                                 Funciones de la Oficina de Tecnologías de la Información
                             </h3>
                             
-                            <div class="space-y-4 text-gray-700">
-                                <div class="flex items-start space-x-3">
+                            <ul class="space-y-4 text-gray-700">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Planificar, formular, dirigir y monitorear la programación de sus actividades y tareas; así como velar por una adecuada ejecución de los recursos que le fueran asignados, en el marco de sus funciones.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Formular, ejecutar y evaluar el Plan Estratégico de Tecnologías de Información (PETI) de la Universidad.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Gestionar el Gobierno Digital en la UNAMAD, procurando la transformación digital a través de la formulación e implementación de los distintos planes en materia de tecnologías de la información, alineados a las políticas y estrategias de la universidad.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Promover el uso intensivo de tecnologías de la información a través de los mecanismos idóneos que coadyuven al incremento de la productividad de los procesos institucionales.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Planificar, coordinar, dirigir, controlar y evaluar las actividades orientadas al diseño, desarrollo, implementación, mantenimiento y administración de sistemas de información, herramientas y soluciones de software.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Proponer, planificar, ejecutar y controlar proyectos tecnológicos orientados a mejorar la productividad de los procesos de la entidad, atendiendo las necesidades de las distintas unidades de organización de la universidad.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Proponer lineamientos de políticas, directivas, estándares, lineamientos y/o procedimientos en materia de tecnologías de la información para la adecuada administración de los servicios y recursos tecnológicos de la universidad, asegurando su cumplimiento en el marco de su competencia.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Planificar, administrar, mantener, controlar y evaluar la infraestructura tecnológica y la red de datos de la UNAMAD para garantizar la continuidad de los distintos servicios tecnológicos que se brindan a usuarios internos y externos, minimizando los riesgos inherentes.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Promover, planificar, implementar, administrar y controlar la seguridad de la información, seguridad informática y respaldo de datos de la UNAMAD con el fin de garantizar la confidencialidad, integridad y disponibilidad de los activos de información.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Brindar soporte y asistencia tecnológica a las distintas unidades de organización en el uso de herramientas, servicios y sistemas de información, a fin de procurar el óptimo uso de los recursos tecnológicos de la entidad.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Planificar, administrar, mantener y custodiar el equipamiento tecnológico y el software de la entidad con el fin de garantizar su operatividad y vigencia tecnológica.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Gestionar los riesgos asociados a los sistemas, infraestructura y servicios de tecnologías de la información, en base a los lineamientos institucionales para la gestión de riesgos y buenas prácticas internacionales.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Supervisar, controlar y evaluar los servicios tecnológicos contratados con proveedores, con el fin de garantizar el cumplimiento de los requerimientos técnicos, así como la adecuada prestación de los mismos.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Emitir opinión técnica en el ámbito de su competencia.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Informar a la Alta Dirección, respecto al inventario informático de la universidad.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Mantener actualizado de manera permanente el portal de la UNAMAD respetando la Ley de Transparencia y Acceso a la Información Pública.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Supervisar y evaluar trabajos y/o servicios de terceros relacionados a TI.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Las demás funciones asignadas por el Rectorado, o aquellas que sean otorgadas por norma expresa.</p>
-                                </div>
-                            </div>
+                                </li>
+                            </ul>
                         </div>
 
                         <!-- Información Adicional -->

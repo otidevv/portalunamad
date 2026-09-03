@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Estructura Orgánica - OCRI - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Miga de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -59,9 +61,9 @@
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Sidebar -->
-            <div class="lg:col-span-1">
+            <aside class="lg:col-span-1">
                 @include('oficinas.cooperacion.partials.navigation')
-            </div>
+            </aside>
 
             <!-- Main Content -->
             <div class="lg:col-span-2">
@@ -112,8 +114,8 @@
                                 Descripción de la Estructura
                             </h3>
                             
-                            <div id="descripcion-estructura" class="space-y-4">
-                                <div class="flex items-start space-x-3">
+                            <ol id="descripcion-estructura" class="space-y-4">
+                                <li class="flex items-start space-x-3">
                                     <div aria-hidden="true" class="w-8 h-8 bg-[#1e3a8a] rounded-lg flex items-center justify-center flex-shrink-0">
                                         <span class="text-white text-xs font-bold">1°</span>
                                     </div>
@@ -121,9 +123,9 @@
                                         <h4 class="font-semibold text-gray-800">Primer Nivel - Rectorado</h4>
                                         <p class="text-gray-600 text-sm">Máxima autoridad ejecutiva de la universidad, responsable de la dirección académica, administrativa y de gobierno de la institución.</p>
                                     </div>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div aria-hidden="true" class="w-8 h-8 bg-[#2563eb] rounded-lg flex items-center justify-center flex-shrink-0">
                                         <span class="text-white text-xs font-bold">2°</span>
                                     </div>
@@ -131,8 +133,8 @@
                                         <h4 class="font-semibold text-gray-800">Segundo Nivel - Oficina de Cooperación y Relaciones Internacionales</h4>
                                         <p class="text-gray-600 text-sm">Órgano de asesoramiento especializado que depende directamente del Rectorado, encargado de gestionar la cooperación nacional e internacional de la universidad.</p>
                                     </div>
-                                </div>
-                            </div>
+                                </li>
+                            </ol>
                         </div>
 
                         <!-- Nivel de Dependencia -->

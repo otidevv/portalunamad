@@ -1,5 +1,5 @@
 <!-- Sidebar Navigation -->
-<div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-blue-500">
+<aside class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-blue-500">
     <div class="text-center mb-6">
         <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-3">
             <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -10,7 +10,7 @@
         <p class="text-sm text-gray-600">Transporte Universitario</p>
     </div>
     
-    <nav class="space-y-1">
+    <nav class="space-y-1" aria-label="Secciones de Bus Universitario">
         <a href="/proyectos/bus" 
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('proyectos/bus') ? 'bg-blue-100 text-blue-800 border-r-2 border-blue-500' : 'text-gray-700 hover:bg-gray-100 hover:text-blue-600' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -51,4 +51,4 @@
             </div>
         </div>
     </div>
-</div>
+</aside>

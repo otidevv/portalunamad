@@ -28,7 +28,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Miga de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -103,9 +103,9 @@
                         Funciones de la Asamblea Universitaria
                     </h3>
 
-                    <div class="space-y-6">
+                    <ol class="space-y-6">
                         <!-- Función 1 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     1
@@ -117,10 +117,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 2 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     2
@@ -132,10 +132,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 3 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     3
@@ -147,10 +147,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 4 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     4
@@ -162,10 +162,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 5 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     5
@@ -177,10 +177,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 6 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     6
@@ -192,10 +192,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 7 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     7
@@ -207,10 +207,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 8 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     8
@@ -222,10 +222,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 9 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     9
@@ -237,10 +237,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 10 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     10
@@ -252,10 +252,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 11 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     11
@@ -267,10 +267,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 12 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     12
@@ -282,10 +282,10 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </li>
 
                         <!-- Función 13 -->
-                        <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                        <li class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
                             <div class="flex items-start">
                                 <div aria-hidden="true" class="w-8 h-8 bg-[#db0455] text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0 mt-1">
                                     13
@@ -297,8 +297,8 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </li>
+                    </ol>
                 </div>
 
                 <!-- Marco Legal -->
@@ -311,8 +311,8 @@
                         <p class="text-lg mb-6 opacity-95">
                             La Asamblea Universitaria se rige por un sólido marco normativo que garantiza la gobernanza universitaria
                         </p>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                            <div class="bg-white/20 rounded-lg p-4">
+                        <ul class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                            <li class="bg-white/20 rounded-lg p-4">
                                 <div class="flex items-center justify-center mb-2">
                                     <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
@@ -320,8 +320,8 @@
                                     <span class="font-semibold">Ley Universitaria</span>
                                 </div>
                                 <p class="text-sm opacity-90">Marco legal nacional</p>
-                            </div>
-                            <div class="bg-white/20 rounded-lg p-4">
+                            </li>
+                            <li class="bg-white/20 rounded-lg p-4">
                                 <div class="flex items-center justify-center mb-2">
                                     <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -329,8 +329,8 @@
                                     <span class="font-semibold">Estatuto UNAMAD</span>
                                 </div>
                                 <p class="text-sm opacity-90">Normativa institucional</p>
-                            </div>
-                            <div class="bg-white/20 rounded-lg p-4">
+                            </li>
+                            <li class="bg-white/20 rounded-lg p-4">
                                 <div class="flex items-center justify-center mb-2">
                                     <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
@@ -338,8 +338,8 @@
                                     <span class="font-semibold">Políticas MINEDU</span>
                                 </div>
                                 <p class="text-sm opacity-90">Lineamientos sectoriales</p>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Oficina de Planeamiento y Presupuesto - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Miga de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -51,9 +53,9 @@
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Sidebar -->
-            <div class="lg:col-span-1">
+            <aside class="lg:col-span-1">
                 @include('oficinas.planeamiento.partials.navigation')
-            </div>
+            </aside>
 
             <!-- Main Content -->
             <div class="lg:col-span-2">
@@ -84,133 +86,133 @@
                                 Funciones de la Oficina de Planeamiento y Presupuesto
                             </h3>
                             
-                            <div class="space-y-4 text-gray-700">
-                                <div class="flex items-start space-x-3">
+                            <ul class="space-y-4 text-gray-700">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Formular, monitorear y evaluar el Plan Estratégico Institucional, Plan de Desarrollo Institucional y el Plan Operativo Institucional de la UNAMAD.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Coordinar, preparar, elaborar y presentar el proyecto anual de presupuesto institucional en el marco de las normas vigentes y sustentarlo ante las instancias correspondientes.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Conducir el proceso de la gestión presupuestaria de la universidad en las fases de Programación Multianual, Formulación, Aprobación, Ejecución y Evaluación Presupuestaria; así como, realizar el seguimiento presupuestal, en el marco de las disposiciones vigentes que emite el Sistema Nacional de Presupuesto Público.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Conducir, articular, promover el proceso de formulación y actualización de los documentos de gestión institucional de la universidad.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Implementar el proceso de modernización institucional de la universidad, de acuerdo a las normas y lineamientos existentes sobre la materia.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Proponer la mejora y actualización de los procesos y procedimientos internos en el marco de la implementación de la gestión por proceso en la universidad.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Consolidar y elaborar la Memoria Anual Institucional, en coordinación con las distintas unidades de organización de la universidad.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Brindar asistencia técnica especializada a las distintas unidades de organización de la universidad.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Emitir opinión técnica previa en lo referente a políticas, planes, presupuesto, modernización de la gestión de la universidad y otros temas vinculadas al ámbito de su competencia.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Asegurar la aplicación de las normas del Sistema Nacional de Gestión de Inversiones.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Mantener actualizada la información registrada en los aplicativos informáticos de los sistemas administrativos o funcionales que conduce.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Proponer directivas, lineamientos o herramientas internas que coadyuven al ordenamiento de los procesos y actividades de la universidad, en el marco de las normas generales emitidas por los organismos rectores de los sistemas administrativos y del Ministerio de Educación, los cuales estén vinculados al ámbito de su competencia.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Programar, recolectar, validar, procesar, analizar y difundir la información estadística de la universidad.</p>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p>Las demás funciones asignadas por el Rectorado, o aquellas que sean otorgadas por norma expresa.</p>
-                                </div>
-                            </div>
+                                </li>
+                            </ul>
                         </div>
 
                         <!-- Información Adicional -->

@@ -29,16 +29,12 @@
     <!-- Breadcrumb -->
     <div class="bg-gradient-to-r from-gray-50 to-gray-100 border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <nav class="flex items-center space-x-2 text-sm">
-                <a href="/" class="text-gray-600 hover:text-purple-600 transition-colors font-medium">Inicio</a>
-                <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <a href="/proyectos" class="text-gray-600 hover:text-purple-600 transition-colors font-medium">Proyectos</a>
-                <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-purple-600 font-semibold">Aldea Científica</span>
+            <nav aria-label="Miga de pan" class="text-sm">
+                <ol class="flex items-center space-x-2">
+                    <li><a href="/" class="text-gray-600 hover:text-purple-600 transition-colors font-medium">Inicio</a></li>
+                    <li class="flex items-center"><svg aria-hidden="true" focusable="false" class="mr-2 w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"> <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/> </svg> <a href="/proyectos" class="text-gray-600 hover:text-purple-600 transition-colors font-medium">Proyectos</a></li>
+                    <li class="flex items-center"><svg aria-hidden="true" focusable="false" class="mr-2 w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"> <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/> </svg> <span aria-current="page" class="text-purple-600 font-semibold">Aldea Científica</span></li>
+                </ol>
             </nav>
         </div>
     </div>
@@ -84,8 +80,8 @@
                             <h2 class="text-2xl font-bold text-gray-800">Objetivos y Funciones</h2>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="p-4 bg-purple-50 rounded-lg border border-purple-200">
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <li class="p-4 bg-purple-50 rounded-lg border border-purple-200">
                                 <div class="flex items-center mb-2">
                                     <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-purple-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
@@ -93,9 +89,9 @@
                                     <h3 class="text-lg font-semibold text-purple-800">Intercambio Académico</h3>
                                 </div>
                                 <p class="text-sm text-purple-700">Centro de encuentro entre docentes y estudiantes de Brasil, Bolivia y Perú</p>
-                            </div>
+                            </li>
 
-                            <div class="p-4 bg-violet-50 rounded-lg border border-violet-200">
+                            <li class="p-4 bg-violet-50 rounded-lg border border-violet-200">
                                 <div class="flex items-center mb-2">
                                     <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-violet-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
@@ -103,9 +99,9 @@
                                     <h3 class="text-lg font-semibold text-violet-800">Investigación de Campo</h3>
                                 </div>
                                 <p class="text-sm text-violet-700">Estación para investigadores de diferentes escuelas académicas</p>
-                            </div>
+                            </li>
 
-                            <div class="p-4 bg-indigo-50 rounded-lg border border-indigo-200">
+                            <li class="p-4 bg-indigo-50 rounded-lg border border-indigo-200">
                                 <div class="flex items-center mb-2">
                                     <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-indigo-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
@@ -113,9 +109,9 @@
                                     <h3 class="text-lg font-semibold text-indigo-800">Laboratorios</h3>
                                 </div>
                                 <p class="text-sm text-indigo-700">Desarrollo de laboratorios de investigación en Tahuamanu</p>
-                            </div>
+                            </li>
 
-                            <div class="p-4 bg-purple-50 rounded-lg border border-purple-200">
+                            <li class="p-4 bg-purple-50 rounded-lg border border-purple-200">
                                 <div class="flex items-center mb-2">
                                     <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-purple-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9m0 9c-5 0-9-4-9-9s4-9 9-9"></path>
@@ -123,8 +119,8 @@
                                     <h3 class="text-lg font-semibold text-purple-800">Extensión Educativa</h3>
                                 </div>
                                 <p class="text-sm text-purple-700">Servicios educativos y proyección social en zona de frontera</p>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 

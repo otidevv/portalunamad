@@ -1,5 +1,5 @@
 <!-- Sidebar Navigation -->
-<div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-orange-600">
+<aside class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-orange-600">
     <div class="text-center mb-6">
         <div class="w-16 h-16 bg-gradient-to-r from-orange-600 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-3">
             <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -10,7 +10,7 @@
         <p class="text-sm text-gray-600">Ciencias de la Tierra</p>
     </div>
     
-    <nav class="space-y-1">
+    <nav class="space-y-1" aria-label="Secciones de Estación Geológica">
         <a href="/proyectos/estacion" 
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('proyectos/estacion') ? 'bg-orange-100 text-orange-800 border-r-2 border-orange-500' : 'text-gray-700 hover:bg-gray-100 hover:text-orange-600' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -41,15 +41,15 @@
             <h4 class="text-sm font-semibold text-orange-800">Áreas de Estudio</h4>
         </div>
         
-        <div class="space-y-3">
+        <dl class="space-y-3">
             <!-- Composición -->
             <div class="flex items-start space-x-2">
                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <div>
-                    <p class="text-xs font-semibold text-gray-800">Composición</p>
-                    <p class="text-xs text-orange-700">Química, física y mineralogía</p>
+                    <dt class="text-xs font-semibold text-gray-800">Composición</dt>
+                    <dd class="text-xs text-orange-700">Química, física y mineralogía</dd>
                 </div>
             </div>
 
@@ -59,8 +59,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                 </svg>
                 <div>
-                    <p class="text-xs font-semibold text-gray-800">Dinámica</p>
-                    <p class="text-xs text-orange-700">Procesos internos y externos</p>
+                    <dt class="text-xs font-semibold text-gray-800">Dinámica</dt>
+                    <dd class="text-xs text-orange-700">Procesos internos y externos</dd>
                 </div>
             </div>
 
@@ -70,8 +70,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
                 </svg>
                 <div>
-                    <p class="text-xs font-semibold text-gray-800">Recursos</p>
-                    <p class="text-xs text-orange-700">Minerales y energéticos</p>
+                    <dt class="text-xs font-semibold text-gray-800">Recursos</dt>
+                    <dd class="text-xs text-orange-700">Minerales y energéticos</dd>
                 </div>
             </div>
 
@@ -81,10 +81,10 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
                 <div>
-                    <p class="text-xs font-semibold text-gray-800">Investigación</p>
-                    <p class="text-xs text-orange-700">Equipos analíticos avanzados</p>
+                    <dt class="text-xs font-semibold text-gray-800">Investigación</dt>
+                    <dd class="text-xs text-orange-700">Equipos analíticos avanzados</dd>
                 </div>
             </div>
-        </div>
+        </dl>
     </div>
-</div>
+</aside>
