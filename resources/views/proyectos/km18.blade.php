@@ -19,7 +19,7 @@
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 drop-shadow-lg">
                     Complejo Polideportivo Km. 18
                 </h1>
-                <p class="text-lg sm:text-xl opacity-90 max-w-2xl mx-auto leading-relaxed">
+                <p class="text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
                     Centro deportivo y recreacional universitario
                 </p>
             </div>

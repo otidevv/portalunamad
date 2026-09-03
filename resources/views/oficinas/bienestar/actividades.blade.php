@@ -4,12 +4,12 @@
 
 @section('content')
 <!-- Hero Section -->
-<div class="relative bg-gradient-to-r from-[#db0455] to-[#ed145b] py-20">
-    <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
+<div class="relative bg-gradient-to-r from-[#b8003f] to-[#db0455] py-20">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#b8003f]/90 to-[#db0455]/90"></div>
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-center text-white">
             <h1 class="text-4xl font-bold mb-4">Actividades</h1>
-            <p class="text-xl opacity-90">Bienestar Universitario - UNAMAD</p>
+            <p class="text-xl">Bienestar Universitario - UNAMAD</p>
         </div>
     </div>
 </div>
@@ -57,7 +57,7 @@
                             Pronto encontrarás aquí información detallada sobre los programas, eventos y actividades organizadas por la Dirección Universitaria de Bienestar Universitario.
                         </p>
                         <div class="mt-8">
-                            <a href="/oficinas/bienestar" class="inline-flex items-center px-6 py-3 bg-orange-500 text-white font-medium rounded-lg hover:bg-orange-600 transition-colors">
+                            <a href="/oficinas/bienestar" class="inline-flex items-center px-6 py-3 bg-orange-700 text-white font-medium rounded-lg hover:bg-orange-800 transition-colors">
                                 <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                                 </svg>

@@ -19,7 +19,7 @@
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 drop-shadow-lg">
                     Herbario
                 </h1>
-                <p class="text-lg sm:text-xl opacity-90 max-w-2xl mx-auto leading-relaxed">
+                <p class="text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
                     Un tesoro de biodiversidad para el mundo - Conservando la flora de Madre de Dios
                 </p>
             </div>
@@ -33,7 +33,7 @@
                 <ol class="flex items-center space-x-2">
                     <li><a href="/" class="text-gray-600 hover:text-green-600 transition-colors font-medium">Inicio</a></li>
                     <li class="flex items-center"><svg aria-hidden="true" focusable="false" class="mr-2 w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"> <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/> </svg> <a href="/proyectos" class="text-gray-600 hover:text-green-600 transition-colors font-medium">Proyectos</a></li>
-                    <li class="flex items-center"><svg aria-hidden="true" focusable="false" class="mr-2 w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"> <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/> </svg> <span aria-current="page" class="text-green-600 font-semibold">Herbario</span></li>
+                    <li class="flex items-center"><svg aria-hidden="true" focusable="false" class="mr-2 w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"> <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/> </svg> <span aria-current="page" class="text-green-700 font-semibold">Herbario</span></li>
                 </ol>
             </nav>
         </div>

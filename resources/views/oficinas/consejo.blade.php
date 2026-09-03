@@ -19,7 +19,7 @@
                 </svg>
                 Consejo Universitario
             </h1>
-            <p class="text-lg opacity-95">
+            <p class="text-lg">
                 Máximo órgano de gestión, dirección y ejecución académica y administrativa
             </p>
         </div>
@@ -63,7 +63,7 @@
     <div class="container mx-auto px-4 py-12">
         <!-- Consejo Universitario Section -->
         <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-[#db0455]">
-            <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+            <div class="bg-gradient-to-r from-[#b8003f] to-[#db0455] text-white p-6">
                 <h2 class="text-3xl font-bold flex items-center">
                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
@@ -75,7 +75,7 @@
             <div class="p-8">
                 <!-- Descripción Principal -->
                 <div class="mb-12">
-                    <div class="bg-gradient-to-br from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 border border-[#db0455]/20 shadow-sm">
+                    <div class="bg-gradient-to-br from-[#db0455]/5 to-[#db0455]/5 rounded-lg p-6 border border-[#db0455]/20 shadow-sm">
                         <h3 class="text-2xl font-bold text-[#db0455] mb-6 flex items-center">
                             <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
@@ -572,42 +572,42 @@
                 </div>
 
                 <!-- Marco Legal -->
-                <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] rounded-lg p-8 text-white">
+                <div class="bg-gradient-to-r from-[#b8003f] to-[#db0455] rounded-lg p-8 text-white">
                     <div class="text-center">
                         <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto mb-4 opacity-75" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8s0 0 0 0l-6-6s0 0 0 0zM10.5 18.5h3v-3h-3v3zm0-4.5h3v-3h-3v3zm5-6.5L15 4.5 13.5 6l1.5 1.5L16.5 6z"/>
                         </svg>
                         <h3 class="text-2xl font-bold mb-4">Estructura Ejecutiva</h3>
-                        <p class="text-lg mb-6 opacity-95">
+                        <p class="text-lg mb-6">
                             El Consejo Universitario actúa como el órgano ejecutivo que materializa las decisiones de gobierno universitario
                         </p>
                         <ul class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                            <li class="bg-white/20 rounded-lg p-4">
+                            <li class="bg-white/10 rounded-lg p-4">
                                 <div class="flex items-center justify-center mb-2">
                                     <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
                                     </svg>
                                     <span class="font-semibold">Gestión</span>
                                 </div>
-                                <p class="text-sm opacity-90">Administración y dirección</p>
+                                <p class="text-sm">Administración y dirección</p>
                             </li>
-                            <li class="bg-white/20 rounded-lg p-4">
+                            <li class="bg-white/10 rounded-lg p-4">
                                 <div class="flex items-center justify-center mb-2">
                                     <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                                     </svg>
                                     <span class="font-semibold">Academia</span>
                                 </div>
-                                <p class="text-sm opacity-90">Dirección académica</p>
+                                <p class="text-sm">Dirección académica</p>
                             </li>
-                            <li class="bg-white/20 rounded-lg p-4">
+                            <li class="bg-white/10 rounded-lg p-4">
                                 <div class="flex items-center justify-center mb-2">
                                     <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                                     </svg>
                                     <span class="font-semibold">Administración</span>
                                 </div>
-                                <p class="text-sm opacity-90">Ejecución administrativa</p>
+                                <p class="text-sm">Ejecución administrativa</p>
                             </li>
                         </ul>
                     </div>

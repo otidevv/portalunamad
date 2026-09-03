@@ -6,11 +6,11 @@
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#b8003f]/90 to-[#db0455]/90"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Directorio</h1>
-                <p class="text-xl md:text-2xl opacity-90 drop-shadow-md">Oficina de Cooperación y Relaciones Internacionales</p>
+                <p class="text-xl md:text-2xl drop-shadow-md">Oficina de Cooperación y Relaciones Internacionales</p>
             </div>
         </div>
     </div>
@@ -69,14 +69,14 @@
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
                     <div class="flex items-start space-x-4 mb-8">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-4 rounded-full">
+                        <div class="bg-gradient-to-r from-[#b8003f] to-[#db0455] p-4 rounded-full">
                             <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                             </svg>
                         </div>
                         <div>
                             <h2 class="text-3xl font-bold text-gray-800 mb-4">Directorio OCRI</h2>
-                            <div class="w-20 h-1 bg-gradient-to-r from-[#db0455] to-[#ed145b]"></div>
+                            <div class="w-20 h-1 bg-gradient-to-r from-[#b8003f] to-[#db0455]"></div>
                         </div>
                     </div>
 
@@ -86,11 +86,11 @@
                         </p>
 
                         <!-- Director Profile -->
-                        <div class="bg-gradient-to-r from-[#db0455]/5 to-[#ed145b]/5 rounded-xl p-8 border border-gray-200 mb-8 hover:shadow-xl transition-shadow">
+                        <div class="bg-gradient-to-r from-[#db0455]/5 to-[#db0455]/5 rounded-xl p-8 border border-gray-200 mb-8 hover:shadow-xl transition-shadow">
                             <div class="flex flex-col lg:flex-row items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-8">
                                 <!-- Profile Image Placeholder -->
                                 <div class="flex-shrink-0">
-                                    <div class="w-32 h-32 bg-gradient-to-r from-[#db0455] to-[#ed145b] rounded-full flex items-center justify-center">
+                                    <div class="w-32 h-32 bg-gradient-to-r from-[#b8003f] to-[#db0455] rounded-full flex items-center justify-center">
                                         <svg aria-hidden="true" focusable="false" class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                                         </svg>

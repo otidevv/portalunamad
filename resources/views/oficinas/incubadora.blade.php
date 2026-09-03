@@ -4,12 +4,12 @@
 
 @section('content')
 <!-- Hero Section -->
-<div class="relative bg-gradient-to-r from-[#db0455] to-[#ed145b] py-20">
-    <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
+<div class="relative bg-gradient-to-r from-[#b8003f] to-[#db0455] py-20">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#b8003f]/90 to-[#db0455]/90"></div>
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-center text-white">
             <h1 class="text-4xl font-bold mb-4">Incubadora de Empresas</h1>
-            <p class="text-xl opacity-90">Vicerrectorado de Investigación - UNAMAD</p>
+            <p class="text-xl">Vicerrectorado de Investigación - UNAMAD</p>
         </div>
     </div>
 </div>

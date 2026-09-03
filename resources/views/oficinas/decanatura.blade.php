@@ -19,7 +19,7 @@
                 </svg>
                 Decanatura
             </h1>
-            <p class="text-lg opacity-95">
+            <p class="text-lg">
                 Máxima autoridad de gobierno de la Facultad
             </p>
         </div>
@@ -63,7 +63,7 @@
     <div class="container mx-auto px-4 py-12">
         <!-- Decanatura Section -->
         <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-[#db0455]">
-            <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+            <div class="bg-gradient-to-r from-[#b8003f] to-[#db0455] text-white p-6">
                 <h2 class="text-3xl font-bold flex items-center">
                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -75,7 +75,7 @@
             <div class="p-8">
                 <!-- Descripción Principal -->
                 <div class="mb-12">
-                    <div class="bg-gradient-to-br from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 border border-[#db0455]/20 shadow-sm">
+                    <div class="bg-gradient-to-br from-[#db0455]/5 to-[#db0455]/5 rounded-lg p-6 border border-[#db0455]/20 shadow-sm">
                         <h3 class="text-2xl font-bold text-[#db0455] mb-6 flex items-center">
                             <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
@@ -472,33 +472,33 @@
                 </div>
 
                 <!-- Periodo y Elección -->
-                <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] rounded-lg p-8 text-white">
+                <div class="bg-gradient-to-r from-[#b8003f] to-[#db0455] rounded-lg p-8 text-white">
                     <div class="text-center">
                         <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto mb-4 opacity-75" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                         </svg>
                         <h3 class="text-2xl font-bold mb-4">Elección y Mandato</h3>
-                        <p class="text-lg mb-6 opacity-95">
+                        <p class="text-lg mb-6">
                             El Decano es elegido democráticamente por la comunidad facultativa
                         </p>
                         <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                            <li class="bg-white/20 rounded-lg p-6">
+                            <li class="bg-white/10 rounded-lg p-6">
                                 <div class="flex items-center justify-center mb-3">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
                                     <span class="text-xl font-bold">4 años</span>
                                 </div>
-                                <p class="text-sm opacity-90">Periodo de mandato</p>
+                                <p class="text-sm">Periodo de mandato</p>
                             </li>
-                            <li class="bg-white/20 rounded-lg p-6">
+                            <li class="bg-white/10 rounded-lg p-6">
                                 <div class="flex items-center justify-center mb-3">
                                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728L5.636 5.636m12.728 12.728L12 21l-6.364-6.364M5.636 5.636L12 3l6.364 6.364"></path>
                                     </svg>
                                     <span class="text-xl font-bold">Sin reelección</span>
                                 </div>
-                                <p class="text-sm opacity-90">Inmediata</p>
+                                <p class="text-sm">Inmediata</p>
                             </li>
                         </ul>
                     </div>

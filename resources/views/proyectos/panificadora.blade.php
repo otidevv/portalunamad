@@ -5,7 +5,7 @@
 @section('content')
     <!-- Hero Section -->
     <div class="relative h-64 sm:h-80 lg:h-96 overflow-hidden bg-gradient-to-r from-yellow-600 via-orange-500 to-amber-600">
-        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="absolute inset-0 bg-black/40"></div>
         <img src="{{ asset('img/presentacion/presentacionbackground.jpg') }}" 
              alt="" 
              class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30">
@@ -19,7 +19,7 @@
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 drop-shadow-lg">
                     Panificadora UNAMAD
                 </h1>
-                <p class="text-lg sm:text-xl opacity-90 max-w-2xl mx-auto leading-relaxed">
+                <p class="text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
                     Centro de investigación, capacitación y producción especializado en panadería y pastelería
                 </p>
             </div>
@@ -33,7 +33,7 @@
                 <ol class="flex items-center space-x-2">
                     <li><a href="/" class="text-gray-600 hover:text-yellow-600 transition-colors font-medium">Inicio</a></li>
                     <li class="flex items-center"><svg aria-hidden="true" focusable="false" class="mr-2 w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"> <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/> </svg> <a href="/proyectos" class="text-gray-600 hover:text-yellow-600 transition-colors font-medium">Proyectos</a></li>
-                    <li class="flex items-center"><svg aria-hidden="true" focusable="false" class="mr-2 w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"> <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/> </svg> <span aria-current="page" class="text-yellow-600 font-semibold">Panificadora UNAMAD</span></li>
+                    <li class="flex items-center"><svg aria-hidden="true" focusable="false" class="mr-2 w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"> <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/> </svg> <span aria-current="page" class="text-yellow-800 font-semibold">Panificadora UNAMAD</span></li>
                 </ol>
             </nav>
         </div>
@@ -80,7 +80,7 @@
                             <li class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
                                     <div aria-hidden="true" class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
-                                        <span class="text-yellow-600 font-bold text-sm">1</span>
+                                        <span class="text-yellow-800 font-bold text-sm">1</span>
                                     </div>
                                 </div>
                                 <p class="text-gray-700 text-sm leading-relaxed">
@@ -91,7 +91,7 @@
                             <li class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
                                     <div aria-hidden="true" class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                                        <span class="text-orange-600 font-bold text-sm">2</span>
+                                        <span class="text-orange-800 font-bold text-sm">2</span>
                                     </div>
                                 </div>
                                 <p class="text-gray-700 text-sm leading-relaxed">
@@ -102,7 +102,7 @@
                             <li class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
                                     <div aria-hidden="true" class="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center">
-                                        <span class="text-amber-600 font-bold text-sm">3</span>
+                                        <span class="text-amber-800 font-bold text-sm">3</span>
                                     </div>
                                 </div>
                                 <p class="text-gray-700 text-sm leading-relaxed">
@@ -113,7 +113,7 @@
                             <li class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
                                     <div aria-hidden="true" class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
-                                        <span class="text-yellow-600 font-bold text-sm">4</span>
+                                        <span class="text-yellow-800 font-bold text-sm">4</span>
                                     </div>
                                 </div>
                                 <p class="text-gray-700 text-sm leading-relaxed">
@@ -124,7 +124,7 @@
                             <li class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
                                     <div aria-hidden="true" class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                                        <span class="text-orange-600 font-bold text-sm">5</span>
+                                        <span class="text-orange-800 font-bold text-sm">5</span>
                                     </div>
                                 </div>
                                 <p class="text-gray-700 text-sm leading-relaxed">
@@ -135,7 +135,7 @@
                             <li class="flex items-start space-x-4">
                                 <div class="flex-shrink-0">
                                     <div aria-hidden="true" class="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center">
-                                        <span class="text-amber-600 font-bold text-sm">6</span>
+                                        <span class="text-amber-800 font-bold text-sm">6</span>
                                     </div>
                                 </div>
                                 <p class="text-gray-700 text-sm leading-relaxed">

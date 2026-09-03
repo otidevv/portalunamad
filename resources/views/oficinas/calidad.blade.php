@@ -6,11 +6,11 @@
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#b8003f]/90 to-[#db0455]/90"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Gestión de la Calidad</h1>
-                <p class="text-xl md:text-2xl opacity-90 drop-shadow-md">Universidad Nacional Amazónica de Madre de Dios</p>
+                <p class="text-xl md:text-2xl drop-shadow-md">Universidad Nacional Amazónica de Madre de Dios</p>
             </div>
         </div>
     </div>
@@ -56,7 +56,7 @@
             <aside class="w-80 flex-shrink-0">
                 <!-- Navigation Card -->
                 <div class="bg-white rounded-lg shadow-xl mb-8 overflow-hidden border-t-4 border-[#db0455]">
-                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+                    <div class="bg-gradient-to-r from-[#b8003f] to-[#db0455] text-white p-6">
                         <div class="flex items-center space-x-3">
                             <svg aria-hidden="true" focusable="false" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -87,7 +87,7 @@
                                         </svg>
                                     </div>
                                     <span class="flex-1 text-sm font-medium">Estructura Orgánica</span>
-                                    <span class="text-xs bg-gray-200 text-gray-500 px-2 py-1 rounded-full">Próximamente</span>
+                                    <span class="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full">Próximamente</span>
                                 </div>
                             </div>
                             <div class="calidad-nav-link-disabled">
@@ -98,7 +98,7 @@
                                         </svg>
                                     </div>
                                     <span class="flex-1 text-sm font-medium">Personal Administrativo</span>
-                                    <span class="text-xs bg-gray-200 text-gray-500 px-2 py-1 rounded-full">Próximamente</span>
+                                    <span class="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full">Próximamente</span>
                                 </div>
                             </div>
                             <div class="calidad-nav-link-disabled">
@@ -109,7 +109,7 @@
                                         </svg>
                                     </div>
                                     <span class="flex-1 text-sm font-medium">Directorio</span>
-                                    <span class="text-xs bg-gray-200 text-gray-500 px-2 py-1 rounded-full">Próximamente</span>
+                                    <span class="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full">Próximamente</span>
                                 </div>
                             </div>
                             <div class="calidad-nav-link-disabled">
@@ -120,7 +120,7 @@
                                         </svg>
                                     </div>
                                     <span class="flex-1 text-sm font-medium">SINC</span>
-                                    <span class="text-xs bg-gray-200 text-gray-500 px-2 py-1 rounded-full">Próximamente</span>
+                                    <span class="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full">Próximamente</span>
                                 </div>
                             </div>
                         </nav>
@@ -129,7 +129,7 @@
 
                 <!-- Contact Information Card -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-4">
+                    <div class="bg-gradient-to-r from-[#b8003f] to-[#db0455] text-white p-4">
                         <h2 class="text-lg font-bold">Datos de contacto</h2>
                     </div>
                     <div class="p-6">
@@ -172,11 +172,11 @@
                 <!-- Inicio Section -->
                 <div id="inicio" class="content-section active">
                     <!-- Welcome Banner -->
-                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white rounded-lg p-8 mb-8 shadow-lg">
+                    <div class="bg-gradient-to-r from-[#b8003f] to-[#db0455] text-white rounded-lg p-8 mb-8 shadow-lg">
                         <div class="flex items-center justify-between">
                             <div>
                                 <h2 class="text-3xl font-bold mb-2">Bienvenido a la Oficina de Gestión de la Calidad</h2>
-                                <p class="text-lg opacity-90">Comprometidos con la excelencia académica y la mejora continua</p>
+                                <p class="text-lg">Comprometidos con la excelencia académica y la mejora continua</p>
                             </div>
                             <div class="hidden md:block">
                                 <svg aria-hidden="true" focusable="false" class="w-20 h-20 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -189,7 +189,7 @@
 
                     <!-- Main Description -->
                     <div class="bg-white rounded-lg shadow-lg mb-8 overflow-hidden border-t-4 border-[#db0455]">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+                        <div class="bg-gradient-to-r from-[#b8003f] to-[#db0455] text-white p-6">
                             <h2 class="text-2xl font-bold flex items-center">
                                 <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -237,7 +237,7 @@
 
                     <!-- Functions Section -->
                     <div class="bg-white rounded-lg shadow-lg mb-8 overflow-hidden border-t-4 border-[#db0455]">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+                        <div class="bg-gradient-to-r from-[#b8003f] to-[#db0455] text-white p-6">
                             <h2 class="text-2xl font-bold flex items-center">
                                 <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
@@ -340,7 +340,7 @@
                 <!-- Estructura Orgánica Section -->
                 <div id="estructura" class="content-section hidden">
                     <div class="bg-white rounded-lg shadow-lg mb-12 overflow-hidden border-t-4 border-[#db0455]">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+                        <div class="bg-gradient-to-r from-[#b8003f] to-[#db0455] text-white p-6">
                             <h2 class="text-3xl font-bold flex items-center uppercase">
                                 <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
@@ -359,7 +359,7 @@
                                     <div class="bg-[#db0455] text-white px-6 py-4 rounded-lg shadow-lg">
                                         <div class="text-center">
                                             <h4 class="font-bold uppercase">Director(a) General</h4>
-                                            <p class="text-sm opacity-90">Gestión de la Calidad</p>
+                                            <p class="text-sm">Gestión de la Calidad</p>
                                         </div>
                                     </div>
                                     
@@ -368,15 +368,15 @@
                                     
                                     <!-- Subdivisiones -->
                                     <div class="grid md:grid-cols-3 gap-8 w-full">
-                                        <div class="bg-blue-500 text-white px-4 py-3 rounded-lg shadow-lg text-center">
+                                        <div class="bg-blue-700 text-white px-4 py-3 rounded-lg shadow-lg text-center">
                                             <h5 class="font-bold text-sm uppercase">Unidad de Licenciamiento</h5>
                                         </div>
                                         
-                                        <div class="bg-green-500 text-white px-4 py-3 rounded-lg shadow-lg text-center">
+                                        <div class="bg-green-700 text-white px-4 py-3 rounded-lg shadow-lg text-center">
                                             <h5 class="font-bold text-sm uppercase">Unidad de Acreditación</h5>
                                         </div>
                                         
-                                        <div class="bg-purple-500 text-white px-4 py-3 rounded-lg shadow-lg text-center">
+                                        <div class="bg-purple-700 text-white px-4 py-3 rounded-lg shadow-lg text-center">
                                             <h5 class="font-bold text-sm uppercase">Unidad de Evaluación</h5>
                                         </div>
                                     </div>
@@ -413,7 +413,7 @@
                 <!-- Personal Administrativo Section -->
                 <div id="personal" class="content-section hidden">
                     <div class="bg-white rounded-lg shadow-lg mb-12 overflow-hidden border-t-4 border-[#db0455]">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+                        <div class="bg-gradient-to-r from-[#b8003f] to-[#db0455] text-white p-6">
                             <h2 class="text-3xl font-bold flex items-center uppercase">
                                 <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
@@ -424,7 +424,7 @@
                         <div class="p-8">
                             <div class="grid md:grid-cols-2 gap-8">
                                 <!-- Director General -->
-                                <div class="bg-gradient-to-r from-[#db0455]/10 to-[#ed145b]/10 p-6 rounded-lg border border-[#db0455]/20">
+                                <div class="bg-gradient-to-r from-[#db0455]/10 to-[#db0455]/10 p-6 rounded-lg border border-[#db0455]/20">
                                     <div class="flex items-center space-x-4">
                                         <div class="w-16 h-16 bg-[#db0455] rounded-full flex items-center justify-center">
                                             <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -485,7 +485,7 @@
                 <!-- Directorio Section -->
                 <div id="directorio" class="content-section hidden">
                     <div class="bg-white rounded-lg shadow-lg mb-12 overflow-hidden border-t-4 border-[#db0455]">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+                        <div class="bg-gradient-to-r from-[#b8003f] to-[#db0455] text-white p-6">
                             <h2 class="text-3xl font-bold flex items-center uppercase">
                                 <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
@@ -495,7 +495,7 @@
                         </div>
                         <div class="p-8">
                             <!-- Información Principal -->
-                            <div class="bg-gradient-to-r from-[#db0455]/10 to-[#ed145b]/10 p-6 rounded-lg mb-8">
+                            <div class="bg-gradient-to-r from-[#db0455]/10 to-[#db0455]/10 p-6 rounded-lg mb-8">
                                 <h3 class="text-xl font-bold text-[#db0455] mb-4">Información General</h3>
                                 <div class="grid md:grid-cols-2 gap-6">
                                     <div>
@@ -530,7 +530,7 @@
                                         </div>
                                         
                                         <div class="border-l-4 border-green-500 pl-4">
-                                            <h4 class="font-semibold text-green-600">Acreditación</h4>
+                                            <h4 class="font-semibold text-green-700">Acreditación</h4>
                                             <p class="text-sm text-gray-600">📞 +51 975 845 154</p>
                                             <p class="text-sm text-gray-600">📧 acreditacion@unamad.edu.pe</p>
                                         </div>
@@ -592,7 +592,7 @@
                 <!-- SINC Section -->
                 <div id="sinc" class="content-section hidden">
                     <div class="bg-white rounded-lg shadow-lg mb-12 overflow-hidden border-t-4 border-[#db0455]">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+                        <div class="bg-gradient-to-r from-[#b8003f] to-[#db0455] text-white p-6">
                             <h2 class="text-3xl font-bold flex items-center uppercase">
                                 <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -615,7 +615,7 @@
                                     <h3 class="text-lg font-bold text-gray-800 mb-6">Módulos del Sistema</h3>
                                     
                                     <div class="space-y-4">
-                                        <div class="bg-gradient-to-r from-[#db0455]/10 to-[#ed145b]/10 p-4 rounded-lg border border-[#db0455]/20">
+                                        <div class="bg-gradient-to-r from-[#db0455]/10 to-[#db0455]/10 p-4 rounded-lg border border-[#db0455]/20">
                                             <h4 class="font-bold text-[#db0455] mb-2">Gestión Documental</h4>
                                             <p class="text-sm text-gray-700">Control y seguimiento de documentos institucionales</p>
                                         </div>
@@ -712,43 +712,61 @@
 
 <style>
 .calidad-nav-link {
-    @apply block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#db0455]/5 hover:to-[#ed145b]/5 hover:text-[#db0455] rounded-lg transition-all duration-300 border border-transparent hover:border-[#db0455]/20 cursor-pointer hover:shadow-sm transform hover:translate-x-1;
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #374151;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
 }
 
-.calidad-nav-link.active {
-    @apply bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white border-[#db0455]/30 shadow-lg translate-x-1;
-}
-
-.calidad-nav-link.active svg {
-    @apply text-white;
+.calidad-nav-link:hover {
+    background: linear-gradient(to right, rgb(219 4 85 / 0.05), rgb(184 0 63 / 0.05));
+    color: #db0455;
+    border-color: rgb(219 4 85 / 0.2);
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    transform: translateX(0.25rem);
 }
 
 .calidad-nav-link:hover svg:last-child {
-    @apply transform rotate-90 text-[#db0455];
+    transform: rotate(90deg);
+    color: #db0455;
 }
 
-.calidad-nav-link.active svg:last-child {
-    @apply transform rotate-90 text-white;
+.calidad-nav-link.active,
+.calidad-nav-link[aria-current="page"] {
+    background: linear-gradient(to right, #b8003f, #db0455);
+    color: #ffffff;
+    border-color: rgb(219 4 85 / 0.3);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transform: translateX(0.25rem);
+}
+
+.calidad-nav-link.active svg,
+.calidad-nav-link[aria-current="page"] svg {
+    color: #ffffff;
+}
+
+.calidad-nav-link.active svg:last-child,
+.calidad-nav-link[aria-current="page"] svg:last-child {
+    transform: rotate(90deg);
 }
 
 .calidad-nav-link span {
-    @apply text-sm;
+    font-size: 0.875rem;
 }
 
 .calidad-nav-link-disabled {
-    @apply block px-4 py-3 text-gray-400 rounded-lg border border-transparent cursor-not-allowed opacity-60;
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #4b5563;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    cursor: not-allowed;
 }
 
 .content-section {
-    @apply transition-all duration-300;
-}
-
-.content-section.hidden {
-    @apply hidden;
-}
-
-.content-section.active {
-    @apply block;
+    transition: all 0.3s ease-in-out;
 }
 </style>
 

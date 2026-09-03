@@ -1,6 +1,6 @@
 <!-- Enhanced Navigation Card -->
 <div class="bg-white rounded-lg shadow-xl mb-8 overflow-hidden border-t-4 border-[#db0455]">
-    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+    <div class="bg-gradient-to-r from-[#b8003f] to-[#db0455] text-white p-6">
         <div class="flex items-center space-x-3">
             <svg aria-hidden="true" focusable="false" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -125,30 +125,43 @@
 
 <style>
     .cooperacion-nav-link {
-        @apply flex items-center justify-between px-4 py-3 text-gray-700 rounded-lg border border-transparent hover:bg-gray-50 hover:border-gray-200 transition-all duration-200 ease-in-out transform hover:translate-x-1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 1rem;
+        color: #374151;
+        border-radius: 0.5rem;
+        border: 1px solid transparent;
+        transition: all 0.2s ease-in-out;
     }
-    
-    .cooperacion-nav-link.active {
-        @apply bg-white text-[#db0455] border-[#db0455] shadow-lg translate-x-1;
+
+    .cooperacion-nav-link:hover {
+        background-color: #f9fafb;
+        border-color: #e5e7eb;
+        transform: translateX(0.25rem);
     }
-    
-    .cooperacion-nav-link.active svg {
-        color: #db0455 !important;
+
+    .cooperacion-nav-link:hover svg {
+        color: #db0455;
     }
-    
-    .cooperacion-nav-link.active span {
-        color: #db0455 !important;
-    }
-    
-    .cooperacion-nav-link-disabled {
-        @apply flex items-center justify-between px-4 py-3 text-gray-400 rounded-lg border border-transparent cursor-not-allowed opacity-60;
-    }
-    
-    .cooperacion-nav-link:hover .group-hover\:text-\[\#db0455\] {
-        @apply text-[#db0455];
-    }
-    
+
     .cooperacion-nav-link:hover svg:last-child {
-        @apply transform translate-x-1;
+        transform: translateX(0.25rem);
+    }
+
+    .cooperacion-nav-link.active,
+    .cooperacion-nav-link[aria-current="page"] {
+        background-color: #ffffff;
+        color: #db0455;
+        border-color: #db0455;
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        transform: translateX(0.25rem);
+    }
+
+    .cooperacion-nav-link.active svg,
+    .cooperacion-nav-link.active span,
+    .cooperacion-nav-link[aria-current="page"] svg,
+    .cooperacion-nav-link[aria-current="page"] span {
+        color: #db0455;
     }
 </style>
