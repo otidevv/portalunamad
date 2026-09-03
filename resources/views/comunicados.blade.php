@@ -38,7 +38,9 @@
             <!-- Campo de búsqueda -->
             <div class="flex-1">
                 <div class="relative">
-                    <input type="text" 
+                    <label for="buscar" class="sr-only">Buscar comunicados</label>
+                    <input type="text"
+                           id="buscar"
                            name="buscar" 
                            value="{{ $search }}"
                            placeholder="Buscar comunicados..." 
@@ -51,7 +53,8 @@
 
             <!-- Filtro por categoría -->
             <div class="md:w-64">
-                <select name="categoria" 
+                <label for="categoria" class="sr-only">Categoría</label>
+                <select name="categoria" id="categoria" 
                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455]">
                     <option value="">Todas las categorías</option>
                     @foreach($categorias as $categoria)
@@ -84,7 +87,7 @@
         </form>
 
         @if($search)
-            <div class="mt-4 text-sm text-gray-600">
+            <div class="mt-4 text-sm text-gray-600" role="status">
                 Resultados para: <span class="font-semibold">{{ $search }}</span>
             </div>
         @endif

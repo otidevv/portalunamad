@@ -40,19 +40,24 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                             </svg>
                         </div>
-                        <input type="text" 
-                               id="searchInput" 
-                               placeholder="Buscar documentos, reglamentos, manuales..." 
+                        <label for="searchInput" class="sr-only">Buscar documentos, reglamentos y manuales</label>
+                        <input type="search"
+                               id="searchInput"
+                               placeholder="Buscar documentos, reglamentos, manuales..."
+                               aria-describedby="search-help"
+                               autocomplete="off"
                                class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#db0455] focus:border-transparent text-sm">
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
-                            <div id="searchLoader" class="hidden">
+                            <div id="searchLoader" class="hidden" role="status">
                                 <svg aria-hidden="true" focusable="false" class="animate-spin h-5 w-5 text-[#db0455]" fill="none" viewBox="0 0 24 24">
                                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                 </svg>
+                                <span class="sr-only">Buscando documentos…</span>
                             </div>
                         </div>
                     </div>
+                    <p id="search-help" class="mt-2 text-xs text-gray-600">Escriba al menos 2 caracteres; los resultados aparecen automáticamente debajo del campo.</p>
                     
                     <!-- Resultados de búsqueda -->
                     <div id="searchResults" class="hidden mt-4 border-t border-gray-200 pt-4">
@@ -60,7 +65,7 @@
                             <h2 class="text-sm font-medium text-gray-700">Resultados de búsqueda</h2>
                             <button onclick="clearSearch()" class="text-xs text-[#db0455] hover:text-[#a00340]">Limpiar</button>
                         </div>
-                        <div id="searchResultsContent" class="space-y-2 max-h-96 overflow-y-auto"></div>
+                        <div id="searchResultsContent" class="space-y-2 max-h-96 overflow-y-auto" role="status" aria-live="polite"></div>
                     </div>
                 </div>
             </div>
@@ -125,7 +130,7 @@
 
                         <!-- Contenido expandible de la carpeta -->
                         <div class="folder-content hidden ml-12 border-l-2 border-gray-100">
-                            <div class="loading-content p-4 text-center text-gray-500 text-sm">
+                            <div class="loading-content p-4 text-center text-gray-500 text-sm" role="status">
                                 <svg aria-hidden="true" focusable="false" class="animate-spin h-5 w-5 mx-auto mb-2" fill="none" viewBox="0 0 24 24">
                                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -254,7 +259,7 @@ function displaySearchResults(results) {
     const searchResults = document.getElementById('searchResults');
     
     if (results.length === 0) {
-        resultsContainer.innerHTML = '<p class="text-sm text-gray-500 py-2">No se encontraron documentos</p>';
+        resultsContainer.innerHTML = '<p class="text-sm text-gray-600 py-2">No se encontraron documentos</p>';
     } else {
         resultsContainer.innerHTML = results.map(doc => `
             <div class="flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
@@ -275,6 +280,11 @@ function displaySearchResults(results) {
     }
     
     searchResults.classList.remove('hidden');
+    // Anuncio del número de resultados para lectores de pantalla (WCAG 4.1.3)
+    const resumen = document.createElement('p');
+    resumen.className = 'sr-only';
+    resumen.textContent = results.length === 1 ? '1 documento encontrado' : results.length + ' documentos encontrados';
+    resultsContainer.prepend(resumen);
 }
 
 function hideSearchResults() {
@@ -327,7 +337,7 @@ function loadFolderContent(folderId) {
         content.dataset.loaded = 'true';
     })
     .catch(error => {
-        content.innerHTML = '<div class="p-4 text-center text-red-500 text-sm">Error al cargar contenido</div>';
+        content.innerHTML = '<div class="p-4 text-center text-red-600 text-sm" role="alert">Error al cargar el contenido de la carpeta</div>';
         console.error('Error:', error);
     });
 }
@@ -355,7 +365,7 @@ function generateFolderContent(carpetas, documentos) {
                     </div>
                 </div>
                 <div class="folder-content hidden ml-8 border-l border-gray-100">
-                    <div class="loading-content p-3 text-center text-gray-500 text-xs">
+                    <div class="loading-content p-3 text-center text-gray-500 text-xs" role="status">
                         <svg aria-hidden="true" focusable="false" class="animate-spin h-4 w-4 mx-auto mb-1" fill="none" viewBox="0 0 24 24">
                             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>

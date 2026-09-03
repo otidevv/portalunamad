@@ -24,6 +24,7 @@
             <!-- Formulario -->
             <form class="p-8 space-y-6" action="{{ route('login.post') }}" method="POST">
                 @csrf
+                <p class="text-xs text-gray-600">Todos los campos son obligatorios.</p>
                 
                 <!-- Email -->
                 <div>
@@ -37,13 +38,16 @@
                                       d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path>
                             </svg>
                         </div>
-                        <input id="email" name="email" type="email" autocomplete="email" required
+                        <input id="email" name="email" type="email" autocomplete="email" required aria-required="true"
+                               aria-describedby="email-help @error('email') email-error @enderror"
+                               @error('email') aria-invalid="true" @enderror
                                class="appearance-none block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#db0455] focus:border-transparent transition duration-150 ease-in-out @error('email') border-red-500 @enderror"
                                placeholder="correo@unamad.edu.pe"
                                value="{{ old('email') }}">
                     </div>
+                    <p id="email-help" class="mt-1 text-xs text-gray-600">Use su correo institucional (@unamad.edu.pe).</p>
                     @error('email')
-                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                        <p id="email-error" class="mt-2 text-sm text-red-600" role="alert">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -59,7 +63,8 @@
                                       d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                             </svg>
                         </div>
-                        <input id="password" name="password" type="password" autocomplete="current-password" required
+                        <input id="password" name="password" type="password" autocomplete="current-password" required aria-required="true"
+                               @error('password') aria-invalid="true" aria-describedby="password-error" @enderror
                                class="appearance-none block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#db0455] focus:border-transparent transition duration-150 ease-in-out @error('password') border-red-500 @enderror"
                                placeholder="Ingrese su contraseña">
                         <!-- Botón mostrar/ocultar contraseña -->
@@ -74,7 +79,7 @@
                         </button>
                     </div>
                     @error('password')
-                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                        <p id="password-error" class="mt-2 text-sm text-red-600" role="alert">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -100,7 +105,7 @@
                     <div class="g-recaptcha" data-sitekey="{{ config('recaptcha.site_key') }}"></div>
                 </div>
                 @error('g-recaptcha-response')
-                    <p class="text-sm text-red-600 text-center">{{ $message }}</p>
+                    <p class="text-sm text-red-600 text-center" role="alert">{{ $message }}</p>
                 @enderror
                 @endif
 
@@ -118,7 +123,7 @@
 
                 <!-- Mensaje de error general -->
                 @if(session('error'))
-                    <div class="rounded-md bg-red-50 p-4">
+                    <div class="rounded-md bg-red-50 p-4" role="alert">
                         <div class="flex">
                             <div class="flex-shrink-0">
                                 <svg aria-hidden="true" focusable="false" class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
