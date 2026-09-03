@@ -4,15 +4,15 @@
 
 @section('content')
     <!-- Hero Section -->
-    <div class="relative h-64 sm:h-80 lg:h-96 overflow-hidden bg-gradient-to-r from-gray-700 via-slate-600 to-gray-800">
+    <div class="relative overflow-hidden bg-gradient-to-r from-gray-700 via-slate-600 to-gray-800">
         <div class="absolute inset-0 bg-black/20"></div>
         <img src="{{ asset('img/presentacion/presentacionbackground.jpg') }}" 
-             alt="MV2 Reglamento y Calendario de Admisión" 
+             alt="" 
              class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30">
-        <div class="relative h-full flex items-center justify-center px-6">
+        <div class="relative min-h-64 sm:min-h-80 lg:min-h-96 flex items-center justify-center px-6 py-8">
             <div class="text-center text-white max-w-4xl mx-auto">
                 <div class="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 border border-white/20">
-                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V6a2 2 0 012-2h2a2 2 0 012 2v1M8 7h8m-8 0l-4 12h16L16 7M8 7V6a2 2 0 012-2h2a2 2 0 012 2v1"></path>
                     </svg>
                 </div>
@@ -29,20 +29,20 @@
     <!-- Breadcrumb -->
     <div class="bg-gradient-to-r from-gray-50 to-gray-100 border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <nav class="flex items-center space-x-2 text-sm">
+            <nav aria-label="Ruta de navegación" class="flex items-center space-x-2 text-sm">
                 <a href="/" class="text-gray-600 hover:text-gray-800 transition-colors font-medium">Inicio</a>
-                <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
                 </svg>
                 <a href="/transparencia" class="text-gray-600 hover:text-gray-800 transition-colors font-medium">Transparencia</a>
-                <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
                 </svg>
                 <a href="/transparencia/indicador-55" class="text-gray-600 hover:text-gray-800 transition-colors font-medium">Indicador 55</a>
-                <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
                 </svg>
-                <span class="text-gray-800 font-semibold">MV2: Reglamento de Admisión</span>
+                <span aria-current="page" class="text-gray-800 font-semibold">MV2: Reglamento de Admisión</span>
             </nav>
         </div>
     </div>
@@ -57,7 +57,7 @@
                     <div class="p-8">
                         <div class="flex items-center mb-6">
                             <div class="w-12 h-12 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center mr-4">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V6a2 2 0 012-2h2a2 2 0 012 2v1M8 7h8m-8 0l-4 12h16L16 7M8 7V6a2 2 0 012-2h2a2 2 0 012 2v1"></path>
                                 </svg>
                             </div>
@@ -98,6 +98,7 @@
                         '2021' => 'purple',
                         '2020' => 'pink',
                     ];
+                    // Clases generadas dinámicamente (Tailwind las detecta en este comentario): bg-emerald-700 bg-green-700 bg-blue-700 bg-indigo-700 bg-purple-700 bg-pink-700 bg-gray-700
                 @endphp
 
                 @if(count($docsPorAnio) > 0)
@@ -109,30 +110,28 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-{{ $color }}-600">
                         <div class="p-6">
                             <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-{{ $color }}-600 rounded-full flex items-center justify-center mr-3">
-                                    <span class="text-white font-bold text-lg">{{ substr($anio, -2) }}</span>
+                                <div class="w-10 h-10 bg-{{ $color }}-700 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white font-bold text-lg" aria-hidden="true">{{ substr($anio, -2) }}</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">{{ $anio }}</h3>
                             </div>
 
                             <div class="grid gap-3">
                                 @foreach($docsAnio as $doc)
-                                <a href="{{ $doc['url'] ?? '#' }}"
-                                   target="_blank"
-                                   rel="noopener noreferrer"
+                                <a @if(!empty($doc['url'])) href="{{ $doc['url'] }}" target="_blank" rel="noopener noreferrer" @endif
                                    class="flex items-center p-3 bg-{{ $color }}-50 rounded-lg border border-{{ $color }}-200 hover:bg-{{ $color }}-100 transition-colors duration-200 group">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-{{ $color }}-100 group-hover:bg-{{ $color }}-200 flex-shrink-0 mr-3">
-                                        <svg class="w-4 h-4 text-{{ $color }}-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-{{ $color }}-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                         </svg>
                                     </div>
                                     <div class="flex-1">
                                         <span class="font-semibold text-gray-800">{{ $doc['titulo'] ?? 'Documento' }}</span>
                                         @if(isset($doc['descripcion']))
-                                        <p class="text-xs text-gray-600">{{ $doc['descripcion'] }}</p>
+                                        <p class="text-xs text-gray-700">{{ $doc['descripcion'] }}</p>
                                         @endif
                                     </div>
-                                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </a>
@@ -150,8 +149,8 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-green-600">
                         <div class="p-6">
                             <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center mr-3">
-                                    <span class="text-white font-bold text-lg">24</span>
+                                <div class="w-10 h-10 bg-green-700 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white font-bold text-lg" aria-hidden="true">24</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2024</h3>
                             </div>
@@ -162,15 +161,15 @@
                                    rel="noopener noreferrer"
                                    class="flex items-center p-3 bg-green-50 rounded-lg border border-green-200 hover:bg-green-100 transition-colors duration-200 group">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 group-hover:bg-green-200 flex-shrink-0 mr-3">
-                                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                         </svg>
                                     </div>
                                     <div class="flex-1">
                                         <span class="font-semibold text-gray-800">Reglamento de Admisión v8.0</span>
-                                        <p class="text-xs text-gray-600">Resolución 126-2024-UNAMAD-CU</p>
+                                        <p class="text-xs text-gray-700">Resolución 126-2024-UNAMAD-CU</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </a>
@@ -180,15 +179,15 @@
                                    rel="noopener noreferrer"
                                    class="flex items-center p-3 bg-green-50 rounded-lg border border-green-200 hover:bg-green-100 transition-colors duration-200 group">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 group-hover:bg-green-200 flex-shrink-0 mr-3">
-                                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                         </svg>
                                     </div>
                                     <div class="flex-1">
                                         <span class="font-semibold text-gray-800">Reglamento de Admisión v9.0</span>
-                                        <p class="text-xs text-gray-600">Resolución 396-2024-UNAMAD-CU</p>
+                                        <p class="text-xs text-gray-700">Resolución 396-2024-UNAMAD-CU</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </a>
@@ -198,15 +197,15 @@
                                    rel="noopener noreferrer"
                                    class="flex items-center p-3 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-200 group">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 group-hover:bg-blue-200 flex-shrink-0 mr-3">
-                                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V6a2 2 0 012-2h2a2 2 0 012 2v1M8 7h8m-8 0l-4 12h16L16 7M8 7V6a2 2 0 012-2h2a2 2 0 012 2v1"></path>
                                         </svg>
                                     </div>
                                     <div class="flex-1">
                                         <span class="font-semibold text-gray-800">Calendario de Admisión</span>
-                                        <p class="text-xs text-gray-600">Resolución 003-2024-UNAMAD-CU</p>
+                                        <p class="text-xs text-gray-700">Resolución 003-2024-UNAMAD-CU</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </a>
@@ -218,8 +217,8 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-blue-600">
                         <div class="p-6">
                             <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mr-3">
-                                    <span class="text-white font-bold text-lg">23</span>
+                                <div class="w-10 h-10 bg-blue-700 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white font-bold text-lg" aria-hidden="true">23</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2023</h3>
                             </div>
@@ -230,15 +229,15 @@
                                    rel="noopener noreferrer"
                                    class="flex items-center p-3 bg-green-50 rounded-lg border border-green-200 hover:bg-green-100 transition-colors duration-200 group">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 group-hover:bg-green-200 flex-shrink-0 mr-3">
-                                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                         </svg>
                                     </div>
                                     <div class="flex-1">
                                         <span class="font-semibold text-gray-800">Reglamento de Admisión v6.0</span>
-                                        <p class="text-xs text-gray-600">Resolución 119-2023-UNAMAD-CU</p>
+                                        <p class="text-xs text-gray-700">Resolución 119-2023-UNAMAD-CU</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </a>
@@ -248,15 +247,15 @@
                                    rel="noopener noreferrer"
                                    class="flex items-center p-3 bg-green-50 rounded-lg border border-green-200 hover:bg-green-100 transition-colors duration-200 group">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 group-hover:bg-green-200 flex-shrink-0 mr-3">
-                                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                         </svg>
                                     </div>
                                     <div class="flex-1">
                                         <span class="font-semibold text-gray-800">Reglamento de Admisión v7.0</span>
-                                        <p class="text-xs text-gray-600">Resolución 431-2023-UNAMAD-CU</p>
+                                        <p class="text-xs text-gray-700">Resolución 431-2023-UNAMAD-CU</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </a>
@@ -266,15 +265,15 @@
                                    rel="noopener noreferrer"
                                    class="flex items-center p-3 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-200 group">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 group-hover:bg-blue-200 flex-shrink-0 mr-3">
-                                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V6a2 2 0 012-2h2a2 2 0 012 2v1M8 7h8m-8 0l-4 12h16L16 7M8 7V6a2 2 0 012-2h2a2 2 0 012 2v1"></path>
                                         </svg>
                                     </div>
                                     <div class="flex-1">
                                         <span class="font-semibold text-gray-800">Calendario de Admisión</span>
-                                        <p class="text-xs text-gray-600">Resolución 390-2023-UNAMAD-CU</p>
+                                        <p class="text-xs text-gray-700">Resolución 390-2023-UNAMAD-CU</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </a>
@@ -286,8 +285,8 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-purple-600">
                         <div class="p-6">
                             <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center mr-3">
-                                    <span class="text-white font-bold text-lg">22</span>
+                                <div class="w-10 h-10 bg-purple-700 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white font-bold text-lg" aria-hidden="true">22</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2022</h3>
                             </div>
@@ -298,15 +297,15 @@
                                    rel="noopener noreferrer"
                                    class="flex items-center p-3 bg-green-50 rounded-lg border border-green-200 hover:bg-green-100 transition-colors duration-200 group">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 group-hover:bg-green-200 flex-shrink-0 mr-3">
-                                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                         </svg>
                                     </div>
                                     <div class="flex-1">
                                         <span class="font-semibold text-gray-800">Reglamento de Admisión v4.0</span>
-                                        <p class="text-xs text-gray-600">Resolución 086-2022-UNAMAD-CU</p>
+                                        <p class="text-xs text-gray-700">Resolución 086-2022-UNAMAD-CU</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </a>
@@ -316,15 +315,15 @@
                                    rel="noopener noreferrer"
                                    class="flex items-center p-3 bg-green-50 rounded-lg border border-green-200 hover:bg-green-100 transition-colors duration-200 group">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 group-hover:bg-green-200 flex-shrink-0 mr-3">
-                                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                         </svg>
                                     </div>
                                     <div class="flex-1">
                                         <span class="font-semibold text-gray-800">Reglamento de Admisión v5.0</span>
-                                        <p class="text-xs text-gray-600">Resolución 342-2022-UNAMAD-CU</p>
+                                        <p class="text-xs text-gray-700">Resolución 342-2022-UNAMAD-CU</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </a>
@@ -334,15 +333,15 @@
                                    rel="noopener noreferrer"
                                    class="flex items-center p-3 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-200 group">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 group-hover:bg-blue-200 flex-shrink-0 mr-3">
-                                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V6a2 2 0 012-2h2a2 2 0 012 2v1M8 7h8m-8 0l-4 12h16L16 7M8 7V6a2 2 0 012-2h2a2 2 0 012 2v1"></path>
                                         </svg>
                                     </div>
                                     <div class="flex-1">
                                         <span class="font-semibold text-gray-800">Calendario de Admisión</span>
-                                        <p class="text-xs text-gray-600">Resolución 025-2022-UNAMAD-CU</p>
+                                        <p class="text-xs text-gray-700">Resolución 025-2022-UNAMAD-CU</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </a>
@@ -354,8 +353,8 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-orange-600">
                         <div class="p-6">
                             <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center mr-3">
-                                    <span class="text-white font-bold text-lg">21</span>
+                                <div class="w-10 h-10 bg-orange-700 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white font-bold text-lg" aria-hidden="true">21</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2021</h3>
                             </div>
@@ -366,15 +365,15 @@
                                    rel="noopener noreferrer"
                                    class="flex items-center p-3 bg-green-50 rounded-lg border border-green-200 hover:bg-green-100 transition-colors duration-200 group">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 group-hover:bg-green-200 flex-shrink-0 mr-3">
-                                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                         </svg>
                                     </div>
                                     <div class="flex-1">
                                         <span class="font-semibold text-gray-800">Reglamento de Admisión</span>
-                                        <p class="text-xs text-gray-600">Resolución 211-2019-UNAMAD-R-HIS</p>
+                                        <p class="text-xs text-gray-700">Resolución 211-2019-UNAMAD-R-HIS</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </a>
@@ -384,15 +383,15 @@
                                    rel="noopener noreferrer"
                                    class="flex items-center p-3 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-200 group">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 group-hover:bg-blue-200 flex-shrink-0 mr-3">
-                                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V6a2 2 0 012-2h2a2 2 0 012 2v1M8 7h8m-8 0l-4 12h16L16 7M8 7V6a2 2 0 012-2h2a2 2 0 012 2v1"></path>
                                         </svg>
                                     </div>
                                     <div class="flex-1">
                                         <span class="font-semibold text-gray-800">Calendario de Admisión</span>
-                                        <p class="text-xs text-gray-600">Resolución 326-2021-UNAMAD-CU</p>
+                                        <p class="text-xs text-gray-700">Resolución 326-2021-UNAMAD-CU</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </a>
@@ -404,8 +403,8 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-red-600">
                         <div class="p-6">
                             <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center mr-3">
-                                    <span class="text-white font-bold text-lg">20</span>
+                                <div class="w-10 h-10 bg-red-700 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white font-bold text-lg" aria-hidden="true">20</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2020</h3>
                             </div>
@@ -416,15 +415,15 @@
                                    rel="noopener noreferrer"
                                    class="flex items-center p-3 bg-green-50 rounded-lg border border-green-200 hover:bg-green-100 transition-colors duration-200 group">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 group-hover:bg-green-200 flex-shrink-0 mr-3">
-                                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                         </svg>
                                     </div>
                                     <div class="flex-1">
                                         <span class="font-semibold text-gray-800">Reglamento de Admisión</span>
-                                        <p class="text-xs text-gray-600">Resolución 211-2019-UNAMAD-R-HIS</p>
+                                        <p class="text-xs text-gray-700">Resolución 211-2019-UNAMAD-R-HIS</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </a>
@@ -434,15 +433,15 @@
                                    rel="noopener noreferrer"
                                    class="flex items-center p-3 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-200 group">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 group-hover:bg-blue-200 flex-shrink-0 mr-3">
-                                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V6a2 2 0 012-2h2a2 2 0 012 2v1M8 7h8m-8 0l-4 12h16L16 7M8 7V6a2 2 0 012-2h2a2 2 0 012 2v1"></path>
                                         </svg>
                                     </div>
                                     <div class="flex-1">
                                         <span class="font-semibold text-gray-800">Calendario de Admisión</span>
-                                        <p class="text-xs text-gray-600">Resolución 240-2020-UNAMAD-CU</p>
+                                        <p class="text-xs text-gray-700">Resolución 240-2020-UNAMAD-CU</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </a>
@@ -454,8 +453,8 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-teal-600">
                         <div class="p-6">
                             <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center mr-3">
-                                    <span class="text-white font-bold text-lg">19</span>
+                                <div class="w-10 h-10 bg-teal-700 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-white font-bold text-lg" aria-hidden="true">19</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2019</h3>
                             </div>
@@ -466,15 +465,15 @@
                                    rel="noopener noreferrer"
                                    class="flex items-center p-3 bg-green-50 rounded-lg border border-green-200 hover:bg-green-100 transition-colors duration-200 group">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 group-hover:bg-green-200 flex-shrink-0 mr-3">
-                                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                         </svg>
                                     </div>
                                     <div class="flex-1">
                                         <span class="font-semibold text-gray-800">Reglamento de Admisión</span>
-                                        <p class="text-xs text-gray-600">Resolución 280-2018-UNAMAD-CU</p>
+                                        <p class="text-xs text-gray-700">Resolución 280-2018-UNAMAD-CU</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </a>
@@ -484,15 +483,15 @@
                                    rel="noopener noreferrer"
                                    class="flex items-center p-3 bg-blue-50 rounded-lg border border-blue-200 hover:bg-blue-100 transition-colors duration-200 group">
                                     <div class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 group-hover:bg-blue-200 flex-shrink-0 mr-3">
-                                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V6a2 2 0 012-2h2a2 2 0 012 2v1M8 7h8m-8 0l-4 12h16L16 7M8 7V6a2 2 0 012-2h2a2 2 0 012 2v1"></path>
                                         </svg>
                                     </div>
                                     <div class="flex-1">
                                         <span class="font-semibold text-gray-800">Calendario de Admisión</span>
-                                        <p class="text-xs text-gray-600">Resolución 008-2019-UNAMAD-CU</p>
+                                        <p class="text-xs text-gray-700">Resolución 008-2019-UNAMAD-CU</p>
                                     </div>
-                                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                     </svg>
                                 </a>

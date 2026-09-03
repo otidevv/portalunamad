@@ -1,28 +1,30 @@
 @extends('layouts.app')
 
+@section('title', 'MV9: Proyectos de Investigación - Indicador 55 UNAMAD')
+
 @section('content')
 <div class="bg-gradient-to-br from-teal-50 to-emerald-50 min-h-screen">
     <div class="bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-16">
         <div class="container mx-auto px-4">
             <div class="flex items-center mb-4">
-                <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
                 </svg>
                 <h1 class="text-4xl font-bold">MV9: Proyectos de Investigación</h1>
             </div>
-            <p class="text-xl text-teal-100">
+            <p class="text-xl text-white">
                 Títulos de proyectos de investigación actualizados por semestre académico
             </p>
         </div>
     </div>
 
     <div class="container mx-auto px-4 py-8">
-        <nav class="text-sm text-gray-600 mb-8">
-            <a href="/" class="hover:text-teal-600">Inicio</a>
-            <span class="mx-2">›</span>
-            <a href="/transparencia/indicador-55" class="hover:text-teal-600">Transparencia - Indicador 55</a>
-            <span class="mx-2">›</span>
-            <span class="text-gray-800">MV9: Proyectos de Investigación</span>
+        <nav aria-label="Ruta de navegación" class="text-sm text-gray-600 mb-8">
+            <a href="/" class="hover:text-teal-700">Inicio</a>
+            <span class="mx-2" aria-hidden="true">›</span>
+            <a href="/transparencia/indicador-55" class="hover:text-teal-700">Transparencia - Indicador 55</a>
+            <span class="mx-2" aria-hidden="true">›</span>
+            <span aria-current="page" class="text-gray-800">MV9: Proyectos de Investigación</span>
         </nav>
 
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -30,7 +32,7 @@
                 <div class="bg-white rounded-lg shadow-md p-8">
                     <div class="mb-8">
                         <h2 class="text-2xl font-bold text-teal-800 mb-4 flex items-center">
-                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
                             </svg>
                             Título de los Proyectos de Investigación
@@ -68,12 +70,13 @@
                             '2019' => 'violet',
                             'default' => 'gray'
                         ];
+                    // Clases generadas dinámicamente (Tailwind las detecta en este comentario): text-emerald-700 text-teal-700 text-cyan-700 text-blue-700 text-indigo-700 text-purple-700 text-violet-700 text-gray-700 hover:text-emerald-900 hover:text-teal-900 hover:text-cyan-900 hover:text-blue-900 hover:text-indigo-900 hover:text-purple-900 hover:text-violet-900 hover:text-gray-900
                     @endphp
 
                     @if(count($docsPorAnio) > 0)
                     <div class="space-y-6 mb-8">
                         <h3 class="text-lg font-semibold text-teal-800 flex items-center">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>
                             </svg>
                             Documentos Actualizados
@@ -88,7 +91,7 @@
                                     @foreach($docsAnio as $doc)
                                     <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-{{ $color }}-200 hover:bg-{{ $color }}-50 transition-colors">
                                         <div class="flex items-center">
-                                            <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                             </svg>
                                             <div>
@@ -98,11 +101,9 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <a href="{{ $doc['url'] ?? '#' }}"
-                                           target="_blank"
-                                           rel="noopener noreferrer"
-                                           class="text-{{ $color }}-600 hover:text-{{ $color }}-800 font-medium">
-                                            Ver documento →
+                                        <a @if(!empty($doc['url'])) href="{{ $doc['url'] }}" target="_blank" rel="noopener noreferrer" @endif
+                                           class="text-{{ $color }}-700 hover:text-{{ $color }}-900 font-medium">
+                                            Ver documento<span class="sr-only">: {{ $doc['titulo'] ?? 'Documento' }}</span> <span aria-hidden="true">→</span>
                                         </a>
                                     </div>
                                     @endforeach
@@ -118,7 +119,7 @@
                             <div class="space-y-2">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-teal-200 hover:bg-teal-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         <div>
@@ -129,8 +130,8 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/55_-_2024.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-teal-600 hover:text-teal-800 font-medium">
-                                        Ver documento →
+                                       class="text-teal-700 hover:text-teal-900 font-medium">
+                                        Ver documento<span class="sr-only">: Proyectos de Investigación 2024 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -141,7 +142,7 @@
                             <div class="space-y-2">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-teal-200 hover:bg-teal-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         <div>
@@ -152,8 +153,8 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/55_-_2023_lfPzjAE.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-teal-600 hover:text-teal-800 font-medium">
-                                        Ver documento →
+                                       class="text-teal-700 hover:text-teal-900 font-medium">
+                                        Ver documento<span class="sr-only">: Proyectos de Investigación 2023 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -164,7 +165,7 @@
                             <div class="space-y-2">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-teal-200 hover:bg-teal-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         <div>
@@ -175,8 +176,8 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/55_-_2022_3sRgbUe.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-teal-600 hover:text-teal-800 font-medium">
-                                        Ver documento →
+                                       class="text-teal-700 hover:text-teal-900 font-medium">
+                                        Ver documento<span class="sr-only">: Proyectos de Investigación 2022 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -187,7 +188,7 @@
                             <div class="space-y-2">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-teal-200 hover:bg-teal-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         <div>
@@ -198,8 +199,8 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/55_-_2021_w2ck8Wk.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-teal-600 hover:text-teal-800 font-medium">
-                                        Ver documento →
+                                       class="text-teal-700 hover:text-teal-900 font-medium">
+                                        Ver documento<span class="sr-only">: Proyectos de Investigación 2021 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -210,7 +211,7 @@
                             <div class="space-y-2">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-teal-200 hover:bg-teal-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         <div>
@@ -221,8 +222,8 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/55_-2020_OcatDDB.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-teal-600 hover:text-teal-800 font-medium">
-                                        Ver documento →
+                                       class="text-teal-700 hover:text-teal-900 font-medium">
+                                        Ver documento<span class="sr-only">: Proyectos de Investigación 2020 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -233,7 +234,7 @@
                             <div class="space-y-2">
                                 <div class="flex items-center justify-between p-4 bg-white rounded-lg border border-teal-200 hover:bg-teal-50 transition-colors">
                                     <div class="flex items-center">
-                                        <svg class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-red-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                         </svg>
                                         <div>
@@ -244,8 +245,8 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/55_-_2019_1gfGjhf.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-teal-600 hover:text-teal-800 font-medium">
-                                        Ver documento →
+                                       class="text-teal-700 hover:text-teal-900 font-medium">
+                                        Ver documento<span class="sr-only">: Proyectos de Investigación 2019 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
@@ -255,30 +256,30 @@
 
                     <div class="mt-8 p-6 bg-teal-50 rounded-lg border border-teal-200">
                         <h3 class="text-lg font-semibold text-teal-800 mb-3 flex items-center">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
                             </svg>
                             Información Importante
                         </h3>
-                        <ul class="text-sm text-teal-700 space-y-2">
+                        <ul role="list" class="text-sm text-teal-700 space-y-2">
                             <li class="flex items-start">
-                                <span class="text-teal-600 mr-2">•</span>
+                                <span class="text-teal-600 mr-2" aria-hidden="true">•</span>
                                 Los documentos contienen únicamente los títulos de los proyectos de investigación
                             </li>
                             <li class="flex items-start">
-                                <span class="text-teal-600 mr-2">•</span>
+                                <span class="text-teal-600 mr-2" aria-hidden="true">•</span>
                                 La información está actualizada al último semestre académico de cada año
                             </li>
                             <li class="flex items-start">
-                                <span class="text-teal-600 mr-2">•</span>
+                                <span class="text-teal-600 mr-2" aria-hidden="true">•</span>
                                 Los proyectos incluyen investigaciones de docentes y estudiantes de todas las facultades
                             </li>
                             <li class="flex items-start">
-                                <span class="text-teal-600 mr-2">•</span>
+                                <span class="text-teal-600 mr-2" aria-hidden="true">•</span>
                                 Esta información forma parte del compromiso de transparencia en investigación
                             </li>
                             <li class="flex items-start">
-                                <span class="text-teal-600 mr-2">•</span>
+                                <span class="text-teal-600 mr-2" aria-hidden="true">•</span>
                                 Para mayor detalle sobre proyectos específicos, consulte con el Vicerrectorado de Investigación
                             </li>
                         </ul>
@@ -286,7 +287,7 @@
 
                     <div class="mt-6 p-4 bg-emerald-50 rounded-lg border border-emerald-200">
                         <div class="flex items-start">
-                            <svg class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12,2L13.09,8.26L22,9L17,14L18.18,22L12,19L5.82,22L7,14L2,9L10.91,8.26L12,2Z"/>
                             </svg>
                             <div>
