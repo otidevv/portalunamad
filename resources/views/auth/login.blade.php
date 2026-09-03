@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <h1 class="text-3xl font-bold text-white">Bienvenido<span class="sr-only">: iniciar sesión en el Portal Administrativo UNAMAD</span></h1>
-                <p class="mt-2 text-pink-100">Portal Administrativo UNAMAD</p>
+                <p class="mt-2 text-white">Portal Administrativo UNAMAD</p>
             </div>
 
             <!-- Formulario -->
@@ -41,7 +41,7 @@
                         <input id="email" name="email" type="email" autocomplete="email" required aria-required="true"
                                aria-describedby="email-help @error('email') email-error @enderror"
                                @error('email') aria-invalid="true" @enderror
-                               class="appearance-none block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#db0455] focus:border-transparent transition duration-150 ease-in-out @error('email') border-red-500 @enderror"
+                               class="appearance-none block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#db0455] focus:border-transparent transition duration-150 ease-in-out @error('email') border-red-500 @enderror"
                                placeholder="correo@unamad.edu.pe"
                                value="{{ old('email') }}">
                     </div>
@@ -65,7 +65,7 @@
                         </div>
                         <input id="password" name="password" type="password" autocomplete="current-password" required aria-required="true"
                                @error('password') aria-invalid="true" aria-describedby="password-error" @enderror
-                               class="appearance-none block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#db0455] focus:border-transparent transition duration-150 ease-in-out @error('password') border-red-500 @enderror"
+                               class="appearance-none block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#db0455] focus:border-transparent transition duration-150 ease-in-out @error('password') border-red-500 @enderror"
                                placeholder="Ingrese su contraseña">
                         <!-- Botón mostrar/ocultar contraseña -->
                         <button type="button" onclick="togglePassword()" id="toggle-password"

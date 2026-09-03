@@ -13,7 +13,7 @@
                         <h1 class="text-2xl md:text-3xl font-bold mb-2">
                             Documentos Normativos y de Gestión
                         </h1>
-                        <p class="text-white/90">
+                        <p class="text-white">
                             Portal de transparencia institucional
                         </p>
                     </div>
@@ -117,7 +117,7 @@
                                 <div class="flex-1 min-w-0">
                                     <div class="flex items-center">
                                         <h3 class="text-sm font-medium text-gray-900 truncate">{{ $carpeta->nombre }}</h3>
-                                        <span class="ml-2 text-xs text-gray-500">
+                                        <span class="ml-2 text-xs text-gray-600">
                                             ({{ ($carpeta->hijos_count ?? 0) + ($carpeta->documentos_count ?? 0) }} elementos)
                                         </span>
                                     </div>
@@ -171,7 +171,7 @@
                                 <p class="text-xs text-gray-600 mb-1 line-clamp-1">{{ $documento->descripcion }}</p>
                             @endif
                             
-                            <ul class="flex items-center space-x-3 text-xs text-gray-500 list-none m-0 p-0">
+                            <ul class="flex items-center space-x-3 text-xs text-gray-600 list-none m-0 p-0">
                                 <li>{{ $documento->vistas ?? 0 }} vistas</li>
                                 @if($documento->descargas > 0)
                                     <li>{{ $documento->descargas }} descargas</li>
@@ -366,7 +366,7 @@ function generateFolderContent(carpetas, documentos) {
                     </div>
                     <div class="flex-1">
                         <h4 class="text-sm font-medium text-gray-900">${carpeta.nombre}</h4>
-                        <span class="text-xs text-gray-500">(${carpeta.elementos_count || 0} elementos)</span>
+                        <span class="text-xs text-gray-600">(${carpeta.elementos_count || 0} elementos)</span>
                     </div>
                 </div>
                 <div class="folder-content hidden ml-8 border-l border-gray-100">

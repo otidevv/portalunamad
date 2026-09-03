@@ -6,11 +6,12 @@
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#db0455]/70"></div>
+        <div class="absolute inset-0 bg-black/20"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Autoridades</h1>
-                <p class="text-xl md:text-2xl opacity-90 drop-shadow-md">Universidad Nacional Amazónica de Madre de Dios</p>
+                <p class="text-xl md:text-2xl drop-shadow-md">Universidad Nacional Amazónica de Madre de Dios</p>
             </div>
         </div>
     </div>
@@ -53,7 +54,7 @@
     <div class="container mx-auto px-4 py-12">
         <!-- Rector Section -->
         <div class="bg-white rounded-lg shadow-lg mb-12 overflow-hidden border-t-4 border-[#db0455]">
-            <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+            <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] text-white p-6">
                 <h2 class="text-3xl font-bold flex items-center">
                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -84,7 +85,7 @@
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 012 2z"/>
                                     </svg>
-                                    <a href="mailto:jmaquera@unamad.edu.pe" class="text-sm text-[#db0455] hover:text-[#ed145b] transition-colors font-medium">
+                                    <a href="mailto:jmaquera@unamad.edu.pe" class="text-sm text-[#db0455] hover:text-[#db0455] transition-colors font-medium">
                                         jmaquera@unamad.edu.pe
                                     </a>
                                 </div>
@@ -92,7 +93,7 @@
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"/>
                                     </svg>
-                                    <a href="https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=23590" target="_blank" rel="noopener noreferrer" class="text-sm text-[#db0455] hover:text-[#ed145b] transition-colors font-medium">
+                                    <a href="https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=23590" target="_blank" rel="noopener noreferrer" class="text-sm text-[#db0455] hover:text-[#db0455] transition-colors font-medium">
                                         Perfil en CTI Vitae (CONCYTEC)<span class="sr-only"> del Dr. Joab Maquera Ramírez</span>
                                     </a>
                                 </div>
@@ -223,7 +224,7 @@
 
         <!-- Vicerrectora de Investigación Section -->
         <div class="bg-white rounded-lg shadow-lg mb-12 overflow-hidden border-t-4 border-[#db0455]">
-            <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+            <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] text-white p-6">
                 <h2 class="text-3xl font-bold flex items-center">
                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -254,7 +255,7 @@
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 012 2z"/>
                                     </svg>
-                                    <a href="mailto:lalmanza@unamad.edu.pe" class="text-sm text-[#db0455] hover:text-[#ed145b] transition-colors font-medium">
+                                    <a href="mailto:lalmanza@unamad.edu.pe" class="text-sm text-[#db0455] hover:text-[#db0455] transition-colors font-medium">
                                         lalmanza@unamad.edu.pe
                                     </a>
                                 </div>
@@ -262,7 +263,7 @@
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"/>
                                     </svg>
-                                    <a href="https://dina.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=86686" target="_blank" rel="noopener noreferrer" class="text-sm text-[#db0455] hover:text-[#ed145b] transition-colors font-medium">
+                                    <a href="https://dina.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=86686" target="_blank" rel="noopener noreferrer" class="text-sm text-[#db0455] hover:text-[#db0455] transition-colors font-medium">
                                         Perfil en CTI Vitae (CONCYTEC)<span class="sr-only"> de la Dra. Luz Marina Almanza Huamán</span>
                                     </a>
                                 </div>

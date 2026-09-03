@@ -43,19 +43,19 @@
             <!-- Ficha de metadatos -->
             <dl class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-3 mt-5 text-sm bg-white rounded-xl shadow-sm p-5">
                 <div>
-                    <dt class="text-xs text-gray-400 uppercase">Fecha de corte</dt>
+                    <dt class="text-xs text-gray-600 uppercase">Fecha de corte</dt>
                     <dd class="text-gray-700">{{ $dataset->fecha_corte ? $dataset->fecha_corte->format('d/m/Y') : '—' }}</dd>
                 </div>
                 <div>
-                    <dt class="text-xs text-gray-400 uppercase">Frecuencia</dt>
+                    <dt class="text-xs text-gray-600 uppercase">Frecuencia</dt>
                     <dd class="text-gray-700">{{ $dataset->frecuencia_actualizacion ?: '—' }}</dd>
                 </div>
                 <div>
-                    <dt class="text-xs text-gray-400 uppercase">Licencia</dt>
+                    <dt class="text-xs text-gray-600 uppercase">Licencia</dt>
                     <dd class="text-gray-700">{{ $dataset->licencia ?: '—' }}</dd>
                 </div>
                 <div>
-                    <dt class="text-xs text-gray-400 uppercase">Campos</dt>
+                    <dt class="text-xs text-gray-600 uppercase">Campos</dt>
                     <dd class="text-gray-700">{{ count($dataset->columnas ?? []) }}</dd>
                 </div>
             </dl>
@@ -91,7 +91,7 @@
                     </select>
                 </div>
             </div>
-            <p id="grafico-aviso" class="text-xs text-amber-600 mb-2 hidden" role="status" aria-live="polite"></p>
+            <p id="grafico-aviso" class="text-xs text-amber-800 mb-2 hidden" role="status" aria-live="polite"></p>
             <div class="relative" style="height: 460px;">
                 <canvas id="grafico-dataset" role="img" aria-label="Gráfico de datos del conjunto {{ $dataset->nombre }}"></canvas>
             </div>
@@ -108,7 +108,7 @@
                 <h2 class="m-0">
                 <button type="button" id="toggle-diccionario" class="w-full flex items-center justify-between px-6 py-4 text-left">
                     <span class="text-lg font-semibold text-gray-800">Diccionario de datos</span>
-                    <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>

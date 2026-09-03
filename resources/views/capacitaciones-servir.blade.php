@@ -19,7 +19,7 @@
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 drop-shadow-lg">
                     Videos de Capacitación SERVIR
                 </h1>
-                <p class="text-lg sm:text-xl opacity-90 max-w-2xl mx-auto leading-relaxed">
+                <p class="text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
                     Material audiovisual de capacitación para servidores públicos
                 </p>
             </div>
@@ -58,8 +58,8 @@
                         </div>
                     </div>
                     <div>
-                        <p class="text-sm text-gray-500 mb-1">"Decenio de la Igualdad de Oportunidades para Mujeres y Hombres"</p>
-                        <p class="text-sm text-gray-500 mb-3">"Año de la recuperación y consolidación de la economía peruana"</p>
+                        <p class="text-sm text-gray-600 mb-1">"Decenio de la Igualdad de Oportunidades para Mujeres y Hombres"</p>
+                        <p class="text-sm text-gray-600 mb-3">"Año de la recuperación y consolidación de la economía peruana"</p>
                         <h2 class="text-xl font-bold text-gray-800 mb-2">Cultura de Aprendizaje - SERVIR</h2>
                         <p class="text-gray-600">Difusión de material audiovisual para la sensibilización sobre la cultura de aprendizaje en el marco del proceso de capacitación del Sistema Administrativo de Gestión de Recursos Humanos.</p>
                     </div>
@@ -314,7 +314,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <span class="absolute top-3 left-3 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            <span class="absolute top-3 left-3 bg-green-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
                                 Video 5
                             </span>
                         </div>
@@ -361,7 +361,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <span class="absolute top-3 left-3 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            <span class="absolute top-3 left-3 bg-green-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
                                 Video 6
                             </span>
                         </div>
@@ -408,7 +408,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <span class="absolute top-3 left-3 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            <span class="absolute top-3 left-3 bg-green-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
                                 Video 7
                             </span>
                         </div>
@@ -451,7 +451,7 @@
                 <div class="flex items-start space-x-4">
                     <div class="flex-shrink-0">
                         <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                            <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
                             </svg>
                         </div>
@@ -489,7 +489,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <span class="absolute top-3 left-3 bg-orange-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            <span class="absolute top-3 left-3 bg-orange-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
                                 Short 1
                             </span>
                         </div>
@@ -528,7 +528,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <span class="absolute top-3 left-3 bg-orange-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            <span class="absolute top-3 left-3 bg-orange-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
                                 Short 2
                             </span>
                         </div>
@@ -567,7 +567,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <span class="absolute top-3 left-3 bg-orange-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            <span class="absolute top-3 left-3 bg-orange-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
                                 Short 3
                             </span>
                         </div>
@@ -606,7 +606,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <span class="absolute top-3 left-3 bg-orange-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            <span class="absolute top-3 left-3 bg-orange-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
                                 Short 4
                             </span>
                         </div>
@@ -695,7 +695,7 @@
                                         </svg>
                                     </a>
                                 </div>
-                                <span class="absolute top-3 left-3 bg-orange-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                <span class="absolute top-3 left-3 bg-orange-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
                                     Video {{ $i + 1 }}
                                 </span>
                             </div>
@@ -774,7 +774,7 @@
                 <div class="flex items-start space-x-4">
                     <div class="flex-shrink-0">
                         <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                            <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                             </svg>
                         </div>
@@ -793,16 +793,16 @@
                             <div class="p-6">
                                 <div class="flex items-center mb-4">
                                     <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                                        <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                                         </svg>
                                     </div>
-                                    <span class="text-xs font-semibold text-orange-600 uppercase tracking-wide">Matriz MCP {{ $i + 1 }}</span>
+                                    <span class="text-xs font-semibold text-orange-700 uppercase tracking-wide">Matriz MCP {{ $i + 1 }}</span>
                                 </div>
                                 <h3 class="text-lg font-bold text-gray-800 mb-4 line-clamp-2">{{ $matriz['titulo'] }}</h3>
                                 <div class="flex flex-wrap gap-2">
                                     <a href="{{ $matriz['matriz'] }}" target="_blank" rel="noopener noreferrer"
-                                       class="inline-flex items-center px-4 py-2 bg-orange-600 text-white text-sm font-medium rounded-lg hover:bg-orange-700 transition-colors">
+                                       class="inline-flex items-center px-4 py-2 bg-orange-700 text-white text-sm font-medium rounded-lg hover:bg-orange-800 transition-colors">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                                         </svg>

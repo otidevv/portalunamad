@@ -19,7 +19,7 @@
                 </svg>
                 Historia
             </h1>
-            <p class="text-lg opacity-95">
+            <p class="text-lg">
                 Trayectoria y evolución de nuestra institución
             </p>
         </div>
@@ -63,7 +63,7 @@
     <div class="container mx-auto px-4 py-12">
         <!-- Historia Section -->
         <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-[#db0455]">
-            <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+            <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] text-white p-6">
                 <h2 class="text-3xl font-bold flex items-center">
                     <svg aria-hidden="true" focusable="false" class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
@@ -95,11 +95,11 @@
                     <!-- Año 2001 -->
                     <li class="relative">
                         <div class="flex items-start">
-                            <div class="flex-shrink-0 w-20 h-20 bg-[#ed145b] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg" aria-hidden="true">
+                            <div class="flex-shrink-0 w-20 h-20 bg-[#db0455] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg" aria-hidden="true">
                                 2001
                             </div>
                             <div class="ml-6 flex-1">
-                                <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-[#ed145b]">
+                                <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-[#db0455]">
                                     <h3 class="text-xl font-bold text-gray-800 mb-3"><time datetime="2001" class="sr-only">Año 2001: </time>Autorización de Funcionamiento</h3>
                                     <div class="space-y-3 text-gray-700">
                                         <p class="leading-relaxed">
@@ -163,7 +163,7 @@
                     </div>
 
                     <!-- Compromiso y Misión -->
-                    <div class="bg-gradient-to-br from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 border border-[#db0455]/20 shadow-sm">
+                    <div class="bg-gradient-to-br from-[#db0455]/5 to-[#db0455]/5 rounded-lg p-6 border border-[#db0455]/20 shadow-sm">
                         <h3 class="text-xl font-bold text-[#db0455] mb-4 flex items-center">
                             <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
@@ -183,11 +183,11 @@
 
                 <!-- Quote final -->
                 <div class="mt-12 text-center">
-                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] rounded-lg p-8 text-white">
+                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] rounded-lg p-8 text-white">
                         <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto mb-4 opacity-75" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
                         </svg>
-                        <p class="text-xl font-medium mb-4 italic">
+                        <p class="text-xl font-bold mb-4 italic">
                             "Formando profesionales comprometidos con el desarrollo amazónico y nacional"
                         </p>
                         <div class="w-24 h-0.5 bg-white/60 mx-auto"></div>

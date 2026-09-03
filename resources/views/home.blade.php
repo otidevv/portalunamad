@@ -697,12 +697,12 @@
                 <div class="lg:col-span-1">
                     <div class="bg-white rounded-lg shadow-xl overflow-hidden">
                         <!-- Cabecera con marca Facebook -->
-                        <div class="text-white p-6 text-center" style="background-color:#1877F2;">
+                        <div class="text-white p-6 text-center" style="background-color:#1565c0;">
                             <svg class="w-12 h-12 mx-auto mb-3" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                             </svg>
                             <h3 class="text-xl font-bold leading-tight">Conéctate con nosotros</h3>
-                            <p class="text-sm opacity-90 mt-1">@unamad.oficial</p>
+                            <p class="text-sm mt-1">@unamad.oficial</p>
                         </div>
 
                         <!-- Cuerpo -->
@@ -749,7 +749,7 @@
                             <a href="https://www.facebook.com/unamad.oficial/?locale=es_LA"
                                 target="_blank" rel="noopener noreferrer"
                                 class="block w-full text-center text-white font-bold py-3 px-4 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-                                style="background-color:#1877F2;">
+                                style="background-color:#1565c0;">
                                 <span class="inline-flex items-center justify-center">
                                     <svg class="w-5 h-5 mr-2" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
@@ -991,7 +991,7 @@
 
                 <!-- Videos de Capacitación SERVIR -->
                 <a href="{{ url('capacitaciones-servir') }}"
-                    class="block bg-gradient-to-r from-red-500 to-red-600 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group">
+                    class="block bg-gradient-to-r from-red-600 to-red-700 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group">
                     <div class="flex items-center">
                         <div class="bg-white/20 rounded-lg p-3 mr-4 group-hover:bg-white/30 transition-colors">
                             <svg class="w-6 h-6 text-white" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
@@ -1000,7 +1000,7 @@
                         </div>
                         <div>
                             <h3 class="text-lg font-semibold text-white">Videos de Capacitación SERVIR</h3>
-                            <p class="text-white/90 text-sm">Material audiovisual de capacitación para servidores públicos</p>
+                            <p class="text-white text-sm">Material audiovisual de capacitación para servidores públicos</p>
                         </div>
                     </div>
                 </a>
@@ -1044,7 +1044,7 @@
                                     </div>
                                     <div>
                                         <h3 class="text-lg font-bold">Notas de Prensa</h3>
-                                        <p class="text-sm opacity-90">Listado de las últimas noticias publicadas en la
+                                        <p class="text-sm">Listado de las últimas noticias publicadas en la
                                             UNAMAD</p>
                                     </div>
                                 </div>
@@ -1062,14 +1062,14 @@
                                     </div>
                                     <div>
                                         <h3 class="text-lg font-bold">Facebook</h3>
-                                        <p class="text-sm opacity-90">Página oficial de la UNAMAD en Facebook</p>
+                                        <p class="text-sm">Página oficial de la UNAMAD en Facebook</p>
                                     </div>
                                 </div>
                             </a>
 
                             <!-- Instagram -->
                             <a href="https://www.instagram.com/unamad_oficial/" target="_blank" rel="noopener noreferrer"
-                                class="block bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 rounded-lg shadow-lg p-6 transition-all duration-300">
+                                class="block bg-gradient-to-r from-purple-700 via-pink-700 to-orange-700 hover:from-purple-800 hover:via-pink-800 hover:to-orange-800 rounded-lg shadow-lg p-6 transition-all duration-300">
                                 <div class="flex items-center text-white">
                                     <div class="mr-4">
                                         <svg class="w-8 h-8" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
@@ -1079,7 +1079,7 @@
                                     </div>
                                     <div>
                                         <h3 class="text-lg font-bold">Instagram</h3>
-                                        <p class="text-sm opacity-90">Cuenta oficial de la UNAMAD en Instagram</p>
+                                        <p class="text-sm">Cuenta oficial de la UNAMAD en Instagram</p>
                                     </div>
                                 </div>
                             </a>
@@ -1099,7 +1099,7 @@
                                     class="block bg-red-600 hover:bg-red-700 rounded-b-lg shadow-lg p-6 transition-all duration-300">
                                     <div class="text-white">
                                         <h3 class="text-lg font-bold mb-2">Boletín Digital "UNAMAD AL DÍA"</h3>
-                                        <p class="text-sm opacity-90">¡FELICES BODAS DE PLATA UNAMAD!
+                                        <p class="text-sm">¡FELICES BODAS DE PLATA UNAMAD!
                                             25 AÑOS IMPULSANDO EL DESARROLLO EN LA AMAZONÍA
                                             SE CELEBRÓ XXV ANIVERSARIO
                                             CON SESIÓN SOLEMNE E INVITADOS DE HONOR</p>
@@ -1259,7 +1259,7 @@
                     </button>
 
                     <!-- Indicador de posición -->
-                    <div class="text-white/90 text-sm font-medium ml-2">
+                    <div class="text-white text-sm font-medium ml-2">
                         <span id="anuncio-actual">1</span> / <span id="total-anuncios">1</span>
                     </div>
                 </div>
@@ -1269,7 +1269,7 @@
                     <div id="modal-categoria"
                         class="inline-block px-3 py-1 bg-white/20 rounded-full text-sm font-bold mb-3"></div>
                     <h2 id="modal-titulo" class="text-2xl font-bold leading-tight mb-2"></h2>
-                    <div class="flex items-center space-x-4 text-white/90 text-sm">
+                    <div class="flex items-center space-x-4 text-white text-sm">
                         <div class="flex items-center">
                             <svg class="w-4 h-4 mr-1" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1365,7 +1365,7 @@
     </style>
 
     <!-- Modal Lightbox para imágenes en tamaño completo -->
-    <div id="lightbox-modal" class="fixed inset-0 bg-black bg-opacity-90 z-[10000] hidden items-center justify-center p-4"
+    <div id="lightbox-modal" class="fixed inset-0 bg-black/90 z-[10000] hidden items-center justify-center p-4"
         onclick="cerrarLightbox()" role="dialog" aria-modal="true" aria-label="Visualización de imagen">
         <div class="relative max-w-7xl max-h-full w-full h-full flex items-center justify-center"
             onclick="event.stopPropagation()">
@@ -1436,7 +1436,7 @@
                     <p class="text-sm text-gray-500">Universidad Nacional Amazónica de Madre de Dios</p>
                 </div>
                 <!-- Botón de minimizar -->
-                <button onclick="togglePlayerSize()" class="text-gray-400 hover:text-gray-600 transition-colors" aria-label="Minimizar reproductor">
+                <button onclick="togglePlayerSize()" class="text-gray-600 hover:text-gray-800 transition-colors" aria-label="Minimizar reproductor">
                     <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
@@ -2009,9 +2009,13 @@
             if (totalAnuncios > 1) {
                 controles.classList.remove('hidden');
 
-                // Habilitar/deshabilitar botones
-                document.getElementById('btn-anterior').style.opacity = indiceActual > 0 ? '1' : '0.5';
-                document.getElementById('btn-siguiente').style.opacity = indiceActual < totalAnuncios - 1 ? '1' : '0.5';
+                // Habilitar/deshabilitar botones (estado real, no solo opacidad)
+                const btnAnterior = document.getElementById('btn-anterior');
+                const btnSiguiente = document.getElementById('btn-siguiente');
+                btnAnterior.disabled = !(indiceActual > 0);
+                btnSiguiente.disabled = !(indiceActual < totalAnuncios - 1);
+                btnAnterior.style.opacity = btnAnterior.disabled ? '0.5' : '1';
+                btnSiguiente.style.opacity = btnSiguiente.disabled ? '0.5' : '1';
             } else {
                 controles.classList.add('hidden');
             }
@@ -2055,7 +2059,7 @@
         // Abrir imagen en lightbox
         function abrirImagenLightbox(url, titulo) {
             const lightbox = document.createElement('div');
-            lightbox.className = 'fixed inset-0 bg-black bg-opacity-90 z-[10000] flex items-center justify-center p-4';
+            lightbox.className = 'fixed inset-0 bg-black/90 z-[10000] flex items-center justify-center p-4';
             lightbox.setAttribute('role', 'dialog');
             lightbox.setAttribute('aria-modal', 'true');
             lightbox.setAttribute('aria-label', 'Imagen ampliada: ' + titulo);
@@ -2065,7 +2069,7 @@
         <div class="relative max-w-6xl max-h-[95vh] flex items-center justify-center">
             <img src="${url}" alt="${titulo}" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl">
             <button type="button" aria-label="Cerrar imagen" onclick="event.stopPropagation(); this.parentElement.parentElement.remove()"
-                    class="absolute top-4 right-4 w-12 h-12 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 flex items-center justify-center text-white transition-all">
+                    class="absolute top-4 right-4 w-12 h-12 rounded-full bg-black/50 hover:bg-black/70 flex items-center justify-center text-white transition-all">
                 <svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
