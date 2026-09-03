@@ -7,7 +7,7 @@
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
         <div class="absolute inset-0 bg-black/50"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#db0455]/70"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Ingeniería Agroindustrial</h1>
@@ -57,7 +57,7 @@
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
                     <div class="flex items-start space-x-4 mb-8">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-4 rounded-full">
+                        <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-4 rounded-full">
                             <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
                             </svg>
@@ -91,7 +91,7 @@
                             
                             <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <li class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-2 rounded-full">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-2 rounded-full">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -102,7 +102,7 @@
                                     </div>
                                 </li>
                                 <li class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-2 rounded-full">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-2 rounded-full">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -113,7 +113,7 @@
                                     </div>
                                 </li>
                                 <li class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-2 rounded-full">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-2 rounded-full">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -124,7 +124,7 @@
                                     </div>
                                 </li>
                                 <li class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-2 rounded-full">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-2 rounded-full">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>

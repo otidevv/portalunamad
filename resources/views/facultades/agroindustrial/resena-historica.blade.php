@@ -7,7 +7,7 @@
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
         <div class="absolute inset-0 bg-black/50"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#db0455]/70"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Reseña Histórica</h1>
@@ -65,7 +65,7 @@
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
                     <div class="flex items-start space-x-4 mb-8">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-4 rounded-full">
+                        <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-4 rounded-full">
                             <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
@@ -175,7 +175,7 @@
                             
                             <ul class="space-y-3">
                                 <li class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -183,7 +183,7 @@
                                     <p class="text-gray-700">La manipulación, adecuación y conservación de la materia prima proveniente del campo (tanto de origen alimentario como no alimentario)</p>
                                 </li>
                                 <li class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -191,7 +191,7 @@
                                     <p class="text-gray-700">Su procesamiento, conservación y comercialización en productos terminados</p>
                                 </li>
                                 <li class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
