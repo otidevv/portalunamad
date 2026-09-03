@@ -62,7 +62,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                 </svg>
                             </div>
-                            <h2 class="text-2xl font-bold text-gray-800">MISIÓN</h2>
+                            <h2 class="text-2xl font-bold text-gray-800 uppercase">Misión</h2>
                         </div>
 
                         <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mb-6">
@@ -115,7 +115,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                                 </svg>
                             </div>
-                            <h2 class="text-2xl font-bold text-gray-800">VISIÓN</h2>
+                            <h2 class="text-2xl font-bold text-gray-800 uppercase">Visión</h2>
                         </div>
 
                         <div class="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-lg mb-6">

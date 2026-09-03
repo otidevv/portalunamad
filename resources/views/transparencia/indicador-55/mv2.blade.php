@@ -111,7 +111,7 @@
                         <div class="p-6">
                             <div class="flex items-center mb-4">
                                 <div class="w-10 h-10 bg-{{ $color }}-700 rounded-full flex items-center justify-center mr-3">
-                                    <span class="text-white font-bold text-lg">{{ substr($anio, -2) }}</span>
+                                    <span class="text-white font-bold text-lg" aria-hidden="true">{{ substr($anio, -2) }}</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">{{ $anio }}</h3>
                             </div>
@@ -150,7 +150,7 @@
                         <div class="p-6">
                             <div class="flex items-center mb-4">
                                 <div class="w-10 h-10 bg-green-700 rounded-full flex items-center justify-center mr-3">
-                                    <span class="text-white font-bold text-lg">24</span>
+                                    <span class="text-white font-bold text-lg" aria-hidden="true">24</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2024</h3>
                             </div>
@@ -218,7 +218,7 @@
                         <div class="p-6">
                             <div class="flex items-center mb-4">
                                 <div class="w-10 h-10 bg-blue-700 rounded-full flex items-center justify-center mr-3">
-                                    <span class="text-white font-bold text-lg">23</span>
+                                    <span class="text-white font-bold text-lg" aria-hidden="true">23</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2023</h3>
                             </div>
@@ -286,7 +286,7 @@
                         <div class="p-6">
                             <div class="flex items-center mb-4">
                                 <div class="w-10 h-10 bg-purple-700 rounded-full flex items-center justify-center mr-3">
-                                    <span class="text-white font-bold text-lg">22</span>
+                                    <span class="text-white font-bold text-lg" aria-hidden="true">22</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2022</h3>
                             </div>
@@ -354,7 +354,7 @@
                         <div class="p-6">
                             <div class="flex items-center mb-4">
                                 <div class="w-10 h-10 bg-orange-700 rounded-full flex items-center justify-center mr-3">
-                                    <span class="text-white font-bold text-lg">21</span>
+                                    <span class="text-white font-bold text-lg" aria-hidden="true">21</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2021</h3>
                             </div>
@@ -404,7 +404,7 @@
                         <div class="p-6">
                             <div class="flex items-center mb-4">
                                 <div class="w-10 h-10 bg-red-700 rounded-full flex items-center justify-center mr-3">
-                                    <span class="text-white font-bold text-lg">20</span>
+                                    <span class="text-white font-bold text-lg" aria-hidden="true">20</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2020</h3>
                             </div>
@@ -454,7 +454,7 @@
                         <div class="p-6">
                             <div class="flex items-center mb-4">
                                 <div class="w-10 h-10 bg-teal-700 rounded-full flex items-center justify-center mr-3">
-                                    <span class="text-white font-bold text-lg">19</span>
+                                    <span class="text-white font-bold text-lg" aria-hidden="true">19</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2019</h3>
                             </div>
