@@ -10,14 +10,18 @@
         <p class="text-sm text-gray-600">Turismo Sostenible</p>
     </div>
     
-    <nav class="space-y-1">
-        <a href="/facultades/ecoturismo" 
-           class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('facultades/ecoturismo') ? 'bg-teal-100 text-teal-800 border-r-2 border-teal-500' : 'text-gray-700 hover:bg-gray-100 hover:text-teal-600' }}">
-            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
-            </svg>
-            Inicio
-        </a>
+    <nav aria-label="Secciones de Ecoturismo" id="navegacion-carrera">
+        <ul class="space-y-1">
+            <li>
+            <a href="/facultades/ecoturismo" 
+               class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('facultades/ecoturismo') ? 'bg-teal-100 text-teal-800 border-r-2 border-teal-500' : 'text-gray-700 hover:bg-gray-100 hover:text-teal-600' }}">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
+                </svg>
+                Inicio
+            </a>
+            </li>
+        </ul>
     </nav>
     
     <div class="mt-8 p-4 bg-teal-50 rounded-lg border border-teal-200">

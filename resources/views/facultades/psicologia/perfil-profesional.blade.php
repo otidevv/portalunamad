@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Perfil Profesional - Psicología - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Migas de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -58,11 +60,6 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                @include('facultades.psicologia.partials.navigation')
-            </div>
-
             <!-- Main Content -->
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
@@ -90,32 +87,32 @@
                             </svg>
                             Competencias Genéricas
                         </h3>
-                        <div class="space-y-4 mb-10">
-                            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-5 border-l-4 border-blue-500">
+                        <ol class="space-y-4 mb-10">
+                            <li class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-5 border-l-4 border-blue-500">
                                 <div class="flex items-start space-x-3">
                                     <span class="bg-blue-600 text-white font-bold text-xs px-3 py-1 rounded-full flex-shrink-0">CG1</span>
                                     <p class="text-gray-700">Colabora en equipos multidisciplinarios, demostrando creatividad e innovación para diseñar y desarrollar propuestas de emprendimiento sostenibles que generen impacto positivo en la comunidad.</p>
                                 </div>
-                            </div>
-                            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-5 border-l-4 border-blue-500">
+                            </li>
+                            <li class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-5 border-l-4 border-blue-500">
                                 <div class="flex items-start space-x-3">
                                     <span class="bg-blue-600 text-white font-bold text-xs px-3 py-1 rounded-full flex-shrink-0">CG2</span>
                                     <p class="text-gray-700">Comunica ideas en forma oral y escrita de manera efectiva, adaptando el mensaje a diversas audiencias y contextos para garantizar su claridad y comprensión.</p>
                                 </div>
-                            </div>
-                            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-5 border-l-4 border-blue-500">
+                            </li>
+                            <li class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-5 border-l-4 border-blue-500">
                                 <div class="flex items-start space-x-3">
                                     <span class="bg-blue-600 text-white font-bold text-xs px-3 py-1 rounded-full flex-shrink-0">CG3</span>
                                     <p class="text-gray-700">Aplica conocimientos matemáticos, estadísticos y científicos mediante el uso de herramientas y razonamiento lógico en la resolución de problemas, para proponer soluciones efectivas, analizando fenómenos naturales basados en evidencia.</p>
                                 </div>
-                            </div>
-                            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-5 border-l-4 border-blue-500">
+                            </li>
+                            <li class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-5 border-l-4 border-blue-500">
                                 <div class="flex items-start space-x-3">
                                     <span class="bg-blue-600 text-white font-bold text-xs px-3 py-1 rounded-full flex-shrink-0">CG4</span>
                                     <p class="text-gray-700">Aplica principios éticos en la promoción de la paz y la justicia social, integrando conocimientos sobre ecología y diversidad cultural, para contribuir al desarrollo sostenible de la región amazónica.</p>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ol>
 
                         <!-- Competencias Específicas -->
                         <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
@@ -124,9 +121,9 @@
                             </svg>
                             Competencias Específicas y de Especialidad
                         </h3>
-                        <div class="space-y-6">
+                        <ol class="space-y-6">
                             <!-- CE1 -->
-                            <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                            <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-blue-500 to-cyan-600 p-3 rounded-full flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -141,10 +138,10 @@
                                         <p class="text-gray-700">Realiza la evaluación, diagnóstico, tratamiento integral y seguimiento postratamiento psicológico a personas (por curso de vida), grupos familiares o poblaciones específicas, aplicando ciencia y tecnología, teorías psicológicas y enfoques de derecho, género e interculturalidad en el ámbito bio-psico-social y espiritual, de acuerdo con el modelo de cuidado integral de salud y el modelo comunitario de salud mental, actuando con ética y profesionalismo para afrontar situaciones de riesgo o recaídas y mantener los logros del tratamiento.</p>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
 
                             <!-- CE2 -->
-                            <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                            <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-cyan-500 to-sky-600 p-3 rounded-full flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -159,10 +156,10 @@
                                         <p class="text-gray-700">Realiza acciones que contribuyan a la rehabilitación psicosocial de la persona, a fin de lograr niveles de funcionalidad en su desempeño y adaptación familiar y social, considerando el modelo de cuidado integral de salud.</p>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
 
                             <!-- CE3 -->
-                            <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                            <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-sky-500 to-indigo-600 p-3 rounded-full flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -177,10 +174,10 @@
                                         <p class="text-gray-700">Promueve cambios en el comportamiento individual, colectivo y del entorno a través de la educación para la salud y la difusión de conocimientos psicológicos, para la generación de condiciones que conserven y mejoren la salud y fomenten el bienestar de la persona, familia y comunidad, considerando el modelo de cuidado integral de salud.</p>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
 
                             <!-- CE4 -->
-                            <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                            <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-indigo-500 to-blue-600 p-3 rounded-full flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -195,10 +192,10 @@
                                         <p class="text-gray-700">Desarrolla acciones de prevención en psicología para disminuir los riesgos y daños relacionados con la salud mental y problemas psicosociales que afectan la salud individual y pública en ámbitos poblacionales, ambientales y ocupacionales, para contribuir al desarrollo sostenible y al bienestar de la comunidad, considerando el modelo de cuidado integral de salud.</p>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
 
                             <!-- CE5 -->
-                            <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                            <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-blue-600 to-cyan-500 p-3 rounded-full flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -213,8 +210,8 @@
                                         <p class="text-gray-700">Ejerce su profesión en concordancia con el sistema de salud del Perú y el modelo de cuidado integral de salud, asumiendo un rol transformador y facilitador del acceso equitativo a los servicios de salud, reconociendo la salud como derecho inalienable e inherente a todo ser humano, e integrando la investigación, el desarrollo y la innovación para optimizar y generar soluciones en su práctica profesional.</p>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ol>
 
                         <!-- Resumen del Perfil -->
                         <div class="mt-8 p-6 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg border border-gray-200">
@@ -224,6 +221,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Sidebar: visualmente primero (order-first); en el DOM va tras el contenido para mantener la jerarquía de encabezados -->
+            <div class="lg:col-span-1 order-first">
+                @include('facultades.psicologia.partials.navigation')
             </div>
         </div>
     </div>

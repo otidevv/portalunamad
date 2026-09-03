@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Campo Ocupacional - Ingeniería Agroindustrial - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Migas de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -58,11 +60,6 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                @include('facultades.agroindustrial.partials.navigation')
-            </div>
-
             <!-- Main Content -->
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
@@ -234,9 +231,9 @@
                         <div class="bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg p-8 border border-gray-200 mb-8">
                             <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Competencias Aplicables en el Campo Laboral</h3>
                             
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <ul class="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 <!-- Conocimientos Técnicos -->
-                                <div class="text-center">
+                                <li class="text-center">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-4 rounded-full mx-auto mb-4 w-fit">
                                         <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -245,10 +242,10 @@
                                     <h4 class="text-lg font-bold text-gray-800 mb-3">Fundamentos Técnicos</h4>
                                     <p class="text-gray-600 text-sm mb-3">Fenómenos de transporte, termodinámica, transferencia de calor y masa, balances de materia y energía</p>
                                     <div class="w-16 h-0.5 bg-[#db0455] mx-auto"></div>
-                                </div>
+                                </li>
 
                                 <!-- Tecnologías Especializadas -->
-                                <div class="text-center">
+                                <li class="text-center">
                                     <div class="bg-gradient-to-r from-[#ed145b] to-[#db0455] p-4 rounded-full mx-auto mb-4 w-fit">
                                         <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
@@ -257,10 +254,10 @@
                                     <h4 class="text-lg font-bold text-gray-800 mb-3">Tecnologías Avanzadas</h4>
                                     <p class="text-gray-600 text-sm mb-3">Tecnologías agroindustriales, optimización de sistemas, gestión tecnológica y diseño de procesos</p>
                                     <div class="w-16 h-0.5 bg-[#ed145b] mx-auto"></div>
-                                </div>
+                                </li>
 
                                 <!-- Gestión Empresarial -->
-                                <div class="text-center">
+                                <li class="text-center">
                                     <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-4 rounded-full mx-auto mb-4 w-fit">
                                         <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
@@ -269,8 +266,8 @@
                                     <h4 class="text-lg font-bold text-gray-800 mb-3">Gestión Integral</h4>
                                     <p class="text-gray-600 text-sm mb-3">Administración, planificación, control de producción y gestión de la ingeniería</p>
                                     <div class="w-16 h-0.5 bg-blue-500 mx-auto"></div>
-                                </div>
-                            </div>
+                                </li>
+                            </ul>
                         </div>
 
                         <!-- Oportunidades Laborales -->
@@ -287,6 +284,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Sidebar: visualmente primero (order-first); en el DOM va tras el contenido para mantener la jerarquía de encabezados -->
+            <div class="lg:col-span-1 order-first">
+                @include('facultades.agroindustrial.partials.navigation')
             </div>
         </div>
     </div>

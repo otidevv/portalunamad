@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Ingeniería Forestal y Medio Ambiente - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Migas de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -50,11 +52,6 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                @include('facultades.forestal.partials.navigation')
-            </div>
-
             <!-- Main Content -->
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
@@ -133,34 +130,34 @@
                                 Hacia el 2021, la Escuela Profesional de Ingeniería Forestal y Medio Ambiente, deberá contar con los servicios de <strong>tres Departamentos Académicos</strong>:
                             </p>
                             
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                            <ul class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <li class="text-center p-4 bg-white rounded-lg shadow-sm">
                                     <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
                                         </svg>
                                     </div>
-                                    <h4 class="font-semibold text-gray-800 text-sm">Silvicultura y Manejo Forestal</h4>
-                                </div>
+                                    <p class="font-semibold text-gray-800 text-sm">Silvicultura y Manejo Forestal</p>
+                                </li>
                                 
-                                <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                                <li class="text-center p-4 bg-white rounded-lg shadow-sm">
                                     <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
                                         </svg>
                                     </div>
-                                    <h4 class="font-semibold text-gray-800 text-sm">Tecnología de Productos Forestales</h4>
-                                </div>
+                                    <p class="font-semibold text-gray-800 text-sm">Tecnología de Productos Forestales</p>
+                                </li>
                                 
-                                <div class="text-center p-4 bg-white rounded-lg shadow-sm">
+                                <li class="text-center p-4 bg-white rounded-lg shadow-sm">
                                     <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-3">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                         </svg>
                                     </div>
-                                    <h4 class="font-semibold text-gray-800 text-sm">Ingeniería Ambiental</h4>
-                                </div>
-                            </div>
+                                    <p class="font-semibold text-gray-800 text-sm">Ingeniería Ambiental</p>
+                                </li>
+                            </ul>
                         </div>
 
                         <!-- Compromiso con la Calidad -->
@@ -177,6 +174,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Sidebar: visualmente primero (order-first); en el DOM va tras el contenido para mantener la jerarquía de encabezados -->
+            <div class="lg:col-span-1 order-first">
+                @include('facultades.forestal.partials.navigation')
             </div>
         </div>
     </div>

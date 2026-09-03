@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Reseña Histórica - Ingeniería Agroindustrial - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Migas de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -58,11 +60,6 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                @include('facultades.agroindustrial.partials.navigation')
-            </div>
-
             <!-- Main Content -->
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
@@ -104,8 +101,8 @@
                                 Sectores de Aplicación
                             </h3>
                             
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                     <div class="flex items-start space-x-4">
                                         <div class="bg-gradient-to-r from-green-500 to-green-600 p-3 rounded-full flex-shrink-0">
                                             <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -117,9 +114,9 @@
                                             <p class="text-gray-600 text-sm">Transformación de productos agrícolas primarios</p>
                                         </div>
                                     </div>
-                                </div>
+                                </li>
 
-                                <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                                <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                     <div class="flex items-start space-x-4">
                                         <div class="bg-gradient-to-r from-orange-500 to-orange-600 p-3 rounded-full flex-shrink-0">
                                             <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -131,9 +128,9 @@
                                             <p class="text-gray-600 text-sm">Procesamiento de productos ganaderos</p>
                                         </div>
                                     </div>
-                                </div>
+                                </li>
 
-                                <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                                <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                     <div class="flex items-start space-x-4">
                                         <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-3 rounded-full flex-shrink-0">
                                             <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -145,9 +142,9 @@
                                             <p class="text-gray-600 text-sm">Aprovechamiento de recursos acuáticos</p>
                                         </div>
                                     </div>
-                                </div>
+                                </li>
 
-                                <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                                <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                     <div class="flex items-start space-x-4">
                                         <div class="bg-gradient-to-r from-green-600 to-green-700 p-3 rounded-full flex-shrink-0">
                                             <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -159,8 +156,8 @@
                                             <p class="text-gray-600 text-sm">Industrialización de recursos forestales</p>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+                                </li>
+                            </ul>
                         </div>
 
                         <!-- Contexto Regional -->
@@ -175,32 +172,32 @@
                                 El sector agroindustrial en la <strong>Región Madre de Dios</strong> y sobre todo en el País, se ha convertido en uno de los sectores más dinámicos y estratégicos de la economía nacional, principalmente por las actividades a que este sector está orientado:
                             </p>
                             
-                            <div class="space-y-3">
-                                <div class="flex items-start space-x-3">
+                            <ul class="space-y-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p class="text-gray-700">La manipulación, adecuación y conservación de la materia prima proveniente del campo (tanto de origen alimentario como no alimentario)</p>
-                                </div>
-                                <div class="flex items-start space-x-3">
+                                </li>
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p class="text-gray-700">Su procesamiento, conservación y comercialización en productos terminados</p>
-                                </div>
-                                <div class="flex items-start space-x-3">
+                                </li>
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                     </div>
                                     <p class="text-gray-700">Destinados al consumo de los hogares y empresas</p>
-                                </div>
-                            </div>
+                                </li>
+                            </ul>
                         </div>
 
                         <!-- Marco Legal y Proyección -->
@@ -217,6 +214,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Sidebar: visualmente primero (order-first); en el DOM va tras el contenido para mantener la jerarquía de encabezados -->
+            <div class="lg:col-span-1 order-first">
+                @include('facultades.agroindustrial.partials.navigation')
             </div>
         </div>
     </div>

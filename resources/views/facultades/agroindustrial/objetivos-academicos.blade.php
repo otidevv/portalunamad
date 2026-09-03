@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Objetivos Académicos - Ingeniería Agroindustrial - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Migas de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -58,11 +60,6 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                @include('facultades.agroindustrial.partials.navigation')
-            </div>
-
             <!-- Main Content -->
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
@@ -83,8 +80,8 @@
                             Los objetivos académicos de la carrera de <strong>Ingeniería Agroindustrial</strong> están diseñados para formar profesionales integrales con sólidos conocimientos técnicos y competencias especializadas en el sector agroindustrial.
                         </p>
 
-                        <div class="space-y-6">
-                            <div class="bg-gradient-to-r from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 border-l-4 border-[#db0455]">
+                        <ol class="space-y-6">
+                            <li class="bg-gradient-to-r from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 border-l-4 border-[#db0455]">
                                 <div class="flex items-center mb-4">
                                     <div class="w-8 h-8 bg-[#db0455] rounded-full flex items-center justify-center mr-3">
                                         <span class="text-white font-bold text-sm">1</span>
@@ -94,9 +91,9 @@
                                 <p class="text-gray-700 leading-relaxed ml-11">
                                     Poseer conocimientos de fenómenos de transporte, termodinámica, transferencia de calor y masa, tanto en sus fundamentos teóricos como en sus aplicaciones y de balances de materia y energía.
                                 </p>
-                            </div>
+                            </li>
 
-                            <div class="bg-gradient-to-r from-[#ed145b]/5 to-[#db0455]/5 rounded-lg p-6 border-l-4 border-[#ed145b]">
+                            <li class="bg-gradient-to-r from-[#ed145b]/5 to-[#db0455]/5 rounded-lg p-6 border-l-4 border-[#ed145b]">
                                 <div class="flex items-center mb-4">
                                     <div class="w-8 h-8 bg-[#ed145b] rounded-full flex items-center justify-center mr-3">
                                         <span class="text-white font-bold text-sm">2</span>
@@ -106,9 +103,9 @@
                                 <p class="text-gray-700 leading-relaxed ml-11">
                                     Poseer conocimientos de las diferentes tecnologías agroindustriales, optimización en sistemas de ingeniería, gestión tecnológica y diseños de proceso.
                                 </p>
-                            </div>
+                            </li>
 
-                            <div class="bg-gradient-to-r from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 border-l-4 border-[#db0455]">
+                            <li class="bg-gradient-to-r from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 border-l-4 border-[#db0455]">
                                 <div class="flex items-center mb-4">
                                     <div class="w-8 h-8 bg-[#db0455] rounded-full flex items-center justify-center mr-3">
                                         <span class="text-white font-bold text-sm">3</span>
@@ -118,10 +115,15 @@
                                 <p class="text-gray-700 leading-relaxed ml-11">
                                     Tener conocimientos de administración, planificación y control de producción, y de la ingeniería.
                                 </p>
-                            </div>
-                        </div>
+                            </li>
+                        </ol>
                     </div>
                 </div>
+            </div>
+
+            <!-- Sidebar: visualmente primero (order-first); en el DOM va tras el contenido para mantener la jerarquía de encabezados -->
+            <div class="lg:col-span-1 order-first">
+                @include('facultades.agroindustrial.partials.navigation')
             </div>
         </div>
     </div>

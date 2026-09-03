@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Objetivos Académicos - Biología - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Migas de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -58,11 +60,6 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                @include('facultades.biologia.partials.navigation')
-            </div>
-
             <!-- Main Content -->
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
@@ -83,9 +80,9 @@
                             Los objetivos educacionales de la carrera de <strong>Biología</strong> están organizados en torno a las cuatro áreas de especialidad, orientando la formación hacia la investigación, la conservación y el desarrollo sostenible de la Amazonía.
                         </p>
 
-                        <div class="space-y-6">
+                        <ol class="space-y-6">
                             <!-- OE1 -->
-                            <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 border-l-4 border-green-500">
+                            <li class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 border-l-4 border-green-500">
                                 <div class="flex items-center mb-4">
                                     <div class="w-12 h-8 bg-green-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <span class="text-white font-bold text-xs">OE1</span>
@@ -95,10 +92,10 @@
                                 <p class="text-gray-700 leading-relaxed">
                                     Dirige proyectos de conservación de la biodiversidad y restauración de ecosistemas, integrando conocimientos científicos y promoviendo la sostenibilidad en articulación con la comunidad.
                                 </p>
-                            </div>
+                            </li>
 
                             <!-- OE2 -->
-                            <div class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg p-6 border-l-4 border-emerald-500">
+                            <li class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg p-6 border-l-4 border-emerald-500">
                                 <div class="flex items-center mb-4">
                                     <div class="w-12 h-8 bg-emerald-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <span class="text-white font-bold text-xs">OE2</span>
@@ -108,10 +105,10 @@
                                 <p class="text-gray-700 leading-relaxed">
                                     Diseña y ejecuta planes, estrategias y normativas ambientales, basadas en principios ecológicos para promover el equilibrio ecológico, contribuyendo al desarrollo sostenible y a la mitigación del impacto ambiental.
                                 </p>
-                            </div>
+                            </li>
 
                             <!-- OE3 -->
-                            <div class="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-lg p-6 border-l-4 border-teal-500">
+                            <li class="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-lg p-6 border-l-4 border-teal-500">
                                 <div class="flex items-center mb-4">
                                     <div class="w-12 h-8 bg-teal-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <span class="text-white font-bold text-xs">OE3</span>
@@ -121,10 +118,10 @@
                                 <p class="text-gray-700 leading-relaxed">
                                     Desarrolla e implementa soluciones de salud y biotecnológicas innovadoras, para los ámbitos de la salud, la producción y la remediación ambiental, con estándares éticos y de bioseguridad.
                                 </p>
-                            </div>
+                            </li>
 
                             <!-- OE4 -->
-                            <div class="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-lg p-6 border-l-4 border-cyan-500">
+                            <li class="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-lg p-6 border-l-4 border-cyan-500">
                                 <div class="flex items-center mb-4">
                                     <div class="w-12 h-8 bg-cyan-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <span class="text-white font-bold text-xs">OE4</span>
@@ -134,10 +131,10 @@
                                 <p class="text-gray-700 leading-relaxed">
                                     Gestiona sistemas de control y monitoreo de ecosistemas acuáticos, con ética profesional para garantizar la conservación y el aprovechamiento sostenible del recurso hidrobiológico.
                                 </p>
-                            </div>
+                            </li>
 
                             <!-- OE5 -->
-                            <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 border-l-4 border-green-600">
+                            <li class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 border-l-4 border-green-600">
                                 <div class="flex items-center mb-4">
                                     <div class="w-12 h-8 bg-green-700 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <span class="text-white font-bold text-xs">OE5</span>
@@ -147,8 +144,8 @@
                                 <p class="text-gray-700 leading-relaxed">
                                     Elabora proyectos de investigación interdisciplinarios y colaborativos en temas de biodiversidad, salud pública y cambio climático, integrando la ética, el método científico y los saberes locales, con responsabilidad social y compromiso ambiental.
                                 </p>
-                            </div>
-                        </div>
+                            </li>
+                        </ol>
 
                         <!-- Plan de Estudios -->
                         <div class="mt-10 bg-white rounded-lg p-6 border border-gray-200">
@@ -163,20 +160,20 @@
                             </p>
                             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                                 <div class="text-center bg-green-50 rounded-lg p-4 border border-green-200">
-                                    <p class="text-3xl font-bold text-green-600">10</p>
-                                    <p class="text-gray-600 text-sm">Semestres</p>
+                                    <p><span class="block text-3xl font-bold text-green-600">10</span>
+                                    <span class="block text-gray-600 text-sm">Semestres</span></p>
                                 </div>
                                 <div class="text-center bg-emerald-50 rounded-lg p-4 border border-emerald-200">
-                                    <p class="text-3xl font-bold text-emerald-600">62</p>
-                                    <p class="text-gray-600 text-sm">Cursos mínimos</p>
+                                    <p><span class="block text-3xl font-bold text-emerald-600">62</span>
+                                    <span class="block text-gray-600 text-sm">Cursos mínimos</span></p>
                                 </div>
                                 <div class="text-center bg-teal-50 rounded-lg p-4 border border-teal-200">
-                                    <p class="text-3xl font-bold text-teal-600">220</p>
-                                    <p class="text-gray-600 text-sm">Créditos totales</p>
+                                    <p><span class="block text-3xl font-bold text-teal-600">220</span>
+                                    <span class="block text-gray-600 text-sm">Créditos totales</span></p>
                                 </div>
                                 <div class="text-center bg-cyan-50 rounded-lg p-4 border border-cyan-200">
-                                    <p class="text-3xl font-bold text-cyan-600">4</p>
-                                    <p class="text-gray-600 text-sm">Áreas de especialidad</p>
+                                    <p><span class="block text-3xl font-bold text-cyan-600">4</span>
+                                    <span class="block text-gray-600 text-sm">Áreas de especialidad</span></p>
                                 </div>
                             </div>
                             <p class="text-gray-600 text-sm mt-4">
@@ -185,6 +182,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Sidebar: visualmente primero (order-first); en el DOM va tras el contenido para mantener la jerarquía de encabezados -->
+            <div class="lg:col-span-1 order-first">
+                @include('facultades.biologia.partials.navigation')
             </div>
         </div>
     </div>

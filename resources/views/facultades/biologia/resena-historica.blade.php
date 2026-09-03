@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Reseña Histórica - Biología - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Migas de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -58,11 +60,6 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                @include('facultades.biologia.partials.navigation')
-            </div>
-
             <!-- Main Content -->
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
@@ -104,9 +101,9 @@
                                 Hitos de su Consolidación Institucional
                             </h3>
 
-                            <div class="space-y-6">
+                            <ol class="space-y-6">
                                 <!-- Hito 1 -->
-                                <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                                <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                     <div class="flex items-start space-x-4">
                                         <div class="bg-gradient-to-r from-green-500 to-emerald-600 p-3 rounded-full flex-shrink-0">
                                             <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,10 +115,10 @@
                                             <p class="text-gray-600 text-sm">Aprobó la creación y funcionamiento de la Escuela Profesional de Biología dentro de la estructura académica de la universidad.</p>
                                         </div>
                                     </div>
-                                </div>
+                                </li>
 
                                 <!-- Hito 2 -->
-                                <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                                <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                     <div class="flex items-start space-x-4">
                                         <div class="bg-gradient-to-r from-emerald-500 to-teal-600 p-3 rounded-full flex-shrink-0">
                                             <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -133,10 +130,10 @@
                                             <p class="text-gray-600 text-sm">Conformó los grupos de interés y la comisión técnica encargados de elaborar el diseño curricular de la carrera, garantizando los estándares de calidad y la pertinencia con el entorno amazónico.</p>
                                         </div>
                                     </div>
-                                </div>
+                                </li>
 
                                 <!-- Hito 3 -->
-                                <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                                <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                     <div class="flex items-start space-x-4">
                                         <div class="bg-gradient-to-r from-teal-500 to-cyan-600 p-3 rounded-full flex-shrink-0">
                                             <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -148,8 +145,8 @@
                                             <p class="text-gray-600 text-sm">El Consejo Universitario ratificó la aprobación del Diseño Curricular del Programa de Estudios de Biología, instrumento académico fundamental que establece competencias, perfiles profesionales, planes de estudio y estrategias de enseñanza.</p>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+                                </li>
+                            </ol>
                         </div>
 
                         <!-- Reconocimiento ante SUNEDU -->
@@ -179,6 +176,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Sidebar: visualmente primero (order-first); en el DOM va tras el contenido para mantener la jerarquía de encabezados -->
+            <div class="lg:col-span-1 order-first">
+                @include('facultades.biologia.partials.navigation')
             </div>
         </div>
     </div>

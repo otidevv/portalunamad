@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Campo Ocupacional - Medicina Humana - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Migas de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -58,11 +60,6 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                @include('facultades.medicina-humana.partials.navigation')
-            </div>
-
             <!-- Main Content -->
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
@@ -157,22 +154,22 @@
                         <!-- Perfil Docente e Investigador -->
                         <div class="bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg p-8 border border-gray-200 mb-8">
                             <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Ámbitos de Docencia e Investigación</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="bg-white rounded-lg p-6 border border-gray-200">
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <li class="bg-white rounded-lg p-6 border border-gray-200">
                                     <h4 class="font-bold text-gray-800 mb-3 flex items-center">
                                         <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
                                         Docencia
                                     </h4>
                                     <p class="text-gray-600 text-sm">Gestiona el proceso de enseñanza-aprendizaje bajo el enfoque por competencias: planifica sílabos y sesiones, aplica estrategias didácticas con TICs, evalúa y retroalimenta a los estudiantes, y desarrolla acciones de tutoría e investigación formativa.</p>
-                                </div>
-                                <div class="bg-white rounded-lg p-6 border border-gray-200">
+                                </li>
+                                <li class="bg-white rounded-lg p-6 border border-gray-200">
                                     <h4 class="font-bold text-gray-800 mb-3 flex items-center">
                                         <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                                         Investigación
                                     </h4>
                                     <p class="text-gray-600 text-sm">Genera y difunde producción científica con integridad: diseña proyectos disciplinares e interdisciplinares, participa en congresos, publica en revistas indexadas nacionales e internacionales y registra o patenta productos científicos ante INDECOPI y otros organismos.</p>
-                                </div>
-                            </div>
+                                </li>
+                            </ul>
                         </div>
 
                         <!-- Relevancia Regional -->
@@ -190,6 +187,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Sidebar: visualmente primero (order-first); en el DOM va tras el contenido para mantener la jerarquía de encabezados -->
+            <div class="lg:col-span-1 order-first">
+                @include('facultades.medicina-humana.partials.navigation')
             </div>
         </div>
     </div>

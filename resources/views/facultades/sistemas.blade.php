@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Ingeniería de Sistemas e Informática - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Migas de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -50,11 +52,6 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                @include('facultades.sistemas.partials.navigation')
-            </div>
-
             <!-- Main Content -->
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
@@ -100,8 +97,8 @@
                                 Es necesario recalcar que, el <strong>Ingeniero de Sistemas e Informática</strong> siempre estará preparado para afrontar cualquier reto tecnológico que se le presente en alguna empresa o proyecto en la cual esté laborando.
                             </p>
                             
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="flex items-start space-x-3">
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <li class="flex items-start space-x-3">
                                     <div class="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
@@ -111,9 +108,9 @@
                                         <h4 class="font-semibold text-gray-800 text-sm">Actualización Constante</h4>
                                         <p class="text-gray-600 text-sm">En nuevas tecnologías de información emergentes</p>
                                     </div>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
@@ -123,9 +120,9 @@
                                         <h4 class="font-semibold text-gray-800 text-sm">Generación de Tecnología</h4>
                                         <p class="text-gray-600 text-sm">Creación de soluciones tecnológicas innovadoras</p>
                                     </div>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
@@ -135,9 +132,9 @@
                                         <h4 class="font-semibold text-gray-800 text-sm">Adaptabilidad Tecnológica</h4>
                                         <p class="text-gray-600 text-sm">Capacidad de usar tecnologías globales</p>
                                     </div>
-                                </div>
+                                </li>
                                 
-                                <div class="flex items-start space-x-3">
+                                <li class="flex items-start space-x-3">
                                     <div class="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path>
@@ -147,8 +144,8 @@
                                         <h4 class="font-semibold text-gray-800 text-sm">Versatilidad Profesional</h4>
                                         <p class="text-gray-600 text-sm">Preparado para diversos retos empresariales</p>
                                     </div>
-                                </div>
-                            </div>
+                                </li>
+                            </ul>
                         </div>
 
                         <!-- Marco Legal y Proyección -->
@@ -198,6 +195,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Sidebar: visualmente primero (order-first); en el DOM va tras el contenido para mantener la jerarquía de encabezados -->
+            <div class="lg:col-span-1 order-first">
+                @include('facultades.sistemas.partials.navigation')
             </div>
         </div>
     </div>

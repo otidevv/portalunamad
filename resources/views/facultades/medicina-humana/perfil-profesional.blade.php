@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Perfil Profesional - Medicina Humana - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Migas de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -58,11 +60,6 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                @include('facultades.medicina-humana.partials.navigation')
-            </div>
-
             <!-- Main Content -->
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
@@ -90,32 +87,32 @@
                             </svg>
                             Competencias Genéricas
                         </h3>
-                        <div class="space-y-4 mb-10">
-                            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-5 border-l-4 border-blue-500">
+                        <ol class="space-y-4 mb-10">
+                            <li class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-5 border-l-4 border-blue-500">
                                 <div class="flex items-start space-x-3">
                                     <span class="bg-blue-600 text-white font-bold text-xs px-3 py-1 rounded-full flex-shrink-0">CG1</span>
                                     <p class="text-gray-700">Trabaja en equipo, es creativo e innovador para generar propuestas de emprendimiento.</p>
                                 </div>
-                            </div>
-                            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-5 border-l-4 border-blue-500">
+                            </li>
+                            <li class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-5 border-l-4 border-blue-500">
                                 <div class="flex items-start space-x-3">
                                     <span class="bg-blue-600 text-white font-bold text-xs px-3 py-1 rounded-full flex-shrink-0">CG2</span>
                                     <p class="text-gray-700">Argumenta ideas en forma oral y escrita para una adecuada comunicación.</p>
                                 </div>
-                            </div>
-                            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-5 border-l-4 border-blue-500">
+                            </li>
+                            <li class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-5 border-l-4 border-blue-500">
                                 <div class="flex items-start space-x-3">
                                     <span class="bg-blue-600 text-white font-bold text-xs px-3 py-1 rounded-full flex-shrink-0">CG3</span>
                                     <p class="text-gray-700">Utiliza saberes y/o razonamiento matemático para la resolución de problemas.</p>
                                 </div>
-                            </div>
-                            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-5 border-l-4 border-blue-500">
+                            </li>
+                            <li class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-5 border-l-4 border-blue-500">
                                 <div class="flex items-start space-x-3">
                                     <span class="bg-blue-600 text-white font-bold text-xs px-3 py-1 rounded-full flex-shrink-0">CG4</span>
                                     <p class="text-gray-700">Valora el comportamiento ético en el ejercicio de una profesión para el desarrollo de una cultura de paz en la sociedad.</p>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ol>
 
                         <!-- Competencias Específicas -->
                         <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
@@ -124,9 +121,9 @@
                             </svg>
                             Competencias Específicas
                         </h3>
-                        <div class="space-y-6">
+                        <ol class="space-y-6">
                             <!-- CE1 -->
-                            <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                            <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-blue-500 to-cyan-600 p-3 rounded-full flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -141,10 +138,10 @@
                                         <p class="text-gray-700">Realiza la evaluación clínica y epidemiológica durante la práctica médica, aplicando el método académico-científico y actuando con ética y profesionalismo, para proporcionar un tratamiento integral y eficiente.</p>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
 
                             <!-- CE2 -->
-                            <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                            <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-cyan-500 to-sky-600 p-3 rounded-full flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -159,10 +156,10 @@
                                         <p class="text-gray-700">Promueve cambios sostenibles en el comportamiento individual y colectivo mediante la implementación del modelo de atención integral de salud, que incorpore la responsabilidad social y el respeto al medio ambiente, para mejorar la calidad de vida y contribuir al bienestar social y ambiental.</p>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
 
                             <!-- CE3 -->
-                            <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                            <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-sky-500 to-indigo-600 p-3 rounded-full flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -177,10 +174,10 @@
                                         <p class="text-gray-700">Gestiona y administra establecimientos y servicios de salud, con liderazgo, ética y en conformidad con las normativas vigentes, para garantizar el acceso universal a los servicios de salud con calidad y eficiencia.</p>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
 
                             <!-- CE4 -->
-                            <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                            <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-indigo-500 to-blue-600 p-3 rounded-full flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -195,8 +192,8 @@
                                         <p class="text-gray-700">Investiga los problemas de salud prioritarios y prevalentes de la región amazónica y del país, con rigor científico y ética, utilizando herramientas tecnológicas avanzadas, para proponer soluciones innovadoras que contribuyan al desarrollo de la medicina y mejoren la calidad de vida de la población.</p>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ol>
 
                         <!-- Resumen del Perfil -->
                         <div class="mt-8 p-6 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg border border-gray-200">
@@ -206,6 +203,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Sidebar: visualmente primero (order-first); en el DOM va tras el contenido para mantener la jerarquía de encabezados -->
+            <div class="lg:col-span-1 order-first">
+                @include('facultades.medicina-humana.partials.navigation')
             </div>
         </div>
     </div>

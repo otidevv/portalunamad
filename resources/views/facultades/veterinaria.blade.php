@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Medicina Veterinaria - Zootecnia - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Migas de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -50,11 +52,6 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                @include('facultades.veterinaria.partials.navigation')
-            </div>
-
             <!-- Main Content -->
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
@@ -86,32 +83,32 @@
                             <p class="text-gray-700 leading-relaxed mb-4">
                                 Mediante un proceso de <strong>enseñanza-aprendizaje de calidad</strong> y el desarrollo de la investigación científica, programas de extensión universitaria y proyección social, destacando el papel:
                             </p>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div class="text-center p-3">
+                            <ul class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <li class="text-center p-3">
                                     <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-2">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                                         </svg>
                                     </div>
-                                    <h4 class="font-semibold text-gray-800 text-sm">Salud</h4>
-                                </div>
-                                <div class="text-center p-3">
+                                    <p class="font-semibold text-gray-800 text-sm">Salud</p>
+                                </li>
+                                <li class="text-center p-3">
                                     <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center mx-auto mb-2">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
                                         </svg>
                                     </div>
-                                    <h4 class="font-semibold text-gray-800 text-sm">Económico</h4>
-                                </div>
-                                <div class="text-center p-3">
+                                    <p class="font-semibold text-gray-800 text-sm">Económico</p>
+                                </li>
+                                <li class="text-center p-3">
                                     <div class="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-2">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                                         </svg>
                                     </div>
-                                    <h4 class="font-semibold text-gray-800 text-sm">Social</h4>
-                                </div>
-                            </div>
+                                    <p class="font-semibold text-gray-800 text-sm">Social</p>
+                                </li>
+                            </ul>
                         </div>
 
                         <!-- Perfil Profesional Internacional -->
@@ -140,50 +137,50 @@
                             </p>
                             
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                                <div class="space-y-2">
-                                    <div class="flex items-center space-x-2">
+                                <ul class="space-y-2">
+                                    <li class="flex items-center space-x-2">
                                         <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
                                         <span class="text-gray-700">Sanidad animal y epidemiología veterinaria</span>
-                                    </div>
-                                    <div class="flex items-center space-x-2">
+                                    </li>
+                                    <li class="flex items-center space-x-2">
                                         <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
                                         <span class="text-gray-700">Salud pública (zoonosis, calentamiento global)</span>
-                                    </div>
-                                    <div class="flex items-center space-x-2">
+                                    </li>
+                                    <li class="flex items-center space-x-2">
                                         <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
                                         <span class="text-gray-700">Inocuidad alimentaria y trazabilidad</span>
-                                    </div>
-                                    <div class="flex items-center space-x-2">
+                                    </li>
+                                    <li class="flex items-center space-x-2">
                                         <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
                                         <span class="text-gray-700">Producción animal y economía</span>
-                                    </div>
-                                    <div class="flex items-center space-x-2">
+                                    </li>
+                                    <li class="flex items-center space-x-2">
                                         <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
                                         <span class="text-gray-700">Medicina en animales de compañía</span>
-                                    </div>
-                                </div>
-                                <div class="space-y-2">
-                                    <div class="flex items-center space-x-2">
+                                    </li>
+                                </ul>
+                                <ul class="space-y-2">
+                                    <li class="flex items-center space-x-2">
                                         <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
                                         <span class="text-gray-700">Animales silvestres y acuáticos</span>
-                                    </div>
-                                    <div class="flex items-center space-x-2">
+                                    </li>
+                                    <li class="flex items-center space-x-2">
                                         <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
                                         <span class="text-gray-700">Deportes y entrenamiento animal</span>
-                                    </div>
-                                    <div class="flex items-center space-x-2">
+                                    </li>
+                                    <li class="flex items-center space-x-2">
                                         <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
                                         <span class="text-gray-700">Bienestar animal y biodiversidad</span>
-                                    </div>
-                                    <div class="flex items-center space-x-2">
+                                    </li>
+                                    <li class="flex items-center space-x-2">
                                         <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
                                         <span class="text-gray-700">Normas sanitarias internacionales</span>
-                                    </div>
-                                    <div class="flex items-center space-x-2">
+                                    </li>
+                                    <li class="flex items-center space-x-2">
                                         <div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
                                         <span class="text-gray-700">Nuevas tecnologías informáticas (TICS)</span>
-                                    </div>
-                                </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 
@@ -200,20 +197,20 @@
                             </p>
                             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                                 <div class="bg-white p-3 rounded-lg">
-                                    <div class="text-2xl font-bold text-orange-600">11</div>
-                                    <div class="text-xs text-gray-600">Públicas</div>
+                                    <p><span class="block text-2xl font-bold text-orange-600">11</span>
+                                    <span class="block text-xs text-gray-600">Públicas</span></p>
                                 </div>
                                 <div class="bg-white p-3 rounded-lg">
-                                    <div class="text-2xl font-bold text-orange-600">8</div>
-                                    <div class="text-xs text-gray-600">Privadas</div>
+                                    <p><span class="block text-2xl font-bold text-orange-600">8</span>
+                                    <span class="block text-xs text-gray-600">Privadas</span></p>
                                 </div>
                                 <div class="bg-white p-3 rounded-lg">
-                                    <div class="text-2xl font-bold text-orange-600">13</div>
-                                    <div class="text-xs text-gray-600">En provincias</div>
+                                    <p><span class="block text-2xl font-bold text-orange-600">13</span>
+                                    <span class="block text-xs text-gray-600">En provincias</span></p>
                                 </div>
                                 <div class="bg-white p-3 rounded-lg">
-                                    <div class="text-2xl font-bold text-orange-600">6</div>
-                                    <div class="text-xs text-gray-600">En Lima</div>
+                                    <p><span class="block text-2xl font-bold text-orange-600">6</span>
+                                    <span class="block text-xs text-gray-600">En Lima</span></p>
                                 </div>
                             </div>
                         </div>
@@ -232,6 +229,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Sidebar: visualmente primero (order-first); en el DOM va tras el contenido para mantener la jerarquía de encabezados -->
+            <div class="lg:col-span-1 order-first">
+                @include('facultades.veterinaria.partials.navigation')
             </div>
         </div>
     </div>

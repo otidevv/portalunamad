@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Perfil Profesional - Biología - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Migas de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -58,11 +60,6 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                @include('facultades.biologia.partials.navigation')
-            </div>
-
             <!-- Main Content -->
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
@@ -87,12 +84,12 @@
                             <svg aria-hidden="true" focusable="false" class="w-6 h-6 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
-                            El biólogo egresado de la UNAMAD está capacitado para:
+                            Capacidades del biólogo egresado de la UNAMAD
                         </h3>
 
                         <!-- Capacidades -->
-                        <div class="space-y-4">
-                            <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 border-l-4 border-green-500 hover:shadow-lg transition-shadow">
+                        <ul class="space-y-4">
+                            <li class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 border-l-4 border-green-500 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-green-500 to-emerald-600 p-3 rounded-full flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,9 +101,9 @@
                                         <p class="text-gray-700">En la Amazonía, con un enfoque en la sostenibilidad y conservación.</p>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
 
-                            <div class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg p-6 border-l-4 border-emerald-500 hover:shadow-lg transition-shadow">
+                            <li class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg p-6 border-l-4 border-emerald-500 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-emerald-500 to-teal-600 p-3 rounded-full flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,9 +115,9 @@
                                         <p class="text-gray-700">En diversas áreas como hidrobiología, microbiología, ecología y biotecnología.</p>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
 
-                            <div class="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-lg p-6 border-l-4 border-teal-500 hover:shadow-lg transition-shadow">
+                            <li class="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-lg p-6 border-l-4 border-teal-500 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-teal-500 to-cyan-600 p-3 rounded-full flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,9 +129,9 @@
                                         <p class="text-gray-700">Colaborando con organismos gubernamentales y no gubernamentales en la conservación de la biodiversidad y salubridad humana.</p>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
 
-                            <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 border-l-4 border-green-600 hover:shadow-lg transition-shadow">
+                            <li class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 border-l-4 border-green-600 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-green-600 to-emerald-700 p-3 rounded-full flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -146,9 +143,9 @@
                                         <p class="text-gray-700">Que involucren el uso de biotecnología y el manejo sostenible de recursos naturales.</p>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
 
-                            <div class="bg-gradient-to-r from-emerald-50 to-green-50 rounded-lg p-6 border-l-4 border-emerald-600 hover:shadow-lg transition-shadow">
+                            <li class="bg-gradient-to-r from-emerald-50 to-green-50 rounded-lg p-6 border-l-4 border-emerald-600 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-emerald-600 to-green-700 p-3 rounded-full flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -160,8 +157,8 @@
                                         <p class="text-gray-700">Contribuyendo a la sensibilización sobre la importancia de la biodiversidad amazónica.</p>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
 
                         <!-- Resumen del Perfil -->
                         <div class="mt-8 p-6 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg border border-gray-200">
@@ -171,6 +168,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Sidebar: visualmente primero (order-first); en el DOM va tras el contenido para mantener la jerarquía de encabezados -->
+            <div class="lg:col-span-1 order-first">
+                @include('facultades.biologia.partials.navigation')
             </div>
         </div>
     </div>

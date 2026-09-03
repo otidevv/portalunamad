@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Psicología - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Migas de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -50,11 +52,6 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                @include('facultades.psicologia.partials.navigation')
-            </div>
-
             <!-- Main Content -->
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
@@ -87,8 +84,8 @@
                                 </svg>
                                 Pilares de Nuestra Formación
                             </h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="flex items-start space-x-3">
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-blue-500 to-cyan-600 p-2 rounded-full">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -98,8 +95,8 @@
                                         <h4 class="font-semibold text-gray-800">Intervención Basada en Evidencia</h4>
                                         <p class="text-gray-600 text-sm">Prevención, promoción y recuperación de la salud mental</p>
                                     </div>
-                                </div>
-                                <div class="flex items-start space-x-3">
+                                </li>
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-blue-500 to-cyan-600 p-2 rounded-full">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -109,8 +106,8 @@
                                         <h4 class="font-semibold text-gray-800">Compromiso Ético y Social</h4>
                                         <p class="text-gray-600 text-sm">Profundo compromiso con el bienestar humano</p>
                                     </div>
-                                </div>
-                                <div class="flex items-start space-x-3">
+                                </li>
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-blue-500 to-cyan-600 p-2 rounded-full">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -120,8 +117,8 @@
                                         <h4 class="font-semibold text-gray-800">Investigación e Innovación</h4>
                                         <p class="text-gray-600 text-sm">Abordaje de las problemáticas de salud mental amazónica</p>
                                     </div>
-                                </div>
-                                <div class="flex items-start space-x-3">
+                                </li>
+                                <li class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-blue-500 to-cyan-600 p-2 rounded-full">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -131,8 +128,8 @@
                                         <h4 class="font-semibold text-gray-800">Enfoque Comunitario e Intercultural</h4>
                                         <p class="text-gray-600 text-sm">Respeto a la diversidad cultural, étnica y lingüística</p>
                                     </div>
-                                </div>
-                            </div>
+                                </li>
+                            </ul>
                         </div>
 
                         <!-- Campos en que contribuye -->
@@ -146,20 +143,20 @@
                             <p class="text-gray-700 leading-relaxed mb-4">
                                 La Carrera Profesional de Psicología se compromete con la formación de recursos humanos con responsabilidad social, orientados a la promoción de la salud mental y al fortalecimiento de los procesos de desarrollo humano sostenible en Madre de Dios, el Perú y el mundo:
                             </p>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="text-center p-4 bg-blue-50 rounded-lg border border-blue-200">
-                                    <h4 class="font-semibold text-gray-800 text-sm">Salud Mental y Bienestar</h4>
-                                </div>
-                                <div class="text-center p-4 bg-cyan-50 rounded-lg border border-cyan-200">
-                                    <h4 class="font-semibold text-gray-800 text-sm">Desarrollo Humano Sostenible</h4>
-                                </div>
-                                <div class="text-center p-4 bg-sky-50 rounded-lg border border-sky-200">
-                                    <h4 class="font-semibold text-gray-800 text-sm">Convivencia Social y Comunitaria</h4>
-                                </div>
-                                <div class="text-center p-4 bg-indigo-50 rounded-lg border border-indigo-200">
-                                    <h4 class="font-semibold text-gray-800 text-sm">Investigación en Psicología</h4>
-                                </div>
-                            </div>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <li class="text-center p-4 bg-blue-50 rounded-lg border border-blue-200">
+                                    <p class="font-semibold text-gray-800 text-sm">Salud Mental y Bienestar</p>
+                                </li>
+                                <li class="text-center p-4 bg-cyan-50 rounded-lg border border-cyan-200">
+                                    <p class="font-semibold text-gray-800 text-sm">Desarrollo Humano Sostenible</p>
+                                </li>
+                                <li class="text-center p-4 bg-sky-50 rounded-lg border border-sky-200">
+                                    <p class="font-semibold text-gray-800 text-sm">Convivencia Social y Comunitaria</p>
+                                </li>
+                                <li class="text-center p-4 bg-indigo-50 rounded-lg border border-indigo-200">
+                                    <p class="font-semibold text-gray-800 text-sm">Investigación en Psicología</p>
+                                </li>
+                            </ul>
                         </div>
 
                         <!-- Call to Action -->
@@ -170,6 +167,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Sidebar: visualmente primero (order-first); en el DOM va tras el contenido para mantener la jerarquía de encabezados -->
+            <div class="lg:col-span-1 order-first">
+                @include('facultades.psicologia.partials.navigation')
             </div>
         </div>
     </div>

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Visión y Misión - Medicina Humana - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Migas de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -58,11 +60,6 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                @include('facultades.medicina-humana.partials.navigation')
-            </div>
-
             <!-- Main Content -->
             <div class="lg:col-span-2 space-y-8">
                 <!-- Misión -->
@@ -87,8 +84,8 @@
                         </div>
 
                         <!-- Componentes de la Misión -->
-                        <div class="space-y-4 mt-8">
-                            <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                        <ul class="space-y-4 mt-8">
+                            <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-blue-500 to-cyan-600 p-3 rounded-full flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,13 +93,13 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h4 class="text-xl font-bold text-gray-800 mb-2">Líderes e Innovadores</h4>
+                                        <h3 class="text-xl font-bold text-gray-800 mb-2">Líderes e Innovadores</h3>
                                         <p class="text-gray-700">Profesionales líderes, investigadores e innovadores con orientación humanística, científica y tecnológica</p>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
 
-                            <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                            <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-blue-500 to-cyan-600 p-3 rounded-full flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,13 +107,13 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h4 class="text-xl font-bold text-gray-800 mb-2">Desarrollo Sostenible de la Amazonía</h4>
+                                        <h3 class="text-xl font-bold text-gray-800 mb-2">Desarrollo Sostenible de la Amazonía</h3>
                                         <p class="text-gray-700">Contribuir al desarrollo sostenible de la región y a la competitividad del país</p>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
 
-                            <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                            <li class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow">
                                 <div class="flex items-start space-x-4">
                                     <div class="bg-gradient-to-r from-blue-500 to-cyan-600 p-3 rounded-full flex-shrink-0">
                                         <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -124,12 +121,12 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h4 class="text-xl font-bold text-gray-800 mb-2">Identidad y Responsabilidad Social</h4>
+                                        <h3 class="text-xl font-bold text-gray-800 mb-2">Identidad y Responsabilidad Social</h3>
                                         <p class="text-gray-700">Con identidad cultural, espíritu emprendedor y responsabilidad social</p>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
@@ -156,8 +153,8 @@
                         </div>
 
                         <!-- Elementos Clave de la Visión -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-                            <div class="bg-white rounded-lg p-4 border border-gray-200">
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                            <li class="bg-white rounded-lg p-4 border border-gray-200">
                                 <div class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-cyan-600 to-sky-600 p-2 rounded-full">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -165,13 +162,13 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h4 class="font-semibold text-gray-800">Excelencia Académica</h4>
+                                        <h3 class="font-semibold text-gray-800">Excelencia Académica</h3>
                                         <p class="text-gray-600 text-sm">Acreditada internacionalmente</p>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
 
-                            <div class="bg-white rounded-lg p-4 border border-gray-200">
+                            <li class="bg-white rounded-lg p-4 border border-gray-200">
                                 <div class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-cyan-600 to-sky-600 p-2 rounded-full">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -179,13 +176,13 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h4 class="font-semibold text-gray-800">Investigación y Emprendimiento</h4>
+                                        <h3 class="font-semibold text-gray-800">Investigación y Emprendimiento</h3>
                                         <p class="text-gray-600 text-sm">Universidad innovadora y líder</p>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
 
-                            <div class="bg-white rounded-lg p-4 border border-gray-200">
+                            <li class="bg-white rounded-lg p-4 border border-gray-200">
                                 <div class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-cyan-600 to-sky-600 p-2 rounded-full">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -193,13 +190,13 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h4 class="font-semibold text-gray-800">Saberes de los Pueblos Originarios</h4>
+                                        <h3 class="font-semibold text-gray-800">Saberes de los Pueblos Originarios</h3>
                                         <p class="text-gray-600 text-sm">Respeto y preservación del conocimiento amazónico</p>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
 
-                            <div class="bg-white rounded-lg p-4 border border-gray-200">
+                            <li class="bg-white rounded-lg p-4 border border-gray-200">
                                 <div class="flex items-start space-x-3">
                                     <div class="bg-gradient-to-r from-cyan-600 to-sky-600 p-2 rounded-full">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -207,14 +204,19 @@
                                         </svg>
                                     </div>
                                     <div>
-                                        <h4 class="font-semibold text-gray-800">Conservación de la Biodiversidad</h4>
+                                        <h3 class="font-semibold text-gray-800">Conservación de la Biodiversidad</h3>
                                         <p class="text-gray-600 text-sm">Uso de la biodiversidad natural y cultural</p>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+
+            <!-- Sidebar: visualmente primero (order-first); en el DOM va tras el contenido para mantener la jerarquía de encabezados -->
+            <div class="lg:col-span-1 order-first">
+                @include('facultades.medicina-humana.partials.navigation')
             </div>
         </div>
     </div>

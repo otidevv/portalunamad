@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Objetivos Académicos - Psicología - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
@@ -16,7 +18,7 @@
     <!-- Navigation Breadcrumb -->
     <div class="bg-white border-b border-gray-200">
         <div class="container mx-auto px-4 py-4">
-            <nav class="flex" aria-label="Breadcrumb">
+            <nav class="flex" aria-label="Migas de pan">
                 <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
                         <a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
@@ -58,11 +60,6 @@
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Sidebar -->
-            <div class="lg:col-span-1">
-                @include('facultades.psicologia.partials.navigation')
-            </div>
-
             <!-- Main Content -->
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
@@ -83,9 +80,9 @@
                             El programa de estudios de <strong>Psicología</strong> de la UNAMAD orienta su formación hacia el desarrollo de profesionales competentes y comprometidos con la salud mental de la región amazónica y el país. Son objetivos académicos del programa de estudios:
                         </p>
 
-                        <div class="space-y-6">
+                        <ol class="space-y-6">
                             <!-- OA1 -->
-                            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-6 border-l-4 border-blue-500">
+                            <li class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-6 border-l-4 border-blue-500">
                                 <div class="flex items-center mb-4">
                                     <div class="w-16 h-8 bg-blue-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <span class="text-white font-bold text-xs">OA1</span>
@@ -95,10 +92,10 @@
                                 <p class="text-gray-700 leading-relaxed">
                                     Formar profesionales competentes en intervenciones psicológicas éticas y basadas en evidencia, con enfoque humanista y comunitario.
                                 </p>
-                            </div>
+                            </li>
 
                             <!-- OA2 -->
-                            <div class="bg-gradient-to-r from-cyan-50 to-sky-50 rounded-lg p-6 border-l-4 border-cyan-500">
+                            <li class="bg-gradient-to-r from-cyan-50 to-sky-50 rounded-lg p-6 border-l-4 border-cyan-500">
                                 <div class="flex items-center mb-4">
                                     <div class="w-16 h-8 bg-cyan-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <span class="text-white font-bold text-xs">OA2</span>
@@ -108,10 +105,10 @@
                                 <p class="text-gray-700 leading-relaxed">
                                     Fomentar la investigación e innovación para abordar problemáticas de salud mental en la Amazonía y otros contextos.
                                 </p>
-                            </div>
+                            </li>
 
                             <!-- OA3 -->
-                            <div class="bg-gradient-to-r from-sky-50 to-indigo-50 rounded-lg p-6 border-l-4 border-sky-500">
+                            <li class="bg-gradient-to-r from-sky-50 to-indigo-50 rounded-lg p-6 border-l-4 border-sky-500">
                                 <div class="flex items-center mb-4">
                                     <div class="w-16 h-8 bg-sky-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <span class="text-white font-bold text-xs">OA3</span>
@@ -121,10 +118,10 @@
                                 <p class="text-gray-700 leading-relaxed">
                                     Promover el compromiso social y el respeto a la diversidad cultural a través de acciones de extensión y responsabilidad social.
                                 </p>
-                            </div>
+                            </li>
 
                             <!-- OA4 -->
-                            <div class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-lg p-6 border-l-4 border-indigo-500">
+                            <li class="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-lg p-6 border-l-4 border-indigo-500">
                                 <div class="flex items-center mb-4">
                                     <div class="w-16 h-8 bg-indigo-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <span class="text-white font-bold text-xs">OA4</span>
@@ -134,10 +131,10 @@
                                 <p class="text-gray-700 leading-relaxed">
                                     Desarrollar capacidades de gestión en salud mental, con enfoque en calidad y mejora continua.
                                 </p>
-                            </div>
+                            </li>
 
                             <!-- OA5 -->
-                            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-6 border-l-4 border-blue-600">
+                            <li class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg p-6 border-l-4 border-blue-600">
                                 <div class="flex items-center mb-4">
                                     <div class="w-16 h-8 bg-blue-700 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <span class="text-white font-bold text-xs">OA5</span>
@@ -147,8 +144,8 @@
                                 <p class="text-gray-700 leading-relaxed">
                                     Capacitar para la atención psicosocial en situaciones de riesgo y desastre, fortaleciendo la resiliencia comunitaria.
                                 </p>
-                            </div>
-                        </div>
+                            </li>
+                        </ol>
 
                         <!-- Marco Legal -->
                         <div class="mt-10 bg-white rounded-lg p-6 border border-gray-200">
@@ -164,6 +161,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Sidebar: visualmente primero (order-first); en el DOM va tras el contenido para mantener la jerarquía de encabezados -->
+            <div class="lg:col-span-1 order-first">
+                @include('facultades.psicologia.partials.navigation')
             </div>
         </div>
     </div>
