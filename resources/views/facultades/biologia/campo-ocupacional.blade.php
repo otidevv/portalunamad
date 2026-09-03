@@ -6,11 +6,12 @@
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="absolute inset-0 bg-black/50"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Campo Ocupacional</h1>
-                <p class="text-xl md:text-2xl opacity-90 drop-shadow-md">Escuela Profesional de Biología - UNAMAD</p>
+                <p class="text-xl md:text-2xl drop-shadow-md">Escuela Profesional de Biología - UNAMAD</p>
             </div>
         </div>
     </div>
@@ -200,7 +201,7 @@
                                     <p class="text-gray-600 text-sm">Comunicación, trabajo en equipo, liderazgo y dominio de herramientas digitales (SIG, estadística, bases de datos).</p>
                                 </li>
                             </ul>
-                            <div class="mt-6 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg p-5 text-white text-center">
+                            <div class="mt-6 bg-gradient-to-r from-green-700 to-emerald-800 rounded-lg p-5 text-white text-center">
                                 <p class="font-medium">Los salarios pueden alcanzar hasta <strong>S/ 10 mil soles o más</strong> para profesionales con experiencia, con convocatorias estatales competitivas para especialistas.</p>
                             </div>
                         </div>

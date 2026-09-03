@@ -6,11 +6,12 @@
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="absolute inset-0 bg-black/50"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Perfil Profesional</h1>
-                <p class="text-xl md:text-2xl opacity-90 drop-shadow-md">Escuela Profesional de Medicina Humana - UNAMAD</p>
+                <p class="text-xl md:text-2xl drop-shadow-md">Escuela Profesional de Medicina Humana - UNAMAD</p>
             </div>
         </div>
     </div>
@@ -150,7 +151,7 @@
                                     </div>
                                     <div>
                                         <div class="flex items-center flex-wrap gap-2 mb-2">
-                                            <span class="bg-cyan-600 text-white font-bold text-xs px-3 py-1 rounded-full">CE2</span>
+                                            <span class="bg-cyan-700 text-white font-bold text-xs px-3 py-1 rounded-full">CE2</span>
                                             <h4 class="text-lg font-bold text-gray-800">Área: Salud Pública</h4>
                                         </div>
                                         <p class="text-gray-700">Promueve cambios sostenibles en el comportamiento individual y colectivo mediante la implementación del modelo de atención integral de salud, que incorpore la responsabilidad social y el respeto al medio ambiente, para mejorar la calidad de vida y contribuir al bienestar social y ambiental.</p>
@@ -168,7 +169,7 @@
                                     </div>
                                     <div>
                                         <div class="flex items-center flex-wrap gap-2 mb-2">
-                                            <span class="bg-sky-600 text-white font-bold text-xs px-3 py-1 rounded-full">CE3</span>
+                                            <span class="bg-sky-700 text-white font-bold text-xs px-3 py-1 rounded-full">CE3</span>
                                             <h4 class="text-lg font-bold text-gray-800">Área: Gestión y Administración de los Servicios de Salud</h4>
                                         </div>
                                         <p class="text-gray-700">Gestiona y administra establecimientos y servicios de salud, con liderazgo, ética y en conformidad con las normativas vigentes, para garantizar el acceso universal a los servicios de salud con calidad y eficiencia.</p>

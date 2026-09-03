@@ -6,11 +6,12 @@
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="absolute inset-0 bg-black/50"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Objetivos Académicos</h1>
-                <p class="text-xl md:text-2xl opacity-90 drop-shadow-md">Ingeniería Agroindustrial - UNAMAD</p>
+                <p class="text-xl md:text-2xl drop-shadow-md">Ingeniería Agroindustrial - UNAMAD</p>
             </div>
         </div>
     </div>
@@ -95,7 +96,7 @@
 
                             <li class="bg-gradient-to-r from-[#ed145b]/5 to-[#db0455]/5 rounded-lg p-6 border-l-4 border-[#ed145b]">
                                 <div class="flex items-center mb-4">
-                                    <div class="w-8 h-8 bg-[#ed145b] rounded-full flex items-center justify-center mr-3">
+                                    <div class="w-8 h-8 bg-[#db0455] rounded-full flex items-center justify-center mr-3">
                                         <span class="text-white font-bold text-sm">2</span>
                                     </div>
                                     <h3 class="text-xl font-bold text-gray-800">Tecnologías y Optimización de Procesos</h3>

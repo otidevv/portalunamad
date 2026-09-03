@@ -6,11 +6,12 @@
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="absolute inset-0 bg-black/50"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Perfil Profesional</h1>
-                <p class="text-xl md:text-2xl opacity-90 drop-shadow-md">Escuela Profesional de Psicología - UNAMAD</p>
+                <p class="text-xl md:text-2xl drop-shadow-md">Escuela Profesional de Psicología - UNAMAD</p>
             </div>
         </div>
     </div>
@@ -150,7 +151,7 @@
                                     </div>
                                     <div>
                                         <div class="flex items-center flex-wrap gap-2 mb-2">
-                                            <span class="bg-cyan-600 text-white font-bold text-xs px-3 py-1 rounded-full">CE2</span>
+                                            <span class="bg-cyan-700 text-white font-bold text-xs px-3 py-1 rounded-full">CE2</span>
                                             <h4 class="text-lg font-bold text-gray-800">Rehabilitación Psicosocial</h4>
                                         </div>
                                         <p class="text-gray-700">Realiza acciones que contribuyan a la rehabilitación psicosocial de la persona, a fin de lograr niveles de funcionalidad en su desempeño y adaptación familiar y social, considerando el modelo de cuidado integral de salud.</p>
@@ -168,7 +169,7 @@
                                     </div>
                                     <div>
                                         <div class="flex items-center flex-wrap gap-2 mb-2">
-                                            <span class="bg-sky-600 text-white font-bold text-xs px-3 py-1 rounded-full">CE3</span>
+                                            <span class="bg-sky-700 text-white font-bold text-xs px-3 py-1 rounded-full">CE3</span>
                                             <h4 class="text-lg font-bold text-gray-800">Educación y Promoción de la Salud</h4>
                                         </div>
                                         <p class="text-gray-700">Promueve cambios en el comportamiento individual, colectivo y del entorno a través de la educación para la salud y la difusión de conocimientos psicológicos, para la generación de condiciones que conserven y mejoren la salud y fomenten el bienestar de la persona, familia y comunidad, considerando el modelo de cuidado integral de salud.</p>

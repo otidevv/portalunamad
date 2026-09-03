@@ -32,7 +32,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <nav class="text-sm" aria-label="Migas de pan">
                 <ol class="flex items-center space-x-2">
-                    <li><a href="/" class="text-gray-600 hover:text-[#ed145b] transition-colors font-medium">Inicio</a></li>
+                    <li><a href="/" class="text-gray-600 hover:text-[#db0455] transition-colors font-medium">Inicio</a></li>
                     <li class="flex items-center space-x-2">
                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
@@ -43,7 +43,7 @@
                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
                         </svg>
-                        <span class="text-[#ed145b] font-semibold">{{ $carrera ?? 'Carrera Profesional' }}</span>
+                        <span class="text-[#db0455] font-semibold">{{ $carrera ?? 'Carrera Profesional' }}</span>
                     </li>
                 </ol>
             </nav>
@@ -89,7 +89,7 @@
                         Volver al inicio
                     </a>
                     <a href="https://www.unamad.edu.pe" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-gray-300 text-gray-700 font-semibold hover:border-[#ed145b] hover:text-[#ed145b] transition-all">
+                        class="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-gray-300 text-gray-700 font-semibold hover:border-[#ed145b] hover:text-[#db0455] transition-all">
                         Portal UNAMAD
                     </a>
                 </div>

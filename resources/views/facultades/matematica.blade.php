@@ -6,11 +6,12 @@
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="absolute inset-0 bg-black/50"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Educación: Especialidad Matemática y Computación</h1>
-                <p class="text-xl md:text-2xl opacity-90 drop-shadow-md">UNAMAD</p>
+                <p class="text-xl md:text-2xl drop-shadow-md">UNAMAD</p>
             </div>
         </div>
     </div>
@@ -82,7 +83,7 @@
                             </h3>
                             <ol class="space-y-4">
                                 <li class="flex items-start space-x-4">
-                                    <div class="w-12 h-12 bg-violet-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <div class="w-12 h-12 bg-violet-700 rounded-full flex items-center justify-center flex-shrink-0">
                                         <span class="text-white font-bold text-sm">2001</span>
                                     </div>
                                     <div>
@@ -92,7 +93,7 @@
                                 </li>
                                 
                                 <li class="flex items-start space-x-4">
-                                    <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <div class="w-12 h-12 bg-purple-700 rounded-full flex items-center justify-center flex-shrink-0">
                                         <span class="text-white font-bold text-sm">2009</span>
                                     </div>
                                     <div>
@@ -102,7 +103,7 @@
                                 </li>
                                 
                                 <li class="flex items-start space-x-4">
-                                    <div class="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <div class="w-12 h-12 bg-indigo-700 rounded-full flex items-center justify-center flex-shrink-0">
                                         <span class="text-white font-bold text-sm">2016</span>
                                     </div>
                                     <div>

@@ -6,11 +6,12 @@
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="absolute inset-0 bg-black/50"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Objetivos Académicos</h1>
-                <p class="text-xl md:text-2xl opacity-90 drop-shadow-md">Escuela Profesional de Biología - UNAMAD</p>
+                <p class="text-xl md:text-2xl drop-shadow-md">Escuela Profesional de Biología - UNAMAD</p>
             </div>
         </div>
     </div>
@@ -84,7 +85,7 @@
                             <!-- OE1 -->
                             <li class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 border-l-4 border-green-500">
                                 <div class="flex items-center mb-4">
-                                    <div class="w-12 h-8 bg-green-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <div class="w-12 h-8 bg-green-700 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <span class="text-white font-bold text-xs">OE1</span>
                                     </div>
                                     <h3 class="text-lg font-bold text-gray-800">Biodiversidad y Conservación</h3>
@@ -97,7 +98,7 @@
                             <!-- OE2 -->
                             <li class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg p-6 border-l-4 border-emerald-500">
                                 <div class="flex items-center mb-4">
-                                    <div class="w-12 h-8 bg-emerald-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <div class="w-12 h-8 bg-emerald-700 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <span class="text-white font-bold text-xs">OE2</span>
                                     </div>
                                     <h3 class="text-lg font-bold text-gray-800">Ecología y Gestión Ambiental</h3>
@@ -110,7 +111,7 @@
                             <!-- OE3 -->
                             <li class="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-lg p-6 border-l-4 border-teal-500">
                                 <div class="flex items-center mb-4">
-                                    <div class="w-12 h-8 bg-teal-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <div class="w-12 h-8 bg-teal-700 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <span class="text-white font-bold text-xs">OE3</span>
                                     </div>
                                     <h3 class="text-lg font-bold text-gray-800">Microbiología y Biotecnología</h3>
@@ -123,7 +124,7 @@
                             <!-- OE4 -->
                             <li class="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-lg p-6 border-l-4 border-cyan-500">
                                 <div class="flex items-center mb-4">
-                                    <div class="w-12 h-8 bg-cyan-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <div class="w-12 h-8 bg-cyan-700 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <span class="text-white font-bold text-xs">OE4</span>
                                     </div>
                                     <h3 class="text-lg font-bold text-gray-800">Hidrobiología y Acuicultura</h3>

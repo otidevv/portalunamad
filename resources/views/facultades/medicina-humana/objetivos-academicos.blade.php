@@ -6,11 +6,12 @@
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="absolute inset-0 bg-black/50"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Objetivos Académicos</h1>
-                <p class="text-xl md:text-2xl opacity-90 drop-shadow-md">Escuela Profesional de Medicina Humana - UNAMAD</p>
+                <p class="text-xl md:text-2xl drop-shadow-md">Escuela Profesional de Medicina Humana - UNAMAD</p>
             </div>
         </div>
     </div>
@@ -97,7 +98,7 @@
                             <!-- OEI.02 -->
                             <li class="bg-gradient-to-r from-cyan-50 to-sky-50 rounded-lg p-6 border-l-4 border-cyan-500">
                                 <div class="flex items-center mb-4">
-                                    <div class="w-16 h-8 bg-cyan-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <div class="w-16 h-8 bg-cyan-700 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <span class="text-white font-bold text-xs">OEI.02</span>
                                     </div>
                                     <h3 class="text-lg font-bold text-gray-800">Investigación e Innovación</h3>
@@ -110,7 +111,7 @@
                             <!-- OEI.03 -->
                             <li class="bg-gradient-to-r from-sky-50 to-indigo-50 rounded-lg p-6 border-l-4 border-sky-500">
                                 <div class="flex items-center mb-4">
-                                    <div class="w-16 h-8 bg-sky-600 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                                    <div class="w-16 h-8 bg-sky-700 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <span class="text-white font-bold text-xs">OEI.03</span>
                                     </div>
                                     <h3 class="text-lg font-bold text-gray-800">Extensión y Proyección Social</h3>

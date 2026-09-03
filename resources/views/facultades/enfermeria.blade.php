@@ -31,7 +31,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <nav class="text-sm" aria-label="Migas de pan">
                 <ol class="flex items-center space-x-2">
-                    <li><a href="/" class="text-gray-600 hover:text-pink-600 transition-colors font-medium">Inicio</a></li>
+                    <li><a href="/" class="text-gray-600 hover:text-pink-700 transition-colors font-medium">Inicio</a></li>
                     <li class="flex items-center space-x-2">
                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
@@ -42,7 +42,7 @@
                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
                         </svg>
-                        <span class="text-pink-600 font-semibold">Enfermería</span>
+                        <span class="text-pink-700 font-semibold">Enfermería</span>
                     </li>
                 </ol>
             </nav>

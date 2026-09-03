@@ -5,7 +5,7 @@
 @section('content')
     <!-- Hero Section -->
     <div class="relative h-64 sm:h-80 lg:h-96 overflow-hidden bg-gradient-to-r from-teal-600 via-cyan-500 to-blue-500">
-        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="absolute inset-0 bg-black/50"></div>
         <img src="{{ asset('img/presentacion/presentacionbackground.jpg') }}" 
              alt="" 
              class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30">
@@ -19,7 +19,7 @@
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 drop-shadow-lg">
                     Ecoturismo
                 </h1>
-                <p class="text-lg sm:text-xl opacity-90 max-w-2xl mx-auto leading-relaxed">
+                <p class="text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
                     Formando profesionales para el desarrollo sostenible del turismo amazónico
                 </p>
             </div>
@@ -31,7 +31,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <nav class="text-sm" aria-label="Migas de pan">
                 <ol class="flex items-center space-x-2">
-                    <li><a href="/" class="text-gray-600 hover:text-teal-600 transition-colors font-medium">Inicio</a></li>
+                    <li><a href="/" class="text-gray-600 hover:text-teal-800 transition-colors font-medium">Inicio</a></li>
                     <li class="flex items-center space-x-2">
                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
@@ -42,7 +42,7 @@
                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
                         </svg>
-                        <span class="text-teal-600 font-semibold">Ecoturismo</span>
+                        <span class="text-teal-800 font-semibold">Ecoturismo</span>
                     </li>
                 </ol>
             </nav>

@@ -6,11 +6,12 @@
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="absolute inset-0 bg-black/50"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Ingeniería Agroindustrial</h1>
-                <p class="text-xl md:text-2xl opacity-90 drop-shadow-md">Universidad Nacional Amazónica de Madre de Dios</p>
+                <p class="text-xl md:text-2xl drop-shadow-md">Universidad Nacional Amazónica de Madre de Dios</p>
             </div>
         </div>
     </div>
@@ -152,7 +153,7 @@
                         <!-- Call to Action -->
                         <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 border-l-4 border-blue-500">
                             <p class="text-gray-700">
-                                Para conocer más sobre nuestra <strong>Misión, Visión, Perfil Profesional</strong> y otros aspectos académicos, utiliza el menú de navegación de la izquierda.
+                                Para conocer más sobre nuestra <strong>Misión, Visión, Perfil Profesional</strong> y otros aspectos académicos, utiliza el menú <a href="#navegacion-carrera" class="underline font-medium text-[#db0455]">«Secciones de la carrera»</a> de esta página.
                             </p>
                         </div>
                     </div>

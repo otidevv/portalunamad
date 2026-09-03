@@ -14,7 +14,7 @@
         <ul class="space-y-1">
             <li>
             <a href="/facultades/veterinaria" 
-               class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('facultades/veterinaria') ? 'bg-emerald-100 text-emerald-800 border-r-2 border-emerald-500' : 'text-gray-700 hover:bg-gray-100 hover:text-emerald-600' }}">
+               class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('facultades/veterinaria') ? 'bg-emerald-100 text-emerald-800 border-r-2 border-emerald-500' : 'text-gray-700 hover:bg-gray-100 hover:text-emerald-800' }}">
                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
                 </svg>
@@ -64,7 +64,7 @@
                 </svg>
                 <div>
                     <p class="text-xs font-semibold text-gray-800">Correo</p>
-                    <a href="mailto:dir_epmvz@unamad.edu.pe" class="text-xs text-emerald-600 hover:text-emerald-700 transition-colors break-all">dir_epmvz@unamad.edu.pe</a>
+                    <a href="mailto:dir_epmvz@unamad.edu.pe" class="text-xs text-emerald-800 hover:text-emerald-900 transition-colors break-all">dir_epmvz@unamad.edu.pe</a>
                 </div>
             </div>
 
