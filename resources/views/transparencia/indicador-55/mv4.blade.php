@@ -134,12 +134,13 @@
                         '2019' => 'teal',
                         'default' => 'gray'
                     ];
+                    // Clases generadas dinámicamente (Tailwind las detecta en este comentario): bg-emerald-700 bg-green-700 bg-blue-700 bg-purple-700 bg-orange-700 bg-red-700 bg-teal-700 bg-gray-700 text-emerald-700 text-green-700 text-blue-700 text-purple-700 text-orange-700 text-red-700 text-teal-700 text-gray-700
                 @endphp
 
                 @if(count($docsPorAnio) > 0)
                 <div class="space-y-8 mb-8">
                     <div class="flex items-center">
-                        <div class="w-10 h-10 bg-cyan-600 rounded-full flex items-center justify-center mr-3">
+                        <div class="w-10 h-10 bg-cyan-700 rounded-full flex items-center justify-center mr-3">
                             <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
                             </svg>
@@ -154,7 +155,7 @@
                         <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-{{ $color }}-600">
                             <div class="p-6">
                                 <div class="flex items-center mb-4">
-                                    <div class="w-10 h-10 bg-{{ $color }}-600 rounded-full flex items-center justify-center mr-3">
+                                    <div class="w-10 h-10 bg-{{ $color }}-700 rounded-full flex items-center justify-center mr-3">
                                         <span class="text-white font-bold text-lg">{{ substr($anio, -2) }}</span>
                                     </div>
                                     <h3 class="text-xl font-bold text-gray-800">{{ $anio }}</h3>
@@ -177,7 +178,7 @@
                                                 @if(isset($doc['descripcion']))
                                                     <p class="text-sm text-gray-600 mt-1">{{ $doc['descripcion'] }}</p>
                                                 @endif
-                                                <div class="flex items-center mt-2 text-xs text-{{ $color }}-600">
+                                                <div class="flex items-center mt-2 text-xs text-{{ $color }}-700">
                                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                                                     </svg>
@@ -201,7 +202,7 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-emerald-600">
                         <div class="p-6">
                             <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center mr-3">
+                                <div class="w-10 h-10 bg-emerald-700 rounded-full flex items-center justify-center mr-3">
                                     <span class="text-white font-bold text-lg">24</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2024</h3>
@@ -220,7 +221,7 @@
                                     <div class="flex-1">
                                         <h4 class="font-semibold text-gray-800 group-hover:text-gray-900">Postulantes e Ingresantes 2024-1</h4>
                                         <p class="text-sm text-gray-600 mt-1">Primer proceso de admisión 2024</p>
-                                        <div class="flex items-center mt-2 text-xs text-emerald-600">
+                                        <div class="flex items-center mt-2 text-xs text-emerald-700">
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                                             </svg>
@@ -244,7 +245,7 @@
                                     <div class="flex-1">
                                         <h4 class="font-semibold text-gray-800 group-hover:text-gray-900">Postulantes e Ingresantes 2024-2</h4>
                                         <p class="text-sm text-gray-600 mt-1">Segundo proceso de admisión 2024</p>
-                                        <div class="flex items-center mt-2 text-xs text-emerald-600">
+                                        <div class="flex items-center mt-2 text-xs text-emerald-700">
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                                             </svg>
@@ -263,7 +264,7 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-blue-600">
                         <div class="p-6">
                             <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center mr-3">
+                                <div class="w-10 h-10 bg-blue-700 rounded-full flex items-center justify-center mr-3">
                                     <span class="text-white font-bold text-lg">23</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2023</h3>
@@ -282,7 +283,7 @@
                                     <div class="flex-1">
                                         <h4 class="font-semibold text-gray-800 group-hover:text-gray-900">Postulantes e Ingresantes 2023-1</h4>
                                         <p class="text-sm text-gray-600 mt-1">Primer proceso de admisión 2023</p>
-                                        <div class="flex items-center mt-2 text-xs text-blue-600">
+                                        <div class="flex items-center mt-2 text-xs text-blue-700">
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                                             </svg>
@@ -306,7 +307,7 @@
                                     <div class="flex-1">
                                         <h4 class="font-semibold text-gray-800 group-hover:text-gray-900">Postulantes e Ingresantes 2023-2</h4>
                                         <p class="text-sm text-gray-600 mt-1">Segundo proceso de admisión 2023</p>
-                                        <div class="flex items-center mt-2 text-xs text-blue-600">
+                                        <div class="flex items-center mt-2 text-xs text-blue-700">
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                                             </svg>
@@ -325,7 +326,7 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-purple-600">
                         <div class="p-6">
                             <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center mr-3">
+                                <div class="w-10 h-10 bg-purple-700 rounded-full flex items-center justify-center mr-3">
                                     <span class="text-white font-bold text-lg">22</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2022</h3>
@@ -344,7 +345,7 @@
                                     <div class="flex-1">
                                         <h4 class="font-semibold text-gray-800 group-hover:text-gray-900">Postulantes e Ingresantes 2022-1</h4>
                                         <p class="text-sm text-gray-600 mt-1">Primer proceso de admisión 2022</p>
-                                        <div class="flex items-center mt-2 text-xs text-purple-600">
+                                        <div class="flex items-center mt-2 text-xs text-purple-700">
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                                             </svg>
@@ -368,7 +369,7 @@
                                     <div class="flex-1">
                                         <h4 class="font-semibold text-gray-800 group-hover:text-gray-900">Postulantes e Ingresantes 2022-2</h4>
                                         <p class="text-sm text-gray-600 mt-1">Segundo proceso de admisión 2022</p>
-                                        <div class="flex items-center mt-2 text-xs text-purple-600">
+                                        <div class="flex items-center mt-2 text-xs text-purple-700">
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                                             </svg>
@@ -387,7 +388,7 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-orange-600">
                         <div class="p-6">
                             <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-orange-600 rounded-full flex items-center justify-center mr-3">
+                                <div class="w-10 h-10 bg-orange-700 rounded-full flex items-center justify-center mr-3">
                                     <span class="text-white font-bold text-lg">21</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2021</h3>
@@ -406,7 +407,7 @@
                                     <div class="flex-1">
                                         <h4 class="font-semibold text-gray-800 group-hover:text-gray-900">Postulantes e Ingresantes 2021-1</h4>
                                         <p class="text-sm text-gray-600 mt-1">Primer proceso de admisión 2021</p>
-                                        <div class="flex items-center mt-2 text-xs text-orange-600">
+                                        <div class="flex items-center mt-2 text-xs text-orange-700">
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                                             </svg>
@@ -430,7 +431,7 @@
                                     <div class="flex-1">
                                         <h4 class="font-semibold text-gray-800 group-hover:text-gray-900">Postulantes e Ingresantes 2021-2</h4>
                                         <p class="text-sm text-gray-600 mt-1">Segundo proceso de admisión 2021</p>
-                                        <div class="flex items-center mt-2 text-xs text-orange-600">
+                                        <div class="flex items-center mt-2 text-xs text-orange-700">
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                                             </svg>
@@ -449,7 +450,7 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-red-600">
                         <div class="p-6">
                             <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center mr-3">
+                                <div class="w-10 h-10 bg-red-700 rounded-full flex items-center justify-center mr-3">
                                     <span class="text-white font-bold text-lg">20</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2020</h3>
@@ -468,7 +469,7 @@
                                     <div class="flex-1">
                                         <h4 class="font-semibold text-gray-800 group-hover:text-gray-900">Postulantes e Ingresantes 2020-1</h4>
                                         <p class="text-sm text-gray-600 mt-1">Primer proceso de admisión 2020</p>
-                                        <div class="flex items-center mt-2 text-xs text-red-600">
+                                        <div class="flex items-center mt-2 text-xs text-red-700">
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                                             </svg>
@@ -492,7 +493,7 @@
                                     <div class="flex-1">
                                         <h4 class="font-semibold text-gray-800 group-hover:text-gray-900">Postulantes e Ingresantes 2020-2</h4>
                                         <p class="text-sm text-gray-600 mt-1">Segundo proceso de admisión 2020</p>
-                                        <div class="flex items-center mt-2 text-xs text-red-600">
+                                        <div class="flex items-center mt-2 text-xs text-red-700">
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                                             </svg>
@@ -511,7 +512,7 @@
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-teal-600">
                         <div class="p-6">
                             <div class="flex items-center mb-4">
-                                <div class="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center mr-3">
+                                <div class="w-10 h-10 bg-teal-700 rounded-full flex items-center justify-center mr-3">
                                     <span class="text-white font-bold text-lg">19</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-gray-800">2019</h3>
@@ -530,7 +531,7 @@
                                     <div class="flex-1">
                                         <h4 class="font-semibold text-gray-800 group-hover:text-gray-900">Postulantes e Ingresantes 2019-1</h4>
                                         <p class="text-sm text-gray-600 mt-1">Primer proceso de admisión 2019</p>
-                                        <div class="flex items-center mt-2 text-xs text-teal-600">
+                                        <div class="flex items-center mt-2 text-xs text-teal-700">
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                                             </svg>
@@ -554,7 +555,7 @@
                                     <div class="flex-1">
                                         <h4 class="font-semibold text-gray-800 group-hover:text-gray-900">Postulantes e Ingresantes 2019-2</h4>
                                         <p class="text-sm text-gray-600 mt-1">Segundo proceso de admisión 2019</p>
-                                        <div class="flex items-center mt-2 text-xs text-teal-600">
+                                        <div class="flex items-center mt-2 text-xs text-teal-700">
                                             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                                             </svg>
@@ -575,7 +576,7 @@
                 <div class="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl shadow-lg overflow-hidden border border-cyan-200 mt-8">
                     <div class="p-6">
                         <div class="flex items-center mb-4">
-                            <div class="w-10 h-10 bg-cyan-600 rounded-full flex items-center justify-center mr-3">
+                            <div class="w-10 h-10 bg-cyan-700 rounded-full flex items-center justify-center mr-3">
                                 <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>

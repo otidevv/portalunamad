@@ -10,7 +10,7 @@
         <ul role="list" class="space-y-2">
         <li>
         <a href="/transparencia/articulo-11"
-           class="flex items-center px-3 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-blue-50 hover:text-blue-700 transition-colors {{ request()->is('transparencia/articulo-11') ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-700' : '' }}">
+           class="flex items-center px-3 py-2 text-sm text-gray-700 rounded-md hover:bg-blue-50 hover:text-blue-700 transition-colors {{ request()->is('transparencia/articulo-11') ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-700 font-semibold' : 'font-medium' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"/>
             </svg>

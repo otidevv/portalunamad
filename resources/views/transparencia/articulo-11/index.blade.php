@@ -12,7 +12,7 @@
                 </svg>
                 <h1 class="text-4xl font-bold">Transparencia Universitaria</h1>
             </div>
-            <p class="text-xl text-blue-100">
+            <p class="text-xl text-white">
                 Artículo 11 - Información pública de la universidad
             </p>
         </div>
@@ -20,7 +20,7 @@
 
     <div class="container mx-auto px-4 py-8">
         <nav aria-label="Ruta de navegación" class="text-sm text-gray-600 mb-8">
-            <a href="/" class="hover:text-blue-600">Inicio</a>
+            <a href="/" class="hover:text-blue-700">Inicio</a>
             <span class="mx-2" aria-hidden="true">›</span>
             <span class="text-gray-800">Transparencia - Artículo 11</span>
         </nav>
@@ -333,10 +333,10 @@
                                     </svg>
                                     <div>
                                         <h4 class="font-medium text-gray-500">Estadísticas de Matrícula</h4>
-                                        <p class="text-sm text-gray-400">Enlace no disponible temporalmente</p>
+                                        <p class="text-sm text-gray-600">Enlace no disponible temporalmente</p>
                                     </div>
                                 </div>
-                                <span class="text-gray-400 font-medium">No disponible</span>
+                                <span class="text-gray-600 font-medium">No disponible</span>
                             </div>
                         </div>
                     </div>

@@ -13,7 +13,7 @@
                 </svg>
                 <h1 class="text-4xl font-bold">MV6: Número de Estudiantes por Facultades</h1>
             </div>
-            <p class="text-xl text-green-100">
+            <p class="text-xl text-white">
                 Estadísticas oficiales de matrícula estudiantil por facultades y programas de estudio de UNAMAD
             </p>
         </div>
@@ -21,9 +21,9 @@
 
     <div class="container mx-auto px-4 py-8">
         <nav aria-label="Ruta de navegación" class="text-sm text-gray-600 mb-8">
-            <a href="/" class="hover:text-green-600">Inicio</a>
+            <a href="/" class="hover:text-green-700">Inicio</a>
             <span class="mx-2" aria-hidden="true">›</span>
-            <a href="/transparencia/indicador-55" class="hover:text-green-600">Transparencia - Indicador 55</a>
+            <a href="/transparencia/indicador-55" class="hover:text-green-700">Transparencia - Indicador 55</a>
             <span class="mx-2" aria-hidden="true">›</span>
             <span class="text-gray-800">MV6: Número de Estudiantes por Facultades</span>
         </nav>
@@ -72,6 +72,7 @@
                             '2019' => 'purple',
                             'default' => 'gray'
                         ];
+                    // Clases generadas dinámicamente (Tailwind las detecta en este comentario): text-emerald-700 text-green-700 text-teal-700 text-cyan-700 text-blue-700 text-indigo-700 text-purple-700 text-gray-700 hover:text-emerald-900 hover:text-green-900 hover:text-teal-900 hover:text-cyan-900 hover:text-blue-900 hover:text-indigo-900 hover:text-purple-900 hover:text-gray-900
                     @endphp
 
                     @if(count($docsPorAnio) > 0)
@@ -103,7 +104,7 @@
                                             </div>
                                         </div>
                                         <a @if(!empty($doc['url'])) href="{{ $doc['url'] }}" target="_blank" rel="noopener noreferrer" @endif
-                                           class="text-{{ $color }}-600 hover:text-{{ $color }}-800 font-medium">
+                                           class="text-{{ $color }}-700 hover:text-{{ $color }}-900 font-medium">
                                             Ver documento<span class="sr-only">: {{ $doc['titulo'] ?? 'Documento' }}</span> <span aria-hidden="true">→</span>
                                         </a>
                                     </div>
@@ -131,7 +132,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/NUMERO_DE_ESTUDIANTES_POR_FACULTADES_Y_PROGRAMAS_DE_ESTUDIO_2024-1.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-green-600 hover:text-green-800 font-medium">
+                                       class="text-green-700 hover:text-green-900 font-medium">
                                         Ver documento<span class="sr-only">: 2024 (Período I) (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -154,7 +155,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/NUMERO_DE_ESTUDIANTES_POR_FACULTADES_Y_PROGRAMAS_DE_ESTUDIO_2023.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-green-600 hover:text-green-800 font-medium">
+                                       class="text-green-700 hover:text-green-900 font-medium">
                                         Ver documento<span class="sr-only">: 2023 (Períodos I y II) (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -177,7 +178,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/NUMERO_DE_ESTUDIANTES_POR_FACULTADES_Y_PROGRAMAS_DE_ESTUDIO_2022.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-green-600 hover:text-green-800 font-medium">
+                                       class="text-green-700 hover:text-green-900 font-medium">
                                         Ver documento<span class="sr-only">: 2022 (Períodos I y II) (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -200,7 +201,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/NUMERO_DE_ESTUDIANTES_POR_FACULTADES_Y_PROGRAMAS_DE_ESTUDIO_2021.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-green-600 hover:text-green-800 font-medium">
+                                       class="text-green-700 hover:text-green-900 font-medium">
                                         Ver documento<span class="sr-only">: 2021 (Períodos I y II) (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -223,7 +224,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/NUMERO_DE_ESTUDIANTES_POR_FACULTADES_Y_PROGRAMAS_DE_ESTUDIO_2020.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-green-600 hover:text-green-800 font-medium">
+                                       class="text-green-700 hover:text-green-900 font-medium">
                                         Ver documento<span class="sr-only">: 2020 (Períodos I y II) (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -246,7 +247,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/NUMERO_DE_ESTUDIANTES_POR_FACULTADES_Y_PROGRAMAS_DE_ESTUDIO_2019.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-green-600 hover:text-green-800 font-medium">
+                                       class="text-green-700 hover:text-green-900 font-medium">
                                         Ver documento<span class="sr-only">: 2019 (Períodos I y II) (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>

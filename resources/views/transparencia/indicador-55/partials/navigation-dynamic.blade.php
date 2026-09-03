@@ -14,7 +14,7 @@
         <ul role="list" class="space-y-1">
         <li>
         <a href="/transparencia/indicador-55"
-           class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('transparencia/indicador-55') && !isset($currentCodigo) ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
+           class="flex items-center px-3 py-2 text-sm rounded-md transition-colors duration-200 {{ Request::is('transparencia/indicador-55') && !isset($currentCodigo) ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500 font-semibold' : 'font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
             </svg>
@@ -47,7 +47,7 @@
             @endphp
             <li>
             <a href="/transparencia/indicador-55/{{ $var->codigo }}"
-               class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ $isActive ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
+               class="flex items-center px-3 py-2 text-sm rounded-md transition-colors duration-200 {{ $isActive ? 'bg-gray-100 text-gray-800 border-r-2 border-gray-500 font-semibold' : 'font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-800' }}">
                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     {!! $icono !!}
                 </svg>

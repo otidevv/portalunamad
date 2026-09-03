@@ -12,7 +12,7 @@
                 </svg>
                 <h1 class="text-4xl font-bold">MV7: Reglamento de Estudiantes</h1>
             </div>
-            <p class="text-xl text-purple-100">
+            <p class="text-xl text-white">
                 Marco normativo académico que regula la vida estudiantil en UNAMAD
             </p>
         </div>
@@ -20,9 +20,9 @@
 
     <div class="container mx-auto px-4 py-8">
         <nav aria-label="Ruta de navegación" class="text-sm text-gray-600 mb-8">
-            <a href="/" class="hover:text-purple-600">Inicio</a>
+            <a href="/" class="hover:text-purple-700">Inicio</a>
             <span class="mx-2" aria-hidden="true">›</span>
-            <a href="/transparencia/indicador-55" class="hover:text-purple-600">Transparencia - Indicador 55</a>
+            <a href="/transparencia/indicador-55" class="hover:text-purple-700">Transparencia - Indicador 55</a>
             <span class="mx-2" aria-hidden="true">›</span>
             <span class="text-gray-800">MV7: Reglamento de Estudiantes</span>
         </nav>

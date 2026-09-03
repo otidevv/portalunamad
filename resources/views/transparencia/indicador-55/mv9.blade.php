@@ -12,7 +12,7 @@
                 </svg>
                 <h1 class="text-4xl font-bold">MV9: Proyectos de Investigación</h1>
             </div>
-            <p class="text-xl text-teal-100">
+            <p class="text-xl text-white">
                 Títulos de proyectos de investigación actualizados por semestre académico
             </p>
         </div>
@@ -20,9 +20,9 @@
 
     <div class="container mx-auto px-4 py-8">
         <nav aria-label="Ruta de navegación" class="text-sm text-gray-600 mb-8">
-            <a href="/" class="hover:text-teal-600">Inicio</a>
+            <a href="/" class="hover:text-teal-700">Inicio</a>
             <span class="mx-2" aria-hidden="true">›</span>
-            <a href="/transparencia/indicador-55" class="hover:text-teal-600">Transparencia - Indicador 55</a>
+            <a href="/transparencia/indicador-55" class="hover:text-teal-700">Transparencia - Indicador 55</a>
             <span class="mx-2" aria-hidden="true">›</span>
             <span class="text-gray-800">MV9: Proyectos de Investigación</span>
         </nav>
@@ -70,6 +70,7 @@
                             '2019' => 'violet',
                             'default' => 'gray'
                         ];
+                    // Clases generadas dinámicamente (Tailwind las detecta en este comentario): text-emerald-700 text-teal-700 text-cyan-700 text-blue-700 text-indigo-700 text-purple-700 text-violet-700 text-gray-700 hover:text-emerald-900 hover:text-teal-900 hover:text-cyan-900 hover:text-blue-900 hover:text-indigo-900 hover:text-purple-900 hover:text-violet-900 hover:text-gray-900
                     @endphp
 
                     @if(count($docsPorAnio) > 0)
@@ -101,7 +102,7 @@
                                             </div>
                                         </div>
                                         <a @if(!empty($doc['url'])) href="{{ $doc['url'] }}" target="_blank" rel="noopener noreferrer" @endif
-                                           class="text-{{ $color }}-600 hover:text-{{ $color }}-800 font-medium">
+                                           class="text-{{ $color }}-700 hover:text-{{ $color }}-900 font-medium">
                                             Ver documento<span class="sr-only">: {{ $doc['titulo'] ?? 'Documento' }}</span> <span aria-hidden="true">→</span>
                                         </a>
                                     </div>
@@ -129,7 +130,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/55_-_2024.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-teal-600 hover:text-teal-800 font-medium">
+                                       class="text-teal-700 hover:text-teal-900 font-medium">
                                         Ver documento<span class="sr-only">: Proyectos de Investigación 2024 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -152,7 +153,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/55_-_2023_lfPzjAE.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-teal-600 hover:text-teal-800 font-medium">
+                                       class="text-teal-700 hover:text-teal-900 font-medium">
                                         Ver documento<span class="sr-only">: Proyectos de Investigación 2023 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -175,7 +176,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/55_-_2022_3sRgbUe.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-teal-600 hover:text-teal-800 font-medium">
+                                       class="text-teal-700 hover:text-teal-900 font-medium">
                                         Ver documento<span class="sr-only">: Proyectos de Investigación 2022 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -198,7 +199,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/55_-_2021_w2ck8Wk.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-teal-600 hover:text-teal-800 font-medium">
+                                       class="text-teal-700 hover:text-teal-900 font-medium">
                                         Ver documento<span class="sr-only">: Proyectos de Investigación 2021 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -221,7 +222,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/55_-2020_OcatDDB.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-teal-600 hover:text-teal-800 font-medium">
+                                       class="text-teal-700 hover:text-teal-900 font-medium">
                                         Ver documento<span class="sr-only">: Proyectos de Investigación 2020 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -244,7 +245,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/55_-_2019_1gfGjhf.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-teal-600 hover:text-teal-800 font-medium">
+                                       class="text-teal-700 hover:text-teal-900 font-medium">
                                         Ver documento<span class="sr-only">: Proyectos de Investigación 2019 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>

@@ -12,7 +12,7 @@
                 </svg>
                 <h1 class="text-4xl font-bold">MV10: Tarifas de Servicios</h1>
             </div>
-            <p class="text-xl text-orange-100">
+            <p class="text-xl text-white">
                 Tarifas de servicios prestados: matrículas, pensiones, constancias, certificados y otros
             </p>
         </div>
@@ -20,9 +20,9 @@
 
     <div class="container mx-auto px-4 py-8">
         <nav aria-label="Ruta de navegación" class="text-sm text-gray-600 mb-8">
-            <a href="/" class="hover:text-orange-600">Inicio</a>
+            <a href="/" class="hover:text-orange-700">Inicio</a>
             <span class="mx-2" aria-hidden="true">›</span>
-            <a href="/transparencia/indicador-55" class="hover:text-orange-600">Transparencia - Indicador 55</a>
+            <a href="/transparencia/indicador-55" class="hover:text-orange-700">Transparencia - Indicador 55</a>
             <span class="mx-2" aria-hidden="true">›</span>
             <span class="text-gray-800">MV10: Tarifas de Servicios</span>
         </nav>
@@ -71,7 +71,7 @@
                                             <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z"/>
                                         </svg>
                                     @endif
-                                    {{ $nombreSeccion }}
+                                    {{ $nombreSeccion }}@if($vigente)<span class="ml-2 px-2 py-0.5 bg-green-100 text-green-800 text-xs font-medium rounded-full">VIGENTE</span>@endif
                                 </h3>
                                 @if($descripcionSeccion)
                                     <p class="text-gray-700 mb-4">{{ $descripcionSeccion }}</p>
@@ -91,7 +91,7 @@
                                             </div>
                                         </div>
                                         <a @if(!empty($item['url'])) href="{{ $item['url'] }}" target="_blank" rel="noopener noreferrer" @endif
-                                           class="text-orange-600 hover:text-orange-800 font-medium">
+                                           class="text-orange-700 hover:text-orange-900 font-medium">
                                             Ver documento<span class="sr-only">: {{ $item['titulo'] ?? 'Documento' }}</span> <span aria-hidden="true">→</span>
                                         </a>
                                     </div>
@@ -128,7 +128,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/5707962-tupa-2022-digital-actualizado-vigente.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-orange-600 hover:text-orange-800 font-medium">
+                                       class="text-orange-700 hover:text-orange-900 font-medium">
                                         Ver documento<span class="sr-only">: TUPA 2022 Digital Actualizado (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -145,7 +145,7 @@
                                     <a href="https://www.gob.pe/institucion/unamad/normas-legales/5707962-107-2024-unamad-r" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-orange-600 hover:text-orange-800 font-medium">
+                                       class="text-orange-700 hover:text-orange-900 font-medium">
                                         Ver resolución<span class="sr-only">: Resolución N° 107-2024-UNAMAD-R</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -171,7 +171,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/5522593-tupa-2022-digital.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-amber-600 hover:text-amber-800 font-medium">
+                                       class="text-amber-700 hover:text-amber-900 font-medium">
                                         Ver documento<span class="sr-only">: TUPA 2022 Digital (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -188,7 +188,7 @@
                                     <a href="https://www.gob.pe/institucion/unamad/normas-legales/5522593-281-2023-unamad-r" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-amber-600 hover:text-amber-800 font-medium">
+                                       class="text-amber-700 hover:text-amber-900 font-medium">
                                         Ver resolución<span class="sr-only">: Resolución N° 281-2023-UNAMAD-R</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -214,7 +214,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/TUPA_2022_I.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-yellow-600 hover:text-yellow-800 font-medium">
+                                       class="text-yellow-700 hover:text-yellow-900 font-medium">
                                         Ver documento<span class="sr-only">: TUPA 2022 I (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -231,7 +231,7 @@
                                     <a href="https://www.gob.pe/institucion/unamad/normas-legales/4193283-149-2023-unamad-r" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-yellow-600 hover:text-yellow-800 font-medium">
+                                       class="text-yellow-700 hover:text-yellow-900 font-medium">
                                         Ver resolución<span class="sr-only">: Resolución N° 149-2023-UNAMAD-R</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -257,7 +257,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/TUPA_2022.pdf.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-orange-600 hover:text-orange-800 font-medium">
+                                       class="text-orange-700 hover:text-orange-900 font-medium">
                                         Ver documento<span class="sr-only">: TUPA 2022 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -274,7 +274,7 @@
                                     <a href="https://www.gob.pe/institucion/unamad/normas-legales/3664816-625-2022-unamad-cu" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-orange-600 hover:text-orange-800 font-medium">
+                                       class="text-orange-700 hover:text-orange-900 font-medium">
                                         Ver resolución<span class="sr-only">: Resolución N° 625-2022-UNAMAD-CU</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -300,7 +300,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/TUPA_UNAMAD.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-amber-600 hover:text-amber-800 font-medium">
+                                       class="text-amber-700 hover:text-amber-900 font-medium">
                                         Ver documento<span class="sr-only">: TUPA UNAMAD 2018 (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
@@ -317,7 +317,7 @@
                                     <a href="https://www.gob.pe/institucion/unamad/normas-legales/3469083-005-2018-unamad-cu" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-amber-600 hover:text-amber-800 font-medium">
+                                       class="text-amber-700 hover:text-amber-900 font-medium">
                                         Ver resolución<span class="sr-only">: Resolución N° 005-2018-UNAMAD-CU</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>

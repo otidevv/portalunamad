@@ -12,7 +12,7 @@
                 </svg>
                 <h1 class="text-4xl font-bold">MV8: Espacios y Servicios</h1>
             </div>
-            <p class="text-xl text-sky-100">
+            <p class="text-xl text-white">
                 Ambientes y espacios destinados a brindar servicios sociales, deportivos y culturales
             </p>
         </div>
@@ -20,9 +20,9 @@
 
     <div class="container mx-auto px-4 py-8">
         <nav aria-label="Ruta de navegación" class="text-sm text-gray-600 mb-8">
-            <a href="/" class="hover:text-sky-600">Inicio</a>
+            <a href="/" class="hover:text-sky-700">Inicio</a>
             <span class="mx-2" aria-hidden="true">›</span>
-            <a href="/transparencia/indicador-55" class="hover:text-sky-600">Transparencia - Indicador 55</a>
+            <a href="/transparencia/indicador-55" class="hover:text-sky-700">Transparencia - Indicador 55</a>
             <span class="mx-2" aria-hidden="true">›</span>
             <span class="text-gray-800">MV8: Espacios y Servicios</span>
         </nav>
@@ -84,7 +84,7 @@
                                             </div>
                                         </div>
                                         <a @if(!empty($item['url'])) href="{{ $item['url'] }}" target="_blank" rel="noopener noreferrer" @endif
-                                           class="text-sky-600 hover:text-sky-800 font-medium">
+                                           class="text-sky-700 hover:text-sky-900 font-medium">
                                             Ver documento<span class="sr-only">: {{ $item['titulo'] ?? 'Documento' }}</span> <span aria-hidden="true">→</span>
                                         </a>
                                     </div>
@@ -121,7 +121,7 @@
                                     <a href="https://sinc.unamad.edu.pe:8000/media/pdf/AMBIENTES_O_ESPACIOS_DESTINADOS_A_BRINDAR_SERVICIOS_DEPORTIVOS_GBhdEAL.pdf" 
                                        target="_blank" 
                                        rel="noopener noreferrer"
-                                       class="text-sky-600 hover:text-sky-800 font-medium">
+                                       class="text-sky-700 hover:text-sky-900 font-medium">
                                         Ver documento<span class="sr-only">: Espacios Destinados a Servicios Deportivos (PDF)</span> <span aria-hidden="true">→</span>
                                     </a>
                                 </div>

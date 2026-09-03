@@ -13,7 +13,7 @@
                 </svg>
                 <h1 class="text-4xl font-bold">{{ $variable->titulo_completo }}</h1>
             </div>
-            <p class="text-xl opacity-90">
+            <p class="text-xl">
                 {{ $variable->descripcion }}
             </p>
         </div>
@@ -22,9 +22,9 @@
     <div class="container mx-auto px-4 py-8">
         <!-- Breadcrumb -->
         <nav aria-label="Ruta de navegación" class="text-sm text-gray-600 mb-8">
-            <a href="/" class="hover:text-{{ explode('-', $variable->gradiente_from)[0] }}-600">Inicio</a>
+            <a href="/" class="hover:text-{{ explode('-', $variable->gradiente_from)[0] }}-700">Inicio</a>
             <span class="mx-2" aria-hidden="true">&rsaquo;</span>
-            <a href="/transparencia/indicador-55" class="hover:text-{{ explode('-', $variable->gradiente_from)[0] }}-600">Transparencia - Indicador 55</a>
+            <a href="/transparencia/indicador-55" class="hover:text-{{ explode('-', $variable->gradiente_from)[0] }}-700">Transparencia - Indicador 55</a>
             <span class="mx-2" aria-hidden="true">&rsaquo;</span>
             <span class="text-gray-800">{{ $variable->titulo_completo }}</span>
         </nav>
@@ -47,6 +47,7 @@
                             $documentos = json_decode($documentos, true) ?? [];
                         }
                         $documentos = $documentos ?? [];
+                        // Clases generadas dinámicamente (Tailwind las detecta en este comentario): text-red-700 text-orange-700 text-amber-700 text-yellow-700 text-lime-700 text-green-700 text-emerald-700 text-teal-700 text-cyan-700 text-sky-700 text-blue-700 text-indigo-700 text-violet-700 text-purple-700 text-fuchsia-700 text-pink-700 text-rose-700 text-gray-700 text-slate-700 hover:text-red-700 hover:text-orange-700 hover:text-amber-700 hover:text-yellow-700 hover:text-lime-700 hover:text-green-700 hover:text-emerald-700 hover:text-teal-700 hover:text-cyan-700 hover:text-sky-700 hover:text-blue-700 hover:text-indigo-700 hover:text-violet-700 hover:text-purple-700 hover:text-fuchsia-700 hover:text-pink-700 hover:text-rose-700 hover:text-gray-700 hover:text-slate-700 hover:text-red-900 hover:text-orange-900 hover:text-amber-900 hover:text-yellow-900 hover:text-lime-900 hover:text-green-900 hover:text-emerald-900 hover:text-teal-900 hover:text-cyan-900 hover:text-sky-900 hover:text-blue-900 hover:text-indigo-900 hover:text-violet-900 hover:text-purple-900 hover:text-fuchsia-900 hover:text-pink-900 hover:text-rose-900 hover:text-gray-900 hover:text-slate-900
                     @endphp
                     @if(is_array($documentos) && count($documentos) > 0)
                         <div class="space-y-8">
@@ -95,7 +96,7 @@
                                                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                                                         <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                                                                     </svg>
-                                                                    {{ $item['titulo'] }}
+                                                                    {{ $item['titulo'] }}@if(($item['tipo'] ?? 'pdf') == 'pdf')<span class="sr-only"> (PDF)</span>@elseif(($item['tipo'] ?? '') == 'excel')<span class="sr-only"> (Excel)</span>@elseif(($item['tipo'] ?? '') == 'resolucion')<span class="sr-only"> (Resolución)</span>@endif
                                                                 </a>
                                                             @endforeach
                                                         </div>
@@ -135,7 +136,7 @@
                                                     <a href="{{ $doc['url'] }}"
                                                        target="_blank"
                                                        rel="noopener noreferrer"
-                                                       class="text-{{ explode('-', $variable->gradiente_from)[0] }}-600 hover:text-{{ explode('-', $variable->gradiente_from)[0] }}-800 font-medium">
+                                                       class="text-{{ explode('-', $variable->gradiente_from)[0] }}-700 hover:text-{{ explode('-', $variable->gradiente_from)[0] }}-900 font-medium">
                                                         Ver documento<span class="sr-only">: {{ $doc['titulo'] }}</span> <span aria-hidden="true">&rarr;</span>
                                                     </a>
                                                 </div>
@@ -212,7 +213,7 @@
                                             <a href="{{ $doc['url'] }}"
                                                target="_blank"
                                                rel="noopener noreferrer"
-                                               class="text-{{ explode('-', $variable->gradiente_from)[0] }}-600 hover:text-{{ explode('-', $variable->gradiente_from)[0] }}-800 font-medium">
+                                               class="text-{{ explode('-', $variable->gradiente_from)[0] }}-700 hover:text-{{ explode('-', $variable->gradiente_from)[0] }}-900 font-medium">
                                                 Ver documento<span class="sr-only">: {{ $doc['titulo'] }}</span> <span aria-hidden="true">&rarr;</span>
                                             </a>
                                         </div>
