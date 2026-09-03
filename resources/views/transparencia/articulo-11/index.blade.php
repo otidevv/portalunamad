@@ -22,7 +22,7 @@
         <nav aria-label="Ruta de navegación" class="text-sm text-gray-600 mb-8">
             <a href="/" class="hover:text-blue-700">Inicio</a>
             <span class="mx-2" aria-hidden="true">›</span>
-            <span class="text-gray-800">Transparencia - Artículo 11</span>
+            <span aria-current="page" class="text-gray-800">Transparencia - Artículo 11</span>
         </nav>
 
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">

@@ -24,7 +24,7 @@
             <span class="mx-2" aria-hidden="true">›</span>
             <a href="/transparencia/indicador-55" class="hover:text-orange-700">Transparencia - Indicador 55</a>
             <span class="mx-2" aria-hidden="true">›</span>
-            <span class="text-gray-800">MV10: Tarifas de Servicios</span>
+            <span aria-current="page" class="text-gray-800">MV10: Tarifas de Servicios</span>
         </nav>
 
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">

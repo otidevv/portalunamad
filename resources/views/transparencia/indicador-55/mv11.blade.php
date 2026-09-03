@@ -24,7 +24,7 @@
             <span class="mx-2" aria-hidden="true">›</span>
             <a href="/transparencia/indicador-55" class="hover:text-indigo-700">Transparencia - Indicador 55</a>
             <span class="mx-2" aria-hidden="true">›</span>
-            <span class="text-gray-800">MV11: Plana Docente</span>
+            <span aria-current="page" class="text-gray-800">MV11: Plana Docente</span>
         </nav>
 
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -1675,18 +1675,4 @@
     </div>
 </div>
 
-<script>
-function toggleSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    const toggle = document.getElementById('toggle-' + sectionId.split('-')[1]);
-    
-    if (section.classList.contains('hidden')) {
-        section.classList.remove('hidden');
-        toggle.textContent = 'Ocultar departamentos ↑';
-    } else {
-        section.classList.add('hidden');
-        toggle.textContent = 'Ver todos los departamentos →';
-    }
-}
-</script>
 @endsection
