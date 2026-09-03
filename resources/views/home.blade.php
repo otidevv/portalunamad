@@ -5,7 +5,7 @@
 @section('content')
 
     <!-- Hero Section con Slider - Portal Principal UNAMAD -->
-    <section class="hero-slider">
+    <section class="hero-slider" aria-roledescription="carrusel" aria-label="Banners destacados de la UNAMAD">
         <!-- Slider Container -->
         <div class="slider-container">
             <!-- Slide 1 (LCP - carga prioritaria) -->
@@ -232,8 +232,8 @@
         <div class="container mx-auto px-4">
             <!-- Título Principal de la Sección -->
             <div class="text-center mb-12">
-                <p class="text-sm font-medium text-gray-600 mb-2">CONOCE TODOS</p>
-                <h2 class="text-2xl sm:text-3xl font-bold text-[#db0455]">Nuestros Servicios</h2>
+                <p class="text-sm font-medium text-gray-600 mb-2" aria-hidden="true">CONOCE TODOS</p>
+                <h2 class="text-2xl sm:text-3xl font-bold text-[#db0455]"><span class="sr-only">Conoce todos </span>Nuestros Servicios</h2>
                 <div class="w-20 h-1 mx-auto rounded-full mt-4" style="background:linear-gradient(to right,#ed145b,#db0455);"></div>
             </div>
 
@@ -766,23 +766,23 @@
 
     <!-- Sección La UNAMAD en cifras con efecto de ola -->
     <!-- Primera sección - Ola superior -->
-    <section class="wave-section" style="margin-bottom: -1px;">
+    <div class="wave-section" aria-hidden="true" style="margin-bottom: -1px;">
         <div style="height: 150px; overflow: hidden;">
             <svg aria-hidden="true" viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
                 <path d="M-0.00,49.85 C150.00,149.60 349.20,-49.85 500.00,49.85 L507.56,166.82 L-8.23,167.80 Z"
                     style="stroke: none; fill: #db0455;"></path>
             </svg>
         </div>
-    </section>
+    </div>
 
     <!-- Segunda sección - Contenido con fondo amarillo -->
     <section class="bg-[#db0455] py-16">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">LA UNAMAD EN CIFRAS:</h2>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2 uppercase">La UNAMAD en cifras</h2>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-8 mt-12">
+            <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-8 mt-12 list-none m-0 p-0">
                 <!-- Cifra 1 - Docentes Investigadores -->
-                <div class="text-center">
+                <li class="text-center">
                     <div class="mb-4">
                         <img width="64" height="64" loading="lazy" src="/img/sectioncifras/investigadores.svg" alt="" class="w-16 h-16 mx-auto">
                     </div>
@@ -790,10 +790,10 @@
                     <div class="bg-[#0056ac] text-white px-3 py-1 rounded text-sm font-semibold">
                         DOCENTES<br>INVESTIGADORES
                     </div>
-                </div>
+                </li>
 
                 <!-- Cifra 2 - Años de Fundación -->
-                <div class="text-center">
+                <li class="text-center">
                     <div class="mb-4">
                         <img width="64" height="64" loading="lazy" src="/img/sectioncifras/fundacion.svg" alt="" class="w-16 h-16 mx-auto">
                     </div>
@@ -801,10 +801,10 @@
                     <div class="bg-[#0056ac] text-white px-3 py-1 rounded text-sm font-semibold">
                         AÑOS DE<br>FUNDACIÓN<br>INSTITUCIONAL
                     </div>
-                </div>
+                </li>
 
                 <!-- Cifra 3 - Estudiantes Matriculados -->
-                <div class="text-center">
+                <li class="text-center">
                     <div class="mb-4">
                         <img width="64" height="64" loading="lazy" src="/img/sectioncifras/estudiantes.svg" alt="" class="w-16 h-16 mx-auto">
                     </div>
@@ -812,10 +812,10 @@
                     <div class="bg-[#0056ac] text-white px-3 py-1 rounded text-sm font-semibold">
                         ESTUDIANTES<br>MATRICULADOS
                     </div>
-                </div>
+                </li>
 
                 <!-- Cifra 4 - Escuelas Profesionales -->
-                <div class="text-center">
+                <li class="text-center">
                     <div class="mb-4">
                         <img width="64" height="64" loading="lazy" src="/img/sectioncifras/escuelas.svg" alt="" class="w-16 h-16 mx-auto">
                     </div>
@@ -823,10 +823,10 @@
                     <div class="bg-[#0056ac] text-white px-3 py-1 rounded text-sm font-semibold">
                         ESCUELAS<br>PROFESIONALES
                     </div>
-                </div>
+                </li>
 
                 <!-- Cifra 5 - Convenios Institucionales -->
-                <div class="text-center">
+                <li class="text-center">
                     <div class="mb-4">
                         <img width="64" height="64" loading="lazy" src="/img/sectioncifras/convenio.svg" alt="" class="w-16 h-16 mx-auto">
                     </div>
@@ -834,20 +834,20 @@
                     <div class="bg-[#0056ac] text-white px-3 py-1 rounded text-sm font-semibold">
                         CONVENIOS<br>INSTITUCIONALES
                     </div>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
     </section>
 
     <!-- Tercera sección - Ola inferior -->
-    <section class="wave-section" style="margin-top: -1px;">
+    <div class="wave-section" aria-hidden="true" style="margin-top: -1px;">
         <div style="height: 150px; overflow: hidden;">
             <svg aria-hidden="true" viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
                 <path d="M-0.00,49.85 C150.00,149.60 271.37,-49.85 500.00,49.85 L500.00,0.00 L-0.00,0.00 Z"
                     style="stroke: none; fill: #db0455;"></path>
             </svg>
         </div>
-    </section>
+    </div>
 
     <!-- Sección Otros enlaces -->
     <section class="py-16 bg-gray-100">
@@ -1120,103 +1120,103 @@
 
             <!-- Slider Container -->
             <div class="relative overflow-hidden">
-                <div class="enlaces-slider flex" id="enlacesSlider">
+                <ul class="enlaces-slider flex list-none m-0 p-0" id="enlacesSlider">
                     <!-- Items individuales para desplazamiento continuo -->
-                    <a href="https://www.sunedu.gob.pe/" target="_blank" rel="noopener noreferrer"
-                        class="flex-shrink-0 p-6 mx-4 text-center group">
+                    <li class="flex-shrink-0"><a href="https://www.sunedu.gob.pe/" target="_blank" rel="noopener noreferrer"
+                        class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/logo-sunedu.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             SUNEDU</h3>
-                    </a>
-                    <a href="https://www.pronabec.gob.pe/" target="_blank" rel="noopener noreferrer"
-                        class="flex-shrink-0 p-6 mx-4 text-center group">
+                    </a></li>
+                    <li class="flex-shrink-0"><a href="https://www.pronabec.gob.pe/" target="_blank" rel="noopener noreferrer"
+                        class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/logoPronabec_hd.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             PRONABEC</h3>
-                    </a>
-                    <a href="https://www.prociencia.gob.pe/" target="_blank" rel="noopener noreferrer"
-                        class="flex-shrink-0 p-6 mx-4 text-center group">
+                    </a></li>
+                    <li class="flex-shrink-0"><a href="https://www.prociencia.gob.pe/" target="_blank" rel="noopener noreferrer"
+                        class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/prociencia.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             PROCIENCIA</h3>
-                    </a>
-                    <a href="https://portal.rnssc.gob.pe/" target="_blank" rel="noopener noreferrer"
-                        class="flex-shrink-0 p-6 mx-4 text-center group">
+                    </a></li>
+                    <li class="flex-shrink-0"><a href="https://portal.rnssc.gob.pe/" target="_blank" rel="noopener noreferrer"
+                        class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/rnssc.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             RNSSC</h3>
-                    </a>
-                    <a href="https://www.rpu.edu.pe/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 p-6 mx-4 text-center group">
+                    </a></li>
+                    <li class="flex-shrink-0"><a href="https://www.rpu.edu.pe/" target="_blank" rel="noopener noreferrer" class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/rpu.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             RPU</h3>
-                    </a>
-                    <a href="https://www.scopus.com/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 p-6 mx-4 text-center group">
+                    </a></li>
+                    <li class="flex-shrink-0"><a href="https://www.scopus.com/" target="_blank" rel="noopener noreferrer" class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/scopus.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             SCOPUS</h3>
-                    </a>
+                    </a></li>
 
                     <!-- Duplicado para bucle infinito -->
-                    <a href="https://www.sunedu.gob.pe/" target="_blank" rel="noopener noreferrer"
-                        class="flex-shrink-0 p-6 mx-4 text-center group">
+                    <li class="flex-shrink-0"><a href="https://www.sunedu.gob.pe/" target="_blank" rel="noopener noreferrer"
+                        class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/logo-sunedu.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             SUNEDU</h3>
-                    </a>
-                    <a href="https://www.pronabec.gob.pe/" target="_blank" rel="noopener noreferrer"
-                        class="flex-shrink-0 p-6 mx-4 text-center group">
+                    </a></li>
+                    <li class="flex-shrink-0"><a href="https://www.pronabec.gob.pe/" target="_blank" rel="noopener noreferrer"
+                        class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/logoPronabec_hd.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             PRONABEC</h3>
-                    </a>
-                    <a href="https://www.prociencia.gob.pe/" target="_blank" rel="noopener noreferrer"
-                        class="flex-shrink-0 p-6 mx-4 text-center group">
+                    </a></li>
+                    <li class="flex-shrink-0"><a href="https://www.prociencia.gob.pe/" target="_blank" rel="noopener noreferrer"
+                        class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/prociencia.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             PROCIENCIA</h3>
-                    </a>
-                    <a href="https://portal.rnssc.gob.pe/" target="_blank" rel="noopener noreferrer"
-                        class="flex-shrink-0 p-6 mx-4 text-center group">
+                    </a></li>
+                    <li class="flex-shrink-0"><a href="https://portal.rnssc.gob.pe/" target="_blank" rel="noopener noreferrer"
+                        class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/rnssc.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             RNSSC</h3>
-                    </a>
-                    <a href="https://www.rpu.edu.pe/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 p-6 mx-4 text-center group">
+                    </a></li>
+                    <li class="flex-shrink-0"><a href="https://www.rpu.edu.pe/" target="_blank" rel="noopener noreferrer" class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/rpu.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             RPU</h3>
-                    </a>
-                    <a href="https://www.scopus.com/" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 p-6 mx-4 text-center group">
+                    </a></li>
+                    <li class="flex-shrink-0"><a href="https://www.scopus.com/" target="_blank" rel="noopener noreferrer" class="block p-6 mx-4 text-center group">
                         <img width="160" height="112" loading="lazy" src="/img/enlacesexternos/scopus.png" alt=""
                             class="w-28 h-20 sm:w-40 sm:h-28 object-contain mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 filter grayscale hover:grayscale-0">
                         <h3
                             class="text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
                             SCOPUS</h3>
-                    </a>
-                </div>
+                    </a></li>
+                </ul>
             </div>
         </div>
     </section>
@@ -1431,7 +1431,7 @@
         <div class="flex-1">
             <div class="flex items-center justify-between mb-3">
                 <div>
-                    <h4 class="text-base font-bold text-gray-800">Himno UNAMAD</h4>
+                    <h2 class="text-base font-bold text-gray-800">Himno UNAMAD</h2>
                     <p class="text-sm text-gray-500">Universidad Nacional Amazónica de Madre de Dios</p>
                 </div>
                 <!-- Botón de minimizar -->

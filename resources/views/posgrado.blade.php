@@ -30,16 +30,24 @@
     <!-- Breadcrumb -->
     <div class="bg-gradient-to-r from-gray-50 to-gray-100 border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <nav class="flex items-center space-x-2 text-sm">
-                <a href="/" class="text-gray-600 hover:text-purple-600 transition-colors font-medium">Inicio</a>
-                <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <a href="/programas" class="text-gray-600 hover:text-purple-600 transition-colors font-medium">Programas</a>
-                <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-purple-600 font-semibold">Escuela de Posgrado</span>
+            <nav class="flex items-center text-sm" aria-label="Migas de pan">
+                <ol class="flex items-center space-x-2 list-none m-0 p-0">
+                    <li>
+                        <a href="/" class="text-gray-600 hover:text-purple-600 transition-colors font-medium">Inicio</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <a href="/programas" class="text-gray-600 hover:text-purple-600 transition-colors font-medium">Programas</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-purple-600 font-semibold" aria-current="page">Escuela de Posgrado</span>
+                    </li>
+                </ol>
             </nav>
         </div>
     </div>
@@ -85,49 +93,40 @@
                         <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
                             <p class="mb-4">Son funciones de la Escuela de Posgrado, las siguientes:</p>
                             
-                            <ol class="space-y-3">
-                                <li class="flex items-start">
-                                    <span class="font-semibold text-purple-600 mr-2">1.</span>
+                            <ol class="space-y-3 list-decimal pl-6 marker:font-semibold marker:text-purple-600">
+                                <li class="pl-1">
                                     <span>Dirigir, supervisar y controlar la actividad académica y administrativa de la Escuela de Posgrado, en coordinación con las Unidades de Posgrado de las Facultades.</span>
                                 </li>
                                 
-                                <li class="flex items-start">
-                                    <span class="font-semibold text-purple-600 mr-2">2.</span>
+                                <li class="pl-1">
                                     <span>Elaborar y elevar para su aprobación el plan anual de funcionamiento y desarrollo de la Escuela, su informe de gestión anual, reglamentos y manuales internos.</span>
                                 </li>
                                 
-                                <li class="flex items-start">
-                                    <span class="font-semibold text-purple-600 mr-2">3.</span>
+                                <li class="pl-1">
                                     <span>Refrendar los diplomas de grados académicos de los Programas a su cargo.</span>
                                 </li>
                                 
-                                <li class="flex items-start">
-                                    <span class="font-semibold text-purple-600 mr-2">4.</span>
+                                <li class="pl-1">
                                     <span>Desarrollar los procedimientos y actividades de autoevaluación en cada programa de Posgrado, en coordinación con la Oficina de Gestión de la Calidad.</span>
                                 </li>
                                 
-                                <li class="flex items-start">
-                                    <span class="font-semibold text-purple-600 mr-2">5.</span>
+                                <li class="pl-1">
                                     <span>Elaborar y difundir las publicaciones de los programas de Posgrado de la universidad.</span>
                                 </li>
                                 
-                                <li class="flex items-start">
-                                    <span class="font-semibold text-purple-600 mr-2">6.</span>
+                                <li class="pl-1">
                                     <span>Proponer al Consejo Universitario el número de vacantes en los programas de maestría y doctorado en cada proceso de admisión, en coordinación con las Unidades de Posgrado.</span>
                                 </li>
                                 
-                                <li class="flex items-start">
-                                    <span class="font-semibold text-purple-600 mr-2">7.</span>
+                                <li class="pl-1">
                                     <span>Aprobar y proponer al consejo universitario los grados de maestrías y doctorados para su otorgamiento respectivo.</span>
                                 </li>
                                 
-                                <li class="flex items-start">
-                                    <span class="font-semibold text-purple-600 mr-2">8.</span>
+                                <li class="pl-1">
                                     <span>Elaborar y proponer al Consejo Universitario nuevos programas de maestrías y doctorados con sus respectivas asignaturas y créditos correspondientes en coordinación con las facultades y las unidades de posgrado.</span>
                                 </li>
                                 
-                                <li class="flex items-start">
-                                    <span class="font-semibold text-purple-600 mr-2">9.</span>
+                                <li class="pl-1">
                                     <span>Las demás funciones asignadas por el Rectorado, o aquellas que sean otorgadas por norma expresa.</span>
                                 </li>
                             </ol>

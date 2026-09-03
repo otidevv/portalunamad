@@ -7,18 +7,22 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
             </svg>
         </div>
-        <h3 class="text-lg font-bold text-gray-800">Escuela de Posgrado</h3>
+        <h3 id="posgrado-nav-title" class="text-lg font-bold text-gray-800">Escuela de Posgrado</h3>
         <p class="text-sm text-gray-600">Investigación y Docencia</p>
     </div>
     
-    <nav class="space-y-1">
-        <a href="/posgrado" 
+    <nav class="space-y-1" aria-labelledby="posgrado-nav-title">
+        <ul class="list-none m-0 p-0 space-y-1">
+        <li>
+        <a href="/posgrado" @if(Request::is('posgrado')) aria-current="page" @endif
            class="flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 {{ Request::is('posgrado') ? 'bg-purple-100 text-purple-800 border-r-2 border-purple-500' : 'text-gray-700 hover:bg-gray-100 hover:text-purple-600' }}">
             <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
             </svg>
             Inicio
         </a>
+        </li>
+        </ul>
     </nav>
     
     <div class="mt-8 p-4 bg-purple-50 rounded-lg border border-purple-200">

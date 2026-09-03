@@ -4,14 +4,16 @@
 @section('description', Str::limit($dataset->descripcion ?: ('Datos abiertos de la UNAMAD: ' . $dataset->nombre), 160))
 
 @section('content')
-<main id="contenido-principal" class="bg-gray-50 min-h-screen">
+<div class="bg-gray-50 min-h-screen">
     <div class="container mx-auto px-4 py-10">
         <!-- Encabezado -->
         <div class="mb-8">
-            <nav class="text-sm text-gray-500 mb-3">
-                <a href="/" class="hover:text-[#db0455]">Inicio</a>
-                <span class="mx-2">/</span>
-                <span class="text-gray-700">Datos</span>
+            <nav class="text-sm text-gray-500 mb-3" aria-label="Migas de pan">
+                <ol class="flex flex-wrap items-center list-none m-0 p-0">
+                    <li><a href="/" class="hover:text-[#db0455]">Inicio</a></li>
+                    <li><span class="mx-2" aria-hidden="true">/</span>Datos</li>
+                    <li><span class="mx-2" aria-hidden="true">/</span><span class="text-gray-700" aria-current="page">{{ Str::limit($dataset->nombre, 60) }}</span></li>
+                </ol>
             </nav>
             <h1 class="text-3xl font-bold text-gray-800">{{ $dataset->nombre }}</h1>
             @if($dataset->descripcion)
@@ -39,28 +41,29 @@
             </div>
 
             <!-- Ficha de metadatos -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-3 mt-5 text-sm bg-white rounded-xl shadow-sm p-5">
+            <dl class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-3 mt-5 text-sm bg-white rounded-xl shadow-sm p-5">
                 <div>
-                    <p class="text-xs text-gray-400 uppercase">Fecha de corte</p>
-                    <p class="text-gray-700">{{ $dataset->fecha_corte ? $dataset->fecha_corte->format('d/m/Y') : '—' }}</p>
+                    <dt class="text-xs text-gray-400 uppercase">Fecha de corte</dt>
+                    <dd class="text-gray-700">{{ $dataset->fecha_corte ? $dataset->fecha_corte->format('d/m/Y') : '—' }}</dd>
                 </div>
                 <div>
-                    <p class="text-xs text-gray-400 uppercase">Frecuencia</p>
-                    <p class="text-gray-700">{{ $dataset->frecuencia_actualizacion ?: '—' }}</p>
+                    <dt class="text-xs text-gray-400 uppercase">Frecuencia</dt>
+                    <dd class="text-gray-700">{{ $dataset->frecuencia_actualizacion ?: '—' }}</dd>
                 </div>
                 <div>
-                    <p class="text-xs text-gray-400 uppercase">Licencia</p>
-                    <p class="text-gray-700">{{ $dataset->licencia ?: '—' }}</p>
+                    <dt class="text-xs text-gray-400 uppercase">Licencia</dt>
+                    <dd class="text-gray-700">{{ $dataset->licencia ?: '—' }}</dd>
                 </div>
                 <div>
-                    <p class="text-xs text-gray-400 uppercase">Campos</p>
-                    <p class="text-gray-700">{{ count($dataset->columnas ?? []) }}</p>
+                    <dt class="text-xs text-gray-400 uppercase">Campos</dt>
+                    <dd class="text-gray-700">{{ count($dataset->columnas ?? []) }}</dd>
                 </div>
-            </div>
+            </dl>
         </div>
 
         <!-- Controles + Gráfico -->
         <div class="bg-white rounded-xl shadow-sm p-6">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">Visualización de los datos</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
                 <div>
                     <label class="block text-xs text-gray-500 mb-1">Categoría (eje X)</label>
@@ -102,12 +105,14 @@
         <!-- Diccionario de datos -->
         @if(!empty($dataset->columnas))
             <div class="bg-white rounded-xl shadow-sm overflow-hidden mt-8">
+                <h2 class="m-0">
                 <button type="button" id="toggle-diccionario" class="w-full flex items-center justify-between px-6 py-4 text-left">
                     <span class="text-lg font-semibold text-gray-800">Diccionario de datos</span>
                     <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
+                </h2>
                 <div id="contenido-diccionario" class="overflow-x-auto border-t border-gray-100">
                     <table class="w-full text-sm">
                         <thead class="bg-gray-50 text-xs text-gray-500 uppercase">
@@ -138,7 +143,7 @@
             <span class="font-medium">Protección de datos:</span> este conjunto de datos se publica de forma anonimizada y agregada, conforme a la Ley N° 29733 de Protección de Datos Personales.
         </p>
     </div>
-</main>
+</div>
 @endsection
 
 @push('scripts')

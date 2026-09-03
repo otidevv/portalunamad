@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', $comunicado->titulo . ' - Comunicados UNAMAD')
+
 @section('content')
 <div class="container mx-auto px-4 py-8">
     <!-- Breadcrumb -->
@@ -18,7 +20,7 @@
                     <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                     </svg>
-                    <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Oficina</span>
+                    <a href="{{ route('comunicados.index') }}" class="ml-1 text-sm font-medium text-gray-700 hover:text-[#db0455] md:ml-2">Comunicados</a>
                 </div>
             </li>
             <li aria-current="page">
@@ -83,7 +85,8 @@
                 <!-- Contenido -->
                 @if($comunicado->contenido)
                     <div class="comunicado-content">
-                        {!! \App\Helpers\HtmlSanitizer::clean($comunicado->contenido) !!}
+                        {{-- Los encabezados h1 del editor se rebajan a h2 para mantener un único h1 en la página --}}
+                        {!! preg_replace('/<(\/?)h1\b/i', '<$1h2', \App\Helpers\HtmlSanitizer::clean($comunicado->contenido)) !!}
                     </div>
                 @else
                     <p class="text-gray-600 italic">Este comunicado no tiene contenido adicional.</p>
@@ -91,12 +94,12 @@
 
                 @if($comunicado->archivos->count() > 0)
                     <div class="mt-8 pt-6 border-t border-gray-200">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
                             <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 10-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/>
                             </svg>
                             Archivos adjuntos ({{ $comunicado->archivos->count() }})
-                        </h3>
+                        </h2>
                         <ul class="space-y-2">
                             @foreach($comunicado->archivos as $archivo)
                                 @php $ext = strtoupper($archivo->extension ?? pathinfo($archivo->ruta, PATHINFO_EXTENSION)); @endphp
@@ -127,38 +130,38 @@
             <div class="sticky top-4 space-y-6">
                 <!-- Información del Comunicado -->
                 <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Información del Comunicado</h3>
+                    <h2 class="text-lg font-semibold text-gray-800 mb-4">Información del Comunicado</h2>
                     
-                    <div class="space-y-3">
+                    <dl class="space-y-3">
                         <div>
-                            <span class="text-sm text-gray-600">Oficina:</span>
-                            <p class="font-medium">{{ $comunicado->oficina ?? $comunicado->categoria->nombre ?? 'Sin oficina' }}</p>
+                            <dt class="text-sm text-gray-600">Oficina</dt>
+                            <dd class="font-medium">{{ $comunicado->oficina ?? $comunicado->categoria->nombre ?? 'Sin oficina' }}</dd>
                         </div>
-                        
+
                         <div>
-                            <span class="text-sm text-gray-600">Fecha de publicación:</span>
-                            <p class="font-medium">{{ $comunicado->created_at->format('d/m/Y') }}</p>
+                            <dt class="text-sm text-gray-600">Fecha de publicación</dt>
+                            <dd class="font-medium">{{ $comunicado->created_at->format('d/m/Y') }}</dd>
                         </div>
-                        
+
                         @if($comunicado->fecha_fin)
                             <div>
-                                <span class="text-sm text-gray-600">Vigente hasta:</span>
-                                <p class="font-medium">{{ $comunicado->fecha_fin->format('d/m/Y') }}</p>
+                                <dt class="text-sm text-gray-600">Vigente hasta</dt>
+                                <dd class="font-medium">{{ $comunicado->fecha_fin->format('d/m/Y') }}</dd>
                             </div>
                         @endif
-                        
+
                         @if($comunicado->duracion)
                             <div>
-                                <span class="text-sm text-gray-600">Duración:</span>
-                                <p class="font-medium">{{ $comunicado->duracion }} días</p>
+                                <dt class="text-sm text-gray-600">Duración</dt>
+                                <dd class="font-medium">{{ $comunicado->duracion }} días</dd>
                             </div>
                         @endif
-                    </div>
+                    </dl>
                 </div>
 
                 <!-- Botones de Acción -->
                 <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Acciones</h3>
+                    <h2 class="text-lg font-semibold text-gray-800 mb-4">Acciones</h2>
                     
                     <div class="space-y-3">
                         <button onclick="window.print()" 

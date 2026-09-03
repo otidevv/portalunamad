@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Presentación - UNAMAD')
+
 @section('content')
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->

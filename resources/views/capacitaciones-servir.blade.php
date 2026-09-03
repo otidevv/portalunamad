@@ -29,12 +29,18 @@
     <!-- Breadcrumb -->
     <div class="bg-gradient-to-r from-gray-50 to-gray-100 border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <nav class="flex items-center space-x-2 text-sm">
-                <a href="/" class="text-gray-600 hover:text-red-600 transition-colors font-medium">Inicio</a>
-                <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
-                </svg>
-                <span class="text-red-600 font-semibold">Videos de Capacitación SERVIR</span>
+            <nav class="flex items-center text-sm" aria-label="Migas de pan">
+                <ol class="flex items-center space-x-2 list-none m-0 p-0">
+                    <li>
+                        <a href="/" class="text-gray-600 hover:text-red-600 transition-colors font-medium">Inicio</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-red-600 font-semibold" aria-current="page">Videos de Capacitación SERVIR</span>
+                    </li>
+                </ol>
             </nav>
         </div>
     </div>
@@ -77,9 +83,9 @@
                     <h2 class="text-2xl font-bold text-gray-800">Oficina de Recursos Humanos</h2>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <ul class="grid grid-cols-1 lg:grid-cols-2 gap-6 list-none m-0 p-0">
                     <!-- Video 1 -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <li class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/1mMzMEXEzy0/maxresdefault.jpg"
                                  alt=""
@@ -123,8 +129,8 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
 
             <!-- Sección: Directivos y Mandos Medios -->
@@ -138,9 +144,9 @@
                     <h2 class="text-2xl font-bold text-gray-800">Directivos y Mandos Medios</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 list-none m-0 p-0">
                     <!-- Video 2 -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <li class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/qLFlbYLgqRk/maxresdefault.jpg"
                                  alt=""
@@ -184,10 +190,10 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </li>
 
                     <!-- Video 3 -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <li class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/FG609uRqMpE/maxresdefault.jpg"
                                  alt=""
@@ -231,10 +237,10 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </li>
 
                     <!-- Video 4 -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <li class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/R0Bvaftc9E/maxresdefault.jpg"
                                  alt=""
@@ -278,8 +284,8 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
 
             <!-- Sección: Servidores Civiles en General -->
@@ -293,9 +299,9 @@
                     <h2 class="text-2xl font-bold text-gray-800">Servidores Civiles en General</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 list-none m-0 p-0">
                     <!-- Video 5 -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <li class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/XL8MA-Tz7Cg/maxresdefault.jpg"
                                  alt=""
@@ -339,10 +345,10 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </li>
 
                     <!-- Video 6 -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <li class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/I4ccjU9cRrw/maxresdefault.jpg"
                                  alt=""
@@ -386,10 +392,10 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </li>
 
                     <!-- Video 7 -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <li class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/TlJxyaLkd4I/maxresdefault.jpg"
                                  alt=""
@@ -433,16 +439,12 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
 
             <!-- Separador -->
-            <div class="my-16 border-t-2 border-gray-200 relative">
-                <div class="absolute left-1/2 -translate-x-1/2 -top-4 bg-gray-50 px-6">
-                    <span class="text-gray-400 text-sm font-medium">Nueva Sección</span>
-                </div>
-            </div>
+            <hr class="my-16 border-t-2 border-gray-200" aria-hidden="true">
 
             <!-- Encabezado MCP -->
             <div class="bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl p-6 border border-orange-100 mb-12">
@@ -472,9 +474,9 @@
                     <h2 class="text-2xl font-bold text-gray-800">¿Cómo se definieron las "MCP"?</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 list-none m-0 p-0">
                     <!-- Video MCP 1 -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <li class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/nt89n4PAnrY/maxresdefault.jpg"
                                  alt=""
@@ -510,10 +512,10 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </li>
 
                     <!-- Video MCP 2 -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <li class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/ialDfhO-yPw/maxresdefault.jpg"
                                  alt=""
@@ -549,10 +551,10 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </li>
 
                     <!-- Video MCP 3 -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <li class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/zaKkPC6cpNo/maxresdefault.jpg"
                                  alt=""
@@ -588,10 +590,10 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </li>
 
                     <!-- Video MCP 4 -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <li class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <div class="relative">
                             <img src="https://img.youtube.com/vi/5QusdOShehY/maxresdefault.jpg"
                                  alt=""
@@ -627,8 +629,8 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
 
             <!-- ============================================================
@@ -678,9 +680,9 @@
                     <h2 class="text-2xl font-bold text-gray-800">Conoce las Matrices de las MCP</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 list-none m-0 p-0">
                     @foreach ($videosMatrices as $i => $video)
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <li class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                             <div class="relative">
                                 <img src="https://img.youtube.com/vi/{{ $video['id'] }}/maxresdefault.jpg"
                                      alt=""
@@ -723,9 +725,9 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </li>
                     @endforeach
-                </div>
+                </ul>
             </div>
 
             <!-- ============================================================
@@ -785,9 +787,9 @@
             </div>
 
             <div class="mb-12">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 list-none m-0 p-0">
                     @foreach ($matricesMcp as $i => $matriz)
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border-t-4 border-orange-500">
+                        <li class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border-t-4 border-orange-500">
                             <div class="p-6">
                                 <div class="flex items-center mb-4">
                                     <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
@@ -815,9 +817,9 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </li>
                     @endforeach
-                </div>
+                </ul>
             </div>
 
             <!-- Botón de regreso -->

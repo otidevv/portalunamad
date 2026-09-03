@@ -17,7 +17,7 @@
                         </svg>
                     </div>
                 </div>
-                <h2 class="text-3xl font-bold text-white">Bienvenido</h2>
+                <h1 class="text-3xl font-bold text-white">Bienvenido<span class="sr-only">: iniciar sesión en el Portal Administrativo UNAMAD</span></h1>
                 <p class="mt-2 text-pink-100">Portal Administrativo UNAMAD</p>
             </div>
 

@@ -74,33 +74,33 @@
             
             <div class="p-8">
                 <!-- Timeline -->
-                <div class="space-y-8">
+                <ol class="space-y-8 list-none m-0 p-0">
                     <!-- Año 2000 -->
-                    <div class="relative">
+                    <li class="relative">
                         <div class="flex items-start">
-                            <div class="flex-shrink-0 w-20 h-20 bg-[#db0455] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                            <div class="flex-shrink-0 w-20 h-20 bg-[#db0455] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg" aria-hidden="true">
                                 2000
                             </div>
                             <div class="ml-6 flex-1">
                                 <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-[#db0455]">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-3">Creación de la Universidad</h3>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3"><time datetime="2000" class="sr-only">Año 2000: </time>Creación de la Universidad</h3>
                                     <p class="text-gray-700 leading-relaxed">
                                         La Universidad Nacional Amazónica de Madre de Dios fue <strong>creada mediante la LEY Nº 27297 el 5 de julio del año 2000</strong>, marcando el inicio de una nueva era en la educación superior de la región amazónica.
                                     </p>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </li>
 
                     <!-- Año 2001 -->
-                    <div class="relative">
+                    <li class="relative">
                         <div class="flex items-start">
-                            <div class="flex-shrink-0 w-20 h-20 bg-[#ed145b] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                            <div class="flex-shrink-0 w-20 h-20 bg-[#ed145b] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg" aria-hidden="true">
                                 2001
                             </div>
                             <div class="ml-6 flex-1">
                                 <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-[#ed145b]">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-3">Autorización de Funcionamiento</h3>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3"><time datetime="2001" class="sr-only">Año 2001: </time>Autorización de Funcionamiento</h3>
                                     <div class="space-y-3 text-gray-700">
                                         <p class="leading-relaxed">
                                             <strong>Se autoriza su funcionamiento mediante la Resolución Nº 060-2001-CONAFU.</strong>
@@ -112,25 +112,25 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </li>
 
                     <!-- Año 2009 -->
-                    <div class="relative">
+                    <li class="relative">
                         <div class="flex items-start">
-                            <div class="flex-shrink-0 w-20 h-20 bg-[#a00340] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                            <div class="flex-shrink-0 w-20 h-20 bg-[#a00340] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg" aria-hidden="true">
                                 2009
                             </div>
                             <div class="ml-6 flex-1">
                                 <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-[#a00340]">
-                                    <h3 class="text-xl font-bold text-gray-800 mb-3">Autorización Definitiva</h3>
+                                    <h3 class="text-xl font-bold text-gray-800 mb-3"><time datetime="2009" class="sr-only">Año 2009: </time>Autorización Definitiva</h3>
                                     <p class="text-gray-700 leading-relaxed">
                                         El <strong>27 de noviembre de 2009, mediante la Resolución Nº 626-2009-CONAFU</strong>, se otorga la <strong>Autorización Definitiva de Funcionamiento</strong> a la Universidad Nacional Amazónica de Madre de Dios, bajo la Ley Nº 23733 y sus modificatorias y complementarias.
                                     </p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ol>
 
                 <!-- Servicios y Centros -->
                 <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">

@@ -57,7 +57,7 @@
                     <!-- Resultados de búsqueda -->
                     <div id="searchResults" class="hidden mt-4 border-t border-gray-200 pt-4">
                         <div class="flex items-center justify-between mb-3">
-                            <h3 class="text-sm font-medium text-gray-700">Resultados de búsqueda</h3>
+                            <h2 class="text-sm font-medium text-gray-700">Resultados de búsqueda</h2>
                             <button onclick="clearSearch()" class="text-xs text-[#db0455] hover:text-[#a00340]">Limpiar</button>
                         </div>
                         <div id="searchResultsContent" class="space-y-2 max-h-96 overflow-y-auto"></div>
@@ -79,11 +79,11 @@
                 </div>
 
                 <!-- Contenido del explorador -->
-                <div class="divide-y divide-gray-100">
-                    
+                <ul class="divide-y divide-gray-100 list-none m-0 p-0">
+
                     <!-- Carpetas -->
                     @foreach($carpetas as $carpeta)
-                    <div class="folder-item" data-folder-id="{{ $carpeta->id }}">
+                    <li class="folder-item" data-folder-id="{{ $carpeta->id }}">
                         <div class="flex items-center p-4 hover:bg-gray-50 cursor-pointer transition-colors" 
                              onclick="toggleFolder({{ $carpeta->id }})">
                             <div class="flex items-center flex-1">
@@ -133,12 +133,12 @@
                                 Cargando contenido...
                             </div>
                         </div>
-                    </div>
+                    </li>
                     @endforeach
 
                     <!-- Documentos -->
                     @foreach($documentos as $documento)
-                    <div class="document-item flex items-center p-4 hover:bg-gray-50 transition-colors">
+                    <li class="document-item flex items-center p-4 hover:bg-gray-50 transition-colors">
                         <div class="w-6 h-6 mr-3"></div> <!-- Espaciado para alineación -->
                         
                         <!-- Icono del documento -->
@@ -166,12 +166,12 @@
                                 <p class="text-xs text-gray-600 mb-1 line-clamp-1">{{ $documento->descripcion }}</p>
                             @endif
                             
-                            <div class="flex items-center space-x-3 text-xs text-gray-500">
-                                <span>{{ $documento->vistas ?? 0 }} vistas</span>
+                            <ul class="flex items-center space-x-3 text-xs text-gray-500 list-none m-0 p-0">
+                                <li>{{ $documento->vistas ?? 0 }} vistas</li>
                                 @if($documento->descargas > 0)
-                                    <span>{{ $documento->descargas }} descargas</span>
+                                    <li>{{ $documento->descargas }} descargas</li>
                                 @endif
-                            </div>
+                            </ul>
                         </div>
 
                         <!-- Botón de acción -->
@@ -182,12 +182,12 @@
                                 {{ $documento->tipo_enlace === 'archivo' ? 'Descargar' : 'Acceder' }}
                             </a>
                         </div>
-                    </div>
+                    </li>
                     @endforeach
 
                     <!-- Estado vacío -->
                     @if($carpetas->count() === 0 && $documentos->count() === 0)
-                    <div class="text-center py-12">
+                    <li class="text-center py-12">
                         <svg aria-hidden="true" focusable="false" class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-5l-2-2H5a2 2 0 00-2 2z"></path>
                         </svg>
@@ -195,9 +195,9 @@
                         <p class="mt-1 text-sm text-gray-500">
                             No hay carpetas o documentos disponibles en este momento.
                         </p>
-                    </div>
+                    </li>
                     @endif
-                </div>
+                </ul>
             </div>
         </div>
     </div>
@@ -334,11 +334,11 @@ function loadFolderContent(folderId) {
 
 function generateFolderContent(carpetas, documentos) {
     let html = '';
-    
+
     // Agregar subcarpetas
     carpetas.forEach(carpeta => {
         html += `
-            <div class="folder-item" data-folder-id="${carpeta.id}">
+            <li class="folder-item" data-folder-id="${carpeta.id}">
                 <div class="flex items-center p-3 hover:bg-gray-50 cursor-pointer transition-colors" 
                      onclick="toggleFolder(${carpeta.id})">
                     <div class="expand-btn w-5 h-5 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center mr-2">
@@ -363,14 +363,14 @@ function generateFolderContent(carpetas, documentos) {
                         Cargando...
                     </div>
                 </div>
-            </div>
+            </li>
         `;
     });
     
     // Agregar documentos
     documentos.forEach(documento => {
         html += `
-            <div class="flex items-center p-3 hover:bg-gray-50 transition-colors">
+            <li class="flex items-center p-3 hover:bg-gray-50 transition-colors">
                 <div class="w-5 h-5 mr-2"></div>
                 <div class="w-6 h-6 rounded bg-gray-100 flex items-center justify-center mr-2 text-xs">
                     <span aria-hidden="true">${documento.icono}</span>
@@ -383,15 +383,15 @@ function generateFolderContent(carpetas, documentos) {
                    class="ml-2 inline-flex items-center px-2 py-1 bg-[#db0455] text-white text-xs rounded hover:bg-[#a00340] transition-colors">
                     ${documento.tipo_enlace === 'archivo' ? 'Descargar' : 'Acceder'}
                 </a>
-            </div>
+            </li>
         `;
     });
-    
+
     if (html === '') {
-        html = '<div class="p-3 text-center text-gray-500 text-xs">Carpeta vacía</div>';
+        html = '<li class="p-3 text-center text-gray-500 text-xs">Carpeta vacía</li>';
     }
-    
-    return html;
+
+    return '<ul class="list-none m-0 p-0">' + html + '</ul>';
 }
 
 function getIcono(tipo) {

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Comunicados - Portal UNAMAD')
+
 @section('content')
 <div class="container mx-auto px-4 py-8">
     <!-- Breadcrumb -->
@@ -90,8 +92,9 @@
 
     <!-- Lista de Comunicados -->
     @if($comunicados->count() > 0)
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 list-none m-0 p-0">
             @foreach($comunicados as $comunicado)
+                <li>
                 <article class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
                          onclick="window.location.href='{{ route('comunicado.ver', $comunicado) }}'">
                     <!-- Imagen -->
@@ -119,9 +122,9 @@
                         </div>
 
                         <!-- Título -->
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#db0455] transition-colors line-clamp-2">
+                        <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#db0455] transition-colors line-clamp-2">
                             {{ $comunicado->titulo }}
-                        </h3>
+                        </h2>
 
                         <!-- Contenido preview -->
                         @if($comunicado->contenido)
@@ -144,8 +147,9 @@
                         </div>
                     </div>
                 </article>
+                </li>
             @endforeach
-        </div>
+        </ul>
 
         <!-- Paginación -->
         <div class="mt-8">
@@ -157,7 +161,7 @@
             <svg aria-hidden="true" focusable="false" class="w-24 h-24 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">No se encontraron comunicados</h3>
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">No se encontraron comunicados</h2>
             @if($search || $categoria_id)
                 <p class="text-gray-600 mb-6">No hay comunicados que coincidan con tu búsqueda.</p>
                 <a href="{{ route('comunicados.index') }}" 
