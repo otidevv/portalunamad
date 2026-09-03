@@ -5,7 +5,7 @@
         <!-- Hero Section -->
         <div class="relative text-white py-20"
             style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
-            <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#db0455]/70"></div>
             <div class="relative z-10 container mx-auto px-4">
                 <div class="text-center">
                     <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Convenios</h1>
@@ -79,7 +79,7 @@
                 <div class="lg:col-span-2">
                     <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
                         <div class="flex items-start space-x-4 mb-8">
-                            <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-4 rounded-full">
+                            <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-4 rounded-full">
                                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
@@ -88,14 +88,14 @@
                             </div>
                             <div>
                                 <h2 class="text-3xl font-bold text-gray-800 mb-4">Información sobre Convenios</h2>
-                                <div class="w-20 h-1 bg-gradient-to-r from-[#db0455] to-[#ed145b]"></div>
+                                <div class="w-20 h-1 bg-gradient-to-r from-[#db0455] to-[#db0455]"></div>
                             </div>
                         </div>
 
                         <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
                             <!-- ¿Qué es un convenio? -->
                             <div
-                                class="bg-gradient-to-r from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 border-l-4 border-[#db0455] mb-8">
+                                class="bg-gradient-to-r from-[#db0455]/5 to-[#db0455]/5 rounded-lg p-6 border-l-4 border-[#db0455] mb-8">
                                 <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
                                     <svg class="w-6 h-6 mr-2 text-[#db0455]" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
@@ -263,7 +263,7 @@
                                         <h4 class="font-semibold text-gray-800 mb-2">Convenio Marco</h4>
                                         <div class="space-y-2">
                                             <a href="#"
-                                                class="inline-flex items-center text-sm text-[#db0455] hover:text-[#ed145b] transition-colors">
+                                                class="inline-flex items-center text-sm text-[#db0455] hover:text-[#db0455] transition-colors">
                                                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -274,7 +274,7 @@
                                             </a>
                                             <br>
                                             <a href="#"
-                                                class="inline-flex items-center text-sm text-[#db0455] hover:text-[#ed145b] transition-colors">
+                                                class="inline-flex items-center text-sm text-[#db0455] hover:text-[#db0455] transition-colors">
                                                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -289,7 +289,7 @@
                                         <h4 class="font-semibold text-gray-800 mb-2">Convenio Específico</h4>
                                         <div class="space-y-2">
                                             <a href="#"
-                                                class="inline-flex items-center text-sm text-[#db0455] hover:text-[#ed145b] transition-colors">
+                                                class="inline-flex items-center text-sm text-[#db0455] hover:text-[#db0455] transition-colors">
                                                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -300,7 +300,7 @@
                                             </a>
                                             <br>
                                             <a href="#"
-                                                class="inline-flex items-center text-sm text-[#db0455] hover:text-[#ed145b] transition-colors">
+                                                class="inline-flex items-center text-sm text-[#db0455] hover:text-[#db0455] transition-colors">
                                                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -372,7 +372,7 @@
 
                             <!-- Flujograma -->
                             <div
-                                class="bg-gradient-to-r from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 border-l-4 border-[#db0455] mb-8">
+                                class="bg-gradient-to-r from-[#db0455]/5 to-[#db0455]/5 rounded-lg p-6 border-l-4 border-[#db0455] mb-8">
                                 <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
                                     <svg class="w-6 h-6 mr-2 text-[#db0455]" fill="none" stroke="currentColor"
                                         viewBox="0 0 24 24">
@@ -412,7 +412,7 @@
                                 </p>
                                 <a href="https://www.gob.pe/institucion/unamad/colecciones/16884-convenios-institucionales"
                                     target="_blank"
-                                    class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white font-semibold rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                                    class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#db0455] to-[#db0455] text-white font-semibold rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200">
                                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">

@@ -4,7 +4,7 @@
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#db0455]/70"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Reseña Histórica</h1>
@@ -67,20 +67,20 @@
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
                     <div class="flex items-start space-x-4 mb-8">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-4 rounded-full">
+                        <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-4 rounded-full">
                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
                         <div>
                             <h2 class="text-3xl font-bold text-gray-800 mb-4">Reseña Histórica</h2>
-                            <div class="w-20 h-1 bg-gradient-to-r from-[#db0455] to-[#ed145b]"></div>
+                            <div class="w-20 h-1 bg-gradient-to-r from-[#db0455] to-[#db0455]"></div>
                         </div>
                     </div>
 
                     <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
                         <!-- Origen y Propósito -->
-                        <div class="bg-gradient-to-r from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 mb-8 border-l-4 border-[#db0455]">
+                        <div class="bg-gradient-to-r from-[#db0455]/5 to-[#db0455]/5 rounded-lg p-6 mb-8 border-l-4 border-[#db0455]">
                             <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
                                 <svg class="w-6 h-6 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
@@ -177,7 +177,7 @@
                             
                             <div class="space-y-3">
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -185,7 +185,7 @@
                                     <p class="text-gray-700">La manipulación, adecuación y conservación de la materia prima proveniente del campo (tanto de origen alimentario como no alimentario)</p>
                                 </div>
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -193,7 +193,7 @@
                                     <p class="text-gray-700">Su procesamiento, conservación y comercialización en productos terminados</p>
                                 </div>
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>

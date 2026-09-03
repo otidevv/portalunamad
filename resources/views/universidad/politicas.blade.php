@@ -63,7 +63,7 @@
     <div class="container mx-auto px-4 py-12">
         <!-- Política Institucional Section -->
         <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-[#db0455]">
-            <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+            <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] text-white p-6">
                 <h2 class="text-3xl font-bold flex items-center">
                     <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -124,7 +124,7 @@
                         </div>
 
                         <!-- Reglamentos Académicos -->
-                        <div class="bg-gradient-to-br from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 border border-[#db0455]/20 shadow-sm">
+                        <div class="bg-gradient-to-br from-[#db0455]/5 to-[#db0455]/5 rounded-lg p-6 border border-[#db0455]/20 shadow-sm">
                             <h4 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
                                 <svg class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
@@ -257,7 +257,7 @@
                 </div>
 
                 <!-- Acceso a Documentos -->
-                <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] rounded-lg p-8 text-white">
+                <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] rounded-lg p-8 text-white">
                     <div class="text-center">
                         <svg class="w-12 h-12 mx-auto mb-4 opacity-75" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8s0 0 0 0l-6-6s0 0 0 0zM10.5 18.5h3v-3h-3v3zm0-4.5h3v-3h-3v3zm5-6.5L15 4.5 13.5 6l1.5 1.5L16.5 6z"/>

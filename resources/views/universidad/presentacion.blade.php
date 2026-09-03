@@ -4,7 +4,7 @@
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#db0455]/70"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Presentación</h1>
@@ -148,7 +148,7 @@
                                         <svg class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 012 2z"/>
                                         </svg>
-                                        <a href="mailto:jmaquera@unamad.edu.pe" class="text-sm text-[#db0455] hover:text-[#ed145b] transition-colors font-medium">
+                                        <a href="mailto:jmaquera@unamad.edu.pe" class="text-sm text-[#db0455] hover:text-[#db0455] transition-colors font-medium">
                                             jmaquera@unamad.edu.pe
                                         </a>
                                     </div>

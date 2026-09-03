@@ -1,6 +1,6 @@
 <!-- Enhanced Navigation Card -->
 <div class="bg-white rounded-lg shadow-xl mb-8 overflow-hidden border-t-4 border-[#db0455]">
-    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] text-white p-6">
         <div class="flex items-center space-x-3">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>

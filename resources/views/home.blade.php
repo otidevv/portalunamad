@@ -172,12 +172,12 @@
         <div class="container mx-auto px-4">
             <p class="text-sm font-medium text-gray-600 text-center mb-2">Información oficial publicada en gob.pe</p>
             <h2 id="noticias-gobpe-label" class="text-2xl sm:text-3xl font-bold text-center text-[#db0455]">Noticias</h2>
-            <div class="w-20 h-1 mx-auto rounded-full mt-4 mb-8 sm:mb-12" style="background:linear-gradient(to right,#ed145b,#db0455);"></div>
+            <div class="w-20 h-1 mx-auto rounded-full mt-4 mb-8 sm:mb-12" style="background:linear-gradient(to right,#db0455,#db0455);"></div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 @foreach ($noticiasGobPe as $noticia)
                     <a href="{{ $noticia['enlace'] }}" target="_blank" rel="noopener noreferrer"
-                        class="group bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:border-[#ed145b]/40 transition-all duration-300 flex flex-col">
+                        class="group bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:border-[#db0455]/40 transition-all duration-300 flex flex-col">
                         @if (!empty($noticia['imagen']))
                             <div class="aspect-[16/10] bg-gray-100 overflow-hidden">
                                 <img src="{{ $noticia['imagen'] }}" alt="{{ $noticia['titulo'] }}"
@@ -185,8 +185,8 @@
                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                             </div>
                         @else
-                            <div class="aspect-[16/10] bg-gradient-to-br from-[#ed145b]/10 to-[#db0455]/10 flex items-center justify-center">
-                                <svg class="w-12 h-12 text-[#ed145b]/40" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div class="aspect-[16/10] bg-gradient-to-br from-[#db0455]/10 to-[#db0455]/10 flex items-center justify-center">
+                                <svg class="w-12 h-12 text-[#db0455]/40" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l4 4v10a2 2 0 01-2 2z"></path>
                                 </svg>
@@ -234,7 +234,7 @@
             <div class="text-center mb-12">
                 <p class="text-sm font-medium text-gray-600 mb-2">CONOCE TODOS</p>
                 <h2 class="text-2xl sm:text-3xl font-bold text-[#db0455]">Nuestros Servicios</h2>
-                <div class="w-20 h-1 mx-auto rounded-full mt-4" style="background:linear-gradient(to right,#ed145b,#db0455);"></div>
+                <div class="w-20 h-1 mx-auto rounded-full mt-4" style="background:linear-gradient(to right,#db0455,#db0455);"></div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -586,7 +586,7 @@
             <div class="flex justify-between items-center mb-8">
                 <div>
                     <h2 class="text-2xl font-bold text-[#db0455]">Comunicados</h2>
-                    <div class="w-16 h-1 rounded-full mt-2" style="background:linear-gradient(to right,#ed145b,#db0455);"></div>
+                    <div class="w-16 h-1 rounded-full mt-2" style="background:linear-gradient(to right,#db0455,#db0455);"></div>
                 </div>
                 <a href="{{ route('comunicados.index') }}"
                     class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
@@ -637,7 +637,7 @@
         <div class="container mx-auto px-4">
             <p class="text-sm font-medium text-gray-600 text-center mb-2">Convocatorias y actividades publicadas en gob.pe</p>
             <h2 id="campanas-gobpe-label" class="text-2xl sm:text-3xl font-bold text-center text-[#db0455]">Campañas y eventos</h2>
-            <div class="w-20 h-1 mx-auto rounded-full mt-4 mb-8 sm:mb-12" style="background:linear-gradient(to right,#ed145b,#db0455);"></div>
+            <div class="w-20 h-1 mx-auto rounded-full mt-4 mb-8 sm:mb-12" style="background:linear-gradient(to right,#db0455,#db0455);"></div>
 
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
                 <!-- Columna IZQUIERDA - Campañas (80%) -->
@@ -645,7 +645,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                         @foreach ($campanasGobPe as $campana)
                             <a href="{{ $campana['enlace'] }}" target="_blank" rel="noopener noreferrer"
-                                class="group bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:border-[#ed145b]/40 transition-all duration-300 flex flex-col">
+                                class="group bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:border-[#db0455]/40 transition-all duration-300 flex flex-col">
                                 @if (!empty($campana['imagen']))
                                     <div class="aspect-[16/10] bg-gray-100 overflow-hidden">
                                         <img src="{{ $campana['imagen'] }}" alt="{{ $campana['titulo'] }}"
@@ -653,8 +653,8 @@
                                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                                     </div>
                                 @else
-                                    <div class="aspect-[16/10] bg-gradient-to-br from-[#ed145b]/10 to-[#db0455]/10 flex items-center justify-center">
-                                        <svg class="w-12 h-12 text-[#ed145b]/40" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div class="aspect-[16/10] bg-gradient-to-br from-[#db0455]/10 to-[#db0455]/10 flex items-center justify-center">
+                                        <svg class="w-12 h-12 text-[#db0455]/40" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
                                         </svg>
@@ -854,7 +854,7 @@
         <div class="container mx-auto px-4">
             <p class="text-sm font-medium text-gray-600 text-center mb-2">También te puede interesar</p>
             <h2 class="text-2xl sm:text-3xl font-bold text-center text-[#db0455]">Otros enlaces</h2>
-            <div class="w-20 h-1 mx-auto rounded-full mt-4 mb-8 sm:mb-12" style="background:linear-gradient(to right,#ed145b,#db0455);"></div>
+            <div class="w-20 h-1 mx-auto rounded-full mt-4 mb-8 sm:mb-12" style="background:linear-gradient(to right,#db0455,#db0455);"></div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <!-- Directorio de Funcionarios -->
@@ -1011,7 +1011,7 @@
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-800">Actividades</h2>
-            <div class="w-20 h-1 mx-auto rounded-full mt-4 mb-8 sm:mb-12" style="background:linear-gradient(to right,#ed145b,#db0455);"></div>
+            <div class="w-20 h-1 mx-auto rounded-full mt-4 mb-8 sm:mb-12" style="background:linear-gradient(to right,#db0455,#db0455);"></div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
                 <!-- Columna Izquierda - Video YouTube (50%) -->
@@ -1116,7 +1116,7 @@
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <h2 class="text-2xl sm:text-3xl font-bold text-center text-[#db0455]">Enlaces Externos</h2>
-            <div class="w-20 h-1 mx-auto rounded-full mt-4 mb-8 sm:mb-12" style="background:linear-gradient(to right,#ed145b,#db0455);"></div>
+            <div class="w-20 h-1 mx-auto rounded-full mt-4 mb-8 sm:mb-12" style="background:linear-gradient(to right,#db0455,#db0455);"></div>
 
             <!-- Slider Container -->
             <div class="relative overflow-hidden">

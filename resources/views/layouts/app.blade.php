@@ -128,7 +128,7 @@
                     <source srcset="{{ asset('img/logo/logo.webp') }}" type="image/webp">
                     <img src="{{ asset('img/logo/logo.png') }}" alt="Logo UNAMAD" class="w-16 h-22 mx-auto" width="64" height="88">
                 </picture>
-                <div style="color: #ed145b; line-height: 1;">
+                <div style="color: #db0455; line-height: 1;">
                     <span class="loading-dots">
                         <span>.</span><span>.</span><span>.</span>
                     </span>
@@ -145,23 +145,23 @@
                 <div class="flex justify-between items-center py-2">
                     <div class="flex space-x-4">
                         <a href="https://sgd.unamad.edu.pe/mesa-de-partes" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-[#ed145b] transition-colors">Mesa de Partes Virtual</a>
+                            class="hover:text-[#ff8fb5] hover:underline transition-colors">Mesa de Partes Virtual</a>
                         <a href="mailto:tramite-documentario@unamad.edu.pe"
-                            class="hover:text-[#ed145b] transition-colors">Correo Institucional</a>
+                            class="hover:text-[#ff8fb5] hover:underline transition-colors">Correo Institucional</a>
                         <a href="https://biblioteca.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-[#ed145b] transition-colors">Biblioteca Virtual</a>
+                            class="hover:text-[#ff8fb5] hover:underline transition-colors">Biblioteca Virtual</a>
                     </div>
                     <div class="flex items-center space-x-3">
                         <!-- Redes sociales pequeñas -->
                         <a href="https://www.facebook.com/unamad.oficial/" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-[#ed145b] transition-colors" aria-label="Facebook UNAMAD">
+                            class="hover:text-[#ff8fb5] transition-colors" aria-label="Facebook UNAMAD">
                             <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                             </svg>
                         </a>
                         <a href="https://www.youtube.com/channel/UCUNGgRNunGECIxEd_-qv_oA" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-[#ed145b] transition-colors" aria-label="YouTube UNAMAD">
+                            class="hover:text-[#ff8fb5] transition-colors" aria-label="YouTube UNAMAD">
                             <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
                                 <path
                                     d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
@@ -173,7 +173,7 @@
 
                         <!-- Icono de Login/Admin discreto -->
                         @auth
-                            <a href="{{ route('admin.dashboard') }}" class="hover:text-[#ed145b] transition-colors"
+                            <a href="{{ route('admin.dashboard') }}" class="hover:text-[#ff8fb5] transition-colors"
                                 title="Panel Admin" aria-label="Panel de administración">
                                 <svg class="w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -182,7 +182,7 @@
                                 </svg>
                             </a>
                         @else
-                            <a href="{{ route('login') }}" class="hover:text-[#ed145b] transition-colors"
+                            <a href="{{ route('login') }}" class="hover:text-[#ff8fb5] transition-colors"
                                 title="Iniciar Sesión" aria-label="Iniciar sesión">
                                 <svg class="w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -237,10 +237,10 @@
 
                                     <div class="grid grid-cols-1 gap-y-4">
                                         <a href="/universidad/presentacion"
-                                            class="mega-dropdown-link {{ request()->is('universidad/presentacion') ? 'bg-[#ed145b]/5 border-l-4 border-[#ed145b]' : '' }}">
+                                            class="mega-dropdown-link {{ request()->is('universidad/presentacion') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -250,17 +250,17 @@
                                             </div>
                                             <div>
                                                 <span
-                                                    class="font-semibold {{ request()->is('universidad/presentacion') ? 'text-[#ed145b]' : 'text-gray-800' }}">Presentación</span>
+                                                    class="font-semibold {{ request()->is('universidad/presentacion') ? 'text-[#db0455]' : 'text-gray-800' }}">Presentación</span>
                                                 <p class="text-xs text-gray-600 mt-1">Conoce nuestra misión, visión y
                                                     valores institucionales</p>
                                             </div>
                                         </a>
 
                                         <a href="/universidad/autoridades"
-                                            class="mega-dropdown-link {{ request()->is('universidad/autoridades') ? 'bg-[#ed145b]/5 border-l-4 border-[#ed145b]' : '' }}">
+                                            class="mega-dropdown-link {{ request()->is('universidad/autoridades') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -270,7 +270,7 @@
                                             </div>
                                             <div>
                                                 <span
-                                                    class="font-semibold {{ request()->is('universidad/autoridades') ? 'text-[#ed145b]' : 'text-gray-800' }}">Autoridades</span>
+                                                    class="font-semibold {{ request()->is('universidad/autoridades') ? 'text-[#db0455]' : 'text-gray-800' }}">Autoridades</span>
                                                 <p class="text-xs text-gray-600 mt-1">Rectorado y equipo directivo de
                                                     la
                                                     universidad</p>
@@ -278,10 +278,10 @@
                                         </a>
 
                                         <a href="/universidad/historia"
-                                            class="mega-dropdown-link {{ request()->is('universidad/historia') ? 'bg-[#ed145b]/5 border-l-4 border-[#ed145b]' : '' }}">
+                                            class="mega-dropdown-link {{ request()->is('universidad/historia') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -291,17 +291,17 @@
                                             </div>
                                             <div>
                                                 <span
-                                                    class="font-semibold {{ request()->is('universidad/historia') ? 'text-[#ed145b]' : 'text-gray-800' }}">Historia</span>
+                                                    class="font-semibold {{ request()->is('universidad/historia') ? 'text-[#db0455]' : 'text-gray-800' }}">Historia</span>
                                                 <p class="text-xs text-gray-600 mt-1">Trayectoria y evolución de
                                                     nuestra institución</p>
                                             </div>
                                         </a>
 
                                         <a href="/universidad/sedes"
-                                            class="mega-dropdown-link {{ request()->is('universidad/sedes') ? 'bg-[#ed145b]/5 border-l-4 border-[#ed145b]' : '' }}">
+                                            class="mega-dropdown-link {{ request()->is('universidad/sedes') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -313,17 +313,17 @@
                                             </div>
                                             <div>
                                                 <span
-                                                    class="font-semibold {{ request()->is('universidad/sedes') ? 'text-[#ed145b]' : 'text-gray-800' }}">Sedes</span>
+                                                    class="font-semibold {{ request()->is('universidad/sedes') ? 'text-[#db0455]' : 'text-gray-800' }}">Sedes</span>
                                                 <p class="text-xs text-gray-600 mt-1">Ubicaciones y campus
                                                     universitarios</p>
                                             </div>
                                         </a>
 
                                         <a href="/universidad/politicas"
-                                            class="mega-dropdown-link {{ request()->is('universidad/politicas') ? 'bg-[#ed145b]/5 border-l-4 border-[#ed145b]' : '' }}">
+                                            class="mega-dropdown-link {{ request()->is('universidad/politicas') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -333,7 +333,7 @@
                                             </div>
                                             <div>
                                                 <span
-                                                    class="font-semibold {{ request()->is('universidad/politicas') ? 'text-[#ed145b]' : 'text-gray-800' }}">Política
+                                                    class="font-semibold {{ request()->is('universidad/politicas') ? 'text-[#db0455]' : 'text-gray-800' }}">Política
                                                     Institucional</span>
                                                 <p class="text-xs text-gray-600 mt-1">Normativas, reglamentos y
                                                     políticas universitarias</p>
@@ -369,14 +369,14 @@
                                         <!-- Columna 1: Órganos de Gobierno -->
                                         <div>
                                             <h5
-                                                class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#ed145b]">
+                                                class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#db0455]">
                                                 Órganos de Gobierno</h5>
                                             <div class="space-y-2">
                                                 <a href="/oficinas/asamblea"
-                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/asamblea') ? 'bg-[#ed145b]/5 border-l-4 border-[#ed145b]' : '' }}">
+                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/asamblea') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
                                                     <div
-                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                        <svg class="w-4 h-4 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                        <svg class="w-4 h-4 text-[#db0455]" aria-hidden="true" fill="none"
                                                             stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                 stroke-width="2"
@@ -385,14 +385,14 @@
                                                         </svg>
                                                     </div>
                                                     <span
-                                                        class="font-medium {{ request()->is('oficinas/asamblea') ? 'text-[#ed145b]' : 'text-gray-800' }} text-sm">Asamblea
+                                                        class="font-medium {{ request()->is('oficinas/asamblea') ? 'text-[#db0455]' : 'text-gray-800' }} text-sm">Asamblea
                                                         Universitaria</span>
                                                 </a>
                                                 <a href="/oficinas/consejo"
-                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/consejo') ? 'bg-[#ed145b]/5 border-l-4 border-[#ed145b]' : '' }}">
+                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/consejo') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
                                                     <div
-                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                        <svg class="w-4 h-4 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                        <svg class="w-4 h-4 text-[#db0455]" aria-hidden="true" fill="none"
                                                             stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                 stroke-width="2"
@@ -401,14 +401,14 @@
                                                         </svg>
                                                     </div>
                                                     <span
-                                                        class="font-medium {{ request()->is('oficinas/consejo') ? 'text-[#ed145b]' : 'text-gray-800' }} text-sm">Consejo
+                                                        class="font-medium {{ request()->is('oficinas/consejo') ? 'text-[#db0455]' : 'text-gray-800' }} text-sm">Consejo
                                                         Universitario</span>
                                                 </a>
                                                 <a href="/oficinas/decanatura"
-                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/decanatura') ? 'bg-[#ed145b]/5 border-l-4 border-[#ed145b]' : '' }}">
+                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/decanatura') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
                                                     <div
-                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                        <svg class="w-4 h-4 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                        <svg class="w-4 h-4 text-[#db0455]" aria-hidden="true" fill="none"
                                                             stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                 stroke-width="2"
@@ -417,19 +417,19 @@
                                                         </svg>
                                                     </div>
                                                     <span
-                                                        class="font-medium {{ request()->is('oficinas/decanatura') ? 'text-[#ed145b]' : 'text-gray-800' }} text-sm">Decanatura</span>
+                                                        class="font-medium {{ request()->is('oficinas/decanatura') ? 'text-[#db0455]' : 'text-gray-800' }} text-sm">Decanatura</span>
                                                 </a>
                                             </div>
 
                                             <h5
-                                                class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#ed145b] mt-6">
+                                                class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#db0455] mt-6">
                                                 Vicerrectorados</h5>
                                             <div class="space-y-2">
                                                 <div class="relative group-vicerrectorado">
                                                     <button type="button" class="oficinas-dropdown-link has-subdropdown" aria-expanded="false" aria-haspopup="true">
                                                         <div
-                                                            class="flex items-center justify-center w-8 h-8 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                            <svg class="w-4 h-4 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                            class="flex items-center justify-center w-8 h-8 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                            <svg class="w-4 h-4 text-[#db0455]" aria-hidden="true" fill="none"
                                                                 stroke="currentColor" viewBox="0 0 24 24">
                                                                 <path stroke-linecap="round" stroke-linejoin="round"
                                                                     stroke-width="2"
@@ -439,7 +439,7 @@
                                                         </div>
                                                         <span class="font-medium text-gray-800 text-sm">Vicerrectorado
                                                             Académico</span>
-                                                        <svg class="w-3 h-3 text-[#ed145b] ml-auto" aria-hidden="true" fill="none"
+                                                        <svg class="w-3 h-3 text-[#db0455] ml-auto" aria-hidden="true" fill="none"
                                                             stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                 stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -454,7 +454,7 @@
                                                             <div class="space-y-2">
                                                                 <a href="/oficinas/admision"
                                                                     class="sub-dropdown-link">
-                                                                    <svg class="w-3 h-3 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                                    <svg class="w-3 h-3 text-[#db0455]" aria-hidden="true" fill="none"
                                                                         stroke="currentColor" viewBox="0 0 24 24">
                                                                         <path stroke-linecap="round"
                                                                             stroke-linejoin="round" stroke-width="2"
@@ -465,7 +465,7 @@
                                                                 </a>
                                                                 <a href="/oficinas/biblioteca"
                                                                     class="sub-dropdown-link">
-                                                                    <svg class="w-3 h-3 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                                    <svg class="w-3 h-3 text-[#db0455]" aria-hidden="true" fill="none"
                                                                         stroke="currentColor" viewBox="0 0 24 24">
                                                                         <path stroke-linecap="round"
                                                                             stroke-linejoin="round" stroke-width="2"
@@ -476,7 +476,7 @@
                                                                 </a>
                                                                 <a href="/oficinas/academicos"
                                                                     class="sub-dropdown-link">
-                                                                    <svg class="w-3 h-3 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                                    <svg class="w-3 h-3 text-[#db0455]" aria-hidden="true" fill="none"
                                                                         stroke="currentColor" viewBox="0 0 24 24">
                                                                         <path stroke-linecap="round"
                                                                             stroke-linejoin="round" stroke-width="2"
@@ -487,7 +487,7 @@
                                                                 </a>
                                                                 <a href="https://proyeccionsocial.unamad.edu.pe/"
                                                                     target="_blank" rel="noopener noreferrer" class="sub-dropdown-link">
-                                                                    <svg class="w-3 h-3 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                                    <svg class="w-3 h-3 text-[#db0455]" aria-hidden="true" fill="none"
                                                                         stroke="currentColor" viewBox="0 0 24 24">
                                                                         <path stroke-linecap="round"
                                                                             stroke-linejoin="round" stroke-width="2"
@@ -498,7 +498,7 @@
                                                                 </a>
                                                                 <a href="/oficinas/bienestar"
                                                                     class="sub-dropdown-link">
-                                                                    <svg class="w-3 h-3 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                                    <svg class="w-3 h-3 text-[#db0455]" aria-hidden="true" fill="none"
                                                                         stroke="currentColor" viewBox="0 0 24 24">
                                                                         <path stroke-linecap="round"
                                                                             stroke-linejoin="round" stroke-width="2"
@@ -515,8 +515,8 @@
                                                 <div class="relative group-vicerrectorado">
                                                     <button type="button" class="oficinas-dropdown-link has-subdropdown" aria-expanded="false" aria-haspopup="true">
                                                         <div
-                                                            class="flex items-center justify-center w-8 h-8 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                            <svg class="w-4 h-4 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                            class="flex items-center justify-center w-8 h-8 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                            <svg class="w-4 h-4 text-[#db0455]" aria-hidden="true" fill="none"
                                                                 stroke="currentColor" viewBox="0 0 24 24">
                                                                 <path stroke-linecap="round" stroke-linejoin="round"
                                                                     stroke-width="2"
@@ -526,7 +526,7 @@
                                                         </div>
                                                         <span class="font-medium text-gray-800 text-sm">Vicerrectorado
                                                             de Investigación</span>
-                                                        <svg class="w-3 h-3 text-[#ed145b] ml-auto" aria-hidden="true" fill="none"
+                                                        <svg class="w-3 h-3 text-[#db0455] ml-auto" aria-hidden="true" fill="none"
                                                             stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                 stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -541,7 +541,7 @@
                                                             <div class="space-y-2">
                                                                 <a href="/oficinas/incubadora"
                                                                     class="sub-dropdown-link">
-                                                                    <svg class="w-3 h-3 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                                    <svg class="w-3 h-3 text-[#db0455]" aria-hidden="true" fill="none"
                                                                         stroke="currentColor" viewBox="0 0 24 24">
                                                                         <path stroke-linecap="round"
                                                                             stroke-linejoin="round" stroke-width="2"
@@ -552,7 +552,7 @@
                                                                 </a>
                                                                 <a href="/oficinas/innovacion"
                                                                     class="sub-dropdown-link">
-                                                                    <svg class="w-3 h-3 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                                    <svg class="w-3 h-3 text-[#db0455]" aria-hidden="true" fill="none"
                                                                         stroke="currentColor" viewBox="0 0 24 24">
                                                                         <path stroke-linecap="round"
                                                                             stroke-linejoin="round" stroke-width="2"
@@ -563,7 +563,7 @@
                                                                 </a>
                                                                 <a href="/oficinas/investigacion"
                                                                     class="sub-dropdown-link">
-                                                                    <svg class="w-3 h-3 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                                    <svg class="w-3 h-3 text-[#db0455]" aria-hidden="true" fill="none"
                                                                         stroke="currentColor" viewBox="0 0 24 24">
                                                                         <path stroke-linecap="round"
                                                                             stroke-linejoin="round" stroke-width="2"
@@ -589,14 +589,14 @@
                                         <!-- Columna 2: Oficinas Administrativas -->
                                         <div>
                                             <h5
-                                                class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#ed145b]">
+                                                class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#db0455]">
                                                 Oficinas Centrales</h5>
                                             <div class="space-y-2">
                                                 <a href="/oficinas/secretaria"
-                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/secretaria') ? 'bg-[#ed145b]/5 border-l-4 border-[#ed145b]' : '' }}">
+                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/secretaria') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
                                                     <div
-                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                        <svg class="w-4 h-4 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                        <svg class="w-4 h-4 text-[#db0455]" aria-hidden="true" fill="none"
                                                             stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                 stroke-width="2"
@@ -605,14 +605,14 @@
                                                         </svg>
                                                     </div>
                                                     <span
-                                                        class="font-medium {{ request()->is('oficinas/secretaria') ? 'text-[#ed145b]' : 'text-gray-800' }} text-sm">Secretaría
+                                                        class="font-medium {{ request()->is('oficinas/secretaria') ? 'text-[#db0455]' : 'text-gray-800' }} text-sm">Secretaría
                                                         General</span>
                                                 </a>
                                                 <a href="/oficinas/calidad"
-                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/calidad') ? 'bg-[#ed145b]/5 border-l-4 border-[#ed145b]' : '' }}">
+                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/calidad') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
                                                     <div
-                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                        <svg class="w-4 h-4 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                        <svg class="w-4 h-4 text-[#db0455]" aria-hidden="true" fill="none"
                                                             stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                 stroke-width="2"
@@ -621,13 +621,13 @@
                                                         </svg>
                                                     </div>
                                                     <span
-                                                        class="font-medium {{ request()->is('oficinas/calidad') ? 'text-[#ed145b]' : 'text-gray-800' }} text-sm">Gestión
+                                                        class="font-medium {{ request()->is('oficinas/calidad') ? 'text-[#db0455]' : 'text-gray-800' }} text-sm">Gestión
                                                         de la Calidad</span>
                                                 </a>
                                                 <a href="/oficinas/cooperacion" class="oficinas-dropdown-link">
                                                     <div
-                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                        <svg class="w-4 h-4 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                        <svg class="w-4 h-4 text-[#db0455]" aria-hidden="true" fill="none"
                                                             stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                 stroke-width="2"
@@ -639,10 +639,10 @@
                                                         Relaciones Internacionales</span>
                                                 </a>
                                                 <a href="/oficinas/ambiental"
-                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/ambiental*') ? 'bg-[#ed145b]/5 border-l-4 border-[#ed145b]' : '' }}">
+                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/ambiental*') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
                                                     <div
-                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                        <svg class="w-4 h-4 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                        <svg class="w-4 h-4 text-[#db0455]" aria-hidden="true" fill="none"
                                                             stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                 stroke-width="2"
@@ -651,14 +651,14 @@
                                                         </svg>
                                                     </div>
                                                     <span
-                                                        class="font-medium {{ request()->is('oficinas/ambiental*') ? 'text-[#ed145b]' : 'text-gray-800' }} text-sm">Gestión
+                                                        class="font-medium {{ request()->is('oficinas/ambiental*') ? 'text-[#db0455]' : 'text-gray-800' }} text-sm">Gestión
                                                         Ambiental</span>
                                                 </a>
                                                 <a href="/oficinas/administracion"
-                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/administracion*') ? 'bg-[#ed145b]/5 border-l-4 border-[#ed145b]' : '' }}">
+                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/administracion*') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
                                                     <div
-                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                        <svg class="w-4 h-4 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                        <svg class="w-4 h-4 text-[#db0455]" aria-hidden="true" fill="none"
                                                             stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                 stroke-width="2"
@@ -667,14 +667,14 @@
                                                         </svg>
                                                     </div>
                                                     <span
-                                                        class="font-medium {{ request()->is('oficinas/administracion*') ? 'text-[#ed145b]' : 'text-gray-800' }} text-sm">Dirección
+                                                        class="font-medium {{ request()->is('oficinas/administracion*') ? 'text-[#db0455]' : 'text-gray-800' }} text-sm">Dirección
                                                         de Administración</span>
                                                 </a>
                                                 <a href="/oficinas/oti"
-                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/oti*') ? 'bg-[#ed145b]/5 border-l-4 border-[#ed145b]' : '' }}">
+                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/oti*') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
                                                     <div
-                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                        <svg class="w-4 h-4 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                        <svg class="w-4 h-4 text-[#db0455]" aria-hidden="true" fill="none"
                                                             stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                 stroke-width="2"
@@ -683,14 +683,14 @@
                                                         </svg>
                                                     </div>
                                                     <span
-                                                        class="font-medium {{ request()->is('oficinas/oti*') ? 'text-[#ed145b]' : 'text-gray-800' }} text-sm">Tecnologías
+                                                        class="font-medium {{ request()->is('oficinas/oti*') ? 'text-[#db0455]' : 'text-gray-800' }} text-sm">Tecnologías
                                                         de Información</span>
                                                 </a>
                                                 <a href="/oficinas/planeamiento"
-                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/planeamiento*') ? 'bg-[#ed145b]/5 border-l-4 border-[#ed145b]' : '' }}">
+                                                    class="oficinas-dropdown-link {{ request()->is('oficinas/planeamiento*') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
                                                     <div
-                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                        <svg class="w-4 h-4 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                        <svg class="w-4 h-4 text-[#db0455]" aria-hidden="true" fill="none"
                                                             stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                 stroke-width="2"
@@ -699,7 +699,7 @@
                                                         </svg>
                                                     </div>
                                                     <span
-                                                        class="font-medium {{ request()->is('oficinas/planeamiento*') ? 'text-[#ed145b]' : 'text-gray-800' }} text-sm">Planeamiento
+                                                        class="font-medium {{ request()->is('oficinas/planeamiento*') ? 'text-[#db0455]' : 'text-gray-800' }} text-sm">Planeamiento
                                                         y Presupuesto</span>
                                                 </a>
                                             </div>
@@ -734,14 +734,14 @@
                                         <!-- Facultad de Ingeniería -->
                                         <div>
                                             <h5
-                                                class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#ed145b]">
+                                                class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#db0455]">
                                                 Facultad de Ingeniería</h5>
                                             <div class="space-y-2">
                                                 <a href="/facultades/agroindustrial"
-                                                    class="facultades-dropdown-link {{ request()->is('facultades/agroindustrial*') ? 'bg-[#ed145b]/5 border-l-4 border-[#ed145b]' : '' }}">
+                                                    class="facultades-dropdown-link {{ request()->is('facultades/agroindustrial*') ? 'bg-[#db0455]/5 border-l-4 border-[#db0455]' : '' }}">
                                                     <div
-                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                        <svg class="w-4 h-4 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                        class="flex items-center justify-center w-8 h-8 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                        <svg class="w-4 h-4 text-[#db0455]" aria-hidden="true" fill="none"
                                                             stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                 stroke-width="2"
@@ -750,7 +750,7 @@
                                                         </svg>
                                                     </div>
                                                     <span
-                                                        class="font-medium {{ request()->is('facultades/agroindustrial*') ? 'text-[#ed145b]' : 'text-gray-800' }} text-sm">Ingeniería
+                                                        class="font-medium {{ request()->is('facultades/agroindustrial*') ? 'text-[#db0455]' : 'text-gray-800' }} text-sm">Ingeniería
                                                         Agroindustrial</span>
                                                 </a>
                                                 <a href="/facultades/forestal"
@@ -791,7 +791,7 @@
                                         <!-- Facultad de Educación -->
                                         <div>
                                             <h5
-                                                class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#ed145b]">
+                                                class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#db0455]">
                                                 Facultad de Educación</h5>
                                             <div class="space-y-2">
                                                 <a href="/facultades/matematica"
@@ -832,7 +832,7 @@
                                         <!-- Facultad de Ecoturismo -->
                                         <div>
                                             <h5
-                                                class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#ed145b]">
+                                                class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#db0455]">
                                                 FACULTAD DE CIENCIAS EMPRESARIALES</h5>
                                             <div class="space-y-2">
                                                 <a href="/facultades/ecoturismo"
@@ -888,7 +888,7 @@
                                         <!-- Facultad de Ciencias de la Salud y Biológicas -->
                                         <div>
                                             <h5
-                                                class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#ed145b]">
+                                                class="font-semibold text-gray-800 mb-3 text-sm uppercase tracking-wide text-[#db0455]">
                                                 Facultad de Ciencias de la Salud y Biológicas</h5>
                                             <div class="space-y-2">
                                                 <a href="/facultades/enfermeria"
@@ -1000,8 +1000,8 @@
                                         <a href="https://ceinfo.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
                                             class="programas-dropdown-link">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -1019,8 +1019,8 @@
                                         <a href="https://cidiomas.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
                                             class="programas-dropdown-link">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -1038,8 +1038,8 @@
                                         <a href="https://cepre.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
                                             class="programas-dropdown-link">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -1057,8 +1057,8 @@
 
                                         <a href="/posgrado" class="programas-dropdown-link">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
@@ -1078,8 +1078,8 @@
                                         <a href="https://posgrado-educacion.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
                                             class="programas-dropdown-link">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
@@ -1097,8 +1097,8 @@
                                         <a href="https://posgrado-ingenieria.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
                                             class="programas-dropdown-link">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
@@ -1142,8 +1142,8 @@
                                         <!-- Columna 1 -->
                                         <a href="/proyectos/jardin" class="proyectos-dropdown-link">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -1160,8 +1160,8 @@
 
                                         <a href="/proyectos/panificadora" class="proyectos-dropdown-link">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -1178,8 +1178,8 @@
 
                                         <a href="/proyectos/bus" class="proyectos-dropdown-link">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -1195,8 +1195,8 @@
 
                                         <a href="/proyectos/herbario" class="proyectos-dropdown-link">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -1214,8 +1214,8 @@
                                         <!-- Columna 2 -->
                                         <a href="/proyectos/estacion" class="proyectos-dropdown-link">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -1232,8 +1232,8 @@
 
                                         <a href="/proyectos/aldea" class="proyectos-dropdown-link">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -1250,8 +1250,8 @@
 
                                         <a href="/proyectos/km16" class="proyectos-dropdown-link">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -1268,8 +1268,8 @@
 
                                         <a href="/proyectos/km18" class="proyectos-dropdown-link">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -1313,8 +1313,8 @@
                                     <div class="grid grid-cols-1 gap-y-4">
                                         <a href="/transparencia/indicador-55" class="transparencia-dropdown-link">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -1331,8 +1331,8 @@
 
                                         <a href="/transparencia/articulo-11" class="transparencia-dropdown-link">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -1350,8 +1350,8 @@
                                         <div class="transparencia-section">
                                             <div class="flex items-center mb-3">
                                                 <div
-                                                    class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                    <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                    class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                    <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                         stroke="currentColor" viewBox="0 0 24 24">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             stroke-width="2"
@@ -1369,7 +1369,7 @@
                                             <div class="ml-14 space-y-2">
                                                 <a href="https://facilita.gob.pe/t/3371" target="_blank" rel="noopener noreferrer"
                                                     class="transparencia-sub-link">
-                                                    <svg class="w-4 h-4 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                    <svg class="w-4 h-4 text-[#db0455]" aria-hidden="true" fill="none"
                                                         stroke="currentColor" viewBox="0 0 24 24">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             stroke-width="2"
@@ -1381,7 +1381,7 @@
                                                 <a href="https://drive.google.com/file/d/1tStD8HiMChMZO8QmnepBPU3evR920xGz/view"
                                                     target="_blank" rel="noopener noreferrer"
                                                     class="transparencia-sub-link">
-                                                    <svg class="w-4 h-4 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                    <svg class="w-4 h-4 text-[#db0455]" aria-hidden="true" fill="none"
                                                         stroke="currentColor" viewBox="0 0 24 24">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             stroke-width="2"
@@ -1395,8 +1395,8 @@
 
                                         <a href="/transparencia/documentos" class="transparencia-dropdown-link">
                                             <div
-                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#ed145b]/10 flex-shrink-0">
-                                                <svg class="w-5 h-5 text-[#ed145b]" aria-hidden="true" fill="none"
+                                                class="flex items-center justify-center w-10 h-10 rounded-full bg-[#db0455]/10 flex-shrink-0">
+                                                <svg class="w-5 h-5 text-[#db0455]" aria-hidden="true" fill="none"
                                                     stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         stroke-width="2"
@@ -1438,7 +1438,7 @@
                 </div>
 
                 <!-- Menú móvil -->
-                <button class="lg:hidden text-gray-700 hover:text-[#ed145b] transition-colors"
+                <button class="lg:hidden text-gray-700 hover:text-[#db0455] transition-colors"
                     onclick="toggleMobileMenu()" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileMenu">
                     <svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1452,7 +1452,7 @@
         <div id="mobileMenu" class="hidden lg:hidden border-t bg-white shadow-lg">
             <nav class="px-6 py-6 flex flex-col space-y-2" aria-label="Navegación móvil">
                 <a href="/"
-                    class="mobile-link {{ request()->is('/') ? 'text-[#ed145b] border-l-4 border-[#ed145b] pl-3' : '' }}">
+                    class="mobile-link {{ request()->is('/') ? 'text-[#db0455] border-l-4 border-[#db0455] pl-3' : '' }}">
                     <svg class="w-5 h-5 mr-3" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
@@ -1464,7 +1464,7 @@
                 <!-- Universidad -->
                 <div class="mobile-dropdown">
                     <button onclick="toggleMobileSubmenu('universidad', this)"
-                        class="mobile-link w-full text-left justify-between {{ request()->is('universidad*') ? 'text-[#ed145b] bg-[#ed145b]/5' : '' }}">
+                        class="mobile-link w-full text-left justify-between {{ request()->is('universidad*') ? 'text-[#db0455] bg-[#db0455]/5' : '' }}">
                         <div class="flex items-center">
                             <svg class="w-5 h-5 mr-3" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1481,7 +1481,7 @@
                     </button>
                     <div id="universidad" class="mobile-submenu hidden pl-8 mt-2 space-y-2">
                         <a href="/universidad/presentacion"
-                            class="mobile-sublink {{ request()->is('universidad/presentacion') ? 'text-[#ed145b] bg-[#ed145b]/10 border-l-4 border-[#ed145b]' : '' }}">
+                            class="mobile-sublink {{ request()->is('universidad/presentacion') ? 'text-[#db0455] bg-[#db0455]/10 border-l-4 border-[#db0455]' : '' }}">
                             <svg class="w-4 h-4 mr-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -1489,7 +1489,7 @@
                             Presentación
                         </a>
                         <a href="/universidad/autoridades"
-                            class="mobile-sublink {{ request()->is('universidad/autoridades') ? 'text-[#ed145b] bg-[#ed145b]/10 border-l-4 border-[#ed145b]' : '' }}">
+                            class="mobile-sublink {{ request()->is('universidad/autoridades') ? 'text-[#db0455] bg-[#db0455]/10 border-l-4 border-[#db0455]' : '' }}">
                             <svg class="w-4 h-4 mr-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
@@ -1498,7 +1498,7 @@
                             Autoridades
                         </a>
                         <a href="/universidad/historia"
-                            class="mobile-sublink {{ request()->is('universidad/historia') ? 'text-[#ed145b] bg-[#ed145b]/10 border-l-4 border-[#ed145b]' : '' }}">
+                            class="mobile-sublink {{ request()->is('universidad/historia') ? 'text-[#db0455] bg-[#db0455]/10 border-l-4 border-[#db0455]' : '' }}">
                             <svg class="w-4 h-4 mr-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
@@ -1507,7 +1507,7 @@
                             Historia
                         </a>
                         <a href="/universidad/sedes"
-                            class="mobile-sublink {{ request()->is('universidad/sedes') ? 'text-[#ed145b] bg-[#ed145b]/10 border-l-4 border-[#ed145b]' : '' }}">
+                            class="mobile-sublink {{ request()->is('universidad/sedes') ? 'text-[#db0455] bg-[#db0455]/10 border-l-4 border-[#db0455]' : '' }}">
                             <svg class="w-4 h-4 mr-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
@@ -1518,7 +1518,7 @@
                             Sedes
                         </a>
                         <a href="/universidad/politicas"
-                            class="mobile-sublink {{ request()->is('universidad/politicas') ? 'text-[#ed145b] bg-[#ed145b]/10 border-l-4 border-[#ed145b]' : '' }}">
+                            class="mobile-sublink {{ request()->is('universidad/politicas') ? 'text-[#db0455] bg-[#db0455]/10 border-l-4 border-[#db0455]' : '' }}">
                             <svg class="w-4 h-4 mr-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
@@ -1532,7 +1532,7 @@
                 <!-- Oficinas -->
                 <div class="mobile-dropdown">
                     <button onclick="toggleMobileSubmenu('oficinas', this)"
-                        class="mobile-link w-full text-left justify-between {{ request()->is('oficinas*') ? 'text-[#ed145b] bg-[#ed145b]/5' : '' }}">
+                        class="mobile-link w-full text-left justify-between {{ request()->is('oficinas*') ? 'text-[#db0455] bg-[#db0455]/5' : '' }}">
                         <div class="flex items-center">
                             <svg class="w-5 h-5 mr-3" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1630,7 +1630,7 @@
                 <!-- Facultades -->
                 <div class="mobile-dropdown">
                     <button onclick="toggleMobileSubmenu('facultades', this)"
-                        class="mobile-link w-full text-left justify-between {{ request()->is('facultades*') ? 'text-[#ed145b] bg-[#ed145b]/5' : '' }}">
+                        class="mobile-link w-full text-left justify-between {{ request()->is('facultades*') ? 'text-[#db0455] bg-[#db0455]/5' : '' }}">
                         <div class="flex items-center">
                             <svg class="w-5 h-5 mr-3" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1699,7 +1699,7 @@
                 <!-- Programas -->
                 <div class="mobile-dropdown">
                     <button onclick="toggleMobileSubmenu('programas', this)"
-                        class="mobile-link w-full text-left justify-between {{ request()->is('posgrado*') ? 'text-[#ed145b] bg-[#ed145b]/5' : '' }}">
+                        class="mobile-link w-full text-left justify-between {{ request()->is('posgrado*') ? 'text-[#db0455] bg-[#db0455]/5' : '' }}">
                         <div class="flex items-center">
                             <svg class="w-5 h-5 mr-3" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1732,7 +1732,7 @@
                 <!-- Proyectos -->
                 <div class="mobile-dropdown">
                     <button onclick="toggleMobileSubmenu('proyectos', this)"
-                        class="mobile-link w-full text-left justify-between {{ request()->is('proyectos*') ? 'text-[#ed145b] bg-[#ed145b]/5' : '' }}">
+                        class="mobile-link w-full text-left justify-between {{ request()->is('proyectos*') ? 'text-[#db0455] bg-[#db0455]/5' : '' }}">
                         <div class="flex items-center">
                             <svg class="w-5 h-5 mr-3" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1762,7 +1762,7 @@
                 <!-- Transparencia -->
                 <div class="mobile-dropdown">
                     <button onclick="toggleMobileSubmenu('transparencia', this)"
-                        class="mobile-link w-full text-left justify-between {{ request()->is('transparencia*') ? 'text-[#ed145b] bg-[#ed145b]/5' : '' }}">
+                        class="mobile-link w-full text-left justify-between {{ request()->is('transparencia*') ? 'text-[#db0455] bg-[#db0455]/5' : '' }}">
                         <div class="flex items-center">
                             <svg class="w-5 h-5 mr-3" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1870,7 +1870,7 @@
                 right: 0;
                 bottom: 0;
                 height: 2px;
-                background: #ed145b;
+                background: #db0455;
                 border-radius: 2px;
                 transform: scaleX(0);
                 transform-origin: center;
@@ -1880,7 +1880,7 @@
             .nav-link:hover,
             .nav-link:focus-visible,
             .nav-link.active {
-                color: #ed145b;
+                color: #db0455;
             }
 
             .nav-link:hover::after,
@@ -1952,13 +1952,13 @@
             }
 
             .mega-dropdown-link:hover {
-                color: #ed145b;
+                color: #db0455;
                 transform: translateX(0.5rem);
                 background-color: #f9fafb;
             }
 
             .mega-dropdown-link:hover .w-10 {
-                background-color: #ed145b;
+                background-color: #db0455;
                 transform: scale(1.05);
             }
 
@@ -1972,7 +1972,7 @@
             }
 
             .mega-dropdown-link:hover div:last-child span {
-                color: #ed145b;
+                color: #db0455;
             }
 
             /* Mega Dropdown para Oficinas */
@@ -2018,12 +2018,12 @@
             }
 
             .oficinas-dropdown-link:hover {
-                color: #ed145b;
+                color: #db0455;
                 transform: translateX(0.25rem);
             }
 
             .oficinas-dropdown-link:hover .w-8 {
-                background-color: #ed145b;
+                background-color: #db0455;
                 transform: scale(1.05);
             }
 
@@ -2033,7 +2033,7 @@
             }
 
             .oficinas-dropdown-link:hover span {
-                color: #ed145b;
+                color: #db0455;
             }
 
             /* Sub-dropdowns para Vicerrectorados */
@@ -2109,16 +2109,16 @@
             }
 
             .sub-dropdown-link:hover {
-                color: #ed145b;
+                color: #db0455;
                 transform: translateX(0.25rem);
-                background-color: rgba(237, 20, 91, 0.05);
+                background-color: rgba(219, 4, 85, 0.05);
                 padding-left: 0.5rem;
                 margin-left: -0.5rem;
                 margin-right: -0.5rem;
             }
 
             .sub-dropdown-link:hover svg {
-                color: #ed145b;
+                color: #db0455;
                 transform: scale(1.1);
             }
 
@@ -2165,12 +2165,12 @@
             }
 
             .facultades-dropdown-link:hover {
-                color: #ed145b;
+                color: #db0455;
                 transform: translateX(0.25rem);
             }
 
             .facultades-dropdown-link:hover .w-8 {
-                background-color: #ed145b;
+                background-color: #db0455;
                 transform: scale(1.05);
             }
 
@@ -2180,7 +2180,7 @@
             }
 
             .facultades-dropdown-link:hover span {
-                color: #ed145b;
+                color: #db0455;
             }
 
             /* Mega Dropdown para Programas */
@@ -2226,13 +2226,13 @@
             }
 
             .programas-dropdown-link:hover {
-                color: #ed145b;
+                color: #db0455;
                 transform: translateX(0.5rem);
                 background-color: #f9fafb;
             }
 
             .programas-dropdown-link:hover .w-10 {
-                background-color: #ed145b;
+                background-color: #db0455;
                 transform: scale(1.05);
             }
 
@@ -2284,13 +2284,13 @@
             }
 
             .proyectos-dropdown-link:hover {
-                color: #ed145b;
+                color: #db0455;
                 transform: translateX(0.5rem);
                 background-color: #f9fafb;
             }
 
             .proyectos-dropdown-link:hover .w-10 {
-                background-color: #ed145b;
+                background-color: #db0455;
                 transform: scale(1.05);
             }
 
@@ -2343,13 +2343,13 @@
             }
 
             .transparencia-dropdown-link:hover {
-                color: #ed145b;
+                color: #db0455;
                 transform: translateX(0.5rem);
                 background-color: #f9fafb;
             }
 
             .transparencia-dropdown-link:hover .w-10 {
-                background-color: #ed145b;
+                background-color: #db0455;
                 transform: scale(1.05);
             }
 
@@ -2377,13 +2377,13 @@
             }
 
             .transparencia-sub-link:hover {
-                color: #ed145b;
-                background-color: rgba(237, 20, 91, 0.1);
+                color: #db0455;
+                background-color: rgba(219, 4, 85, 0.1);
                 transform: translateX(0.25rem);
             }
 
             .transparencia-sub-link:hover svg {
-                color: #ed145b;
+                color: #db0455;
                 transform: scale(1.1);
             }
 
@@ -2409,8 +2409,8 @@
 
             .mobile-link:hover {
                 background-color: #f3f4f6;
-                color: #ed145b;
-                border-left-color: #ed145b;
+                color: #db0455;
+                border-left-color: #db0455;
                 padding-left: 1.25rem;
                 transform: translateX(0.25rem);
             }
@@ -2420,7 +2420,7 @@
             }
 
             .mobile-link:hover svg {
-                color: #ed145b;
+                color: #db0455;
                 transform: scale(1.1);
             }
 
@@ -2451,7 +2451,7 @@
 
             .mobile-sublink:hover {
                 background-color: #f9fafb;
-                color: #ed145b;
+                color: #db0455;
                 padding-left: 1rem;
                 transform: translateX(0.125rem);
             }
@@ -2461,7 +2461,7 @@
             }
 
             .mobile-sublink:hover svg {
-                color: #ed145b;
+                color: #db0455;
                 transform: scale(1.05);
             }
 
@@ -2496,7 +2496,7 @@
 
             .mobile-sub-sublink:hover {
                 background-color: #f3f4f6;
-                color: #ed145b;
+                color: #db0455;
                 padding-left: 0.75rem;
                 transform: translateX(0.125rem);
             }
@@ -2652,14 +2652,14 @@
                 <!-- Universidad Info -->
                 <div class="space-y-4">
                     <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-12 h-12 bg-[#ed145b] rounded-lg flex items-center justify-center">
+                        <div class="w-12 h-12 bg-[#db0455] rounded-lg flex items-center justify-center">
                             <svg class="w-6 h-6 text-white" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                     d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold text-[#ed145b]">UNAMAD</h3>
+                            <h3 class="text-lg font-bold text-[#db0455]">UNAMAD</h3>
                             <p class="text-sm text-gray-600">Universidad Nacional Amazónica de Madre de Dios</p>
                         </div>
                     </div>
@@ -2667,7 +2667,7 @@
                     <div class="space-y-3">
                         <div class="flex items-start space-x-3">
                             <div class="w-5 h-5 mt-1">
-                                <svg class="w-full h-full text-[#ed145b]" aria-hidden="true" fill="none" stroke="currentColor"
+                                <svg class="w-full h-full text-[#db0455]" aria-hidden="true" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -2683,7 +2683,7 @@
 
                         <div class="flex items-center space-x-3">
                             <div class="w-5 h-5">
-                                <svg class="w-full h-full text-[#ed145b]" aria-hidden="true" fill="none" stroke="currentColor"
+                                <svg class="w-full h-full text-[#db0455]" aria-hidden="true" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -2694,7 +2694,7 @@
 
                         <div class="flex items-center space-x-3">
                             <div class="w-5 h-5">
-                                <svg class="w-full h-full text-[#ed145b]" aria-hidden="true" fill="none" stroke="currentColor"
+                                <svg class="w-full h-full text-[#db0455]" aria-hidden="true" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 012 2z" />
@@ -2705,7 +2705,7 @@
 
                         <div class="flex items-center space-x-3">
                             <div class="w-5 h-5">
-                                <svg class="w-full h-full text-[#ed145b]" aria-hidden="true" fill="none" stroke="currentColor"
+                                <svg class="w-full h-full text-[#db0455]" aria-hidden="true" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -2721,7 +2721,7 @@
 
                 <!-- Enlaces Rápidos -->
                 <div>
-                    <h4 class="text-lg font-bold mb-4 text-[#ed145b] flex items-center">
+                    <h4 class="text-lg font-bold mb-4 text-[#db0455] flex items-center">
                         <svg class="w-5 h-5 mr-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
@@ -2731,42 +2731,42 @@
                     <ul class="space-y-2">
                         <li>
                             <a href="https://admision.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
-                                class="text-sm text-gray-700 hover:text-[#ed145b] transition-colors duration-300 flex items-center group">
+                                class="text-sm text-gray-700 hover:text-[#db0455] transition-colors duration-300 flex items-center group">
                                 <span
-                                    class="w-1 h-1 bg-[#ed145b] rounded-full mr-2 group-hover:w-2 transition-all duration-300"></span>
+                                    class="w-1 h-1 bg-[#db0455] rounded-full mr-2 group-hover:w-2 transition-all duration-300"></span>
                                 Admisión 2025
                             </a>
                         </li>
                         <li>
                             <a href="https://biblioteca.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
-                                class="text-sm text-gray-700 hover:text-[#ed145b] transition-colors duration-300 flex items-center group">
+                                class="text-sm text-gray-700 hover:text-[#db0455] transition-colors duration-300 flex items-center group">
                                 <span
-                                    class="w-1 h-1 bg-[#ed145b] rounded-full mr-2 group-hover:w-2 transition-all duration-300"></span>
+                                    class="w-1 h-1 bg-[#db0455] rounded-full mr-2 group-hover:w-2 transition-all duration-300"></span>
                                 Biblioteca Virtual
                             </a>
                         </li>
                         <li>
                             <a href="https://sgd.unamad.edu.pe/mesa-de-partes" target="_blank" rel="noopener noreferrer"
-                                class="text-sm text-gray-700 hover:text-[#ed145b] transition-colors duration-300 flex items-center group">
+                                class="text-sm text-gray-700 hover:text-[#db0455] transition-colors duration-300 flex items-center group">
                                 <span
-                                    class="w-1 h-1 bg-[#ed145b] rounded-full mr-2 group-hover:w-2 transition-all duration-300"></span>
+                                    class="w-1 h-1 bg-[#db0455] rounded-full mr-2 group-hover:w-2 transition-all duration-300"></span>
                                 Mesa de Partes Virtual
                             </a>
                         </li>
                         <li>
                             <a href="mailto:tramite-documentario@unamad.edu.pe"
-                                class="text-sm text-gray-700 hover:text-[#ed145b] transition-colors duration-300 flex items-center group">
+                                class="text-sm text-gray-700 hover:text-[#db0455] transition-colors duration-300 flex items-center group">
                                 <span
-                                    class="w-1 h-1 bg-[#ed145b] rounded-full mr-2 group-hover:w-2 transition-all duration-300"></span>
+                                    class="w-1 h-1 bg-[#db0455] rounded-full mr-2 group-hover:w-2 transition-all duration-300"></span>
                                 Correo Institucional
                             </a>
                         </li>
                         <li>
                             <a href="https://www.transparencia.gob.pe/enlaces/pte_transparencia_enlaces.aspx?id_entidad=13136#.YvEV03ZByUk"
                                 target="_blank" rel="noopener noreferrer"
-                                class="text-sm text-gray-700 hover:text-[#ed145b] transition-colors duration-300 flex items-center group">
+                                class="text-sm text-gray-700 hover:text-[#db0455] transition-colors duration-300 flex items-center group">
                                 <span
-                                    class="w-1 h-1 bg-[#ed145b] rounded-full mr-2 group-hover:w-2 transition-all duration-300"></span>
+                                    class="w-1 h-1 bg-[#db0455] rounded-full mr-2 group-hover:w-2 transition-all duration-300"></span>
                                 Portal de Transparencia
                             </a>
                         </li>
@@ -2775,7 +2775,7 @@
 
                 <!-- Síguenos -->
                 <div>
-                    <h4 class="text-lg font-bold mb-4 text-[#ed145b] flex items-center">
+                    <h4 class="text-lg font-bold mb-4 text-[#db0455] flex items-center">
                         <svg class="w-5 h-5 mr-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 3v10a2 2 0 002 2h6a2 2 0 002-2V7H7z" />
@@ -2785,7 +2785,7 @@
 
                     <div class="grid grid-cols-2 gap-3">
                         <a href="https://www.facebook.com/unamad.oficial/" target="_blank" rel="noopener noreferrer" aria-label="Facebook UNAMAD (abre en nueva pestaña)"
-                            class="bg-gray-200 hover:bg-[#ed145b] p-3 rounded-lg transition-all duration-300 group text-center">
+                            class="bg-gray-200 hover:bg-[#db0455] p-3 rounded-lg transition-all duration-300 group text-center">
                             <svg aria-hidden="true" class="w-6 h-6 mx-auto mb-1 text-blue-500 group-hover:text-white"
                                 fill="currentColor" viewBox="0 0 24 24">
                                 <path
@@ -2795,7 +2795,7 @@
                         </a>
 
                         <a href="https://www.youtube.com/channel/UCUNGgRNunGECIxEd_-qv_oA" target="_blank" rel="noopener noreferrer" aria-label="YouTube UNAMAD (abre en nueva pestaña)"
-                            class="bg-gray-200 hover:bg-[#ed145b] p-3 rounded-lg transition-all duration-300 group text-center">
+                            class="bg-gray-200 hover:bg-[#db0455] p-3 rounded-lg transition-all duration-300 group text-center">
                             <svg aria-hidden="true" class="w-6 h-6 mx-auto mb-1 text-red-500 group-hover:text-white"
                                 fill="currentColor" viewBox="0 0 24 24">
                                 <path
@@ -2805,7 +2805,7 @@
                         </a>
 
                         <a href="https://www.instagram.com/unamad_oficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram UNAMAD (abre en nueva pestaña)"
-                            class="bg-gray-200 hover:bg-[#ed145b] p-3 rounded-lg transition-all duration-300 group text-center">
+                            class="bg-gray-200 hover:bg-[#db0455] p-3 rounded-lg transition-all duration-300 group text-center">
                             <svg aria-hidden="true" class="w-6 h-6 mx-auto mb-1 text-pink-500 group-hover:text-white"
                                 fill="currentColor" viewBox="0 0 24 24">
                                 <path
@@ -2818,7 +2818,7 @@
 
                 <!-- Mapa y Ubicación -->
                 <div>
-                    <h4 class="text-lg font-bold mb-4 text-[#ed145b] flex items-center">
+                    <h4 class="text-lg font-bold mb-4 text-[#db0455] flex items-center">
                         <svg class="w-5 h-5 mr-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
@@ -2837,7 +2837,7 @@
                     <div class="mt-3 text-center">
                         <a href="https://www.google.com/maps/place/Universidad+Nacional+Amaz%C3%B3nica+de+Madre+de+Dios,+Puerto+Maldonado+17001/@-12.5883515,-69.2096578,393m/data=!3m2!1e3!4b1!4m6!3m5!1s0x917b49441850fe49:0x2881b0658744e313!8m2!3d-12.5885658!4d-69.2095274!16s%2Fg%2F11hy9l896x?hl=es&entry=ttu&g_ep=EgoyMDI1MDkwNy4wIKXMDSoASAFQAw%3D%3D"
                             target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center text-sm text-gray-700 hover:text-[#ed145b] transition-colors duration-300">
+                            class="inline-flex items-center text-sm text-gray-700 hover:text-[#db0455] transition-colors duration-300">
                             <svg class="w-4 h-4 mr-1" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -2852,7 +2852,7 @@
             <div class="border-t border-gray-700 mt-8 pt-6">
                 <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                     <div class="flex items-center space-x-4">
-                        <div class="w-8 h-8 bg-[#ed145b] rounded-full flex items-center justify-center">
+                        <div class="w-8 h-8 bg-[#db0455] rounded-full flex items-center justify-center">
                             <svg class="w-4 h-4 text-white" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                     d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z" />
@@ -3083,7 +3083,7 @@
             appearance: none;
             width: 14px;
             height: 14px;
-            background: linear-gradient(45deg, #db0455, #ff1744);
+            background: linear-gradient(45deg, #db0455, #a00340);
             cursor: pointer;
             border-radius: 50%;
             box-shadow: 0 2px 6px rgba(219, 4, 85, 0.4);
@@ -3092,7 +3092,7 @@
         .slider::-moz-range-thumb {
             width: 14px;
             height: 14px;
-            background: linear-gradient(45deg, #db0455, #ff1744);
+            background: linear-gradient(45deg, #db0455, #a00340);
             cursor: pointer;
             border-radius: 50%;
             border: none;
@@ -3188,7 +3188,7 @@
         }
 
         .shimmer-text {
-            background: linear-gradient(90deg, #db0455 0%, #ff1744 25%, #db0455 50%, #ff1744 75%, #db0455 100%);
+            background: linear-gradient(90deg, #db0455 0%, #a00340 25%, #db0455 50%, #a00340 75%, #db0455 100%);
             background-size: 200% auto;
             animation: shimmer 3s linear infinite;
             -webkit-background-clip: text;

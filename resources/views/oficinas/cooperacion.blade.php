@@ -4,7 +4,7 @@
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#db0455]/70"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Cooperación y Relaciones Internacionales</h1>
@@ -59,14 +59,14 @@
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
                     <div class="flex items-start space-x-4 mb-8">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-4 rounded-full">
+                        <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-4 rounded-full">
                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
                         <div>
                             <h2 class="text-3xl font-bold text-gray-800 mb-4">Oficina de Cooperación y Relaciones Internacionales</h2>
-                            <div class="w-20 h-1 bg-gradient-to-r from-[#db0455] to-[#ed145b]"></div>
+                            <div class="w-20 h-1 bg-gradient-to-r from-[#db0455] to-[#db0455]"></div>
                         </div>
                     </div>
 
@@ -88,7 +88,7 @@
                         </p>
 
                         <!-- Información Adicional -->
-                        <div class="bg-gradient-to-r from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 border-l-4 border-[#db0455]">
+                        <div class="bg-gradient-to-r from-[#db0455]/5 to-[#db0455]/5 rounded-lg p-6 border-l-4 border-[#db0455]">
                             <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
                                 <svg class="w-6 h-6 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>

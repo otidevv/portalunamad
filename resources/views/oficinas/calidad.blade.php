@@ -4,7 +4,7 @@
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#db0455]/70"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Gestión de la Calidad</h1>
@@ -54,7 +54,7 @@
             <div class="w-80 flex-shrink-0">
                 <!-- Navigation Card -->
                 <div class="bg-white rounded-lg shadow-xl mb-8 overflow-hidden border-t-4 border-[#db0455]">
-                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] text-white p-6">
                         <div class="flex items-center space-x-3">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -127,7 +127,7 @@
 
                 <!-- Contact Information Card -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-4">
+                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] text-white p-4">
                         <h3 class="text-lg font-bold">Datos de contacto</h3>
                     </div>
                     <div class="p-6">
@@ -170,7 +170,7 @@
                 <!-- Inicio Section -->
                 <div id="inicio" class="content-section active">
                     <!-- Welcome Banner -->
-                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white rounded-lg p-8 mb-8 shadow-lg">
+                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] text-white rounded-lg p-8 mb-8 shadow-lg">
                         <div class="flex items-center justify-between">
                             <div>
                                 <h2 class="text-3xl font-bold mb-2">Bienvenido a la Oficina de Gestión de la Calidad</h2>
@@ -187,7 +187,7 @@
 
                     <!-- Main Description -->
                     <div class="bg-white rounded-lg shadow-lg mb-8 overflow-hidden border-t-4 border-[#db0455]">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+                        <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] text-white p-6">
                             <h2 class="text-2xl font-bold flex items-center">
                                 <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -235,7 +235,7 @@
 
                     <!-- Functions Section -->
                     <div class="bg-white rounded-lg shadow-lg mb-8 overflow-hidden border-t-4 border-[#db0455]">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+                        <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] text-white p-6">
                             <h2 class="text-2xl font-bold flex items-center">
                                 <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
@@ -338,7 +338,7 @@
                 <!-- Estructura Orgánica Section -->
                 <div id="estructura" class="content-section hidden">
                     <div class="bg-white rounded-lg shadow-lg mb-12 overflow-hidden border-t-4 border-[#db0455]">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+                        <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] text-white p-6">
                             <h2 class="text-3xl font-bold flex items-center">
                                 <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
@@ -413,7 +413,7 @@
                 <!-- Personal Administrativo Section -->
                 <div id="personal" class="content-section hidden">
                     <div class="bg-white rounded-lg shadow-lg mb-12 overflow-hidden border-t-4 border-[#db0455]">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+                        <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] text-white p-6">
                             <h2 class="text-3xl font-bold flex items-center">
                                 <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
@@ -424,7 +424,7 @@
                         <div class="p-8">
                             <div class="grid md:grid-cols-2 gap-8">
                                 <!-- Director General -->
-                                <div class="bg-gradient-to-r from-[#db0455]/10 to-[#ed145b]/10 p-6 rounded-lg border border-[#db0455]/20">
+                                <div class="bg-gradient-to-r from-[#db0455]/10 to-[#db0455]/10 p-6 rounded-lg border border-[#db0455]/20">
                                     <div class="flex items-center space-x-4">
                                         <div class="w-16 h-16 bg-[#db0455] rounded-full flex items-center justify-center">
                                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -485,7 +485,7 @@
                 <!-- Directorio Section -->
                 <div id="directorio" class="content-section hidden">
                     <div class="bg-white rounded-lg shadow-lg mb-12 overflow-hidden border-t-4 border-[#db0455]">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+                        <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] text-white p-6">
                             <h2 class="text-3xl font-bold flex items-center">
                                 <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
@@ -495,7 +495,7 @@
                         </div>
                         <div class="p-8">
                             <!-- Información Principal -->
-                            <div class="bg-gradient-to-r from-[#db0455]/10 to-[#ed145b]/10 p-6 rounded-lg mb-8">
+                            <div class="bg-gradient-to-r from-[#db0455]/10 to-[#db0455]/10 p-6 rounded-lg mb-8">
                                 <h3 class="text-xl font-bold text-[#db0455] mb-4">Información General</h3>
                                 <div class="grid md:grid-cols-2 gap-6">
                                     <div>
@@ -592,7 +592,7 @@
                 <!-- SINC Section -->
                 <div id="sinc" class="content-section hidden">
                     <div class="bg-white rounded-lg shadow-lg mb-12 overflow-hidden border-t-4 border-[#db0455]">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+                        <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] text-white p-6">
                             <h2 class="text-3xl font-bold flex items-center">
                                 <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -615,7 +615,7 @@
                                     <h3 class="text-lg font-bold text-gray-800 mb-6">Módulos del Sistema</h3>
                                     
                                     <div class="space-y-4">
-                                        <div class="bg-gradient-to-r from-[#db0455]/10 to-[#ed145b]/10 p-4 rounded-lg border border-[#db0455]/20">
+                                        <div class="bg-gradient-to-r from-[#db0455]/10 to-[#db0455]/10 p-4 rounded-lg border border-[#db0455]/20">
                                             <h4 class="font-bold text-[#db0455] mb-2">Gestión Documental</h4>
                                             <p class="text-sm text-gray-700">Control y seguimiento de documentos institucionales</p>
                                         </div>
@@ -691,7 +691,7 @@
                                     <div>
                                         <h4 class="font-semibold text-gray-800 mb-2">Para Docentes:</h4>
                                         <p class="text-sm text-gray-600 mb-3">Accede al módulo de evaluación docente y seguimiento académico</p>
-                                        <button class="bg-[#db0455] text-white px-4 py-2 rounded-lg hover:bg-[#ed145b] transition-colors">
+                                        <button class="bg-[#db0455] text-white px-4 py-2 rounded-lg hover:bg-[#db0455] transition-colors">
                                             Acceder como Docente
                                         </button>
                                     </div>
@@ -715,11 +715,11 @@
 
 <style>
 .calidad-nav-link {
-    @apply block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#db0455]/5 hover:to-[#ed145b]/5 hover:text-[#db0455] rounded-lg transition-all duration-300 border border-transparent hover:border-[#db0455]/20 cursor-pointer hover:shadow-sm transform hover:translate-x-1;
+    @apply block px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-[#db0455]/5 hover:to-[#db0455]/5 hover:text-[#db0455] rounded-lg transition-all duration-300 border border-transparent hover:border-[#db0455]/20 cursor-pointer hover:shadow-sm transform hover:translate-x-1;
 }
 
 .calidad-nav-link.active {
-    @apply bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white border-[#db0455]/30 shadow-lg translate-x-1;
+    @apply bg-gradient-to-r from-[#db0455] to-[#db0455] text-white border-[#db0455]/30 shadow-lg translate-x-1;
 }
 
 .calidad-nav-link.active svg {

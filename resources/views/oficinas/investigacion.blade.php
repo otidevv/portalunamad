@@ -4,8 +4,8 @@
 
 @section('content')
 <!-- Hero Section -->
-<div class="relative bg-gradient-to-r from-[#db0455] to-[#ed145b] py-20">
-    <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
+<div class="relative bg-gradient-to-r from-[#db0455] to-[#db0455] py-20">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#db0455]/70"></div>
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-center text-white">
             <h1 class="text-4xl font-bold mb-4">Instituto de Investigación</h1>

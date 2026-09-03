@@ -63,7 +63,7 @@
     <div class="container mx-auto px-4 py-12">
         <!-- Consejo Universitario Section -->
         <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-[#db0455]">
-            <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+            <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] text-white p-6">
                 <h2 class="text-3xl font-bold flex items-center">
                     <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
@@ -75,7 +75,7 @@
             <div class="p-8">
                 <!-- Descripción Principal -->
                 <div class="mb-12">
-                    <div class="bg-gradient-to-br from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 border border-[#db0455]/20 shadow-sm">
+                    <div class="bg-gradient-to-br from-[#db0455]/5 to-[#db0455]/5 rounded-lg p-6 border border-[#db0455]/20 shadow-sm">
                         <h3 class="text-2xl font-bold text-[#db0455] mb-6 flex items-center">
                             <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
@@ -572,7 +572,7 @@
                 </div>
 
                 <!-- Marco Legal -->
-                <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] rounded-lg p-8 text-white">
+                <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] rounded-lg p-8 text-white">
                     <div class="text-center">
                         <svg class="w-12 h-12 mx-auto mb-4 opacity-75" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8s0 0 0 0l-6-6s0 0 0 0zM10.5 18.5h3v-3h-3v3zm0-4.5h3v-3h-3v3zm5-6.5L15 4.5 13.5 6l1.5 1.5L16.5 6z"/>

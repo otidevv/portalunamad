@@ -4,7 +4,7 @@
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#db0455]/70"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Oficina de Tecnologías de la Información</h1>
@@ -59,14 +59,14 @@
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
                     <div class="flex items-start space-x-4 mb-8">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-4 rounded-full">
+                        <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-4 rounded-full">
                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
                         </div>
                         <div>
                             <h2 class="text-3xl font-bold text-gray-800 mb-4">Oficina de Tecnologías de la Información</h2>
-                            <div class="w-20 h-1 bg-gradient-to-r from-[#db0455] to-[#ed145b]"></div>
+                            <div class="w-20 h-1 bg-gradient-to-r from-[#db0455] to-[#db0455]"></div>
                         </div>
                     </div>
 
@@ -76,7 +76,7 @@
                         </p>
 
                         <!-- Funciones -->
-                        <div class="bg-gradient-to-r from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 mb-8 border-l-4 border-[#db0455]">
+                        <div class="bg-gradient-to-r from-[#db0455]/5 to-[#db0455]/5 rounded-lg p-6 mb-8 border-l-4 border-[#db0455]">
                             <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
                                 <svg class="w-6 h-6 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -86,7 +86,7 @@
                             
                             <div class="space-y-4 text-gray-700">
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -95,7 +95,7 @@
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -104,7 +104,7 @@
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -113,7 +113,7 @@
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -122,7 +122,7 @@
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -131,7 +131,7 @@
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -140,7 +140,7 @@
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -149,7 +149,7 @@
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -158,7 +158,7 @@
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -167,7 +167,7 @@
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -176,7 +176,7 @@
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -185,7 +185,7 @@
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -194,7 +194,7 @@
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -203,7 +203,7 @@
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -212,7 +212,7 @@
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -221,7 +221,7 @@
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -230,7 +230,7 @@
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
@@ -239,7 +239,7 @@
                                 </div>
                                 
                                 <div class="flex items-start space-x-3">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-1 rounded-full mt-1 flex-shrink-0">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-1 rounded-full mt-1 flex-shrink-0">
                                         <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>

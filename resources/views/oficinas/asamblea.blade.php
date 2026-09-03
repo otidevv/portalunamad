@@ -63,7 +63,7 @@
     <div class="container mx-auto px-4 py-12">
         <!-- Asamblea Universitaria Section -->
         <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-[#db0455]">
-            <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] text-white p-6">
+            <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] text-white p-6">
                 <h2 class="text-3xl font-bold flex items-center">
                     <svg class="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
@@ -75,7 +75,7 @@
             <div class="p-8">
                 <!-- Descripción Principal -->
                 <div class="mb-12">
-                    <div class="bg-gradient-to-br from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 border border-[#db0455]/20 shadow-sm">
+                    <div class="bg-gradient-to-br from-[#db0455]/5 to-[#db0455]/5 rounded-lg p-6 border border-[#db0455]/20 shadow-sm">
                         <h3 class="text-2xl font-bold text-[#db0455] mb-6 flex items-center">
                             <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
@@ -302,7 +302,7 @@
                 </div>
 
                 <!-- Marco Legal -->
-                <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] rounded-lg p-8 text-white">
+                <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] rounded-lg p-8 text-white">
                     <div class="text-center">
                         <svg class="w-12 h-12 mx-auto mb-4 opacity-75" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8s0 0 0 0l-6-6s0 0 0 0zM10.5 18.5h3v-3h-3v3zm0-4.5h3v-3h-3v3zm5-6.5L15 4.5 13.5 6l1.5 1.5L16.5 6z"/>

@@ -4,7 +4,7 @@
 <div class="bg-gray-50 min-h-screen">
     <!-- Hero Section -->
     <div class="relative text-white py-20" style="background-image: url('{{ asset('img/presentacion/presentacionbackground.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#ed145b]/70"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#db0455]/80 to-[#db0455]/70"></div>
         <div class="relative z-10 container mx-auto px-4">
             <div class="text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Campo Ocupacional</h1>
@@ -67,14 +67,14 @@
             <div class="lg:col-span-2">
                 <div class="bg-white rounded-lg shadow-lg p-8 border-t-4 border-[#db0455]">
                     <div class="flex items-start space-x-4 mb-8">
-                        <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-4 rounded-full">
+                        <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-4 rounded-full">
                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0H8m8 0v2a2 2 0 01-2 2H10a2 2 0 01-2-2V6m8 0H8"></path>
                             </svg>
                         </div>
                         <div>
                             <h2 class="text-3xl font-bold text-gray-800 mb-4">Campo Ocupacional</h2>
-                            <div class="w-20 h-1 bg-gradient-to-r from-[#db0455] to-[#ed145b]"></div>
+                            <div class="w-20 h-1 bg-gradient-to-r from-[#db0455] to-[#db0455]"></div>
                         </div>
                     </div>
 
@@ -86,7 +86,7 @@
                         <!-- Áreas de Desempeño Profesional -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                             <!-- Sector Industrial -->
-                            <div class="bg-gradient-to-r from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 border-l-4 border-[#db0455] hover:shadow-lg transition-shadow">
+                            <div class="bg-gradient-to-r from-[#db0455]/5 to-[#db0455]/5 rounded-lg p-6 border-l-4 border-[#db0455] hover:shadow-lg transition-shadow">
                                 <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
                                     <svg class="w-6 h-6 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
@@ -122,34 +122,34 @@
                             </div>
 
                             <!-- Sector Empresarial -->
-                            <div class="bg-gradient-to-r from-[#ed145b]/5 to-[#db0455]/5 rounded-lg p-6 border-l-4 border-[#ed145b] hover:shadow-lg transition-shadow">
+                            <div class="bg-gradient-to-r from-[#db0455]/5 to-[#db0455]/5 rounded-lg p-6 border-l-4 border-[#db0455] hover:shadow-lg transition-shadow">
                                 <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                                    <svg class="w-6 h-6 mr-2 text-[#ed145b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l7-3 7 3z"></path>
                                     </svg>
                                     Sector Empresarial
                                 </h3>
                                 <ul class="space-y-2">
                                     <li class="flex items-start space-x-2">
-                                        <svg class="w-4 h-4 text-[#ed145b] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-4 h-4 text-[#db0455] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                         <span class="text-sm">Emprendimiento agroindustrial</span>
                                     </li>
                                     <li class="flex items-start space-x-2">
-                                        <svg class="w-4 h-4 text-[#ed145b] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-4 h-4 text-[#db0455] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                         <span class="text-sm">Consultoría especializada</span>
                                     </li>
                                     <li class="flex items-start space-x-2">
-                                        <svg class="w-4 h-4 text-[#ed145b] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-4 h-4 text-[#db0455] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                         <span class="text-sm">Gestión de proyectos agroindustriales</span>
                                     </li>
                                     <li class="flex items-start space-x-2">
-                                        <svg class="w-4 h-4 text-[#ed145b] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-4 h-4 text-[#db0455] mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                         </svg>
                                         <span class="text-sm">Desarrollo de productos alimentarios</span>
@@ -237,7 +237,7 @@
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 <!-- Conocimientos Técnicos -->
                                 <div class="text-center">
-                                    <div class="bg-gradient-to-r from-[#db0455] to-[#ed145b] p-4 rounded-full mx-auto mb-4 w-fit">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-4 rounded-full mx-auto mb-4 w-fit">
                                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                                         </svg>
@@ -249,14 +249,14 @@
 
                                 <!-- Tecnologías Especializadas -->
                                 <div class="text-center">
-                                    <div class="bg-gradient-to-r from-[#ed145b] to-[#db0455] p-4 rounded-full mx-auto mb-4 w-fit">
+                                    <div class="bg-gradient-to-r from-[#db0455] to-[#db0455] p-4 rounded-full mx-auto mb-4 w-fit">
                                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                                         </svg>
                                     </div>
                                     <h4 class="text-lg font-bold text-gray-800 mb-3">Tecnologías Avanzadas</h4>
                                     <p class="text-gray-600 text-sm mb-3">Tecnologías agroindustriales, optimización de sistemas, gestión tecnológica y diseño de procesos</p>
-                                    <div class="w-16 h-0.5 bg-[#ed145b] mx-auto"></div>
+                                    <div class="w-16 h-0.5 bg-[#db0455] mx-auto"></div>
                                 </div>
 
                                 <!-- Gestión Empresarial -->
@@ -274,7 +274,7 @@
                         </div>
 
                         <!-- Oportunidades Laborales -->
-                        <div class="bg-gradient-to-r from-[#db0455]/5 to-[#ed145b]/5 rounded-lg p-6 border-l-4 border-[#db0455]">
+                        <div class="bg-gradient-to-r from-[#db0455]/5 to-[#db0455]/5 rounded-lg p-6 border-l-4 border-[#db0455]">
                             <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
                                 <svg class="w-6 h-6 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
