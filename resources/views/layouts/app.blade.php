@@ -3227,6 +3227,10 @@
     {{-- Barra de accesibilidad (WCAG 2.1 AA · Ley N° 29973) --}}
     @include('partials.barra-accesibilidad')
 
+    {{-- Diálogos modales. Van fuera de #contenido-principal porque al abrirse
+         se marca el fondo con [inert]; dentro quedarían inertes ellos mismos. --}}
+    @stack('modals')
+
     <script>
         // ===== Ayudantes globales de accesibilidad =====
         (function () {

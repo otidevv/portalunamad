@@ -1,5 +1,6 @@
 {{-- Video emergente de la página de inicio. Se administra en: Panel → Videos Destacados --}}
 @if(!empty($videoDestacado) && $videoDestacado->es_valido)
+@push('modals')
     <div id="video-destacado-modal"
          class="hidden fixed inset-0 z-[9999] items-center justify-center p-4 sm:p-6 overflow-y-auto"
          data-video-id="{{ $videoDestacado->id }}"
@@ -73,6 +74,7 @@
             </div>
         </div>
     </div>
+@endpush
 
     @push('scripts')
     <script>
