@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', $comunicado->titulo . ' - Comunicados UNAMAD')
+
 @section('content')
 <div class="container mx-auto px-4 py-8">
     <!-- Breadcrumb -->
@@ -7,7 +9,7 @@
         <ol class="inline-flex items-center space-x-1 md:space-x-3">
             <li class="inline-flex items-center">
                 <a href="{{ route('home') }}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
-                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
                     </svg>
                     Inicio
@@ -15,15 +17,15 @@
             </li>
             <li>
                 <div class="flex items-center">
-                    <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                    <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                     </svg>
-                    <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Oficina</span>
+                    <a href="{{ route('comunicados.index') }}" class="ml-1 text-sm font-medium text-gray-700 hover:text-[#db0455] md:ml-2">Comunicados</a>
                 </div>
             </li>
             <li aria-current="page">
                 <div class="flex items-center">
-                    <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                    <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                     </svg>
                     <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">{{ Str::limit($comunicado->titulo, 50) }}</span>
@@ -54,7 +56,7 @@
                     
                     <div class="flex items-center text-sm text-gray-600 gap-4">
                         <div class="flex items-center">
-                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4h3a1 1 0 011 1v8a3 3 0 01-3 3H6a3 3 0 01-3-3V8a1 1 0 011-1h3z"></path>
                             </svg>
                             {{ $comunicado->created_at->format('d/m/Y H:i') }}
@@ -62,7 +64,7 @@
                         
                         @if($comunicado->user)
                             <div class="flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                                 </svg>
                                 {{ $comunicado->user->name }}
@@ -75,7 +77,7 @@
                 @if($comunicado->imagen)
                     <div class="mb-8">
                         <img src="{{ $comunicado->imagen_url }}" 
-                             alt="{{ $comunicado->titulo }}"
+                             alt=""
                              class="w-full rounded-lg shadow-md">
                     </div>
                 @endif
@@ -83,7 +85,8 @@
                 <!-- Contenido -->
                 @if($comunicado->contenido)
                     <div class="comunicado-content">
-                        {!! \App\Helpers\HtmlSanitizer::clean($comunicado->contenido) !!}
+                        {{-- Los encabezados h1 del editor se rebajan a h2 para mantener un único h1 en la página --}}
+                        {!! preg_replace('/<(\/?)h1\b/i', '<$1h2', \App\Helpers\HtmlSanitizer::clean($comunicado->contenido)) !!}
                     </div>
                 @else
                     <p class="text-gray-600 italic">Este comunicado no tiene contenido adicional.</p>
@@ -91,26 +94,27 @@
 
                 @if($comunicado->archivos->count() > 0)
                     <div class="mt-8 pt-6 border-t border-gray-200">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                            <svg class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 10-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/>
                             </svg>
                             Archivos adjuntos ({{ $comunicado->archivos->count() }})
-                        </h3>
+                        </h2>
                         <ul class="space-y-2">
                             @foreach($comunicado->archivos as $archivo)
                                 @php $ext = strtoupper($archivo->extension ?? pathinfo($archivo->ruta, PATHINFO_EXTENSION)); @endphp
                                 <li>
-                                    <a href="{{ $archivo->url }}" target="_blank" rel="noopener"
+                                    <a href="{{ $archivo->url }}" target="_blank" rel="noopener noreferrer"
+                                       aria-label="Descargar {{ $archivo->nombre_original ?? basename($archivo->ruta) }} (archivo {{ $ext }})"
                                        class="flex items-center gap-3 px-4 py-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg transition-colors group">
                                         <span class="inline-flex items-center justify-center w-10 h-10 rounded-md text-xs font-bold flex-shrink-0
                                                      {{ $ext === 'PDF' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700' }}">
                                             {{ $ext }}
                                         </span>
-                                        <span class="text-sm text-gray-800 flex-1 truncate group-hover:text-[#db0455]">
+                                        <span class="text-sm text-gray-800 flex-1 min-w-0 break-words group-hover:text-[#db0455]">
                                             {{ $archivo->nombre_original ?? basename($archivo->ruta) }}
                                         </span>
-                                        <svg class="w-5 h-5 text-gray-400 group-hover:text-[#db0455] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-gray-400 group-hover:text-[#db0455] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/>
                                         </svg>
                                     </a>
@@ -127,51 +131,51 @@
             <div class="sticky top-4 space-y-6">
                 <!-- Información del Comunicado -->
                 <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Información del Comunicado</h3>
+                    <h2 class="text-lg font-semibold text-gray-800 mb-4">Información del Comunicado</h2>
                     
-                    <div class="space-y-3">
+                    <dl class="space-y-3">
                         <div>
-                            <span class="text-sm text-gray-600">Oficina:</span>
-                            <p class="font-medium">{{ $comunicado->oficina ?? $comunicado->categoria->nombre ?? 'Sin oficina' }}</p>
+                            <dt class="text-sm text-gray-600">Oficina</dt>
+                            <dd class="font-medium">{{ $comunicado->oficina ?? $comunicado->categoria->nombre ?? 'Sin oficina' }}</dd>
                         </div>
-                        
+
                         <div>
-                            <span class="text-sm text-gray-600">Fecha de publicación:</span>
-                            <p class="font-medium">{{ $comunicado->created_at->format('d/m/Y') }}</p>
+                            <dt class="text-sm text-gray-600">Fecha de publicación</dt>
+                            <dd class="font-medium">{{ $comunicado->created_at->format('d/m/Y') }}</dd>
                         </div>
-                        
+
                         @if($comunicado->fecha_fin)
                             <div>
-                                <span class="text-sm text-gray-600">Vigente hasta:</span>
-                                <p class="font-medium">{{ $comunicado->fecha_fin->format('d/m/Y') }}</p>
+                                <dt class="text-sm text-gray-600">Vigente hasta</dt>
+                                <dd class="font-medium">{{ $comunicado->fecha_fin->format('d/m/Y') }}</dd>
                             </div>
                         @endif
-                        
+
                         @if($comunicado->duracion)
                             <div>
-                                <span class="text-sm text-gray-600">Duración:</span>
-                                <p class="font-medium">{{ $comunicado->duracion }} días</p>
+                                <dt class="text-sm text-gray-600">Duración</dt>
+                                <dd class="font-medium">{{ $comunicado->duracion }} días</dd>
                             </div>
                         @endif
-                    </div>
+                    </dl>
                 </div>
 
                 <!-- Botones de Acción -->
                 <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Acciones</h3>
+                    <h2 class="text-lg font-semibold text-gray-800 mb-4">Acciones</h2>
                     
                     <div class="space-y-3">
-                        <button onclick="window.print()" 
+                        <button type="button" onclick="window.print()" 
                                 class="w-full flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
                             </svg>
                             Imprimir
                         </button>
                         
-                        <button onclick="compartir()" 
+                        <button type="button" onclick="compartir()" 
                                 class="w-full flex items-center justify-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
-                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path>
                             </svg>
                             Compartir
@@ -179,7 +183,7 @@
                         
                         <a href="{{ route('home') }}" 
                            class="w-full flex items-center justify-center px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
-                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                             </svg>
                             Volver al inicio

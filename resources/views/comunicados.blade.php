@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Comunicados - Portal UNAMAD')
+
 @section('content')
 <div class="container mx-auto px-4 py-8">
     <!-- Breadcrumb -->
@@ -7,7 +9,7 @@
         <ol class="inline-flex items-center space-x-1 md:space-x-3">
             <li class="inline-flex items-center">
                 <a href="{{ route('home') }}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-[#db0455]">
-                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
                     </svg>
                     Inicio
@@ -15,7 +17,7 @@
             </li>
             <li aria-current="page">
                 <div class="flex items-center">
-                    <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                    <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                     </svg>
                     <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2">Comunicados</span>
@@ -36,12 +38,14 @@
             <!-- Campo de búsqueda -->
             <div class="flex-1">
                 <div class="relative">
-                    <input type="text" 
+                    <label for="buscar" class="sr-only">Buscar comunicados</label>
+                    <input type="text"
+                           id="buscar"
                            name="buscar" 
                            value="{{ $search }}"
                            placeholder="Buscar comunicados..." 
-                           class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455]">
-                    <svg class="absolute left-3 top-3.5 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                           class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#db0455] focus:ring-2 focus:ring-[#db0455]">
+                    <svg aria-hidden="true" focusable="false" class="absolute left-3 top-3.5 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
                 </div>
@@ -49,8 +53,9 @@
 
             <!-- Filtro por categoría -->
             <div class="md:w-64">
-                <select name="categoria" 
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455]">
+                <label for="categoria" class="sr-only">Categoría</label>
+                <select name="categoria" id="categoria" 
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#db0455] focus:ring-2 focus:ring-[#db0455]">
                     <option value="">Todas las categorías</option>
                     @foreach($categorias as $categoria)
                         <option value="{{ $categoria->id }}" {{ $categoria_id == $categoria->id ? 'selected' : '' }}>
@@ -64,7 +69,7 @@
             <div>
                 <button type="submit" 
                         class="w-full md:w-auto px-6 py-3 bg-[#db0455] text-white font-semibold rounded-lg hover:bg-[#a00340] transition-colors">
-                    <svg class="w-5 h-5 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-5 h-5 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
                     Buscar
@@ -82,7 +87,7 @@
         </form>
 
         @if($search)
-            <div class="mt-4 text-sm text-gray-600">
+            <div class="mt-4 text-sm text-gray-600" role="status">
                 Resultados para: <span class="font-semibold">{{ $search }}</span>
             </div>
         @endif
@@ -90,20 +95,20 @@
 
     <!-- Lista de Comunicados -->
     @if($comunicados->count() > 0)
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 list-none m-0 p-0">
             @foreach($comunicados as $comunicado)
-                <article class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
-                         onclick="window.location.href='{{ route('comunicado.ver', $comunicado) }}'">
+                <li>
+                <article class="relative bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
                     <!-- Imagen -->
                     @if($comunicado->imagen)
                         <div class="aspect-w-16 aspect-h-9 overflow-hidden">
                             <img src="{{ $comunicado->imagen_url }}" 
-                                 alt="{{ $comunicado->titulo }}"
+                                 alt=""
                                  class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
                         </div>
                     @else
                         <div class="w-full h-48 bg-gradient-to-br from-[#db0455] to-[#a00340] flex items-center justify-center">
-                            <svg class="w-16 h-16 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-16 h-16 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                             </svg>
                         </div>
@@ -119,9 +124,12 @@
                         </div>
 
                         <!-- Título -->
-                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#db0455] transition-colors line-clamp-2">
-                            {{ $comunicado->titulo }}
-                        </h3>
+                        <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#db0455] transition-colors line-clamp-2">
+                            {{-- Enlace "extendido": el pseudoelemento cubre toda la tarjeta para conservar el clic en cualquier punto --}}
+                            <a href="{{ route('comunicado.ver', $comunicado) }}" class="after:absolute after:inset-0 after:content-['']">
+                                {{ $comunicado->titulo }}
+                            </a>
+                        </h2>
 
                         <!-- Contenido preview -->
                         @if($comunicado->contenido)
@@ -133,19 +141,20 @@
                         <!-- Footer -->
                         <div class="flex items-center justify-between text-sm text-gray-500 pt-4 border-t">
                             <div class="flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                 </svg>
                                 {{ $comunicado->created_at->format('d/m/Y') }}
                             </div>
-                            <span class="text-[#db0455] font-medium group-hover:underline">
+                            <span class="text-[#db0455] font-medium group-hover:underline" aria-hidden="true">
                                 Leer más →
                             </span>
                         </div>
                     </div>
                 </article>
+                </li>
             @endforeach
-        </div>
+        </ul>
 
         <!-- Paginación -->
         <div class="mt-8">
@@ -154,15 +163,15 @@
     @else
         <!-- No hay resultados -->
         <div class="bg-white rounded-lg shadow-md p-12 text-center">
-            <svg class="w-24 h-24 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" class="w-24 h-24 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">No se encontraron comunicados</h3>
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">No se encontraron comunicados</h2>
             @if($search || $categoria_id)
                 <p class="text-gray-600 mb-6">No hay comunicados que coincidan con tu búsqueda.</p>
                 <a href="{{ route('comunicados.index') }}" 
                    class="inline-flex items-center px-4 py-2 bg-[#db0455] text-white rounded-lg hover:bg-[#a00340] transition-colors">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                     </svg>
                     Ver todos los comunicados
@@ -219,7 +228,7 @@
     }
     
     .pagination .page-item.disabled .page-link {
-        color: #9ca3af;
+        color: #6b7280;
         cursor: not-allowed;
     }
 </style>

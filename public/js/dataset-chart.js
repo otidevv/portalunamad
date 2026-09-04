@@ -14,9 +14,41 @@
     var selAgg = document.getElementById('sel-agg');
     var selTipo = document.getElementById('sel-tipo');
     var aviso = document.getElementById('grafico-aviso');
+    var tabla = document.getElementById('grafico-tabla');
+    var btnTabla = document.getElementById('toggle-tabla-grafico');
 
     if (!canvas) {
         return;
+    }
+
+    // Alternativa textual del gráfico (WCAG 1.1.1): el <canvas> se expone como imagen
+    // con nombre accesible y los datos se vuelcan en una tabla (oculta visualmente
+    // pero disponible para lectores de pantalla; un botón permite mostrarla).
+    canvas.setAttribute('role', 'img');
+    if (!canvas.getAttribute('aria-label')) {
+        canvas.setAttribute('aria-label', 'Gráfico de datos del dataset');
+    }
+    if (!tabla) {
+        tabla = document.createElement('div');
+        tabla.id = 'grafico-tabla';
+        tabla.className = 'sr-only';
+        canvas.parentNode.insertAdjacentElement('afterend', tabla);
+    }
+    if (btnTabla && tabla) {
+        btnTabla.addEventListener('click', function () {
+            var visible = btnTabla.getAttribute('aria-expanded') === 'true';
+            btnTabla.setAttribute('aria-expanded', visible ? 'false' : 'true');
+            tabla.className = visible ? 'sr-only' : 'mt-2 overflow-x-auto';
+            btnTabla.textContent = visible
+                ? 'Ver los datos del gráfico en una tabla'
+                : 'Ocultar la tabla de datos del gráfico';
+        });
+    }
+
+    // Los avisos del gráfico son mensajes de estado (WCAG 4.1.3).
+    if (aviso) {
+        aviso.setAttribute('role', 'status');
+        aviso.setAttribute('aria-live', 'polite');
     }
 
     // Si la librería de gráficos no cargó, avisar en pantalla en vez de fallar en silencio.
@@ -37,8 +69,9 @@
     }
 
     var COLOR = '#db0455';
-    var PALETA = ['#db0455', '#a00340', '#f59e0b', '#10b981', '#3b82f6', '#8b5cf6',
-        '#ec4899', '#14b8a6', '#f97316', '#6366f1', '#84cc16', '#ef4444'];
+    // Paleta con contraste >= 3:1 sobre blanco para sectores y muestras de leyenda (WCAG 1.4.11).
+    var PALETA = ['#db0455', '#a00340', '#b45309', '#047857', '#1d4ed8', '#6d28d9',
+        '#be185d', '#0f766e', '#c2410c', '#4338ca', '#4d7c0f', '#b91c1c'];
 
     var chart = null;
 
@@ -111,6 +144,37 @@
             });
     }
 
+    function escapeHtml(str) {
+        return String(str)
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function etiquetaX(key) {
+        var col = columnas.find(function (c) { return c.key === key; });
+        return col ? col.label : key;
+    }
+
+    // Vuelca labels/values en una tabla de datos accesible.
+    function renderTabla(labels, values, ejeX, etiquetaSerie) {
+        if (!tabla) return;
+        if (!labels.length) {
+            tabla.innerHTML = '';
+            return;
+        }
+        var html = '<table class="w-full text-sm border-collapse">' +
+            '<caption class="sr-only">Datos del gráfico: ' + escapeHtml(etiquetaSerie) + ' por ' + escapeHtml(ejeX) + '</caption>' +
+            '<thead><tr>' +
+            '<th scope="col" class="px-3 py-1 text-left bg-gray-50 border-b">' + escapeHtml(ejeX) + '</th>' +
+            '<th scope="col" class="px-3 py-1 text-right bg-gray-50 border-b">' + escapeHtml(etiquetaSerie) + '</th>' +
+            '</tr></thead><tbody>';
+        for (var i = 0; i < labels.length; i++) {
+            html += '<tr><th scope="row" class="px-3 py-1 text-left font-normal border-b border-gray-100">' + escapeHtml(labels[i]) + '</th>' +
+                '<td class="px-3 py-1 text-right border-b border-gray-100">' + escapeHtml(values[i]) + '</td></tr>';
+        }
+        html += '</tbody></table>';
+        tabla.innerHTML = html;
+    }
+
     function render(data, tipo) {
         var labels = data.labels || [];
         var values = data.values || [];
@@ -132,6 +196,12 @@
         var etiquetaSerie = data.ejeY
             ? (colorY ? colorY.label : data.ejeY) + ' (' + data.agregacion + ')'
             : 'Conteo';
+
+        var nombreX = etiquetaX(selX ? selX.value : '');
+        var tiposNombre = { bar: 'Gráfico de barras', line: 'Gráfico de líneas', pie: 'Gráfico circular', doughnut: 'Gráfico de dona' };
+        canvas.setAttribute('aria-label', (tiposNombre[tipo] || 'Gráfico') + ': ' + etiquetaSerie + ' por ' + nombreX +
+            ' (' + labels.length + ' categorías). Los valores están disponibles en la tabla de datos.');
+        renderTabla(labels, values, nombreX, etiquetaSerie);
 
         var dataset = {
             label: etiquetaSerie,
