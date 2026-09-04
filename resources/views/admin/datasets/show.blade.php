@@ -127,14 +127,15 @@
         </div>
         <div class="overflow-x-auto">
             <table class="w-full text-sm">
+                    <caption class="sr-only">Diccionario de datos</caption>
                 <thead class="bg-gray-50 border-b border-gray-200 text-xs text-gray-500 uppercase">
                     <tr>
-                        <th class="px-4 py-2 text-left">#</th>
-                        <th class="px-4 py-2 text-left">Campo</th>
-                        <th class="px-4 py-2 text-left">Tipo</th>
-                        <th class="px-4 py-2 text-left">Formato</th>
-                        <th class="px-4 py-2 text-left">Descripción</th>
-                        <th class="px-4 py-2 text-left">Ejemplo</th>
+                        <th scope="col" class="px-4 py-2 text-left">#</th>
+                        <th scope="col" class="px-4 py-2 text-left">Campo</th>
+                        <th scope="col" class="px-4 py-2 text-left">Tipo</th>
+                        <th scope="col" class="px-4 py-2 text-left">Formato</th>
+                        <th scope="col" class="px-4 py-2 text-left">Descripción</th>
+                        <th scope="col" class="px-4 py-2 text-left">Ejemplo</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100">
@@ -210,11 +211,12 @@
             </div>
             <div class="overflow-x-auto">
                 <table class="w-full text-sm">
+                    <caption class="sr-only">Primeras filas del dataset</caption>
                     <thead class="bg-gray-50 border-b border-gray-200">
                         <tr>
-                            <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">#</th>
+                            <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">#</th>
                             @foreach($dataset->columnas ?? [] as $col)
-                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase whitespace-nowrap">{{ data_get($col, 'label') }}</th>
+                                <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase whitespace-nowrap">{{ data_get($col, 'label') }}</th>
                             @endforeach
                         </tr>
                     </thead>

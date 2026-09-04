@@ -176,14 +176,15 @@
 
             <div class="overflow-x-auto">
                 <table class="w-full text-sm" id="tabla-diccionario">
+                    <caption class="sr-only">Diccionario de datos del dataset</caption>
                     <thead class="bg-gray-50 text-gray-500 uppercase text-xs">
                         <tr>
-                            <th class="px-2 py-2 text-left">Campo</th>
-                            <th class="px-2 py-2 text-left">Tipo</th>
-                            <th class="px-2 py-2 text-left">Formato</th>
-                            <th class="px-2 py-2 text-left">Descripción</th>
-                            <th class="px-2 py-2 text-left">Ejemplo</th>
-                            <th class="px-2 py-2"></th>
+                            <th scope="col" class="px-2 py-2 text-left">Campo</th>
+                            <th scope="col" class="px-2 py-2 text-left">Tipo</th>
+                            <th scope="col" class="px-2 py-2 text-left">Formato</th>
+                            <th scope="col" class="px-2 py-2 text-left">Descripción</th>
+                            <th scope="col" class="px-2 py-2 text-left">Ejemplo</th>
+                            <th scope="col" class="px-2 py-2"><span class="sr-only">Acciones</span></th>
                         </tr>
                     </thead>
                     <tbody id="cuerpo-diccionario" class="divide-y divide-gray-100">
