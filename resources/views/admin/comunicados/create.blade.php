@@ -249,6 +249,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     tinymce.init({
         selector: '.tinymce-editor',
+        language: 'es',
+        language_url: 'https://cdn.jsdelivr.net/npm/tinymce-i18n/langs6/es.js',
+        iframe_aria_text: 'Editor de contenido del comunicado',
         height: 300,
         menubar: false,
         plugins: [

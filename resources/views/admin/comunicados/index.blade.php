@@ -123,7 +123,7 @@
                                     <div class="text-sm font-medium text-gray-900 flex items-center gap-2">
                                         <span>{{ Str::limit($comunicado->titulo, 50) }}</span>
                                         @if($comunicado->archivos->count() > 0)
-                                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-blue-100 text-blue-700"
+                                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-800"
                                                   title="{{ $comunicado->archivos->pluck('nombre_original')->implode(', ') }}">
                                                 <svg aria-hidden="true" focusable="false" class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 10-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/>
@@ -703,8 +703,8 @@ function renderArchivosActuales(archivos) {
         li.className = 'flex items-center justify-between bg-white border border-gray-200 rounded-lg px-3 py-2';
         li.innerHTML = `
             <a href="${url}" target="_blank" aria-label="Abrir ${nombre} (archivo ${ext})" class="flex items-center text-sm text-gray-800 hover:text-[#db0455] truncate flex-1 mr-3">
-                <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold mr-2 ${badgeClass}">${ext}</span>
-                <span class="truncate">${nombre}</span>
+                <span class="inline-block px-2 py-0.5 rounded text-xs font-bold mr-2 ${badgeClass}">${ext}</span>
+                <span class="truncate" title="${nombre}">${nombre}</span>
             </a>
             <label class="flex items-center text-xs text-red-600 whitespace-nowrap cursor-pointer">
                 <input type="checkbox" name="eliminar_archivos[]" value="${arch.id}" class="rounded border-gray-300 text-red-600 focus:ring-red-200 mr-1">

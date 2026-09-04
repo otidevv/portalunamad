@@ -238,7 +238,7 @@
                         @endif
 
                         <p class="text-xs text-gray-500 mt-4">
-                            <span class="font-medium">Tip:</span> Los cambios se guardan automáticamente al enviar el formulario.
+                            <span class="font-medium">Consejo:</span> Los cambios se guardan automáticamente al enviar el formulario.
                         </p>
                     </div>
 
@@ -305,7 +305,7 @@
                         </div>
 
                         <div>
-                            <label for="gradiente_from" class="block text-sm font-medium text-gray-700 mb-1">Gradiente From (Tailwind)</label>
+                            <label for="gradiente_from" class="block text-sm font-medium text-gray-700 mb-1">Gradiente inicial (clase Tailwind)</label>
                             <input type="text" name="gradiente_from" id="gradiente_from" value="{{ old('gradiente_from', $indicador55->gradiente_from) }}"
                                    class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455] text-sm"
                                    aria-describedby="tailwind-help"
@@ -313,7 +313,7 @@
                         </div>
 
                         <div>
-                            <label for="gradiente_to" class="block text-sm font-medium text-gray-700 mb-1">Gradiente To (Tailwind)</label>
+                            <label for="gradiente_to" class="block text-sm font-medium text-gray-700 mb-1">Gradiente final (clase Tailwind)</label>
                             <input type="text" name="gradiente_to" id="gradiente_to" value="{{ old('gradiente_to', $indicador55->gradiente_to) }}"
                                    class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455] text-sm"
                                    aria-describedby="tailwind-help"
@@ -321,7 +321,7 @@
                         </div>
 
                         <div>
-                            <label for="bg_light" class="block text-sm font-medium text-gray-700 mb-1">Fondo Claro (Tailwind)</label>
+                            <label for="bg_light" class="block text-sm font-medium text-gray-700 mb-1">Fondo claro (clase Tailwind)</label>
                             <input type="text" name="bg_light" id="bg_light" value="{{ old('bg_light', $indicador55->bg_light) }}"
                                    class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455] text-sm"
                                    aria-describedby="tailwind-help"

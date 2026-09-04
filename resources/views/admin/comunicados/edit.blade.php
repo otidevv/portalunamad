@@ -170,10 +170,10 @@
                                     @php $ext = strtoupper($archivo->extension ?? pathinfo($archivo->ruta, PATHINFO_EXTENSION)); @endphp
                                     <li class="flex items-center justify-between bg-white border border-gray-200 rounded-lg px-3 py-2">
                                         <a href="{{ $archivo->url }}" target="_blank" aria-label="Abrir {{ $archivo->nombre_original ?? basename($archivo->ruta) }} (archivo {{ $ext }})" class="flex items-center text-sm text-gray-800 hover:text-[#db0455] truncate flex-1 mr-3">
-                                            <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold mr-2 {{ $ext === 'PDF' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-800' }}">
+                                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold mr-2 {{ $ext === 'PDF' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-800' }}">
                                                 {{ $ext }}
                                             </span>
-                                            <span class="truncate">{{ $archivo->nombre_original ?? basename($archivo->ruta) }}</span>
+                                            <span class="truncate" title="{{ $archivo->nombre_original ?? basename($archivo->ruta) }}">{{ $archivo->nombre_original ?? basename($archivo->ruta) }}</span>
                                         </a>
                                         <label class="flex items-center text-xs text-red-600 whitespace-nowrap cursor-pointer">
                                             <input type="checkbox" name="eliminar_archivos[]" value="{{ $archivo->id }}" class="rounded border-gray-300 text-red-600 focus:ring-red-200 mr-1">
@@ -300,6 +300,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     tinymce.init({
         selector: '.tinymce-editor',
+        language: 'es',
+        language_url: 'https://cdn.jsdelivr.net/npm/tinymce-i18n/langs6/es.js',
+        iframe_aria_text: 'Editor de contenido del comunicado',
         height: 300,
         menubar: false,
         plugins: [

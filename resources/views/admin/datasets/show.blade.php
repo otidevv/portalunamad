@@ -197,7 +197,7 @@
                 </div>
             </div>
             <p id="grafico-aviso" role="status" aria-live="polite" class="text-xs text-amber-800 mb-2 hidden"></p>
-            <div class="relative" style="height: 420px;">
+            <div class="relative w-full" style="height: clamp(320px, 60vh, 640px);">
                 <canvas id="grafico-dataset" role="img" aria-label="Gráfico del dataset {{ $dataset->nombre }}. Los datos de origen se muestran en la tabla de filas de esta página.">
                     Gráfico del dataset {{ $dataset->nombre }}. Los datos de origen se muestran en la tabla de filas de esta página.
                 </canvas>
