@@ -6,7 +6,7 @@
         "build": "vite build",
         "dev": "vite",
         "a11y": "pa11y-ci --config .pa11yci.json",
-        "a11y:report": "pa11y-ci --config .pa11yci.json --json > docs/accesibilidad/reporte-despues.json"
+        "a11y:report": "pa11y-ci --config .pa11yci.report.json --json > docs/accesibilidad/reporte-despues.json"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.1.13",

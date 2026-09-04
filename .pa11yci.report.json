@@ -18,6 +18,7 @@
       "height": 768
     },
     "levelCapWhenNeedsReview": "warning",
+    "includeWarnings": true,
     "ignore": [
       "frame-tested"
     ]
