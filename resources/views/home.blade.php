@@ -245,7 +245,7 @@
             <div class="text-center mb-12">
                 <p class="text-sm font-medium text-gray-600 mb-2" aria-hidden="true">CONOCE TODOS</p>
                 <h2 class="text-2xl sm:text-3xl font-bold text-[#db0455]"><span class="sr-only">Conoce todos </span>Nuestros Servicios</h2>
-                <div class="w-20 h-1 mx-auto rounded-full mt-4" style="background:linear-gradient(to right,#ed145b,#db0455);"></div>
+                <div class="w-20 h-1 mx-auto rounded-full mt-4" style="background:linear-gradient(to right,#db0455,#db0455);"></div>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
