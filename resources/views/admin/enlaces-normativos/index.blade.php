@@ -71,6 +71,7 @@
                             </td>
                             <td class="px-6 py-4">
                                 <a href="{{ $enlace->url }}" target="_blank" rel="noopener noreferrer"
+                                   aria-label="Abrir {{ $enlace->titulo }}"
                                    class="text-sm text-blue-600 hover:text-blue-800 break-all">
                                     {{ Str::limit($enlace->url, 70) }}
                                 </a>

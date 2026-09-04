@@ -672,7 +672,7 @@ function renderArchivosActuales(archivos) {
         const li = document.createElement('li');
         li.className = 'flex items-center justify-between bg-white border border-gray-200 rounded-lg px-3 py-2';
         li.innerHTML = `
-            <a href="${url}" target="_blank" class="flex items-center text-sm text-gray-800 hover:text-[#db0455] truncate flex-1 mr-3">
+            <a href="${url}" target="_blank" aria-label="Abrir ${nombre} (archivo ${ext})" class="flex items-center text-sm text-gray-800 hover:text-[#db0455] truncate flex-1 mr-3">
                 <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold mr-2 ${badgeClass}">${ext}</span>
                 <span class="truncate">${nombre}</span>
             </a>

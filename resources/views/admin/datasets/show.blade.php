@@ -24,7 +24,7 @@
                     <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                     </svg>
-                    <span>Plantilla CSV</span>
+                    <span>Descargar plantilla CSV</span>
                 </a>
             @endif
             @if($dataset->activo && $dataset->tieneDatos())
@@ -33,7 +33,7 @@
                     <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                     </svg>
-                    <span>Portal</span>
+                    <span>Ver en el portal</span>
                 </a>
             @endif
             <a href="{{ route('admin.datasets.edit', $dataset) }}"
@@ -110,7 +110,7 @@
                 <dt class="text-xs text-gray-500 uppercase">Fuente</dt>
                 <dd>
                 @if($dataset->fuente_url)
-                    <a href="{{ $dataset->fuente_url }}" target="_blank" class="font-medium text-[#db0455] hover:underline break-all">Ver origen</a>
+                    <a href="{{ $dataset->fuente_url }}" target="_blank" class="font-medium text-[#db0455] hover:underline break-all">Ver fuente en el PNDA</a>
                 @else
                     <span class="font-medium text-gray-400">—</span>
                 @endif

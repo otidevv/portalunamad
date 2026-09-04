@@ -81,6 +81,7 @@
                             </td>
                             <td class="px-6 py-4">
                                 <a href="{{ $video->url }}" target="_blank" rel="noopener noreferrer"
+                                   aria-label="Abrir video {{ $video->titulo }}"
                                    class="text-sm text-blue-600 hover:text-blue-800 break-all">
                                     {{ Str::limit($video->url, 60) }}
                                 </a>
