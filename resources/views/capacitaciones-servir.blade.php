@@ -62,6 +62,7 @@
                         <p class="text-sm text-gray-600 mb-3">"Año de la recuperación y consolidación de la economía peruana"</p>
                         <h2 class="text-xl font-bold text-gray-800 mb-2">Cultura de Aprendizaje - SERVIR</h2>
                         <p class="text-gray-600">Difusión de material audiovisual para la sensibilización sobre la cultura de aprendizaje en el marco del proceso de capacitación del Sistema Administrativo de Gestión de Recursos Humanos.</p>
+                        <p class="text-sm text-gray-600 mt-2">Los videos se reproducen en YouTube; los subtítulos se activan desde el botón CC del reproductor.</p>
                     </div>
                 </div>
             </div>

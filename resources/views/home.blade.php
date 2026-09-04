@@ -1030,11 +1030,12 @@
                 <div class="w-full">
                     <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-xl">
                         <iframe data-src="https://www.youtube.com/embed/videoseries?list=PLne5X_hwjWd5pL7WveLwUSqbMplFft-II"
-                            title="YouTube video playlist" frameborder="0"
+                            title="Video: lista de reproducción de actividades de la UNAMAD en YouTube" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen class="w-full h-full youtube-lazy" loading="lazy" style="min-height: 250px;">
                         </iframe>
                     </div>
+                    <p class="text-xs text-gray-600 mt-2">Los subtítulos se activan desde el botón CC del reproductor de YouTube.</p>
                 </div>
 
                 <!-- Columna Derecha - Enlaces y Redes Sociales (50%) -->
