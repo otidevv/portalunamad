@@ -141,7 +141,7 @@
                 <tbody class="divide-y divide-gray-100">
                     @forelse($dataset->columnas ?? [] as $i => $col)
                         <tr class="hover:bg-gray-50">
-                            <td class="px-4 py-2 text-gray-400">{{ data_get($col, 'numero', $i + 1) }}</td>
+                            <td class="px-4 py-2 text-gray-500">{{ data_get($col, 'numero', $i + 1) }}</td>
                             <td class="px-4 py-2 font-mono text-gray-800 whitespace-nowrap">{{ data_get($col, 'label') }}</td>
                             <td class="px-4 py-2">
                                 <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium
@@ -196,7 +196,7 @@
                     </select>
                 </div>
             </div>
-            <p id="grafico-aviso" role="status" aria-live="polite" class="text-xs text-amber-600 mb-2 hidden"></p>
+            <p id="grafico-aviso" role="status" aria-live="polite" class="text-xs text-amber-800 mb-2 hidden"></p>
             <div class="relative" style="height: 420px;">
                 <canvas id="grafico-dataset" role="img" aria-label="Gráfico del dataset {{ $dataset->nombre }}. Los datos de origen se muestran en la tabla de filas de esta página.">
                     Gráfico del dataset {{ $dataset->nombre }}. Los datos de origen se muestran en la tabla de filas de esta página.
@@ -223,7 +223,7 @@
                     <tbody class="divide-y divide-gray-200">
                         @foreach($muestra as $registro)
                             <tr class="hover:bg-gray-50">
-                                <td class="px-4 py-2 text-gray-400">{{ $registro->fila + 1 }}</td>
+                                <td class="px-4 py-2 text-gray-500">{{ $registro->fila + 1 }}</td>
                                 @foreach($dataset->columnas ?? [] as $col)
                                     <td class="px-4 py-2 text-gray-700 whitespace-nowrap">{{ data_get($registro->datos, data_get($col, 'key')) }}</td>
                                 @endforeach

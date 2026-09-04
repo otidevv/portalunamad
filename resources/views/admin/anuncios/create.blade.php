@@ -31,7 +31,7 @@
                         <!-- Título -->
                         <div>
                             <label for="titulo" class="block text-sm font-medium text-gray-700 mb-1">
-                                Título <span class="text-red-500" aria-hidden="true">*</span>
+                                Título <span class="text-red-600" aria-hidden="true">*</span>
                             </label>
                             <input type="text" 
                                    name="titulo" 
@@ -48,7 +48,7 @@
                         <!-- Descripción -->
                         <div>
                             <label for="descripcion" class="block text-sm font-medium text-gray-700 mb-1">
-                                Descripción <span class="text-red-500" aria-hidden="true">*</span>
+                                Descripción <span class="text-red-600" aria-hidden="true">*</span>
                             </label>
                             <textarea name="descripcion" 
                                       id="descripcion" 
@@ -65,7 +65,7 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label for="categoria" class="block text-sm font-medium text-gray-700 mb-1">
-                                    Categoría <span class="text-red-500" aria-hidden="true">*</span>
+                                    Categoría <span class="text-red-600" aria-hidden="true">*</span>
                                 </label>
                                 <select name="categoria" 
                                         id="categoria" 
@@ -85,7 +85,7 @@
 
                             <div>
                                 <label for="estado" class="block text-sm font-medium text-gray-700 mb-1">
-                                    Estado <span class="text-red-500" aria-hidden="true">*</span>
+                                    Estado <span class="text-red-600" aria-hidden="true">*</span>
                                 </label>
                                 <select name="estado" 
                                         id="estado" 
@@ -278,7 +278,7 @@ function agregarEnlace() {
             <button type="button"
                     onclick="this.closest('.enlace-item').remove()"
                     aria-label="Eliminar este enlace"
-                    class="absolute right-2 top-1/2 -translate-y-1/2 text-red-500 hover:text-red-700">
+                    class="absolute right-2 top-1/2 -translate-y-1/2 text-red-600 hover:text-red-800">
                 <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>

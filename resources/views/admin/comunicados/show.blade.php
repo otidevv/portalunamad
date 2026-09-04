@@ -146,7 +146,7 @@
                             <dt class="text-sm text-gray-600">Fecha de expiración:</dt>
                             <dd class="font-medium">{{ $comunicado->fecha_fin->format('d/m/Y H:i') }}</dd>
                             @if($comunicado->fecha_fin > now())
-                                <dd class="text-xs text-green-600">
+                                <dd class="text-xs text-green-700">
                                     Expira en {{ $comunicado->fecha_fin->diffForHumans() }}
                                 </dd>
                             @else

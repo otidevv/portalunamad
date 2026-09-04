@@ -71,13 +71,13 @@
                         </div>
 
                         <div>
-                            <label for="titulo" class="block text-sm font-medium text-gray-700 mb-1">Título <span class="text-red-500" aria-hidden="true">*</span></label>
+                            <label for="titulo" class="block text-sm font-medium text-gray-700 mb-1">Título <span class="text-red-600" aria-hidden="true">*</span></label>
                             <input type="text" name="titulo" id="titulo" value="{{ old('titulo', $indicador55->titulo) }}" required aria-required="true"
                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455]">
                         </div>
 
                         <div>
-                            <label for="titulo_completo" class="block text-sm font-medium text-gray-700 mb-1">Título Completo <span class="text-red-500" aria-hidden="true">*</span></label>
+                            <label for="titulo_completo" class="block text-sm font-medium text-gray-700 mb-1">Título Completo <span class="text-red-600" aria-hidden="true">*</span></label>
                             <input type="text" name="titulo_completo" id="titulo_completo" value="{{ old('titulo_completo', $indicador55->titulo_completo) }}" required aria-required="true"
                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455]">
                         </div>
@@ -466,7 +466,7 @@ function renderSimpleDocuments() {
     if (documentsData.length === 0) {
         container.innerHTML = `
             <div class="text-center py-8 text-gray-500 border-2 border-dashed border-gray-200 rounded-lg">
-                <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                 </svg>
                 <p>No hay documentos agregados</p>
@@ -489,7 +489,7 @@ function createSimpleDocumentCard(doc, index) {
     div.className = 'bg-gray-50 border border-gray-200 rounded-lg p-4 relative group';
     div.innerHTML = `
         <button type="button" onclick="removeSimpleDocument(${index})" aria-label="Eliminar documento ${index + 1}"
-                class="absolute top-2 right-2 p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
+                class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
             <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
             </svg>
@@ -560,7 +560,7 @@ function renderSections() {
     if (sectionsData.length === 0) {
         container.innerHTML = `
             <div class="text-center py-8 text-gray-500 border-2 border-dashed border-gray-200 rounded-lg">
-                <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                 </svg>
                 <p>No hay secciones agregadas</p>
@@ -589,7 +589,7 @@ function createSectionCard(section, sectionIndex) {
         itemsHtml += `
             <div class="bg-white border border-gray-200 rounded-lg p-3 relative group">
                 <button type="button" onclick="removeSectionItem(${sectionIndex}, ${itemIndex})" aria-label="Eliminar item ${itemIndex + 1} de la sección ${sectionIndex + 1}"
-                        class="absolute top-2 right-2 p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
+                        class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
                     <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
@@ -622,7 +622,7 @@ function createSectionCard(section, sectionIndex) {
                        placeholder="Nombre de la sección">
             </div>
             <button type="button" onclick="removeSection(${sectionIndex})" aria-label="Eliminar sección ${sectionIndex + 1}"
-                    class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors">
+                    class="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors">
                 <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                 </svg>
@@ -726,7 +726,7 @@ function renderMV11() {
     if (years.length === 0) {
         container.innerHTML = `
             <div class="text-center py-8 text-gray-500 border-2 border-dashed border-gray-200 rounded-lg">
-                <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                 </svg>
                 <p>No hay documentos agregados</p>
@@ -779,7 +779,7 @@ function createMV11YearCard(year, docs) {
                 Documento Simple
             </button>
             <button type="button" onclick="addMV11Department('${year}')"
-                    class="flex items-center px-3 py-1.5 text-sm bg-white text-amber-600 rounded border border-amber-300 hover:bg-amber-50 transition-colors">
+                    class="flex items-center px-3 py-1.5 text-sm bg-white text-amber-800 rounded border border-amber-300 hover:bg-amber-50 transition-colors">
                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                 </svg>
@@ -794,7 +794,7 @@ function createMV11SimpleDocHtml(docIndex, doc) {
     return `
         <div class="bg-white border border-gray-200 rounded-lg p-3 relative group">
             <button type="button" onclick="removeMV11Doc(${docIndex})" aria-label="Eliminar documento simple ${docIndex + 1}"
-                    class="absolute top-2 right-2 p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
+                    class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
                 <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
@@ -832,7 +832,7 @@ function createMV11DepartmentHtml(docIndex, doc) {
         itemsHtml += `
             <div class="bg-gray-50 border border-gray-200 rounded p-2 relative group/item">
                 <button type="button" onclick="removeMV11DeptItem(${docIndex}, ${itemIndex})" aria-label="Eliminar item ${itemIndex + 1} del departamento"
-                        class="absolute top-1 right-1 p-0.5 text-gray-400 hover:text-red-500 rounded transition-colors opacity-0 group-hover/item:opacity-100">
+                        class="absolute top-1 right-1 p-0.5 text-gray-600 hover:text-red-700 rounded transition-colors opacity-0 group-hover/item:opacity-100">
                     <svg aria-hidden="true" focusable="false" class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
@@ -854,7 +854,7 @@ function createMV11DepartmentHtml(docIndex, doc) {
     return `
         <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 relative group">
             <button type="button" onclick="removeMV11Doc(${docIndex})" aria-label="Eliminar departamento ${docIndex + 1}"
-                    class="absolute top-2 right-2 p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
+                    class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
                 <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
@@ -880,7 +880,7 @@ function createMV11DepartmentHtml(docIndex, doc) {
                 ${itemsHtml}
             </div>
             <button type="button" onclick="addMV11DeptItem(${docIndex})"
-                    class="mt-2 flex items-center px-2 py-1 text-xs bg-white text-amber-600 rounded border border-amber-300 hover:bg-amber-50 transition-colors">
+                    class="mt-2 flex items-center px-2 py-1 text-xs bg-white text-amber-800 rounded border border-amber-300 hover:bg-amber-50 transition-colors">
                 <svg aria-hidden="true" focusable="false" class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                 </svg>
@@ -955,7 +955,7 @@ function renderMV12() {
     if (mv12Data.length === 0) {
         container.innerHTML = `
             <div class="text-center py-8 text-gray-500 border-2 border-dashed border-gray-200 rounded-lg">
-                <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                 </svg>
                 <p>No hay secciones agregadas</p>
@@ -982,7 +982,7 @@ function createMV12SectionCard(section, sectionIndex) {
         itemsHtml += `
             <div class="bg-white border border-gray-200 rounded-lg p-3 relative group">
                 <button type="button" onclick="removeMV12Item(${sectionIndex}, ${itemIndex})" aria-label="Eliminar documento ${itemIndex + 1} de la sección ${sectionIndex + 1}"
-                        class="absolute top-2 right-2 p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
+                        class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
                     <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
@@ -1011,7 +1011,7 @@ function createMV12SectionCard(section, sectionIndex) {
                 <span class="bg-purple-600 text-white px-3 py-1 rounded-lg font-bold">${section.anio || '----'}</span>
             </div>
             <button type="button" onclick="removeMV12Section(${sectionIndex})" aria-label="Eliminar sección ${sectionIndex + 1}"
-                    class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors">
+                    class="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors">
                 <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                 </svg>

@@ -12,7 +12,7 @@
         </div>
         <div class="flex space-x-3">
             <button onclick="openModal('carpeta')" 
-                    class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200">
+                    class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200">
                 <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                 </svg>
@@ -113,7 +113,7 @@
                                 @if($carpeta->descripcion)
                                 <p class="text-sm text-gray-500 mt-1">{{ Str::limit($carpeta->descripcion, 60) }}</p>
                                 @endif
-                                <p class="text-xs text-gray-400 mt-1">
+                                <p class="text-xs text-gray-600 mt-1">
                                     Creado por {{ $carpeta->user->name }} • {{ $carpeta->created_at->format('d/m/Y H:i') }}
                                 </p>
                             </div>
@@ -122,13 +122,13 @@
                             <!-- Controles de Orden -->
                             <div class="flex flex-col">
                                 <button onclick="cambiarOrden('carpeta', {{ $carpeta->id }}, 'up')" 
-                                        class="text-gray-400 hover:text-green-600 transition-colors p-1" title="Subir" aria-label="Subir carpeta {{ $carpeta->nombre }} en el orden">
+                                        class="text-gray-600 hover:text-green-700 transition-colors p-1" title="Subir" aria-label="Subir carpeta {{ $carpeta->nombre }} en el orden">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
                                     </svg>
                                 </button>
                                 <button onclick="cambiarOrden('carpeta', {{ $carpeta->id }}, 'down')" 
-                                        class="text-gray-400 hover:text-orange-600 transition-colors p-1" title="Bajar" aria-label="Bajar carpeta {{ $carpeta->nombre }} en el orden">
+                                        class="text-gray-600 hover:text-orange-700 transition-colors p-1" title="Bajar" aria-label="Bajar carpeta {{ $carpeta->nombre }} en el orden">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                     </svg>
@@ -141,7 +141,7 @@
                             </span>
                             
                             <button onclick="editCarpeta({{ $carpeta->id }})" 
-                                    class="text-gray-400 hover:text-blue-600 transition-colors" title="Editar" aria-label="Editar carpeta {{ $carpeta->nombre }}">
+                                    class="text-gray-600 hover:text-blue-700 transition-colors" title="Editar" aria-label="Editar carpeta {{ $carpeta->nombre }}">
                                 <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                                 </svg>
@@ -152,7 +152,7 @@
                                   onsubmit="return confirm('¿Está seguro de eliminar esta carpeta?');">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="text-gray-400 hover:text-red-600 transition-colors" title="Eliminar" aria-label="Eliminar carpeta {{ $carpeta->nombre }}">
+                                <button type="submit" class="text-gray-600 hover:text-red-700 transition-colors" title="Eliminar" aria-label="Eliminar carpeta {{ $carpeta->nombre }}">
                                     <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                                     </svg>
@@ -194,7 +194,7 @@
                                 @if($documento->descripcion)
                                 <p class="text-sm text-gray-500 mt-1">{{ Str::limit($documento->descripcion, 60) }}</p>
                                 @endif
-                                <div class="flex items-center space-x-4 text-xs text-gray-400 mt-1">
+                                <div class="flex items-center space-x-4 text-xs text-gray-600 mt-1">
                                     <span>{{ $documento->user->name }}</span>
                                     <span>{{ $documento->created_at->format('d/m/Y') }}</span>
                                     @if($documento->tamaño_formateado)
@@ -209,20 +209,20 @@
                         </div>
                         <div class="flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
                             <a href="{{ route('admin.documentos.show', $documento) }}" 
-                               class="text-gray-400 hover:text-gray-600 transition-colors" title="Ver" aria-label="Ver documento {{ $documento->titulo }}">
+                               class="text-gray-600 hover:text-gray-800 transition-colors" title="Ver" aria-label="Ver documento {{ $documento->titulo }}">
                                 <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                                 </svg>
                             </a>
                             <button onclick="editDocumento({{ $documento->id }})" 
-                                    class="text-gray-400 hover:text-blue-600 transition-colors" title="Editar" aria-label="Editar documento {{ $documento->titulo }}">
+                                    class="text-gray-600 hover:text-blue-700 transition-colors" title="Editar" aria-label="Editar documento {{ $documento->titulo }}">
                                 <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                                 </svg>
                             </button>
                             <button onclick="toggleEstado({{ $documento->id }})"
-                                    class="text-gray-400 hover:text-green-600 transition-colors" title="Cambiar estado" aria-label="Cambiar estado del documento {{ $documento->titulo }} (actual: {{ $documento->texto_estado }})">
+                                    class="text-gray-600 hover:text-green-700 transition-colors" title="Cambiar estado" aria-label="Cambiar estado del documento {{ $documento->titulo }} (actual: {{ $documento->texto_estado }})">
                                 <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
@@ -233,7 +233,7 @@
                                   onsubmit="return confirm('¿Está seguro de eliminar este documento?');">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="text-gray-400 hover:text-red-600 transition-colors" title="Eliminar" aria-label="Eliminar documento {{ $documento->titulo }}">
+                                <button type="submit" class="text-gray-600 hover:text-red-700 transition-colors" title="Eliminar" aria-label="Eliminar documento {{ $documento->titulo }}">
                                     <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                                     </svg>
@@ -323,7 +323,7 @@ function closeModal() {
 // HTML del modal de carpeta
 function getCarpetaModalHTML() {
     return `
-        <div class="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-4">
+        <div class="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
@@ -335,7 +335,7 @@ function getCarpetaModalHTML() {
                         <h3 class="text-lg leading-6 font-medium text-white">
                             Nueva Carpeta
                         </h3>
-                        <p class="text-sm text-blue-100">
+                        <p class="text-sm text-white">
                             Crea una nueva carpeta para organizar documentos
                         </p>
                     </div>
@@ -408,7 +408,7 @@ function getCarpetaModalHTML() {
                     Cancelar
                 </button>
                 <button type="submit" id="submitBtn"
-                        class="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:shadow-lg transition-all">
+                        class="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:shadow-lg transition-all">
                     <span id="submitText">Crear Carpeta</span>
                     <span id="loadingText" role="status" class="hidden">Creando...</span>
                 </button>
@@ -432,7 +432,7 @@ function getDocumentoModalHTML() {
                         <h3 class="text-lg leading-6 font-medium text-white">
                             Nuevo Documento
                         </h3>
-                        <p class="text-sm text-pink-100">
+                        <p class="text-sm text-white">
                             Agrega un nuevo documento a la carpeta
                         </p>
                     </div>
@@ -534,7 +534,7 @@ function getDocumentoModalHTML() {
 // HTML del modal de edición de carpeta
 function getEditCarpetaModalHTML(carpeta) {
     return `
-        <div class="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-4">
+        <div class="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
@@ -546,7 +546,7 @@ function getEditCarpetaModalHTML(carpeta) {
                         <h3 class="text-lg leading-6 font-medium text-white">
                             Editar Carpeta
                         </h3>
-                        <p class="text-sm text-blue-100">
+                        <p class="text-sm text-white">
                             Modifica los datos de la carpeta
                         </p>
                     </div>
@@ -616,7 +616,7 @@ function getEditCarpetaModalHTML(carpeta) {
                     Cancelar
                 </button>
                 <button type="submit" id="submitBtn"
-                        class="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:shadow-lg transition-all">
+                        class="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:shadow-lg transition-all">
                     <span id="submitText">Actualizar Carpeta</span>
                     <span id="loadingText" role="status" class="hidden">Actualizando...</span>
                 </button>
@@ -640,7 +640,7 @@ function getEditDocumentoModalHTML(documento) {
                         <h3 class="text-lg leading-6 font-medium text-white">
                             Editar Documento
                         </h3>
-                        <p class="text-sm text-pink-100">
+                        <p class="text-sm text-white">
                             Modifica los datos del documento
                         </p>
                     </div>

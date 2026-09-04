@@ -53,7 +53,7 @@
         @if($dataset->ultima_sincronizacion)
             · datos actualizados el {{ $dataset->ultima_sincronizacion->format('d/m/Y H:i') }}
         @else
-            · <span class="text-amber-600">aún sin datos cargados</span>
+            · <span class="text-amber-800">aún sin datos cargados</span>
         @endif
     </div>
 
@@ -172,7 +172,7 @@
                     Agregar campo
                 </button>
             </div>
-            <p class="text-xs text-gray-500 mb-4">Define o ajusta los campos del dataset. Estos metadatos alimentan la plantilla CSV y la ficha pública. <span class="text-amber-600">Si subes un CSV nuevo abajo, el diccionario se regenera a partir del archivo.</span></p>
+            <p class="text-xs text-gray-500 mb-4">Define o ajusta los campos del dataset. Estos metadatos alimentan la plantilla CSV y la ficha pública. <span class="text-amber-800">Si subes un CSV nuevo abajo, el diccionario se regenera a partir del archivo.</span></p>
 
             <div class="overflow-x-auto">
                 <table class="w-full text-sm" id="tabla-diccionario">
@@ -215,7 +215,7 @@
                                            class="w-32 rounded border-gray-300 text-sm focus:border-[#db0455] focus:ring-[#db0455]" placeholder="Ej: 2025-I">
                                 </td>
                                 <td class="px-2 py-2 text-right">
-                                    <button type="button" class="btn-quitar-campo text-red-500 hover:text-red-700" title="Quitar" aria-label="Quitar campo {{ data_get($col, 'label') ?: 'de la fila ' . $loop->iteration }}">
+                                    <button type="button" class="btn-quitar-campo text-red-600 hover:text-red-800" title="Quitar" aria-label="Quitar campo {{ data_get($col, 'label') ?: 'de la fila ' . $loop->iteration }}">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                                     </button>
                                 </td>
@@ -223,7 +223,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                <p id="diccionario-vacio" role="status" aria-live="polite" class="text-sm text-gray-400 py-4 {{ count($columnasActuales) ? 'hidden' : '' }}">
+                <p id="diccionario-vacio" role="status" aria-live="polite" class="text-sm text-gray-600 py-4 {{ count($columnasActuales) ? 'hidden' : '' }}">
                     Sin campos definidos. Usa «Agregar campo» o sube un CSV para detectarlos automáticamente.
                 </p>
             </div>
@@ -237,7 +237,7 @@
                     <label for="archivo" class="block text-sm font-medium text-gray-700 mb-1">Archivo CSV</label>
                     <input type="file" name="archivo" id="archivo" accept=".csv,.txt"
                            class="w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-[#db0455] file:text-white hover:file:bg-[#a00340] @error('archivo') border border-red-300 rounded-lg @enderror" aria-describedby="aviso-csv @error('archivo') archivo-error @enderror" @error('archivo') aria-invalid="true" @enderror>
-                    <p id="aviso-csv" class="text-xs text-amber-600 mt-1"><span aria-hidden="true">⚠️</span> Al subir un CSV nuevo se eliminan todas las filas actuales y se regenera el diccionario.</p>
+                    <p id="aviso-csv" class="text-xs text-amber-800 mt-1"><span aria-hidden="true">⚠️</span> Al subir un CSV nuevo se eliminan todas las filas actuales y se regenera el diccionario.</p>
                     @error('archivo')<p id="archivo-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>@enderror
                 </div>
                 <div>
@@ -302,7 +302,7 @@
                    class="w-32 rounded border-gray-300 text-sm focus:border-[#db0455] focus:ring-[#db0455]" placeholder="Ej: 2025-I">
         </td>
         <td class="px-2 py-2 text-right">
-            <button type="button" class="btn-quitar-campo text-red-500 hover:text-red-700" title="Quitar" aria-label="Quitar este campo">
+            <button type="button" class="btn-quitar-campo text-red-600 hover:text-red-800" title="Quitar" aria-label="Quitar este campo">
                 <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </td>

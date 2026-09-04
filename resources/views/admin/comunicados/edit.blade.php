@@ -170,7 +170,7 @@
                                     @php $ext = strtoupper($archivo->extension ?? pathinfo($archivo->ruta, PATHINFO_EXTENSION)); @endphp
                                     <li class="flex items-center justify-between bg-white border border-gray-200 rounded-lg px-3 py-2">
                                         <a href="{{ $archivo->url }}" target="_blank" aria-label="Abrir {{ $archivo->nombre_original ?? basename($archivo->ruta) }} (archivo {{ $ext }})" class="flex items-center text-sm text-gray-800 hover:text-[#db0455] truncate flex-1 mr-3">
-                                            <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold mr-2 {{ $ext === 'PDF' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700' }}">
+                                            <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold mr-2 {{ $ext === 'PDF' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-800' }}">
                                                 {{ $ext }}
                                             </span>
                                             <span class="truncate">{{ $archivo->nombre_original ?? basename($archivo->ruta) }}</span>

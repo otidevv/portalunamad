@@ -47,7 +47,7 @@
         @foreach($variables as $variable)
             <li class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
                 <!-- Header con gradiente -->
-                <div class="bg-gradient-to-r from-{{ $variable->gradiente_from }} to-{{ $variable->gradiente_to }} p-4">
+                <div class="bg-gradient-to-r from-{{ $variable->gradiente_from }} to-{{ $variable->gradiente_to }} p-4" style="background-color: {{ $variable->color_primario }}">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
                             <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mr-3">
@@ -56,7 +56,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <span class="text-white/80 text-xs font-medium uppercase">{{ strtoupper($variable->codigo) }}</span>
+                                <span class="text-white text-xs font-medium uppercase">{{ strtoupper($variable->codigo) }}</span>
                                 <h3 class="text-white font-semibold text-sm">{{ $variable->titulo }}</h3>
                             </div>
                         </div>

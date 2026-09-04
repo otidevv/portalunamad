@@ -76,7 +76,7 @@
                                             <span>{{ $comunicado->created_at->format('d/m/Y H:i') }}</span>
                                             @if($comunicado->fecha_fin)
                                                 <span class="mx-2">•</span>
-                                                <span class="{{ $comunicado->fecha_fin <= now() ? 'text-red-600' : 'text-green-600' }}">
+                                                <span class="{{ $comunicado->fecha_fin <= now() ? 'text-red-600' : 'text-green-700' }}">
                                                     {{ $comunicado->fecha_fin <= now() ? 'Vencido' : 'Vigente' }}
                                                 </span>
                                             @endif
@@ -133,7 +133,7 @@
 
                     <div class="flex justify-between items-center">
                         <dt class="text-sm text-gray-600">Comunicados activos:</dt>
-                        <dd class="font-semibold text-green-600">{{ $comunicadoCategoria->comunicados->where('estado', 1)->count() }}</dd>
+                        <dd class="font-semibold text-green-700">{{ $comunicadoCategoria->comunicados->where('estado', 1)->count() }}</dd>
                     </div>
 
                     <div class="flex justify-between items-center">

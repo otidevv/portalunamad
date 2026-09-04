@@ -291,7 +291,7 @@
                                 <!-- Título -->
                                 <div class="lg:col-span-2">
                                     <label for="titulo" class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Título del Comunicado <span class="text-red-500" aria-hidden="true">*</span>
+                                        Título del Comunicado <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
                                         <input type="text"
@@ -312,7 +312,7 @@
                                 <!-- Categoría -->
                                 <div>
                                     <label for="categoria_id" class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Categoría <span class="text-red-500" aria-hidden="true">*</span>
+                                        Categoría <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
                                         <select name="categoria_id" id="categoria_id" aria-describedby="error-categoria_id" 
@@ -334,7 +334,7 @@
                                 <!-- Duración -->
                                 <div>
                                     <label for="duracion" class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Duración (días) <span class="text-red-500" aria-hidden="true">*</span>
+                                        Duración (días) <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
                                         <input type="number"
@@ -357,7 +357,7 @@
                                 <!-- Contenido -->
                                 <div class="lg:col-span-2">
                                     <label id="contenido-label" class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Contenido del Comunicado <span class="text-red-500" aria-hidden="true">*</span>
+                                        Contenido del Comunicado <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     
                                     <!-- Editor Toolbar -->
@@ -450,7 +450,7 @@
 
                             <div>
                                 <label for="imagen" class="block text-sm font-semibold text-gray-700 mb-2">
-                                    Seleccionar Imagen <span class="text-gray-400 font-normal">(Opcional)</span>
+                                    Seleccionar Imagen <span class="text-gray-600 font-normal">(Opcional)</span>
                                 </label>
                                 <div class="relative">
                                     <input type="file" name="imagen" id="imagen" accept="image/*" aria-describedby="imagen-help error-imagen"
@@ -488,7 +488,7 @@
 
                             <div>
                                 <label for="archivos" class="block text-sm font-semibold text-gray-700 mb-2">
-                                    Añadir Archivos <span class="text-gray-400 font-normal">(Opcional, varios permitidos)</span>
+                                    Añadir Archivos <span class="text-gray-600 font-normal">(Opcional, varios permitidos)</span>
                                 </label>
                                 <div class="relative">
                                     <input type="file" name="archivos[]" id="archivos" multiple aria-describedby="archivos-help error-archivos"

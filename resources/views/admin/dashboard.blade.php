@@ -14,10 +14,10 @@
                 <div>
                     <p class="text-gray-500 text-sm">Total Usuarios</p>
                     <p class="text-2xl font-bold text-gray-800">1,284</p>
-                    <p class="text-green-500 text-sm mt-1">+12% este mes</p>
+                    <p class="text-green-700 text-sm mt-1">+12% este mes</p>
                 </div>
                 <div class="bg-blue-100 rounded-full p-3">
-                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                               d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
                     </svg>
@@ -31,10 +31,10 @@
                 <div>
                     <p class="text-gray-500 text-sm">Anuncios Publicados</p>
                     <p class="text-2xl font-bold text-gray-800">{{ \App\Models\Anuncio::where('estado', 'publicado')->count() }}</p>
-                    <p class="text-green-500 text-sm mt-1">{{ \App\Models\Anuncio::whereDate('created_at', today())->count() }} hoy</p>
+                    <p class="text-green-700 text-sm mt-1">{{ \App\Models\Anuncio::whereDate('created_at', today())->count() }} hoy</p>
                 </div>
                 <div class="bg-green-100 rounded-full p-3">
-                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                               d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
                     </svg>
@@ -48,10 +48,10 @@
                 <div>
                     <p class="text-gray-500 text-sm">Anuncios Destacados</p>
                     <p class="text-2xl font-bold text-gray-800">{{ \App\Models\Anuncio::where('destacado', true)->where('estado', 'publicado')->count() }}</p>
-                    <p class="text-purple-500 text-sm mt-1">Activos</p>
+                    <p class="text-purple-700 text-sm mt-1">Activos</p>
                 </div>
                 <div class="bg-purple-100 rounded-full p-3">
-                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-purple-700" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                     </svg>
                 </div>
@@ -64,10 +64,10 @@
                 <div>
                     <p class="text-gray-500 text-sm">Total Vistas</p>
                     <p class="text-2xl font-bold text-gray-800">{{ number_format(\App\Models\Anuncio::sum('vistas')) }}</p>
-                    <p class="text-orange-500 text-sm mt-1">Todos los anuncios</p>
+                    <p class="text-orange-700 text-sm mt-1">Todos los anuncios</p>
                 </div>
                 <div class="bg-orange-100 rounded-full p-3">
-                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-8 h-8 text-orange-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                               d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -95,12 +95,13 @@
                             @else bg-red-500
                             @endif
                             rounded-full mt-2"></div>
+                        <span class="sr-only">Estado: {{ ucfirst($anuncio->estado) }}.</span>
                         <div class="flex-1">
                             <p class="text-sm text-gray-800">{{ $anuncio->titulo }}</p>
                             <p class="text-xs text-gray-500">
                                 Por: {{ $anuncio->user->name }} • {{ $anuncio->created_at->diffForHumans() }}
                                 @if($anuncio->destacado)
-                                    <span class="ml-2 text-yellow-600"><span aria-hidden="true">⭐</span> Destacado</span>
+                                    <span class="ml-2 text-yellow-800"><span aria-hidden="true">⭐</span> Destacado</span>
                                 @endif
                             </p>
                         </div>

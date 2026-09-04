@@ -265,7 +265,7 @@
                                 <!-- Nombre -->
                                 <div>
                                     <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Nombres <span class="text-red-500" aria-hidden="true">*</span>
+                                        Nombres <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <input type="text"
                                            name="name"
@@ -321,7 +321,7 @@
                                 <!-- Email -->
                                 <div class="lg:col-span-2">
                                     <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Correo electrónico <span class="text-red-500" aria-hidden="true">*</span>
+                                        Correo electrónico <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <input type="email"
                                            name="email"
@@ -335,7 +335,7 @@
                                 <!-- Tipo de Documento -->
                                 <div>
                                     <label for="tipo_documento" class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Tipo de Documento <span class="text-red-500" aria-hidden="true">*</span>
+                                        Tipo de Documento <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <select name="tipo_documento" id="tipo_documento" aria-describedby="error-tipo_documento"
                                             class="w-full appearance-none px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 bg-white" required aria-required="true">
@@ -351,7 +351,7 @@
                                 <!-- Número de Documento -->
                                 <div>
                                     <label for="numero_documento" class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Número de Documento <span class="text-red-500" aria-hidden="true">*</span>
+                                        Número de Documento <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
                                         <input type="text"
@@ -375,7 +375,7 @@
                                 <!-- Rol -->
                                 <div>
                                     <label for="rol" class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Rol <span class="text-red-500" aria-hidden="true">*</span>
+                                        Rol <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <select name="rol" id="rol" aria-describedby="error-rol"
                                             class="w-full appearance-none px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 bg-white" required aria-required="true">
@@ -420,7 +420,7 @@
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
                                 <div>
                                     <label for="password" class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Contraseña <span class="text-red-500" aria-hidden="true">*</span>
+                                        Contraseña <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
                                         <input type="password"
@@ -435,7 +435,7 @@
                                         <button type="button"
                                                 onclick="togglePassword('password')"
                                                 aria-label="Mostrar contraseña"
-                                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800">
                                             <svg aria-hidden="true" focusable="false" id="password-eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
@@ -451,7 +451,7 @@
 
                                 <div>
                                     <label for="password_confirmation" class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Confirmar Contraseña <span class="text-red-500" aria-hidden="true">*</span>
+                                        Confirmar Contraseña <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
                                         <input type="password"
@@ -466,7 +466,7 @@
                                         <button type="button"
                                                 onclick="togglePassword('password_confirmation')"
                                                 aria-label="Mostrar confirmación de contraseña"
-                                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800">
                                             <svg aria-hidden="true" focusable="false" id="password_confirmation-eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
@@ -494,7 +494,7 @@
 
                             <div>
                                 <label for="avatar" class="block text-sm font-semibold text-gray-700 mb-2">
-                                    Seleccionar Avatar <span class="text-gray-400 font-normal">(Opcional)</span>
+                                    Seleccionar Avatar <span class="text-gray-600 font-normal">(Opcional)</span>
                                 </label>
                                 <div class="relative">
                                     <input type="file" name="avatar" id="avatar" accept="image/*" aria-describedby="avatar-help error-avatar"
@@ -555,7 +555,7 @@
         <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
                 <!-- Header -->
-                <div class="bg-gradient-to-r from-green-500 to-green-600 px-6 py-4">
+                <div class="bg-gradient-to-r from-green-700 to-green-800 px-6 py-4">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
                             <svg aria-hidden="true" focusable="false" class="h-6 w-6 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -586,7 +586,7 @@
 
                         <div>
                             <label for="new_password" class="block text-sm font-semibold text-gray-700 mb-2">
-                                Nueva Contraseña <span class="text-red-500" aria-hidden="true">*</span>
+                                Nueva Contraseña <span class="text-red-600" aria-hidden="true">*</span>
                             </label>
                             <div class="relative">
                                 <input type="password"
@@ -601,7 +601,7 @@
                                 <button type="button"
                                         onclick="togglePassword('new_password')"
                                         aria-label="Mostrar nueva contraseña"
-                                        class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                                        class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800">
                                     <svg aria-hidden="true" focusable="false" id="new_password-eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
@@ -617,7 +617,7 @@
 
                         <div>
                             <label for="new_password_confirmation" class="block text-sm font-semibold text-gray-700 mb-2">
-                                Confirmar Nueva Contraseña <span class="text-red-500" aria-hidden="true">*</span>
+                                Confirmar Nueva Contraseña <span class="text-red-600" aria-hidden="true">*</span>
                             </label>
                             <div class="relative">
                                 <input type="password"
@@ -632,7 +632,7 @@
                                 <button type="button"
                                         onclick="togglePassword('new_password_confirmation')"
                                         aria-label="Mostrar confirmación de nueva contraseña"
-                                        class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                                        class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800">
                                     <svg aria-hidden="true" focusable="false" id="new_password_confirmation-eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
@@ -653,7 +653,7 @@
                             Cancelar
                         </button>
                         <button type="submit" id="passwordSubmitBtn"
-                                class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-green-500 to-green-600 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 focus:outline-none focus:shadow-outline disabled:opacity-50">
+                                class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-green-700 to-green-800 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 focus:outline-none focus:shadow-outline disabled:opacity-50">
                             <span id="passwordSubmitText" class="inline-flex items-center">
                                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>

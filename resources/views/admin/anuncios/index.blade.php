@@ -193,7 +193,7 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-center">
                                 @if($anuncio->destacado)
-                                    <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-yellow-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                    <svg aria-hidden="true" focusable="false" class="w-6 h-6 text-yellow-700 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                                     </svg>
                                     <span class="sr-only">Destacado</span>
@@ -324,7 +324,7 @@
                                 <!-- Título -->
                                 <div class="lg:col-span-2">
                                     <label for="titulo" class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Título del Anuncio <span class="text-red-500" aria-hidden="true">*</span>
+                                        Título del Anuncio <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
                                         <input type="text"
@@ -345,7 +345,7 @@
                                 <!-- Categoría -->
                                 <div>
                                     <label for="categoria" class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Categoría <span class="text-red-500" aria-hidden="true">*</span>
+                                        Categoría <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
                                         <select name="categoria" id="categoria" aria-describedby="error-categoria" 
@@ -369,7 +369,7 @@
                                 <!-- Estado -->
                                 <div>
                                     <label for="estado" class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Estado <span class="text-red-500" aria-hidden="true">*</span>
+                                        Estado <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
                                         <select name="estado" id="estado" aria-describedby="error-estado" 
@@ -390,14 +390,14 @@
                                 <!-- Descripción -->
                                 <div class="lg:col-span-2">
                                     <label for="descripcion" class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Descripción <span class="text-gray-400 font-normal">(Opcional)</span>
+                                        Descripción <span class="text-gray-600 font-normal">(Opcional)</span>
                                     </label>
                                     <div class="relative">
                                         <textarea name="descripcion" id="descripcion" rows="4" maxlength="500" aria-describedby="descripcion-help error-descripcion" 
                                                   class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400 resize-none"
                                                   placeholder="Escriba una descripción detallada del anuncio..."></textarea>
                                         <div class="absolute bottom-3 right-3">
-                                            <span id="descripcion-help" class="text-xs text-gray-400">Máx. 500 caracteres</span>
+                                            <span id="descripcion-help" class="text-xs text-gray-600">Máx. 500 caracteres</span>
                                         </div>
                                     </div>
                                     <div class="text-red-600 text-sm mt-1" id="error-descripcion" aria-live="polite"></div>
@@ -417,7 +417,7 @@
                             
                             <div>
                                 <label for="imagen_principal" class="block text-sm font-semibold text-gray-700 mb-2">
-                                    Seleccionar Imagen <span class="text-gray-400 font-normal">(Opcional)</span>
+                                    Seleccionar Imagen <span class="text-gray-600 font-normal">(Opcional)</span>
                                 </label>
                                 <div class="relative">
                                     <input type="file" name="imagen_principal" id="imagen_principal" accept="image/*" aria-describedby="imagen_principal-help error-imagen_principal"
@@ -459,7 +459,7 @@
                                                    class="flex-1 px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                                                    placeholder="https://ejemplo.com">
                                             <button type="button" onclick="addEnlace()" aria-label="Agregar otro enlace" 
-                                                    class="px-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                                                    class="px-4 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
                                                 <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                                                 </svg>
@@ -635,7 +635,7 @@ function resetFormForCreate() {
                            class="flex-1 px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                            placeholder="https://ejemplo.com">
                     <button type="button" onclick="addEnlace()" aria-label="Agregar otro enlace"
-                            class="px-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                            class="px-4 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
                         <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                         </svg>
@@ -667,7 +667,7 @@ function addEnlace() {
                        class="flex-1 px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                        placeholder="https://ejemplo.com">
                 <button type="button" onclick="removeEnlace(this)" aria-label="Eliminar este enlace" 
-                        class="px-4 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                        class="px-4 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
                     <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
@@ -787,7 +787,7 @@ function addDefaultEnlace() {
                        class="flex-1 px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                        placeholder="https://ejemplo.com">
                 <button type="button" onclick="addEnlace()" aria-label="Agregar otro enlace"
-                        class="px-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                        class="px-4 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
                     <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                     </svg>
@@ -805,14 +805,14 @@ function addEnlaceWithData(titulo, url, isFirst) {
 
     const buttonHtml = isFirst ? `
         <button type="button" onclick="addEnlace()" aria-label="Agregar otro enlace"
-                class="px-4 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                class="px-4 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
             <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
             </svg>
         </button>
     ` : `
         <button type="button" onclick="removeEnlace(this)" aria-label="Eliminar este enlace"
-                class="px-4 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                class="px-4 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200">
             <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>

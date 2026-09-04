@@ -97,7 +97,7 @@
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="px-6 py-4">
                                 <div class="font-medium text-gray-900">{{ $dataset->nombre }}</div>
-                                <div class="text-xs text-gray-400 font-mono">{{ $dataset->slug }}</div>
+                                <div class="text-xs text-gray-600 font-mono">{{ $dataset->slug }}</div>
                             </td>
                             <td class="px-6 py-4 text-sm text-gray-600">
                                 {{ $dataset->area_responsable ?: '—' }}
@@ -118,7 +118,7 @@
                                         {{ number_format($dataset->total_filas) }}
                                     </span>
                                 @else
-                                    <span class="text-xs text-gray-400">Sin datos</span>
+                                    <span class="text-xs text-gray-600">Sin datos</span>
                                 @endif
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
