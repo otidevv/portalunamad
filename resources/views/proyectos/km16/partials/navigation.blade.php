@@ -61,7 +61,7 @@
             <h4 class="text-sm font-semibold text-teal-800">Campus</h4>
         </div>
         
-        <dl class="space-y-3">
+        <div class="space-y-3">
             <!-- Ubicación -->
             <div class="flex items-start space-x-2">
                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,8 +69,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
                 <div>
-                    <dt class="text-xs font-semibold text-gray-800">Ubicación</dt>
-                    <dd class="text-xs text-teal-700">Kilómetro 16</dd>
+                    <p class="text-xs font-semibold text-gray-800">Ubicación</p>
+                    <p class="text-xs text-teal-700">Kilómetro 16</p>
                 </div>
             </div>
 
@@ -80,8 +80,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                 </svg>
                 <div>
-                    <dt class="text-xs font-semibold text-gray-800">Infraestructura</dt>
-                    <dd class="text-xs text-teal-700">Aulas y laboratorios</dd>
+                    <p class="text-xs font-semibold text-gray-800">Infraestructura</p>
+                    <p class="text-xs text-teal-700">Aulas y laboratorios</p>
                 </div>
             </div>
 
@@ -91,10 +91,10 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                 </svg>
                 <div>
-                    <dt class="text-xs font-semibold text-gray-800">Expansión</dt>
-                    <dd class="text-xs text-teal-700">Crecimiento académico</dd>
+                    <p class="text-xs font-semibold text-gray-800">Expansión</p>
+                    <p class="text-xs text-teal-700">Crecimiento académico</p>
                 </div>
             </div>
-        </dl>
+        </div>
     </div>
 </aside>

@@ -1081,7 +1081,7 @@
 
                             <!-- Instagram -->
                             <a href="https://www.instagram.com/unamad_oficial/" target="_blank" rel="noopener noreferrer"
-                                class="block bg-gradient-to-r from-purple-700 via-pink-700 to-orange-700 hover:from-purple-800 hover:via-pink-800 hover:to-orange-800 rounded-lg shadow-lg p-6 transition-all duration-300">
+                                class="block bg-[#c6005c] bg-gradient-to-r from-purple-700 via-pink-700 to-orange-700 hover:from-purple-800 hover:via-pink-800 hover:to-orange-800 rounded-lg shadow-lg p-6 transition-all duration-300">
                                 <div class="flex items-center text-white">
                                     <div class="mr-4">
                                         <svg class="w-8 h-8" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
@@ -1288,7 +1288,7 @@
                 <div class="mt-8">
                     <div id="modal-categoria"
                         class="inline-block px-3 py-1 bg-white/20 rounded-full text-sm font-bold mb-3"></div>
-                    <h2 id="modal-titulo" class="text-2xl font-bold leading-tight mb-2 focus:outline-none" tabindex="-1"></h2>
+                    <h2 id="modal-titulo" class="text-2xl font-bold leading-tight mb-2 focus:outline-none" tabindex="-1">Anuncio</h2>
                     <div class="flex items-center space-x-4 text-white text-sm">
                         <div class="flex items-center">
                             <svg class="w-4 h-4 mr-1" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">

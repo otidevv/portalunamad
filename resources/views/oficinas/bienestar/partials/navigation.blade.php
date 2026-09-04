@@ -48,15 +48,15 @@
             <h3 class="text-sm font-semibold text-orange-800">Contacto</h3>
         </div>
 
-        <dl class="space-y-3">
+        <div class="space-y-3">
             <!-- Teléfono -->
             <div class="flex items-start space-x-2">
                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                 </svg>
                 <div>
-                    <dt class="text-xs font-semibold text-gray-800">Teléfono</dt>
-                    <dd class="text-xs text-orange-700"><a href="tel:+51956344053" class="hover:underline">+51 956344053</a></dd>
+                    <p class="text-xs font-semibold text-gray-800">Teléfono</p>
+                    <p class="text-xs text-orange-700"><a href="tel:+51956344053" class="hover:underline">+51 956344053</a></p>
                 </div>
             </div>
 
@@ -66,8 +66,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
                 <div>
-                    <dt class="text-xs font-semibold text-gray-800">Correo</dt>
-                    <dd class="text-xs text-orange-700"><a href="mailto:bienestar@unamad.edu.pe" class="hover:underline">bienestar@unamad.edu.pe</a></dd>
+                    <p class="text-xs font-semibold text-gray-800">Correo</p>
+                    <p class="text-xs text-orange-700"><a href="mailto:bienestar@unamad.edu.pe" class="hover:underline">bienestar@unamad.edu.pe</a></p>
                 </div>
             </div>
 
@@ -78,10 +78,10 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
                 <div>
-                    <dt class="text-xs font-semibold text-gray-800">Dirección</dt>
-                    <dd class="text-xs text-orange-700">AV. Jorge Chávez N° 1160</dd>
+                    <p class="text-xs font-semibold text-gray-800">Dirección</p>
+                    <p class="text-xs text-orange-700">AV. Jorge Chávez N° 1160</p>
                 </div>
             </div>
-        </dl>
+        </div>
     </div>
 </aside>

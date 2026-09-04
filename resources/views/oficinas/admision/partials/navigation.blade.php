@@ -41,15 +41,15 @@
             <h3 class="text-sm font-semibold text-blue-800">Contacto</h3>
         </div>
 
-        <dl class="space-y-3">
+        <div class="space-y-3">
             <!-- Correo - Comentado -->
             <!-- <div class="flex items-start space-x-2">
                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
                 <div>
-                    <dt class="text-xs font-semibold text-gray-800">Correo</dt>
-                    <dd class="text-xs text-blue-700">-</dd>
+                    <p class="text-xs font-semibold text-gray-800">Correo</p>
+                    <p class="text-xs text-blue-700">-</p>
                 </div>
             </div> -->
 
@@ -60,8 +60,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
                 <div>
-                    <dt class="text-xs font-semibold text-gray-800">Dirección</dt>
-                    <dd class="text-xs text-blue-700">Ciudad Universitaria - Tambopata</dd>
+                    <p class="text-xs font-semibold text-gray-800">Dirección</p>
+                    <p class="text-xs text-blue-700">Ciudad Universitaria - Tambopata</p>
                 </div>
             </div>
 
@@ -71,10 +71,10 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9m0 9c-5 0-9-4-9-9s4-9 9-9"></path>
                 </svg>
                 <div>
-                    <dt class="text-xs font-semibold text-gray-800">Portal de Admisión</dt>
-                    <dd><a href="https://admision.unamad.edu.pe/" target="_blank" rel="noopener" class="text-xs text-blue-600 hover:text-blue-700 transition-colors">admision.unamad.edu.pe</a></dd>
+                    <p class="text-xs font-semibold text-gray-800">Portal de Admisión</p>
+                    <p><a href="https://admision.unamad.edu.pe/" target="_blank" rel="noopener" class="text-xs text-blue-600 hover:text-blue-700 transition-colors">admision.unamad.edu.pe</a></p>
                 </div>
             </div>
-        </dl>
+        </div>
     </div>
 </aside>

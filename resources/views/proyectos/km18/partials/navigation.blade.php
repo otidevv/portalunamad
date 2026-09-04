@@ -61,7 +61,7 @@
             <h4 class="text-sm font-semibold text-red-800">Polideportivo</h4>
         </div>
         
-        <dl class="space-y-3">
+        <div class="space-y-3">
             <!-- Ubicación -->
             <div class="flex items-start space-x-2">
                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,8 +69,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
                 <div>
-                    <dt class="text-xs font-semibold text-gray-800">Ubicación</dt>
-                    <dd class="text-xs text-red-700">Kilómetro 18</dd>
+                    <p class="text-xs font-semibold text-gray-800">Ubicación</p>
+                    <p class="text-xs text-red-700">Kilómetro 18</p>
                 </div>
             </div>
 
@@ -80,8 +80,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
                 <div>
-                    <dt class="text-xs font-semibold text-gray-800">Deportes</dt>
-                    <dd class="text-xs text-red-700">Múltiples disciplinas</dd>
+                    <p class="text-xs font-semibold text-gray-800">Deportes</p>
+                    <p class="text-xs text-red-700">Múltiples disciplinas</p>
                 </div>
             </div>
 
@@ -91,8 +91,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                 </svg>
                 <div>
-                    <dt class="text-xs font-semibold text-gray-800">Bienestar</dt>
-                    <dd class="text-xs text-red-700">Comunidad universitaria</dd>
+                    <p class="text-xs font-semibold text-gray-800">Bienestar</p>
+                    <p class="text-xs text-red-700">Comunidad universitaria</p>
                 </div>
             </div>
 
@@ -102,10 +102,10 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.01M15 10h1.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <div>
-                    <dt class="text-xs font-semibold text-gray-800">Recreación</dt>
-                    <dd class="text-xs text-red-700">Actividades de esparcimiento</dd>
+                    <p class="text-xs font-semibold text-gray-800">Recreación</p>
+                    <p class="text-xs text-red-700">Actividades de esparcimiento</p>
                 </div>
             </div>
-        </dl>
+        </div>
     </div>
 </aside>

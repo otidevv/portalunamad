@@ -41,15 +41,15 @@
             <h4 class="text-sm font-semibold text-orange-800">Áreas de Estudio</h4>
         </div>
         
-        <dl class="space-y-3">
+        <div class="space-y-3">
             <!-- Composición -->
             <div class="flex items-start space-x-2">
                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
                 <div>
-                    <dt class="text-xs font-semibold text-gray-800">Composición</dt>
-                    <dd class="text-xs text-orange-700">Química, física y mineralogía</dd>
+                    <p class="text-xs font-semibold text-gray-800">Composición</p>
+                    <p class="text-xs text-orange-700">Química, física y mineralogía</p>
                 </div>
             </div>
 
@@ -59,8 +59,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                 </svg>
                 <div>
-                    <dt class="text-xs font-semibold text-gray-800">Dinámica</dt>
-                    <dd class="text-xs text-orange-700">Procesos internos y externos</dd>
+                    <p class="text-xs font-semibold text-gray-800">Dinámica</p>
+                    <p class="text-xs text-orange-700">Procesos internos y externos</p>
                 </div>
             </div>
 
@@ -70,8 +70,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
                 </svg>
                 <div>
-                    <dt class="text-xs font-semibold text-gray-800">Recursos</dt>
-                    <dd class="text-xs text-orange-700">Minerales y energéticos</dd>
+                    <p class="text-xs font-semibold text-gray-800">Recursos</p>
+                    <p class="text-xs text-orange-700">Minerales y energéticos</p>
                 </div>
             </div>
 
@@ -81,10 +81,10 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                 </svg>
                 <div>
-                    <dt class="text-xs font-semibold text-gray-800">Investigación</dt>
-                    <dd class="text-xs text-orange-700">Equipos analíticos avanzados</dd>
+                    <p class="text-xs font-semibold text-gray-800">Investigación</p>
+                    <p class="text-xs text-orange-700">Equipos analíticos avanzados</p>
                 </div>
             </div>
-        </dl>
+        </div>
     </div>
 </aside>

@@ -803,7 +803,7 @@
                                 <h3 class="text-lg font-bold text-gray-800 mb-4 line-clamp-2">{{ $matriz['titulo'] }}</h3>
                                 <div class="flex flex-wrap gap-2">
                                     <a href="{{ $matriz['matriz'] }}" target="_blank" rel="noopener noreferrer"
-                                       class="inline-flex items-center px-4 py-2 bg-orange-700 text-white text-sm font-medium rounded-lg hover:bg-orange-800 transition-colors">
+                                       class="inline-flex items-center px-4 py-2 bg-[#c2410c] text-white text-sm font-medium rounded-lg hover:bg-[#9a3412] transition-colors">
                                         <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                                         </svg>
