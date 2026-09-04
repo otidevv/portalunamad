@@ -31,15 +31,19 @@
             </h2>
             <div class="max-w-2xl aspect-video bg-black rounded-lg overflow-hidden">
                 @if($video->tipo === 'archivo')
-                    <video src="{{ $video->embed_url }}" controls class="w-full h-full"></video>
+                    <video src="{{ $video->embed_url }}" controls preload="metadata" aria-label="Vista previa del video: {{ $video->titulo }}" class="w-full h-full"></video>
                 @else
                     <iframe src="{{ $video->embed_url }}"
+                            title="Video: {{ $video->titulo }} (vista previa)"
                             class="w-full h-full"
                             frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                 @endif
             </div>
+            @if($video->tipo === 'youtube')
+                <p class="text-xs text-gray-500 mt-2">Los subtítulos se activan desde el botón CC del reproductor.</p>
+            @endif
         </div>
     @endif
 
