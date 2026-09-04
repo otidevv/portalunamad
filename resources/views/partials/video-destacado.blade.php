@@ -1,7 +1,7 @@
 {{-- Video emergente de la página de inicio. Se administra en: Panel → Videos Destacados --}}
 @if(!empty($videoDestacado) && $videoDestacado->es_valido)
     <div id="video-destacado-modal"
-         class="hidden fixed inset-0 z-[9999] items-center justify-center p-3 sm:p-6"
+         class="hidden fixed inset-0 z-[9999] items-center justify-center p-4 sm:p-6 overflow-y-auto"
          data-video-id="{{ $videoDestacado->id }}"
          data-video-version="{{ optional($videoDestacado->updated_at)->timestamp }}"
          data-una-vez="{{ $videoDestacado->mostrar_una_vez ? '1' : '0' }}"
@@ -12,18 +12,18 @@
 
         <!-- Fondo oscuro -->
         <div id="video-destacado-fondo"
-             class="absolute inset-0 bg-black/75 opacity-0 transition-opacity duration-300"></div>
+             class="fixed inset-0 bg-black/75 opacity-0 transition-opacity duration-300"></div>
 
         <!-- Tarjeta -->
         <div id="video-destacado-tarjeta"
-             class="relative w-full max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden opacity-0 scale-95 transition-all duration-300">
+             class="relative w-full max-w-4xl my-auto bg-white rounded-2xl shadow-2xl overflow-hidden opacity-0 scale-95 transition-all duration-300">
 
             <!-- Botón cerrar -->
             <button type="button"
                     id="video-destacado-cerrar"
                     aria-label="Cerrar video"
-                    class="absolute top-3 right-3 z-10 flex items-center justify-center w-9 h-9 rounded-full bg-black/50 text-white hover:bg-black/70 focus:outline-none focus:ring-2 focus:ring-white/70 transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    class="absolute top-4 right-4 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-black/50 text-white hover:bg-black/70 focus:outline-none focus:ring-2 focus:ring-white/70 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
@@ -49,17 +49,17 @@
             </div>
 
             <!-- Pie -->
-            <div class="px-5 py-4 border-t-4 border-[#db0455]">
-                <h2 id="video-destacado-titulo" class="text-base sm:text-lg font-bold text-gray-800">
+            <div class="px-6 py-6 sm:px-8 sm:py-7 border-t-4 border-[#db0455]">
+                <h2 id="video-destacado-titulo" class="text-lg sm:text-2xl font-bold text-gray-800 leading-snug pr-2">
                     {{ $videoDestacado->titulo }}
                 </h2>
                 @if($videoDestacado->descripcion)
-                    <p class="text-sm text-gray-600 mt-1">{{ $videoDestacado->descripcion }}</p>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed mt-2.5">{{ $videoDestacado->descripcion }}</p>
                 @endif
-                <div class="flex justify-end mt-3">
+                <div class="flex justify-end mt-5 sm:mt-6">
                     <button type="button"
                             id="video-destacado-cerrar-pie"
-                            class="px-4 py-2 rounded-lg text-sm font-medium text-white bg-gradient-to-r from-[#db0455] to-[#a00340] hover:shadow-lg transition-all duration-200">
+                            class="px-6 py-3 rounded-lg text-sm sm:text-base font-medium text-white bg-gradient-to-r from-[#db0455] to-[#a00340] hover:shadow-lg transition-all duration-200">
                         Continuar al portal
                     </button>
                 </div>
