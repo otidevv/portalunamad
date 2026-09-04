@@ -111,7 +111,7 @@
                                                      {{ $ext === 'PDF' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700' }}">
                                             {{ $ext }}
                                         </span>
-                                        <span class="text-sm text-gray-800 flex-1 truncate group-hover:text-[#db0455]">
+                                        <span class="text-sm text-gray-800 flex-1 min-w-0 break-words group-hover:text-[#db0455]">
                                             {{ $archivo->nombre_original ?? basename($archivo->ruta) }}
                                         </span>
                                         <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-gray-400 group-hover:text-[#db0455] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

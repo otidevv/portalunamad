@@ -208,7 +208,7 @@
                                             <td class="border border-gray-300 px-4 py-2">ALICIA</td>
                                         </tr>
                                         <tr class="bg-gray-50">
-                                            <td class="border border-gray-300 px-4 py-2">MasterThesis</td>
+                                            <td class="border border-gray-300 px-4 py-2">TESIS DE MAESTRÍA</td>
                                             <td class="border border-gray-300 px-4 py-2">Comercio electrónico y la comercialización de la castaña en el Departamento de Madre de Dios</td>
                                             <td class="border border-gray-300 px-4 py-2">2011</td>
                                             <td class="border border-gray-300 px-4 py-2">ALICIA</td>

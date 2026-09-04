@@ -97,7 +97,7 @@
                     </h1>
 
                     <!-- Lema reducido -->
-                    <p class="text-gray-600 mb-1 text-[10px] sm:text-xs md:text-sm leading-snug text-center md:text-left">
+                    <p class="text-gray-600 mb-1 text-xs md:text-sm leading-snug text-center md:text-left">
                         Formando profesionales comprometidos con el desarrollo sostenible de la Amazonía peruana.
                     </p>
 
@@ -105,7 +105,7 @@
                     <div class="flex items-stretch gap-1">
                         <div class="flex items-center">
                             <a href="https://admision.unamad.edu.pe/" target="_blank" rel="noopener noreferrer"
-                                class="bg-[#db0455] hover:bg-[#a00340] text-white px-2.5 py-1.5 sm:px-4 sm:py-2.5 md:px-5 md:py-3 rounded-lg font-semibold transition-all duration-300 text-center text-[10px] sm:text-xs md:text-sm inline-block">
+                                class="bg-[#db0455] hover:bg-[#a00340] text-white px-2.5 py-1.5 sm:px-4 sm:py-2.5 md:px-5 md:py-3 rounded-lg font-semibold transition-all duration-300 text-center text-xs md:text-sm inline-block">
                                 Admisión 2026
                             </a>
                         </div>
@@ -1586,13 +1586,12 @@
             if (playPauseBtnMobile) playPauseBtnMobile.setAttribute('aria-label', isPlaying ? 'Pausar himno UNAMAD' : 'Reproducir himno UNAMAD');
         }
 
-        // Detectar zoom del navegador y cambiar a modo compacto (solo icono)
+        // Cambiar a modo compacto (solo icono) únicamente cuando el ancho disponible es reducido.
+        // No se oculta el reproductor por nivel de zoom para que siga siendo funcional al ampliar el texto (WCAG 1.4.4).
         function detectZoomAndAdapt() {
-            const zoomLevel = Math.round(window.devicePixelRatio * 100);
             const viewportWidth = window.innerWidth;
 
-            // Si el zoom es >= 150% O el viewport efectivo es <= 800px, modo compacto
-            if (zoomLevel >= 150 || viewportWidth <= 800) {
+            if (viewportWidth <= 800) {
                 // Ocultar reproductor completo desktop
                 if (audioPlayer) {
                     audioPlayer.classList.add('!hidden');

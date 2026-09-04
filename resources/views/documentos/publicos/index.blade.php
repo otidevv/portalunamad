@@ -117,13 +117,13 @@
                                 <!-- Información de la carpeta -->
                                 <div class="flex-1 min-w-0">
                                     <div class="flex items-center">
-                                        <h3 class="text-sm font-medium text-gray-900 truncate">{{ $carpeta->nombre }}</h3>
+                                        <h3 class="text-sm font-medium text-gray-900 break-words">{{ $carpeta->nombre }}</h3>
                                         <span class="ml-2 text-xs text-gray-600">
                                             ({{ ($carpeta->hijos_count ?? 0) + ($carpeta->documentos_count ?? 0) }} elementos)
                                         </span>
                                     </div>
                                     @if($carpeta->descripcion)
-                                        <p class="text-xs text-gray-600 mt-1 truncate">{{ $carpeta->descripcion }}</p>
+                                        <p class="text-xs text-gray-600 mt-1 break-words">{{ $carpeta->descripcion }}</p>
                                     @endif
                                 </div>
                             </div>
@@ -155,7 +155,7 @@
                         <!-- Información del documento -->
                         <div class="flex-1 min-w-0">
                             <div class="flex items-center mb-1">
-                                <h3 class="text-sm font-medium text-gray-900 truncate">{{ $documento->titulo }}</h3>
+                                <h3 class="text-sm font-medium text-gray-900 break-words">{{ $documento->titulo }}</h3>
                                 @if($documento->destacado)
                                     <span class="ml-2 inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
                                         <span aria-hidden="true">⭐</span><span class="sr-only">Documento destacado</span>
@@ -169,7 +169,7 @@
                             </div>
                             
                             @if($documento->descripcion)
-                                <p class="text-xs text-gray-600 mb-1 line-clamp-1">{{ $documento->descripcion }}</p>
+                                <p class="text-xs text-gray-600 mb-1 break-words">{{ $documento->descripcion }}</p>
                             @endif
                             
                             <ul class="flex items-center space-x-3 text-xs text-gray-600 list-none m-0 p-0">
@@ -273,8 +273,8 @@ function displaySearchResults(results) {
                     <span aria-hidden="true">${doc.icono}</span>
                 </div>
                 <div class="flex-1 min-w-0">
-                    <h4 class="text-sm font-medium text-gray-900 truncate">${doc.titulo}</h4>
-                    <p class="text-xs text-gray-600 truncate">${doc.ruta}</p>
+                    <h4 class="text-sm font-medium text-gray-900 break-words">${escapeHtml(doc.titulo)}</h4>
+                    <p class="text-xs text-gray-600 break-words">${escapeHtml(doc.ruta)}</p>
                 </div>
                 <a href="${doc.url}"
                    target="${doc.externo ? '_blank' : '_self'}" rel="noopener noreferrer"
@@ -396,7 +396,7 @@ function generateFolderContent(carpetas, documentos) {
                     <span aria-hidden="true">${documento.icono}</span>
                 </div>
                 <div class="flex-1 min-w-0">
-                    <h4 class="text-sm font-medium text-gray-900 truncate">${documento.titulo}</h4>
+                    <h4 class="text-sm font-medium text-gray-900 break-words">${escapeHtml(documento.titulo)}</h4>
                 </div>
                 <a href="${documento.url}"
                    target="${documento.externo ? '_blank' : '_self'}" rel="noopener noreferrer"

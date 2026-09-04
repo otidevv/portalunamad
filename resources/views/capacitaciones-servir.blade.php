@@ -491,7 +491,7 @@
                                 </a>
                             </div>
                             <span class="absolute top-3 left-3 bg-orange-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                                Short 1
+                                Video corto 1
                             </span>
                         </div>
                         <div class="p-5">
@@ -530,7 +530,7 @@
                                 </a>
                             </div>
                             <span class="absolute top-3 left-3 bg-orange-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                                Short 2
+                                Video corto 2
                             </span>
                         </div>
                         <div class="p-5">
@@ -569,7 +569,7 @@
                                 </a>
                             </div>
                             <span class="absolute top-3 left-3 bg-orange-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                                Short 3
+                                Video corto 3
                             </span>
                         </div>
                         <div class="p-5">
@@ -608,7 +608,7 @@
                                 </a>
                             </div>
                             <span class="absolute top-3 left-3 bg-orange-700 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                                Short 4
+                                Video corto 4
                             </span>
                         </div>
                         <div class="p-5">
