@@ -1,17 +1,19 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Editar comunicado: ' . $comunicado->titulo)
+@section('header', 'Editar Comunicado')
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">Editar Comunicado</h1>
+            <h2 class="text-2xl font-bold text-gray-800">Editar Comunicado</h2>
             <p class="text-gray-600 text-sm mt-1">Modifique los datos del comunicado</p>
         </div>
         <div class="flex space-x-3">
             <a href="{{ route('admin.comunicados.show', $comunicado) }}" 
                class="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                           d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -21,7 +23,7 @@
             </a>
             <a href="{{ route('admin.comunicados.index') }}" 
                class="flex items-center space-x-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                           d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                 </svg>
@@ -35,23 +37,24 @@
         <form action="{{ route('admin.comunicados.update', $comunicado) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            
+            <p class="text-sm text-gray-600 mb-4">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
+
             <div class="space-y-6">
                 <!-- Información básica -->
                 <div class="bg-gray-50 rounded-lg p-4">
-                    <h4 class="text-sm font-medium text-gray-900 mb-3 flex items-center">
-                        <svg class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <h3 class="text-sm font-medium text-gray-900 mb-3 flex items-center">
+                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                                   d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                         Información Básica
-                    </h4>
+                    </h3>
                     
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                         <!-- Título -->
                         <div class="lg:col-span-2">
                             <label for="titulo" class="block text-sm font-medium text-gray-700 mb-1">
-                                Título del Comunicado *
+                                Título del Comunicado <span aria-hidden="true">*</span>
                             </label>
                             <input type="text" 
                                    name="titulo" 
@@ -59,21 +62,21 @@
                                    value="{{ old('titulo', $comunicado->titulo) }}"
                                    class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('titulo') border-red-300 @enderror"
                                    placeholder="Ingrese el título del comunicado"
-                                   required>
+                                   required aria-required="true" @error('titulo') aria-invalid="true" aria-describedby="titulo-error" @enderror>
                             @error('titulo')
-                                <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                                <p id="titulo-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
                             @enderror
                         </div>
 
                         <!-- Categoría -->
                         <div>
                             <label for="comunicado_categoria_id" class="block text-sm font-medium text-gray-700 mb-1">
-                                Categoría *
+                                Categoría <span aria-hidden="true">*</span>
                             </label>
                             <select name="comunicado_categoria_id" 
                                     id="comunicado_categoria_id" 
                                     class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('comunicado_categoria_id') border-red-300 @enderror" 
-                                    required>
+                                    required aria-required="true" @error('comunicado_categoria_id') aria-invalid="true" aria-describedby="comunicado_categoria_id-error" @enderror>
                                 <option value="">Seleccionar categoría</option>
                                 @foreach($categorias as $categoria)
                                     <option value="{{ $categoria->id }}" {{ old('comunicado_categoria_id', $comunicado->comunicado_categoria_id) == $categoria->id ? 'selected' : '' }}>
@@ -82,15 +85,15 @@
                                 @endforeach
                             </select>
                             @error('comunicado_categoria_id')
-                                <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                                <p id="comunicado_categoria_id-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
                             @enderror
                         </div>
 
                         <!-- Estado -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                            <span class="block text-sm font-medium text-gray-700 mb-1">
                                 Estado
-                            </label>
+                            </span>
                             <div class="flex items-center">
                                 <input type="hidden" name="estado" value="0">
                                 <input type="checkbox" 
@@ -109,13 +112,13 @@
 
                 <!-- Imagen -->
                 <div class="bg-gray-50 rounded-lg p-4">
-                    <h4 class="text-sm font-medium text-gray-900 mb-3 flex items-center">
-                        <svg class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <h3 class="text-sm font-medium text-gray-900 mb-3 flex items-center">
+                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                                   d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                         </svg>
                         Imagen del Comunicado
-                    </h4>
+                    </h3>
                     
                     @if($comunicado->imagen)
                         <div class="mb-4">
@@ -134,30 +137,30 @@
                     
                     <div>
                         <label for="imagen" class="block text-sm font-medium text-gray-700 mb-1">
-                            {{ $comunicado->imagen ? 'Cambiar Imagen' : 'Seleccionar Imagen *' }}
+                            {{ $comunicado->imagen ? 'Cambiar Imagen' : 'Seleccionar Imagen' }}@if(!$comunicado->imagen) <span aria-hidden="true">*</span>@endif
                         </label>
                         <input type="file"
                                name="imagen"
                                id="imagen"
                                accept="image/*"
                                class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-[#db0455] file:text-white hover:file:bg-[#a00340] file:cursor-pointer @error('imagen') border-red-300 @enderror"
-                               {{ !$comunicado->imagen ? 'required' : '' }}>
+                               {{ !$comunicado->imagen ? 'required aria-required="true"' : '' }} aria-describedby="imagen-help @error('imagen') imagen-error @enderror" @error('imagen') aria-invalid="true" @enderror>
                         @error('imagen')
-                            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                            <p id="imagen-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
                         @enderror
-                        <p class="text-xs text-gray-500 mt-1">Máximo 5MB. Formatos: JPG, PNG, GIF</p>
+                        <p id="imagen-help" class="text-xs text-gray-500 mt-1">Máximo 5MB. Formatos: JPG, PNG, GIF</p>
                     </div>
                 </div>
 
                 <!-- Archivos adjuntos (PDF/Excel, varios) -->
                 <div class="bg-gray-50 rounded-lg p-4">
-                    <h4 class="text-sm font-medium text-gray-900 mb-3 flex items-center">
-                        <svg class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <h3 class="text-sm font-medium text-gray-900 mb-3 flex items-center">
+                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
                         Archivos Adjuntos (PDF o Excel)
-                    </h4>
+                    </h3>
 
                     @if($comunicado->archivos->count() > 0)
                         <div class="mb-4">
@@ -166,11 +169,11 @@
                                 @foreach($comunicado->archivos as $archivo)
                                     @php $ext = strtoupper($archivo->extension ?? pathinfo($archivo->ruta, PATHINFO_EXTENSION)); @endphp
                                     <li class="flex items-center justify-between bg-white border border-gray-200 rounded-lg px-3 py-2">
-                                        <a href="{{ $archivo->url }}" target="_blank" class="flex items-center text-sm text-gray-800 hover:text-[#db0455] truncate flex-1 mr-3">
-                                            <span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold mr-2 {{ $ext === 'PDF' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700' }}">
+                                        <a href="{{ $archivo->url }}" target="_blank" aria-label="Abrir {{ $archivo->nombre_original ?? basename($archivo->ruta) }} (archivo {{ $ext }})" class="flex items-center text-sm text-gray-800 hover:text-[#db0455] truncate flex-1 mr-3">
+                                            <span class="inline-block px-2 py-0.5 rounded text-xs font-bold mr-2 {{ $ext === 'PDF' ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-800' }}">
                                                 {{ $ext }}
                                             </span>
-                                            <span class="truncate">{{ $archivo->nombre_original ?? basename($archivo->ruta) }}</span>
+                                            <span class="truncate" title="{{ $archivo->nombre_original ?? basename($archivo->ruta) }}">{{ $archivo->nombre_original ?? basename($archivo->ruta) }}</span>
                                         </a>
                                         <label class="flex items-center text-xs text-red-600 whitespace-nowrap cursor-pointer">
                                             <input type="checkbox" name="eliminar_archivos[]" value="{{ $archivo->id }}" class="rounded border-gray-300 text-red-600 focus:ring-red-200 mr-1">
@@ -191,23 +194,23 @@
                                id="archivos"
                                multiple
                                accept=".pdf,.xls,.xlsx,.csv,application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv"
-                               class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-[#db0455] file:text-white hover:file:bg-[#a00340] file:cursor-pointer @error('archivos.*') border-red-300 @enderror">
+                               class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-[#db0455] file:text-white hover:file:bg-[#a00340] file:cursor-pointer @error('archivos.*') border-red-300 @enderror" aria-describedby="archivos-help @error('archivos.*') archivos-error @enderror" @error('archivos.*') aria-invalid="true" @enderror>
                         @error('archivos.*')
-                            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                            <p id="archivos-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
                         @enderror
-                        <p class="text-xs text-gray-500 mt-1">Máximo 20MB por archivo • Hasta 10 archivos • Formatos: PDF, XLS, XLSX, CSV</p>
+                        <p id="archivos-help" class="text-xs text-gray-500 mt-1">Máximo 20MB por archivo • Hasta 10 archivos • Formatos: PDF, XLS, XLSX, CSV</p>
                     </div>
                 </div>
 
                 <!-- Contenido -->
                 <div class="bg-gray-50 rounded-lg p-4">
-                    <h4 class="text-sm font-medium text-gray-900 mb-3 flex items-center">
-                        <svg class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <h3 class="text-sm font-medium text-gray-900 mb-3 flex items-center">
+                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                                   d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
                         Contenido
-                    </h4>
+                    </h3>
                     
                     <div>
                         <label for="contenido" class="block text-sm font-medium text-gray-700 mb-1">
@@ -217,23 +220,23 @@
                                   id="contenido" 
                                   rows="6"
                                   class="tinymce-editor @error('contenido') border-red-300 @enderror"
-                                  placeholder="Ingrese el contenido detallado del comunicado (opcional)">{{ old('contenido', $comunicado->contenido) }}</textarea>
+                                  placeholder="Ingrese el contenido detallado del comunicado (opcional)" aria-describedby="contenido-help @error('contenido') contenido-error @enderror" @error('contenido') aria-invalid="true" @enderror>{{ old('contenido', $comunicado->contenido) }}</textarea>
                         @error('contenido')
-                            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                            <p id="contenido-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
                         @enderror
-                        <p class="text-xs text-gray-500 mt-1">Use el editor para dar formato al texto, agregar enlaces, etc.</p>
+                        <p id="contenido-help" class="text-xs text-gray-500 mt-1">Use el editor para dar formato al texto, agregar enlaces, etc.</p>
                     </div>
                 </div>
 
                 <!-- Configuración de tiempo -->
                 <div class="bg-gray-50 rounded-lg p-4">
-                    <h4 class="text-sm font-medium text-gray-900 mb-3 flex items-center">
-                        <svg class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <h3 class="text-sm font-medium text-gray-900 mb-3 flex items-center">
+                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                                   d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                         Configuración de Tiempo
-                    </h4>
+                    </h3>
                     
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                         <!-- Duración en días -->
@@ -247,11 +250,11 @@
                                    value="{{ old('duracion', $comunicado->duracion) }}"
                                    min="1"
                                    class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('duracion') border-red-300 @enderror"
-                                   placeholder="Ej: 30">
+                                   placeholder="Ej: 30" aria-describedby="duracion-help @error('duracion') duracion-error @enderror" @error('duracion') aria-invalid="true" @enderror>
                             @error('duracion')
-                                <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                                <p id="duracion-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
                             @enderror
-                            <p class="text-xs text-gray-500 mt-1">Número de días que estará visible el comunicado</p>
+                            <p id="duracion-help" class="text-xs text-gray-500 mt-1">Número de días que estará visible el comunicado</p>
                         </div>
 
                         <!-- Fecha de fin -->
@@ -263,11 +266,11 @@
                                    name="fecha_fin" 
                                    id="fecha_fin" 
                                    value="{{ old('fecha_fin', $comunicado->fecha_fin ? $comunicado->fecha_fin->format('Y-m-d\TH:i') : '') }}"
-                                   class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('fecha_fin') border-red-300 @enderror">
+                                   class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('fecha_fin') border-red-300 @enderror" aria-describedby="fecha_fin-help @error('fecha_fin') fecha_fin-error @enderror" @error('fecha_fin') aria-invalid="true" @enderror>
                             @error('fecha_fin')
-                                <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                                <p id="fecha_fin-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
                             @enderror
-                            <p class="text-xs text-gray-500 mt-1">Fecha y hora específica de expiración</p>
+                            <p id="fecha_fin-help" class="text-xs text-gray-500 mt-1">Fecha y hora específica de expiración</p>
                         </div>
                     </div>
                 </div>
@@ -276,12 +279,12 @@
             <!-- Botones -->
             <div class="flex justify-end space-x-3 mt-8 pt-6 border-t border-gray-200">
                 <a href="{{ route('admin.comunicados.show', $comunicado) }}"
-                   class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out">
+                   class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0455] focus-visible:ring-offset-2 active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out">
                     Cancelar
                 </a>
                 <button type="submit"
-                        class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-[#db0455] to-[#a00340] hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 focus:outline-none focus:shadow-outline">
-                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-[#db0455] to-[#a00340] hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0455] focus-visible:ring-offset-2">
+                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                     Actualizar Comunicado
@@ -297,6 +300,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     tinymce.init({
         selector: '.tinymce-editor',
+        language: 'es',
+        language_url: 'https://cdn.jsdelivr.net/npm/tinymce-i18n/langs6/es.js',
+        iframe_aria_text: 'Editor de contenido del comunicado',
         height: 300,
         menubar: false,
         plugins: [

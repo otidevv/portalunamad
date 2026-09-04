@@ -1,16 +1,18 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Usuarios')
+@section('header', 'Gestión de Usuarios')
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">Gestión de Usuarios</h1>
+            <h2 class="text-2xl font-bold text-gray-800">Gestión de Usuarios</h2>
             <p class="text-gray-600 text-sm mt-1">Administra los usuarios del sistema</p>
         </div>
-        <button onclick="openUserModal()"
+        <button type="button" onclick="openUserModal()"
                 class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#db0455] to-[#a00340] text-white rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
             </svg>
             <span>Nuevo Usuario</span>
@@ -24,10 +26,11 @@
                 <input type="text"
                        name="buscar"
                        value="{{ request('buscar') }}"
+                       aria-label="Buscar por nombre, correo electrónico o documento"
                        placeholder="Buscar por nombre, email o documento..."
                        class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
 
-                <select name="rol" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
+                <select name="rol" aria-label="Filtrar por rol" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
                     <option value="">Todos los roles</option>
                     <option value="admin" {{ request('rol') == 'admin' ? 'selected' : '' }}>Administrador</option>
                     <option value="editor" {{ request('rol') == 'editor' ? 'selected' : '' }}>Editor</option>
@@ -35,13 +38,13 @@
                     <option value="usuario" {{ request('rol') == 'usuario' ? 'selected' : '' }}>Usuario</option>
                 </select>
 
-                <select name="estado" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
+                <select name="estado" aria-label="Filtrar por estado" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
                     <option value="">Todos los estados</option>
                     <option value="1" {{ request('estado') == '1' ? 'selected' : '' }}>Activo</option>
                     <option value="0" {{ request('estado') == '0' ? 'selected' : '' }}>Inactivo</option>
                 </select>
 
-                <select name="tipo_documento" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
+                <select name="tipo_documento" aria-label="Filtrar por tipo de documento" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
                     <option value="">Todos los documentos</option>
                     <option value="dni" {{ request('tipo_documento') == 'dni' ? 'selected' : '' }}>DNI</option>
                     <option value="carnet_extranjeria" {{ request('tipo_documento') == 'carnet_extranjeria' ? 'selected' : '' }}>Carnet de Extranjería</option>
@@ -58,9 +61,9 @@
 
     <!-- Mensajes de éxito/error -->
     @if(session('success'))
-        <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-lg">
+        <div role="status" class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-lg">
             <div class="flex items-center">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
                 {{ session('success') }}
@@ -69,9 +72,9 @@
     @endif
 
     @if(session('error'))
-        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
+        <div role="alert" class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
             <div class="flex items-center">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
                 </svg>
                 {{ session('error') }}
@@ -83,24 +86,25 @@
     <div class="bg-white rounded-lg shadow-sm overflow-hidden">
         <div class="overflow-x-auto">
             <table class="w-full">
+                    <caption class="sr-only">Listado de usuarios</caption>
                 <thead class="bg-gray-50 border-b border-gray-200">
                     <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Avatar / Usuario
                         </th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Documento
                         </th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Rol
                         </th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Estado
                         </th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Registro
                         </th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Acciones
                         </th>
                     </tr>
@@ -111,7 +115,7 @@
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
                                     <img src="{{ $user->avatar_url }}"
-                                         alt="{{ $user->name }}"
+                                         alt=""
                                          class="w-12 h-12 object-cover rounded-full mr-4">
                                     <div>
                                         <div class="text-sm font-medium text-gray-900">
@@ -147,7 +151,9 @@
                                 </span>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <button onclick="toggleEstado('{{ $user->id }}', {{ $user->estado ? 'true' : 'false' }})"
+                                <button type="button" onclick="toggleEstado('{{ $user->id }}', {{ $user->estado ? 'true' : 'false' }})"
+                                        aria-pressed="{{ $user->estado ? 'true' : 'false' }}"
+                                        aria-label="{{ $user->estado ? 'Activo' : 'Inactivo' }}: {{ $user->name }}. Pulse para cambiar el estado"
                                         class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium {{ $user->estado ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
                                     {{ $user->estado ? 'Activo' : 'Inactivo' }}
                                 </button>
@@ -157,16 +163,16 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                 <div class="flex items-center space-x-2">
-                                    <button onclick="openUserModal({{ $user->id }})"
-                                            class="text-blue-600 hover:text-blue-900" title="Editar">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <button type="button" onclick="openUserModal({{ $user->id }})"
+                                            class="text-blue-600 hover:text-blue-900" title="Editar" aria-label="Editar usuario {{ $user->name }}">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                   d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                                         </svg>
                                     </button>
-                                    <button onclick="openPasswordModal({{ $user->id }}, '{{ $user->name }}')"
-                                            class="text-green-600 hover:text-green-900" title="Cambiar Contraseña">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <button type="button" onclick="openPasswordModal({{ $user->id }}, '{{ $user->name }}')"
+                                            class="text-green-600 hover:text-green-900" title="Cambiar Contraseña" aria-label="Cambiar contraseña de {{ $user->name }}">
+                                        <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                   d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v-2L3.257 9.257a6 6 0 018.486-8.486L17 7"></path>
                                         </svg>
@@ -177,8 +183,8 @@
                                           onsubmit="return confirm('¿Está seguro de eliminar este usuario?');">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="text-red-600 hover:text-red-900" title="Eliminar">
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <button type="submit" class="text-red-600 hover:text-red-900" title="Eliminar" aria-label="Eliminar usuario {{ $user->name }}">
+                                            <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                       d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                                             </svg>
@@ -190,7 +196,7 @@
                     @empty
                         <tr>
                             <td colspan="6" class="px-6 py-12 text-center text-gray-500">
-                                <svg class="w-12 h-12 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                           d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
                                 </svg>
@@ -220,7 +226,7 @@
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
                             <div class="flex-shrink-0">
-                                <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                                 </svg>
                             </div>
@@ -233,9 +239,10 @@
                                 </p>
                             </div>
                         </div>
-                        <button onclick="closeUserModal()"
-                                class="text-white hover:text-gray-200 focus:outline-none focus:text-gray-200 transition ease-in-out duration-150">
-                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <button type="button" onclick="closeUserModal()"
+                                aria-label="Cerrar"
+                                class="text-white hover:text-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#a00340] transition ease-in-out duration-150">
+                            <svg aria-hidden="true" focusable="false" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
                         </button>
@@ -249,7 +256,7 @@
                         <!-- Información Personal -->
                         <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-5 border border-gray-200">
                             <h4 class="text-sm font-semibold text-gray-900 mb-4 flex items-center">
-                                <svg class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                           d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                                 </svg>
@@ -259,135 +266,143 @@
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
                                 <!-- Nombre -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Nombres <span class="text-red-500">*</span>
+                                    <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Nombres <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <input type="text"
                                            name="name"
                                            id="name"
+                                           aria-describedby="error-name"
                                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
-                                           placeholder="Ej: Juan Carlos" required>
-                                    <div class="text-red-600 text-sm mt-1" id="error-name"></div>
+                                           placeholder="Ej: Juan Carlos" required aria-required="true">
+                                    <div class="text-red-600 text-sm mt-1" id="error-name" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Apellido Paterno -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <label for="apellido_paterno" class="block text-sm font-semibold text-gray-700 mb-2">
                                         Apellido Paterno
                                     </label>
                                     <input type="text"
                                            name="apellido_paterno"
                                            id="apellido_paterno"
+                                           aria-describedby="error-apellido_paterno"
                                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                                            placeholder="Ej: Pérez">
-                                    <div class="text-red-600 text-sm mt-1" id="error-apellido_paterno"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-apellido_paterno" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Apellido Materno -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <label for="apellido_materno" class="block text-sm font-semibold text-gray-700 mb-2">
                                         Apellido Materno
                                     </label>
                                     <input type="text"
                                            name="apellido_materno"
                                            id="apellido_materno"
+                                           aria-describedby="error-apellido_materno"
                                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                                            placeholder="Ej: García">
-                                    <div class="text-red-600 text-sm mt-1" id="error-apellido_materno"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-apellido_materno" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Fecha de Nacimiento -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <label for="fecha_nacimiento" class="block text-sm font-semibold text-gray-700 mb-2">
                                         Fecha de Nacimiento
                                     </label>
                                     <input type="date"
                                            name="fecha_nacimiento"
                                            id="fecha_nacimiento"
+                                           aria-describedby="error-fecha_nacimiento"
                                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200"
                                            placeholder="YYYY-MM-DD">
-                                    <div class="text-red-600 text-sm mt-1" id="error-fecha_nacimiento"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-fecha_nacimiento" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Email -->
                                 <div class="lg:col-span-2">
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Email <span class="text-red-500">*</span>
+                                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Correo electrónico <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <input type="email"
                                            name="email"
                                            id="email"
+                                           aria-describedby="error-email"
                                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
-                                           placeholder="Ej: juan.perez@unamad.edu.pe" required>
-                                    <div class="text-red-600 text-sm mt-1" id="error-email"></div>
+                                           placeholder="Ej: juan.perez@unamad.edu.pe" required aria-required="true">
+                                    <div class="text-red-600 text-sm mt-1" id="error-email" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Tipo de Documento -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Tipo de Documento <span class="text-red-500">*</span>
+                                    <label for="tipo_documento" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Tipo de Documento <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
-                                    <select name="tipo_documento" id="tipo_documento"
-                                            class="w-full appearance-none px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 bg-white" required>
+                                    <select name="tipo_documento" id="tipo_documento" aria-describedby="error-tipo_documento"
+                                            class="w-full appearance-none px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 bg-white" required aria-required="true">
                                         <option value="" disabled selected>Seleccione tipo</option>
                                         <option value="dni">DNI</option>
                                         <option value="carnet_extranjeria">Carnet de Extranjería</option>
                                         <option value="pasaporte">Pasaporte</option>
                                         <option value="cedula">Cédula de Identidad</option>
                                     </select>
-                                    <div class="text-red-600 text-sm mt-1" id="error-tipo_documento"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-tipo_documento" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Número de Documento -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Número de Documento <span class="text-red-500">*</span>
+                                    <label for="numero_documento" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Número de Documento <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
                                         <input type="text"
                                                name="numero_documento"
                                                id="numero_documento"
+                                               aria-describedby="numero_documento-help error-numero_documento success-consulta"
                                                class="w-full px-4 py-3 pr-12 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                                                placeholder="Ej: 12345678"
                                                oninput="handleDocumentInput(this.value)"
-                                               required>
-                                        <div id="consulta-loading" class="absolute right-2 top-1/2 transform -translate-y-1/2 hidden">
-                                            <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-[#db0455]"></div>
+                                               required aria-required="true">
+                                        <div id="consulta-loading" role="status" class="absolute right-2 top-1/2 transform -translate-y-1/2 hidden">
+                                            <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-[#db0455]" aria-hidden="true"></div>
+                                            <span class="sr-only">Consultando DNI…</span>
                                         </div>
                                     </div>
-                                    <div class="text-red-600 text-sm mt-1" id="error-numero_documento"></div>
-                                    <div class="text-green-600 text-sm mt-1" id="success-consulta"></div>
+                                    <p id="numero_documento-help" class="text-xs text-gray-500 mt-1">Si el tipo es DNI, al escribir 8 dígitos se completan automáticamente los nombres, apellidos y fecha de nacimiento que estén vacíos.</p>
+                                    <div class="text-red-600 text-sm mt-1" id="error-numero_documento" aria-live="polite"></div>
+                                    <div class="text-green-600 text-sm mt-1" id="success-consulta" role="status" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Rol -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Rol <span class="text-red-500">*</span>
+                                    <label for="rol" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Rol <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
-                                    <select name="rol" id="rol"
-                                            class="w-full appearance-none px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 bg-white" required>
+                                    <select name="rol" id="rol" aria-describedby="error-rol"
+                                            class="w-full appearance-none px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 bg-white" required aria-required="true">
                                         <option value="" disabled selected>Seleccione rol</option>
-                                        <option value="admin">🔴 Administrador</option>
-                                        <option value="editor">🔵 Editor</option>
-                                        <option value="moderador">🟣 Moderador</option>
-                                        <option value="usuario">⚪ Usuario</option>
+                                        <option value="admin">Administrador</option>
+                                        <option value="editor">Editor</option>
+                                        <option value="moderador">Moderador</option>
+                                        <option value="usuario">Usuario</option>
                                     </select>
-                                    <div class="text-red-600 text-sm mt-1" id="error-rol"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-rol" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Estado -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <span class="block text-sm font-semibold text-gray-700 mb-2">
                                         Estado
-                                    </label>
+                                    </span>
                                     <div class="flex items-center">
-                                        <input type="checkbox" name="estado" id="estado" value="1" checked
+                                        <input type="checkbox" name="estado" id="estado" value="1" checked aria-describedby="estado-help"
                                                class="w-5 h-5 rounded-md border-2 border-green-400 text-green-500 shadow-sm focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50">
                                         <label for="estado" class="ml-3 block text-sm font-semibold text-gray-700 cursor-pointer select-none">
-                                            ✅ Usuario activo
+                                            <span aria-hidden="true">✅</span> Usuario activo
                                         </label>
                                     </div>
-                                    <p class="text-xs text-gray-600 mt-2 ml-8">
+                                    <p id="estado-help" class="text-xs text-gray-600 mt-2 ml-8">
                                         Los usuarios inactivos no pueden acceder al sistema
                                     </p>
                                 </div>
@@ -397,7 +412,7 @@
                         <!-- Contraseña (solo para crear) -->
                         <div id="password-section" class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-5 border border-gray-200">
                             <h4 class="text-sm font-semibold text-gray-900 mb-4 flex items-center">
-                                <svg class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                           d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v-2L3.257 9.257a6 6 0 018.486-8.486L17 7"></path>
                                 </svg>
@@ -406,58 +421,65 @@
 
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Contraseña <span class="text-red-500">*</span>
+                                    <label for="password" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Contraseña <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
                                         <input type="password"
                                                name="password"
                                                id="password"
+                                               aria-describedby="password-help error-password"
+                                               autocomplete="new-password"
                                                class="w-full px-4 py-3 pr-12 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                                                placeholder="Mínimo 8 caracteres"
                                                oninput="checkPasswordMatch()"
-                                               required>
+                                               required aria-required="true">
                                         <button type="button"
                                                 onclick="togglePassword('password')"
-                                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
-                                            <svg id="password-eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                aria-label="Mostrar contraseña" aria-pressed="false"
+                                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800">
+                                            <svg aria-hidden="true" focusable="false" id="password-eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                                             </svg>
-                                            <svg id="password-eye-closed" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" id="password-eye-closed" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"></path>
                                             </svg>
                                         </button>
                                     </div>
-                                    <div class="text-red-600 text-sm mt-1" id="error-password"></div>
+                                    <p id="password-help" class="text-xs text-gray-500 mt-1">Mínimo 8 caracteres.</p>
+                                    <div class="text-red-600 text-sm mt-1" id="error-password" aria-live="polite"></div>
                                 </div>
 
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Confirmar Contraseña <span class="text-red-500">*</span>
+                                    <label for="password_confirmation" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Confirmar Contraseña <span class="text-red-600" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
                                         <input type="password"
                                                name="password_confirmation"
                                                id="password_confirmation"
+                                               aria-describedby="error-password_confirmation password-match-success"
+                                               autocomplete="new-password"
                                                class="w-full px-4 py-3 pr-12 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                                                placeholder="Repita la contraseña"
                                                oninput="checkPasswordMatch()"
-                                               required>
+                                               required aria-required="true">
                                         <button type="button"
                                                 onclick="togglePassword('password_confirmation')"
-                                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
-                                            <svg id="password_confirmation-eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                aria-label="Mostrar confirmación de contraseña" aria-pressed="false"
+                                                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800">
+                                            <svg aria-hidden="true" focusable="false" id="password_confirmation-eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                                             </svg>
-                                            <svg id="password_confirmation-eye-closed" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <svg aria-hidden="true" focusable="false" id="password_confirmation-eye-closed" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"></path>
                                             </svg>
                                         </button>
                                     </div>
-                                    <div class="text-red-600 text-sm mt-1" id="error-password_confirmation"></div>
-                                    <div class="text-green-600 text-sm mt-1" id="password-match-success"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-password_confirmation" aria-live="polite"></div>
+                                    <div class="text-green-600 text-sm mt-1" id="password-match-success" role="status" aria-live="polite"></div>
                                 </div>
                             </div>
                         </div>
@@ -465,7 +487,7 @@
                         <!-- Avatar -->
                         <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-5 border border-gray-200">
                             <h4 class="text-sm font-semibold text-gray-900 mb-4 flex items-center">
-                                <svg class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                           d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                 </svg>
@@ -473,16 +495,16 @@
                             </h4>
 
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                    Seleccionar Avatar <span class="text-gray-400 font-normal">(Opcional)</span>
+                                <label for="avatar" class="block text-sm font-semibold text-gray-700 mb-2">
+                                    Seleccionar Avatar <span class="text-gray-600 font-normal">(Opcional)</span>
                                 </label>
                                 <div class="relative">
-                                    <input type="file" name="avatar" id="avatar" accept="image/*"
+                                    <input type="file" name="avatar" id="avatar" accept="image/*" aria-describedby="avatar-help error-avatar"
                                            class="w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-xl hover:border-[#db0455] transition-colors duration-200 text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gradient-to-r file:from-[#db0455] file:to-[#a00340] file:text-white hover:file:shadow-lg file:cursor-pointer">
                                 </div>
-                                <div class="text-red-600 text-sm mt-1" id="error-avatar"></div>
-                                <p class="text-xs text-gray-500 mt-2 flex items-center">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <div class="text-red-600 text-sm mt-1" id="error-avatar" aria-live="polite"></div>
+                                <p id="avatar-help" class="text-xs text-gray-500 mt-2 flex items-center">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
                                     JPG, PNG, GIF • Máximo 2MB • Si no se selecciona, se generará automáticamente
@@ -504,19 +526,19 @@
                         </div>
                         <div class="flex space-x-3">
                             <button type="button" onclick="closeUserModal()"
-                                    class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out">
+                                    class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0455] focus-visible:ring-offset-2 active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out">
                                 Cancelar
                             </button>
                             <button type="submit" id="submitBtn"
-                                    class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-[#db0455] to-[#a00340] hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 focus:outline-none focus:shadow-outline disabled:opacity-50">
+                                    class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-[#db0455] to-[#a00340] hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0455] focus-visible:ring-offset-2 disabled:opacity-50">
                                 <span id="submitText" class="inline-flex items-center">
-                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                     </svg>
                                     Crear Usuario
                                 </span>
-                                <span id="loadingText" class="hidden flex items-center">
-                                    <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                                <span id="loadingText" role="status" class="hidden flex items-center">
+                                    <svg aria-hidden="true" focusable="false" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
                                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                     </svg>
@@ -535,10 +557,10 @@
         <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
                 <!-- Header -->
-                <div class="bg-gradient-to-r from-green-500 to-green-600 px-6 py-4">
+                <div class="bg-gradient-to-r from-green-700 to-green-800 px-6 py-4">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
-                            <svg class="h-6 w-6 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="h-6 w-6 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                       d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v-2L3.257 9.257a6 6 0 018.486-8.486L17 7"></path>
                             </svg>
@@ -546,9 +568,10 @@
                                 Cambiar Contraseña
                             </h3>
                         </div>
-                        <button onclick="closePasswordModal()"
-                                class="text-white hover:text-gray-200 focus:outline-none focus:text-gray-200 transition ease-in-out duration-150">
-                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <button type="button" onclick="closePasswordModal()"
+                                aria-label="Cerrar"
+                                class="text-white hover:text-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#a00340] transition ease-in-out duration-150">
+                            <svg aria-hidden="true" focusable="false" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
                         </button>
@@ -561,78 +584,86 @@
                         <p class="text-sm text-gray-600">
                             Cambiar contraseña para: <strong id="password-user-name"></strong>
                         </p>
+                        <p class="text-sm text-gray-500">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
 
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                Nueva Contraseña <span class="text-red-500">*</span>
+                            <label for="new_password" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Nueva Contraseña <span class="text-red-600" aria-hidden="true">*</span>
                             </label>
                             <div class="relative">
                                 <input type="password"
                                        name="password"
                                        id="new_password"
+                                       aria-describedby="new_password-help error-new_password"
+                                       autocomplete="new-password"
                                        class="w-full px-4 py-3 pr-12 rounded-xl border-2 border-gray-200 focus:border-green-500 focus:ring-4 focus:ring-green-500/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                                        placeholder="Mínimo 8 caracteres"
                                        oninput="checkNewPasswordMatch()"
-                                       required>
+                                       required aria-required="true">
                                 <button type="button"
                                         onclick="togglePassword('new_password')"
-                                        class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
-                                    <svg id="new_password-eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        aria-label="Mostrar nueva contraseña" aria-pressed="false"
+                                        class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800">
+                                    <svg aria-hidden="true" focusable="false" id="new_password-eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                                     </svg>
-                                    <svg id="new_password-eye-closed" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" id="new_password-eye-closed" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"></path>
                                     </svg>
                                 </button>
                             </div>
-                            <div class="text-red-600 text-sm mt-1" id="error-new_password"></div>
+                            <p id="new_password-help" class="text-xs text-gray-500 mt-1">Mínimo 8 caracteres.</p>
+                            <div class="text-red-600 text-sm mt-1" id="error-new_password" aria-live="polite"></div>
                         </div>
 
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                Confirmar Nueva Contraseña <span class="text-red-500">*</span>
+                            <label for="new_password_confirmation" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Confirmar Nueva Contraseña <span class="text-red-600" aria-hidden="true">*</span>
                             </label>
                             <div class="relative">
                                 <input type="password"
                                        name="password_confirmation"
                                        id="new_password_confirmation"
+                                       aria-describedby="error-new_password_confirmation new-password-match-success"
+                                       autocomplete="new-password"
                                        class="w-full px-4 py-3 pr-12 rounded-xl border-2 border-gray-200 focus:border-green-500 focus:ring-4 focus:ring-green-500/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                                        placeholder="Repita la nueva contraseña"
                                        oninput="checkNewPasswordMatch()"
-                                       required>
+                                       required aria-required="true">
                                 <button type="button"
                                         onclick="togglePassword('new_password_confirmation')"
-                                        class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600">
-                                    <svg id="new_password_confirmation-eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        aria-label="Mostrar confirmación de nueva contraseña" aria-pressed="false"
+                                        class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800">
+                                    <svg aria-hidden="true" focusable="false" id="new_password_confirmation-eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                                     </svg>
-                                    <svg id="new_password_confirmation-eye-closed" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg aria-hidden="true" focusable="false" id="new_password_confirmation-eye-closed" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"></path>
                                     </svg>
                                 </button>
                             </div>
-                            <div class="text-red-600 text-sm mt-1" id="error-new_password_confirmation"></div>
-                            <div class="text-green-600 text-sm mt-1" id="new-password-match-success"></div>
+                            <div class="text-red-600 text-sm mt-1" id="error-new_password_confirmation" aria-live="polite"></div>
+                            <div class="text-green-600 text-sm mt-1" id="new-password-match-success" role="status" aria-live="polite"></div>
                         </div>
                     </div>
 
                     <div class="flex justify-end space-x-3 mt-6">
                         <button type="button" onclick="closePasswordModal()"
-                                class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out">
+                                class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0455] focus-visible:ring-offset-2 active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out">
                             Cancelar
                         </button>
                         <button type="submit" id="passwordSubmitBtn"
-                                class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-green-500 to-green-600 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 focus:outline-none focus:shadow-outline disabled:opacity-50">
+                                class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-green-700 to-green-800 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0455] focus-visible:ring-offset-2 disabled:opacity-50">
                             <span id="passwordSubmitText" class="inline-flex items-center">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
                                 Cambiar Contraseña
                             </span>
-                            <span id="passwordLoadingText" class="hidden flex items-center">
-                                <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                            <span id="passwordLoadingText" role="status" class="hidden flex items-center">
+                                <svg aria-hidden="true" focusable="false" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
                                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                 </svg>
@@ -651,6 +682,32 @@
 // Modal state variables
 let currentUserId = null;
 let isEditMode = false;
+
+// Accesibilidad de los modales: foco inicial, trampa de foco y retorno del foco al disparador
+function a11yModalAbrir(modal) {
+    modal.__disparador = document.activeElement;
+    setTimeout(() => {
+        const primero = modal.querySelector('button, [href], input:not([type="hidden"]), select, textarea');
+        if (primero) primero.focus();
+    }, 50);
+    if (!modal.__trampa) {
+        modal.__trampa = true;
+        modal.addEventListener('keydown', function (e) {
+            if (e.key !== 'Tab') return;
+            const els = Array.from(modal.querySelectorAll('button, [href], input:not([type="hidden"]), select, textarea, [tabindex]:not([tabindex="-1"])'))
+                .filter(el => !el.disabled && el.offsetParent !== null);
+            if (!els.length) return;
+            const primero = els[0], ultimo = els[els.length - 1];
+            if (e.shiftKey && document.activeElement === primero) { e.preventDefault(); ultimo.focus(); }
+            else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primero.focus(); }
+        });
+    }
+}
+function a11yModalCerrar(modal) {
+    const d = modal.__disparador;
+    modal.__disparador = null;
+    if (d && typeof d.focus === 'function' && document.contains(d)) d.focus();
+}
 
 // Toggle estado function
 function toggleEstado(userId, estadoActual) {
@@ -684,7 +741,9 @@ function openUserModal(userId = null) {
     isEditMode = userId !== null;
 
     // Show modal
-    document.getElementById('userModal').classList.remove('hidden');
+    const modalEl = document.getElementById('userModal');
+    modalEl.classList.remove('hidden');
+    a11yModalAbrir(modalEl);
 
     // Update modal title and button text
     const modalTitle = document.getElementById('modal-title');
@@ -695,7 +754,7 @@ function openUserModal(userId = null) {
         modalTitle.textContent = 'Editar Usuario';
         modalTitle.nextElementSibling.textContent = 'Modifique los campos necesarios para actualizar el usuario';
         submitText.innerHTML = `
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
             Actualizar Usuario
@@ -711,7 +770,7 @@ function openUserModal(userId = null) {
         modalTitle.textContent = 'Crear Nuevo Usuario';
         modalTitle.nextElementSibling.textContent = 'Complete todos los campos para crear el usuario';
         submitText.innerHTML = `
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
             Crear Usuario
@@ -776,13 +835,18 @@ function loadUserData(userId) {
 }
 
 function closeUserModal() {
-    document.getElementById('userModal').classList.add('hidden');
+    const modalEl = document.getElementById('userModal');
+    if (modalEl.classList.contains('hidden')) return;
+    modalEl.classList.add('hidden');
+    a11yModalCerrar(modalEl);
 }
 
 // Password modal functions
 function openPasswordModal(userId, userName) {
     document.getElementById('password-user-name').textContent = userName;
-    document.getElementById('passwordModal').classList.remove('hidden');
+    const modalEl = document.getElementById('passwordModal');
+    modalEl.classList.remove('hidden');
+    a11yModalAbrir(modalEl);
 
     // Store user ID for password change
     document.getElementById('passwordForm').dataset.userId = userId;
@@ -793,7 +857,10 @@ function openPasswordModal(userId, userName) {
 }
 
 function closePasswordModal() {
-    document.getElementById('passwordModal').classList.add('hidden');
+    const modalEl = document.getElementById('passwordModal');
+    if (modalEl.classList.contains('hidden')) return;
+    modalEl.classList.add('hidden');
+    a11yModalCerrar(modalEl);
 }
 
 // Clear validation errors
@@ -803,33 +870,53 @@ function clearErrors() {
             el.textContent = '';
         }
     });
+    document.querySelectorAll('#userForm [aria-invalid="true"]').forEach(el => {
+        el.removeAttribute('aria-invalid');
+    });
 }
 
 function clearPasswordErrors() {
     document.querySelectorAll('[id^="error-new_"]').forEach(el => {
         el.textContent = '';
     });
+    document.querySelectorAll('#passwordForm [aria-invalid="true"]').forEach(el => {
+        el.removeAttribute('aria-invalid');
+    });
 }
 
 // Show validation errors
 function showErrors(errors) {
     clearErrors();
+    let primero = null;
     for (const [field, messages] of Object.entries(errors)) {
         const errorElement = document.getElementById(`error-${field}`);
         if (errorElement) {
             errorElement.textContent = messages[0];
         }
+        const control = document.querySelector(`#userForm [name="${field}"]`);
+        if (control) {
+            control.setAttribute('aria-invalid', 'true');
+            if (!primero) primero = control;
+        }
     }
+    if (primero) primero.focus();
 }
 
 function showPasswordErrors(errors) {
     clearPasswordErrors();
+    let primero = null;
     for (const [field, messages] of Object.entries(errors)) {
         const errorElement = document.getElementById(`error-new_${field}`);
         if (errorElement) {
             errorElement.textContent = messages[0];
         }
+        const control = document.getElementById(`new_${field}`);
+        if (control) {
+            control.setAttribute('aria-invalid', 'true');
+            if (!primero) primero = control;
+        }
     }
+    if (primero) primero.focus();
 }
 
 // Form submission
@@ -1097,14 +1184,18 @@ function togglePassword(fieldId) {
     const eyeOpen = document.getElementById(fieldId + '-eye-open');
     const eyeClosed = document.getElementById(fieldId + '-eye-closed');
 
+    const boton = eyeOpen ? eyeOpen.closest('button') : null;
+
     if (field.type === 'password') {
         field.type = 'text';
         eyeOpen.classList.add('hidden');
         eyeClosed.classList.remove('hidden');
+        if (boton) boton.setAttribute('aria-pressed', 'true');
     } else {
         field.type = 'password';
         eyeOpen.classList.remove('hidden');
         eyeClosed.classList.add('hidden');
+        if (boton) boton.setAttribute('aria-pressed', 'false');
     }
 }
 

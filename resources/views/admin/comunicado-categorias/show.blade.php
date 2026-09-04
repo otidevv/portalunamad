@@ -1,17 +1,19 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Categoría: ' . $comunicadoCategoria->nombre)
+@section('header', 'Detalle de Categoría')
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">Detalle de Categoría</h1>
+            <h2 class="text-2xl font-bold text-gray-800">Detalle de Categoría</h2>
             <p class="text-gray-600 text-sm mt-1">Vista completa de la categoría "{{ $comunicadoCategoria->nombre }}"</p>
         </div>
         <div class="flex space-x-3">
             <a href="{{ route('admin.comunicado-categorias.edit', $comunicadoCategoria) }}" 
                class="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                           d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                 </svg>
@@ -19,7 +21,7 @@
             </a>
             <a href="{{ route('admin.comunicado-categorias.index') }}" 
                class="flex items-center space-x-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                           d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                 </svg>
@@ -53,7 +55,7 @@
             <div class="bg-white rounded-lg shadow-sm">
                 <div class="px-6 py-4 border-b border-gray-200">
                     <h3 class="text-lg font-semibold text-gray-800 flex items-center">
-                        <svg class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                                   d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
                         </svg>
@@ -62,9 +64,9 @@
                 </div>
                 
                 @if($comunicadoCategoria->comunicados->count() > 0)
-                    <div class="divide-y divide-gray-200">
+                    <ul class="divide-y divide-gray-200">
                         @foreach($comunicadoCategoria->comunicados as $comunicado)
-                            <div class="px-6 py-4 hover:bg-gray-50 transition-colors">
+                            <li class="px-6 py-4 hover:bg-gray-50 transition-colors">
                                 <div class="flex items-start justify-between">
                                     <div class="flex-1">
                                         <h4 class="font-medium text-gray-900">{{ $comunicado->titulo }}</h4>
@@ -74,7 +76,7 @@
                                             <span>{{ $comunicado->created_at->format('d/m/Y H:i') }}</span>
                                             @if($comunicado->fecha_fin)
                                                 <span class="mx-2">•</span>
-                                                <span class="{{ $comunicado->fecha_fin <= now() ? 'text-red-600' : 'text-green-600' }}">
+                                                <span class="{{ $comunicado->fecha_fin <= now() ? 'text-red-600' : 'text-green-700' }}">
                                                     {{ $comunicado->fecha_fin <= now() ? 'Vencido' : 'Vigente' }}
                                                 </span>
                                             @endif
@@ -85,8 +87,8 @@
                                             {{ $comunicado->estado ? 'Activo' : 'Inactivo' }}
                                         </span>
                                         <a href="{{ route('admin.comunicados.show', $comunicado) }}" 
-                                           class="text-blue-600 hover:text-blue-900" title="Ver comunicado">
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                           class="text-blue-600 hover:text-blue-900" title="Ver comunicado" aria-label="Ver comunicado {{ $comunicado->titulo }}">
+                                            <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                                                       d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -95,19 +97,19 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </li>
                         @endforeach
-                    </div>
+                    </ul>
                 @else
                     <div class="px-6 py-12 text-center text-gray-500">
-                        <svg class="w-12 h-12 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                                   d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
                         </svg>
                         <p>Esta categoría no tiene comunicados asignados</p>
                         <a href="{{ route('admin.comunicados.create', ['categoria' => $comunicadoCategoria->id]) }}" 
                            class="inline-flex items-center mt-4 px-4 py-2 text-sm font-medium text-white bg-[#db0455] rounded-lg hover:bg-[#a00340] transition-colors">
-                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                             </svg>
                             Crear primer comunicado
@@ -122,52 +124,52 @@
             <!-- Estadísticas -->
             <div class="bg-white rounded-lg shadow-sm p-6">
                 <h3 class="text-lg font-semibold text-gray-800 mb-4">Estadísticas</h3>
-                
-                <div class="space-y-4">
+
+                <dl class="space-y-4">
                     <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-600">Total de comunicados:</span>
-                        <span class="font-semibold text-lg">{{ $comunicadoCategoria->comunicados->count() }}</span>
+                        <dt class="text-sm text-gray-600">Total de comunicados:</dt>
+                        <dd class="font-semibold text-lg">{{ $comunicadoCategoria->comunicados->count() }}</dd>
                     </div>
-                    
+
                     <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-600">Comunicados activos:</span>
-                        <span class="font-semibold text-green-600">{{ $comunicadoCategoria->comunicados->where('estado', 1)->count() }}</span>
+                        <dt class="text-sm text-gray-600">Comunicados activos:</dt>
+                        <dd class="font-semibold text-green-700">{{ $comunicadoCategoria->comunicados->where('estado', 1)->count() }}</dd>
                     </div>
-                    
+
                     <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-600">Comunicados inactivos:</span>
-                        <span class="font-semibold text-red-600">{{ $comunicadoCategoria->comunicados->where('estado', 0)->count() }}</span>
+                        <dt class="text-sm text-gray-600">Comunicados inactivos:</dt>
+                        <dd class="font-semibold text-red-600">{{ $comunicadoCategoria->comunicados->where('estado', 0)->count() }}</dd>
                     </div>
-                    
+
                     <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-600">Comunicados vigentes:</span>
-                        <span class="font-semibold text-blue-600">
+                        <dt class="text-sm text-gray-600">Comunicados vigentes:</dt>
+                        <dd class="font-semibold text-blue-600">
                             {{ $comunicadoCategoria->comunicados->filter(function($c) { return !$c->fecha_fin || $c->fecha_fin > now(); })->count() }}
-                        </span>
+                        </dd>
                     </div>
-                </div>
+                </dl>
             </div>
 
             <!-- Información -->
             <div class="bg-white rounded-lg shadow-sm p-6">
                 <h3 class="text-lg font-semibold text-gray-800 mb-4">Información</h3>
-                
-                <div class="space-y-3">
+
+                <dl class="space-y-3">
                     <div>
-                        <span class="text-sm text-gray-600">Estado:</span>
-                        <p class="font-medium">{{ $comunicadoCategoria->estado ? 'Activa' : 'Inactiva' }}</p>
+                        <dt class="text-sm text-gray-600">Estado:</dt>
+                        <dd class="font-medium">{{ $comunicadoCategoria->estado ? 'Activa' : 'Inactiva' }}</dd>
                     </div>
-                    
+
                     <div>
-                        <span class="text-sm text-gray-600">Creada:</span>
-                        <p class="font-medium">{{ $comunicadoCategoria->created_at->format('d/m/Y H:i') }}</p>
+                        <dt class="text-sm text-gray-600">Creada:</dt>
+                        <dd class="font-medium">{{ $comunicadoCategoria->created_at->format('d/m/Y H:i') }}</dd>
                     </div>
-                    
+
                     <div>
-                        <span class="text-sm text-gray-600">Última actualización:</span>
-                        <p class="font-medium">{{ $comunicadoCategoria->updated_at->format('d/m/Y H:i') }}</p>
+                        <dt class="text-sm text-gray-600">Última actualización:</dt>
+                        <dd class="font-medium">{{ $comunicadoCategoria->updated_at->format('d/m/Y H:i') }}</dd>
                     </div>
-                </div>
+                </dl>
             </div>
 
             <!-- Acciones -->
@@ -175,14 +177,14 @@
                 <h3 class="text-lg font-semibold text-gray-800 mb-4">Acciones Rápidas</h3>
                 
                 <div class="space-y-3">
-                    <button onclick="toggleEstado()" 
+                    <button type="button" onclick="toggleEstado()" 
                             class="w-full px-4 py-2 text-sm font-medium rounded-lg {{ $comunicadoCategoria->estado ? 'bg-red-100 text-red-700 hover:bg-red-200' : 'bg-green-100 text-green-700 hover:bg-green-200' }} transition-colors">
                         {{ $comunicadoCategoria->estado ? 'Desactivar Categoría' : 'Activar Categoría' }}
                     </button>
                     
                     <a href="{{ route('admin.comunicados.create', ['categoria' => $comunicadoCategoria->id]) }}" 
                        class="w-full inline-flex justify-center items-center px-4 py-2 text-sm font-medium text-white bg-[#db0455] hover:bg-[#a00340] rounded-lg transition-colors">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                         </svg>
                         Nuevo Comunicado

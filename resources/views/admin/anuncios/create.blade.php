@@ -1,22 +1,24 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Crear anuncio')
 @section('header', 'Crear Nuevo Anuncio')
 
 @section('content')
 <div class="p-6">
     <!-- Breadcrumb -->
-    <nav class="mb-6 text-sm">
+    <nav class="mb-6 text-sm" aria-label="Migas de pan">
         <ol class="flex items-center space-x-2">
-            <li><a href="{{ route('admin.dashboard') }}" class="text-gray-500 hover:text-gray-700">Dashboard</a></li>
-            <li><span class="text-gray-400">/</span></li>
+            <li><a href="{{ route('admin.dashboard') }}" class="text-gray-500 hover:text-gray-700">Panel de administración</a></li>
+            <li aria-hidden="true"><span class="text-gray-400">/</span></li>
             <li><a href="{{ route('admin.anuncios.index') }}" class="text-gray-500 hover:text-gray-700">Anuncios</a></li>
-            <li><span class="text-gray-400">/</span></li>
-            <li class="text-gray-700 font-medium">Crear Nuevo</li>
+            <li aria-hidden="true"><span class="text-gray-400">/</span></li>
+            <li class="text-gray-700 font-medium" aria-current="page">Crear Nuevo</li>
         </ol>
     </nav>
 
     <form action="{{ route('admin.anuncios.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
         @csrf
+        <p class="text-sm text-gray-600">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
         
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <!-- Columna Principal -->
@@ -29,7 +31,7 @@
                         <!-- Título -->
                         <div>
                             <label for="titulo" class="block text-sm font-medium text-gray-700 mb-1">
-                                Título <span class="text-red-500">*</span>
+                                Título <span class="text-red-600" aria-hidden="true">*</span>
                             </label>
                             <input type="text" 
                                    name="titulo" 
@@ -37,25 +39,25 @@
                                    value="{{ old('titulo') }}"
                                    class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] @error('titulo') border-red-500 @enderror"
                                    placeholder="Ingrese el título del anuncio"
-                                   required>
+                                   required aria-required="true" @error('titulo') aria-invalid="true" aria-describedby="titulo-error" @enderror>
                             @error('titulo')
-                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                <p id="titulo-error" class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
 
                         <!-- Descripción -->
                         <div>
                             <label for="descripcion" class="block text-sm font-medium text-gray-700 mb-1">
-                                Descripción <span class="text-red-500">*</span>
+                                Descripción <span class="text-red-600" aria-hidden="true">*</span>
                             </label>
                             <textarea name="descripcion" 
                                       id="descripcion" 
                                       rows="6"
                                       class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] @error('descripcion') border-red-500 @enderror"
                                       placeholder="Escriba la descripción completa del anuncio"
-                                      required>{{ old('descripcion') }}</textarea>
+                                      required aria-required="true" @error('descripcion') aria-invalid="true" aria-describedby="descripcion-error" @enderror>{{ old('descripcion') }}</textarea>
                             @error('descripcion')
-                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                <p id="descripcion-error" class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
 
@@ -63,12 +65,12 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label for="categoria" class="block text-sm font-medium text-gray-700 mb-1">
-                                    Categoría <span class="text-red-500">*</span>
+                                    Categoría <span class="text-red-600" aria-hidden="true">*</span>
                                 </label>
                                 <select name="categoria" 
                                         id="categoria" 
                                         class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] @error('categoria') border-red-500 @enderror"
-                                        required>
+                                        required aria-required="true" @error('categoria') aria-invalid="true" aria-describedby="categoria-error" @enderror>
                                     <option value="">Seleccione una categoría</option>
                                     <option value="noticia" {{ old('categoria') == 'noticia' ? 'selected' : '' }}>Noticia</option>
                                     <option value="evento" {{ old('categoria') == 'evento' ? 'selected' : '' }}>Evento</option>
@@ -77,24 +79,24 @@
                                     <option value="otro" {{ old('categoria') == 'otro' ? 'selected' : '' }}>Otro</option>
                                 </select>
                                 @error('categoria')
-                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                    <p id="categoria-error" class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
 
                             <div>
                                 <label for="estado" class="block text-sm font-medium text-gray-700 mb-1">
-                                    Estado <span class="text-red-500">*</span>
+                                    Estado <span class="text-red-600" aria-hidden="true">*</span>
                                 </label>
                                 <select name="estado" 
                                         id="estado" 
                                         class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] @error('estado') border-red-500 @enderror"
-                                        required>
+                                        required aria-required="true" @error('estado') aria-invalid="true" aria-describedby="estado-error" @enderror>
                                     <option value="borrador" {{ old('estado', 'borrador') == 'borrador' ? 'selected' : '' }}>Borrador</option>
                                     <option value="publicado" {{ old('estado') == 'publicado' ? 'selected' : '' }}>Publicado</option>
                                     <option value="archivado" {{ old('estado') == 'archivado' ? 'selected' : '' }}>Archivado</option>
                                 </select>
                                 @error('estado')
-                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                    <p id="estado-error" class="mt-1 text-sm text-red-600">{{ $message }}</p>
                                 @enderror
                             </div>
                         </div>
@@ -108,27 +110,26 @@
                     <div class="space-y-4">
                         <!-- Imagen Principal -->
                         <div>
-                            <label for="imagen_principal" class="block text-sm font-medium text-gray-700 mb-1">
+                            <span class="block text-sm font-medium text-gray-700 mb-1">
                                 Imagen Principal
-                            </label>
+                            </span>
                             <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg hover:border-[#db0455] transition-colors">
                                 <div class="space-y-1 text-center">
-                                    <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                                    <svg aria-hidden="true" focusable="false" class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
                                         <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                     <div class="flex text-sm text-gray-600">
                                         <label for="imagen_principal" class="relative cursor-pointer bg-white rounded-md font-medium text-[#db0455] hover:text-[#a00340] focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-[#db0455]">
-                                            <span>Subir imagen</span>
-                                            <input id="imagen_principal" name="imagen_principal" type="file" class="sr-only" accept="image/*" onchange="previewImage(this, 'preview-principal')">
+                                            <span>Subir imagen principal</span>
+                                            <input id="imagen_principal" name="imagen_principal" type="file" class="sr-only" accept="image/*" onchange="previewImage(this, 'preview-principal')" aria-describedby="imagen_principal-help @error('imagen_principal') imagen_principal-error @enderror" @error('imagen_principal') aria-invalid="true" @enderror>
                                         </label>
-                                        <p class="pl-1">o arrastrar aquí</p>
                                     </div>
-                                    <p class="text-xs text-gray-500">PNG, JPG, GIF hasta 5MB</p>
+                                    <p id="imagen_principal-help" class="text-xs text-gray-500">PNG, JPG, GIF hasta 5MB</p>
                                 </div>
                             </div>
                             <div id="preview-principal" class="mt-2"></div>
                             @error('imagen_principal')
-                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                <p id="imagen_principal-error" class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
 
@@ -143,11 +144,11 @@
                                    multiple
                                    accept="image/*"
                                    class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]"
-                                   onchange="previewMultipleImages(this, 'preview-adicionales')">
-                            <p class="text-xs text-gray-500 mt-1">Puede seleccionar múltiples imágenes</p>
+                                   onchange="previewMultipleImages(this, 'preview-adicionales')" aria-describedby="imagenes_adicionales-help @error('imagenes_adicionales.*') imagenes_adicionales-error @enderror" @error('imagenes_adicionales.*') aria-invalid="true" @enderror>
+                            <p id="imagenes_adicionales-help" class="text-xs text-gray-500 mt-1">Puede seleccionar múltiples imágenes</p>
                             <div id="preview-adicionales" class="mt-2 grid grid-cols-4 gap-2"></div>
                             @error('imagenes_adicionales.*')
-                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                <p id="imagenes_adicionales-error" class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                     </div>
@@ -159,12 +160,14 @@
                     
                     <div id="enlaces-container" class="space-y-3">
                         <div class="enlace-item grid grid-cols-1 md:grid-cols-2 gap-3">
-                            <input type="text" 
-                                   name="enlaces[0][titulo]" 
+                            <input type="text"
+                                   name="enlaces[0][titulo]"
+                                   aria-label="Título del enlace 1"
                                    placeholder="Título del enlace"
                                    class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
-                            <input type="url" 
-                                   name="enlaces[0][url]" 
+                            <input type="url"
+                                   name="enlaces[0][url]"
+                                   aria-label="URL del enlace 1"
                                    placeholder="https://ejemplo.com"
                                    class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
                         </div>
@@ -208,10 +211,10 @@
                                    name="fecha_publicacion" 
                                    id="fecha_publicacion"
                                    value="{{ old('fecha_publicacion') }}"
-                                   class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
-                            <p class="text-xs text-gray-500 mt-1">Dejar vacío para publicar inmediatamente</p>
+                                   class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]" aria-describedby="fecha_publicacion-help @error('fecha_publicacion') fecha_publicacion-error @enderror" @error('fecha_publicacion') aria-invalid="true" @enderror>
+                            <p id="fecha_publicacion-help" class="text-xs text-gray-500 mt-1">Dejar vacío para publicar inmediatamente</p>
                             @error('fecha_publicacion')
-                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                <p id="fecha_publicacion-error" class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
 
@@ -224,10 +227,10 @@
                                    name="fecha_expiracion" 
                                    id="fecha_expiracion"
                                    value="{{ old('fecha_expiracion') }}"
-                                   class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
-                            <p class="text-xs text-gray-500 mt-1">Dejar vacío para no expirar</p>
+                                   class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]" aria-describedby="fecha_expiracion-help @error('fecha_expiracion') fecha_expiracion-error @enderror" @error('fecha_expiracion') aria-invalid="true" @enderror>
+                            <p id="fecha_expiracion-help" class="text-xs text-gray-500 mt-1">Dejar vacío para no expirar</p>
                             @error('fecha_expiracion')
-                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                                <p id="fecha_expiracion-error" class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
                     </div>
@@ -261,19 +264,22 @@ function agregarEnlace() {
     const nuevoEnlace = document.createElement('div');
     nuevoEnlace.className = 'enlace-item grid grid-cols-1 md:grid-cols-2 gap-3 relative';
     nuevoEnlace.innerHTML = `
-        <input type="text" 
-               name="enlaces[${enlaceIndex}][titulo]" 
+        <input type="text"
+               name="enlaces[${enlaceIndex}][titulo]"
+               aria-label="Título del enlace ${enlaceIndex + 1}"
                placeholder="Título del enlace"
                class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
         <div class="relative">
-            <input type="url" 
-                   name="enlaces[${enlaceIndex}][url]" 
+            <input type="url"
+                   name="enlaces[${enlaceIndex}][url]"
+                   aria-label="URL del enlace ${enlaceIndex + 1}"
                    placeholder="https://ejemplo.com"
                    class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] pr-10">
-            <button type="button" 
-                    onclick="this.closest('.enlace-item').remove()" 
-                    class="absolute right-2 top-1/2 -translate-y-1/2 text-red-500 hover:text-red-700">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button type="button"
+                    onclick="this.closest('.enlace-item').remove()"
+                    aria-label="Eliminar este enlace"
+                    class="absolute right-2 top-1/2 -translate-y-1/2 text-red-600 hover:text-red-800">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
@@ -281,6 +287,7 @@ function agregarEnlace() {
     `;
     container.appendChild(nuevoEnlace);
     enlaceIndex++;
+    nuevoEnlace.querySelector('input').focus();
 }
 
 function previewImage(input, previewId) {
@@ -291,7 +298,7 @@ function previewImage(input, previewId) {
         const reader = new FileReader();
         reader.onload = function(e) {
             preview.innerHTML = `
-                <img src="${e.target.result}" class="mt-2 h-32 w-auto rounded-lg shadow-md">
+                <img src="${e.target.result}" alt="Vista previa de la imagen seleccionada" class="mt-2 h-32 w-auto rounded-lg shadow-md">
             `;
         }
         reader.readAsDataURL(input.files[0]);
@@ -303,11 +310,12 @@ function previewMultipleImages(input, previewId) {
     preview.innerHTML = '';
     
     if (input.files) {
-        Array.from(input.files).forEach(file => {
+        Array.from(input.files).forEach((file, idx) => {
             const reader = new FileReader();
             reader.onload = function(e) {
                 const img = document.createElement('img');
                 img.src = e.target.result;
+                img.alt = 'Vista previa de la imagen adicional ' + (idx + 1);
                 img.className = 'h-20 w-20 object-cover rounded-lg shadow-md';
                 preview.appendChild(img);
             }

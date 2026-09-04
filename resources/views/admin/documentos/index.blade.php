@@ -1,25 +1,27 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Documentos' . ($carpetaActual ? ' - ' . $carpetaActual->nombre : ''))
+@section('header', 'Gestión de Documentos')
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1 class="text-2xl font-bold text-gray-800">📁 Gestión de Documentos</h1>
+            <h2 class="text-2xl font-bold text-gray-800"><span aria-hidden="true">📁</span> Gestión de Documentos</h2>
             <p class="text-gray-600 text-sm mt-1">Administra documentos y carpetas del portal</p>
         </div>
         <div class="flex space-x-3">
-            <button onclick="openModal('carpeta')" 
-                    class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button type="button" onclick="openModal('carpeta')" 
+                    class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                 </svg>
                 <span>Nueva Carpeta</span>
             </button>
             @if($carpetaActual)
-            <button onclick="openModal('documento')" 
+            <button type="button" onclick="openModal('documento')" 
                     class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#db0455] to-[#a00340] text-white rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                 </svg>
                 <span>Nuevo Documento</span>
@@ -30,35 +32,39 @@
 
     <!-- Breadcrumb -->
     @if($breadcrumb->count() > 0)
-    <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
-        <div class="flex items-center space-x-2 text-sm">
-            <a href="{{ route('admin.documentos.index') }}" class="text-gray-500 hover:text-[#db0455] transition-colors">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h0a2 2 0 012 2v0H8v0z"></path>
-                </svg>
-            </a>
-            <span class="text-gray-400">/</span>
+    <nav class="bg-white rounded-lg shadow-sm p-4 mb-6" aria-label="Migas de pan">
+        <ol class="flex items-center space-x-2 text-sm">
+            <li>
+                <a href="{{ route('admin.documentos.index') }}" aria-label="Raíz de documentos" class="text-gray-500 hover:text-[#db0455] transition-colors">
+                    <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h0a2 2 0 012 2v0H8v0z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li class="text-gray-400" aria-hidden="true">/</li>
             @foreach($breadcrumb as $carpeta)
                 @if($loop->last)
-                    <span class="text-[#db0455] font-medium">{{ $carpeta->icono_completo }} {{ $carpeta->nombre }}</span>
+                    <li class="text-[#db0455] font-medium" aria-current="page"><span aria-hidden="true">{{ $carpeta->icono_completo }}</span> {{ $carpeta->nombre }}</li>
                 @else
-                    <a href="{{ route('admin.documentos.index', ['carpeta_id' => $carpeta->id]) }}" 
-                       class="text-gray-500 hover:text-[#db0455] transition-colors">
-                        {{ $carpeta->icono_completo }} {{ $carpeta->nombre }}
-                    </a>
-                    <span class="text-gray-400">/</span>
+                    <li>
+                        <a href="{{ route('admin.documentos.index', ['carpeta_id' => $carpeta->id]) }}"
+                           class="text-gray-500 hover:text-[#db0455] transition-colors">
+                            <span aria-hidden="true">{{ $carpeta->icono_completo }}</span> {{ $carpeta->nombre }}
+                        </a>
+                    </li>
+                    <li class="text-gray-400" aria-hidden="true">/</li>
                 @endif
             @endforeach
-        </div>
-    </div>
+        </ol>
+    </nav>
     @endif
 
     <!-- Mensajes -->
     @if(session('success'))
-        <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-lg">
+        <div role="status" class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-lg">
             <div class="flex items-center">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                 </svg>
                 {{ session('success') }}
@@ -67,9 +73,9 @@
     @endif
 
     @if(session('error'))
-        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
+        <div role="alert" class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
             <div class="flex items-center">
-                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
                 </svg>
                 {{ session('error') }}
@@ -80,14 +86,14 @@
     <!-- Explorador de Archivos -->
     <div class="bg-white rounded-lg shadow-sm overflow-hidden">
         @if($carpetas->count() > 0 || $documentos->count() > 0)
-            <div class="divide-y divide-gray-200">
+            <ul class="divide-y divide-gray-200">
                 <!-- Carpetas -->
                 @foreach($carpetas as $carpeta)
-                <div class="group hover:bg-gray-50 transition-colors">
+                <li class="group hover:bg-gray-50 transition-colors">
                     <div class="p-4 flex items-center justify-between">
                         <div class="flex items-center space-x-4 flex-1">
                             <div class="flex-shrink-0">
-                                <div class="w-12 h-12 rounded-lg flex items-center justify-center text-2xl" 
+                                <div class="w-12 h-12 rounded-lg flex items-center justify-center text-2xl" aria-hidden="true"
                                      style="background-color: {{ $carpeta->color }}20; color: {{ $carpeta->color }}">
                                     {{ $carpeta->icono_completo }}
                                 </div>
@@ -107,23 +113,23 @@
                                 @if($carpeta->descripcion)
                                 <p class="text-sm text-gray-500 mt-1">{{ Str::limit($carpeta->descripcion, 60) }}</p>
                                 @endif
-                                <p class="text-xs text-gray-400 mt-1">
+                                <p class="text-xs text-gray-600 mt-1">
                                     Creado por {{ $carpeta->user->name }} • {{ $carpeta->created_at->format('d/m/Y H:i') }}
                                 </p>
                             </div>
                         </div>
-                        <div class="flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div class="flex items-center space-x-2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 focus-visible:opacity-100 transition-opacity">
                             <!-- Controles de Orden -->
                             <div class="flex flex-col">
-                                <button onclick="cambiarOrden('carpeta', {{ $carpeta->id }}, 'up')" 
-                                        class="text-gray-400 hover:text-green-600 transition-colors p-1" title="Subir">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <button type="button" onclick="cambiarOrdenCarpeta({{ $carpeta->id }}, 'subir')" 
+                                        class="text-gray-600 hover:text-green-700 transition-colors p-1" title="Subir" aria-label="Subir carpeta {{ $carpeta->nombre }} en el orden">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
                                     </svg>
                                 </button>
-                                <button onclick="cambiarOrden('carpeta', {{ $carpeta->id }}, 'down')" 
-                                        class="text-gray-400 hover:text-orange-600 transition-colors p-1" title="Bajar">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <button type="button" onclick="cambiarOrdenCarpeta({{ $carpeta->id }}, 'bajar')" 
+                                        class="text-gray-600 hover:text-orange-700 transition-colors p-1" title="Bajar" aria-label="Bajar carpeta {{ $carpeta->nombre }} en el orden">
+                                    <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                     </svg>
                                 </button>
@@ -131,12 +137,12 @@
                             
                             <!-- Orden Actual -->
                             <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full" title="Orden actual">
-                                #{{ $carpeta->orden ?? 0 }}
+                                <span class="sr-only">Orden actual:</span><span aria-hidden="true">#</span>{{ $carpeta->orden ?? 0 }}
                             </span>
                             
-                            <button onclick="editCarpeta({{ $carpeta->id }})" 
-                                    class="text-gray-400 hover:text-blue-600 transition-colors" title="Editar">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <button type="button" onclick="editCarpeta({{ $carpeta->id }})" 
+                                    class="text-gray-600 hover:text-blue-700 transition-colors" title="Editar" aria-label="Editar carpeta {{ $carpeta->nombre }}">
+                                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                                 </svg>
                             </button>
@@ -146,24 +152,24 @@
                                   onsubmit="return confirm('¿Está seguro de eliminar esta carpeta?');">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="text-gray-400 hover:text-red-600 transition-colors" title="Eliminar">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <button type="submit" class="text-gray-600 hover:text-red-700 transition-colors" title="Eliminar" aria-label="Eliminar carpeta {{ $carpeta->nombre }}">
+                                    <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                                     </svg>
                                 </button>
                             </form>
                         </div>
                     </div>
-                </div>
+                </li>
                 @endforeach
 
                 <!-- Documentos -->
                 @foreach($documentos as $documento)
-                <div class="group hover:bg-gray-50 transition-colors">
+                <li class="group hover:bg-gray-50 transition-colors">
                     <div class="p-4 flex items-center justify-between">
                         <div class="flex items-center space-x-4 flex-1">
                             <div class="flex-shrink-0">
-                                <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-2xl">
+                                <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center text-2xl" aria-hidden="true">
                                     {{ $documento->icono_completo }}
                                 </div>
                             </div>
@@ -182,42 +188,42 @@
                                         {{ $documento->texto_estado }}
                                     </span>
                                     @if($documento->destacado)
-                                    <span class="text-yellow-500" title="Destacado">⭐</span>
+                                    <span class="text-yellow-500" title="Destacado"><span aria-hidden="true">⭐</span><span class="sr-only">Destacado</span></span>
                                     @endif
                                 </div>
                                 @if($documento->descripcion)
                                 <p class="text-sm text-gray-500 mt-1">{{ Str::limit($documento->descripcion, 60) }}</p>
                                 @endif
-                                <div class="flex items-center space-x-4 text-xs text-gray-400 mt-1">
+                                <div class="flex items-center space-x-4 text-xs text-gray-600 mt-1">
                                     <span>{{ $documento->user->name }}</span>
                                     <span>{{ $documento->created_at->format('d/m/Y') }}</span>
                                     @if($documento->tamaño_formateado)
                                     <span>{{ $documento->tamaño_formateado }}</span>
                                     @endif
-                                    <span>👁️ {{ $documento->vistas }}</span>
+                                    <span><span aria-hidden="true">👁️</span> {{ $documento->vistas }} <span class="sr-only">vistas</span></span>
                                     @if($documento->descargas > 0)
-                                    <span>⬇️ {{ $documento->descargas }}</span>
+                                    <span><span aria-hidden="true">⬇️</span> {{ $documento->descargas }} <span class="sr-only">descargas</span></span>
                                     @endif
                                 </div>
                             </div>
                         </div>
-                        <div class="flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div class="flex items-center space-x-2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 focus-visible:opacity-100 transition-opacity">
                             <a href="{{ route('admin.documentos.show', $documento) }}" 
-                               class="text-gray-400 hover:text-gray-600 transition-colors" title="Ver">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                               class="text-gray-600 hover:text-gray-800 transition-colors" title="Ver" aria-label="Ver documento {{ $documento->titulo }}">
+                                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                                 </svg>
                             </a>
-                            <button onclick="editDocumento({{ $documento->id }})" 
-                                    class="text-gray-400 hover:text-blue-600 transition-colors" title="Editar">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <button type="button" onclick="editDocumento({{ $documento->id }})" 
+                                    class="text-gray-600 hover:text-blue-700 transition-colors" title="Editar" aria-label="Editar documento {{ $documento->titulo }}">
+                                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                                 </svg>
                             </button>
-                            <button onclick="toggleEstado({{ $documento->id }})" 
-                                    class="text-gray-400 hover:text-green-600 transition-colors" title="Cambiar estado">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <button type="button" onclick="toggleEstado({{ $documento->id }})"
+                                    class="text-gray-600 hover:text-green-700 transition-colors" title="Cambiar estado" aria-label="Cambiar estado del documento {{ $documento->titulo }} (actual: {{ $documento->texto_estado }})">
+                                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                             </button>
@@ -227,21 +233,21 @@
                                   onsubmit="return confirm('¿Está seguro de eliminar este documento?');">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="text-gray-400 hover:text-red-600 transition-colors" title="Eliminar">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <button type="submit" class="text-gray-600 hover:text-red-700 transition-colors" title="Eliminar" aria-label="Eliminar documento {{ $documento->titulo }}">
+                                    <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                                     </svg>
                                 </button>
                             </form>
                         </div>
                     </div>
-                </div>
+                </li>
                 @endforeach
-            </div>
+            </ul>
         @else
             <!-- Estado vacío -->
             <div class="text-center py-12">
-                <div class="w-24 h-24 mx-auto mb-4 text-gray-400">
+                <div class="w-24 h-24 mx-auto mb-4 text-gray-400" aria-hidden="true">
                     @if($carpetaActual)
                         📂
                     @else
@@ -262,9 +268,9 @@
                         Crea tu primera carpeta para organizar los documentos
                     @endif
                 </p>
-                <button onclick="openModal('{{ $carpetaActual ? 'documento' : 'carpeta' }}')" 
+                <button type="button" onclick="openModal('{{ $carpetaActual ? 'documento' : 'carpeta' }}')" 
                         class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#db0455] to-[#a00340] text-white rounded-lg hover:shadow-lg transition-all">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                     </svg>
                     {{ $carpetaActual ? 'Agregar Documento' : 'Crear Carpeta' }}
@@ -287,19 +293,46 @@
 <script>
 let currentModalType = '';
 
+// Accesibilidad de los modales: foco inicial, trampa de foco y retorno del foco al disparador
+function a11yModalAbrir(modal) {
+    modal.__disparador = document.activeElement;
+    setTimeout(() => {
+        const primero = modal.querySelector('button, [href], input:not([type="hidden"]), select, textarea');
+        if (primero) primero.focus();
+    }, 50);
+    if (!modal.__trampa) {
+        modal.__trampa = true;
+        modal.addEventListener('keydown', function (e) {
+            if (e.key !== 'Tab') return;
+            const els = Array.from(modal.querySelectorAll('button, [href], input:not([type="hidden"]), select, textarea, [tabindex]:not([tabindex="-1"])'))
+                .filter(el => !el.disabled && el.offsetParent !== null);
+            if (!els.length) return;
+            const primero = els[0], ultimo = els[els.length - 1];
+            if (e.shiftKey && document.activeElement === primero) { e.preventDefault(); ultimo.focus(); }
+            else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primero.focus(); }
+        });
+    }
+}
+function a11yModalCerrar(modal) {
+    const d = modal.__disparador;
+    modal.__disparador = null;
+    if (d && typeof d.focus === 'function' && document.contains(d)) d.focus();
+}
+
 // Abrir modal
 function openModal(type) {
     currentModalType = type;
     const modal = document.getElementById('universalModal');
     const modalContent = modal.querySelector('.inline-block');
-    
+
     if (type === 'carpeta') {
         modalContent.innerHTML = getCarpetaModalHTML();
     } else if (type === 'documento') {
         modalContent.innerHTML = getDocumentoModalHTML();
     }
-    
+
     modal.classList.remove('hidden');
+    a11yModalAbrir(modal);
     
     // Focus en el primer input
     setTimeout(() => {
@@ -310,32 +343,35 @@ function openModal(type) {
 
 // Cerrar modal
 function closeModal() {
-    document.getElementById('universalModal').classList.add('hidden');
+    const modal = document.getElementById('universalModal');
+    if (modal.classList.contains('hidden')) return;
+    modal.classList.add('hidden');
     currentModalType = '';
+    a11yModalCerrar(modal);
 }
 
 // HTML del modal de carpeta
 function getCarpetaModalHTML() {
     return `
-        <div class="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-4">
+        <div class="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
-                        <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                         </svg>
                     </div>
                     <div class="ml-3">
-                        <h3 class="text-lg leading-6 font-medium text-white">
+                        <h3 class="text-lg leading-6 font-medium text-white" id="modal-title">
                             Nueva Carpeta
                         </h3>
-                        <p class="text-sm text-blue-100">
+                        <p class="text-sm text-white">
                             Crea una nueva carpeta para organizar documentos
                         </p>
                     </div>
                 </div>
-                <button onclick="closeModal()" class="text-white hover:text-blue-200 transition-colors">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button type="button" onclick="closeModal()" aria-label="Cerrar" class="text-white hover:text-blue-200 transition-colors">
+                    <svg aria-hidden="true" focusable="false" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
@@ -345,52 +381,53 @@ function getCarpetaModalHTML() {
         <form onsubmit="submitForm(event)" class="p-6 space-y-4">
             <input type="hidden" name="tipo" value="carpeta">
             <input type="hidden" name="carpeta_id" value="{{ $carpetaActual?->id }}">
-            
+            <p class="text-xs text-gray-500">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
+
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Nombre *</label>
-                <input type="text" name="nombre" required
+                <label for="carpeta-nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre <span aria-hidden="true">*</span></label>
+                <input type="text" name="nombre" id="carpeta-nombre" required aria-required="true" aria-describedby="error-nombre"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                        placeholder="Ej: Documentos Académicos">
-                <div class="text-red-600 text-sm mt-1" id="error-nombre"></div>
+                <div class="text-red-600 text-sm mt-1" id="error-nombre" aria-live="polite"></div>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
-                <textarea name="descripcion_carpeta" rows="3"
+                <label for="carpeta-descripcion" class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
+                <textarea name="descripcion_carpeta" id="carpeta-descripcion" rows="3"
                           class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                           placeholder="Descripción opcional de la carpeta"></textarea>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Orden *</label>
-                <input type="number" name="orden" required min="1" value="1"
+                <label for="carpeta-orden" class="block text-sm font-medium text-gray-700 mb-1">Orden <span aria-hidden="true">*</span></label>
+                <input type="number" name="orden" id="carpeta-orden" required aria-required="true" min="1" value="1" aria-describedby="carpeta-orden-help error-orden"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                        placeholder="Ej: 1, 2, 3...">
-                <div class="text-red-600 text-sm mt-1" id="error-orden"></div>
-                <p class="text-sm text-gray-500 mt-1">Define la posición donde aparecerá esta carpeta</p>
+                <div class="text-red-600 text-sm mt-1" id="error-orden" aria-live="polite"></div>
+                <p id="carpeta-orden-help" class="text-sm text-gray-500 mt-1">Define la posición donde aparecerá esta carpeta</p>
             </div>
             
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Icono</label>
-                    <select name="icono" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                        <option value="folder">📁 Carpeta</option>
-                        <option value="archive">🗃️ Archivo</option>
-                        <option value="briefcase">💼 Portafolio</option>
-                        <option value="book">📚 Libro</option>
-                        <option value="library">🏛️ Biblioteca</option>
+                    <label for="carpeta-icono" class="block text-sm font-medium text-gray-700 mb-1">Icono</label>
+                    <select name="icono" id="carpeta-icono" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="folder">Carpeta</option>
+                        <option value="archive">Archivo</option>
+                        <option value="briefcase">Portafolio</option>
+                        <option value="book">Libro</option>
+                        <option value="library">Biblioteca</option>
                     </select>
                 </div>
                 
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Color</label>
-                    <select name="color" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                        <option value="#3B82F6">🔵 Azul</option>
-                        <option value="#EF4444">🔴 Rojo</option>
-                        <option value="#10B981">🟢 Verde</option>
-                        <option value="#F59E0B">🟡 Amarillo</option>
-                        <option value="#8B5CF6">🟣 Morado</option>
-                        <option value="#6B7280">⚫ Gris</option>
+                    <label for="carpeta-color" class="block text-sm font-medium text-gray-700 mb-1">Color</label>
+                    <select name="color" id="carpeta-color" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="#3B82F6">Azul</option>
+                        <option value="#EF4444">Rojo</option>
+                        <option value="#10B981">Verde</option>
+                        <option value="#F59E0B">Amarillo</option>
+                        <option value="#8B5CF6">Morado</option>
+                        <option value="#6B7280">Gris</option>
                     </select>
                 </div>
             </div>
@@ -401,9 +438,9 @@ function getCarpetaModalHTML() {
                     Cancelar
                 </button>
                 <button type="submit" id="submitBtn"
-                        class="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:shadow-lg transition-all">
+                        class="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:shadow-lg transition-all">
                     <span id="submitText">Crear Carpeta</span>
-                    <span id="loadingText" class="hidden">Creando...</span>
+                    <span id="loadingText" role="status" class="hidden">Creando...</span>
                 </button>
             </div>
         </form>
@@ -417,21 +454,21 @@ function getDocumentoModalHTML() {
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
-                        <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
                     </div>
                     <div class="ml-3">
-                        <h3 class="text-lg leading-6 font-medium text-white">
+                        <h3 class="text-lg leading-6 font-medium text-white" id="modal-title">
                             Nuevo Documento
                         </h3>
-                        <p class="text-sm text-pink-100">
+                        <p class="text-sm text-white">
                             Agrega un nuevo documento a la carpeta
                         </p>
                     </div>
                 </div>
-                <button onclick="closeModal()" class="text-white hover:text-pink-200 transition-colors">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button type="button" onclick="closeModal()" aria-label="Cerrar" class="text-white hover:text-pink-200 transition-colors">
+                    <svg aria-hidden="true" focusable="false" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
@@ -441,59 +478,60 @@ function getDocumentoModalHTML() {
         <form onsubmit="submitForm(event)" class="p-6 space-y-4">
             <input type="hidden" name="tipo" value="documento">
             <input type="hidden" name="carpeta_id" value="{{ $carpetaActual?->id }}">
-            
+            <p class="text-xs text-gray-500">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
+
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Título *</label>
-                <input type="text" name="titulo" required
+                <label for="doc-titulo" class="block text-sm font-medium text-gray-700 mb-1">Título <span aria-hidden="true">*</span></label>
+                <input type="text" name="titulo" id="doc-titulo" required aria-required="true" aria-describedby="error-titulo"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                        placeholder="Ej: Manual de Usuario 2024">
-                <div class="text-red-600 text-sm mt-1" id="error-titulo"></div>
+                <div class="text-red-600 text-sm mt-1" id="error-titulo" aria-live="polite"></div>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Enlace *</label>
-                <input type="url" name="enlace" required
+                <label for="doc-enlace" class="block text-sm font-medium text-gray-700 mb-1">Enlace <span aria-hidden="true">*</span></label>
+                <input type="url" name="enlace" id="doc-enlace" required aria-required="true" aria-describedby="error-enlace"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                        placeholder="https://ejemplo.com/documento.pdf">
-                <div class="text-red-600 text-sm mt-1" id="error-enlace"></div>
+                <div class="text-red-600 text-sm mt-1" id="error-enlace" aria-live="polite"></div>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
-                <textarea name="descripcion" rows="3"
+                <label for="doc-descripcion" class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
+                <textarea name="descripcion" id="doc-descripcion" rows="3"
                           class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                           placeholder="Descripción opcional del documento"></textarea>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Orden *</label>
-                <input type="number" name="orden" required min="1" value="1"
+                <label for="doc-orden" class="block text-sm font-medium text-gray-700 mb-1">Orden <span aria-hidden="true">*</span></label>
+                <input type="number" name="orden" id="doc-orden" required aria-required="true" min="1" value="1" aria-describedby="doc-orden-help error-orden"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                        placeholder="Ej: 1, 2, 3...">
-                <div class="text-red-600 text-sm mt-1" id="error-orden"></div>
-                <p class="text-sm text-gray-500 mt-1">Define la posición donde aparecerá este documento</p>
+                <div class="text-red-600 text-sm mt-1" id="error-orden" aria-live="polite"></div>
+                <p id="doc-orden-help" class="text-sm text-gray-500 mt-1">Define la posición donde aparecerá este documento</p>
             </div>
             
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Tipo de Enlace</label>
-                    <select name="tipo_enlace" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
-                        <option value="url">🔗 URL Externa</option>
-                        <option value="archivo">📎 Archivo Local</option>
-                        <option value="interno">🏠 Enlace Interno</option>
+                    <label for="doc-tipo-enlace" class="block text-sm font-medium text-gray-700 mb-1">Tipo de Enlace</label>
+                    <select name="tipo_enlace" id="doc-tipo-enlace" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+                        <option value="url">URL Externa</option>
+                        <option value="archivo">Archivo Local</option>
+                        <option value="interno">Enlace Interno</option>
                     </select>
                 </div>
                 
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Tipo de Documento</label>
-                    <select name="tipo_documento" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
-                        <option value="pdf">📄 PDF</option>
-                        <option value="doc">📝 Word</option>
-                        <option value="xls">📊 Excel</option>
-                        <option value="ppt">📋 PowerPoint</option>
-                        <option value="txt">📃 Texto</option>
-                        <option value="zip">🗜️ Comprimido</option>
-                        <option value="url">🔗 Enlace Web</option>
+                    <label for="doc-tipo-documento" class="block text-sm font-medium text-gray-700 mb-1">Tipo de Documento</label>
+                    <select name="tipo_documento" id="doc-tipo-documento" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+                        <option value="pdf">PDF</option>
+                        <option value="doc">Word</option>
+                        <option value="xls">Excel</option>
+                        <option value="ppt">PowerPoint</option>
+                        <option value="txt">Texto</option>
+                        <option value="zip">Comprimido</option>
+                        <option value="url">Enlace Web</option>
                     </select>
                 </div>
             </div>
@@ -503,7 +541,7 @@ function getDocumentoModalHTML() {
                     <input type="checkbox" name="destacado" id="destacado" value="1"
                            class="rounded border-gray-300 text-pink-600 shadow-sm focus:border-pink-300 focus:ring focus:ring-pink-200 focus:ring-opacity-50">
                     <label for="destacado" class="ml-2 block text-sm text-gray-700">
-                        ⭐ Marcar como destacado
+                        <span aria-hidden="true">⭐</span> Marcar como destacado
                     </label>
                 </div>
             </div>
@@ -516,7 +554,7 @@ function getDocumentoModalHTML() {
                 <button type="submit" id="submitBtn"
                         class="px-4 py-2 bg-gradient-to-r from-[#db0455] to-[#a00340] text-white rounded-lg hover:shadow-lg transition-all">
                     <span id="submitText">Crear Documento</span>
-                    <span id="loadingText" class="hidden">Creando...</span>
+                    <span id="loadingText" role="status" class="hidden">Creando...</span>
                 </button>
             </div>
         </form>
@@ -526,25 +564,25 @@ function getDocumentoModalHTML() {
 // HTML del modal de edición de carpeta
 function getEditCarpetaModalHTML(carpeta) {
     return `
-        <div class="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-4">
+        <div class="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
-                        <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                         </svg>
                     </div>
                     <div class="ml-3">
-                        <h3 class="text-lg leading-6 font-medium text-white">
+                        <h3 class="text-lg leading-6 font-medium text-white" id="modal-title">
                             Editar Carpeta
                         </h3>
-                        <p class="text-sm text-blue-100">
+                        <p class="text-sm text-white">
                             Modifica los datos de la carpeta
                         </p>
                     </div>
                 </div>
-                <button onclick="closeModal()" class="text-white hover:text-blue-200 transition-colors">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button type="button" onclick="closeModal()" aria-label="Cerrar" class="text-white hover:text-blue-200 transition-colors">
+                    <svg aria-hidden="true" focusable="false" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
@@ -552,51 +590,52 @@ function getEditCarpetaModalHTML(carpeta) {
         </div>
         
         <form onsubmit="submitEditForm(event)" class="p-6 space-y-4">
+            <p class="text-xs text-gray-500">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Nombre *</label>
-                <input type="text" name="nombre" required value="${carpeta.nombre}"
+                <label for="carpeta-nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre <span aria-hidden="true">*</span></label>
+                <input type="text" name="nombre" id="carpeta-nombre" required aria-required="true" value="${carpeta.nombre}" aria-describedby="error-nombre"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                        placeholder="Ej: Documentos Académicos">
-                <div class="text-red-600 text-sm mt-1" id="error-nombre"></div>
+                <div class="text-red-600 text-sm mt-1" id="error-nombre" aria-live="polite"></div>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
-                <textarea name="descripcion" rows="3"
+                <label for="carpeta-descripcion" class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
+                <textarea name="descripcion" id="carpeta-descripcion" rows="3"
                           class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                           placeholder="Descripción opcional de la carpeta">${carpeta.descripcion || ''}</textarea>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Orden *</label>
-                <input type="number" name="orden" required min="1" value="${carpeta.orden}"
+                <label for="carpeta-orden" class="block text-sm font-medium text-gray-700 mb-1">Orden <span aria-hidden="true">*</span></label>
+                <input type="number" name="orden" id="carpeta-orden" required aria-required="true" min="1" value="${carpeta.orden}" aria-describedby="carpeta-orden-help error-orden"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                        placeholder="Ej: 1, 2, 3...">
-                <div class="text-red-600 text-sm mt-1" id="error-orden"></div>
-                <p class="text-sm text-gray-500 mt-1">Define la posición donde aparecerá esta carpeta</p>
+                <div class="text-red-600 text-sm mt-1" id="error-orden" aria-live="polite"></div>
+                <p id="carpeta-orden-help" class="text-sm text-gray-500 mt-1">Define la posición donde aparecerá esta carpeta</p>
             </div>
             
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Icono</label>
-                    <select name="icono" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                        <option value="folder" ${carpeta.icono === 'folder' ? 'selected' : ''}>📁 Carpeta</option>
-                        <option value="archive" ${carpeta.icono === 'archive' ? 'selected' : ''}>🗃️ Archivo</option>
-                        <option value="briefcase" ${carpeta.icono === 'briefcase' ? 'selected' : ''}>💼 Portafolio</option>
-                        <option value="book" ${carpeta.icono === 'book' ? 'selected' : ''}>📚 Libro</option>
-                        <option value="library" ${carpeta.icono === 'library' ? 'selected' : ''}>🏛️ Biblioteca</option>
+                    <label for="carpeta-icono" class="block text-sm font-medium text-gray-700 mb-1">Icono</label>
+                    <select name="icono" id="carpeta-icono" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="folder" ${carpeta.icono === 'folder' ? 'selected' : ''}>Carpeta</option>
+                        <option value="archive" ${carpeta.icono === 'archive' ? 'selected' : ''}>Archivo</option>
+                        <option value="briefcase" ${carpeta.icono === 'briefcase' ? 'selected' : ''}>Portafolio</option>
+                        <option value="book" ${carpeta.icono === 'book' ? 'selected' : ''}>Libro</option>
+                        <option value="library" ${carpeta.icono === 'library' ? 'selected' : ''}>Biblioteca</option>
                     </select>
                 </div>
                 
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Color</label>
-                    <select name="color" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                        <option value="#3B82F6" ${carpeta.color === '#3B82F6' ? 'selected' : ''}>🔵 Azul</option>
-                        <option value="#EF4444" ${carpeta.color === '#EF4444' ? 'selected' : ''}>🔴 Rojo</option>
-                        <option value="#10B981" ${carpeta.color === '#10B981' ? 'selected' : ''}>🟢 Verde</option>
-                        <option value="#F59E0B" ${carpeta.color === '#F59E0B' ? 'selected' : ''}>🟡 Amarillo</option>
-                        <option value="#8B5CF6" ${carpeta.color === '#8B5CF6' ? 'selected' : ''}>🟣 Morado</option>
-                        <option value="#6B7280" ${carpeta.color === '#6B7280' ? 'selected' : ''}>⚫ Gris</option>
+                    <label for="carpeta-color" class="block text-sm font-medium text-gray-700 mb-1">Color</label>
+                    <select name="color" id="carpeta-color" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="#3B82F6" ${carpeta.color === '#3B82F6' ? 'selected' : ''}>Azul</option>
+                        <option value="#EF4444" ${carpeta.color === '#EF4444' ? 'selected' : ''}>Rojo</option>
+                        <option value="#10B981" ${carpeta.color === '#10B981' ? 'selected' : ''}>Verde</option>
+                        <option value="#F59E0B" ${carpeta.color === '#F59E0B' ? 'selected' : ''}>Amarillo</option>
+                        <option value="#8B5CF6" ${carpeta.color === '#8B5CF6' ? 'selected' : ''}>Morado</option>
+                        <option value="#6B7280" ${carpeta.color === '#6B7280' ? 'selected' : ''}>Gris</option>
                     </select>
                 </div>
             </div>
@@ -607,9 +646,9 @@ function getEditCarpetaModalHTML(carpeta) {
                     Cancelar
                 </button>
                 <button type="submit" id="submitBtn"
-                        class="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:shadow-lg transition-all">
+                        class="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:shadow-lg transition-all">
                     <span id="submitText">Actualizar Carpeta</span>
-                    <span id="loadingText" class="hidden">Actualizando...</span>
+                    <span id="loadingText" role="status" class="hidden">Actualizando...</span>
                 </button>
             </div>
         </form>
@@ -623,21 +662,21 @@ function getEditDocumentoModalHTML(documento) {
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
-                        <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                         </svg>
                     </div>
                     <div class="ml-3">
-                        <h3 class="text-lg leading-6 font-medium text-white">
+                        <h3 class="text-lg leading-6 font-medium text-white" id="modal-title">
                             Editar Documento
                         </h3>
-                        <p class="text-sm text-pink-100">
+                        <p class="text-sm text-white">
                             Modifica los datos del documento
                         </p>
                     </div>
                 </div>
-                <button onclick="closeModal()" class="text-white hover:text-pink-200 transition-colors">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button type="button" onclick="closeModal()" aria-label="Cerrar" class="text-white hover:text-pink-200 transition-colors">
+                    <svg aria-hidden="true" focusable="false" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
@@ -645,58 +684,59 @@ function getEditDocumentoModalHTML(documento) {
         </div>
         
         <form onsubmit="submitEditForm(event)" class="p-6 space-y-4">
+            <p class="text-xs text-gray-500">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Título *</label>
-                <input type="text" name="titulo" required value="${documento.titulo}"
+                <label for="doc-titulo" class="block text-sm font-medium text-gray-700 mb-1">Título <span aria-hidden="true">*</span></label>
+                <input type="text" name="titulo" id="doc-titulo" required aria-required="true" value="${documento.titulo}" aria-describedby="error-titulo"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                        placeholder="Ej: Manual de Usuario 2024">
-                <div class="text-red-600 text-sm mt-1" id="error-titulo"></div>
+                <div class="text-red-600 text-sm mt-1" id="error-titulo" aria-live="polite"></div>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Enlace *</label>
-                <input type="url" name="enlace" required value="${documento.enlace}"
+                <label for="doc-enlace" class="block text-sm font-medium text-gray-700 mb-1">Enlace <span aria-hidden="true">*</span></label>
+                <input type="url" name="enlace" id="doc-enlace" required aria-required="true" value="${documento.enlace}" aria-describedby="error-enlace"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                        placeholder="https://ejemplo.com/documento.pdf">
-                <div class="text-red-600 text-sm mt-1" id="error-enlace"></div>
+                <div class="text-red-600 text-sm mt-1" id="error-enlace" aria-live="polite"></div>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
-                <textarea name="descripcion" rows="3"
+                <label for="doc-descripcion" class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
+                <textarea name="descripcion" id="doc-descripcion" rows="3"
                           class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                           placeholder="Descripción opcional del documento">${documento.descripcion || ''}</textarea>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Orden *</label>
-                <input type="number" name="orden" required min="1" value="${documento.orden}"
+                <label for="doc-orden" class="block text-sm font-medium text-gray-700 mb-1">Orden <span aria-hidden="true">*</span></label>
+                <input type="number" name="orden" id="doc-orden" required aria-required="true" min="1" value="${documento.orden}" aria-describedby="doc-orden-help error-orden"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                        placeholder="Ej: 1, 2, 3...">
-                <div class="text-red-600 text-sm mt-1" id="error-orden"></div>
-                <p class="text-sm text-gray-500 mt-1">Define la posición donde aparecerá este documento</p>
+                <div class="text-red-600 text-sm mt-1" id="error-orden" aria-live="polite"></div>
+                <p id="doc-orden-help" class="text-sm text-gray-500 mt-1">Define la posición donde aparecerá este documento</p>
             </div>
             
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Tipo de Enlace</label>
-                    <select name="tipo_enlace" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
-                        <option value="url" ${documento.tipo_enlace === 'url' ? 'selected' : ''}>🔗 URL Externa</option>
-                        <option value="archivo" ${documento.tipo_enlace === 'archivo' ? 'selected' : ''}>📎 Archivo Local</option>
-                        <option value="interno" ${documento.tipo_enlace === 'interno' ? 'selected' : ''}>🏠 Enlace Interno</option>
+                    <label for="doc-tipo-enlace" class="block text-sm font-medium text-gray-700 mb-1">Tipo de Enlace</label>
+                    <select name="tipo_enlace" id="doc-tipo-enlace" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+                        <option value="url" ${documento.tipo_enlace === 'url' ? 'selected' : ''}>URL Externa</option>
+                        <option value="archivo" ${documento.tipo_enlace === 'archivo' ? 'selected' : ''}>Archivo Local</option>
+                        <option value="interno" ${documento.tipo_enlace === 'interno' ? 'selected' : ''}>Enlace Interno</option>
                     </select>
                 </div>
                 
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Tipo de Documento</label>
-                    <select name="tipo_documento" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
-                        <option value="pdf" ${documento.tipo_documento === 'pdf' ? 'selected' : ''}>📄 PDF</option>
-                        <option value="doc" ${documento.tipo_documento === 'doc' ? 'selected' : ''}>📝 Word</option>
-                        <option value="xls" ${documento.tipo_documento === 'xls' ? 'selected' : ''}>📊 Excel</option>
-                        <option value="ppt" ${documento.tipo_documento === 'ppt' ? 'selected' : ''}>📋 PowerPoint</option>
-                        <option value="txt" ${documento.tipo_documento === 'txt' ? 'selected' : ''}>📃 Texto</option>
-                        <option value="zip" ${documento.tipo_documento === 'zip' ? 'selected' : ''}>🗜️ Comprimido</option>
-                        <option value="url" ${documento.tipo_documento === 'url' ? 'selected' : ''}>🔗 Enlace Web</option>
+                    <label for="doc-tipo-documento" class="block text-sm font-medium text-gray-700 mb-1">Tipo de Documento</label>
+                    <select name="tipo_documento" id="doc-tipo-documento" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+                        <option value="pdf" ${documento.tipo_documento === 'pdf' ? 'selected' : ''}>PDF</option>
+                        <option value="doc" ${documento.tipo_documento === 'doc' ? 'selected' : ''}>Word</option>
+                        <option value="xls" ${documento.tipo_documento === 'xls' ? 'selected' : ''}>Excel</option>
+                        <option value="ppt" ${documento.tipo_documento === 'ppt' ? 'selected' : ''}>PowerPoint</option>
+                        <option value="txt" ${documento.tipo_documento === 'txt' ? 'selected' : ''}>Texto</option>
+                        <option value="zip" ${documento.tipo_documento === 'zip' ? 'selected' : ''}>Comprimido</option>
+                        <option value="url" ${documento.tipo_documento === 'url' ? 'selected' : ''}>Enlace Web</option>
                     </select>
                 </div>
             </div>
@@ -706,7 +746,7 @@ function getEditDocumentoModalHTML(documento) {
                     <input type="checkbox" name="destacado" id="destacado" value="1" ${documento.destacado ? 'checked' : ''}
                            class="rounded border-gray-300 text-pink-600 shadow-sm focus:border-pink-300 focus:ring focus:ring-pink-200 focus:ring-opacity-50">
                     <label for="destacado" class="ml-2 block text-sm text-gray-700">
-                        ⭐ Marcar como destacado
+                        <span aria-hidden="true">⭐</span> Marcar como destacado
                     </label>
                 </div>
             </div>
@@ -719,7 +759,7 @@ function getEditDocumentoModalHTML(documento) {
                 <button type="submit" id="submitBtn"
                         class="px-4 py-2 bg-gradient-to-r from-[#db0455] to-[#a00340] text-white rounded-lg hover:shadow-lg transition-all">
                     <span id="submitText">Actualizar Documento</span>
-                    <span id="loadingText" class="hidden">Actualizando...</span>
+                    <span id="loadingText" role="status" class="hidden">Actualizando...</span>
                 </button>
             </div>
         </form>
@@ -788,15 +828,25 @@ function clearErrors() {
     document.querySelectorAll('[id^="error-"]').forEach(el => {
         el.textContent = '';
     });
+    document.querySelectorAll('#universalModal [aria-invalid="true"]').forEach(el => {
+        el.removeAttribute('aria-invalid');
+    });
 }
 
 function showErrors(errors) {
+    let primero = null;
     for (const [field, messages] of Object.entries(errors)) {
         const errorElement = document.getElementById(`error-${field}`);
         if (errorElement) {
             errorElement.textContent = messages[0];
         }
+        const control = document.querySelector(`#universalModal [name="${field}"]`);
+        if (control) {
+            control.setAttribute('aria-invalid', 'true');
+            if (!primero) primero = control;
+        }
     }
+    if (primero) primero.focus();
 }
 
 // Enviar formulario de edición
@@ -1006,6 +1056,7 @@ function openEditCarpetaModal(carpeta) {
     
     modalContent.innerHTML = getEditCarpetaModalHTML(carpeta);
     modal.classList.remove('hidden');
+    a11yModalAbrir(modal);
     
     // Focus en el primer input
     setTimeout(() => {
@@ -1023,6 +1074,7 @@ function openEditDocumentoModal(documento) {
     
     modalContent.innerHTML = getEditDocumentoModalHTML(documento);
     modal.classList.remove('hidden');
+    a11yModalAbrir(modal);
     
     // Focus en el primer input
     setTimeout(() => {

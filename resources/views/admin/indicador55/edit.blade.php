@@ -1,23 +1,25 @@
 @extends('admin.layouts.app')
 
+@section('title', 'Editar ' . $indicador55->titulo)
+@section('header', 'Editar: ' . $indicador55->titulo_completo)
 @section('content')
 <div class="p-6">
     <!-- Header -->
     <div class="flex justify-between items-center mb-6">
         <div>
             <div class="flex items-center mb-2">
-                <a href="{{ route('admin.indicador55.index') }}" class="text-gray-500 hover:text-gray-700 mr-3">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <a href="{{ route('admin.indicador55.index') }}" aria-label="Volver al listado del Indicador 55" class="text-gray-500 hover:text-gray-700 mr-3">
+                    <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                     </svg>
                 </a>
-                <h1 class="text-2xl font-bold text-gray-800">Editar: {{ $indicador55->titulo_completo }}</h1>
+                <h2 class="text-2xl font-bold text-gray-800">Editar: {{ $indicador55->titulo_completo }}</h2>
             </div>
             <p class="text-gray-600 text-sm">Modifica el contenido y documentos de esta variable</p>
         </div>
         <a href="/transparencia/indicador-55/{{ $indicador55->codigo }}" target="_blank"
            class="flex items-center space-x-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
             </svg>
@@ -27,7 +29,8 @@
 
     <!-- Mensajes de error -->
     @if($errors->any())
-        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
+        <div id="resumen-errores" role="alert" tabindex="-1" class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
+            <p class="font-medium">Revisa los siguientes errores:</p>
             <ul class="list-disc list-inside">
                 @foreach($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -39,6 +42,7 @@
     <form action="{{ route('admin.indicador55.update', $indicador55) }}" method="POST">
         @csrf
         @method('PUT')
+        <p class="text-sm text-gray-600 mb-4">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <!-- Columna Principal -->
@@ -46,7 +50,7 @@
                 <!-- Información Básica -->
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                     <h2 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                        <svg class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                         Información Básica
@@ -55,32 +59,32 @@
                     <div class="space-y-4">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Código</label>
-                                <input type="text" value="{{ strtoupper($indicador55->codigo) }}" disabled
+                                <label for="codigo" class="block text-sm font-medium text-gray-700 mb-1">Código</label>
+                                <input type="text" id="codigo" value="{{ strtoupper($indicador55->codigo) }}" disabled
                                        class="w-full px-4 py-2 rounded-lg border border-gray-300 bg-gray-100 text-gray-500">
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Orden</label>
-                                <input type="text" value="{{ $indicador55->orden }}" disabled
+                                <label for="orden" class="block text-sm font-medium text-gray-700 mb-1">Orden</label>
+                                <input type="text" id="orden" value="{{ $indicador55->orden }}" disabled
                                        class="w-full px-4 py-2 rounded-lg border border-gray-300 bg-gray-100 text-gray-500">
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Título <span class="text-red-500">*</span></label>
-                            <input type="text" name="titulo" value="{{ old('titulo', $indicador55->titulo) }}" required
+                            <label for="titulo" class="block text-sm font-medium text-gray-700 mb-1">Título <span class="text-red-600" aria-hidden="true">*</span></label>
+                            <input type="text" name="titulo" id="titulo" value="{{ old('titulo', $indicador55->titulo) }}" required aria-required="true"
                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455]">
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Título Completo <span class="text-red-500">*</span></label>
-                            <input type="text" name="titulo_completo" value="{{ old('titulo_completo', $indicador55->titulo_completo) }}" required
+                            <label for="titulo_completo" class="block text-sm font-medium text-gray-700 mb-1">Título Completo <span class="text-red-600" aria-hidden="true">*</span></label>
+                            <input type="text" name="titulo_completo" id="titulo_completo" value="{{ old('titulo_completo', $indicador55->titulo_completo) }}" required aria-required="true"
                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455]">
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
-                            <textarea name="descripcion" rows="3"
+                            <label for="descripcion" class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
+                            <textarea name="descripcion" id="descripcion" rows="3"
                                       class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455]">{{ old('descripcion', $indicador55->descripcion) }}</textarea>
                         </div>
                     </div>
@@ -90,7 +94,7 @@
                 <!-- Campos específicos para MV1: Misión y Visión -->
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                     <h2 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                        <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                         </svg>
@@ -100,25 +104,25 @@
 
                     <div class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                            <label for="texto_mision" class="block text-sm font-medium text-gray-700 mb-1">
                                 <span class="inline-flex items-center">
-                                    <span class="w-3 h-3 bg-blue-600 rounded-full mr-2"></span>
+                                    <span class="w-3 h-3 bg-blue-600 rounded-full mr-2" aria-hidden="true"></span>
                                     Texto de MISIÓN
                                 </span>
                             </label>
-                            <textarea name="texto_mision" rows="4"
+                            <textarea name="texto_mision" id="texto_mision" rows="4"
                                       class="w-full px-4 py-2 rounded-lg border border-blue-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                                       placeholder="Ej: Formar Profesionales líderes, investigadores e innovadores...">{{ old('texto_mision', $indicador55->texto_mision) }}</textarea>
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                            <label for="texto_vision" class="block text-sm font-medium text-gray-700 mb-1">
                                 <span class="inline-flex items-center">
-                                    <span class="w-3 h-3 bg-emerald-600 rounded-full mr-2"></span>
+                                    <span class="w-3 h-3 bg-emerald-600 rounded-full mr-2" aria-hidden="true"></span>
                                     Texto de VISIÓN
                                 </span>
                             </label>
-                            <textarea name="texto_vision" rows="4"
+                            <textarea name="texto_vision" id="texto_vision" rows="4"
                                       class="w-full px-4 py-2 rounded-lg border border-emerald-300 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
                                       placeholder="Ej: Ser la Universidad líder en la Región Amazónica...">{{ old('texto_vision', $indicador55->texto_vision) }}</textarea>
                         </div>
@@ -130,14 +134,15 @@
                 <!-- Contenido HTML -->
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                     <h2 class="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-                        <svg class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
                         Contenido Principal (HTML)
                     </h2>
-                    <textarea name="contenido" rows="10"
+                    <label for="contenido" class="sr-only">Contenido principal (HTML)</label>
+                    <textarea name="contenido" id="contenido" rows="10" aria-describedby="contenido-help"
                               class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455] font-mono text-sm">{{ old('contenido', $indicador55->contenido) }}</textarea>
-                    <p class="text-xs text-gray-500 mt-2">Puedes usar HTML para formatear el contenido principal de la página.</p>
+                    <p id="contenido-help" class="text-xs text-gray-500 mt-2">Puedes usar HTML para formatear el contenido principal de la página.</p>
                 </div>
                 @endif
 
@@ -145,13 +150,13 @@
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                     <div class="flex items-center justify-between mb-4">
                         <h2 class="text-lg font-semibold text-gray-800 flex items-center">
-                            <svg class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2 text-[#db0455]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                             </svg>
                             Documentos
                         </h2>
                         <div class="flex items-center space-x-2">
-                            <button type="button" id="toggle-json-mode" onclick="toggleJsonMode()" class="text-xs px-3 py-1 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                            <button type="button" id="toggle-json-mode" onclick="toggleJsonMode()" aria-controls="json-editor" aria-expanded="false" class="text-xs px-3 py-1 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
                                 <span id="toggle-json-text">Ver JSON</span>
                             </button>
                         </div>
@@ -174,7 +179,7 @@
                             <!-- Los documentos se cargarán dinámicamente con JavaScript -->
                         </div>
                         <button type="button" onclick="addSimpleDocument()" class="mt-4 flex items-center px-4 py-2 bg-green-50 text-green-700 rounded-lg hover:bg-green-100 transition-colors border border-green-200">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                             </svg>
                             Agregar Documento
@@ -185,7 +190,7 @@
                             <!-- Las secciones se cargarán dinámicamente con JavaScript -->
                         </div>
                         <button type="button" onclick="addSection()" class="mt-4 flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors border border-blue-200">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                             </svg>
                             Agregar Sección
@@ -202,13 +207,13 @@
                         </div>
                         <div class="flex space-x-2 mt-4">
                             <button type="button" onclick="addMV11SimpleDoc(new Date().getFullYear().toString())" class="flex items-center px-4 py-2 bg-indigo-50 text-indigo-700 rounded-lg hover:bg-indigo-100 transition-colors border border-indigo-200">
-                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                                 </svg>
                                 Documento Simple
                             </button>
                             <button type="button" onclick="addMV11Department(new Date().getFullYear().toString())" class="flex items-center px-4 py-2 bg-amber-50 text-amber-700 rounded-lg hover:bg-amber-100 transition-colors border border-amber-200">
-                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                                 </svg>
                                 Departamento
@@ -225,7 +230,7 @@
                             <!-- Las secciones se cargarán dinámicamente con JavaScript -->
                         </div>
                         <button type="button" onclick="addMV12Section()" class="mt-4 flex items-center px-4 py-2 bg-purple-50 text-purple-700 rounded-lg hover:bg-purple-100 transition-colors border border-purple-200">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                             </svg>
                             Agregar Sección
@@ -233,16 +238,17 @@
                         @endif
 
                         <p class="text-xs text-gray-500 mt-4">
-                            <span class="font-medium">Tip:</span> Los cambios se guardan automáticamente al enviar el formulario.
+                            <span class="font-medium">Consejo:</span> Los cambios se guardan automáticamente al enviar el formulario.
                         </p>
                     </div>
 
                     <!-- Editor JSON (oculto por defecto) -->
                     <div id="json-editor" class="hidden">
-                        <textarea name="documentos" rows="15" id="documentos-json"
+                        <label for="documentos-json" class="sr-only">JSON de documentos</label>
+                        <textarea name="documentos" rows="15" id="documentos-json" aria-describedby="documentos-json-help"
                                   class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455] font-mono text-sm">{{ old('documentos', is_array($indicador55->documentos) ? json_encode($indicador55->documentos, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) : $indicador55->documentos) }}</textarea>
                         <div class="flex items-center justify-between mt-2">
-                            <p class="text-xs text-gray-500">Array JSON con los documentos y enlaces.</p>
+                            <p id="documentos-json-help" class="text-xs text-gray-500">Array JSON con los documentos y enlaces.</p>
                             <button type="button" onclick="formatJSON()" class="text-xs text-[#db0455] hover:underline">Formatear JSON</button>
                         </div>
                     </div>
@@ -263,16 +269,18 @@
                             <span class="text-sm text-gray-700">Estado</span>
                             <label class="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" name="activo" value="1" {{ $indicador55->activo ? 'checked' : '' }}
+                                       role="switch" aria-checked="{{ $indicador55->activo ? 'true' : 'false' }}"
+                                       onchange="this.setAttribute('aria-checked', this.checked ? 'true' : 'false'); document.getElementById('activo-texto').textContent = this.checked ? 'Activo' : 'Inactivo';"
                                        class="sr-only peer">
                                 <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#db0455]/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#db0455]"></div>
-                                <span class="ml-2 text-sm font-medium text-gray-700">{{ $indicador55->activo ? 'Activo' : 'Inactivo' }}</span>
+                                <span id="activo-texto" class="ml-2 text-sm font-medium text-gray-700">{{ $indicador55->activo ? 'Activo' : 'Inactivo' }}</span>
                             </label>
                         </div>
 
                         <div class="pt-4 border-t border-gray-200">
                             <button type="submit"
                                     class="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-[#db0455] to-[#a00340] text-white rounded-lg hover:shadow-lg transition-all">
-                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
                                 Guardar Cambios
@@ -287,34 +295,38 @@
 
                     <div class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Color Primario</label>
+                            <label for="color_primario" class="block text-sm font-medium text-gray-700 mb-1">Color Primario</label>
                             <div class="flex items-center space-x-2">
-                                <input type="color" name="color_primario" value="{{ $indicador55->color_primario }}"
+                                <input type="color" name="color_primario" id="color_primario" value="{{ $indicador55->color_primario }}"
                                        class="w-10 h-10 rounded border border-gray-300 cursor-pointer">
-                                <input type="text" value="{{ $indicador55->color_primario }}" disabled
+                                <input type="text" value="{{ $indicador55->color_primario }}" disabled aria-label="Valor hexadecimal del color primario"
                                        class="flex-1 px-3 py-2 rounded-lg border border-gray-300 bg-gray-50 text-sm">
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Gradiente From (Tailwind)</label>
-                            <input type="text" name="gradiente_from" value="{{ old('gradiente_from', $indicador55->gradiente_from) }}"
+                            <label for="gradiente_from" class="block text-sm font-medium text-gray-700 mb-1">Gradiente inicial (clase Tailwind)</label>
+                            <input type="text" name="gradiente_from" id="gradiente_from" value="{{ old('gradiente_from', $indicador55->gradiente_from) }}"
                                    class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455] text-sm"
+                                   aria-describedby="tailwind-help"
                                    placeholder="ej: blue-600">
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Gradiente To (Tailwind)</label>
-                            <input type="text" name="gradiente_to" value="{{ old('gradiente_to', $indicador55->gradiente_to) }}"
+                            <label for="gradiente_to" class="block text-sm font-medium text-gray-700 mb-1">Gradiente final (clase Tailwind)</label>
+                            <input type="text" name="gradiente_to" id="gradiente_to" value="{{ old('gradiente_to', $indicador55->gradiente_to) }}"
                                    class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455] text-sm"
+                                   aria-describedby="tailwind-help"
                                    placeholder="ej: indigo-600">
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Fondo Claro (Tailwind)</label>
-                            <input type="text" name="bg_light" value="{{ old('bg_light', $indicador55->bg_light) }}"
+                            <label for="bg_light" class="block text-sm font-medium text-gray-700 mb-1">Fondo claro (clase Tailwind)</label>
+                            <input type="text" name="bg_light" id="bg_light" value="{{ old('bg_light', $indicador55->bg_light) }}"
                                    class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455] text-sm"
+                                   aria-describedby="tailwind-help"
                                    placeholder="ej: blue-50">
+                            <p id="tailwind-help" class="text-xs text-gray-500 mt-2">Escribe el nombre de un color de Tailwind con su tono, por ejemplo <code>blue-600</code>, <code>indigo-600</code> o <code>blue-50</code>.</p>
                         </div>
                     </div>
                 </div>
@@ -324,14 +336,14 @@
                     <h2 class="text-lg font-semibold text-gray-800 mb-4">Icono SVG</h2>
 
                     <div class="flex items-center justify-center mb-4 p-4 bg-gray-100 rounded-lg">
-                        <svg class="w-16 h-16 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                        <svg role="img" aria-label="Vista previa del icono" focusable="false" class="w-16 h-16 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
                             <path d="{{ $indicador55->icono }}"/>
                         </svg>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Path del SVG</label>
-                        <textarea name="icono" rows="3"
+                        <label for="icono" class="block text-sm font-medium text-gray-700 mb-1">Path del SVG</label>
+                        <textarea name="icono" id="icono" rows="3"
                                   class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455] font-mono text-xs">{{ old('icono', $indicador55->icono) }}</textarea>
                     </div>
                 </div>
@@ -366,6 +378,8 @@ const isMV12 = {{ $isMV12 ? 'true' : 'false' }};
 // Inicializar al cargar la página
 document.addEventListener('DOMContentLoaded', function() {
     initializeEditor();
+    var resumen = document.getElementById('resumen-errores');
+    if (resumen) resumen.focus();
 });
 
 function initializeEditor() {
@@ -407,12 +421,16 @@ function toggleJsonMode() {
 
     isJsonMode = !isJsonMode;
 
+    const toggleBtn = document.getElementById('toggle-json-mode');
+
     if (isJsonMode) {
         // Actualizar JSON desde el editor visual antes de mostrar
         updateJsonFromVisual();
         visualEditor.classList.add('hidden');
         jsonEditor.classList.remove('hidden');
         toggleText.textContent = 'Editor Visual';
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        document.getElementById('documentos-json').focus();
     } else {
         // Actualizar visual desde JSON antes de mostrar
         try {
@@ -439,7 +457,16 @@ function toggleJsonMode() {
         visualEditor.classList.remove('hidden');
         jsonEditor.classList.add('hidden');
         toggleText.textContent = 'Ver JSON';
+        toggleBtn.setAttribute('aria-expanded', 'false');
     }
+}
+
+// Enfoca el primer campo del último elemento de un contenedor (tras agregar)
+function enfocarUltimo(containerId) {
+    const container = document.getElementById(containerId);
+    const ultimo = container ? container.lastElementChild : null;
+    const campo = ultimo ? ultimo.querySelector('input, textarea, select') : null;
+    if (campo) campo.focus();
 }
 
 // ========================
@@ -454,7 +481,7 @@ function renderSimpleDocuments() {
     if (documentsData.length === 0) {
         container.innerHTML = `
             <div class="text-center py-8 text-gray-500 border-2 border-dashed border-gray-200 rounded-lg">
-                <svg class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                 </svg>
                 <p>No hay documentos agregados</p>
@@ -476,30 +503,30 @@ function createSimpleDocumentCard(doc, index) {
     const div = document.createElement('div');
     div.className = 'bg-gray-50 border border-gray-200 rounded-lg p-4 relative group';
     div.innerHTML = `
-        <button type="button" onclick="removeSimpleDocument(${index})"
-                class="absolute top-2 right-2 p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button type="button" onclick="removeSimpleDocument(${index})" aria-label="Eliminar documento ${index + 1}"
+                class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 focus-visible:opacity-100">
+            <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
             </svg>
         </button>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
             <div>
-                <label class="block text-xs font-medium text-gray-600 mb-1">Año</label>
-                <input type="text" value="${doc.anio || ''}"
+                <label for="doc-${index}-anio" class="block text-xs font-medium text-gray-600 mb-1">Año</label>
+                <input type="text" id="doc-${index}-anio" value="${doc.anio || ''}"
                        onchange="updateSimpleDocument(${index}, 'anio', this.value)"
                        class="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455]"
                        placeholder="2024">
             </div>
             <div class="md:col-span-2">
-                <label class="block text-xs font-medium text-gray-600 mb-1">Título del documento</label>
-                <input type="text" value="${escapeHtml(doc.titulo || '')}"
+                <label for="doc-${index}-titulo" class="block text-xs font-medium text-gray-600 mb-1">Título del documento</label>
+                <input type="text" id="doc-${index}-titulo" value="${escapeHtml(doc.titulo || '')}"
                        onchange="updateSimpleDocument(${index}, 'titulo', this.value)"
                        class="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455]"
                        placeholder="Nombre del documento">
             </div>
             <div>
-                <label class="block text-xs font-medium text-gray-600 mb-1">URL</label>
-                <input type="text" value="${escapeHtml(doc.url || '')}"
+                <label for="doc-${index}-url" class="block text-xs font-medium text-gray-600 mb-1">URL</label>
+                <input type="text" id="doc-${index}-url" value="${escapeHtml(doc.url || '')}"
                        onchange="updateSimpleDocument(${index}, 'url', this.value)"
                        class="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455]"
                        placeholder="/storage/docs/...">
@@ -520,12 +547,15 @@ function addSimpleDocument() {
     // Scroll al nuevo documento
     const container = document.getElementById('documents-container');
     container.lastElementChild?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    enfocarUltimo('documents-container');
 }
 
 function removeSimpleDocument(index) {
     if (confirm('¿Estás seguro de eliminar este documento?')) {
         documentsData.splice(index, 1);
         renderSimpleDocuments();
+        const boton = document.querySelector('button[onclick="addSimpleDocument()"]');
+        if (boton) boton.focus();
     }
 }
 
@@ -548,7 +578,7 @@ function renderSections() {
     if (sectionsData.length === 0) {
         container.innerHTML = `
             <div class="text-center py-8 text-gray-500 border-2 border-dashed border-gray-200 rounded-lg">
-                <svg class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                 </svg>
                 <p>No hay secciones agregadas</p>
@@ -576,22 +606,22 @@ function createSectionCard(section, sectionIndex) {
     items.forEach((item, itemIndex) => {
         itemsHtml += `
             <div class="bg-white border border-gray-200 rounded-lg p-3 relative group">
-                <button type="button" onclick="removeSectionItem(${sectionIndex}, ${itemIndex})"
-                        class="absolute top-2 right-2 p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button type="button" onclick="removeSectionItem(${sectionIndex}, ${itemIndex})" aria-label="Eliminar item ${itemIndex + 1} de la sección ${sectionIndex + 1}"
+                        class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 focus-visible:opacity-100">
+                    <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-2 pr-8">
                     <div>
-                        <label class="block text-xs font-medium text-gray-600 mb-1">Título</label>
-                        <input type="text" value="${escapeHtml(item.titulo || '')}"
+                        <label for="sec-${sectionIndex}-item-${itemIndex}-titulo" class="block text-xs font-medium text-gray-600 mb-1">Título</label>
+                        <input type="text" id="sec-${sectionIndex}-item-${itemIndex}-titulo" value="${escapeHtml(item.titulo || '')}"
                                onchange="updateSectionItem(${sectionIndex}, ${itemIndex}, 'titulo', this.value)"
                                class="w-full px-2 py-1.5 text-sm rounded border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
                     </div>
                     <div>
-                        <label class="block text-xs font-medium text-gray-600 mb-1">URL</label>
-                        <input type="text" value="${escapeHtml(item.url || '')}"
+                        <label for="sec-${sectionIndex}-item-${itemIndex}-url" class="block text-xs font-medium text-gray-600 mb-1">URL</label>
+                        <input type="text" id="sec-${sectionIndex}-item-${itemIndex}-url" value="${escapeHtml(item.url || '')}"
                                onchange="updateSectionItem(${sectionIndex}, ${itemIndex}, 'url', this.value)"
                                class="w-full px-2 py-1.5 text-sm rounded border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
                     </div>
@@ -603,22 +633,22 @@ function createSectionCard(section, sectionIndex) {
     div.innerHTML = `
         <div class="flex items-center justify-between mb-3">
             <div class="flex-1 mr-4">
-                <label class="block text-xs font-medium text-blue-700 mb-1">Nombre de la Sección</label>
-                <input type="text" value="${escapeHtml(section.seccion || '')}"
+                <label for="sec-${sectionIndex}-nombre" class="block text-xs font-medium text-blue-700 mb-1">Nombre de la Sección</label>
+                <input type="text" id="sec-${sectionIndex}-nombre" value="${escapeHtml(section.seccion || '')}"
                        onchange="updateSection(${sectionIndex}, 'seccion', this.value)"
                        class="w-full px-3 py-2 text-sm rounded-lg border border-blue-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 bg-white"
                        placeholder="Nombre de la sección">
             </div>
-            <button type="button" onclick="removeSection(${sectionIndex})"
-                    class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button type="button" onclick="removeSection(${sectionIndex})" aria-label="Eliminar sección ${sectionIndex + 1}"
+                    class="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                 </svg>
             </button>
         </div>
         <div class="mb-3">
-            <label class="block text-xs font-medium text-blue-700 mb-1">Descripción (opcional)</label>
-            <input type="text" value="${escapeHtml(section.descripcion || '')}"
+            <label for="sec-${sectionIndex}-descripcion" class="block text-xs font-medium text-blue-700 mb-1">Descripción (opcional)</label>
+            <input type="text" id="sec-${sectionIndex}-descripcion" value="${escapeHtml(section.descripcion || '')}"
                    onchange="updateSection(${sectionIndex}, 'descripcion', this.value)"
                    class="w-full px-3 py-2 text-sm rounded-lg border border-blue-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 bg-white"
                    placeholder="Descripción de la sección">
@@ -628,7 +658,7 @@ function createSectionCard(section, sectionIndex) {
         </div>
         <button type="button" onclick="addSectionItem(${sectionIndex})"
                 class="mt-3 flex items-center px-3 py-1.5 text-sm bg-white text-blue-600 rounded border border-blue-300 hover:bg-blue-50 transition-colors">
-            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
             Agregar Item
@@ -647,6 +677,7 @@ function addSection() {
 
     const container = document.getElementById('sections-container');
     container.lastElementChild?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    enfocarUltimo('sections-container');
 }
 
 function removeSection(index) {
@@ -673,6 +704,8 @@ function addSectionItem(sectionIndex) {
             url: ''
         });
         renderSections();
+        const nuevo = document.getElementById(`sec-${sectionIndex}-item-${sectionsData[sectionIndex].items.length - 1}-titulo`);
+        if (nuevo) nuevo.focus();
     }
 }
 
@@ -714,7 +747,7 @@ function renderMV11() {
     if (years.length === 0) {
         container.innerHTML = `
             <div class="text-center py-8 text-gray-500 border-2 border-dashed border-gray-200 rounded-lg">
-                <svg class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                 </svg>
                 <p>No hay documentos agregados</p>
@@ -761,14 +794,14 @@ function createMV11YearCard(year, docs) {
         <div class="flex space-x-2 mt-4">
             <button type="button" onclick="addMV11SimpleDoc('${year}')"
                     class="flex items-center px-3 py-1.5 text-sm bg-white text-indigo-600 rounded border border-indigo-300 hover:bg-indigo-50 transition-colors">
-                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                 </svg>
                 Documento Simple
             </button>
             <button type="button" onclick="addMV11Department('${year}')"
-                    class="flex items-center px-3 py-1.5 text-sm bg-white text-amber-600 rounded border border-amber-300 hover:bg-amber-50 transition-colors">
-                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    class="flex items-center px-3 py-1.5 text-sm bg-white text-amber-800 rounded border border-amber-300 hover:bg-amber-50 transition-colors">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                 </svg>
                 Departamento
@@ -781,9 +814,9 @@ function createMV11YearCard(year, docs) {
 function createMV11SimpleDocHtml(docIndex, doc) {
     return `
         <div class="bg-white border border-gray-200 rounded-lg p-3 relative group">
-            <button type="button" onclick="removeMV11Doc(${docIndex})"
-                    class="absolute top-2 right-2 p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button type="button" onclick="removeMV11Doc(${docIndex})" aria-label="Eliminar documento simple ${docIndex + 1}"
+                    class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 focus-visible:opacity-100">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
@@ -792,20 +825,20 @@ function createMV11SimpleDocHtml(docIndex, doc) {
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-2 pr-8">
                 <div>
-                    <label class="block text-xs font-medium text-gray-600 mb-1">Año</label>
-                    <input type="text" value="${escapeHtml(doc.anio || '')}"
+                    <label for="mv11-${docIndex}-anio" class="block text-xs font-medium text-gray-600 mb-1">Año</label>
+                    <input type="text" id="mv11-${docIndex}-anio" value="${escapeHtml(doc.anio || '')}"
                            onchange="updateMV11Doc(${docIndex}, 'anio', this.value)"
                            class="w-full px-2 py-1.5 text-sm rounded border border-gray-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
                 </div>
                 <div>
-                    <label class="block text-xs font-medium text-gray-600 mb-1">Título</label>
-                    <input type="text" value="${escapeHtml(doc.titulo || '')}"
+                    <label for="mv11-${docIndex}-titulo" class="block text-xs font-medium text-gray-600 mb-1">Título</label>
+                    <input type="text" id="mv11-${docIndex}-titulo" value="${escapeHtml(doc.titulo || '')}"
                            onchange="updateMV11Doc(${docIndex}, 'titulo', this.value)"
                            class="w-full px-2 py-1.5 text-sm rounded border border-gray-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
                 </div>
                 <div>
-                    <label class="block text-xs font-medium text-gray-600 mb-1">URL</label>
-                    <input type="text" value="${escapeHtml(doc.url || '')}"
+                    <label for="mv11-${docIndex}-url" class="block text-xs font-medium text-gray-600 mb-1">URL</label>
+                    <input type="text" id="mv11-${docIndex}-url" value="${escapeHtml(doc.url || '')}"
                            onchange="updateMV11Doc(${docIndex}, 'url', this.value)"
                            class="w-full px-2 py-1.5 text-sm rounded border border-gray-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
                 </div>
@@ -819,18 +852,18 @@ function createMV11DepartmentHtml(docIndex, doc) {
     (doc.items || []).forEach((item, itemIndex) => {
         itemsHtml += `
             <div class="bg-gray-50 border border-gray-200 rounded p-2 relative group/item">
-                <button type="button" onclick="removeMV11DeptItem(${docIndex}, ${itemIndex})"
-                        class="absolute top-1 right-1 p-0.5 text-gray-400 hover:text-red-500 rounded transition-colors opacity-0 group-hover/item:opacity-100">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button type="button" onclick="removeMV11DeptItem(${docIndex}, ${itemIndex})" aria-label="Eliminar item ${itemIndex + 1} del departamento"
+                        class="absolute top-1 right-1 p-0.5 text-gray-600 hover:text-red-700 rounded transition-colors opacity-0 group-hover/item:opacity-100 group-focus-within/item:opacity-100 focus-visible:opacity-100">
+                    <svg aria-hidden="true" focusable="false" class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
                 <div class="grid grid-cols-2 gap-2 pr-6">
-                    <input type="text" value="${escapeHtml(item.titulo || '')}"
+                    <input type="text" value="${escapeHtml(item.titulo || '')}" aria-label="Título del item ${itemIndex + 1}"
                            onchange="updateMV11DeptItem(${docIndex}, ${itemIndex}, 'titulo', this.value)"
                            class="w-full px-2 py-1 text-xs rounded border border-gray-300 focus:border-amber-500"
                            placeholder="Título">
-                    <input type="text" value="${escapeHtml(item.url || '')}"
+                    <input type="text" value="${escapeHtml(item.url || '')}" aria-label="URL del item ${itemIndex + 1}"
                            onchange="updateMV11DeptItem(${docIndex}, ${itemIndex}, 'url', this.value)"
                            class="w-full px-2 py-1 text-xs rounded border border-gray-300 focus:border-amber-500"
                            placeholder="URL">
@@ -841,9 +874,9 @@ function createMV11DepartmentHtml(docIndex, doc) {
 
     return `
         <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 relative group">
-            <button type="button" onclick="removeMV11Doc(${docIndex})"
-                    class="absolute top-2 right-2 p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button type="button" onclick="removeMV11Doc(${docIndex})" aria-label="Eliminar departamento ${docIndex + 1}"
+                    class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 focus-visible:opacity-100">
+                <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
@@ -852,14 +885,14 @@ function createMV11DepartmentHtml(docIndex, doc) {
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3 pr-8">
                 <div>
-                    <label class="block text-xs font-medium text-amber-700 mb-1">Año</label>
-                    <input type="text" value="${escapeHtml(doc.anio || '')}"
+                    <label for="mv11-${docIndex}-anio" class="block text-xs font-medium text-amber-700 mb-1">Año</label>
+                    <input type="text" id="mv11-${docIndex}-anio" value="${escapeHtml(doc.anio || '')}"
                            onchange="updateMV11Doc(${docIndex}, 'anio', this.value)"
                            class="w-full px-2 py-1.5 text-sm rounded border border-amber-300 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 bg-white">
                 </div>
                 <div>
-                    <label class="block text-xs font-medium text-amber-700 mb-1">Nombre del Departamento</label>
-                    <input type="text" value="${escapeHtml(doc.departamento || '')}"
+                    <label for="mv11-${docIndex}-departamento" class="block text-xs font-medium text-amber-700 mb-1">Nombre del Departamento</label>
+                    <input type="text" id="mv11-${docIndex}-departamento" value="${escapeHtml(doc.departamento || '')}"
                            onchange="updateMV11Doc(${docIndex}, 'departamento', this.value)"
                            class="w-full px-2 py-1.5 text-sm rounded border border-amber-300 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 bg-white">
                 </div>
@@ -868,8 +901,8 @@ function createMV11DepartmentHtml(docIndex, doc) {
                 ${itemsHtml}
             </div>
             <button type="button" onclick="addMV11DeptItem(${docIndex})"
-                    class="mt-2 flex items-center px-2 py-1 text-xs bg-white text-amber-600 rounded border border-amber-300 hover:bg-amber-50 transition-colors">
-                <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    class="mt-2 flex items-center px-2 py-1 text-xs bg-white text-amber-800 rounded border border-amber-300 hover:bg-amber-50 transition-colors">
+                <svg aria-hidden="true" focusable="false" class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                 </svg>
                 Agregar Item
@@ -881,11 +914,15 @@ function createMV11DepartmentHtml(docIndex, doc) {
 function addMV11SimpleDoc(year) {
     mv11Data.push({ anio: year, titulo: '', url: '' });
     renderMV11();
+    const nuevo = document.getElementById(`mv11-${mv11Data.length - 1}-titulo`);
+    if (nuevo) nuevo.focus();
 }
 
 function addMV11Department(year) {
     mv11Data.push({ anio: year, departamento: '', items: [] });
     renderMV11();
+    const nuevo = document.getElementById(`mv11-${mv11Data.length - 1}-departamento`);
+    if (nuevo) nuevo.focus();
 }
 
 function removeMV11Doc(docIndex) {
@@ -899,9 +936,12 @@ function updateMV11Doc(docIndex, field, value) {
     if (mv11Data[docIndex]) {
         mv11Data[docIndex][field] = value;
         updateJsonFromVisual();
-        // Si se cambió el año, re-renderizar para reorganizar
+        // Si se cambió el año, re-renderizar para reorganizar (conservando el foco)
         if (field === 'anio') {
+            const activoId = document.activeElement ? document.activeElement.id : null;
             renderMV11();
+            const activo = activoId ? document.getElementById(activoId) : null;
+            if (activo) activo.focus();
         }
     }
 }
@@ -943,7 +983,7 @@ function renderMV12() {
     if (mv12Data.length === 0) {
         container.innerHTML = `
             <div class="text-center py-8 text-gray-500 border-2 border-dashed border-gray-200 rounded-lg">
-                <svg class="w-12 h-12 mx-auto text-gray-300 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg aria-hidden="true" focusable="false" class="w-12 h-12 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                 </svg>
                 <p>No hay secciones agregadas</p>
@@ -969,22 +1009,22 @@ function createMV12SectionCard(section, sectionIndex) {
     (section.items || []).forEach((item, itemIndex) => {
         itemsHtml += `
             <div class="bg-white border border-gray-200 rounded-lg p-3 relative group">
-                <button type="button" onclick="removeMV12Item(${sectionIndex}, ${itemIndex})"
-                        class="absolute top-2 right-2 p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button type="button" onclick="removeMV12Item(${sectionIndex}, ${itemIndex})" aria-label="Eliminar documento ${itemIndex + 1} de la sección ${sectionIndex + 1}"
+                        class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 focus-visible:opacity-100">
+                    <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-2 pr-8">
                     <div>
-                        <label class="block text-xs font-medium text-gray-600 mb-1">Título</label>
-                        <input type="text" value="${escapeHtml(item.titulo || '')}"
+                        <label for="mv12-${sectionIndex}-item-${itemIndex}-titulo" class="block text-xs font-medium text-gray-600 mb-1">Título</label>
+                        <input type="text" id="mv12-${sectionIndex}-item-${itemIndex}-titulo" value="${escapeHtml(item.titulo || '')}"
                                onchange="updateMV12Item(${sectionIndex}, ${itemIndex}, 'titulo', this.value)"
                                class="w-full px-2 py-1.5 text-sm rounded border border-gray-300 focus:border-purple-500 focus:ring-1 focus:ring-purple-500">
                     </div>
                     <div>
-                        <label class="block text-xs font-medium text-gray-600 mb-1">URL</label>
-                        <input type="text" value="${escapeHtml(item.url || '')}"
+                        <label for="mv12-${sectionIndex}-item-${itemIndex}-url" class="block text-xs font-medium text-gray-600 mb-1">URL</label>
+                        <input type="text" id="mv12-${sectionIndex}-item-${itemIndex}-url" value="${escapeHtml(item.url || '')}"
                                onchange="updateMV12Item(${sectionIndex}, ${itemIndex}, 'url', this.value)"
                                class="w-full px-2 py-1.5 text-sm rounded border border-gray-300 focus:border-purple-500 focus:ring-1 focus:ring-purple-500">
                     </div>
@@ -998,24 +1038,24 @@ function createMV12SectionCard(section, sectionIndex) {
             <div class="flex items-center space-x-3">
                 <span class="bg-purple-600 text-white px-3 py-1 rounded-lg font-bold">${section.anio || '----'}</span>
             </div>
-            <button type="button" onclick="removeMV12Section(${sectionIndex})"
-                    class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button type="button" onclick="removeMV12Section(${sectionIndex})" aria-label="Eliminar sección ${sectionIndex + 1}"
+                    class="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                 </svg>
             </button>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
             <div>
-                <label class="block text-xs font-medium text-purple-700 mb-1">Año</label>
-                <input type="text" value="${section.anio || ''}"
+                <label for="mv12-${sectionIndex}-anio" class="block text-xs font-medium text-purple-700 mb-1">Año</label>
+                <input type="text" id="mv12-${sectionIndex}-anio" value="${section.anio || ''}"
                        onchange="updateMV12Section(${sectionIndex}, 'anio', this.value)"
                        class="w-full px-3 py-2 text-sm rounded-lg border border-purple-300 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 bg-white"
                        placeholder="2024">
             </div>
             <div>
-                <label class="block text-xs font-medium text-purple-700 mb-1">Nombre de la Sección</label>
-                <input type="text" value="${escapeHtml(section.seccion || '')}"
+                <label for="mv12-${sectionIndex}-seccion" class="block text-xs font-medium text-purple-700 mb-1">Nombre de la Sección</label>
+                <input type="text" id="mv12-${sectionIndex}-seccion" value="${escapeHtml(section.seccion || '')}"
                        onchange="updateMV12Section(${sectionIndex}, 'seccion', this.value)"
                        class="w-full px-3 py-2 text-sm rounded-lg border border-purple-300 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 bg-white"
                        placeholder="Diseño Curricular 2024">
@@ -1026,7 +1066,7 @@ function createMV12SectionCard(section, sectionIndex) {
         </div>
         <button type="button" onclick="addMV12Item(${sectionIndex})"
                 class="mt-3 flex items-center px-3 py-1.5 text-sm bg-white text-purple-600 rounded border border-purple-300 hover:bg-purple-50 transition-colors">
-            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
             </svg>
             Agregar Documento
@@ -1045,6 +1085,7 @@ function addMV12Section() {
 
     const container = document.getElementById('mv12-container');
     container.lastElementChild?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    enfocarUltimo('mv12-container');
 }
 
 function removeMV12Section(index) {
@@ -1068,6 +1109,8 @@ function addMV12Item(sectionIndex) {
         }
         mv12Data[sectionIndex].items.push({ titulo: '', url: '' });
         renderMV12();
+        const nuevo = document.getElementById(`mv12-${sectionIndex}-item-${mv12Data[sectionIndex].items.length - 1}-titulo`);
+        if (nuevo) nuevo.focus();
     }
 }
 
