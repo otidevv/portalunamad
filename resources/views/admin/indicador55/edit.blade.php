@@ -156,7 +156,7 @@
                             Documentos
                         </h2>
                         <div class="flex items-center space-x-2">
-                            <button type="button" id="toggle-json-mode" onclick="toggleJsonMode()" class="text-xs px-3 py-1 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                            <button type="button" id="toggle-json-mode" onclick="toggleJsonMode()" aria-controls="json-editor" aria-expanded="false" class="text-xs px-3 py-1 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
                                 <span id="toggle-json-text">Ver JSON</span>
                             </button>
                         </div>
@@ -269,9 +269,11 @@
                             <span class="text-sm text-gray-700">Estado</span>
                             <label class="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" name="activo" value="1" {{ $indicador55->activo ? 'checked' : '' }}
+                                       role="switch" aria-checked="{{ $indicador55->activo ? 'true' : 'false' }}"
+                                       onchange="this.setAttribute('aria-checked', this.checked ? 'true' : 'false'); document.getElementById('activo-texto').textContent = this.checked ? 'Activo' : 'Inactivo';"
                                        class="sr-only peer">
                                 <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#db0455]/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#db0455]"></div>
-                                <span class="ml-2 text-sm font-medium text-gray-700">{{ $indicador55->activo ? 'Activo' : 'Inactivo' }}</span>
+                                <span id="activo-texto" class="ml-2 text-sm font-medium text-gray-700">{{ $indicador55->activo ? 'Activo' : 'Inactivo' }}</span>
                             </label>
                         </div>
 
@@ -419,12 +421,16 @@ function toggleJsonMode() {
 
     isJsonMode = !isJsonMode;
 
+    const toggleBtn = document.getElementById('toggle-json-mode');
+
     if (isJsonMode) {
         // Actualizar JSON desde el editor visual antes de mostrar
         updateJsonFromVisual();
         visualEditor.classList.add('hidden');
         jsonEditor.classList.remove('hidden');
         toggleText.textContent = 'Editor Visual';
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        document.getElementById('documentos-json').focus();
     } else {
         // Actualizar visual desde JSON antes de mostrar
         try {
@@ -451,7 +457,16 @@ function toggleJsonMode() {
         visualEditor.classList.remove('hidden');
         jsonEditor.classList.add('hidden');
         toggleText.textContent = 'Ver JSON';
+        toggleBtn.setAttribute('aria-expanded', 'false');
     }
+}
+
+// Enfoca el primer campo del último elemento de un contenedor (tras agregar)
+function enfocarUltimo(containerId) {
+    const container = document.getElementById(containerId);
+    const ultimo = container ? container.lastElementChild : null;
+    const campo = ultimo ? ultimo.querySelector('input, textarea, select') : null;
+    if (campo) campo.focus();
 }
 
 // ========================
@@ -489,7 +504,7 @@ function createSimpleDocumentCard(doc, index) {
     div.className = 'bg-gray-50 border border-gray-200 rounded-lg p-4 relative group';
     div.innerHTML = `
         <button type="button" onclick="removeSimpleDocument(${index})" aria-label="Eliminar documento ${index + 1}"
-                class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
+                class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 focus-visible:opacity-100">
             <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
             </svg>
@@ -532,12 +547,15 @@ function addSimpleDocument() {
     // Scroll al nuevo documento
     const container = document.getElementById('documents-container');
     container.lastElementChild?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    enfocarUltimo('documents-container');
 }
 
 function removeSimpleDocument(index) {
     if (confirm('¿Estás seguro de eliminar este documento?')) {
         documentsData.splice(index, 1);
         renderSimpleDocuments();
+        const boton = document.querySelector('button[onclick="addSimpleDocument()"]');
+        if (boton) boton.focus();
     }
 }
 
@@ -589,7 +607,7 @@ function createSectionCard(section, sectionIndex) {
         itemsHtml += `
             <div class="bg-white border border-gray-200 rounded-lg p-3 relative group">
                 <button type="button" onclick="removeSectionItem(${sectionIndex}, ${itemIndex})" aria-label="Eliminar item ${itemIndex + 1} de la sección ${sectionIndex + 1}"
-                        class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
+                        class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 focus-visible:opacity-100">
                     <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
@@ -659,6 +677,7 @@ function addSection() {
 
     const container = document.getElementById('sections-container');
     container.lastElementChild?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    enfocarUltimo('sections-container');
 }
 
 function removeSection(index) {
@@ -685,6 +704,8 @@ function addSectionItem(sectionIndex) {
             url: ''
         });
         renderSections();
+        const nuevo = document.getElementById(`sec-${sectionIndex}-item-${sectionsData[sectionIndex].items.length - 1}-titulo`);
+        if (nuevo) nuevo.focus();
     }
 }
 
@@ -794,7 +815,7 @@ function createMV11SimpleDocHtml(docIndex, doc) {
     return `
         <div class="bg-white border border-gray-200 rounded-lg p-3 relative group">
             <button type="button" onclick="removeMV11Doc(${docIndex})" aria-label="Eliminar documento simple ${docIndex + 1}"
-                    class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
+                    class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 focus-visible:opacity-100">
                 <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
@@ -832,7 +853,7 @@ function createMV11DepartmentHtml(docIndex, doc) {
         itemsHtml += `
             <div class="bg-gray-50 border border-gray-200 rounded p-2 relative group/item">
                 <button type="button" onclick="removeMV11DeptItem(${docIndex}, ${itemIndex})" aria-label="Eliminar item ${itemIndex + 1} del departamento"
-                        class="absolute top-1 right-1 p-0.5 text-gray-600 hover:text-red-700 rounded transition-colors opacity-0 group-hover/item:opacity-100">
+                        class="absolute top-1 right-1 p-0.5 text-gray-600 hover:text-red-700 rounded transition-colors opacity-0 group-hover/item:opacity-100 group-focus-within/item:opacity-100 focus-visible:opacity-100">
                     <svg aria-hidden="true" focusable="false" class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
@@ -854,7 +875,7 @@ function createMV11DepartmentHtml(docIndex, doc) {
     return `
         <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 relative group">
             <button type="button" onclick="removeMV11Doc(${docIndex})" aria-label="Eliminar departamento ${docIndex + 1}"
-                    class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
+                    class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 focus-visible:opacity-100">
                 <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
@@ -893,11 +914,15 @@ function createMV11DepartmentHtml(docIndex, doc) {
 function addMV11SimpleDoc(year) {
     mv11Data.push({ anio: year, titulo: '', url: '' });
     renderMV11();
+    const nuevo = document.getElementById(`mv11-${mv11Data.length - 1}-titulo`);
+    if (nuevo) nuevo.focus();
 }
 
 function addMV11Department(year) {
     mv11Data.push({ anio: year, departamento: '', items: [] });
     renderMV11();
+    const nuevo = document.getElementById(`mv11-${mv11Data.length - 1}-departamento`);
+    if (nuevo) nuevo.focus();
 }
 
 function removeMV11Doc(docIndex) {
@@ -911,9 +936,12 @@ function updateMV11Doc(docIndex, field, value) {
     if (mv11Data[docIndex]) {
         mv11Data[docIndex][field] = value;
         updateJsonFromVisual();
-        // Si se cambió el año, re-renderizar para reorganizar
+        // Si se cambió el año, re-renderizar para reorganizar (conservando el foco)
         if (field === 'anio') {
+            const activoId = document.activeElement ? document.activeElement.id : null;
             renderMV11();
+            const activo = activoId ? document.getElementById(activoId) : null;
+            if (activo) activo.focus();
         }
     }
 }
@@ -982,7 +1010,7 @@ function createMV12SectionCard(section, sectionIndex) {
         itemsHtml += `
             <div class="bg-white border border-gray-200 rounded-lg p-3 relative group">
                 <button type="button" onclick="removeMV12Item(${sectionIndex}, ${itemIndex})" aria-label="Eliminar documento ${itemIndex + 1} de la sección ${sectionIndex + 1}"
-                        class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100">
+                        class="absolute top-2 right-2 p-1 text-gray-600 hover:text-red-700 hover:bg-red-50 rounded transition-colors opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 focus-visible:opacity-100">
                     <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
@@ -1057,6 +1085,7 @@ function addMV12Section() {
 
     const container = document.getElementById('mv12-container');
     container.lastElementChild?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    enfocarUltimo('mv12-container');
 }
 
 function removeMV12Section(index) {
@@ -1080,6 +1109,8 @@ function addMV12Item(sectionIndex) {
         }
         mv12Data[sectionIndex].items.push({ titulo: '', url: '' });
         renderMV12();
+        const nuevo = document.getElementById(`mv12-${sectionIndex}-item-${mv12Data[sectionIndex].items.length - 1}-titulo`);
+        if (nuevo) nuevo.focus();
     }
 }
 

@@ -11,7 +11,7 @@
             <p class="text-gray-600 text-sm mt-1">Administra documentos y carpetas del portal</p>
         </div>
         <div class="flex space-x-3">
-            <button onclick="openModal('carpeta')" 
+            <button type="button" onclick="openModal('carpeta')" 
                     class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200">
                 <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -19,7 +19,7 @@
                 <span>Nueva Carpeta</span>
             </button>
             @if($carpetaActual)
-            <button onclick="openModal('documento')" 
+            <button type="button" onclick="openModal('documento')" 
                     class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#db0455] to-[#a00340] text-white rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200">
                 <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -118,16 +118,16 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div class="flex items-center space-x-2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 focus-visible:opacity-100 transition-opacity">
                             <!-- Controles de Orden -->
                             <div class="flex flex-col">
-                                <button onclick="cambiarOrden('carpeta', {{ $carpeta->id }}, 'up')" 
+                                <button type="button" onclick="cambiarOrdenCarpeta({{ $carpeta->id }}, 'subir')" 
                                         class="text-gray-600 hover:text-green-700 transition-colors p-1" title="Subir" aria-label="Subir carpeta {{ $carpeta->nombre }} en el orden">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
                                     </svg>
                                 </button>
-                                <button onclick="cambiarOrden('carpeta', {{ $carpeta->id }}, 'down')" 
+                                <button type="button" onclick="cambiarOrdenCarpeta({{ $carpeta->id }}, 'bajar')" 
                                         class="text-gray-600 hover:text-orange-700 transition-colors p-1" title="Bajar" aria-label="Bajar carpeta {{ $carpeta->nombre }} en el orden">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -140,7 +140,7 @@
                                 <span class="sr-only">Orden actual:</span><span aria-hidden="true">#</span>{{ $carpeta->orden ?? 0 }}
                             </span>
                             
-                            <button onclick="editCarpeta({{ $carpeta->id }})" 
+                            <button type="button" onclick="editCarpeta({{ $carpeta->id }})" 
                                     class="text-gray-600 hover:text-blue-700 transition-colors" title="Editar" aria-label="Editar carpeta {{ $carpeta->nombre }}">
                                 <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
@@ -207,7 +207,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div class="flex items-center space-x-2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 focus-visible:opacity-100 transition-opacity">
                             <a href="{{ route('admin.documentos.show', $documento) }}" 
                                class="text-gray-600 hover:text-gray-800 transition-colors" title="Ver" aria-label="Ver documento {{ $documento->titulo }}">
                                 <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -215,13 +215,13 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                                 </svg>
                             </a>
-                            <button onclick="editDocumento({{ $documento->id }})" 
+                            <button type="button" onclick="editDocumento({{ $documento->id }})" 
                                     class="text-gray-600 hover:text-blue-700 transition-colors" title="Editar" aria-label="Editar documento {{ $documento->titulo }}">
                                 <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                                 </svg>
                             </button>
-                            <button onclick="toggleEstado({{ $documento->id }})"
+                            <button type="button" onclick="toggleEstado({{ $documento->id }})"
                                     class="text-gray-600 hover:text-green-700 transition-colors" title="Cambiar estado" aria-label="Cambiar estado del documento {{ $documento->titulo }} (actual: {{ $documento->texto_estado }})">
                                 <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -268,7 +268,7 @@
                         Crea tu primera carpeta para organizar los documentos
                     @endif
                 </p>
-                <button onclick="openModal('{{ $carpetaActual ? 'documento' : 'carpeta' }}')" 
+                <button type="button" onclick="openModal('{{ $carpetaActual ? 'documento' : 'carpeta' }}')" 
                         class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#db0455] to-[#a00340] text-white rounded-lg hover:shadow-lg transition-all">
                     <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -293,19 +293,46 @@
 <script>
 let currentModalType = '';
 
+// Accesibilidad de los modales: foco inicial, trampa de foco y retorno del foco al disparador
+function a11yModalAbrir(modal) {
+    modal.__disparador = document.activeElement;
+    setTimeout(() => {
+        const primero = modal.querySelector('button, [href], input:not([type="hidden"]), select, textarea');
+        if (primero) primero.focus();
+    }, 50);
+    if (!modal.__trampa) {
+        modal.__trampa = true;
+        modal.addEventListener('keydown', function (e) {
+            if (e.key !== 'Tab') return;
+            const els = Array.from(modal.querySelectorAll('button, [href], input:not([type="hidden"]), select, textarea, [tabindex]:not([tabindex="-1"])'))
+                .filter(el => !el.disabled && el.offsetParent !== null);
+            if (!els.length) return;
+            const primero = els[0], ultimo = els[els.length - 1];
+            if (e.shiftKey && document.activeElement === primero) { e.preventDefault(); ultimo.focus(); }
+            else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primero.focus(); }
+        });
+    }
+}
+function a11yModalCerrar(modal) {
+    const d = modal.__disparador;
+    modal.__disparador = null;
+    if (d && typeof d.focus === 'function' && document.contains(d)) d.focus();
+}
+
 // Abrir modal
 function openModal(type) {
     currentModalType = type;
     const modal = document.getElementById('universalModal');
     const modalContent = modal.querySelector('.inline-block');
-    
+
     if (type === 'carpeta') {
         modalContent.innerHTML = getCarpetaModalHTML();
     } else if (type === 'documento') {
         modalContent.innerHTML = getDocumentoModalHTML();
     }
-    
+
     modal.classList.remove('hidden');
+    a11yModalAbrir(modal);
     
     // Focus en el primer input
     setTimeout(() => {
@@ -316,8 +343,11 @@ function openModal(type) {
 
 // Cerrar modal
 function closeModal() {
-    document.getElementById('universalModal').classList.add('hidden');
+    const modal = document.getElementById('universalModal');
+    if (modal.classList.contains('hidden')) return;
+    modal.classList.add('hidden');
     currentModalType = '';
+    a11yModalCerrar(modal);
 }
 
 // HTML del modal de carpeta
@@ -332,7 +362,7 @@ function getCarpetaModalHTML() {
                         </svg>
                     </div>
                     <div class="ml-3">
-                        <h3 class="text-lg leading-6 font-medium text-white">
+                        <h3 class="text-lg leading-6 font-medium text-white" id="modal-title">
                             Nueva Carpeta
                         </h3>
                         <p class="text-sm text-white">
@@ -429,7 +459,7 @@ function getDocumentoModalHTML() {
                         </svg>
                     </div>
                     <div class="ml-3">
-                        <h3 class="text-lg leading-6 font-medium text-white">
+                        <h3 class="text-lg leading-6 font-medium text-white" id="modal-title">
                             Nuevo Documento
                         </h3>
                         <p class="text-sm text-white">
@@ -543,7 +573,7 @@ function getEditCarpetaModalHTML(carpeta) {
                         </svg>
                     </div>
                     <div class="ml-3">
-                        <h3 class="text-lg leading-6 font-medium text-white">
+                        <h3 class="text-lg leading-6 font-medium text-white" id="modal-title">
                             Editar Carpeta
                         </h3>
                         <p class="text-sm text-white">
@@ -637,7 +667,7 @@ function getEditDocumentoModalHTML(documento) {
                         </svg>
                     </div>
                     <div class="ml-3">
-                        <h3 class="text-lg leading-6 font-medium text-white">
+                        <h3 class="text-lg leading-6 font-medium text-white" id="modal-title">
                             Editar Documento
                         </h3>
                         <p class="text-sm text-white">
@@ -1026,6 +1056,7 @@ function openEditCarpetaModal(carpeta) {
     
     modalContent.innerHTML = getEditCarpetaModalHTML(carpeta);
     modal.classList.remove('hidden');
+    a11yModalAbrir(modal);
     
     // Focus en el primer input
     setTimeout(() => {
@@ -1043,6 +1074,7 @@ function openEditDocumentoModal(documento) {
     
     modalContent.innerHTML = getEditDocumentoModalHTML(documento);
     modal.classList.remove('hidden');
+    a11yModalAbrir(modal);
     
     // Focus en el primer input
     setTimeout(() => {

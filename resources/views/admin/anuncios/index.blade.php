@@ -11,7 +11,7 @@
             <h2 class="text-2xl font-bold text-gray-800">Gestión de Anuncios</h2>
             <p class="text-gray-600 text-sm mt-1">Administra las publicaciones y anuncios del portal</p>
         </div>
-        <button onclick="openAnuncioModal()" 
+        <button type="button" onclick="openAnuncioModal()" 
                 class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#db0455] to-[#a00340] text-white rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200">
             <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
@@ -45,7 +45,7 @@
                 <option value="0">No destacados</option>
             </select>
             
-            <button onclick="aplicarFiltros()" class="px-4 py-2 bg-[#db0455] text-white rounded-lg hover:bg-[#a00340] transition-colors">
+            <button type="button" onclick="aplicarFiltros()" class="px-4 py-2 bg-[#db0455] text-white rounded-lg hover:bg-[#a00340] transition-colors">
                 Filtrar
             </button>
         </div>
@@ -227,7 +227,7 @@
                                                   d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                                         </svg>
                                     </a>
-                                    <button onclick="openAnuncioModal({{ $anuncio->id }})"
+                                    <button type="button" onclick="openAnuncioModal({{ $anuncio->id }})"
                                             class="text-blue-600 hover:text-blue-900" title="Editar" aria-label="Editar anuncio {{ $anuncio->titulo }}">
                                         <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -296,9 +296,9 @@
                                 </p>
                             </div>
                         </div>
-                        <button onclick="closeAnuncioModal()"
+                        <button type="button" onclick="closeAnuncioModal()"
                                 aria-label="Cerrar"
-                                class="text-white hover:text-gray-200 focus:outline-none focus:text-gray-200 transition ease-in-out duration-150">
+                                class="text-white hover:text-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#a00340] transition ease-in-out duration-150">
                             <svg aria-hidden="true" focusable="false" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
@@ -549,11 +549,11 @@
                         </div>
                         <div class="flex space-x-3">
                             <button type="button" onclick="closeAnuncioModal()"
-                                    class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out">
+                                    class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0455] focus-visible:ring-offset-2 active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out">
                                 Cancelar
                             </button>
                             <button type="submit" id="submitBtn"
-                                    class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-[#db0455] to-[#a00340] hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 focus:outline-none focus:shadow-outline disabled:opacity-50">
+                                    class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-[#db0455] to-[#a00340] hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0455] focus-visible:ring-offset-2 disabled:opacity-50">
                                 <span id="submitText">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -583,12 +583,40 @@ let enlaceIndex = 0;
 let currentAnuncioId = null;
 let isEditMode = false;
 
+// Accesibilidad de los modales: foco inicial, trampa de foco y retorno del foco al disparador
+function a11yModalAbrir(modal) {
+    modal.__disparador = document.activeElement;
+    setTimeout(() => {
+        const primero = modal.querySelector('button, [href], input:not([type="hidden"]), select, textarea');
+        if (primero) primero.focus();
+    }, 50);
+    if (!modal.__trampa) {
+        modal.__trampa = true;
+        modal.addEventListener('keydown', function (e) {
+            if (e.key !== 'Tab') return;
+            const els = Array.from(modal.querySelectorAll('button, [href], input:not([type="hidden"]), select, textarea, [tabindex]:not([tabindex="-1"])'))
+                .filter(el => !el.disabled && el.offsetParent !== null);
+            if (!els.length) return;
+            const primero = els[0], ultimo = els[els.length - 1];
+            if (e.shiftKey && document.activeElement === primero) { e.preventDefault(); ultimo.focus(); }
+            else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primero.focus(); }
+        });
+    }
+}
+function a11yModalCerrar(modal) {
+    const d = modal.__disparador;
+    modal.__disparador = null;
+    if (d && typeof d.focus === 'function' && document.contains(d)) d.focus();
+}
+
 function openAnuncioModal(anuncioId = null) {
     currentAnuncioId = anuncioId;
     isEditMode = anuncioId !== null;
 
     // Show modal
-    document.getElementById('anuncioModal').classList.remove('hidden');
+    const modalEl = document.getElementById('anuncioModal');
+    modalEl.classList.remove('hidden');
+    a11yModalAbrir(modalEl);
 
     // Update modal title and button text
     const modalTitle = document.getElementById('modal-title');
@@ -648,8 +676,16 @@ function resetFormForCreate() {
 }
 
 function closeAnuncioModal() {
-    document.getElementById('anuncioModal').classList.add('hidden');
+    const modalEl = document.getElementById('anuncioModal');
+    if (modalEl.classList.contains('hidden')) return;
+    modalEl.classList.add('hidden');
+    a11yModalCerrar(modalEl);
 }
+
+// Cerrar el modal con Escape
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeAnuncioModal();
+});
 
 // Add new enlace input
 function addEnlace() {

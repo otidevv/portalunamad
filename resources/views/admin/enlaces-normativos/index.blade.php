@@ -77,7 +77,9 @@
                                 </a>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <button onclick="toggleEstado('{{ $enlace->id }}')"
+                                <button type="button" onclick="toggleEstado('{{ $enlace->id }}')"
+                                        aria-pressed="{{ $enlace->activo ? 'true' : 'false' }}"
+                                        aria-label="{{ $enlace->activo ? 'Activo' : 'Inactivo' }}: {{ $enlace->titulo }}. Pulse para cambiar el estado"
                                         class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium {{ $enlace->activo ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
                                     {{ $enlace->activo ? 'Activo' : 'Inactivo' }}
                                 </button>

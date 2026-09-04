@@ -122,8 +122,10 @@
                                 @endif
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <button onclick="toggleEstado('{{ $dataset->id }}')"
-                                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium {{ $dataset->activo ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-600' }}">
+                                <button type="button" onclick="toggleEstado('{{ $dataset->id }}')"
+                                        aria-pressed="{{ $dataset->activo ? 'true' : 'false' }}"
+                                        aria-label="{{ $dataset->activo ? 'Visible' : 'Oculto' }} en el portal: {{ $dataset->nombre }}. Pulse para cambiar la visibilidad"
+                                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium {{ $dataset->activo ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-700' }}">
                                     {{ $dataset->activo ? 'Visible' : 'Oculto' }}
                                 </button>
                             </td>

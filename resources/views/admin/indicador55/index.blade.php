@@ -62,7 +62,10 @@
                         </div>
                         <form action="{{ route('admin.indicador55.toggle-estado', $variable) }}" method="POST" class="inline">
                             @csrf
-                            <button type="submit" class="px-2 py-1 rounded-full text-xs font-medium {{ $variable->activo ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
+                            <button type="submit"
+                                    aria-pressed="{{ $variable->activo ? 'true' : 'false' }}"
+                                    aria-label="{{ $variable->activo ? 'Activo' : 'Inactivo' }}: {{ $variable->titulo }}. Pulse para cambiar el estado"
+                                    class="px-2 py-1 rounded-full text-xs font-medium {{ $variable->activo ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
                                 {{ $variable->activo ? 'Activo' : 'Inactivo' }}
                             </button>
                         </form>
@@ -71,7 +74,7 @@
 
                 <!-- Contenido -->
                 <div class="p-4">
-                    <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+                    <p class="text-gray-600 text-sm mb-4 line-clamp-2" title="{{ $variable->descripcion }}">
                         {{ $variable->descripcion ?: 'Sin descripción' }}
                     </p>
 

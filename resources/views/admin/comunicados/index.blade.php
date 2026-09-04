@@ -10,7 +10,7 @@
             <h2 class="text-2xl font-bold text-gray-800">Gestión de Comunicados</h2>
             <p class="text-gray-600 text-sm mt-1">Administra los comunicados del portal</p>
         </div>
-        <button onclick="openComunicadoModal()" 
+        <button type="button" onclick="openComunicadoModal()" 
                 class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#db0455] to-[#a00340] text-white rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200">
             <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
@@ -165,7 +165,9 @@
                                 </span>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <button onclick="toggleEstado('{{ $comunicado->id }}', {{ $comunicado->estado ? 'true' : 'false' }})"
+                                <button type="button" onclick="toggleEstado('{{ $comunicado->id }}', {{ $comunicado->estado ? 'true' : 'false' }})"
+                                        aria-pressed="{{ $comunicado->estado ? 'true' : 'false' }}"
+                                        aria-label="{{ $comunicado->estado ? 'Activo' : 'Inactivo' }}: {{ $comunicado->titulo }}. Pulse para cambiar el estado"
                                         class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium {{ $comunicado->estado ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
                                     {{ $comunicado->estado ? 'Activo' : 'Inactivo' }}
                                 </button>
@@ -192,7 +194,7 @@
                                                   d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                                         </svg>
                                     </a>
-                                    <button onclick="openComunicadoModal({{ $comunicado->id }})"
+                                    <button type="button" onclick="openComunicadoModal({{ $comunicado->id }})"
                                             class="text-blue-600 hover:text-blue-900" title="Editar" aria-label="Editar comunicado {{ $comunicado->titulo }}">
                                         <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -263,9 +265,9 @@
                                 </p>
                             </div>
                         </div>
-                        <button onclick="closeComunicadoModal()"
+                        <button type="button" onclick="closeComunicadoModal()"
                                 aria-label="Cerrar"
-                                class="text-white hover:text-gray-200 focus:outline-none focus:text-gray-200 transition ease-in-out duration-150">
+                                class="text-white hover:text-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#a00340] transition ease-in-out duration-150">
                             <svg aria-hidden="true" focusable="false" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
@@ -536,11 +538,11 @@
                         </div>
                         <div class="flex space-x-3">
                             <button type="button" onclick="closeComunicadoModal()"
-                                    class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out">
+                                    class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0455] focus-visible:ring-offset-2 active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out">
                                 Cancelar
                             </button>
                             <button type="submit" id="submitBtn"
-                                    class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-[#db0455] to-[#a00340] hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 focus:outline-none focus:shadow-outline disabled:opacity-50">
+                                    class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-[#db0455] to-[#a00340] hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0455] focus-visible:ring-offset-2 disabled:opacity-50">
                                 <span id="submitText" class="inline-flex items-center">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -595,13 +597,41 @@ function toggleEstado(comunicadoId, estadoActual) {
 let currentComunicadoId = null;
 let isEditMode = false;
 
+// Accesibilidad de los modales: foco inicial, trampa de foco y retorno del foco al disparador
+function a11yModalAbrir(modal) {
+    modal.__disparador = document.activeElement;
+    setTimeout(() => {
+        const primero = modal.querySelector('button, [href], input:not([type="hidden"]), select, textarea');
+        if (primero) primero.focus();
+    }, 50);
+    if (!modal.__trampa) {
+        modal.__trampa = true;
+        modal.addEventListener('keydown', function (e) {
+            if (e.key !== 'Tab') return;
+            const els = Array.from(modal.querySelectorAll('button, [href], input:not([type="hidden"]), select, textarea, [contenteditable="true"], [tabindex]:not([tabindex="-1"])'))
+                .filter(el => !el.disabled && el.offsetParent !== null);
+            if (!els.length) return;
+            const primero = els[0], ultimo = els[els.length - 1];
+            if (e.shiftKey && document.activeElement === primero) { e.preventDefault(); ultimo.focus(); }
+            else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primero.focus(); }
+        });
+    }
+}
+function a11yModalCerrar(modal) {
+    const d = modal.__disparador;
+    modal.__disparador = null;
+    if (d && typeof d.focus === 'function' && document.contains(d)) d.focus();
+}
+
 // Modal functions
 function openComunicadoModal(comunicadoId = null) {
     currentComunicadoId = comunicadoId;
     isEditMode = comunicadoId !== null;
 
     // Show modal
-    document.getElementById('comunicadoModal').classList.remove('hidden');
+    const modalEl = document.getElementById('comunicadoModal');
+    modalEl.classList.remove('hidden');
+    a11yModalAbrir(modalEl);
 
     // Update modal title and button text
     const modalTitle = document.getElementById('modal-title');
@@ -731,7 +761,10 @@ function loadComunicadoData(comunicadoId) {
 }
 
 function closeComunicadoModal() {
-    document.getElementById('comunicadoModal').classList.add('hidden');
+    const modalEl = document.getElementById('comunicadoModal');
+    if (modalEl.classList.contains('hidden')) return;
+    modalEl.classList.add('hidden');
+    a11yModalCerrar(modalEl);
 }
 
 // Clear validation errors
@@ -784,9 +817,9 @@ function insertLink() {
     } else {
         // Si no hay texto seleccionado, crear un diálogo personalizado
         const modalHtml = `
-            <div id="linkModal" class="fixed inset-0 z-[60] flex items-center justify-center p-4">
+            <div id="linkModal" role="dialog" aria-modal="true" aria-labelledby="linkModalTitle" class="fixed inset-0 z-[60] flex items-center justify-center p-4">
                 <div class="bg-white rounded-xl shadow-2xl max-w-md w-full p-6">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Insertar Enlace</h3>
+                    <h3 id="linkModalTitle" class="text-lg font-semibold text-gray-900 mb-4">Insertar Enlace</h3>
                     <div class="space-y-4">
                         <div>
                             <label for="linkTextInput" class="block text-sm font-medium text-gray-700 mb-1">Texto del enlace</label>
@@ -802,11 +835,11 @@ function insertLink() {
                         </div>
                     </div>
                     <div class="flex justify-end gap-3 mt-6">
-                        <button onclick="closeLinkModal()" 
+                        <button type="button" onclick="closeLinkModal()" 
                                 class="px-4 py-2 text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
                             Cancelar
                         </button>
-                        <button onclick="insertLinkFromModal()" 
+                        <button type="button" onclick="insertLinkFromModal()" 
                                 class="px-4 py-2 bg-gradient-to-r from-[#db0455] to-[#a00340] text-white rounded-lg hover:shadow-lg transition-all">
                             Insertar
                         </button>
@@ -847,6 +880,8 @@ function closeLinkModal() {
     const modal = document.getElementById('linkModal');
     if (modal) {
         modal.parentElement.remove();
+        const editor = document.getElementById('editor-content');
+        if (editor) editor.focus();
     }
 }
 
@@ -1050,6 +1085,10 @@ document.addEventListener('DOMContentLoaded', function() {
 // Close modal on ESC key
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
+        if (document.getElementById('linkModal')) {
+            closeLinkModal();
+            return;
+        }
         const modal = document.getElementById('comunicadoModal');
         if (!modal.classList.contains('hidden')) {
             closeComunicadoModal();

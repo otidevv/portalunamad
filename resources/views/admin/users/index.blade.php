@@ -10,7 +10,7 @@
             <h2 class="text-2xl font-bold text-gray-800">Gestión de Usuarios</h2>
             <p class="text-gray-600 text-sm mt-1">Administra los usuarios del sistema</p>
         </div>
-        <button onclick="openUserModal()"
+        <button type="button" onclick="openUserModal()"
                 class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#db0455] to-[#a00340] text-white rounded-lg hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200">
             <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
@@ -151,7 +151,9 @@
                                 </span>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <button onclick="toggleEstado('{{ $user->id }}', {{ $user->estado ? 'true' : 'false' }})"
+                                <button type="button" onclick="toggleEstado('{{ $user->id }}', {{ $user->estado ? 'true' : 'false' }})"
+                                        aria-pressed="{{ $user->estado ? 'true' : 'false' }}"
+                                        aria-label="{{ $user->estado ? 'Activo' : 'Inactivo' }}: {{ $user->name }}. Pulse para cambiar el estado"
                                         class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium {{ $user->estado ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
                                     {{ $user->estado ? 'Activo' : 'Inactivo' }}
                                 </button>
@@ -161,14 +163,14 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                 <div class="flex items-center space-x-2">
-                                    <button onclick="openUserModal({{ $user->id }})"
+                                    <button type="button" onclick="openUserModal({{ $user->id }})"
                                             class="text-blue-600 hover:text-blue-900" title="Editar" aria-label="Editar usuario {{ $user->name }}">
                                         <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                   d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                                         </svg>
                                     </button>
-                                    <button onclick="openPasswordModal({{ $user->id }}, '{{ $user->name }}')"
+                                    <button type="button" onclick="openPasswordModal({{ $user->id }}, '{{ $user->name }}')"
                                             class="text-green-600 hover:text-green-900" title="Cambiar Contraseña" aria-label="Cambiar contraseña de {{ $user->name }}">
                                         <svg aria-hidden="true" focusable="false" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -237,9 +239,9 @@
                                 </p>
                             </div>
                         </div>
-                        <button onclick="closeUserModal()"
+                        <button type="button" onclick="closeUserModal()"
                                 aria-label="Cerrar"
-                                class="text-white hover:text-gray-200 focus:outline-none focus:text-gray-200 transition ease-in-out duration-150">
+                                class="text-white hover:text-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#a00340] transition ease-in-out duration-150">
                             <svg aria-hidden="true" focusable="false" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
@@ -434,7 +436,7 @@
                                                required aria-required="true">
                                         <button type="button"
                                                 onclick="togglePassword('password')"
-                                                aria-label="Mostrar contraseña"
+                                                aria-label="Mostrar contraseña" aria-pressed="false"
                                                 class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800">
                                             <svg aria-hidden="true" focusable="false" id="password-eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -465,7 +467,7 @@
                                                required aria-required="true">
                                         <button type="button"
                                                 onclick="togglePassword('password_confirmation')"
-                                                aria-label="Mostrar confirmación de contraseña"
+                                                aria-label="Mostrar confirmación de contraseña" aria-pressed="false"
                                                 class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800">
                                             <svg aria-hidden="true" focusable="false" id="password_confirmation-eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -524,11 +526,11 @@
                         </div>
                         <div class="flex space-x-3">
                             <button type="button" onclick="closeUserModal()"
-                                    class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out">
+                                    class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0455] focus-visible:ring-offset-2 active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out">
                                 Cancelar
                             </button>
                             <button type="submit" id="submitBtn"
-                                    class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-[#db0455] to-[#a00340] hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 focus:outline-none focus:shadow-outline disabled:opacity-50">
+                                    class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-[#db0455] to-[#a00340] hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0455] focus-visible:ring-offset-2 disabled:opacity-50">
                                 <span id="submitText" class="inline-flex items-center">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -566,9 +568,9 @@
                                 Cambiar Contraseña
                             </h3>
                         </div>
-                        <button onclick="closePasswordModal()"
+                        <button type="button" onclick="closePasswordModal()"
                                 aria-label="Cerrar"
-                                class="text-white hover:text-gray-200 focus:outline-none focus:text-gray-200 transition ease-in-out duration-150">
+                                class="text-white hover:text-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#a00340] transition ease-in-out duration-150">
                             <svg aria-hidden="true" focusable="false" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
@@ -600,7 +602,7 @@
                                        required aria-required="true">
                                 <button type="button"
                                         onclick="togglePassword('new_password')"
-                                        aria-label="Mostrar nueva contraseña"
+                                        aria-label="Mostrar nueva contraseña" aria-pressed="false"
                                         class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800">
                                     <svg aria-hidden="true" focusable="false" id="new_password-eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -631,7 +633,7 @@
                                        required aria-required="true">
                                 <button type="button"
                                         onclick="togglePassword('new_password_confirmation')"
-                                        aria-label="Mostrar confirmación de nueva contraseña"
+                                        aria-label="Mostrar confirmación de nueva contraseña" aria-pressed="false"
                                         class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800">
                                     <svg aria-hidden="true" focusable="false" id="new_password_confirmation-eye-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
@@ -649,11 +651,11 @@
 
                     <div class="flex justify-end space-x-3 mt-6">
                         <button type="button" onclick="closePasswordModal()"
-                                class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out">
+                                class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0455] focus-visible:ring-offset-2 active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out">
                             Cancelar
                         </button>
                         <button type="submit" id="passwordSubmitBtn"
-                                class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-green-700 to-green-800 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 focus:outline-none focus:shadow-outline disabled:opacity-50">
+                                class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg text-sm font-medium text-white bg-gradient-to-r from-green-700 to-green-800 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#db0455] focus-visible:ring-offset-2 disabled:opacity-50">
                             <span id="passwordSubmitText" class="inline-flex items-center">
                                 <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -680,6 +682,32 @@
 // Modal state variables
 let currentUserId = null;
 let isEditMode = false;
+
+// Accesibilidad de los modales: foco inicial, trampa de foco y retorno del foco al disparador
+function a11yModalAbrir(modal) {
+    modal.__disparador = document.activeElement;
+    setTimeout(() => {
+        const primero = modal.querySelector('button, [href], input:not([type="hidden"]), select, textarea');
+        if (primero) primero.focus();
+    }, 50);
+    if (!modal.__trampa) {
+        modal.__trampa = true;
+        modal.addEventListener('keydown', function (e) {
+            if (e.key !== 'Tab') return;
+            const els = Array.from(modal.querySelectorAll('button, [href], input:not([type="hidden"]), select, textarea, [tabindex]:not([tabindex="-1"])'))
+                .filter(el => !el.disabled && el.offsetParent !== null);
+            if (!els.length) return;
+            const primero = els[0], ultimo = els[els.length - 1];
+            if (e.shiftKey && document.activeElement === primero) { e.preventDefault(); ultimo.focus(); }
+            else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primero.focus(); }
+        });
+    }
+}
+function a11yModalCerrar(modal) {
+    const d = modal.__disparador;
+    modal.__disparador = null;
+    if (d && typeof d.focus === 'function' && document.contains(d)) d.focus();
+}
 
 // Toggle estado function
 function toggleEstado(userId, estadoActual) {
@@ -713,7 +741,9 @@ function openUserModal(userId = null) {
     isEditMode = userId !== null;
 
     // Show modal
-    document.getElementById('userModal').classList.remove('hidden');
+    const modalEl = document.getElementById('userModal');
+    modalEl.classList.remove('hidden');
+    a11yModalAbrir(modalEl);
 
     // Update modal title and button text
     const modalTitle = document.getElementById('modal-title');
@@ -805,13 +835,18 @@ function loadUserData(userId) {
 }
 
 function closeUserModal() {
-    document.getElementById('userModal').classList.add('hidden');
+    const modalEl = document.getElementById('userModal');
+    if (modalEl.classList.contains('hidden')) return;
+    modalEl.classList.add('hidden');
+    a11yModalCerrar(modalEl);
 }
 
 // Password modal functions
 function openPasswordModal(userId, userName) {
     document.getElementById('password-user-name').textContent = userName;
-    document.getElementById('passwordModal').classList.remove('hidden');
+    const modalEl = document.getElementById('passwordModal');
+    modalEl.classList.remove('hidden');
+    a11yModalAbrir(modalEl);
 
     // Store user ID for password change
     document.getElementById('passwordForm').dataset.userId = userId;
@@ -822,7 +857,10 @@ function openPasswordModal(userId, userName) {
 }
 
 function closePasswordModal() {
-    document.getElementById('passwordModal').classList.add('hidden');
+    const modalEl = document.getElementById('passwordModal');
+    if (modalEl.classList.contains('hidden')) return;
+    modalEl.classList.add('hidden');
+    a11yModalCerrar(modalEl);
 }
 
 // Clear validation errors
@@ -1146,14 +1184,18 @@ function togglePassword(fieldId) {
     const eyeOpen = document.getElementById(fieldId + '-eye-open');
     const eyeClosed = document.getElementById(fieldId + '-eye-closed');
 
+    const boton = eyeOpen ? eyeOpen.closest('button') : null;
+
     if (field.type === 'password') {
         field.type = 'text';
         eyeOpen.classList.add('hidden');
         eyeClosed.classList.remove('hidden');
+        if (boton) boton.setAttribute('aria-pressed', 'true');
     } else {
         field.type = 'password';
         eyeOpen.classList.remove('hidden');
         eyeClosed.classList.add('hidden');
+        if (boton) boton.setAttribute('aria-pressed', 'false');
     }
 }
 

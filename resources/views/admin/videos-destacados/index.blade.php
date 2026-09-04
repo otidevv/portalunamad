@@ -87,7 +87,9 @@
                                 </a>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <button onclick="toggleEstado('{{ $video->id }}')"
+                                <button type="button" onclick="toggleEstado('{{ $video->id }}')"
+                                        aria-pressed="{{ $video->activo ? 'true' : 'false' }}"
+                                        aria-label="{{ $video->activo ? 'Activo' : 'Inactivo' }}: {{ $video->titulo }}. Pulse para cambiar el estado"
                                         class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium {{ $video->activo ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
                                     {{ $video->activo ? 'Activo' : 'Inactivo' }}
                                 </button>

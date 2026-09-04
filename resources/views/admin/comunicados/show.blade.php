@@ -192,7 +192,7 @@
                 <h3 class="text-lg font-semibold text-gray-800 mb-4">Acciones Rápidas</h3>
                 
                 <div class="space-y-3">
-                    <button onclick="toggleEstado()" 
+                    <button type="button" onclick="toggleEstado()" 
                             class="w-full px-4 py-2 text-sm font-medium rounded-lg {{ $comunicado->estado ? 'bg-red-100 text-red-700 hover:bg-red-200' : 'bg-green-100 text-green-700 hover:bg-green-200' }} transition-colors">
                         {{ $comunicado->estado ? 'Desactivar Comunicado' : 'Activar Comunicado' }}
                     </button>
