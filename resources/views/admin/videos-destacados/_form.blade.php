@@ -1,8 +1,9 @@
 <div class="space-y-6">
+    <p class="text-sm text-gray-600">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
     <!-- Título -->
     <div>
         <label for="titulo" class="block text-sm font-medium text-gray-700 mb-1">
-            Título *
+            Título <span aria-hidden="true">*</span>
         </label>
         <input type="text"
                name="titulo"
@@ -10,11 +11,11 @@
                value="{{ old('titulo', $video->titulo ?? '') }}"
                class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('titulo') border-red-300 @enderror"
                placeholder="Ej: Aniversario UNAMAD 2026"
-               required>
+               required aria-required="true" aria-describedby="titulo-help @error('titulo') titulo-error @enderror" @error('titulo') aria-invalid="true" @enderror>
         @error('titulo')
-            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+            <p id="titulo-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
         @enderror
-        <p class="text-xs text-gray-500 mt-1">Se muestra como encabezado de la ventana emergente.</p>
+        <p id="titulo-help" class="text-xs text-gray-500 mt-1">Se muestra como encabezado de la ventana emergente.</p>
     </div>
 
     <!-- Descripción -->
@@ -26,16 +27,16 @@
                   id="descripcion"
                   rows="2"
                   class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('descripcion') border-red-300 @enderror"
-                  placeholder="Texto breve que acompaña al video (opcional)">{{ old('descripcion', $video->descripcion ?? '') }}</textarea>
+                  placeholder="Texto breve que acompaña al video (opcional)" @error('descripcion') aria-invalid="true" aria-describedby="descripcion-error" @enderror>{{ old('descripcion', $video->descripcion ?? '') }}</textarea>
         @error('descripcion')
-            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+            <p id="descripcion-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
         @enderror
     </div>
 
     <!-- URL -->
     <div>
         <label for="url" class="block text-sm font-medium text-gray-700 mb-1">
-            Enlace del video *
+            Enlace del video <span aria-hidden="true">*</span>
         </label>
         <input type="url"
                name="url"
@@ -43,12 +44,12 @@
                value="{{ old('url', $video->url ?? '') }}"
                class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('url') border-red-300 @enderror"
                placeholder="https://drive.google.com/file/d/.../view?usp=sharing"
-               required>
+               required aria-required="true" aria-describedby="url-ayuda @error('url') url-error @enderror" @error('url') aria-invalid="true" @enderror>
         @error('url')
-            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+            <p id="url-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
         @enderror
 
-        <div class="mt-3 bg-blue-50 border-l-4 border-blue-400 text-blue-800 text-xs rounded-r-lg p-3 space-y-1">
+        <div id="url-ayuda" class="mt-3 bg-blue-50 border-l-4 border-blue-400 text-blue-800 text-xs rounded-r-lg p-3 space-y-1">
             <p class="font-semibold">Pega el enlace tal como lo copias. El sistema lo convierte solo.</p>
             <p><strong>Google Drive:</strong> el archivo debe estar compartido como <strong>&quot;Cualquier persona con el enlace&quot;</strong>, si no los visitantes verán una pantalla de inicio de sesión. Drive no permite reproducción automática y tiene límite de tráfico diario.</p>
             <p><strong>YouTube:</strong> recomendado. Funciona el arranque automático y no tiene límite de visitas. Puede subirse como video &quot;no listado&quot; para que no aparezca en búsquedas.</p>
@@ -73,11 +74,11 @@
                        max="60000"
                        step="500"
                        value="{{ old('retardo', $video->retardo ?? 1500) }}"
-                       class="w-full md:w-40 rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('retardo') border-red-300 @enderror">
+                       class="w-full md:w-40 rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('retardo') border-red-300 @enderror" aria-describedby="retardo-help @error('retardo') retardo-error @enderror" @error('retardo') aria-invalid="true" @enderror>
                 @error('retardo')
-                    <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                    <p id="retardo-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
                 @enderror
-                <p class="text-xs text-gray-500 mt-1">Tiempo de espera antes de que salte el video al abrir la página de inicio. 1500 = 1.5 segundos.</p>
+                <p id="retardo-help" class="text-xs text-gray-500 mt-1">Tiempo de espera antes de que salte el video al abrir la página de inicio. 1500 = 1.5 segundos.</p>
             </div>
 
             <!-- Autoplay -->
@@ -122,11 +123,11 @@
                id="orden"
                min="0"
                value="{{ old('orden', $video->orden ?? 0) }}"
-               class="w-full md:w-40 rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('orden') border-red-300 @enderror">
+               class="w-full md:w-40 rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('orden') border-red-300 @enderror" aria-describedby="orden-help @error('orden') orden-error @enderror" @error('orden') aria-invalid="true" @enderror>
         @error('orden')
-            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+            <p id="orden-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
         @enderror
-        <p class="text-xs text-gray-500 mt-1">En la página de inicio se muestra el video activo con el número más bajo.</p>
+        <p id="orden-help" class="text-xs text-gray-500 mt-1">En la página de inicio se muestra el video activo con el número más bajo.</p>
     </div>
 
     <!-- Estado -->

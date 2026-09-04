@@ -24,12 +24,13 @@
     <div class="bg-white rounded-lg shadow-sm p-6">
         <form action="{{ route('admin.comunicado-categorias.store') }}" method="POST">
             @csrf
-            
+            <p class="text-sm text-gray-600 mb-4">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
+
             <div class="space-y-6">
                 <!-- Nombre -->
                 <div>
                     <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">
-                        Nombre de la Categoría *
+                        Nombre de la Categoría <span aria-hidden="true">*</span>
                     </label>
                     <input type="text" 
                            name="nombre" 
@@ -37,9 +38,9 @@
                            value="{{ old('nombre') }}"
                            class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('nombre') border-red-300 @enderror"
                            placeholder="Ej: Académicos, Administrativos, Eventos"
-                           required>
+                           required aria-required="true" @error('nombre') aria-invalid="true" aria-describedby="nombre-error" @enderror>
                     @error('nombre')
-                        <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                        <p id="nombre-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -52,9 +53,9 @@
                               id="descripcion" 
                               rows="4"
                               class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('descripcion') border-red-300 @enderror"
-                              placeholder="Descripción opcional de la categoría">{{ old('descripcion') }}</textarea>
+                              placeholder="Descripción opcional de la categoría" @error('descripcion') aria-invalid="true" aria-describedby="descripcion-error" @enderror>{{ old('descripcion') }}</textarea>
                     @error('descripcion')
-                        <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                        <p id="descripcion-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -67,12 +68,13 @@
                                id="estado" 
                                value="1" 
                                {{ old('estado', '1') ? 'checked' : '' }}
+                               aria-describedby="estado-help"
                                class="rounded border-gray-300 text-[#db0455] shadow-sm focus:border-[#db0455] focus:ring focus:ring-[#db0455] focus:ring-opacity-50">
                         <label for="estado" class="ml-2 block text-sm text-gray-700">
                             Categoría activa
                         </label>
                     </div>
-                    <p class="text-xs text-gray-500 mt-1">Las categorías inactivas no aparecerán en los formularios</p>
+                    <p id="estado-help" class="text-xs text-gray-500 mt-1">Las categorías inactivas no aparecerán en los formularios</p>
                 </div>
             </div>
 

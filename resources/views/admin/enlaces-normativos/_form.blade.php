@@ -1,8 +1,9 @@
 <div class="space-y-6">
+    <p class="text-sm text-gray-600">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
     <!-- Título -->
     <div>
         <label for="titulo" class="block text-sm font-medium text-gray-700 mb-1">
-            Título *
+            Título <span aria-hidden="true">*</span>
         </label>
         <input type="text"
                name="titulo"
@@ -10,16 +11,16 @@
                value="{{ old('titulo', $enlace->titulo ?? '') }}"
                class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('titulo') border-red-300 @enderror"
                placeholder="Ej: Resoluciones Rectorales"
-               required>
+               required aria-required="true" @error('titulo') aria-invalid="true" aria-describedby="titulo-error" @enderror>
         @error('titulo')
-            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+            <p id="titulo-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
         @enderror
     </div>
 
     <!-- URL -->
     <div>
         <label for="url" class="block text-sm font-medium text-gray-700 mb-1">
-            Enlace (URL) *
+            Enlace (URL) <span aria-hidden="true">*</span>
         </label>
         <input type="url"
                name="url"
@@ -27,11 +28,11 @@
                value="{{ old('url', $enlace->url ?? '') }}"
                class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('url') border-red-300 @enderror"
                placeholder="https://www.gob.pe/institucion/unamad/..."
-               required>
+               required aria-required="true" aria-describedby="url-help @error('url') url-error @enderror" @error('url') aria-invalid="true" @enderror>
         @error('url')
-            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+            <p id="url-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
         @enderror
-        <p class="text-xs text-gray-500 mt-1">Pega aquí la nueva dirección del documento (ej. de gob.pe). Se abrirá en una nueva pestaña.</p>
+        <p id="url-help" class="text-xs text-gray-500 mt-1">Pega aquí la nueva dirección del documento (ej. de gob.pe). Se abrirá en una nueva pestaña.</p>
     </div>
 
     <!-- Orden -->
@@ -44,11 +45,11 @@
                id="orden"
                min="0"
                value="{{ old('orden', $enlace->orden ?? 0) }}"
-               class="w-full md:w-40 rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('orden') border-red-300 @enderror">
+               class="w-full md:w-40 rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('orden') border-red-300 @enderror" aria-describedby="orden-help @error('orden') orden-error @enderror" @error('orden') aria-invalid="true" @enderror>
         @error('orden')
-            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+            <p id="orden-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
         @enderror
-        <p class="text-xs text-gray-500 mt-1">Define la posición en la lista (menor número aparece primero).</p>
+        <p id="orden-help" class="text-xs text-gray-500 mt-1">Define la posición en la lista (menor número aparece primero).</p>
     </div>
 
     <!-- Estado -->

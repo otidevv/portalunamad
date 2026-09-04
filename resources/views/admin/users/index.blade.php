@@ -26,10 +26,11 @@
                 <input type="text"
                        name="buscar"
                        value="{{ request('buscar') }}"
+                       aria-label="Buscar por nombre, correo electrónico o documento"
                        placeholder="Buscar por nombre, email o documento..."
                        class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
 
-                <select name="rol" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
+                <select name="rol" aria-label="Filtrar por rol" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
                     <option value="">Todos los roles</option>
                     <option value="admin" {{ request('rol') == 'admin' ? 'selected' : '' }}>Administrador</option>
                     <option value="editor" {{ request('rol') == 'editor' ? 'selected' : '' }}>Editor</option>
@@ -37,13 +38,13 @@
                     <option value="usuario" {{ request('rol') == 'usuario' ? 'selected' : '' }}>Usuario</option>
                 </select>
 
-                <select name="estado" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
+                <select name="estado" aria-label="Filtrar por estado" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
                     <option value="">Todos los estados</option>
                     <option value="1" {{ request('estado') == '1' ? 'selected' : '' }}>Activo</option>
                     <option value="0" {{ request('estado') == '0' ? 'selected' : '' }}>Inactivo</option>
                 </select>
 
-                <select name="tipo_documento" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
+                <select name="tipo_documento" aria-label="Filtrar por tipo de documento" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
                     <option value="">Todos los documentos</option>
                     <option value="dni" {{ request('tipo_documento') == 'dni' ? 'selected' : '' }}>DNI</option>
                     <option value="carnet_extranjeria" {{ request('tipo_documento') == 'carnet_extranjeria' ? 'selected' : '' }}>Carnet de Extranjería</option>
@@ -60,7 +61,7 @@
 
     <!-- Mensajes de éxito/error -->
     @if(session('success'))
-        <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-lg">
+        <div role="status" class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-lg">
             <div class="flex items-center">
                 <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
@@ -71,7 +72,7 @@
     @endif
 
     @if(session('error'))
-        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
+        <div role="alert" class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
             <div class="flex items-center">
                 <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
@@ -262,135 +263,143 @@
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
                                 <!-- Nombre -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Nombres <span class="text-red-500">*</span>
+                                    <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Nombres <span class="text-red-500" aria-hidden="true">*</span>
                                     </label>
                                     <input type="text"
                                            name="name"
                                            id="name"
+                                           aria-describedby="error-name"
                                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
-                                           placeholder="Ej: Juan Carlos" required>
-                                    <div class="text-red-600 text-sm mt-1" id="error-name"></div>
+                                           placeholder="Ej: Juan Carlos" required aria-required="true">
+                                    <div class="text-red-600 text-sm mt-1" id="error-name" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Apellido Paterno -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <label for="apellido_paterno" class="block text-sm font-semibold text-gray-700 mb-2">
                                         Apellido Paterno
                                     </label>
                                     <input type="text"
                                            name="apellido_paterno"
                                            id="apellido_paterno"
+                                           aria-describedby="error-apellido_paterno"
                                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                                            placeholder="Ej: Pérez">
-                                    <div class="text-red-600 text-sm mt-1" id="error-apellido_paterno"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-apellido_paterno" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Apellido Materno -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <label for="apellido_materno" class="block text-sm font-semibold text-gray-700 mb-2">
                                         Apellido Materno
                                     </label>
                                     <input type="text"
                                            name="apellido_materno"
                                            id="apellido_materno"
+                                           aria-describedby="error-apellido_materno"
                                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                                            placeholder="Ej: García">
-                                    <div class="text-red-600 text-sm mt-1" id="error-apellido_materno"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-apellido_materno" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Fecha de Nacimiento -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <label for="fecha_nacimiento" class="block text-sm font-semibold text-gray-700 mb-2">
                                         Fecha de Nacimiento
                                     </label>
                                     <input type="date"
                                            name="fecha_nacimiento"
                                            id="fecha_nacimiento"
+                                           aria-describedby="error-fecha_nacimiento"
                                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200"
                                            placeholder="YYYY-MM-DD">
-                                    <div class="text-red-600 text-sm mt-1" id="error-fecha_nacimiento"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-fecha_nacimiento" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Email -->
                                 <div class="lg:col-span-2">
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Email <span class="text-red-500">*</span>
+                                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Correo electrónico <span class="text-red-500" aria-hidden="true">*</span>
                                     </label>
                                     <input type="email"
                                            name="email"
                                            id="email"
+                                           aria-describedby="error-email"
                                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
-                                           placeholder="Ej: juan.perez@unamad.edu.pe" required>
-                                    <div class="text-red-600 text-sm mt-1" id="error-email"></div>
+                                           placeholder="Ej: juan.perez@unamad.edu.pe" required aria-required="true">
+                                    <div class="text-red-600 text-sm mt-1" id="error-email" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Tipo de Documento -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Tipo de Documento <span class="text-red-500">*</span>
+                                    <label for="tipo_documento" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Tipo de Documento <span class="text-red-500" aria-hidden="true">*</span>
                                     </label>
-                                    <select name="tipo_documento" id="tipo_documento"
-                                            class="w-full appearance-none px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 bg-white" required>
+                                    <select name="tipo_documento" id="tipo_documento" aria-describedby="error-tipo_documento"
+                                            class="w-full appearance-none px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 bg-white" required aria-required="true">
                                         <option value="" disabled selected>Seleccione tipo</option>
                                         <option value="dni">DNI</option>
                                         <option value="carnet_extranjeria">Carnet de Extranjería</option>
                                         <option value="pasaporte">Pasaporte</option>
                                         <option value="cedula">Cédula de Identidad</option>
                                     </select>
-                                    <div class="text-red-600 text-sm mt-1" id="error-tipo_documento"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-tipo_documento" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Número de Documento -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Número de Documento <span class="text-red-500">*</span>
+                                    <label for="numero_documento" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Número de Documento <span class="text-red-500" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
                                         <input type="text"
                                                name="numero_documento"
                                                id="numero_documento"
+                                               aria-describedby="numero_documento-help error-numero_documento success-consulta"
                                                class="w-full px-4 py-3 pr-12 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                                                placeholder="Ej: 12345678"
                                                oninput="handleDocumentInput(this.value)"
-                                               required>
-                                        <div id="consulta-loading" class="absolute right-2 top-1/2 transform -translate-y-1/2 hidden">
-                                            <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-[#db0455]"></div>
+                                               required aria-required="true">
+                                        <div id="consulta-loading" role="status" class="absolute right-2 top-1/2 transform -translate-y-1/2 hidden">
+                                            <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-[#db0455]" aria-hidden="true"></div>
+                                            <span class="sr-only">Consultando DNI…</span>
                                         </div>
                                     </div>
-                                    <div class="text-red-600 text-sm mt-1" id="error-numero_documento"></div>
-                                    <div class="text-green-600 text-sm mt-1" id="success-consulta"></div>
+                                    <p id="numero_documento-help" class="text-xs text-gray-500 mt-1">Si el tipo es DNI, al escribir 8 dígitos se completan automáticamente los nombres, apellidos y fecha de nacimiento que estén vacíos.</p>
+                                    <div class="text-red-600 text-sm mt-1" id="error-numero_documento" aria-live="polite"></div>
+                                    <div class="text-green-600 text-sm mt-1" id="success-consulta" role="status" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Rol -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Rol <span class="text-red-500">*</span>
+                                    <label for="rol" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Rol <span class="text-red-500" aria-hidden="true">*</span>
                                     </label>
-                                    <select name="rol" id="rol"
-                                            class="w-full appearance-none px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 bg-white" required>
+                                    <select name="rol" id="rol" aria-describedby="error-rol"
+                                            class="w-full appearance-none px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 bg-white" required aria-required="true">
                                         <option value="" disabled selected>Seleccione rol</option>
                                         <option value="admin">Administrador</option>
                                         <option value="editor">Editor</option>
                                         <option value="moderador">Moderador</option>
                                         <option value="usuario">Usuario</option>
                                     </select>
-                                    <div class="text-red-600 text-sm mt-1" id="error-rol"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-rol" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Estado -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <span class="block text-sm font-semibold text-gray-700 mb-2">
                                         Estado
-                                    </label>
+                                    </span>
                                     <div class="flex items-center">
-                                        <input type="checkbox" name="estado" id="estado" value="1" checked
+                                        <input type="checkbox" name="estado" id="estado" value="1" checked aria-describedby="estado-help"
                                                class="w-5 h-5 rounded-md border-2 border-green-400 text-green-500 shadow-sm focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50">
                                         <label for="estado" class="ml-3 block text-sm font-semibold text-gray-700 cursor-pointer select-none">
                                             <span aria-hidden="true">✅</span> Usuario activo
                                         </label>
                                     </div>
-                                    <p class="text-xs text-gray-600 mt-2 ml-8">
+                                    <p id="estado-help" class="text-xs text-gray-600 mt-2 ml-8">
                                         Los usuarios inactivos no pueden acceder al sistema
                                     </p>
                                 </div>
@@ -409,17 +418,19 @@
 
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Contraseña <span class="text-red-500">*</span>
+                                    <label for="password" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Contraseña <span class="text-red-500" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
                                         <input type="password"
                                                name="password"
                                                id="password"
+                                               aria-describedby="password-help error-password"
+                                               autocomplete="new-password"
                                                class="w-full px-4 py-3 pr-12 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                                                placeholder="Mínimo 8 caracteres"
                                                oninput="checkPasswordMatch()"
-                                               required>
+                                               required aria-required="true">
                                         <button type="button"
                                                 onclick="togglePassword('password')"
                                                 aria-label="Mostrar contraseña"
@@ -433,21 +444,24 @@
                                             </svg>
                                         </button>
                                     </div>
-                                    <div class="text-red-600 text-sm mt-1" id="error-password"></div>
+                                    <p id="password-help" class="text-xs text-gray-500 mt-1">Mínimo 8 caracteres.</p>
+                                    <div class="text-red-600 text-sm mt-1" id="error-password" aria-live="polite"></div>
                                 </div>
 
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Confirmar Contraseña <span class="text-red-500">*</span>
+                                    <label for="password_confirmation" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Confirmar Contraseña <span class="text-red-500" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
                                         <input type="password"
                                                name="password_confirmation"
                                                id="password_confirmation"
+                                               aria-describedby="error-password_confirmation password-match-success"
+                                               autocomplete="new-password"
                                                class="w-full px-4 py-3 pr-12 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                                                placeholder="Repita la contraseña"
                                                oninput="checkPasswordMatch()"
-                                               required>
+                                               required aria-required="true">
                                         <button type="button"
                                                 onclick="togglePassword('password_confirmation')"
                                                 aria-label="Mostrar confirmación de contraseña"
@@ -461,8 +475,8 @@
                                             </svg>
                                         </button>
                                     </div>
-                                    <div class="text-red-600 text-sm mt-1" id="error-password_confirmation"></div>
-                                    <div class="text-green-600 text-sm mt-1" id="password-match-success"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-password_confirmation" aria-live="polite"></div>
+                                    <div class="text-green-600 text-sm mt-1" id="password-match-success" role="status" aria-live="polite"></div>
                                 </div>
                             </div>
                         </div>
@@ -478,15 +492,15 @@
                             </h4>
 
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                <label for="avatar" class="block text-sm font-semibold text-gray-700 mb-2">
                                     Seleccionar Avatar <span class="text-gray-400 font-normal">(Opcional)</span>
                                 </label>
                                 <div class="relative">
-                                    <input type="file" name="avatar" id="avatar" accept="image/*"
+                                    <input type="file" name="avatar" id="avatar" accept="image/*" aria-describedby="avatar-help error-avatar"
                                            class="w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-xl hover:border-[#db0455] transition-colors duration-200 text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gradient-to-r file:from-[#db0455] file:to-[#a00340] file:text-white hover:file:shadow-lg file:cursor-pointer">
                                 </div>
-                                <div class="text-red-600 text-sm mt-1" id="error-avatar"></div>
-                                <p class="text-xs text-gray-500 mt-2 flex items-center">
+                                <div class="text-red-600 text-sm mt-1" id="error-avatar" aria-live="polite"></div>
+                                <p id="avatar-help" class="text-xs text-gray-500 mt-2 flex items-center">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
@@ -520,7 +534,7 @@
                                     </svg>
                                     Crear Usuario
                                 </span>
-                                <span id="loadingText" class="hidden flex items-center">
+                                <span id="loadingText" role="status" class="hidden flex items-center">
                                     <svg aria-hidden="true" focusable="false" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
                                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -567,19 +581,22 @@
                         <p class="text-sm text-gray-600">
                             Cambiar contraseña para: <strong id="password-user-name"></strong>
                         </p>
+                        <p class="text-sm text-gray-500">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
 
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                Nueva Contraseña <span class="text-red-500">*</span>
+                            <label for="new_password" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Nueva Contraseña <span class="text-red-500" aria-hidden="true">*</span>
                             </label>
                             <div class="relative">
                                 <input type="password"
                                        name="password"
                                        id="new_password"
+                                       aria-describedby="new_password-help error-new_password"
+                                       autocomplete="new-password"
                                        class="w-full px-4 py-3 pr-12 rounded-xl border-2 border-gray-200 focus:border-green-500 focus:ring-4 focus:ring-green-500/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                                        placeholder="Mínimo 8 caracteres"
                                        oninput="checkNewPasswordMatch()"
-                                       required>
+                                       required aria-required="true">
                                 <button type="button"
                                         onclick="togglePassword('new_password')"
                                         aria-label="Mostrar nueva contraseña"
@@ -593,21 +610,24 @@
                                     </svg>
                                 </button>
                             </div>
-                            <div class="text-red-600 text-sm mt-1" id="error-new_password"></div>
+                            <p id="new_password-help" class="text-xs text-gray-500 mt-1">Mínimo 8 caracteres.</p>
+                            <div class="text-red-600 text-sm mt-1" id="error-new_password" aria-live="polite"></div>
                         </div>
 
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                Confirmar Nueva Contraseña <span class="text-red-500">*</span>
+                            <label for="new_password_confirmation" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Confirmar Nueva Contraseña <span class="text-red-500" aria-hidden="true">*</span>
                             </label>
                             <div class="relative">
                                 <input type="password"
                                        name="password_confirmation"
                                        id="new_password_confirmation"
+                                       aria-describedby="error-new_password_confirmation new-password-match-success"
+                                       autocomplete="new-password"
                                        class="w-full px-4 py-3 pr-12 rounded-xl border-2 border-gray-200 focus:border-green-500 focus:ring-4 focus:ring-green-500/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                                        placeholder="Repita la nueva contraseña"
                                        oninput="checkNewPasswordMatch()"
-                                       required>
+                                       required aria-required="true">
                                 <button type="button"
                                         onclick="togglePassword('new_password_confirmation')"
                                         aria-label="Mostrar confirmación de nueva contraseña"
@@ -621,8 +641,8 @@
                                     </svg>
                                 </button>
                             </div>
-                            <div class="text-red-600 text-sm mt-1" id="error-new_password_confirmation"></div>
-                            <div class="text-green-600 text-sm mt-1" id="new-password-match-success"></div>
+                            <div class="text-red-600 text-sm mt-1" id="error-new_password_confirmation" aria-live="polite"></div>
+                            <div class="text-green-600 text-sm mt-1" id="new-password-match-success" role="status" aria-live="polite"></div>
                         </div>
                     </div>
 
@@ -639,7 +659,7 @@
                                 </svg>
                                 Cambiar Contraseña
                             </span>
-                            <span id="passwordLoadingText" class="hidden flex items-center">
+                            <span id="passwordLoadingText" role="status" class="hidden flex items-center">
                                 <svg aria-hidden="true" focusable="false" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
                                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -811,33 +831,53 @@ function clearErrors() {
             el.textContent = '';
         }
     });
+    document.querySelectorAll('#userForm [aria-invalid="true"]').forEach(el => {
+        el.removeAttribute('aria-invalid');
+    });
 }
 
 function clearPasswordErrors() {
     document.querySelectorAll('[id^="error-new_"]').forEach(el => {
         el.textContent = '';
     });
+    document.querySelectorAll('#passwordForm [aria-invalid="true"]').forEach(el => {
+        el.removeAttribute('aria-invalid');
+    });
 }
 
 // Show validation errors
 function showErrors(errors) {
     clearErrors();
+    let primero = null;
     for (const [field, messages] of Object.entries(errors)) {
         const errorElement = document.getElementById(`error-${field}`);
         if (errorElement) {
             errorElement.textContent = messages[0];
         }
+        const control = document.querySelector(`#userForm [name="${field}"]`);
+        if (control) {
+            control.setAttribute('aria-invalid', 'true');
+            if (!primero) primero = control;
+        }
     }
+    if (primero) primero.focus();
 }
 
 function showPasswordErrors(errors) {
     clearPasswordErrors();
+    let primero = null;
     for (const [field, messages] of Object.entries(errors)) {
         const errorElement = document.getElementById(`error-new_${field}`);
         if (errorElement) {
             errorElement.textContent = messages[0];
         }
+        const control = document.getElementById(`new_${field}`);
+        if (control) {
+            control.setAttribute('aria-invalid', 'true');
+            if (!primero) primero = control;
+        }
     }
+    if (primero) primero.focus();
 }
 
 // Form submission

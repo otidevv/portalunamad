@@ -23,7 +23,7 @@
     <!-- Filtros -->
     <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <select id="filtro-categoria" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
+            <select id="filtro-categoria" aria-label="Filtrar por categoría" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
                 <option value="">Todas las categorías</option>
                 <option value="noticia">Noticias</option>
                 <option value="evento">Eventos</option>
@@ -32,14 +32,14 @@
                 <option value="otro">Otros</option>
             </select>
             
-            <select id="filtro-estado" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
+            <select id="filtro-estado" aria-label="Filtrar por estado" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
                 <option value="">Todos los estados</option>
                 <option value="publicado">Publicado</option>
                 <option value="borrador">Borrador</option>
                 <option value="archivado">Archivado</option>
             </select>
             
-            <select id="filtro-destacado" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
+            <select id="filtro-destacado" aria-label="Filtrar por destacado" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
                 <option value="">Todos</option>
                 <option value="1">Destacados</option>
                 <option value="0">No destacados</option>
@@ -53,7 +53,7 @@
 
     <!-- Mensajes de éxito/error -->
     @if(session('success'))
-        <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-lg">
+        <div role="status" class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-lg">
             <div class="flex items-center">
                 <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
@@ -322,32 +322,33 @@
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
                                 <!-- Título -->
                                 <div class="lg:col-span-2">
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Título del Anuncio <span class="text-red-500">*</span>
+                                    <label for="titulo" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Título del Anuncio <span class="text-red-500" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
-                                        <input type="text" 
+                                        <input type="text"
                                                name="titulo"
                                                id="titulo"
+                                               aria-describedby="error-titulo"
                                                class="w-full pl-4 pr-10 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
-                                               placeholder="Ej: Convocatoria Docente 2025 - Facultad de Ingeniería" required>
+                                               placeholder="Ej: Convocatoria Docente 2025 - Facultad de Ingeniería" required aria-required="true">
                                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                                             <svg aria-hidden="true" focusable="false" class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path>
                                             </svg>
                                         </div>
                                     </div>
-                                    <div class="text-red-600 text-sm mt-1" id="error-titulo"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-titulo" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Categoría -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Categoría <span class="text-red-500">*</span>
+                                    <label for="categoria" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Categoría <span class="text-red-500" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
-                                        <select name="categoria" id="categoria" 
-                                                class="w-full appearance-none pl-4 pr-10 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 bg-white" required>
+                                        <select name="categoria" id="categoria" aria-describedby="error-categoria" 
+                                                class="w-full appearance-none pl-4 pr-10 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 bg-white" required aria-required="true">
                                             <option value="" disabled selected>Seleccione una categoría</option>
                                             <option value="noticia">Noticia</option>
                                             <option value="evento">Evento</option>
@@ -361,17 +362,17 @@
                                             </svg>
                                         </div>
                                     </div>
-                                    <div class="text-red-600 text-sm mt-1" id="error-categoria"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-categoria" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Estado -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Estado <span class="text-red-500">*</span>
+                                    <label for="estado" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Estado <span class="text-red-500" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
-                                        <select name="estado" id="estado" 
-                                                class="w-full appearance-none pl-4 pr-10 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 bg-white" required>
+                                        <select name="estado" id="estado" aria-describedby="error-estado" 
+                                                class="w-full appearance-none pl-4 pr-10 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 bg-white" required aria-required="true">
                                             <option value="publicado" selected>Publicado</option>
                                             <option value="borrador">Borrador</option>
                                             <option value="archivado">Archivado</option>
@@ -382,23 +383,23 @@
                                             </svg>
                                         </div>
                                     </div>
-                                    <div class="text-red-600 text-sm mt-1" id="error-estado"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-estado" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Descripción -->
                                 <div class="lg:col-span-2">
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <label for="descripcion" class="block text-sm font-semibold text-gray-700 mb-2">
                                         Descripción <span class="text-gray-400 font-normal">(Opcional)</span>
                                     </label>
                                     <div class="relative">
-                                        <textarea name="descripcion" id="descripcion" rows="4" 
+                                        <textarea name="descripcion" id="descripcion" rows="4" maxlength="500" aria-describedby="descripcion-help error-descripcion" 
                                                   class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400 resize-none"
                                                   placeholder="Escriba una descripción detallada del anuncio..."></textarea>
                                         <div class="absolute bottom-3 right-3">
-                                            <span class="text-xs text-gray-400">Máx. 500 caracteres</span>
+                                            <span id="descripcion-help" class="text-xs text-gray-400">Máx. 500 caracteres</span>
                                         </div>
                                     </div>
-                                    <div class="text-red-600 text-sm mt-1" id="error-descripcion"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-descripcion" aria-live="polite"></div>
                                 </div>
                             </div>
                         </div>
@@ -414,11 +415,11 @@
                             </h4>
                             
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                <label for="imagen_principal" class="block text-sm font-semibold text-gray-700 mb-2">
                                     Seleccionar Imagen <span class="text-gray-400 font-normal">(Opcional)</span>
                                 </label>
                                 <div class="relative">
-                                    <input type="file" name="imagen_principal" id="imagen_principal" accept="image/*"
+                                    <input type="file" name="imagen_principal" id="imagen_principal" accept="image/*" aria-describedby="imagen_principal-help error-imagen_principal"
                                            class="w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-xl hover:border-[#db0455] transition-colors duration-200 text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gradient-to-r file:from-[#db0455] file:to-[#a00340] file:text-white hover:file:shadow-lg file:cursor-pointer">
                                     <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
                                         <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -426,8 +427,8 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="text-red-600 text-sm mt-1" id="error-imagen_principal"></div>
-                                <p class="text-xs text-gray-500 mt-2 flex items-center">
+                                <div class="text-red-600 text-sm mt-1" id="error-imagen_principal" aria-live="polite"></div>
+                                <p id="imagen_principal-help" class="text-xs text-gray-500 mt-2 flex items-center">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
@@ -449,11 +450,11 @@
                             <div id="enlaces-container" class="space-y-3">
                                 <div class="enlace-item">
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                        <input type="text" name="enlaces[0][titulo]" 
+                                        <input type="text" name="enlaces[0][titulo]" aria-label="Título del enlace 1" 
                                                class="px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                                                placeholder="Título del enlace">
                                         <div class="flex gap-2">
-                                            <input type="url" name="enlaces[0][url]" 
+                                            <input type="url" name="enlaces[0][url]" aria-label="URL del enlace 1" 
                                                    class="flex-1 px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                                                    placeholder="https://ejemplo.com">
                                             <button type="button" onclick="addEnlace()" aria-label="Agregar otro enlace" 
@@ -488,13 +489,13 @@
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
                                 <!-- Fecha de publicación -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <label for="fecha_publicacion" class="block text-sm font-semibold text-gray-700 mb-2">
                                         <span aria-hidden="true">📅</span> Fecha de Publicación
                                     </label>
-                                    <input type="datetime-local" name="fecha_publicacion" id="fecha_publicacion" 
+                                    <input type="datetime-local" name="fecha_publicacion" id="fecha_publicacion" aria-describedby="fecha_publicacion-help error-fecha_publicacion"
                                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200">
-                                    <div class="text-red-600 text-sm mt-1" id="error-fecha_publicacion"></div>
-                                    <p class="text-xs text-gray-500 mt-2 flex items-center">
+                                    <div class="text-red-600 text-sm mt-1" id="error-fecha_publicacion" aria-live="polite"></div>
+                                    <p id="fecha_publicacion-help" class="text-xs text-gray-500 mt-2 flex items-center">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
                                         </svg>
@@ -504,13 +505,13 @@
 
                                 <!-- Fecha de expiración -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                    <label for="fecha_expiracion" class="block text-sm font-semibold text-gray-700 mb-2">
                                         <span aria-hidden="true">⏰</span> Fecha de Expiración
                                     </label>
-                                    <input type="datetime-local" name="fecha_expiracion" id="fecha_expiracion" 
+                                    <input type="datetime-local" name="fecha_expiracion" id="fecha_expiracion" aria-describedby="fecha_expiracion-help error-fecha_expiracion"
                                            class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200">
-                                    <div class="text-red-600 text-sm mt-1" id="error-fecha_expiracion"></div>
-                                    <p class="text-xs text-gray-500 mt-2 flex items-center">
+                                    <div class="text-red-600 text-sm mt-1" id="error-fecha_expiracion" aria-live="polite"></div>
+                                    <p id="fecha_expiracion-help" class="text-xs text-gray-500 mt-2 flex items-center">
                                         <svg aria-hidden="true" focusable="false" class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
                                         </svg>
@@ -558,7 +559,7 @@
                                     </svg>
                                     Crear Anuncio
                                 </span>
-                                <span id="loadingText" class="hidden flex items-center">
+                                <span id="loadingText" role="status" class="hidden flex items-center">
                                     <svg aria-hidden="true" focusable="false" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
                                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -625,11 +626,11 @@ function resetFormForCreate() {
     document.getElementById('enlaces-container').innerHTML = `
         <div class="enlace-item">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <input type="text" name="enlaces[0][titulo]"
+                <input type="text" name="enlaces[0][titulo]" aria-label="Título del enlace 1"
                        class="px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                        placeholder="Título del enlace">
                 <div class="flex gap-2">
-                    <input type="url" name="enlaces[0][url]"
+                    <input type="url" name="enlaces[0][url]" aria-label="URL del enlace 1"
                            class="flex-1 px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                            placeholder="https://ejemplo.com">
                     <button type="button" onclick="addEnlace()" aria-label="Agregar otro enlace"
@@ -657,11 +658,11 @@ function addEnlace() {
     newEnlace.className = 'enlace-item';
     newEnlace.innerHTML = `
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <input type="text" name="enlaces[${enlaceIndex}][titulo]" 
+            <input type="text" name="enlaces[${enlaceIndex}][titulo]" aria-label="Título del enlace ${enlaceIndex + 1}"
                    class="px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                    placeholder="Título del enlace">
             <div class="flex gap-2">
-                <input type="url" name="enlaces[${enlaceIndex}][url]" 
+                <input type="url" name="enlaces[${enlaceIndex}][url]" aria-label="URL del enlace ${enlaceIndex + 1}" 
                        class="flex-1 px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                        placeholder="https://ejemplo.com">
                 <button type="button" onclick="removeEnlace(this)" aria-label="Eliminar este enlace" 
@@ -674,11 +675,16 @@ function addEnlace() {
         </div>
     `;
     container.appendChild(newEnlace);
+    newEnlace.querySelector('input').focus();
 }
 
 // Remove enlace input
 function removeEnlace(button) {
-    button.closest('.enlace-item').remove();
+    const item = button.closest('.enlace-item');
+    const previo = item.previousElementSibling;
+    item.remove();
+    const destino = previo ? previo.querySelector('input') : document.querySelector('#enlaces-container input');
+    if (destino) destino.focus();
 }
 
 // Clear all validation errors
@@ -686,17 +692,27 @@ function clearErrors() {
     document.querySelectorAll('[id^="error-"]').forEach(el => {
         el.textContent = '';
     });
+    document.querySelectorAll('#anuncioForm [aria-invalid="true"]').forEach(el => {
+        el.removeAttribute('aria-invalid');
+    });
 }
 
 // Show validation errors
 function showErrors(errors) {
     clearErrors();
+    let primero = null;
     for (const [field, messages] of Object.entries(errors)) {
         const errorElement = document.getElementById(`error-${field}`);
         if (errorElement) {
             errorElement.textContent = messages[0];
         }
+        const control = document.getElementById(field) || document.querySelector(`#anuncioForm [name="${field}"]`);
+        if (control) {
+            control.setAttribute('aria-invalid', 'true');
+            if (!primero) primero = control;
+        }
     }
+    if (primero) primero.focus();
 }
 
 // Load announcement data for editing
@@ -762,11 +778,11 @@ function addDefaultEnlace() {
     enlaceDiv.className = 'enlace-item';
     enlaceDiv.innerHTML = `
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <input type="text" name="enlaces[0][titulo]"
+            <input type="text" name="enlaces[0][titulo]" aria-label="Título del enlace 1"
                    class="px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                    placeholder="Título del enlace">
             <div class="flex gap-2">
-                <input type="url" name="enlaces[0][url]"
+                <input type="url" name="enlaces[0][url]" aria-label="URL del enlace 1"
                        class="flex-1 px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                        placeholder="https://ejemplo.com">
                 <button type="button" onclick="addEnlace()" aria-label="Agregar otro enlace"
@@ -804,12 +820,12 @@ function addEnlaceWithData(titulo, url, isFirst) {
 
     enlaceDiv.innerHTML = `
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <input type="text" name="enlaces[${container.children.length}][titulo]"
+            <input type="text" name="enlaces[${container.children.length}][titulo]" aria-label="Título del enlace ${container.children.length + 1}"
                    value="${titulo}"
                    class="px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                    placeholder="Título del enlace">
             <div class="flex gap-2">
-                <input type="url" name="enlaces[${container.children.length}][url]"
+                <input type="url" name="enlaces[${container.children.length}][url]" aria-label="URL del enlace ${container.children.length + 1}"
                        value="${url}"
                        class="flex-1 px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
                        placeholder="https://ejemplo.com">

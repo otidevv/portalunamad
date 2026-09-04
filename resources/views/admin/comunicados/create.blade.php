@@ -24,7 +24,8 @@
     <div class="bg-white rounded-lg shadow-sm p-6">
         <form action="{{ route('admin.comunicados.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            
+            <p class="text-sm text-gray-600 mb-4">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
+
             <div class="space-y-6">
                 <!-- Información básica -->
                 <div class="bg-gray-50 rounded-lg p-4">
@@ -40,7 +41,7 @@
                         <!-- Título -->
                         <div class="lg:col-span-2">
                             <label for="titulo" class="block text-sm font-medium text-gray-700 mb-1">
-                                Título del Comunicado *
+                                Título del Comunicado <span aria-hidden="true">*</span>
                             </label>
                             <input type="text" 
                                    name="titulo" 
@@ -48,21 +49,21 @@
                                    value="{{ old('titulo') }}"
                                    class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('titulo') border-red-300 @enderror"
                                    placeholder="Ingrese el título del comunicado"
-                                   required>
+                                   required aria-required="true" @error('titulo') aria-invalid="true" aria-describedby="titulo-error" @enderror>
                             @error('titulo')
-                                <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                                <p id="titulo-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
                             @enderror
                         </div>
 
                         <!-- Categoría -->
                         <div>
                             <label for="comunicado_categoria_id" class="block text-sm font-medium text-gray-700 mb-1">
-                                Categoría *
+                                Categoría <span aria-hidden="true">*</span>
                             </label>
                             <select name="comunicado_categoria_id" 
                                     id="comunicado_categoria_id" 
                                     class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('comunicado_categoria_id') border-red-300 @enderror" 
-                                    required>
+                                    required aria-required="true" @error('comunicado_categoria_id') aria-invalid="true" aria-describedby="comunicado_categoria_id-error" @enderror>
                                 <option value="">Seleccionar categoría</option>
                                 @foreach($categorias as $categoria)
                                     <option value="{{ $categoria->id }}" {{ old('comunicado_categoria_id') == $categoria->id ? 'selected' : '' }}>
@@ -71,15 +72,15 @@
                                 @endforeach
                             </select>
                             @error('comunicado_categoria_id')
-                                <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                                <p id="comunicado_categoria_id-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
                             @enderror
                         </div>
 
                         <!-- Estado -->
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                            <span class="block text-sm font-medium text-gray-700 mb-1">
                                 Estado
-                            </label>
+                            </span>
                             <div class="flex items-center">
                                 <input type="hidden" name="estado" value="0">
                                 <input type="checkbox" 
@@ -108,18 +109,18 @@
 
                     <div>
                         <label for="imagen" class="block text-sm font-medium text-gray-700 mb-1">
-                            Seleccionar Imagen *
+                            Seleccionar Imagen <span aria-hidden="true">*</span>
                         </label>
                         <input type="file"
                                name="imagen"
                                id="imagen"
                                accept="image/*"
                                class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-[#db0455] file:text-white hover:file:bg-[#a00340] file:cursor-pointer @error('imagen') border-red-300 @enderror"
-                               required>
+                               required aria-required="true" aria-describedby="imagen-help @error('imagen') imagen-error @enderror" @error('imagen') aria-invalid="true" @enderror>
                         @error('imagen')
-                            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                            <p id="imagen-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
                         @enderror
-                        <p class="text-xs text-gray-500 mt-1">Máximo 5MB. Formatos: JPG, PNG, GIF</p>
+                        <p id="imagen-help" class="text-xs text-gray-500 mt-1">Máximo 5MB. Formatos: JPG, PNG, GIF</p>
                     </div>
                 </div>
 
@@ -142,11 +143,11 @@
                                id="archivos"
                                multiple
                                accept=".pdf,.xls,.xlsx,.csv,application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv"
-                               class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-[#db0455] file:text-white hover:file:bg-[#a00340] file:cursor-pointer @error('archivos.*') border-red-300 @enderror">
+                               class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-[#db0455] file:text-white hover:file:bg-[#a00340] file:cursor-pointer @error('archivos.*') border-red-300 @enderror" aria-describedby="archivos-help @error('archivos.*') archivos-error @enderror" @error('archivos.*') aria-invalid="true" @enderror>
                         @error('archivos.*')
-                            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                            <p id="archivos-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
                         @enderror
-                        <p class="text-xs text-gray-500 mt-1">Máximo 20MB por archivo • Hasta 10 archivos • Formatos: PDF, XLS, XLSX, CSV</p>
+                        <p id="archivos-help" class="text-xs text-gray-500 mt-1">Máximo 20MB por archivo • Hasta 10 archivos • Formatos: PDF, XLS, XLSX, CSV</p>
                     </div>
                 </div>
 
@@ -168,11 +169,11 @@
                                   id="contenido" 
                                   rows="6"
                                   class="tinymce-editor @error('contenido') border-red-300 @enderror"
-                                  placeholder="Ingrese el contenido detallado del comunicado (opcional)">{{ old('contenido') }}</textarea>
+                                  placeholder="Ingrese el contenido detallado del comunicado (opcional)" aria-describedby="contenido-help @error('contenido') contenido-error @enderror" @error('contenido') aria-invalid="true" @enderror>{{ old('contenido') }}</textarea>
                         @error('contenido')
-                            <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                            <p id="contenido-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
                         @enderror
-                        <p class="text-xs text-gray-500 mt-1">Use el editor para dar formato al texto, agregar enlaces, etc.</p>
+                        <p id="contenido-help" class="text-xs text-gray-500 mt-1">Use el editor para dar formato al texto, agregar enlaces, etc.</p>
                     </div>
                 </div>
 
@@ -198,11 +199,11 @@
                                    value="{{ old('duracion') }}"
                                    min="1"
                                    class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('duracion') border-red-300 @enderror"
-                                   placeholder="Ej: 30">
+                                   placeholder="Ej: 30" aria-describedby="duracion-help @error('duracion') duracion-error @enderror" @error('duracion') aria-invalid="true" @enderror>
                             @error('duracion')
-                                <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                                <p id="duracion-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
                             @enderror
-                            <p class="text-xs text-gray-500 mt-1">Número de días que estará visible el comunicado</p>
+                            <p id="duracion-help" class="text-xs text-gray-500 mt-1">Número de días que estará visible el comunicado</p>
                         </div>
 
                         <!-- Fecha de fin -->
@@ -214,11 +215,11 @@
                                    name="fecha_fin" 
                                    id="fecha_fin" 
                                    value="{{ old('fecha_fin') }}"
-                                   class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('fecha_fin') border-red-300 @enderror">
+                                   class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('fecha_fin') border-red-300 @enderror" aria-describedby="fecha_fin-help @error('fecha_fin') fecha_fin-error @enderror" @error('fecha_fin') aria-invalid="true" @enderror>
                             @error('fecha_fin')
-                                <p class="text-red-600 text-sm mt-1">{{ $message }}</p>
+                                <p id="fecha_fin-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>
                             @enderror
-                            <p class="text-xs text-gray-500 mt-1">Fecha y hora específica de expiración</p>
+                            <p id="fecha_fin-help" class="text-xs text-gray-500 mt-1">Fecha y hora específica de expiración</p>
                         </div>
                     </div>
                 </div>

@@ -29,7 +29,8 @@
 
     <!-- Mensajes de error -->
     @if($errors->any())
-        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
+        <div id="resumen-errores" role="alert" tabindex="-1" class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
+            <p class="font-medium">Revisa los siguientes errores:</p>
             <ul class="list-disc list-inside">
                 @foreach($errors->all() as $error)
                     <li>{{ $error }}</li>
@@ -41,6 +42,7 @@
     <form action="{{ route('admin.indicador55.update', $indicador55) }}" method="POST">
         @csrf
         @method('PUT')
+        <p class="text-sm text-gray-600 mb-4">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <!-- Columna Principal -->
@@ -57,32 +59,32 @@
                     <div class="space-y-4">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Código</label>
-                                <input type="text" value="{{ strtoupper($indicador55->codigo) }}" disabled
+                                <label for="codigo" class="block text-sm font-medium text-gray-700 mb-1">Código</label>
+                                <input type="text" id="codigo" value="{{ strtoupper($indicador55->codigo) }}" disabled
                                        class="w-full px-4 py-2 rounded-lg border border-gray-300 bg-gray-100 text-gray-500">
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Orden</label>
-                                <input type="text" value="{{ $indicador55->orden }}" disabled
+                                <label for="orden" class="block text-sm font-medium text-gray-700 mb-1">Orden</label>
+                                <input type="text" id="orden" value="{{ $indicador55->orden }}" disabled
                                        class="w-full px-4 py-2 rounded-lg border border-gray-300 bg-gray-100 text-gray-500">
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Título <span class="text-red-500">*</span></label>
-                            <input type="text" name="titulo" value="{{ old('titulo', $indicador55->titulo) }}" required
+                            <label for="titulo" class="block text-sm font-medium text-gray-700 mb-1">Título <span class="text-red-500" aria-hidden="true">*</span></label>
+                            <input type="text" name="titulo" id="titulo" value="{{ old('titulo', $indicador55->titulo) }}" required aria-required="true"
                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455]">
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Título Completo <span class="text-red-500">*</span></label>
-                            <input type="text" name="titulo_completo" value="{{ old('titulo_completo', $indicador55->titulo_completo) }}" required
+                            <label for="titulo_completo" class="block text-sm font-medium text-gray-700 mb-1">Título Completo <span class="text-red-500" aria-hidden="true">*</span></label>
+                            <input type="text" name="titulo_completo" id="titulo_completo" value="{{ old('titulo_completo', $indicador55->titulo_completo) }}" required aria-required="true"
                                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455]">
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
-                            <textarea name="descripcion" rows="3"
+                            <label for="descripcion" class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
+                            <textarea name="descripcion" id="descripcion" rows="3"
                                       class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455]">{{ old('descripcion', $indicador55->descripcion) }}</textarea>
                         </div>
                     </div>
@@ -102,25 +104,25 @@
 
                     <div class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                            <label for="texto_mision" class="block text-sm font-medium text-gray-700 mb-1">
                                 <span class="inline-flex items-center">
-                                    <span class="w-3 h-3 bg-blue-600 rounded-full mr-2"></span>
+                                    <span class="w-3 h-3 bg-blue-600 rounded-full mr-2" aria-hidden="true"></span>
                                     Texto de MISIÓN
                                 </span>
                             </label>
-                            <textarea name="texto_mision" rows="4"
+                            <textarea name="texto_mision" id="texto_mision" rows="4"
                                       class="w-full px-4 py-2 rounded-lg border border-blue-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                                       placeholder="Ej: Formar Profesionales líderes, investigadores e innovadores...">{{ old('texto_mision', $indicador55->texto_mision) }}</textarea>
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">
+                            <label for="texto_vision" class="block text-sm font-medium text-gray-700 mb-1">
                                 <span class="inline-flex items-center">
-                                    <span class="w-3 h-3 bg-emerald-600 rounded-full mr-2"></span>
+                                    <span class="w-3 h-3 bg-emerald-600 rounded-full mr-2" aria-hidden="true"></span>
                                     Texto de VISIÓN
                                 </span>
                             </label>
-                            <textarea name="texto_vision" rows="4"
+                            <textarea name="texto_vision" id="texto_vision" rows="4"
                                       class="w-full px-4 py-2 rounded-lg border border-emerald-300 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
                                       placeholder="Ej: Ser la Universidad líder en la Región Amazónica...">{{ old('texto_vision', $indicador55->texto_vision) }}</textarea>
                         </div>
@@ -137,9 +139,10 @@
                         </svg>
                         Contenido Principal (HTML)
                     </h2>
-                    <textarea name="contenido" rows="10"
+                    <label for="contenido" class="sr-only">Contenido principal (HTML)</label>
+                    <textarea name="contenido" id="contenido" rows="10" aria-describedby="contenido-help"
                               class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455] font-mono text-sm">{{ old('contenido', $indicador55->contenido) }}</textarea>
-                    <p class="text-xs text-gray-500 mt-2">Puedes usar HTML para formatear el contenido principal de la página.</p>
+                    <p id="contenido-help" class="text-xs text-gray-500 mt-2">Puedes usar HTML para formatear el contenido principal de la página.</p>
                 </div>
                 @endif
 
@@ -241,10 +244,11 @@
 
                     <!-- Editor JSON (oculto por defecto) -->
                     <div id="json-editor" class="hidden">
-                        <textarea name="documentos" rows="15" id="documentos-json"
+                        <label for="documentos-json" class="sr-only">JSON de documentos</label>
+                        <textarea name="documentos" rows="15" id="documentos-json" aria-describedby="documentos-json-help"
                                   class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455] font-mono text-sm">{{ old('documentos', is_array($indicador55->documentos) ? json_encode($indicador55->documentos, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) : $indicador55->documentos) }}</textarea>
                         <div class="flex items-center justify-between mt-2">
-                            <p class="text-xs text-gray-500">Array JSON con los documentos y enlaces.</p>
+                            <p id="documentos-json-help" class="text-xs text-gray-500">Array JSON con los documentos y enlaces.</p>
                             <button type="button" onclick="formatJSON()" class="text-xs text-[#db0455] hover:underline">Formatear JSON</button>
                         </div>
                     </div>
@@ -289,34 +293,38 @@
 
                     <div class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Color Primario</label>
+                            <label for="color_primario" class="block text-sm font-medium text-gray-700 mb-1">Color Primario</label>
                             <div class="flex items-center space-x-2">
-                                <input type="color" name="color_primario" value="{{ $indicador55->color_primario }}"
+                                <input type="color" name="color_primario" id="color_primario" value="{{ $indicador55->color_primario }}"
                                        class="w-10 h-10 rounded border border-gray-300 cursor-pointer">
-                                <input type="text" value="{{ $indicador55->color_primario }}" disabled
+                                <input type="text" value="{{ $indicador55->color_primario }}" disabled aria-label="Valor hexadecimal del color primario"
                                        class="flex-1 px-3 py-2 rounded-lg border border-gray-300 bg-gray-50 text-sm">
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Gradiente From (Tailwind)</label>
-                            <input type="text" name="gradiente_from" value="{{ old('gradiente_from', $indicador55->gradiente_from) }}"
+                            <label for="gradiente_from" class="block text-sm font-medium text-gray-700 mb-1">Gradiente From (Tailwind)</label>
+                            <input type="text" name="gradiente_from" id="gradiente_from" value="{{ old('gradiente_from', $indicador55->gradiente_from) }}"
                                    class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455] text-sm"
+                                   aria-describedby="tailwind-help"
                                    placeholder="ej: blue-600">
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Gradiente To (Tailwind)</label>
-                            <input type="text" name="gradiente_to" value="{{ old('gradiente_to', $indicador55->gradiente_to) }}"
+                            <label for="gradiente_to" class="block text-sm font-medium text-gray-700 mb-1">Gradiente To (Tailwind)</label>
+                            <input type="text" name="gradiente_to" id="gradiente_to" value="{{ old('gradiente_to', $indicador55->gradiente_to) }}"
                                    class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455] text-sm"
+                                   aria-describedby="tailwind-help"
                                    placeholder="ej: indigo-600">
                         </div>
 
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Fondo Claro (Tailwind)</label>
-                            <input type="text" name="bg_light" value="{{ old('bg_light', $indicador55->bg_light) }}"
+                            <label for="bg_light" class="block text-sm font-medium text-gray-700 mb-1">Fondo Claro (Tailwind)</label>
+                            <input type="text" name="bg_light" id="bg_light" value="{{ old('bg_light', $indicador55->bg_light) }}"
                                    class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455] text-sm"
+                                   aria-describedby="tailwind-help"
                                    placeholder="ej: blue-50">
+                            <p id="tailwind-help" class="text-xs text-gray-500 mt-2">Escribe el nombre de un color de Tailwind con su tono, por ejemplo <code>blue-600</code>, <code>indigo-600</code> o <code>blue-50</code>.</p>
                         </div>
                     </div>
                 </div>
@@ -332,8 +340,8 @@
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Path del SVG</label>
-                        <textarea name="icono" rows="3"
+                        <label for="icono" class="block text-sm font-medium text-gray-700 mb-1">Path del SVG</label>
+                        <textarea name="icono" id="icono" rows="3"
                                   class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455] font-mono text-xs">{{ old('icono', $indicador55->icono) }}</textarea>
                     </div>
                 </div>
@@ -368,6 +376,8 @@ const isMV12 = {{ $isMV12 ? 'true' : 'false' }};
 // Inicializar al cargar la página
 document.addEventListener('DOMContentLoaded', function() {
     initializeEditor();
+    var resumen = document.getElementById('resumen-errores');
+    if (resumen) resumen.focus();
 });
 
 function initializeEditor() {
@@ -486,22 +496,22 @@ function createSimpleDocumentCard(doc, index) {
         </button>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
             <div>
-                <label class="block text-xs font-medium text-gray-600 mb-1">Año</label>
-                <input type="text" value="${doc.anio || ''}"
+                <label for="doc-${index}-anio" class="block text-xs font-medium text-gray-600 mb-1">Año</label>
+                <input type="text" id="doc-${index}-anio" value="${doc.anio || ''}"
                        onchange="updateSimpleDocument(${index}, 'anio', this.value)"
                        class="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455]"
                        placeholder="2024">
             </div>
             <div class="md:col-span-2">
-                <label class="block text-xs font-medium text-gray-600 mb-1">Título del documento</label>
-                <input type="text" value="${escapeHtml(doc.titulo || '')}"
+                <label for="doc-${index}-titulo" class="block text-xs font-medium text-gray-600 mb-1">Título del documento</label>
+                <input type="text" id="doc-${index}-titulo" value="${escapeHtml(doc.titulo || '')}"
                        onchange="updateSimpleDocument(${index}, 'titulo', this.value)"
                        class="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455]"
                        placeholder="Nombre del documento">
             </div>
             <div>
-                <label class="block text-xs font-medium text-gray-600 mb-1">URL</label>
-                <input type="text" value="${escapeHtml(doc.url || '')}"
+                <label for="doc-${index}-url" class="block text-xs font-medium text-gray-600 mb-1">URL</label>
+                <input type="text" id="doc-${index}-url" value="${escapeHtml(doc.url || '')}"
                        onchange="updateSimpleDocument(${index}, 'url', this.value)"
                        class="w-full px-3 py-2 text-sm rounded-lg border border-gray-300 focus:border-[#db0455] focus:ring-1 focus:ring-[#db0455]"
                        placeholder="/storage/docs/...">
@@ -586,14 +596,14 @@ function createSectionCard(section, sectionIndex) {
                 </button>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-2 pr-8">
                     <div>
-                        <label class="block text-xs font-medium text-gray-600 mb-1">Título</label>
-                        <input type="text" value="${escapeHtml(item.titulo || '')}"
+                        <label for="sec-${sectionIndex}-item-${itemIndex}-titulo" class="block text-xs font-medium text-gray-600 mb-1">Título</label>
+                        <input type="text" id="sec-${sectionIndex}-item-${itemIndex}-titulo" value="${escapeHtml(item.titulo || '')}"
                                onchange="updateSectionItem(${sectionIndex}, ${itemIndex}, 'titulo', this.value)"
                                class="w-full px-2 py-1.5 text-sm rounded border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
                     </div>
                     <div>
-                        <label class="block text-xs font-medium text-gray-600 mb-1">URL</label>
-                        <input type="text" value="${escapeHtml(item.url || '')}"
+                        <label for="sec-${sectionIndex}-item-${itemIndex}-url" class="block text-xs font-medium text-gray-600 mb-1">URL</label>
+                        <input type="text" id="sec-${sectionIndex}-item-${itemIndex}-url" value="${escapeHtml(item.url || '')}"
                                onchange="updateSectionItem(${sectionIndex}, ${itemIndex}, 'url', this.value)"
                                class="w-full px-2 py-1.5 text-sm rounded border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
                     </div>
@@ -605,8 +615,8 @@ function createSectionCard(section, sectionIndex) {
     div.innerHTML = `
         <div class="flex items-center justify-between mb-3">
             <div class="flex-1 mr-4">
-                <label class="block text-xs font-medium text-blue-700 mb-1">Nombre de la Sección</label>
-                <input type="text" value="${escapeHtml(section.seccion || '')}"
+                <label for="sec-${sectionIndex}-nombre" class="block text-xs font-medium text-blue-700 mb-1">Nombre de la Sección</label>
+                <input type="text" id="sec-${sectionIndex}-nombre" value="${escapeHtml(section.seccion || '')}"
                        onchange="updateSection(${sectionIndex}, 'seccion', this.value)"
                        class="w-full px-3 py-2 text-sm rounded-lg border border-blue-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 bg-white"
                        placeholder="Nombre de la sección">
@@ -619,8 +629,8 @@ function createSectionCard(section, sectionIndex) {
             </button>
         </div>
         <div class="mb-3">
-            <label class="block text-xs font-medium text-blue-700 mb-1">Descripción (opcional)</label>
-            <input type="text" value="${escapeHtml(section.descripcion || '')}"
+            <label for="sec-${sectionIndex}-descripcion" class="block text-xs font-medium text-blue-700 mb-1">Descripción (opcional)</label>
+            <input type="text" id="sec-${sectionIndex}-descripcion" value="${escapeHtml(section.descripcion || '')}"
                    onchange="updateSection(${sectionIndex}, 'descripcion', this.value)"
                    class="w-full px-3 py-2 text-sm rounded-lg border border-blue-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 bg-white"
                    placeholder="Descripción de la sección">
@@ -794,20 +804,20 @@ function createMV11SimpleDocHtml(docIndex, doc) {
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-2 pr-8">
                 <div>
-                    <label class="block text-xs font-medium text-gray-600 mb-1">Año</label>
-                    <input type="text" value="${escapeHtml(doc.anio || '')}"
+                    <label for="mv11-${docIndex}-anio" class="block text-xs font-medium text-gray-600 mb-1">Año</label>
+                    <input type="text" id="mv11-${docIndex}-anio" value="${escapeHtml(doc.anio || '')}"
                            onchange="updateMV11Doc(${docIndex}, 'anio', this.value)"
                            class="w-full px-2 py-1.5 text-sm rounded border border-gray-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
                 </div>
                 <div>
-                    <label class="block text-xs font-medium text-gray-600 mb-1">Título</label>
-                    <input type="text" value="${escapeHtml(doc.titulo || '')}"
+                    <label for="mv11-${docIndex}-titulo" class="block text-xs font-medium text-gray-600 mb-1">Título</label>
+                    <input type="text" id="mv11-${docIndex}-titulo" value="${escapeHtml(doc.titulo || '')}"
                            onchange="updateMV11Doc(${docIndex}, 'titulo', this.value)"
                            class="w-full px-2 py-1.5 text-sm rounded border border-gray-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
                 </div>
                 <div>
-                    <label class="block text-xs font-medium text-gray-600 mb-1">URL</label>
-                    <input type="text" value="${escapeHtml(doc.url || '')}"
+                    <label for="mv11-${docIndex}-url" class="block text-xs font-medium text-gray-600 mb-1">URL</label>
+                    <input type="text" id="mv11-${docIndex}-url" value="${escapeHtml(doc.url || '')}"
                            onchange="updateMV11Doc(${docIndex}, 'url', this.value)"
                            class="w-full px-2 py-1.5 text-sm rounded border border-gray-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
                 </div>
@@ -828,11 +838,11 @@ function createMV11DepartmentHtml(docIndex, doc) {
                     </svg>
                 </button>
                 <div class="grid grid-cols-2 gap-2 pr-6">
-                    <input type="text" value="${escapeHtml(item.titulo || '')}"
+                    <input type="text" value="${escapeHtml(item.titulo || '')}" aria-label="Título del item ${itemIndex + 1}"
                            onchange="updateMV11DeptItem(${docIndex}, ${itemIndex}, 'titulo', this.value)"
                            class="w-full px-2 py-1 text-xs rounded border border-gray-300 focus:border-amber-500"
                            placeholder="Título">
-                    <input type="text" value="${escapeHtml(item.url || '')}"
+                    <input type="text" value="${escapeHtml(item.url || '')}" aria-label="URL del item ${itemIndex + 1}"
                            onchange="updateMV11DeptItem(${docIndex}, ${itemIndex}, 'url', this.value)"
                            class="w-full px-2 py-1 text-xs rounded border border-gray-300 focus:border-amber-500"
                            placeholder="URL">
@@ -854,14 +864,14 @@ function createMV11DepartmentHtml(docIndex, doc) {
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3 pr-8">
                 <div>
-                    <label class="block text-xs font-medium text-amber-700 mb-1">Año</label>
-                    <input type="text" value="${escapeHtml(doc.anio || '')}"
+                    <label for="mv11-${docIndex}-anio" class="block text-xs font-medium text-amber-700 mb-1">Año</label>
+                    <input type="text" id="mv11-${docIndex}-anio" value="${escapeHtml(doc.anio || '')}"
                            onchange="updateMV11Doc(${docIndex}, 'anio', this.value)"
                            class="w-full px-2 py-1.5 text-sm rounded border border-amber-300 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 bg-white">
                 </div>
                 <div>
-                    <label class="block text-xs font-medium text-amber-700 mb-1">Nombre del Departamento</label>
-                    <input type="text" value="${escapeHtml(doc.departamento || '')}"
+                    <label for="mv11-${docIndex}-departamento" class="block text-xs font-medium text-amber-700 mb-1">Nombre del Departamento</label>
+                    <input type="text" id="mv11-${docIndex}-departamento" value="${escapeHtml(doc.departamento || '')}"
                            onchange="updateMV11Doc(${docIndex}, 'departamento', this.value)"
                            class="w-full px-2 py-1.5 text-sm rounded border border-amber-300 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 bg-white">
                 </div>
@@ -979,14 +989,14 @@ function createMV12SectionCard(section, sectionIndex) {
                 </button>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-2 pr-8">
                     <div>
-                        <label class="block text-xs font-medium text-gray-600 mb-1">Título</label>
-                        <input type="text" value="${escapeHtml(item.titulo || '')}"
+                        <label for="mv12-${sectionIndex}-item-${itemIndex}-titulo" class="block text-xs font-medium text-gray-600 mb-1">Título</label>
+                        <input type="text" id="mv12-${sectionIndex}-item-${itemIndex}-titulo" value="${escapeHtml(item.titulo || '')}"
                                onchange="updateMV12Item(${sectionIndex}, ${itemIndex}, 'titulo', this.value)"
                                class="w-full px-2 py-1.5 text-sm rounded border border-gray-300 focus:border-purple-500 focus:ring-1 focus:ring-purple-500">
                     </div>
                     <div>
-                        <label class="block text-xs font-medium text-gray-600 mb-1">URL</label>
-                        <input type="text" value="${escapeHtml(item.url || '')}"
+                        <label for="mv12-${sectionIndex}-item-${itemIndex}-url" class="block text-xs font-medium text-gray-600 mb-1">URL</label>
+                        <input type="text" id="mv12-${sectionIndex}-item-${itemIndex}-url" value="${escapeHtml(item.url || '')}"
                                onchange="updateMV12Item(${sectionIndex}, ${itemIndex}, 'url', this.value)"
                                class="w-full px-2 py-1.5 text-sm rounded border border-gray-300 focus:border-purple-500 focus:ring-1 focus:ring-purple-500">
                     </div>
@@ -1009,15 +1019,15 @@ function createMV12SectionCard(section, sectionIndex) {
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
             <div>
-                <label class="block text-xs font-medium text-purple-700 mb-1">Año</label>
-                <input type="text" value="${section.anio || ''}"
+                <label for="mv12-${sectionIndex}-anio" class="block text-xs font-medium text-purple-700 mb-1">Año</label>
+                <input type="text" id="mv12-${sectionIndex}-anio" value="${section.anio || ''}"
                        onchange="updateMV12Section(${sectionIndex}, 'anio', this.value)"
                        class="w-full px-3 py-2 text-sm rounded-lg border border-purple-300 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 bg-white"
                        placeholder="2024">
             </div>
             <div>
-                <label class="block text-xs font-medium text-purple-700 mb-1">Nombre de la Sección</label>
-                <input type="text" value="${escapeHtml(section.seccion || '')}"
+                <label for="mv12-${sectionIndex}-seccion" class="block text-xs font-medium text-purple-700 mb-1">Nombre de la Sección</label>
+                <input type="text" id="mv12-${sectionIndex}-seccion" value="${escapeHtml(section.seccion || '')}"
                        onchange="updateMV12Section(${sectionIndex}, 'seccion', this.value)"
                        class="w-full px-3 py-2 text-sm rounded-lg border border-purple-300 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 bg-white"
                        placeholder="Diseño Curricular 2024">

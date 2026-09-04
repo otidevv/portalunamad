@@ -23,7 +23,7 @@
     <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
         <form method="GET" action="{{ route('admin.comunicados.index') }}">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <select name="categoria" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
+                <select name="categoria" aria-label="Filtrar por categoría" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
                     <option value="">Todas las categorías</option>
                     @foreach($categorias as $cat)
                         <option value="{{ $cat->id }}" {{ request('categoria') == $cat->id ? 'selected' : '' }}>
@@ -32,13 +32,13 @@
                     @endforeach
                 </select>
                 
-                <select name="estado" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
+                <select name="estado" aria-label="Filtrar por estado" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
                     <option value="">Todos los estados</option>
                     <option value="1" {{ request('estado') == '1' ? 'selected' : '' }}>Activo</option>
                     <option value="0" {{ request('estado') == '0' ? 'selected' : '' }}>Inactivo</option>
                 </select>
                 
-                <select name="vigencia" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
+                <select name="vigencia" aria-label="Filtrar por vigencia" class="rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
                     <option value="">Todas las vigencias</option>
                     <option value="vigente" {{ request('vigencia') == 'vigente' ? 'selected' : '' }}>Vigentes</option>
                     <option value="vencido" {{ request('vigencia') == 'vencido' ? 'selected' : '' }}>Vencidos</option>
@@ -53,7 +53,7 @@
 
     <!-- Mensajes de éxito/error -->
     @if(session('success'))
-        <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-lg">
+        <div role="status" class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-lg">
             <div class="flex items-center">
                 <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
@@ -64,7 +64,7 @@
     @endif
 
     @if(session('error'))
-        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
+        <div role="alert" class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
             <div class="flex items-center">
                 <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
@@ -289,32 +289,33 @@
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
                                 <!-- Título -->
                                 <div class="lg:col-span-2">
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Título del Comunicado <span class="text-red-500">*</span>
+                                    <label for="titulo" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Título del Comunicado <span class="text-red-500" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
-                                        <input type="text" 
+                                        <input type="text"
                                                name="titulo"
                                                id="titulo"
+                                               aria-describedby="error-titulo"
                                                class="w-full pl-4 pr-10 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
-                                               placeholder="Ej: Comunicado Importante sobre Exámenes Finales" required>
+                                               placeholder="Ej: Comunicado Importante sobre Exámenes Finales" required aria-required="true">
                                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                                             <svg aria-hidden="true" focusable="false" class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path>
                                             </svg>
                                         </div>
                                     </div>
-                                    <div class="text-red-600 text-sm mt-1" id="error-titulo"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-titulo" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Categoría -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Categoría <span class="text-red-500">*</span>
+                                    <label for="categoria_id" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Categoría <span class="text-red-500" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
-                                        <select name="categoria_id" id="categoria_id" 
-                                                class="w-full appearance-none pl-4 pr-10 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 bg-white" required>
+                                        <select name="categoria_id" id="categoria_id" aria-describedby="error-categoria_id" 
+                                                class="w-full appearance-none pl-4 pr-10 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 bg-white" required aria-required="true">
                                             <option value="" disabled selected>Seleccione una categoría</option>
                                             @foreach($categorias ?? [] as $categoria)
                                                 <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
@@ -326,39 +327,40 @@
                                             </svg>
                                         </div>
                                     </div>
-                                    <div class="text-red-600 text-sm mt-1" id="error-categoria_id"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-categoria_id" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Duración -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Duración (días) <span class="text-red-500">*</span>
+                                    <label for="duracion" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Duración (días) <span class="text-red-500" aria-hidden="true">*</span>
                                     </label>
                                     <div class="relative">
-                                        <input type="number" 
+                                        <input type="number"
                                                name="duracion"
                                                id="duracion"
+                                               aria-describedby="error-duracion"
                                                min="1"
                                                max="365"
                                                class="w-full pl-4 pr-10 py-3 rounded-xl border-2 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 placeholder-gray-400"
-                                               placeholder="Ej: 30" required>
+                                               placeholder="Ej: 30" required aria-required="true">
                                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                                             <svg aria-hidden="true" focusable="false" class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                             </svg>
                                         </div>
                                     </div>
-                                    <div class="text-red-600 text-sm mt-1" id="error-duracion"></div>
+                                    <div class="text-red-600 text-sm mt-1" id="error-duracion" aria-live="polite"></div>
                                 </div>
 
                                 <!-- Contenido -->
                                 <div class="lg:col-span-2">
-                                    <label class="block text-sm font-semibold text-gray-700 mb-2">
-                                        Contenido del Comunicado <span class="text-red-500">*</span>
+                                    <label id="contenido-label" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Contenido del Comunicado <span class="text-red-500" aria-hidden="true">*</span>
                                     </label>
                                     
                                     <!-- Editor Toolbar -->
-                                    <div class="border-2 border-gray-200 rounded-t-xl bg-gray-50 px-3 py-2 flex flex-wrap gap-1 items-center">
+                                    <div role="toolbar" aria-label="Formato del contenido" class="border-2 border-gray-200 rounded-t-xl bg-gray-50 px-3 py-2 flex flex-wrap gap-1 items-center">
                                         <div class="flex items-center gap-1 pr-2 border-r border-gray-300">
                                             <button type="button" onclick="formatText('bold')" class="p-2 hover:bg-gray-200 rounded transition-colors" title="Negrita" aria-label="Negrita">
                                                 <svg aria-hidden="true" focusable="false" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -423,13 +425,14 @@
                                     </div>
                                     
                                     <!-- Editor Content -->
-                                    <div id="editor-content" 
+                                    <div id="editor-content"
                                          contenteditable="true"
+                                         role="textbox" aria-multiline="true" aria-labelledby="contenido-label" aria-describedby="contenido-help error-contenido" aria-required="true"
                                          class="w-full min-h-[200px] px-4 py-3 rounded-b-xl border-2 border-t-0 border-gray-200 focus:border-[#db0455] focus:ring-4 focus:ring-[#db0455]/10 shadow-sm transition-all duration-200 bg-white"
                                          placeholder="Escriba el contenido del comunicado aquí..."></div>
                                     <input type="hidden" name="contenido" id="contenido">
-                                    <div class="text-red-600 text-sm mt-1" id="error-contenido"></div>
-                                    <p class="text-xs text-gray-500 mt-2">Use la barra de herramientas para dar formato al texto</p>
+                                    <div class="text-red-600 text-sm mt-1" id="error-contenido" aria-live="polite"></div>
+                                    <p id="contenido-help" class="text-xs text-gray-500 mt-2">Use la barra de herramientas para dar formato al texto</p>
                                 </div>
                             </div>
                         </div>
@@ -445,11 +448,11 @@
                             </h4>
 
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                <label for="imagen" class="block text-sm font-semibold text-gray-700 mb-2">
                                     Seleccionar Imagen <span class="text-gray-400 font-normal">(Opcional)</span>
                                 </label>
                                 <div class="relative">
-                                    <input type="file" name="imagen" id="imagen" accept="image/*"
+                                    <input type="file" name="imagen" id="imagen" accept="image/*" aria-describedby="imagen-help error-imagen"
                                            class="w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-xl hover:border-[#db0455] transition-colors duration-200 text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gradient-to-r file:from-[#db0455] file:to-[#a00340] file:text-white hover:file:shadow-lg file:cursor-pointer">
                                     <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
                                         <svg aria-hidden="true" focusable="false" class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -457,8 +460,8 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <div class="text-red-600 text-sm mt-1" id="error-imagen"></div>
-                                <p class="text-xs text-gray-500 mt-2 flex items-center">
+                                <div class="text-red-600 text-sm mt-1" id="error-imagen" aria-live="polite"></div>
+                                <p id="imagen-help" class="text-xs text-gray-500 mt-2 flex items-center">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
@@ -483,16 +486,16 @@
                             </div>
 
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                <label for="archivos" class="block text-sm font-semibold text-gray-700 mb-2">
                                     Añadir Archivos <span class="text-gray-400 font-normal">(Opcional, varios permitidos)</span>
                                 </label>
                                 <div class="relative">
-                                    <input type="file" name="archivos[]" id="archivos" multiple
+                                    <input type="file" name="archivos[]" id="archivos" multiple aria-describedby="archivos-help error-archivos"
                                            accept=".pdf,.xls,.xlsx,.csv,application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv"
                                            class="w-full px-4 py-3 border-2 border-dashed border-gray-300 rounded-xl hover:border-[#db0455] transition-colors duration-200 text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gradient-to-r file:from-[#db0455] file:to-[#a00340] file:text-white hover:file:shadow-lg file:cursor-pointer">
                                 </div>
-                                <div class="text-red-600 text-sm mt-1" id="error-archivos"></div>
-                                <p class="text-xs text-gray-500 mt-2 flex items-center">
+                                <div class="text-red-600 text-sm mt-1" id="error-archivos" aria-live="polite"></div>
+                                <p id="archivos-help" class="text-xs text-gray-500 mt-2 flex items-center">
                                     <svg aria-hidden="true" focusable="false" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
@@ -543,7 +546,7 @@
                                     </svg>
                                     Crear Comunicado
                                 </span>
-                                <span id="loadingText" class="hidden flex items-center">
+                                <span id="loadingText" role="status" class="hidden flex items-center">
                                     <svg aria-hidden="true" focusable="false" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
                                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -735,17 +738,29 @@ function clearErrors() {
     document.querySelectorAll('[id^="error-"]').forEach(el => {
         el.textContent = '';
     });
+    document.querySelectorAll('#comunicadoForm [aria-invalid="true"]').forEach(el => {
+        el.removeAttribute('aria-invalid');
+    });
 }
 
 // Show validation errors
 function showErrors(errors) {
     clearErrors();
+    let primero = null;
     for (const [field, messages] of Object.entries(errors)) {
         const errorElement = document.getElementById(`error-${field}`);
         if (errorElement) {
             errorElement.textContent = messages[0];
         }
+        const control = field === 'contenido'
+            ? document.getElementById('editor-content')
+            : (document.getElementById(field) || document.querySelector(`#comunicadoForm [name="${field}"]`));
+        if (control) {
+            control.setAttribute('aria-invalid', 'true');
+            if (!primero) primero = control;
+        }
     }
+    if (primero) primero.focus();
 }
 
 // Rich Text Editor Functions
@@ -773,13 +788,13 @@ function insertLink() {
                     <h3 class="text-lg font-semibold text-gray-900 mb-4">Insertar Enlace</h3>
                     <div class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Texto del enlace</label>
+                            <label for="linkTextInput" class="block text-sm font-medium text-gray-700 mb-1">Texto del enlace</label>
                             <input type="text" id="linkTextInput" 
                                    class="w-full px-3 py-2 rounded-lg border-2 border-gray-200 focus:border-[#db0455] focus:ring-2 focus:ring-[#db0455]/10"
                                    placeholder="Ej: Haz clic aquí" autofocus>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">URL del enlace</label>
+                            <label for="linkUrlInput" class="block text-sm font-medium text-gray-700 mb-1">URL del enlace</label>
                             <input type="url" id="linkUrlInput" 
                                    class="w-full px-3 py-2 rounded-lg border-2 border-gray-200 focus:border-[#db0455] focus:ring-2 focus:ring-[#db0455]/10"
                                    placeholder="https://ejemplo.com" value="https://">

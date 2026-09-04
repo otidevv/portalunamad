@@ -62,7 +62,7 @@
 
     <!-- Mensajes -->
     @if(session('success'))
-        <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-lg">
+        <div role="status" class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-lg">
             <div class="flex items-center">
                 <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
@@ -73,7 +73,7 @@
     @endif
 
     @if(session('error'))
-        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
+        <div role="alert" class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
             <div class="flex items-center">
                 <svg aria-hidden="true" focusable="false" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
@@ -351,35 +351,36 @@ function getCarpetaModalHTML() {
         <form onsubmit="submitForm(event)" class="p-6 space-y-4">
             <input type="hidden" name="tipo" value="carpeta">
             <input type="hidden" name="carpeta_id" value="{{ $carpetaActual?->id }}">
-            
+            <p class="text-xs text-gray-500">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
+
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Nombre *</label>
-                <input type="text" name="nombre" required
+                <label for="carpeta-nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre <span aria-hidden="true">*</span></label>
+                <input type="text" name="nombre" id="carpeta-nombre" required aria-required="true" aria-describedby="error-nombre"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                        placeholder="Ej: Documentos Académicos">
-                <div class="text-red-600 text-sm mt-1" id="error-nombre"></div>
+                <div class="text-red-600 text-sm mt-1" id="error-nombre" aria-live="polite"></div>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
-                <textarea name="descripcion_carpeta" rows="3"
+                <label for="carpeta-descripcion" class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
+                <textarea name="descripcion_carpeta" id="carpeta-descripcion" rows="3"
                           class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                           placeholder="Descripción opcional de la carpeta"></textarea>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Orden *</label>
-                <input type="number" name="orden" required min="1" value="1"
+                <label for="carpeta-orden" class="block text-sm font-medium text-gray-700 mb-1">Orden <span aria-hidden="true">*</span></label>
+                <input type="number" name="orden" id="carpeta-orden" required aria-required="true" min="1" value="1" aria-describedby="carpeta-orden-help error-orden"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                        placeholder="Ej: 1, 2, 3...">
-                <div class="text-red-600 text-sm mt-1" id="error-orden"></div>
-                <p class="text-sm text-gray-500 mt-1">Define la posición donde aparecerá esta carpeta</p>
+                <div class="text-red-600 text-sm mt-1" id="error-orden" aria-live="polite"></div>
+                <p id="carpeta-orden-help" class="text-sm text-gray-500 mt-1">Define la posición donde aparecerá esta carpeta</p>
             </div>
             
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Icono</label>
-                    <select name="icono" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <label for="carpeta-icono" class="block text-sm font-medium text-gray-700 mb-1">Icono</label>
+                    <select name="icono" id="carpeta-icono" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                         <option value="folder">Carpeta</option>
                         <option value="archive">Archivo</option>
                         <option value="briefcase">Portafolio</option>
@@ -389,8 +390,8 @@ function getCarpetaModalHTML() {
                 </div>
                 
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Color</label>
-                    <select name="color" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <label for="carpeta-color" class="block text-sm font-medium text-gray-700 mb-1">Color</label>
+                    <select name="color" id="carpeta-color" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                         <option value="#3B82F6">Azul</option>
                         <option value="#EF4444">Rojo</option>
                         <option value="#10B981">Verde</option>
@@ -409,7 +410,7 @@ function getCarpetaModalHTML() {
                 <button type="submit" id="submitBtn"
                         class="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:shadow-lg transition-all">
                     <span id="submitText">Crear Carpeta</span>
-                    <span id="loadingText" class="hidden">Creando...</span>
+                    <span id="loadingText" role="status" class="hidden">Creando...</span>
                 </button>
             </div>
         </form>
@@ -447,43 +448,44 @@ function getDocumentoModalHTML() {
         <form onsubmit="submitForm(event)" class="p-6 space-y-4">
             <input type="hidden" name="tipo" value="documento">
             <input type="hidden" name="carpeta_id" value="{{ $carpetaActual?->id }}">
-            
+            <p class="text-xs text-gray-500">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
+
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Título *</label>
-                <input type="text" name="titulo" required
+                <label for="doc-titulo" class="block text-sm font-medium text-gray-700 mb-1">Título <span aria-hidden="true">*</span></label>
+                <input type="text" name="titulo" id="doc-titulo" required aria-required="true" aria-describedby="error-titulo"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                        placeholder="Ej: Manual de Usuario 2024">
-                <div class="text-red-600 text-sm mt-1" id="error-titulo"></div>
+                <div class="text-red-600 text-sm mt-1" id="error-titulo" aria-live="polite"></div>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Enlace *</label>
-                <input type="url" name="enlace" required
+                <label for="doc-enlace" class="block text-sm font-medium text-gray-700 mb-1">Enlace <span aria-hidden="true">*</span></label>
+                <input type="url" name="enlace" id="doc-enlace" required aria-required="true" aria-describedby="error-enlace"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                        placeholder="https://ejemplo.com/documento.pdf">
-                <div class="text-red-600 text-sm mt-1" id="error-enlace"></div>
+                <div class="text-red-600 text-sm mt-1" id="error-enlace" aria-live="polite"></div>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
-                <textarea name="descripcion" rows="3"
+                <label for="doc-descripcion" class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
+                <textarea name="descripcion" id="doc-descripcion" rows="3"
                           class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                           placeholder="Descripción opcional del documento"></textarea>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Orden *</label>
-                <input type="number" name="orden" required min="1" value="1"
+                <label for="doc-orden" class="block text-sm font-medium text-gray-700 mb-1">Orden <span aria-hidden="true">*</span></label>
+                <input type="number" name="orden" id="doc-orden" required aria-required="true" min="1" value="1" aria-describedby="doc-orden-help error-orden"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                        placeholder="Ej: 1, 2, 3...">
-                <div class="text-red-600 text-sm mt-1" id="error-orden"></div>
-                <p class="text-sm text-gray-500 mt-1">Define la posición donde aparecerá este documento</p>
+                <div class="text-red-600 text-sm mt-1" id="error-orden" aria-live="polite"></div>
+                <p id="doc-orden-help" class="text-sm text-gray-500 mt-1">Define la posición donde aparecerá este documento</p>
             </div>
             
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Tipo de Enlace</label>
-                    <select name="tipo_enlace" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+                    <label for="doc-tipo-enlace" class="block text-sm font-medium text-gray-700 mb-1">Tipo de Enlace</label>
+                    <select name="tipo_enlace" id="doc-tipo-enlace" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
                         <option value="url">URL Externa</option>
                         <option value="archivo">Archivo Local</option>
                         <option value="interno">Enlace Interno</option>
@@ -491,8 +493,8 @@ function getDocumentoModalHTML() {
                 </div>
                 
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Tipo de Documento</label>
-                    <select name="tipo_documento" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+                    <label for="doc-tipo-documento" class="block text-sm font-medium text-gray-700 mb-1">Tipo de Documento</label>
+                    <select name="tipo_documento" id="doc-tipo-documento" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
                         <option value="pdf">PDF</option>
                         <option value="doc">Word</option>
                         <option value="xls">Excel</option>
@@ -522,7 +524,7 @@ function getDocumentoModalHTML() {
                 <button type="submit" id="submitBtn"
                         class="px-4 py-2 bg-gradient-to-r from-[#db0455] to-[#a00340] text-white rounded-lg hover:shadow-lg transition-all">
                     <span id="submitText">Crear Documento</span>
-                    <span id="loadingText" class="hidden">Creando...</span>
+                    <span id="loadingText" role="status" class="hidden">Creando...</span>
                 </button>
             </div>
         </form>
@@ -558,34 +560,35 @@ function getEditCarpetaModalHTML(carpeta) {
         </div>
         
         <form onsubmit="submitEditForm(event)" class="p-6 space-y-4">
+            <p class="text-xs text-gray-500">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Nombre *</label>
-                <input type="text" name="nombre" required value="${carpeta.nombre}"
+                <label for="carpeta-nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre <span aria-hidden="true">*</span></label>
+                <input type="text" name="nombre" id="carpeta-nombre" required aria-required="true" value="${carpeta.nombre}" aria-describedby="error-nombre"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                        placeholder="Ej: Documentos Académicos">
-                <div class="text-red-600 text-sm mt-1" id="error-nombre"></div>
+                <div class="text-red-600 text-sm mt-1" id="error-nombre" aria-live="polite"></div>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
-                <textarea name="descripcion" rows="3"
+                <label for="carpeta-descripcion" class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
+                <textarea name="descripcion" id="carpeta-descripcion" rows="3"
                           class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                           placeholder="Descripción opcional de la carpeta">${carpeta.descripcion || ''}</textarea>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Orden *</label>
-                <input type="number" name="orden" required min="1" value="${carpeta.orden}"
+                <label for="carpeta-orden" class="block text-sm font-medium text-gray-700 mb-1">Orden <span aria-hidden="true">*</span></label>
+                <input type="number" name="orden" id="carpeta-orden" required aria-required="true" min="1" value="${carpeta.orden}" aria-describedby="carpeta-orden-help error-orden"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                        placeholder="Ej: 1, 2, 3...">
-                <div class="text-red-600 text-sm mt-1" id="error-orden"></div>
-                <p class="text-sm text-gray-500 mt-1">Define la posición donde aparecerá esta carpeta</p>
+                <div class="text-red-600 text-sm mt-1" id="error-orden" aria-live="polite"></div>
+                <p id="carpeta-orden-help" class="text-sm text-gray-500 mt-1">Define la posición donde aparecerá esta carpeta</p>
             </div>
             
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Icono</label>
-                    <select name="icono" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <label for="carpeta-icono" class="block text-sm font-medium text-gray-700 mb-1">Icono</label>
+                    <select name="icono" id="carpeta-icono" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                         <option value="folder" ${carpeta.icono === 'folder' ? 'selected' : ''}>Carpeta</option>
                         <option value="archive" ${carpeta.icono === 'archive' ? 'selected' : ''}>Archivo</option>
                         <option value="briefcase" ${carpeta.icono === 'briefcase' ? 'selected' : ''}>Portafolio</option>
@@ -595,8 +598,8 @@ function getEditCarpetaModalHTML(carpeta) {
                 </div>
                 
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Color</label>
-                    <select name="color" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <label for="carpeta-color" class="block text-sm font-medium text-gray-700 mb-1">Color</label>
+                    <select name="color" id="carpeta-color" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                         <option value="#3B82F6" ${carpeta.color === '#3B82F6' ? 'selected' : ''}>Azul</option>
                         <option value="#EF4444" ${carpeta.color === '#EF4444' ? 'selected' : ''}>Rojo</option>
                         <option value="#10B981" ${carpeta.color === '#10B981' ? 'selected' : ''}>Verde</option>
@@ -615,7 +618,7 @@ function getEditCarpetaModalHTML(carpeta) {
                 <button type="submit" id="submitBtn"
                         class="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg hover:shadow-lg transition-all">
                     <span id="submitText">Actualizar Carpeta</span>
-                    <span id="loadingText" class="hidden">Actualizando...</span>
+                    <span id="loadingText" role="status" class="hidden">Actualizando...</span>
                 </button>
             </div>
         </form>
@@ -651,42 +654,43 @@ function getEditDocumentoModalHTML(documento) {
         </div>
         
         <form onsubmit="submitEditForm(event)" class="p-6 space-y-4">
+            <p class="text-xs text-gray-500">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Título *</label>
-                <input type="text" name="titulo" required value="${documento.titulo}"
+                <label for="doc-titulo" class="block text-sm font-medium text-gray-700 mb-1">Título <span aria-hidden="true">*</span></label>
+                <input type="text" name="titulo" id="doc-titulo" required aria-required="true" value="${documento.titulo}" aria-describedby="error-titulo"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                        placeholder="Ej: Manual de Usuario 2024">
-                <div class="text-red-600 text-sm mt-1" id="error-titulo"></div>
+                <div class="text-red-600 text-sm mt-1" id="error-titulo" aria-live="polite"></div>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Enlace *</label>
-                <input type="url" name="enlace" required value="${documento.enlace}"
+                <label for="doc-enlace" class="block text-sm font-medium text-gray-700 mb-1">Enlace <span aria-hidden="true">*</span></label>
+                <input type="url" name="enlace" id="doc-enlace" required aria-required="true" value="${documento.enlace}" aria-describedby="error-enlace"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                        placeholder="https://ejemplo.com/documento.pdf">
-                <div class="text-red-600 text-sm mt-1" id="error-enlace"></div>
+                <div class="text-red-600 text-sm mt-1" id="error-enlace" aria-live="polite"></div>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
-                <textarea name="descripcion" rows="3"
+                <label for="doc-descripcion" class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
+                <textarea name="descripcion" id="doc-descripcion" rows="3"
                           class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                           placeholder="Descripción opcional del documento">${documento.descripcion || ''}</textarea>
             </div>
             
             <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Orden *</label>
-                <input type="number" name="orden" required min="1" value="${documento.orden}"
+                <label for="doc-orden" class="block text-sm font-medium text-gray-700 mb-1">Orden <span aria-hidden="true">*</span></label>
+                <input type="number" name="orden" id="doc-orden" required aria-required="true" min="1" value="${documento.orden}" aria-describedby="doc-orden-help error-orden"
                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
                        placeholder="Ej: 1, 2, 3...">
-                <div class="text-red-600 text-sm mt-1" id="error-orden"></div>
-                <p class="text-sm text-gray-500 mt-1">Define la posición donde aparecerá este documento</p>
+                <div class="text-red-600 text-sm mt-1" id="error-orden" aria-live="polite"></div>
+                <p id="doc-orden-help" class="text-sm text-gray-500 mt-1">Define la posición donde aparecerá este documento</p>
             </div>
             
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Tipo de Enlace</label>
-                    <select name="tipo_enlace" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+                    <label for="doc-tipo-enlace" class="block text-sm font-medium text-gray-700 mb-1">Tipo de Enlace</label>
+                    <select name="tipo_enlace" id="doc-tipo-enlace" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
                         <option value="url" ${documento.tipo_enlace === 'url' ? 'selected' : ''}>URL Externa</option>
                         <option value="archivo" ${documento.tipo_enlace === 'archivo' ? 'selected' : ''}>Archivo Local</option>
                         <option value="interno" ${documento.tipo_enlace === 'interno' ? 'selected' : ''}>Enlace Interno</option>
@@ -694,8 +698,8 @@ function getEditDocumentoModalHTML(documento) {
                 </div>
                 
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Tipo de Documento</label>
-                    <select name="tipo_documento" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+                    <label for="doc-tipo-documento" class="block text-sm font-medium text-gray-700 mb-1">Tipo de Documento</label>
+                    <select name="tipo_documento" id="doc-tipo-documento" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
                         <option value="pdf" ${documento.tipo_documento === 'pdf' ? 'selected' : ''}>PDF</option>
                         <option value="doc" ${documento.tipo_documento === 'doc' ? 'selected' : ''}>Word</option>
                         <option value="xls" ${documento.tipo_documento === 'xls' ? 'selected' : ''}>Excel</option>
@@ -725,7 +729,7 @@ function getEditDocumentoModalHTML(documento) {
                 <button type="submit" id="submitBtn"
                         class="px-4 py-2 bg-gradient-to-r from-[#db0455] to-[#a00340] text-white rounded-lg hover:shadow-lg transition-all">
                     <span id="submitText">Actualizar Documento</span>
-                    <span id="loadingText" class="hidden">Actualizando...</span>
+                    <span id="loadingText" role="status" class="hidden">Actualizando...</span>
                 </button>
             </div>
         </form>
@@ -794,15 +798,25 @@ function clearErrors() {
     document.querySelectorAll('[id^="error-"]').forEach(el => {
         el.textContent = '';
     });
+    document.querySelectorAll('#universalModal [aria-invalid="true"]').forEach(el => {
+        el.removeAttribute('aria-invalid');
+    });
 }
 
 function showErrors(errors) {
+    let primero = null;
     for (const [field, messages] of Object.entries(errors)) {
         const errorElement = document.getElementById(`error-${field}`);
         if (errorElement) {
             errorElement.textContent = messages[0];
         }
+        const control = document.querySelector(`#universalModal [name="${field}"]`);
+        if (control) {
+            control.setAttribute('aria-invalid', 'true');
+            if (!primero) primero = control;
+        }
     }
+    if (primero) primero.focus();
 }
 
 // Enviar formulario de edición

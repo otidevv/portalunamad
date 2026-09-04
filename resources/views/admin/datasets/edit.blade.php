@@ -38,7 +38,7 @@
     </div>
 
     @if($errors->any())
-        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
+        <div id="resumen-errores" role="alert" tabindex="-1" class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">
             <p class="font-medium">Revisa los siguientes campos:</p>
             <ul class="list-disc list-inside text-sm mt-1">
                 @foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach
@@ -60,22 +60,23 @@
     <form action="{{ route('admin.datasets.update', $dataset) }}" method="POST" enctype="multipart/form-data" class="space-y-6">
         @csrf
         @method('PUT')
+        <p class="text-sm text-gray-600">Los campos marcados con asterisco (<span aria-hidden="true">*</span>) son obligatorios.</p>
 
         <!-- Identificación -->
         <div class="bg-white rounded-lg shadow-sm p-6">
             <h2 class="text-sm font-semibold text-gray-800 uppercase tracking-wide mb-4">Identificación</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                    <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre del Dataset *</label>
+                    <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre del Dataset <span aria-hidden="true">*</span></label>
                     <input type="text" name="nombre" id="nombre" value="{{ old('nombre', $dataset->nombre) }}"
-                           class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('nombre') border-red-300 @enderror" required>
-                    @error('nombre')<p class="text-red-600 text-sm mt-1">{{ $message }}</p>@enderror
+                           class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('nombre') border-red-300 @enderror" required aria-required="true" @error('nombre') aria-invalid="true" aria-describedby="nombre-error" @enderror>
+                    @error('nombre')<p id="nombre-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>@enderror
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Identificador (slug)</label>
-                    <input type="text" value="{{ $dataset->slug }}" disabled
+                    <label for="slug" class="block text-sm font-medium text-gray-700 mb-1">Identificador (slug)</label>
+                    <input type="text" id="slug" value="{{ $dataset->slug }}" disabled aria-describedby="slug-help"
                            class="w-full rounded-lg border-gray-200 bg-gray-100 text-gray-500 shadow-sm">
-                    <p class="text-xs text-gray-500 mt-1">El identificador no se modifica para no romper los enlaces publicados.</p>
+                    <p id="slug-help" class="text-xs text-gray-500 mt-1">El identificador no se modifica para no romper los enlaces publicados.</p>
                 </div>
                 <div class="md:col-span-2">
                     <label for="descripcion" class="block text-sm font-medium text-gray-700 mb-1">Descripción</label>
@@ -150,8 +151,8 @@
                     <label for="fuente_url" class="block text-sm font-medium text-gray-700 mb-1">Fuente / enlace al PNDA (opcional)</label>
                     <input type="url" name="fuente_url" id="fuente_url" value="{{ old('fuente_url', $dataset->fuente_url) }}"
                            class="w-full rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455] shadow-sm @error('fuente_url') border-red-300 @enderror"
-                           placeholder="https://www.datosabiertos.gob.pe/...">
-                    @error('fuente_url')<p class="text-red-600 text-sm mt-1">{{ $message }}</p>@enderror
+                           placeholder="https://www.datosabiertos.gob.pe/..." @error('fuente_url') aria-invalid="true" aria-describedby="fuente_url-error" @enderror>
+                    @error('fuente_url')<p id="fuente_url-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>@enderror
                 </div>
                 <div class="md:col-span-2">
                     <label for="observaciones" class="block text-sm font-medium text-gray-700 mb-1">Observaciones · Protección de datos (Ley N° 29733)</label>
@@ -190,26 +191,26 @@
                             <tr class="fila-campo">
                                 <td class="px-2 py-2">
                                     <input type="hidden" name="columnas[{{ $loop->index }}][key]" value="{{ data_get($col, 'key') }}">
-                                    <input type="text" name="columnas[{{ $loop->index }}][label]" value="{{ data_get($col, 'label') }}"
+                                    <input type="text" name="columnas[{{ $loop->index }}][label]" value="{{ data_get($col, 'label') }}" aria-label="Nombre del campo, fila {{ $loop->iteration }}"
                                            class="w-40 rounded border-gray-300 text-sm focus:border-[#db0455] focus:ring-[#db0455]" placeholder="NOMBRE_CAMPO">
                                 </td>
                                 <td class="px-2 py-2">
-                                    <select name="columnas[{{ $loop->index }}][tipo]" class="w-28 rounded border-gray-300 text-sm focus:border-[#db0455] focus:ring-[#db0455]">
+                                    <select name="columnas[{{ $loop->index }}][tipo]" aria-label="Tipo, fila {{ $loop->iteration }}" class="w-28 rounded border-gray-300 text-sm focus:border-[#db0455] focus:ring-[#db0455]">
                                         @foreach($TIPOS as $tval => $tlabel)
                                             <option value="{{ $tval }}" {{ data_get($col, 'tipo') === $tval ? 'selected' : '' }}>{{ $tlabel }}</option>
                                         @endforeach
                                     </select>
                                 </td>
                                 <td class="px-2 py-2">
-                                    <input type="text" name="columnas[{{ $loop->index }}][formato]" value="{{ data_get($col, 'formato') }}"
+                                    <input type="text" name="columnas[{{ $loop->index }}][formato]" value="{{ data_get($col, 'formato') }}" aria-label="Formato, fila {{ $loop->iteration }}"
                                            class="w-28 rounded border-gray-300 text-sm focus:border-[#db0455] focus:ring-[#db0455]" placeholder="YYYYMMDD">
                                 </td>
                                 <td class="px-2 py-2">
-                                    <input type="text" name="columnas[{{ $loop->index }}][descripcion]" value="{{ data_get($col, 'descripcion') }}"
+                                    <input type="text" name="columnas[{{ $loop->index }}][descripcion]" value="{{ data_get($col, 'descripcion') }}" aria-label="Descripción, fila {{ $loop->iteration }}"
                                            class="w-56 rounded border-gray-300 text-sm focus:border-[#db0455] focus:ring-[#db0455]" placeholder="Descripción del campo">
                                 </td>
                                 <td class="px-2 py-2">
-                                    <input type="text" name="columnas[{{ $loop->index }}][ejemplo]" value="{{ data_get($col, 'ejemplo') }}"
+                                    <input type="text" name="columnas[{{ $loop->index }}][ejemplo]" value="{{ data_get($col, 'ejemplo') }}" aria-label="Ejemplo, fila {{ $loop->iteration }}"
                                            class="w-32 rounded border-gray-300 text-sm focus:border-[#db0455] focus:ring-[#db0455]" placeholder="Ej: 2025-I">
                                 </td>
                                 <td class="px-2 py-2 text-right">
@@ -221,7 +222,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                <p id="diccionario-vacio" class="text-sm text-gray-400 py-4 {{ count($columnasActuales) ? 'hidden' : '' }}">
+                <p id="diccionario-vacio" role="status" aria-live="polite" class="text-sm text-gray-400 py-4 {{ count($columnasActuales) ? 'hidden' : '' }}">
                     Sin campos definidos. Usa «Agregar campo» o sube un CSV para detectarlos automáticamente.
                 </p>
             </div>
@@ -234,9 +235,9 @@
                 <div>
                     <label for="archivo" class="block text-sm font-medium text-gray-700 mb-1">Archivo CSV</label>
                     <input type="file" name="archivo" id="archivo" accept=".csv,.txt"
-                           class="w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-[#db0455] file:text-white hover:file:bg-[#a00340] @error('archivo') border border-red-300 rounded-lg @enderror">
-                    <p class="text-xs text-amber-600 mt-1"><span aria-hidden="true">⚠️</span> Al subir un CSV nuevo se eliminan todas las filas actuales y se regenera el diccionario.</p>
-                    @error('archivo')<p class="text-red-600 text-sm mt-1">{{ $message }}</p>@enderror
+                           class="w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-[#db0455] file:text-white hover:file:bg-[#a00340] @error('archivo') border border-red-300 rounded-lg @enderror" aria-describedby="aviso-csv @error('archivo') archivo-error @enderror" @error('archivo') aria-invalid="true" @enderror>
+                    <p id="aviso-csv" class="text-xs text-amber-600 mt-1"><span aria-hidden="true">⚠️</span> Al subir un CSV nuevo se eliminan todas las filas actuales y se regenera el diccionario.</p>
+                    @error('archivo')<p id="archivo-error" class="text-red-600 text-sm mt-1">{{ $message }}</p>@enderror
                 </div>
                 <div>
                     <label for="separador" class="block text-sm font-medium text-gray-700 mb-1">Separador de columnas</label>
@@ -277,26 +278,26 @@
     <tr class="fila-campo">
         <td class="px-2 py-2">
             <input type="hidden" name="columnas[__I__][key]" value="">
-            <input type="text" name="columnas[__I__][label]" value=""
+            <input type="text" name="columnas[__I__][label]" value="" aria-label="Nombre del campo, fila __N__"
                    class="w-40 rounded border-gray-300 text-sm focus:border-[#db0455] focus:ring-[#db0455]" placeholder="NOMBRE_CAMPO">
         </td>
         <td class="px-2 py-2">
-            <select name="columnas[__I__][tipo]" class="w-28 rounded border-gray-300 text-sm focus:border-[#db0455] focus:ring-[#db0455]">
+            <select name="columnas[__I__][tipo]" aria-label="Tipo, fila __N__" class="w-28 rounded border-gray-300 text-sm focus:border-[#db0455] focus:ring-[#db0455]">
                 @foreach($TIPOS as $tval => $tlabel)
                     <option value="{{ $tval }}">{{ $tlabel }}</option>
                 @endforeach
             </select>
         </td>
         <td class="px-2 py-2">
-            <input type="text" name="columnas[__I__][formato]" value=""
+            <input type="text" name="columnas[__I__][formato]" value="" aria-label="Formato, fila __N__"
                    class="w-28 rounded border-gray-300 text-sm focus:border-[#db0455] focus:ring-[#db0455]" placeholder="YYYYMMDD">
         </td>
         <td class="px-2 py-2">
-            <input type="text" name="columnas[__I__][descripcion]" value=""
+            <input type="text" name="columnas[__I__][descripcion]" value="" aria-label="Descripción, fila __N__"
                    class="w-56 rounded border-gray-300 text-sm focus:border-[#db0455] focus:ring-[#db0455]" placeholder="Descripción del campo">
         </td>
         <td class="px-2 py-2">
-            <input type="text" name="columnas[__I__][ejemplo]" value=""
+            <input type="text" name="columnas[__I__][ejemplo]" value="" aria-label="Ejemplo, fila __N__"
                    class="w-32 rounded border-gray-300 text-sm focus:border-[#db0455] focus:ring-[#db0455]" placeholder="Ej: 2025-I">
         </td>
         <td class="px-2 py-2 text-right">
@@ -323,11 +324,15 @@
     }
 
     btnAgregar.addEventListener('click', function () {
-        var html = plantilla.innerHTML.replace(/__I__/g, indice++);
+        var html = plantilla.innerHTML.replace(/__I__/g, indice).replace(/__N__/g, indice + 1);
+        indice++;
         var tmp = document.createElement('tbody');
         tmp.innerHTML = html.trim();
-        cuerpo.appendChild(tmp.firstElementChild);
+        var fila = tmp.firstElementChild;
+        cuerpo.appendChild(fila);
         refrescarVacio();
+        var primero = fila.querySelector('input[type="text"]');
+        if (primero) primero.focus();
     });
 
     cuerpo.addEventListener('click', function (e) {
@@ -336,7 +341,10 @@
         var fila = btn.closest('.fila-campo');
         if (fila) fila.remove();
         refrescarVacio();
+        btnAgregar.focus();
     });
+    var resumen = document.getElementById('resumen-errores');
+    if (resumen) resumen.focus();
 })();
 </script>
 @endpush

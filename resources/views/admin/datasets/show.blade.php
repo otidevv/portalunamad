@@ -54,7 +54,7 @@
     </div>
 
     @if(session('success'))
-        <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-lg">{{ session('success') }}</div>
+        <div role="status" class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-lg">{{ session('success') }}</div>
     @endif
 
     @if($dataset->observaciones)
@@ -170,15 +170,15 @@
             <h2 class="text-lg font-semibold text-gray-800 mb-4">Vista previa del gráfico</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
                 <div>
-                    <label class="block text-xs text-gray-500 mb-1">Eje X (categoría)</label>
+                    <label for="sel-x" class="block text-xs text-gray-500 mb-1">Eje X (categoría)</label>
                     <select id="sel-x" class="w-full text-sm rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]"></select>
                 </div>
                 <div>
-                    <label class="block text-xs text-gray-500 mb-1">Valor (eje Y)</label>
+                    <label for="sel-y" class="block text-xs text-gray-500 mb-1">Valor (eje Y)</label>
                     <select id="sel-y" class="w-full text-sm rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]"></select>
                 </div>
                 <div>
-                    <label class="block text-xs text-gray-500 mb-1">Agregación</label>
+                    <label for="sel-agg" class="block text-xs text-gray-500 mb-1">Agregación</label>
                     <select id="sel-agg" class="w-full text-sm rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
                         <option value="sum">Suma</option>
                         <option value="avg">Promedio</option>
@@ -186,7 +186,7 @@
                     </select>
                 </div>
                 <div>
-                    <label class="block text-xs text-gray-500 mb-1">Tipo</label>
+                    <label for="sel-tipo" class="block text-xs text-gray-500 mb-1">Tipo de gráfico</label>
                     <select id="sel-tipo" class="w-full text-sm rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
                         <option value="bar">Barras</option>
                         <option value="line">Líneas</option>
@@ -195,7 +195,7 @@
                     </select>
                 </div>
             </div>
-            <p id="grafico-aviso" class="text-xs text-amber-600 mb-2 hidden"></p>
+            <p id="grafico-aviso" role="status" aria-live="polite" class="text-xs text-amber-600 mb-2 hidden"></p>
             <div class="relative" style="height: 420px;">
                 <canvas id="grafico-dataset" role="img" aria-label="Gráfico del dataset {{ $dataset->nombre }}. Los datos de origen se muestran en la tabla de filas de esta página.">
                     Gráfico del dataset {{ $dataset->nombre }}. Los datos de origen se muestran en la tabla de filas de esta página.

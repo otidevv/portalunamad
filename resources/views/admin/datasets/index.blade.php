@@ -21,10 +21,10 @@
     </div>
 
     @if(session('success'))
-        <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-lg">{{ session('success') }}</div>
+        <div role="status" class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded-lg">{{ session('success') }}</div>
     @endif
     @if(session('error'))
-        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">{{ session('error') }}</div>
+        <div role="alert" class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg">{{ session('error') }}</div>
     @endif
 
     <!-- Resumen del plan -->
@@ -50,8 +50,8 @@
     <!-- Filtros -->
     <form method="GET" action="{{ route('admin.datasets.index') }}" class="bg-white rounded-lg shadow-sm p-4 mb-6 flex flex-wrap items-end gap-4">
         <div class="flex-1 min-w-[200px]">
-            <label class="block text-xs text-gray-500 mb-1">Área responsable</label>
-            <select name="area" onchange="this.form.submit()"
+            <label for="filtro-area" class="block text-xs text-gray-500 mb-1">Área responsable</label>
+            <select name="area" id="filtro-area"
                     class="w-full text-sm rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
                 <option value="">Todas las áreas</option>
                 @foreach($areas as $area)
@@ -60,8 +60,8 @@
             </select>
         </div>
         <div class="min-w-[180px]">
-            <label class="block text-xs text-gray-500 mb-1">Estado en el plan</label>
-            <select name="estado" onchange="this.form.submit()"
+            <label for="filtro-estado" class="block text-xs text-gray-500 mb-1">Estado en el plan</label>
+            <select name="estado" id="filtro-estado"
                     class="w-full text-sm rounded-lg border-gray-300 focus:border-[#db0455] focus:ring-[#db0455]">
                 <option value="">Todos los estados</option>
                 @foreach($estados as $val => $label)
@@ -69,6 +69,9 @@
                 @endforeach
             </select>
         </div>
+        <button type="submit" class="px-4 py-2 bg-[#db0455] text-white rounded-lg hover:bg-[#a00340] transition-colors text-sm">
+            Filtrar
+        </button>
         @if($filtroArea || $filtroEstado)
             <a href="{{ route('admin.datasets.index') }}" class="text-sm text-gray-500 hover:text-[#db0455] underline pb-2">Limpiar filtros</a>
         @endif
